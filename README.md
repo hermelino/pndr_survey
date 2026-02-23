@@ -1,6 +1,6 @@
 # pndr_survey
 
-Revisão sistemática da literatura empírica sobre os instrumentos da Política Nacional de Desenvolvimento Regional (PNDR), cobrindo estudos publicados entre 2005 e 2025.
+Revisão sistemática da literatura empírica sobre os instrumentos da Política Nacional de Desenvolvimento Regional (PNDR), cobrindo estudos publicados entre 2000 e 2025.
 
 ## Objetivo
 
@@ -10,7 +10,7 @@ Identificar, classificar e sintetizar as evidências empíricas sobre o impacto 
 - **Fundos de Desenvolvimento** (FDNE, FDA, FDCO)
 - **Incentivos Fiscais** (SUDENE, SUDAM)
 
-O projeto combina busca manual em bases acadêmicas com análise automatizada via LLM (Gemini) para extrair informações estruturadas de cada artigo.
+O projeto combina busca em bases acadêmicas (automática e semi-automática) com análise via LLM (Gemini) para extrair informações estruturadas de cada artigo.
 
 ## Estrutura do Projeto
 
@@ -18,65 +18,90 @@ O projeto combina busca manual em bases acadêmicas com análise automatizada vi
 pndr_survey/
 ├── latex/                  # Artigo LaTeX
 │   └── main.tex
-├── scripts/                # Pipeline de extração e análise
-│   ├── config.yaml         # Configuração central
-│   ├── src/
-│   │   ├── models.py       # Modelo de dados (PaperRecord)
-│   │   ├── config.py       # Carregamento de configuração
-│   │   ├── analyzers/
-│   │   │   └── llm_analyzer.py
-│   │   ├── extractors/
-│   │   │   └── pdf_extractor.py
-│   │   ├── exporters/
-│   │   │   ├── excel_exporter.py
-│   │   │   └── csv_exporter.py
-│   │   └── utils/
-│   │       ├── logger.py
-│   │       └── file_utils.py
+├── scripts/                # Pipeline completo
+│   ├── main.py             # Ponto de entrada CLI
+│   ├── config.yaml         # Configuração (não versionado)
+│   ├── config.example.yaml # Template de configuração
+│   ├── requirements.txt
+│   ├── keywords/           # Estratégias de busca por base
 │   ├── questionnaires/     # Questionários JSON para análise LLM
-│   └── main.py             # Ponto de entrada
+│   └── src/
+│       ├── models.py       # BibRecord + PaperRecord
+│       ├── config.py       # Carregamento de configuração
+│       ├── searchers/      # Busca em bases acadêmicas
+│       ├── dedup/          # Deduplicação (DOI + fuzzy title)
+│       ├── extractors/     # Extração de texto de PDFs
+│       ├── analyzers/      # Análise via LLM
+│       ├── exporters/      # Excel, CSV, RIS, JSON
+│       └── utils/          # Logging
 ├── data/                   # Dados (não versionados)
 │   ├── papers/             # PDFs dos artigos
 │   └── processed/          # Resultados da análise
 ├── figures/                # Figuras para o artigo
-└── docs/                   # Documentação adicional
-    └── PLAN.md             # Plano de construção
+└── docs/
+    └── PLAN.md             # Plano de construção detalhado
 ```
 
 ## Pipeline
 
 ```
-PDFs dos artigos
+FASE 1 — BUSCA E COLETA
+========================
+
+Bases acadêmicas (EconPapers, Google Scholar, CAPES, Scopus)
     │
     ▼
-[1] Extração de texto (pdfplumber)
+[0] Busca automática (EconPapers) + semi-automática (demais bases)
     │
     ▼
-[2] Análise via LLM (Gemini)
-    │   Etapa 1: Triagem — é estudo empírico sobre PNDR?
-    │   Etapa 2: Metodologia — métodos, variáveis, período, região
-    │   Etapa 3: Resultados — instrumentos avaliados, efeitos, significância
+[1] Importação e normalização → BibRecord
     │
     ▼
-[3] Exportação (Excel/CSV estruturado)
+[2] Deduplicação (DOI exato + fuzzy title)
     │
     ▼
-[4] Síntese para o artigo LaTeX
+[3] Download de PDFs disponíveis
+
+
+FASE 2 — ANÁLISE E SÍNTESE
+===========================
+
+PDFs coletados
+    │
+    ▼
+[4] Extração de texto (pdfplumber)
+    │
+    ▼
+[5] Análise via LLM (Gemini)
+    │   Stage 1: Triagem — é estudo empírico sobre PNDR?
+    │   Stage 2: Metodologia — métodos, variáveis, período, região
+    │   Stage 3: Resultados — instrumentos avaliados, efeitos, significância
+    │
+    ▼
+[6] Exportação (Excel/CSV/RIS/JSON)
+    │
+    ▼
+[7] Síntese para o artigo LaTeX
 ```
 
 ## Etapas do Projeto
 
 | # | Etapa | Status |
 |---|-------|--------|
-| 1 | Esqueleto do projeto e documentação | Concluído |
-| 2 | Configuração e modelo de dados | Pendente |
-| 3 | Extrator de texto de PDFs | Pendente |
-| 4 | Analisador LLM (triagem) | Pendente |
-| 5 | Analisador LLM (metodologia + resultados) | Pendente |
-| 6 | Exportadores (Excel/CSV) | Pendente |
-| 7 | Orquestrador (main.py) | Pendente |
-| 8 | Migração dos questionários e dados | Pendente |
-| 9 | Redação do artigo LaTeX | Pendente |
+| -- | Esqueleto do projeto e documentação | Concluído |
+| 0A | BibRecord + modelo bibliográfico | Pendente |
+| 0B | Searchers (EconPapers + manuais) | Pendente |
+| 0C | Deduplicação (DOI + fuzzy title) | Pendente |
+| 0D | Download de PDFs | Pendente |
+| 1 | Configuração e PaperRecord | Pendente |
+| 2 | Extrator de texto de PDFs | Pendente |
+| 3 | Analisador LLM (triagem) | Pendente |
+| 4 | Analisador LLM (metodologia + resultados) | Pendente |
+| 5 | Exportadores (Excel/CSV/RIS/JSON) | Pendente |
+| 6 | Orquestrador (main.py) | Pendente |
+| 7 | Migração questionários + keywords + dados | Pendente |
+| 8 | Citation analysis | Futuro |
+| 9 | Artigo LaTeX | Futuro |
 
 ## Requisitos
 
@@ -86,4 +111,4 @@ PDFs dos artigos
 
 ## Origem
 
-Reimplementação limpa do sistema `survey_extraction_system` do projeto de tese (CAEN/UFC), usando como referência de organização o projeto `slr-disasters-birth-outcomes`.
+Reimplementação limpa do sistema `survey_extraction_system` do projeto de tese (CAEN/UFC), usando como referência de arquitetura o projeto `slr-disasters-birth-outcomes`.

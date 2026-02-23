@@ -2,20 +2,30 @@
 
 ## Contexto
 
-Revisão sistemática (SLR) sobre instrumentos da PNDR usando análise automatizada via LLM.
-Pipeline: PDFs → extração de texto → análise Gemini (3 stages) → exportação Excel/CSV.
+Revisão sistemática (SLR) sobre instrumentos da PNDR. Duas fases:
+1. **Busca e coleta** — buscar em bases acadêmicas, deduplicar, baixar PDFs
+2. **Análise e síntese** — extração de texto, análise Gemini (3 stages), exportação
 
 ## Estrutura
 
 ```
-latex/          → Artigo LaTeX (não modificar via scripts)
-scripts/        → Pipeline Python (main.py é o ponto de entrada)
-  src/          → Código-fonte modular
-  questionnaires/ → Questionários JSON para o LLM
-data/papers/    → PDFs dos artigos (não versionados)
-data/processed/ → Resultados da análise (não versionados)
-figures/        → Figuras para o artigo
-docs/           → Documentação (PLAN.md)
+latex/              → Artigo LaTeX (não modificar via scripts)
+scripts/            → Pipeline Python (main.py é o ponto de entrada)
+  src/
+    models.py       → BibRecord (bibliográfico) + PaperRecord (análise LLM)
+    config.py       → Carregamento YAML + validação
+    searchers/      → Busca em bases acadêmicas (BaseSearcher ABC)
+    dedup/          → Deduplicação DOI + fuzzy title
+    extractors/     → Extração de texto de PDFs
+    analyzers/      → Análise via LLM (BaseAnalyzer ABC)
+    exporters/      → Excel, CSV, RIS, JSON
+    utils/          → Logging
+  keywords/         → Estratégias de busca por base (.txt)
+  questionnaires/   → Questionários JSON para o LLM
+data/papers/        → PDFs dos artigos (não versionados)
+data/processed/     → Resultados da análise (não versionados)
+figures/            → Figuras para o artigo
+docs/PLAN.md        → Plano de construção detalhado
 ```
 
 ## Regras de Código
@@ -60,10 +70,22 @@ docs/           → Documentação (PLAN.md)
 ## Dependências
 
 ```
+# Busca e coleta
+requests>=2.31
+beautifulsoup4>=4.12
+rapidfuzz>=3.0
+rispy>=0.8
+unidecode>=1.3
+
+# Extração e análise
 pdfplumber>=0.11
 google-generativeai>=0.8
+
+# Exportação
 pandas>=2.0
 openpyxl>=3.1
+
+# Configuração
 pyyaml>=6.0
 ```
 
