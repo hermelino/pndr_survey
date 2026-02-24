@@ -13,7 +13,7 @@ from typing import Any, Dict, List, Optional
 
 import google.generativeai as genai
 
-from src.analyzers.base import BaseAnalyzer
+from src.analyzers.base import BaseAnalyzer, load_questionnaire
 from src.models import PaperRecord
 
 logger = logging.getLogger("pndr_survey")
@@ -187,12 +187,136 @@ class GeminiAnalyzer(BaseAnalyzer):
             f"{last_error}"
         )
 
+    def analyze_pipeline(
+        self,
+        papers: List[PaperRecord],
+        questionnaires_dir: str,
+    ) -> List[PaperRecord]:
+        """Executa pipeline completo: Stage 1 → filtro → Stages 2+3.
+
+        Sequência:
+          1. Stage 1 (triagem) em todos os papers
+          2. Filtrar: apenas papers com is_scientific_study=='Sim'
+             e instrumentos_pndr != 'nenhum' avançam
+          3. Stage 2 (metodologia) nos papers filtrados
+          4. Stage 3 (resultados) nos papers filtrados
+
+        Args:
+            papers: Lista de PaperRecords com texto extraído.
+            questionnaires_dir: Diretório com os 3 JSONs de questionário.
+
+        Returns:
+            Lista completa de PaperRecords (com stages preenchidos
+            onde aplicável).
+        """
+        from pathlib import Path
+
+        qdir = Path(questionnaires_dir)
+
+        # --- Stage 1: Triagem ---
+        q1 = load_questionnaire(qdir / "stage_1_screening.json")
+        self.analyze_batch(papers, q1)
+
+        # --- Filtro pós-triagem ---
+        passed, rejected = filter_screening(papers)
+        logger.info(
+            "Filtro pós-triagem: %d passaram, %d rejeitados",
+            len(passed), len(rejected),
+        )
+
+        if not passed:
+            logger.warning("Nenhum paper passou na triagem.")
+            return papers
+
+        # --- Stage 2: Metodologia ---
+        q2 = load_questionnaire(qdir / "stage_2_methods.json")
+        self.analyze_batch(passed, q2)
+
+        # --- Stage 3: Resultados ---
+        q3 = load_questionnaire(qdir / "stage_3_results.json")
+        self.analyze_batch(passed, q3)
+
+        return papers
+
     def _wait_rate_limit(self) -> None:
         """Aguarda o rate limit entre chamadas."""
         elapsed = time.time() - self._last_call_time
         if elapsed < self.rate_limit_seconds:
             wait = self.rate_limit_seconds - elapsed
             time.sleep(wait)
+
+
+# --- Filtragem pós-triagem ---
+
+
+def filter_screening(
+    papers: List[PaperRecord],
+) -> tuple[List[PaperRecord], List[PaperRecord]]:
+    """Filtra papers após Stage 1 (triagem).
+
+    Critérios para passar:
+      - is_scientific_study contém "Sim" (case-insensitive)
+      - instrumentos_pndr NÃO é apenas "nenhum" ou "[ne]"
+
+    Preenche paper.is_empirical com base no resultado.
+
+    Args:
+        papers: Lista de PaperRecords com stage_1 preenchido.
+
+    Returns:
+        Tupla (passed, rejected).
+    """
+    passed: List[PaperRecord] = []
+    rejected: List[PaperRecord] = []
+
+    for paper in papers:
+        if paper.stage_1 is None:
+            rejected.append(paper)
+            continue
+
+        s1 = paper.stage_1
+        is_study = _answer_contains(s1.get("is_scientific_study", ""), "sim")
+        instruments = s1.get("instrumentos_pndr", "")
+        has_instruments = (
+            instruments
+            and not _answer_is_empty(instruments)
+            and "nenhum" not in instruments.lower()
+        )
+
+        if is_study and has_instruments:
+            paper.is_empirical = True
+            # Extrair instrumento principal para classificação
+            paper.pndr_instrument = _extract_first_instrument(instruments)
+            passed.append(paper)
+        else:
+            paper.is_empirical = False
+            rejected.append(paper)
+
+    return passed, rejected
+
+
+def _answer_contains(answer: str, value: str) -> bool:
+    """Verifica se a resposta contém o valor (ignora referências [p.X])."""
+    clean = re.sub(r"\[p\.\d+[;\d]*\]", "", answer).strip()
+    return value.lower() in clean.lower()
+
+
+def _answer_is_empty(answer: str) -> bool:
+    """Verifica se a resposta é vazia ou [ne]."""
+    clean = answer.strip().lower()
+    return clean in ("", "[ne]", "ne", "n/a", "não se aplica")
+
+
+def _extract_first_instrument(instruments_str: str) -> str:
+    """Extrai o primeiro instrumento PNDR mencionado."""
+    known = ["FNE", "FNO", "FCO", "FDA", "FDNE", "FDCO"]
+    upper = instruments_str.upper()
+    for inst in known:
+        if inst in upper:
+            return inst
+    # Fallback: retornar a resposta limpa
+    clean = re.sub(r"\[p\.\d+[;\d]*\]", "", instruments_str).strip()
+    return clean[:50] if clean else ""
 
 
 # --- Construção de prompt ---

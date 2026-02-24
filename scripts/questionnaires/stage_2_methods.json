@@ -1,0 +1,85 @@
+{
+  "metadata": {
+    "stage": 2,
+    "name": "Metodologia",
+    "description": "Detalhes metodológicos e características da amostra. Apenas papers que passaram na triagem (Stage 1) chegam aqui.",
+    "version": "1.0"
+  },
+  "instructions": {
+    "context": "Você é um pesquisador na área de economia empírica com anos de experiência em revisões sistemáticas de literatura e meta-análises. Você segue rigorosamente instruções, detém-se unicamente às informações do texto fornecido e nunca inventa fatos.",
+    "guidelines": [
+      "Analise o estudo acadêmico e responda ao questionário de forma direta e precisa",
+      "Cada resposta deve incluir o valor e a referência da página quando possível",
+      "Para informações explícitas: usar formato [p.X] ou [p.X;Y]",
+      "Para informações implícitas: incluir [impl.]",
+      "Para informações ausentes ou não aplicáveis: retornar [ne]"
+    ]
+  },
+  "questions": [
+    {
+      "id": "metodo_econometrico",
+      "title": "Qual o método econométrico empregado?",
+      "type": "text",
+      "required": true,
+      "common_values": ["OLS", "Painel de efeito fixo", "Propensity Score Matching", "Generalized Propensity Score", "Equilíbrio Geral Computável", "Painel Espacial", "Painel Dinâmico (GMM)", "Diferenças em Diferenças", "Regressão Descontínua", "Variáveis Instrumentais"]
+    },
+    {
+      "id": "detalhes_metodo",
+      "title": "Citar detalhes relevantes da abordagem econométrica (especificação, identificação, robustez, instrumentos, heterogeneidade, endogeneidade, etc.)",
+      "type": "text",
+      "required": false
+    },
+    {
+      "id": "tipo_dados",
+      "title": "Qual tipo de base de dados é utilizada?",
+      "type": "select",
+      "required": true,
+      "options": ["painel", "cross-section", "série temporal", "mista"]
+    },
+    {
+      "id": "var_dependente",
+      "title": "Quais variáveis de resultado (ou variáveis dependentes) o estudo utiliza? (e suas respectivas transformações, se houver)",
+      "type": "text",
+      "required": true
+    },
+    {
+      "id": "var_controle",
+      "title": "Quais variáveis explicativas (ou variáveis controle) o estudo utiliza? (e suas respectivas transformações, se houver)",
+      "type": "text",
+      "required": true
+    },
+    {
+      "id": "setor_economico",
+      "title": "O estudo tem foco em algum setor econômico?",
+      "type": "multiselect",
+      "required": false,
+      "options": ["indústria", "agricultura", "serviços", "todos os setores", "não especificado"]
+    },
+    {
+      "id": "area_geografica",
+      "title": "A amostra consiste em que regiões, estados ou municípios?",
+      "type": "text",
+      "required": true
+    },
+    {
+      "id": "unidade_tempo",
+      "title": "Que unidade básica de tempo é usada na amostra?",
+      "type": "select",
+      "required": true,
+      "options": ["mês", "trimestre", "ano", "dois anos", "cinco anos", "outros"]
+    },
+    {
+      "id": "unidade_espacial",
+      "title": "Que unidade espacial básica é usada na amostra?",
+      "type": "select",
+      "required": true,
+      "options": ["firma", "município", "microrregião", "mesorregião", "macrorregião", "estado", "outros"]
+    },
+    {
+      "id": "periodo_amostra",
+      "title": "Qual o período total contemplado na amostra?",
+      "type": "text",
+      "required": true
+    }
+  ]
+}
