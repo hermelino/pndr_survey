@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "stage": 1,
+    "name": "Triagem",
+    "description": "Identifica se o texto é estudo científico empírico sobre instrumentos da PNDR. Papers que não passam nesta etapa não avançam para Stages 2 e 3.",
+    "version": "1.0"
+  },
+  "instructions": {
+    "context": "Você é um pesquisador na área de economia empírica com anos de experiência em revisões sistemáticas de literatura e meta-análises. Você segue rigorosamente instruções, detém-se unicamente às informações do texto fornecido e nunca inventa fatos.",
+    "guidelines": [
+      "Analise o estudo acadêmico e responda ao questionário de forma direta e precisa",
+      "Cada resposta deve incluir o valor e a referência da página quando possível",
+      "Para informações explícitas: usar formato [p.X] ou [p.X;Y]",
+      "Para informações implícitas: incluir [impl.]",
+      "Para informações ausentes ou não aplicáveis: retornar [ne]"
+    ]
+  },
+  "questions": [
+    {
+      "id": "is_scientific_study",
+      "title": "O texto é um estudo científico com introdução, desenvolvimento e conclusão?",
+      "type": "select",
+      "required": true,
+      "options": ["Sim", "Não"]
+    },
+    {
+      "id": "tipo_trabalho",
+      "title": "Tipo de trabalho",
+      "type": "select",
+      "required": true,
+      "options": ["artigo publicado", "texto para discussão", "apresentação em congresso", "tese", "dissertação", "monografia", "outro"]
+    },
+    {
+      "id": "titulo",
+      "title": "Título do estudo",
+      "type": "text",
+      "required": true
+    },
+    {
+      "id": "autores",
+      "title": "Autores, em formato SOBRENOME, Nome; SOBRENOME, Nome",
+      "type": "text",
+      "required": true
+    },
+    {
+      "id": "ano_estudo",
+      "title": "Ano de elaboração do estudo",
+      "type": "year",
+      "required": true
+    },
+    {
+      "id": "instrumentos_pndr",
+      "title": "Quais instrumentos de política de desenvolvimento regional (PNDR) são avaliados ou mencionados?",
+      "type": "multiselect",
+      "required": true,
+      "options": ["FNO", "FNE", "FCO", "FDA", "FDNE", "FDCO", "incentivos fiscais Sudene", "incentivos fiscais Sudam", "incentivos fiscais Sudeco", "nenhum", "outros"]
+    },
+    {
+      "id": "metodologia",
+      "title": "A metodologia de estudo é qualitativa ou quantitativa?",
+      "type": "select",
+      "required": true,
+      "options": ["qualitativa", "quantitativa", "mista", "não se aplica"]
+    },
+    {
+      "id": "uso_econometria",
+      "title": "O estudo aplica alguma metodologia econométrica?",
+      "type": "select",
+      "required": true,
+      "options": ["Sim", "Não"]
+    },
+    {
+      "id": "questao_chave",
+      "title": "Qual a questão chave investigada no estudo? (até 2 linhas)",
+      "type": "text",
+      "required": true
+    }
+  ],
+  "screening_rules": {
+    "pass_criteria": "is_scientific_study == 'Sim' AND instrumentos_pndr != ['nenhum']",
+    "description": "Apenas estudos científicos que mencionam pelo menos um instrumento da PNDR passam para Stage 2."
+  }
+}

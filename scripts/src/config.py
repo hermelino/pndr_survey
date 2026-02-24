@@ -39,7 +39,7 @@ class DedupConfig:
 class LLMConfig:
     """Configuração do provedor LLM."""
     provider: str = "gemini"
-    model: str = "gemini-2.0-flash"
+    model: str = "gemini-2.5-flash"
     api_key: str = ""
     temperature: float = 0.1
     max_tokens_input: int = 100_000
