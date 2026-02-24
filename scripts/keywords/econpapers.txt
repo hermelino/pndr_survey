@@ -1,0 +1,1 @@
+("fundo constitucional" OR "fundo de desenvolvimento" OR "incentivo fiscal" OR "incentivos fiscais" OR "regional fund" OR "constitutional fund" OR "development fund" OR "tax incentive") AND ("fne" OR "fno" OR "fco" OR "fdne" OR "fdco" OR "SUDENE" OR "SUDECO" OR "SUDAM" OR "pndr") AND ("nordeste" OR "amazônia" OR "centro-oeste" OR "northeast" OR "brasil" OR "brazil")

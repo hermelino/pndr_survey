@@ -1,0 +1,1 @@
+("fundo constitucional" OR "fundos constitucionais" OR "fundo de desenvolvimento" OR "incentivo fiscal" OR "incentivos fiscais") AND ("FNE" OR "FNO" OR "FCO" OR "FDNE" OR "FDCO" OR "SUDENE" OR "SUDAM" OR "PNDR")
