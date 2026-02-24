@@ -57,7 +57,7 @@ class BaseSearcher(ABC):
             Lista de BibRecords normalizados.
         """
 
-    def import_from_file(self, filepath: Path) -> List[BibRecord]:
+    def import_from_file(self, filepath: str | Path) -> List[BibRecord]:
         """Importa resultados exportados manualmente (RIS ou CSV).
 
         Implementação padrão tenta detectar o formato pelo sufixo.
@@ -69,6 +69,7 @@ class BaseSearcher(ABC):
         Returns:
             Lista de BibRecords importados.
         """
+        filepath = Path(filepath)
         suffix = filepath.suffix.lower()
         if suffix == ".ris":
             return self._import_ris(filepath)
@@ -126,6 +127,14 @@ class BaseSearcher(ABC):
             raise ValueError(f"Não foi possível ler {filepath} com nenhum encoding")
 
         for entry in entries:
+            # rispy usa 'urls' (lista), não 'url'
+            urls = entry.get("urls", [])
+            first_url = urls[0] if urls else None
+
+            # Tipo do registro RIS (TY tag)
+            ris_type = entry.get("type_of_reference", "")
+            pub_type = _ris_type_to_publication_type(ris_type)
+
             bib = BibRecord(
                 source_db=self.name,
                 source_id=entry.get("accession_number", entry.get("doi", "")),
@@ -139,8 +148,9 @@ class BaseSearcher(ABC):
                 pages=_build_pages(entry.get("start_page"), entry.get("end_page")),
                 abstract=entry.get("abstract", entry.get("notes_abstract")),
                 keywords=entry.get("keywords", []),
-                url=entry.get("url"),
+                url=first_url,
                 language=entry.get("language"),
+                publication_type=pub_type,
             )
             records.append(bib)
 
@@ -193,6 +203,21 @@ class BaseSearcher(ABC):
 
 
 # --- Utilitários compartilhados ---
+
+
+def _ris_type_to_publication_type(ris_type: str) -> Optional[str]:
+    """Converte tipo RIS (TY) para publication_type legível."""
+    mapping = {
+        "JOUR": "artigo publicado",
+        "RPRT": "texto para discussão",
+        "THES": "tese",
+        "CHAP": "capítulo de livro",
+        "CPAPER": "apresentação em congresso",
+        "CONF": "apresentação em congresso",
+        "BOOK": "livro",
+        "GEN": None,
+    }
+    return mapping.get(ris_type)
 
 
 def _extract_year(value: Optional[str | int | float]) -> Optional[int]:
