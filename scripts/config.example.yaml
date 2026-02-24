@@ -1,0 +1,48 @@
+# =============================================================================
+# pndr_survey — Configuração do Pipeline
+# =============================================================================
+# Copie este arquivo para config.yaml e preencha os valores.
+# config.yaml está no .gitignore — nunca será versionado.
+#
+# Variáveis de ambiente: use ${VAR_NAME} para ler do ambiente.
+# Exemplo: api_key: "${GEMINI_API_KEY}"
+# =============================================================================
+
+# --- Busca em bases acadêmicas ---
+search:
+  databases: ["econpapers", "google_scholar", "capes"]
+  keywords_dir: "keywords"
+  date_range:
+    start: 2000
+    end: 2025
+  max_results_per_db: 1000
+
+# --- Deduplicação ---
+dedup:
+  fuzzy_threshold: 90        # 0-100 (token_sort_ratio via rapidfuzz)
+  title_normalization: true   # Remover acentos, lowercase, stopwords
+
+# --- LLM (Gemini) ---
+llm:
+  provider: gemini
+  model: gemini-2.0-flash
+  api_key: "${GEMINI_API_KEY}"
+  temperature: 0.1
+  max_tokens_input: 100000
+  rate_limit_seconds: 4
+
+# --- Caminhos ---
+paths:
+  papers_dir: "../data/papers"
+  questionnaires_dir: "questionnaires"
+
+# --- Saída ---
+output:
+  directory: "../data/processed"
+  formats: ["excel", "csv", "json"]
+  timestamp: true             # Criar subdiretório YYYYMMDD_HHMMSS
+
+# --- Logging ---
+logging:
+  level: INFO                 # Console: INFO ou DEBUG (--verbose)
+  file_level: DEBUG           # Arquivo: sempre DEBUG
