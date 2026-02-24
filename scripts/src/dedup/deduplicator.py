@@ -158,12 +158,12 @@ def deduplicate(
             author_match = (
                 ni["first_author"]
                 and nj["first_author"]
-                and fuzz.ratio(ni["first_author"], nj["first_author"]) > 80
+                and fuzz.ratio(ni["first_author"], nj["first_author"]) >= 80
             )
             journal_match = (
                 ni["journal"]
                 and nj["journal"]
-                and fuzz.ratio(ni["journal"], nj["journal"]) > 80
+                and fuzz.ratio(ni["journal"], nj["journal"]) >= 80
             )
 
             if not author_match and not journal_match:
