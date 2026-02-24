@@ -216,10 +216,11 @@ def load_config(path: str | Path) -> Config:
 def _validate(config: Config) -> None:
     """Validações básicas da configuração."""
     if not config.llm.api_key:
-        raise ValueError(
-            "Chave API do LLM não configurada.\n"
-            "Defina a variável de ambiente GEMINI_API_KEY ou "
-            "preencha llm.api_key no config.yaml."
+        import logging
+        logging.getLogger("pndr_survey").warning(
+            "Chave API do LLM não configurada. "
+            "Comandos 'analyze' e 'full' não funcionarão. "
+            "Defina GEMINI_API_KEY ou preencha llm.api_key no config.yaml."
         )
 
     valid_dbs = {"econpapers", "google_scholar", "capes", "scopus"}
