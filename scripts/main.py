@@ -58,9 +58,9 @@ def build_parser() -> argparse.ArgumentParser:
         help="Bases para buscar (default: todas do config)",
     )
     sp_search.add_argument("--import-econpapers", metavar="FILE", help="Importar RIS/CSV do EconPapers")
-    sp_search.add_argument("--import-scholar", metavar="FILE", help="Importar RIS/CSV do Google Scholar")
     sp_search.add_argument("--import-capes", metavar="FILE", help="Importar RIS/CSV do CAPES")
     sp_search.add_argument("--import-scopus", metavar="FILE", help="Importar RIS/CSV do Scopus")
+    sp_search.add_argument("--import-anpec", metavar="FILE", help="Importar Excel/RIS/CSV da ANPEC")
     sp_search.add_argument("--skip-dedup", action="store_true", help="Pular deduplicação")
     sp_search.add_argument("--skip-download", action="store_true", help="Não baixar PDFs")
     sp_search.add_argument("--dry-run", action="store_true", help="Mostrar queries sem executar")
@@ -127,9 +127,9 @@ def cmd_search(config: Config, args: argparse.Namespace) -> List[BibRecord]:
     # --- Importar arquivos manuais ---
     import_map = {
         "econpapers": args.import_econpapers,
-        "google_scholar": args.import_scholar,
         "capes": args.import_capes,
         "scopus": args.import_scopus,
+        "anpec": args.import_anpec,
     }
     for db_name, filepath in import_map.items():
         if filepath:
@@ -274,9 +274,9 @@ def cmd_full(config: Config, args: argparse.Namespace) -> None:
     # Fase 1: Busca
     args.databases = None
     args.import_econpapers = None
-    args.import_scholar = None
     args.import_capes = None
     args.import_scopus = None
+    args.import_anpec = None
     args.skip_dedup = False
     args.skip_download = False
     args.dry_run = False
@@ -304,9 +304,9 @@ def cmd_full(config: Config, args: argparse.Namespace) -> None:
 
 def _create_searcher(db_name: str, keywords_dir: Path):
     """Cria instância do searcher para a base especificada."""
+    from src.searchers.anpec import ANPECSearcher
     from src.searchers.capes import CapesSearcher
     from src.searchers.econpapers import EconPapersSearcher
-    from src.searchers.google_scholar import GoogleScholarSearcher
     from src.searchers.scopus import ScopusSearcher
 
     kw_file = keywords_dir / f"{db_name}.txt"
@@ -318,9 +318,9 @@ def _create_searcher(db_name: str, keywords_dir: Path):
 
     searcher_map = {
         "econpapers": EconPapersSearcher,
-        "google_scholar": GoogleScholarSearcher,
         "capes": CapesSearcher,
         "scopus": ScopusSearcher,
+        "anpec": ANPECSearcher,
     }
 
     cls = searcher_map.get(db_name)

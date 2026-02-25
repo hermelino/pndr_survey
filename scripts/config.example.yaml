@@ -10,7 +10,7 @@
 
 # --- Busca em bases acadêmicas ---
 search:
-  databases: ["econpapers", "google_scholar", "capes"]
+  databases: ["econpapers", "capes", "scopus", "anpec"]
   keywords_dir: "keywords"
   date_range:
     start: 2000

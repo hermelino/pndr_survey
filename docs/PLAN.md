@@ -44,9 +44,9 @@ scripts/
 │
 ├── keywords/                   # Estratégias de busca por base
 │   ├── econpapers.txt
-│   ├── google_scholar.txt
 │   ├── capes.txt
-│   └── scopus.txt
+│   ├── scopus.txt
+│   └── anpec.txt
 │
 ├── src/
 │   ├── __init__.py
@@ -57,9 +57,9 @@ scripts/
 │   │   ├── __init__.py
 │   │   ├── base.py             # BaseSearcher ABC
 │   │   ├── econpapers.py       # Busca automática via HTTP
-│   │   ├── google_scholar.py   # Gera query + instruções manuais
 │   │   ├── capes.py            # Gera query + instruções manuais
-│   │   └── scopus.py           # API ou manual (opcional)
+│   │   ├── scopus.py           # Semi-automático (import RIS/CSV)
+│   │   └── anpec.py            # Semi-automático (import Excel/RIS/CSV)
 │   │
 │   ├── dedup/                  # Deduplicação entre bases
 │   │   ├── __init__.py
@@ -116,7 +116,7 @@ múltiplas bases acadêmicas, baixar PDFs quando possível, e deduplicar resulta
 @dataclass
 class BibRecord:
     # Identidade
-    source_db: str              # "econpapers", "google_scholar", "capes", "scopus"
+    source_db: str              # "econpapers", "capes", "scopus", "anpec"
     source_id: str              # ID na base de origem
     doi: Optional[str]
 
@@ -184,19 +184,19 @@ class BaseSearcher(ABC):
 | Base | Modo | Implementação |
 |------|------|---------------|
 | **EconPapers/RePEc** | Automático | HTTP requests + BeautifulSoup. Reescrever a partir do `econpapers_extractor.py` original, melhorando parsing e rate limiting |
-| **Google Scholar** | Semi-automático | Gerar query booleana + instruções para usar Publish or Perish ou Zotero Connector. Importar via RIS/CSV |
 | **CAPES Periódicos** | Semi-automático | Gerar query booleana formatada para o portal. Instruções de busca + exportação. Importar via RIS/CSV |
-| **Scopus** | Opcional | Se houver acesso via CAPES proxy: API (pybliometrics) ou manual. Importar via CSV/RIS |
+| **Scopus** | Semi-automático | Busca via proxy CAPES com query TITLE-ABS-KEY. Importar via CSV/RIS |
+| **ANPEC** | Semi-automático | Busca via Google Search com site:anpec.org.br. Importar via Excel/RIS/CSV |
 
 **Keywords (migrar do original):**
 - Manter a estrutura de 3 blocos: instrumentos AND organizações AND (geografia)
-- Adaptar sintaxe por base (EconPapers, Scopus, Google Scholar, CAPES)
+- Adaptar sintaxe por base (EconPapers, Scopus, CAPES, ANPEC)
 - Versões em português e inglês
 
 **Critérios de conclusão:**
 - [ ] EconPapers: `search()` retorna resultados reais
-- [ ] Google Scholar: `save_query_instructions()` gera arquivo com query + passos
 - [ ] CAPES: `save_query_instructions()` gera arquivo com query + URL
+- [ ] ANPEC: `import_from_file()` lê Excel com resultados do Google Search
 - [ ] `import_from_file()` lê RIS e CSV para todas as bases
 
 ---
@@ -282,7 +282,7 @@ class PaperRecord:
 ```yaml
 # --- Busca ---
 search:
-  databases: ["econpapers", "google_scholar", "capes"]
+  databases: ["econpapers", "capes", "scopus", "anpec"]
   keywords_dir: "keywords"
   date_range:
     start: 2000
@@ -457,9 +457,9 @@ commands:
 search options:
   --databases DB [DB ...]     Bases para buscar (default: todas do config)
   --import-econpapers FILE    Importar resultados EconPapers (RIS/CSV)
-  --import-scholar FILE       Importar resultados Google Scholar (RIS/CSV)
   --import-capes FILE         Importar resultados CAPES (RIS/CSV)
   --import-scopus FILE        Importar resultados Scopus (RIS/CSV)
+  --import-anpec FILE         Importar resultados ANPEC (Excel/RIS/CSV)
   --skip-dedup                Pular deduplicação
   --skip-download             Não baixar PDFs
   --dry-run                   Mostrar queries sem executar
@@ -498,7 +498,7 @@ common options:
 **Critérios de conclusão:**
 - [ ] `python main.py search --dry-run` mostra queries de todas as bases
 - [ ] `python main.py search --databases econpapers` busca e exporta resultados
-- [ ] `python main.py search --import-scholar results.ris` importa e deduplica
+- [ ] `python main.py search --import-anpec results.xlsx` importa e deduplica
 - [ ] `python main.py analyze --stage 1 --max-papers 3` analisa 3 papers
 - [ ] `python main.py full` executa pipeline completo
 - [ ] Saída organizada em `output/YYYYMMDD_HHMMSS/`

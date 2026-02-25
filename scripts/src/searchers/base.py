@@ -1,6 +1,6 @@
 """Interface base para buscadores de artigos em bases acadêmicas.
 
-Cada base (EconPapers, Google Scholar, CAPES, Scopus) implementa
+Cada base (EconPapers, CAPES, Scopus, ANPEC) implementa
 esta interface, permitindo orquestração uniforme pelo main.py.
 """
 
@@ -80,7 +80,7 @@ class BaseSearcher(ABC):
     def save_query_instructions(self, output_dir: Path) -> Path:
         """Salva query formatada + instruções de busca manual.
 
-        Útil para bases sem API (Google Scholar, CAPES).
+        Útil para bases sem API (CAPES, Scopus, ANPEC).
 
         Args:
             output_dir: Diretório onde salvar o arquivo de instruções.

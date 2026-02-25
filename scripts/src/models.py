@@ -14,12 +14,12 @@ from typing import Dict, List, Optional
 class BibRecord:
     """Registro bibliográfico normalizado entre bases acadêmicas.
 
-    Cada base (EconPapers, Google Scholar, CAPES, Scopus) produz BibRecords
+    Cada base (EconPapers, CAPES, Scopus, ANPEC) produz BibRecords
     com o mesmo esquema, permitindo deduplicação e exportação unificadas.
     """
 
     # --- Identidade ---
-    source_db: str          # "econpapers", "google_scholar", "capes", "scopus"
+    source_db: str          # "econpapers", "capes", "scopus", "anpec"
     source_id: str          # ID na base de origem (URL, DOI, handle)
     doi: Optional[str] = None
 
@@ -91,8 +91,8 @@ class BibRecord:
 SOURCE_PRIORITY = {
     "scopus": 1,
     "econpapers": 2,
-    "google_scholar": 3,
-    "capes": 4,
+    "capes": 3,
+    "anpec": 4,
 }
 
 

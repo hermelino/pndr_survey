@@ -223,7 +223,7 @@ def _validate(config: Config) -> None:
             "Defina GEMINI_API_KEY ou preencha llm.api_key no config.yaml."
         )
 
-    valid_dbs = {"econpapers", "google_scholar", "capes", "scopus"}
+    valid_dbs = {"econpapers", "capes", "scopus", "anpec"}
     for db in config.search.databases:
         if db not in valid_dbs:
             raise ValueError(

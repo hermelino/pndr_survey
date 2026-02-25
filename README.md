@@ -23,9 +23,9 @@ pndr_survey/
 │   ├── requirements.txt
 │   ├── keywords/           # Estratégias de busca por base (.txt)
 │   │   ├── econpapers.txt
-│   │   ├── google_scholar.txt
 │   │   ├── capes.txt
-│   │   └── scopus.txt
+│   │   ├── scopus.txt
+│   │   └── anpec.txt
 │   ├── questionnaires/     # Questionários JSON para análise LLM
 │   │   ├── stage_1_screening.json   # Triagem (9 perguntas)
 │   │   ├── stage_2_methods.json     # Metodologia (9 perguntas)
@@ -35,10 +35,10 @@ pndr_survey/
 │       ├── config.py       # Carregamento YAML + validação
 │       ├── searchers/      # Busca em bases acadêmicas
 │       │   ├── base.py             # BaseSearcher ABC
-│       │   ├── econpapers.py       # Busca automática via HTTP
-│       │   ├── google_scholar.py   # Semi-automático (import RIS/CSV)
+│       │   ├── econpapers.py       # Semi-automático (import RIS/CSV)
 │       │   ├── capes.py            # Semi-automático (import RIS/CSV)
-│       │   └── scopus.py           # Semi-automático (import RIS/CSV)
+│       │   ├── scopus.py           # Semi-automático (import RIS/CSV)
+│       │   └── anpec.py            # Semi-automático (import Excel/RIS/CSV)
 │       ├── dedup/          # Deduplicação (DOI exato + fuzzy title)
 │       │   └── deduplicator.py
 │       ├── extractors/     # Extração de texto de PDFs
@@ -71,7 +71,7 @@ pndr_survey/
 FASE 1 — BUSCA E COLETA
 ========================
 
-Bases acadêmicas (EconPapers, Google Scholar, CAPES, Scopus)
+Bases acadêmicas (EconPapers, CAPES, Scopus, ANPEC)
     │
     ▼
 [0] Busca automática (EconPapers) + semi-automática (demais bases)
@@ -124,6 +124,75 @@ PDFs coletados
 | 7 | Migração questionários + keywords | Concluído |
 | 8 | Citation analysis | Futuro |
 | 9 | Artigo LaTeX | Futuro |
+
+## Log de Extração (25/02/2026)
+
+### Dados coletados
+
+| Base | Arquivo em `data/` | Registros | PDFs | Método de busca |
+|------|--------------------|-----------|------|-----------------|
+| EconPapers/RePEc | `econpapers_ris/econpapers_combined.ris` | 24 | 19 (manual) | Busca manual em econpapers.repec.org, exportação RIS individual, unificação em arquivo combinado. PDFs baixados manualmente em `papers/econpapers/` |
+| Portal CAPES | `capes_ris/Periodicos-CAPES-RIS.ris` | 30 | 0 (pendente) | Busca avançada no Portal de Periódicos CAPES via CAFe, exportação RIS |
+| Scopus | `scopus_ris/scopus_export_Feb 25-2026_*.ris` | 16 | 0 (pendente) | Advanced query no Scopus com sintaxe `TITLE-ABS-KEY(...)`, exportação RIS |
+| ANPEC | `anpec_extraction/resultados_anpec_pesquisa_250226_1030.xlsx` | 62 | 62 (auto) | Busca via Google com `site:anpec.org.br`, extração com extensão Claude para navegador, download automático |
+| **Total bruto** | | **132** | **81** | |
+
+### Deduplicação
+
+- Duplicatas por DOI exato: 2
+- Duplicatas por título fuzzy (threshold 80%): 5
+- **Total de registros únicos: 125**
+
+### Queries utilizadas
+
+**EconPapers / CAPES** (query booleana genérica):
+```
+("fundo constitucional" OR "fundos constitucionais" OR "fundo de desenvolvimento"
+OR "fundos de desenvolvimento" OR "incentivo fiscal" OR "incentivos fiscais")
+AND ("FNE" OR "FNO" OR "FCO" OR "FDNE" OR "FDCO" OR "SUDENE" OR "SUDECO"
+OR "SUDAM" OR "PNDR")
+```
+
+**Scopus** (sintaxe Advanced query):
+```
+TITLE-ABS-KEY("fundo constitucional" OR "fundo de desenvolvimento"
+OR "incentivo fiscal" OR "incentivos fiscais" OR "regional fund"
+OR "constitutional fund" OR "development fund" OR "tax incentive")
+AND TITLE-ABS-KEY("FNE" OR "FNO" OR "FCO" OR "FDNE" OR "FDCO"
+OR "SUDENE" OR "SUDECO" OR "SUDAM" OR "PNDR")
+```
+
+**ANPEC** (Google Search com filtro de domínio):
+```
+site:anpec.org.br ("fundo constitucional" OR "fundos constitucionais"
+OR "fundo de desenvolvimento" OR "incentivo fiscal" OR "incentivos fiscais")
+("FNE" OR "FNO" OR "FCO" OR "FDNE" OR "SUDENE" OR "SUDAM" OR "PNDR")
+```
+
+### Decisões metodológicas
+
+- **Google Scholar excluído**: retorna 12.000+ resultados com proporção elevada de irrelevantes; periódicos relevantes já cobertos pelo CAPES e RePEc. Decisão alinhada com a justificativa da tese (seção 1.3).
+- **Web of Science excluído**: cobertura já atendida pelo CAPES e RePEc.
+- **PDFs do EconPapers**: 19 de 24 baixados manualmente a partir das landing pages RePEc (5 não disponíveis ou duplicatas). Salvos em `data/papers/econpapers/`. Lista de URLs em `data/econpapers_ris/econpapers_urls.txt`.
+- **PDFs de CAPES e Scopus**: não possuem URL direta para PDF nos metadados exportados. Download manual pendente via acesso institucional ou resolução de DOI.
+
+### Comando de importação unificada
+
+```bash
+cd scripts
+python main.py --verbose search \
+  --import-econpapers "../data/econpapers_ris/econpapers_combined.ris" \
+  --import-capes "../data/capes_ris/Periodicos-CAPES-RIS.ris" \
+  --import-scopus "../data/scopus_ris/scopus_export_Feb 25-2026_bd09397c-fbc7-4454-8d88-0d42afc92ae6.ris" \
+  --import-anpec "../data/anpec_extraction/resultados_anpec_pesquisa_250226_1030.xlsx"
+```
+
+### Próximos passos
+
+1. ~~Baixar PDFs do EconPapers~~ — 19/24 concluído (`data/papers/econpapers/`)
+2. Baixar manualmente os PDFs de CAPES (30) e Scopus (16) e colocar em `data/papers/`
+3. Executar análise LLM: `python main.py analyze`
+4. Exportar resultados: `python main.py export`
 
 ## Instalação
 
@@ -185,51 +254,76 @@ python main.py search --dry-run
 
 Mostra a query booleana de cada base configurada sem executar nenhuma busca. Útil para verificar as estratégias de busca antes de rodar.
 
-#### 1.2 Buscar automaticamente no EconPapers
+#### 1.2 Importar do EconPapers / IDEAS (RePEc)
+
+O EconPapers usa renderização JavaScript, então a busca é semi-manual:
+
+1. Acesse [EconPapers](https://econpapers.repec.org/scripts/search.pf) ou [IDEAS](https://ideas.repec.org/cgi-bin/htsearch2)
+2. Cole a query (gerada com `--dry-run`) no campo de busca
+3. Baixe o arquivo RIS de cada resultado (não há opção de exportar todos de uma vez)
+4. Salve os arquivos em `data/econpapers_ris/`
+
+**Unificar os arquivos RIS individuais:**
 
 ```bash
-python main.py search --databases econpapers
+python -c "
+from pathlib import Path
+import rispy
+
+ris_dir = Path('data/econpapers_ris')
+files = sorted(ris_dir.glob('*.ris'))
+combined = '\n\n'.join(f.read_text(encoding='utf-8').strip() for f in files)
+Path('data/econpapers_combined.ris').write_text(combined, encoding='utf-8')
+
+with open('data/econpapers_combined.ris', encoding='utf-8') as fh:
+    print(f'{len(rispy.load(fh))} registros combinados de {len(files)} arquivos')
+"
 ```
 
-Executa busca HTTP automatizada no EconPapers/RePEc, coleta metadados, deduplica e tenta baixar PDFs disponíveis.
+**Importar no pipeline:**
 
-#### 1.3 Buscar em bases semi-automáticas (Google Scholar, CAPES, Scopus)
+```bash
+cd scripts
+python main.py search --import-econpapers ../data/econpapers_ris/econpapers_combined.ris
+```
+
+#### 1.3 Buscar em bases semi-automáticas (CAPES, Scopus, ANPEC)
 
 Para bases sem API, o pipeline gera instruções de busca manual. O fluxo é:
 
 1. Rodar `--dry-run` para obter a query formatada
-2. Executar a busca manualmente na base (via navegador, Publish or Perish, etc.)
-3. Exportar os resultados como arquivo RIS ou CSV
+2. Executar a busca manualmente na base (via navegador, etc.)
+3. Exportar os resultados como arquivo RIS, CSV ou Excel
 4. Importar os resultados no pipeline:
 
 ```bash
-# Importar resultados do Google Scholar (Publish or Perish ou Zotero)
-python main.py search --import-scholar caminho/para/scholar_results.ris
-
 # Importar resultados do Portal CAPES
 python main.py search --import-capes caminho/para/capes_results.ris
 
 # Importar resultados do Scopus
 python main.py search --import-scopus caminho/para/scopus_results.csv
 
+# Importar resultados da ANPEC (Excel, RIS ou CSV)
+python main.py search --import-anpec caminho/para/anpec_results.xlsx
+
 # Importar de múltiplas bases de uma vez
 python main.py search \
-  --import-scholar scholar.ris \
   --import-capes capes.ris \
-  --import-scopus scopus.csv
+  --import-scopus scopus.csv \
+  --import-anpec anpec.xlsx
 ```
 
 #### 1.4 Opções de controle da busca
 
 ```bash
 # Pular deduplicação (manter todos os registros)
-python main.py search --import-scholar results.ris --skip-dedup
+python main.py search --import-capes results.ris --skip-dedup
 
 # Pular download de PDFs (apenas coletar metadados)
 python main.py search --databases econpapers --skip-download
 
 # Combinar busca automática com importação manual
-python main.py search --databases econpapers --import-scholar scholar.ris
+python main.py search --databases econpapers --import-capes capes.ris
 ```
 
 ---
