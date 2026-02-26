@@ -2,9 +2,10 @@
 
 Comandos:
     search   — Buscar artigos nas bases acadêmicas
+    screen   — Filtrar registros (tipo, idioma, PDF) com relatório PRISMA
     analyze  — Analisar PDFs coletados via LLM
     export   — Exportar resultados
-    full     — Executar pipeline completo (search + analyze + export)
+    full     — Executar pipeline completo (search + screen + analyze + export)
 """
 
 from __future__ import annotations
@@ -17,8 +18,10 @@ from datetime import datetime
 from pathlib import Path
 from typing import List
 
+from collections import Counter
+
 from src.config import Config, load_config
-from src.models import BibRecord, PaperRecord
+from src.models import BibRecord, PaperRecord, ScreeningStatus
 from src.utils.logger import setup_logging
 
 logger = logging.getLogger("pndr_survey")
@@ -62,8 +65,23 @@ def build_parser() -> argparse.ArgumentParser:
     sp_search.add_argument("--import-scopus", metavar="FILE", help="Importar RIS/CSV do Scopus")
     sp_search.add_argument("--import-anpec", metavar="FILE", help="Importar Excel/RIS/CSV da ANPEC")
     sp_search.add_argument("--skip-dedup", action="store_true", help="Pular deduplicação")
-    sp_search.add_argument("--skip-download", action="store_true", help="Não baixar PDFs")
     sp_search.add_argument("--dry-run", action="store_true", help="Mostrar queries sem executar")
+
+    # --- screen ---
+    sp_screen = sub.add_parser("screen", help="Filtrar registros (tipo, idioma, PDF)")
+    sp_screen.add_argument(
+        "--title-filter", action="store_true",
+        help="Ativar filtro de relevância por título (step 4). "
+             "Por padrão, relevância é avaliada pelo LLM.",
+    )
+    sp_screen.add_argument(
+        "--report", action="store_true",
+        help="Apenas exibir relatório PRISMA (sem modificar registros)",
+    )
+    sp_screen.add_argument(
+        "--input-json", metavar="FILE",
+        help="Carregar registros de JSON anterior",
+    )
 
     # --- analyze ---
     sp_analyze = sub.add_parser("analyze", help="Analisar PDFs coletados via LLM")
@@ -94,37 +112,25 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def cmd_search(config: Config, args: argparse.Namespace) -> List[BibRecord]:
-    """Fase 1: busca, importação, deduplicação e download."""
+    """Fase 1: importação, deduplicação e salvamento."""
     from src.dedup.deduplicator import deduplicate
-    from src.utils.downloader import download_pdfs
+    from src.importer import import_from_file
 
-    databases = args.databases or config.search.databases
-    keywords_dir = SCRIPT_DIR / config.search.keywords_dir
     all_records: List[BibRecord] = []
 
-    # --- Gerar queries / buscar ---
-    for db_name in databases:
-        searcher = _create_searcher(db_name, keywords_dir)
-        if searcher is None:
-            continue
-
-        if args.dry_run:
-            query = searcher.build_query()
-            print(f"\n{'='*60}")
-            print(f"Base: {db_name}")
-            print(f"Query: {query}")
-            print(f"{'='*60}")
-            continue
-
-        count = searcher.search()
-        records = searcher.fetch_records()
-        all_records.extend(records)
-        logger.info("%s: %d resultados (%d registros)", db_name, count, len(records))
-
+    # --- Dry-run: mostra queries dos arquivos de keywords ---
     if args.dry_run:
+        keywords_dir = SCRIPT_DIR / config.search.keywords_dir
+        for db_name in (args.databases or config.search.databases):
+            kw_file = keywords_dir / f"{db_name}.txt"
+            if kw_file.exists():
+                print(f"\n{'='*60}")
+                print(f"Base: {db_name}")
+                print(f"Query: {kw_file.read_text(encoding='utf-8').strip()}")
+                print(f"{'='*60}")
         return []
 
-    # --- Importar arquivos manuais ---
+    # --- Importar arquivos ---
     import_map = {
         "econpapers": args.import_econpapers,
         "capes": args.import_capes,
@@ -133,11 +139,9 @@ def cmd_search(config: Config, args: argparse.Namespace) -> List[BibRecord]:
     }
     for db_name, filepath in import_map.items():
         if filepath:
-            searcher = _create_searcher(db_name, keywords_dir)
-            if searcher:
-                imported = searcher.import_from_file(filepath)
-                all_records.extend(imported)
-                logger.info("Importados %d registros de %s", len(imported), filepath)
+            imported = import_from_file(filepath, source_db=db_name)
+            all_records.extend(imported)
+            logger.info("Importados %d registros de %s", len(imported), filepath)
 
     if not all_records:
         logger.warning("Nenhum registro coletado.")
@@ -150,16 +154,68 @@ def cmd_search(config: Config, args: argparse.Namespace) -> List[BibRecord]:
         unique, duplicates = deduplicate(
             all_records, fuzzy_threshold=config.dedup.fuzzy_threshold
         )
-        all_records = unique
+        for rec in duplicates:
+            rec.screening_status = ScreeningStatus.EXCLUDED_DUPLICATE
+        all_records = unique + duplicates
         logger.info("Após deduplicação: %d únicos, %d duplicatas", len(unique), len(duplicates))
 
-    # --- Download PDFs ---
-    if not args.skip_download:
-        papers_dir = SCRIPT_DIR / config.paths.papers_dir
-        ok, fail = download_pdfs(all_records, papers_dir)
-        logger.info("Download: %d ok, %d falhas", ok, fail)
+    # --- Salvar BibRecords para uso posterior ---
+    output_base = SCRIPT_DIR / config.output.directory
+    output_base.mkdir(parents=True, exist_ok=True)
+    _save_bibs_to_json(all_records, output_base / "bib_records.json")
 
     return all_records
+
+
+def cmd_screen(
+    config: Config,
+    args: argparse.Namespace,
+    bib_records: List[BibRecord] | None = None,
+) -> List[BibRecord]:
+    """Fase 1.5: triagem pré-LLM (tipo+idioma, PDF) do PRISMA."""
+    from src.screening.screener import run_screening
+
+    # Carregar registros se necessário
+    if bib_records is None:
+        input_json = getattr(args, "input_json", None)
+        if input_json:
+            bib_records = _load_bibs_from_json(input_json)
+        else:
+            logger.error(
+                "Sem registros para filtrar. "
+                "Use --input-json ou execute 'search' antes."
+            )
+            return []
+
+    # Modo report: apenas imprimir contagens
+    if getattr(args, "report", False):
+        _print_prisma_report(bib_records)
+        return bib_records
+
+    # Filtrar apenas registros não-duplicatas e pendentes
+    to_screen = [
+        r for r in bib_records
+        if not r.is_duplicate and r.screening_status == ScreeningStatus.PENDING
+    ]
+    logger.info("Registros para triagem: %d (de %d total)", len(to_screen), len(bib_records))
+
+    # Executar screening (modifica records in-place)
+    title_filter = getattr(args, "title_filter", False)
+    run_screening(
+        to_screen, config.screening,
+        include_title_filter=title_filter,
+    )
+
+    # Salvar resultado
+    output_base = SCRIPT_DIR / config.output.directory
+    output_base.mkdir(parents=True, exist_ok=True)
+    output_path = output_base / "bib_screened.json"
+    _save_bibs_to_json(bib_records, output_path)
+
+    # Imprimir relatório
+    _print_prisma_report(bib_records)
+
+    return bib_records
 
 
 def cmd_analyze(
@@ -268,7 +324,7 @@ def cmd_export(
 
 
 def cmd_full(config: Config, args: argparse.Namespace) -> None:
-    """Pipeline completo: search → analyze → export."""
+    """Pipeline completo: search → screen → analyze → export."""
     logger.info("Iniciando pipeline completo")
 
     # Fase 1: Busca
@@ -278,23 +334,30 @@ def cmd_full(config: Config, args: argparse.Namespace) -> None:
     args.import_scopus = None
     args.import_anpec = None
     args.skip_dedup = False
-    args.skip_download = False
     args.dry_run = False
     bib_records = cmd_search(config, args)
 
-    # Fase 2: Análise
+    # Fase 1.5: Triagem
+    args.title_filter = False
+    args.report = False
+    args.input_json = None
+    bib_records = cmd_screen(config, args, bib_records=bib_records)
+
+    # Fase 2: Análise (apenas registros incluídos)
+    included = [r for r in bib_records if r.screening_status == ScreeningStatus.INCLUDED]
+    logger.info("Registros incluídos para análise: %d", len(included))
     args.stage = "all"
     args.max_papers = None
     args.input_dir = None
-    paper_records = cmd_analyze(config, args, bib_records=bib_records)
+    paper_records = cmd_analyze(config, args, bib_records=included)
 
     # Fase 3: Exportação
     args.formats = None
     args.input_json = None
     output_dir = cmd_export(config, args, paper_records=paper_records)
 
-    # Resumo
-    _print_summary(paper_records, output_dir)
+    # Resumo PRISMA completo
+    _print_prisma_report(bib_records, paper_records, output_dir)
 
 
 # =============================================================================
@@ -302,33 +365,88 @@ def cmd_full(config: Config, args: argparse.Namespace) -> None:
 # =============================================================================
 
 
-def _create_searcher(db_name: str, keywords_dir: Path):
-    """Cria instância do searcher para a base especificada."""
-    from src.searchers.anpec import ANPECSearcher
-    from src.searchers.capes import CapesSearcher
-    from src.searchers.econpapers import EconPapersSearcher
-    from src.searchers.scopus import ScopusSearcher
 
-    kw_file = keywords_dir / f"{db_name}.txt"
-    if not kw_file.exists():
-        logger.warning("Keywords não encontrado: %s", kw_file)
-        return None
+def _save_bibs_to_json(records: List[BibRecord], path: Path) -> None:
+    """Salva BibRecords em JSON para persistência entre comandos."""
+    data = []
+    for bib in records:
+        row = {
+            "source_db": bib.source_db,
+            "source_id": bib.source_id,
+            "doi": bib.doi or "",
+            "title": bib.title,
+            "authors": "; ".join(bib.authors),
+            "year": bib.year,
+            "journal": bib.journal or "",
+            "volume": bib.volume or "",
+            "issue": bib.issue or "",
+            "pages": bib.pages or "",
+            "abstract": bib.abstract or "",
+            "keywords": "; ".join(bib.keywords),
+            "url": bib.url or "",
+            "pdf_url": bib.pdf_url or "",
+            "language": bib.language or "",
+            "publication_type": bib.publication_type or "",
+            "matched_instruments": "; ".join(bib.matched_instruments),
+            "is_duplicate": bib.is_duplicate,
+            "duplicate_of": bib.duplicate_of or "",
+            "screening_status": bib.screening_status.value,
+            "exclusion_reason": bib.exclusion_reason or "",
+        }
+        data.append(row)
 
-    keywords = kw_file.read_text(encoding="utf-8").strip()
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+    logger.info("Salvos %d registros em %s", len(data), path)
 
-    searcher_map = {
-        "econpapers": EconPapersSearcher,
-        "capes": CapesSearcher,
-        "scopus": ScopusSearcher,
-        "anpec": ANPECSearcher,
-    }
 
-    cls = searcher_map.get(db_name)
-    if cls is None:
-        logger.warning("Base desconhecida: %s", db_name)
-        return None
+def _load_bibs_from_json(json_path: str) -> List[BibRecord]:
+    """Carrega BibRecords de JSON salvo anteriormente."""
+    path = Path(json_path)
+    if not path.exists():
+        logger.error("Arquivo não encontrado: %s", path)
+        return []
 
-    return cls(keywords)
+    with open(path, encoding="utf-8") as f:
+        data = json.load(f)
+
+    records = []
+    for row in data:
+        # Restaurar screening_status como enum
+        status_str = row.get("screening_status", "pending")
+        try:
+            status = ScreeningStatus(status_str)
+        except ValueError:
+            status = ScreeningStatus.PENDING
+
+        bib = BibRecord(
+            source_db=row.get("source_db", ""),
+            source_id=row.get("source_id", ""),
+            doi=row.get("doi") or None,
+            title=row.get("title", ""),
+            authors=row.get("authors", "").split("; ") if row.get("authors") else [],
+            year=row.get("year"),
+            journal=row.get("journal") or None,
+            volume=row.get("volume") or None,
+            issue=row.get("issue") or None,
+            pages=row.get("pages") or None,
+            abstract=row.get("abstract") or None,
+            keywords=row.get("keywords", "").split("; ") if row.get("keywords") else [],
+            url=row.get("url") or None,
+            pdf_url=row.get("pdf_url") or None,
+            language=row.get("language") or None,
+            publication_type=row.get("publication_type") or None,
+            matched_instruments=row.get("matched_instruments", "").split("; ") if row.get("matched_instruments") else [],
+            is_duplicate=row.get("is_duplicate", False),
+            duplicate_of=row.get("duplicate_of") or None,
+            screening_status=status,
+            exclusion_reason=row.get("exclusion_reason") or None,
+        )
+        records.append(bib)
+
+    logger.info("Carregados %d BibRecords de %s", len(records), path)
+    return records
 
 
 def _load_papers_from_json(json_path: str) -> List[PaperRecord]:
@@ -343,6 +461,13 @@ def _load_papers_from_json(json_path: str) -> List[PaperRecord]:
 
     papers = []
     for row in data:
+        # Restaurar screening_status como enum
+        status_str = row.get("screening_status", "pending")
+        try:
+            status = ScreeningStatus(status_str)
+        except ValueError:
+            status = ScreeningStatus.PENDING
+
         bib = BibRecord(
             source_db=row.get("source_db", ""),
             source_id=row.get("source_id", ""),
@@ -354,6 +479,8 @@ def _load_papers_from_json(json_path: str) -> List[PaperRecord]:
             abstract=row.get("abstract") or None,
             url=row.get("url") or None,
             pdf_url=row.get("pdf_url") or None,
+            screening_status=status,
+            exclusion_reason=row.get("exclusion_reason") or None,
         )
         paper = PaperRecord(
             bib=bib,
@@ -379,26 +506,74 @@ def _load_papers_from_json(json_path: str) -> List[PaperRecord]:
     return papers
 
 
-def _print_summary(papers: List[PaperRecord], output_dir: Path) -> None:
-    """Imprime resumo PRISMA-like do pipeline."""
-    total = len(papers)
-    with_text = sum(1 for p in papers if p.text_length > 0)
-    analyzed = sum(1 for p in papers if p.stage_1 is not None)
-    empirical = sum(1 for p in papers if p.is_empirical)
-    with_s2 = sum(1 for p in papers if p.stage_2 is not None)
-    with_s3 = sum(1 for p in papers if p.stage_3 is not None)
+def _print_prisma_report(
+    bib_records: List[BibRecord],
+    paper_records: List[PaperRecord] | None = None,
+    output_dir: Path | None = None,
+) -> None:
+    """Imprime relatório PRISMA com contagens de cada etapa de triagem."""
+    total = len(bib_records)
+    counts = Counter(r.screening_status for r in bib_records)
+    duplicates = sum(1 for r in bib_records if r.is_duplicate)
+    unique = total - duplicates
 
-    print(f"\n{'='*50}")
-    print("RESUMO DO PIPELINE")
-    print(f"{'='*50}")
-    print(f"  PDFs processados:        {total}")
-    print(f"  Com texto extraido:      {with_text}")
-    print(f"  Analisados (Stage 1):    {analyzed}")
-    print(f"  Estudos empiricos:       {empirical}")
-    print(f"  Metodologia (Stage 2):   {with_s2}")
-    print(f"  Resultados (Stage 3):    {with_s3}")
-    print(f"  Saida:                   {output_dir}")
-    print(f"{'='*50}\n")
+    n_doctype = counts.get(ScreeningStatus.EXCLUDED_DOCTYPE, 0)
+    n_language = counts.get(ScreeningStatus.EXCLUDED_LANGUAGE, 0)
+    n_relevance = counts.get(ScreeningStatus.EXCLUDED_RELEVANCE, 0)
+    n_econometrics = counts.get(ScreeningStatus.EXCLUDED_NO_ECONOMETRICS, 0)
+    n_awaiting = counts.get(ScreeningStatus.AWAITING_PDF, 0)
+    n_included = counts.get(ScreeningStatus.INCLUDED, 0)
+
+    print(f"\n{'='*55}")
+    print("PRISMA FLOW — pndr_survey")
+    print(f"{'='*55}")
+    print()
+    print(f"  1. IDENTIFICAÇÃO")
+    print(f"     Registros das bases:           {total}")
+    print()
+    print(f"  2. DEDUPLICAÇÃO")
+    print(f"     Duplicatas removidas:          -{duplicates}")
+    print(f"     Registros únicos:               {unique}")
+    print()
+    print(f"  3. TIPO DOCUMENTAL + IDIOMA")
+    print(f"     Excluídos (tipo):              -{n_doctype}")
+    print(f"     Excluídos (idioma):            -{n_language}")
+
+    # Step 4 (filtro de título) — mostrar apenas se foi usado
+    if n_relevance > 0:
+        print()
+        print(f"     FILTRO DE TÍTULO (opcional)")
+        print(f"     Excluídos (fora do escopo):    -{n_relevance}")
+
+    print()
+    print(f"     DISPONIBILIDADE PDF")
+    print(f"     Aguardando texto completo:      {n_awaiting}")
+    print(f"     Com texto completo:             {n_included}")
+
+    if paper_records is not None:
+        analyzed = sum(1 for p in paper_records if p.stage_1 is not None)
+        with_s2 = sum(1 for p in paper_records if p.stage_2 is not None)
+        with_s3 = sum(1 for p in paper_records if p.stage_3 is not None)
+
+        print()
+        print(f"  4. ANÁLISE LLM (Stage 1)")
+        print(f"     Papers analisados:              {analyzed}")
+        print(f"     Excluídos (sem relevância):     -{n_relevance}")
+        print(f"     Excluídos (sem econometria):    -{n_econometrics}")
+        print()
+        print(f"     INCLUÍDOS")
+        print(f"     Estudos para Stages 2-3:        {n_included}")
+        print(f"     Com metodologia (Stage 2):      {with_s2}")
+        print(f"     Com resultados (Stage 3):       {with_s3}")
+    else:
+        print()
+        print(f"     Registros para análise LLM:     {n_included}")
+
+    if output_dir:
+        print()
+        print(f"     Saída: {output_dir}")
+
+    print(f"\n{'='*55}\n")
 
 
 # =============================================================================
@@ -429,6 +604,8 @@ def main() -> None:
     # Dispatch
     if args.command == "search":
         cmd_search(config, args)
+    elif args.command == "screen":
+        cmd_screen(config, args)
     elif args.command == "analyze":
         cmd_analyze(config, args)
     elif args.command == "export":
