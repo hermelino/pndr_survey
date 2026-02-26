@@ -38,6 +38,9 @@ def flatten_record(paper: PaperRecord) -> Dict[str, Any]:
         # Deduplicação
         "is_duplicate": bib.is_duplicate,
         "duplicate_of": bib.duplicate_of or "",
+        # Triagem
+        "screening_status": bib.screening_status.value,
+        "exclusion_reason": bib.exclusion_reason or "",
         # PDF
         "pdf_path": paper.pdf_path or "",
         "file_hash": paper.file_hash or "",

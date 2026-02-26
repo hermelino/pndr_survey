@@ -22,6 +22,41 @@ dedup:
   fuzzy_threshold: 90        # 0-100 (token_sort_ratio via rapidfuzz)
   title_normalization: true   # Remover acentos, lowercase, stopwords
 
+# --- Triagem pré-LLM (PRISMA steps 3-4) ---
+screening:
+  excluded_doctypes:
+    - "tese"
+    - "dissertação"
+    - "monografia"
+    - "capítulo de livro"
+    - "livro"
+    - "editorial"
+  eligible_languages: ["pt", "en", "por", "eng", "portuguese", "english"]
+  relevance_keywords:
+    - "fundo constitucional"
+    - "fundos constitucionais"
+    - "fundo de desenvolvimento"
+    - "incentivo fiscal"
+    - "incentivos fiscais"
+    - "incentivos regionais"
+    - "FNE"
+    - "FNO"
+    - "FCO"
+    - "FDA"
+    - "FDNE"
+    - "FDCO"
+    - "SUDENE"
+    - "SUDAM"
+    - "SUDECO"
+    - "PNDR"
+    - "constitutional fund"
+    - "development fund"
+    - "financing fund"
+    - "regional fund"
+    - "tax incentive"
+    - "banco do nordeste"
+    - "regional development policy"
+
 # --- LLM (Gemini) ---
 llm:
   provider: gemini

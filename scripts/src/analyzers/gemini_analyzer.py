@@ -13,6 +13,8 @@ from typing import Any, Dict, List, Optional
 
 import google.generativeai as genai
 
+from src.models import ScreeningStatus
+
 from src.analyzers.base import BaseAnalyzer, load_questionnaire
 from src.models import PaperRecord
 
@@ -254,11 +256,14 @@ def filter_screening(
 ) -> tuple[List[PaperRecord], List[PaperRecord]]:
     """Filtra papers após Stage 1 (triagem).
 
-    Critérios para passar:
-      - is_scientific_study contém "Sim" (case-insensitive)
+    Critérios para passar (TODOS devem ser verdadeiros):
+      - is_scientific_study contém "Sim"
       - instrumentos_pndr NÃO é apenas "nenhum" ou "[ne]"
+      - uso_econometria contém "Sim"
 
-    Preenche paper.is_empirical com base no resultado.
+    Preenche paper.is_empirical e paper.bib.screening_status.
+    Hierarquia: is_study → has_instruments → uses_econometrics
+    (primeira falha determina o motivo de exclusão).
 
     Args:
         papers: Lista de PaperRecords com stage_1 preenchido.
@@ -282,14 +287,26 @@ def filter_screening(
             and not _answer_is_empty(instruments)
             and "nenhum" not in instruments.lower()
         )
+        uses_econometrics = _answer_contains(
+            s1.get("uso_econometria", ""), "sim"
+        )
 
-        if is_study and has_instruments:
+        if is_study and has_instruments and uses_econometrics:
             paper.is_empirical = True
-            # Extrair instrumento principal para classificação
             paper.pndr_instrument = _extract_first_instrument(instruments)
+            paper.bib.screening_status = ScreeningStatus.INCLUDED
             passed.append(paper)
         else:
             paper.is_empirical = False
+            if not is_study:
+                paper.bib.screening_status = ScreeningStatus.EXCLUDED_DOCTYPE
+                paper.bib.exclusion_reason = "LLM: não é estudo científico"
+            elif not has_instruments:
+                paper.bib.screening_status = ScreeningStatus.EXCLUDED_RELEVANCE
+                paper.bib.exclusion_reason = "LLM: sem instrumentos PNDR"
+            else:
+                paper.bib.screening_status = ScreeningStatus.EXCLUDED_NO_ECONOMETRICS
+                paper.bib.exclusion_reason = "LLM: sem método econométrico"
             rejected.append(paper)
 
     return passed, rejected

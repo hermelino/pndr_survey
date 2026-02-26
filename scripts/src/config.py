@@ -62,6 +62,32 @@ class OutputConfig:
 
 
 @dataclass
+class ScreeningConfig:
+    """Configuração da triagem pré-LLM (PRISMA steps 3-4)."""
+    excluded_doctypes: List[str] = field(default_factory=lambda: [
+        "tese", "dissertação", "monografia", "capítulo de livro",
+        "livro", "editorial", "book_chapter", "book",
+    ])
+    eligible_languages: List[str] = field(default_factory=lambda: [
+        "pt", "en", "por", "eng", "portuguese", "english",
+    ])
+    relevance_keywords: List[str] = field(default_factory=lambda: [
+        "fundo constitucional", "fundos constitucionais",
+        "fundo de desenvolvimento", "fundos de desenvolvimento",
+        "incentivo fiscal", "incentivos fiscais",
+        "incentivos regionais",
+        "FNE", "FNO", "FCO", "FDA", "FDNE", "FDCO",
+        "SUDENE", "SUDAM", "SUDECO", "PNDR",
+        "constitutional fund", "development fund",
+        "financing fund", "regional fund",
+        "tax incentive", "tax incentives",
+        "regional development policy",
+        "política de desenvolvimento regional",
+        "banco do nordeste",
+    ])
+
+
+@dataclass
 class LoggingConfig:
     """Configuração de logging."""
     level: str = "INFO"
@@ -73,6 +99,7 @@ class Config:
     """Configuração raiz do projeto."""
     search: SearchConfig = field(default_factory=SearchConfig)
     dedup: DedupConfig = field(default_factory=DedupConfig)
+    screening: ScreeningConfig = field(default_factory=ScreeningConfig)
     llm: LLMConfig = field(default_factory=LLMConfig)
     paths: PathsConfig = field(default_factory=PathsConfig)
     output: OutputConfig = field(default_factory=OutputConfig)
@@ -111,6 +138,7 @@ def _resolve_env_vars(value: Any) -> Any:
 # Instâncias sentinela para acessar defaults
 _SEARCH = SearchConfig()
 _DEDUP = DedupConfig()
+_SCREENING = ScreeningConfig()
 _LLM = LLMConfig()
 _PATHS = PathsConfig()
 _OUTPUT = OutputConfig()
@@ -134,6 +162,15 @@ def _build_dedup_config(data: Dict) -> DedupConfig:
     return DedupConfig(
         fuzzy_threshold=raw.get("fuzzy_threshold", _DEDUP.fuzzy_threshold),
         title_normalization=raw.get("title_normalization", _DEDUP.title_normalization),
+    )
+
+
+def _build_screening_config(data: Dict) -> ScreeningConfig:
+    raw = data.get("screening", {})
+    return ScreeningConfig(
+        excluded_doctypes=raw.get("excluded_doctypes", _SCREENING.excluded_doctypes),
+        eligible_languages=raw.get("eligible_languages", _SCREENING.eligible_languages),
+        relevance_keywords=raw.get("relevance_keywords", _SCREENING.relevance_keywords),
     )
 
 
@@ -203,6 +240,7 @@ def load_config(path: str | Path) -> Config:
     config = Config(
         search=_build_search_config(data),
         dedup=_build_dedup_config(data),
+        screening=_build_screening_config(data),
         llm=_build_llm_config(data),
         paths=_build_paths_config(data),
         output=_build_output_config(data),

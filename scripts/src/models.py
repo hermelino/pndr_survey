@@ -7,7 +7,21 @@ PaperRecord: resultado da análise LLM (fase de análise).
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from enum import Enum
 from typing import Dict, List, Optional
+
+
+class ScreeningStatus(str, Enum):
+    """Status de triagem no funil PRISMA."""
+
+    PENDING = "pending"
+    INCLUDED = "included"
+    EXCLUDED_DUPLICATE = "excluded_duplicate"
+    EXCLUDED_DOCTYPE = "excluded_doctype"
+    EXCLUDED_LANGUAGE = "excluded_language"
+    EXCLUDED_RELEVANCE = "excluded_relevance"
+    EXCLUDED_NO_ECONOMETRICS = "excluded_no_econometrics"
+    AWAITING_PDF = "awaiting_pdf"
 
 
 @dataclass
@@ -47,6 +61,10 @@ class BibRecord:
     # --- Deduplicação ---
     is_duplicate: bool = False
     duplicate_of: Optional[str] = None  # source_id do registro mantido
+
+    # --- Triagem / Screening ---
+    screening_status: ScreeningStatus = ScreeningStatus.PENDING
+    exclusion_reason: Optional[str] = None
 
     def completeness_score(self) -> int:
         """Pontuação heurística para escolher qual duplicata manter.
