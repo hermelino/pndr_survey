@@ -32,10 +32,12 @@ pndr_survey/
 │       ├── exporters/        # Excel, CSV, RIS, JSON
 │       └── utils/            # Logging
 ├── data/                     # Dados (nao versionados)
-│   ├── econpapers_ris/       # 24 registros RIS
-│   ├── capes_ris/            # 30 registros RIS
-│   ├── scopus_ris/           # 16 registros RIS
-│   ├── anpec_extraction/     # 62 registros Excel
+│   ├── all_records.ris       # Todos os 125 registros unicos (Zotero/Mendeley)
+│   ├── all_records.xlsx      # Todos os 132 registros com URLs de download
+│   ├── econpapers/           # 24 registros RIS (originais)
+│   ├── capes/                # 30 registros RIS (originais)
+│   ├── scopus/               # 16 registros RIS (originais)
+│   ├── anpec/                # 62 registros Excel (originais)
 │   ├── papers/               # PDFs dos artigos
 │   └── processed/            # Saidas do pipeline (JSON, CSV)
 ├── latex/                    # Artigo LaTeX (esqueleto)
@@ -91,10 +93,10 @@ cd scripts && python main.py search --dry-run
 
 # Importar registros das 4 bases
 python main.py --verbose search \
-  --import-econpapers "../data/econpapers_ris/econpapers_combined.ris" \
-  --import-capes "../data/capes_ris/Periodicos-CAPES-RIS.ris" \
-  --import-scopus "../data/scopus_ris/scopus_export_Feb 25-2026_bd09397c-fbc7-4454-8d88-0d42afc92ae6.ris" \
-  --import-anpec "../data/anpec_extraction/resultados_anpec_pesquisa_250226_1030.xlsx"
+  --import-econpapers "../data/econpapers/econpapers_combined.ris" \
+  --import-capes "../data/capes/Periodicos-CAPES-RIS.ris" \
+  --import-scopus "../data/scopus/scopus_export_Feb 25-2026_bd09397c-fbc7-4454-8d88-0d42afc92ae6.ris" \
+  --import-anpec "../data/anpec/resultados_anpec_pesquisa_250226_1030.xlsx"
 
 # Triagem
 python main.py screen --input-json ../data/processed/bib_records.json

@@ -89,15 +89,22 @@ Arquivo de auditoria: `data/processed/duplicates_removed.csv`
 
 ## Arquivos de dados
 
-### Metadados bibliograficos
+### Arquivos integrados (todos os registros)
 
 | Arquivo | Conteudo |
 |---------|----------|
-| `data/econpapers_ris/econpapers_combined.ris` | 24 registros RIS unificados |
-| `data/econpapers_ris/individuais/` | 24 arquivos RIS individuais |
-| `data/capes_ris/Periodicos-CAPES-RIS.ris` | 30 registros RIS |
-| `data/scopus_ris/scopus_export_Feb 25-2026_*.ris` | 16 registros RIS |
-| `data/anpec_extraction/resultados_anpec_pesquisa_250226_1030.xlsx` | 62 registros Excel |
+| `data/all_records.ris` | 125 registros unicos em formato RIS (para Zotero/Mendeley) |
+| `data/all_records.xlsx` | 132 registros com todos os campos, URLs de download, e aba de resumo |
+
+### Registros por base (arquivos originais)
+
+| Arquivo | Conteudo |
+|---------|----------|
+| `data/econpapers/econpapers_combined.ris` | 24 registros RIS unificados |
+| `data/econpapers/individuais/` | 24 arquivos RIS individuais |
+| `data/capes/Periodicos-CAPES-RIS.ris` | 30 registros RIS |
+| `data/scopus/scopus_export_Feb 25-2026_*.ris` | 16 registros RIS |
+| `data/anpec/resultados_anpec_pesquisa_250226_1030.xlsx` | 62 registros Excel |
 
 ### PDFs
 
@@ -119,17 +126,17 @@ Arquivo de auditoria: `data/processed/duplicates_removed.csv`
 ```bash
 cd scripts
 python main.py --verbose search \
-  --import-econpapers "../data/econpapers_ris/econpapers_combined.ris" \
-  --import-capes "../data/capes_ris/Periodicos-CAPES-RIS.ris" \
-  --import-scopus "../data/scopus_ris/scopus_export_Feb 25-2026_bd09397c-fbc7-4454-8d88-0d42afc92ae6.ris" \
-  --import-anpec "../data/anpec_extraction/resultados_anpec_pesquisa_250226_1030.xlsx"
+  --import-econpapers "../data/econpapers/econpapers_combined.ris" \
+  --import-capes "../data/capes/Periodicos-CAPES-RIS.ris" \
+  --import-scopus "../data/scopus/scopus_export_Feb 25-2026_bd09397c-fbc7-4454-8d88-0d42afc92ae6.ris" \
+  --import-anpec "../data/anpec/resultados_anpec_pesquisa_250226_1030.xlsx"
 ```
 
 ## Decisoes metodologicas
 
 - **Google Scholar excluido**: retorna 12.000+ resultados com proporcao elevada de irrelevantes; periodicos relevantes ja cobertos pelo CAPES e RePEc.
 - **Web of Science excluido**: cobertura ja atendida pelo CAPES e RePEc.
-- **PDFs do EconPapers**: 19 de 24 baixados manualmente (5 nao disponiveis ou duplicatas). URLs em `data/econpapers_ris/econpapers_urls.txt`.
+- **PDFs do EconPapers**: 19 de 24 baixados manualmente (5 nao disponiveis ou duplicatas). URLs em `data/econpapers/econpapers_urls.txt`.
 - **PDFs de CAPES e Scopus**: nao possuem URL direta para PDF nos metadados exportados. Download manual pendente via acesso institucional ou resolucao de DOI.
 
 ## Trabalho pendente
