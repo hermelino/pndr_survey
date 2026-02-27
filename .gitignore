@@ -27,14 +27,17 @@
 # =============================================================================
 # Data (large files - keep only scripts, not raw data)
 # =============================================================================
-data/*.csv
-data/*.xlsx
-data/*.xls
-data/*.dta
-data/*.rds
-data/*.rda
-data/*.sav
-data/*.parquet
+data/**/*.csv
+data/**/*.xlsx
+data/**/*.xls
+data/**/*.dta
+data/**/*.rds
+data/**/*.rda
+data/**/*.sav
+data/**/*.parquet
+data/**/*.pdf
+data/**/*.doc
+data/**/*.json
 !data/.gitkeep
 
 # =============================================================================
@@ -61,7 +64,9 @@ __pycache__/
 *.pyc
 .env
 venv/
+.venv/
 scripts/config.yaml
+nul
 
 # =============================================================================
 # Stata

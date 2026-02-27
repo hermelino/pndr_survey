@@ -32,14 +32,18 @@ pndr_survey/
 │       ├── exporters/        # Excel, CSV, RIS, JSON
 │       └── utils/            # Logging
 ├── data/                     # Dados (nao versionados)
-│   ├── all_records.ris       # Todos os 125 registros unicos (Zotero/Mendeley)
-│   ├── all_records.xlsx      # Todos os 132 registros com URLs de download
-│   ├── econpapers/           # 24 registros RIS (originais)
-│   ├── capes/                # 30 registros RIS (originais)
-│   ├── scopus/               # 16 registros RIS (originais)
-│   ├── anpec/                # 62 registros Excel (originais)
-│   ├── papers/               # PDFs dos artigos
-│   └── processed/            # Saidas do pipeline (JSON, CSV)
+│   ├── 1-records/            # Registros bibliograficos
+│   │   ├── all_records.ris   # 128 registros unicos (Zotero/Mendeley)
+│   │   ├── all_records.xlsx  # Registros + duplicatas + resumo
+│   │   ├── 1-1-records-scopus/    # 16 registros RIS
+│   │   ├── 1-2-records-scielo/    # 5 registros RIS
+│   │   ├── 1-3-records-capes/     # 30 registros RIS
+│   │   ├── 1-4-records-econpapers/# 24 registros RIS
+│   │   ├── 1-5-records-anpec/     # 62 registros Excel
+│   │   └── processed/        # Saidas do pipeline (JSON, CSV)
+│   └── 2-papers/             # PDFs dos artigos
+│       ├── 2-4-papers-econpapers/ # 19 PDFs
+│       └── 2-5-papers-anpec/     # 62 PDFs
 ├── latex/                    # Artigo LaTeX (esqueleto)
 ├── figures/                  # Figuras para o artigo
 └── docs/
@@ -52,7 +56,7 @@ pndr_survey/
 FASE 1 — COLETA                           FASE 2 — ANALISE
 ========================                   ========================
 
-Busca manual nas 4 bases                   PDFs coletados
+Busca manual nas 5 bases                   PDFs coletados
         |                                          |
         v                                          v
 [1] Importacao (RIS/CSV/Excel)             [4] Extracao de texto (pdfplumber)
@@ -71,10 +75,10 @@ Busca manual nas 4 bases                   PDFs coletados
 
 | Etapa | Descricao | Status |
 |-------|-----------|--------|
-| 1 | Busca manual + importacao (4 bases, 132 registros) | Concluido |
-| 2 | Deduplicacao (125 unicos, 7 removidos) | Concluido |
+| 1 | Busca manual + importacao (5 bases) | Concluido |
+| 2 | Deduplicacao (128 unicos, 9 removidos) | Concluido |
 | 3 | Triagem pre-LLM | Concluido |
-| 4 | Coleta de PDFs (81 de 125) | Parcial — CAPES/Scopus pendentes |
+| 4 | Coleta de PDFs (81 de 128) | Parcial — CAPES/Scopus/SciELO pendentes |
 | 5 | Analise LLM (Stages 1-3) | Pendente |
 | 6 | Exportacao de resultados | Pendente |
 
@@ -91,15 +95,16 @@ cp scripts/config.example.yaml scripts/config.yaml
 # Ver queries de busca
 cd scripts && python main.py search --dry-run
 
-# Importar registros das 4 bases
+# Importar registros das 5 bases
 python main.py --verbose search \
-  --import-econpapers "../data/econpapers/econpapers_combined.ris" \
-  --import-capes "../data/capes/Periodicos-CAPES-RIS.ris" \
-  --import-scopus "../data/scopus/scopus_export_Feb 25-2026_bd09397c-fbc7-4454-8d88-0d42afc92ae6.ris" \
-  --import-anpec "../data/anpec/resultados_anpec_pesquisa_250226_1030.xlsx"
+  --import-scopus "../data/1-records/1-1-records-scopus/scopus_20260225.ris" \
+  --import-scielo "../data/1-records/1-2-records-scielo/scielo_20260226.ris" \
+  --import-capes "../data/1-records/1-3-records-capes/capes_20260224.ris" \
+  --import-econpapers "../data/1-records/1-4-records-econpapers/econpapers_20260224.ris" \
+  --import-anpec "../data/1-records/1-5-records-anpec/anpec_20260225.xlsx"
 
 # Triagem
-python main.py screen --input-json ../data/processed/bib_records.json
+python main.py screen --input-json ../data/1-records/processed/bib_records.json
 
 # Analise LLM (requer GEMINI_API_KEY)
 set GEMINI_API_KEY=sua-chave-aqui
@@ -107,7 +112,7 @@ python main.py analyze --stage 1 --max-papers 5    # teste
 python main.py analyze                              # completo
 
 # Exportar resultados
-python main.py export --input-json ../data/processed/results.json
+python main.py export --input-json ../data/1-records/processed/results.json
 ```
 
 ## Referencia de Comandos

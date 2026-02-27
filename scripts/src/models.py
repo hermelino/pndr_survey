@@ -108,9 +108,10 @@ class BibRecord:
 # --- Prioridade de fontes para deduplicação ---
 SOURCE_PRIORITY = {
     "scopus": 1,
-    "econpapers": 2,
+    "scielo": 2,
     "capes": 3,
-    "anpec": 4,
+    "econpapers": 4,
+    "anpec": 5,
 }
 
 

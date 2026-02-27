@@ -64,6 +64,7 @@ def build_parser() -> argparse.ArgumentParser:
     sp_search.add_argument("--import-capes", metavar="FILE", help="Importar RIS/CSV do CAPES")
     sp_search.add_argument("--import-scopus", metavar="FILE", help="Importar RIS/CSV do Scopus")
     sp_search.add_argument("--import-anpec", metavar="FILE", help="Importar Excel/RIS/CSV da ANPEC")
+    sp_search.add_argument("--import-scielo", metavar="FILE", help="Importar RIS/CSV do SciELO")
     sp_search.add_argument("--skip-dedup", action="store_true", help="Pular deduplicação")
     sp_search.add_argument("--dry-run", action="store_true", help="Mostrar queries sem executar")
 
@@ -136,6 +137,7 @@ def cmd_search(config: Config, args: argparse.Namespace) -> List[BibRecord]:
         "capes": args.import_capes,
         "scopus": args.import_scopus,
         "anpec": args.import_anpec,
+        "scielo": args.import_scielo,
     }
     for db_name, filepath in import_map.items():
         if filepath:

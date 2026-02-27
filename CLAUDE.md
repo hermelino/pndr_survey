@@ -22,8 +22,8 @@ scripts/            → Pipeline Python (main.py e o ponto de entrada)
     utils/          → Logging
   keywords/         → Queries de busca por base (.txt)
   questionnaires/   → Questionarios JSON para o LLM
-data/papers/        → PDFs dos artigos (nao versionados)
-data/processed/     → Resultados da analise (nao versionados)
+data/1-records/     → Registros bibliograficos + saidas do pipeline
+data/2-papers/      → PDFs dos artigos (nao versionados)
 latex/              → Artigo LaTeX (nao modificar via scripts)
 figures/            → Figuras para o artigo
 docs/pipeline_extraction.md → Metodologia e log de extracao

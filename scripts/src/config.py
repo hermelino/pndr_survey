@@ -49,14 +49,14 @@ class LLMConfig:
 @dataclass
 class PathsConfig:
     """Caminhos do projeto."""
-    papers_dir: str = "../data/papers"
+    papers_dir: str = "../data/2-papers"
     questionnaires_dir: str = "questionnaires"
 
 
 @dataclass
 class OutputConfig:
     """Configuração de saída."""
-    directory: str = "../data/processed"
+    directory: str = "../data/1-records/processed"
     formats: List[str] = field(default_factory=lambda: ["excel", "csv", "json"])
     timestamp: bool = True
 
@@ -261,7 +261,7 @@ def _validate(config: Config) -> None:
             "Defina GEMINI_API_KEY ou preencha llm.api_key no config.yaml."
         )
 
-    valid_dbs = {"econpapers", "capes", "scopus", "anpec"}
+    valid_dbs = {"econpapers", "capes", "scopus", "anpec", "scielo"}
     for db in config.search.databases:
         if db not in valid_dbs:
             raise ValueError(
