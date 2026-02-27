@@ -8,12 +8,12 @@ Revisao sistematica sobre instrumentos da PNDR (2000-2025). Busca manual em 5 ba
 
 | # | Base | Registros | PDFs | % | Status |
 |---|------|-----------|------|---|--------|
-| 1-1 | Scopus | 16 | 15 | 94% | 1 pendente (Costa et al. 2024) |
+| 1-1 | Scopus | 16 | 16 | 100% | Concluido |
 | 1-2 | SciELO | 4 | 4 | 100% | Concluido |
-| 1-3 | Portal CAPES | 26 | 13 | 50% | 13 pendentes |
-| 1-4 | EconPapers/RePEc | 20 | 20 | 100% | Concluido |
-| 1-5 | ANPEC | 62 | 62 | 100% | Concluido |
-| **Total (apos dedup)** | | **128** | **114** | **89%** | **14 pendentes** |
+| 1-3 | Portal CAPES | 26 | 26 | 100% | Concluido |
+| 1-4 | EconPapers/RePEc | 11 | 11 | 100% | Concluido |
+| 1-5 | ANPEC | 61 | 61 | 100% | Concluido |
+| **Total (apos dedup)** | | **118** | **118** | **100%** | **Concluido** |
 
 ## Estrategia de busca
 
@@ -71,10 +71,11 @@ OR "fundo de desenvolvimento" OR "incentivo fiscal" OR "incentivos fiscais")
 
 ## Deduplicacao
 
-Algoritmo em 2 fases (modulo `src/dedup/deduplicator.py`):
+Algoritmo em 3 fases:
 
-1. **DOI exato** — normaliza lowercase, remove prefixos
-2. **Titulo fuzzy** — `rapidfuzz.token_sort_ratio >= 80%`, com verificacao adicional: mesmo ano E (mesmo primeiro autor OU mesmo periodico)
+1. **DOI exato** — normaliza lowercase, remove prefixos (modulo `src/dedup/deduplicator.py`)
+2. **Titulo fuzzy** — `rapidfuzz.token_sort_ratio >= 80%`, com verificacao adicional: mesmo ano E (mesmo primeiro autor OU mesmo periodico) (modulo `src/dedup/deduplicator.py`)
+3. **PDF identico** — registros de bases diferentes que apontam para o mesmo PDF (verificacao manual pos-coleta)
 
 Prioridade de retencao: Scopus > SciELO > CAPES > EconPapers > ANPEC (em caso de duplicata, mantem a versao da base de maior prioridade).
 
@@ -97,7 +98,22 @@ Prioridade de retencao: Scopus > SciELO > CAPES > EconPapers > ANPEC (em caso de
 | EFEITOS DIFERENCIADOS DO FNE NO CRESCIMENTO ECONOMICO DOS MUNICIPIOS NORDESTINOS | EconPapers | Triplicata intra-base |
 | Avaliacao dos Impactos Economicos do FCO Entre 2004 e 2010 | EconPapers | Variacao de caixa do TD IPEA 1969 |
 
-Arquivo de auditoria: `data/1-records/processed/duplicates_removed.csv`
+### Removidos por PDF identico (10)
+
+| Titulo | Base removida | Base mantida |
+|--------|---------------|--------------|
+| Measuring Micro- and Macro-Impacts of Regional Development Policies | EconPapers (2x) | Scopus |
+| Tax Incentives and Job Creation in the Tourism Sector of Brazil's SUDENE | EconPapers (2x) | Scopus |
+| Evaluation of the Brazilian regional development funds | EconPapers | Scopus |
+| Regional funding and regional inequalities in the Brazilian Northeast | EconPapers | Scopus |
+| Analysis of the Northeast Constitutional Financing Fund (FNE) on Municipal | EconPapers | Scopus |
+| Uma nota sobre os impactos dos incentivos fiscais no mercado de trabalho | ANPEC | SciELO |
+| Efeito dose resposta do FCO (variantes de titulo) | EconPapers (2x) | EconPapers |
+
+Total de duplicatas: 9 (fase 1) + 10 (fase 3) = 19 removidas. **118 registros unicos**.
+
+Arquivo de auditoria fase 1: `data/1-records/processed/duplicates_removed.csv`
+Arquivo de auditoria fase 3: `data/2-papers/all_papers.xlsx` (aba "Duplicatas")
 
 ## Arquivos de dados
 
@@ -128,12 +144,12 @@ Scripts de renomeacao: `data/2-papers/rename_pdfs*.py` e `rename_scopus*.py`.
 
 | Base | Total | Baixados | Faltando | % |
 |------|-------|----------|----------|---|
-| Scopus | 16 | 15 | 1 | 94% |
+| Scopus | 16 | 16 | 0 | 100% |
 | SciELO | 4 | 4 | 0 | 100% |
-| CAPES | 26 | 13 | 13 | 50% |
-| EconPapers | 20 | 20 | 0 | 100% |
-| ANPEC | 62 | 62 | 0 | 100% |
-| **Total** | **128** | **114** | **14** | **89%** |
+| CAPES | 26 | 26 | 0 | 100% |
+| EconPapers | 11 | 11 | 0 | 100% |
+| ANPEC | 61 | 61 | 0 | 100% |
+| **Total** | **118** | **118** | **0** | **100%** |
 
 Controle detalhado: `data/2-papers/all_papers.xlsx` (planilha "Registros", colunas Baixado e Arquivo PDF).
 
@@ -164,14 +180,13 @@ python main.py --verbose search \
 - **Google Scholar excluido**: retorna 12.000+ resultados com proporcao elevada de irrelevantes; periodicos relevantes ja cobertos pelo CAPES e RePEc.
 - **Web of Science excluido**: cobertura ja atendida pelo CAPES e RePEc.
 - **PDFs do EconPapers**: 20 de 20 baixados (100%). Um arquivo em formato .doc (Goncalves et al. 2014).
-- **PDFs de Scopus**: 15 de 16 baixados (1 pendente: Costa et al. 2024, DOI: 10.1080/13504851.2024.2402927).
-- **PDFs de CAPES**: 13 de 26 baixados (50%). Restam 13 pendentes, maioria sem URL direta; download manual pendente via acesso institucional ou resolucao de DOI.
+- **PDFs de Scopus**: 16 de 16 baixados (100%).
+- **PDFs de CAPES**: 26 de 26 baixados (100%).
 - **PDFs de SciELO**: 4 de 4 baixados (100%). Os 2 ultimos foram inicialmente classificados como "extras" e depois associados aos registros SciELO corretos.
 
 ## Trabalho pendente
 
-1. Baixar PDFs faltantes: CAPES (13), Scopus (1) → `data/2-papers/`
-2. Executar triagem pre-LLM: `python main.py screen`
+1. Executar triagem pre-LLM: `python main.py screen`
 3. Executar analise LLM (Stages 1-3): `python main.py analyze`
 4. Exportar resultados: `python main.py export`
 5. Integrar resultados no artigo LaTeX

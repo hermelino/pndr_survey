@@ -41,7 +41,7 @@ pndr_survey/
 │   │   ├── 1-4-records-econpapers/# 24 registros RIS
 │   │   ├── 1-5-records-anpec/     # 62 registros Excel
 │   │   └── processed/        # Saidas do pipeline (JSON, CSV)
-│   └── 2-papers/             # 101 PDFs renomeados (<base>-<ano>-<autores>.pdf)
+│   └── 2-papers/             # 118 PDFs renomeados (<base>-<ano>-<autores>.pdf)
 │       ├── all_papers.xlsx   # Controle: registros + status de download
 │       └── *.py              # Scripts de renomeacao e verificacao
 ├── latex/                    # Artigo LaTeX (esqueleto)
@@ -76,9 +76,9 @@ Busca manual nas 5 bases                   PDFs coletados
 | Etapa | Descricao | Status |
 |-------|-----------|--------|
 | 1 | Busca manual + importacao (5 bases) | Concluido |
-| 2 | Deduplicacao (128 unicos, 9 removidos) | Concluido |
+| 2 | Deduplicacao (118 unicos, 19 removidos) | Concluido |
 | 3 | Triagem pre-LLM | Concluido |
-| 4 | Coleta de PDFs (114 de 128, 89%) | Parcial — CAPES (13), Scopus (1) pendentes |
+| 4 | Coleta de PDFs (118 de 118, 100%) | Concluido |
 | 5 | Analise LLM (Stages 1-3) | Pendente |
 | 6 | Exportacao de resultados | Pendente |
 
