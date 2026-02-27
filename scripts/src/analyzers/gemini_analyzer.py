@@ -179,10 +179,18 @@ class GeminiAnalyzer(BaseAnalyzer):
             except Exception as e:
                 last_error = e
                 if attempt < self.max_retries:
-                    wait = 2 ** attempt
+                    err_str = str(e)
+                    if "429" in err_str or "RESOURCE_EXHAUSTED" in err_str:
+                        # Rate limit: esperar mais (extrair retryDelay se possível)
+                        wait = max(10, 5 * attempt)
+                        match = re.search(r"retryDelay.*?(\d+)", err_str)
+                        if match:
+                            wait = max(wait, int(match.group(1)) + 2)
+                    else:
+                        wait = 2 ** attempt
                     logger.warning(
                         "Tentativa %d/%d falhou: %s. Aguardando %ds...",
-                        attempt, self.max_retries, e, wait,
+                        attempt, self.max_retries, str(e)[:120], wait,
                     )
                     time.sleep(wait)
 
