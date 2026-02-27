@@ -6,15 +6,14 @@ Data da extração: 25-26/02/2026
 
 Revisao sistematica sobre instrumentos da PNDR (2000-2025). Busca manual em 5 bases academicas, importacao via pipeline, deduplicacao automatica.
 
-| # | Base | Registros | PDFs | Status |
-|---|------|-----------|------|--------|
-| 1-1 | Scopus | 16 | 0 | PDFs pendentes |
-| 1-2 | SciELO | 5 | 0 | PDFs pendentes |
-| 1-3 | Portal CAPES | 30 | 0 | PDFs pendentes |
-| 1-4 | EconPapers/RePEc | 24 | 19 (manual) | Concluido |
-| 1-5 | ANPEC | 62 | 62 (auto) | Concluido |
-| **Total bruto** | **137** | **81** | |
-| **Apos deduplicacao** | **128** | **81** | |
+| # | Base | Registros | PDFs | % | Status |
+|---|------|-----------|------|---|--------|
+| 1-1 | Scopus | 16 | 15 | 94% | 1 pendente (Costa et al. 2024) |
+| 1-2 | SciELO | 4 | 4 | 100% | Concluido |
+| 1-3 | Portal CAPES | 26 | 13 | 50% | 13 pendentes |
+| 1-4 | EconPapers/RePEc | 20 | 20 | 100% | Concluido |
+| 1-5 | ANPEC | 62 | 62 | 100% | Concluido |
+| **Total (apos dedup)** | | **128** | **114** | **89%** | **14 pendentes** |
 
 ## Estrategia de busca
 
@@ -56,11 +55,9 @@ OR "fundo de desenvolvimento" OR "incentivo fiscal" OR "incentivos fiscais")
 ### SciELO
 
 ```
-("fundo constitucional" OR "fundos constitucionais" OR "fundo de desenvolvimento"
-OR "fundos de desenvolvimento" OR "incentivo fiscal" OR "incentivos fiscais")
-AND ("FNE" OR "FNO" OR "FCO" OR "FDNE" OR "FDCO" OR "SUDENE" OR "SUDECO"
-OR "SUDAM" OR "PNDR")
+("fundo constitucional" OR "fundos constitucionais" OR "fundo de desenvolvimento" OR "fundos de desenvolvimento" OR "incentivo fiscal" OR "incentivos fiscais") AND ("FNE" OR "FNO" OR "FCO" OR "FDNE" OR "FDCO" OR "SUDENE" OR "SUDECO" OR "SUDAM" OR "PNDR")
 ```
+
 
 ## Metodo de coleta por base
 
@@ -125,10 +122,22 @@ Cada pasta contem um `.ris` integrado (com data de extracao no nome) e um `.xlsx
 
 ### PDFs
 
-| Diretorio | Quantidade | Origem |
-|-----------|------------|--------|
-| `data/2-papers/2-4-papers-econpapers/` | 19 PDFs + 1 DOC | Download manual |
-| `data/2-papers/2-5-papers-anpec/` | 62 PDFs | Download automatico via extensao |
+Todos os PDFs foram movidos para `data/2-papers/` (sem subpastas) e renomeados com a convencao `<base>-<ano>-<sobrenome1>-<sobrenome2>-<sobrenome3>.pdf`.
+
+Scripts de renomeacao: `data/2-papers/rename_pdfs*.py` e `rename_scopus*.py`.
+
+| Base | Total | Baixados | Faltando | % |
+|------|-------|----------|----------|---|
+| Scopus | 16 | 15 | 1 | 94% |
+| SciELO | 4 | 4 | 0 | 100% |
+| CAPES | 26 | 13 | 13 | 50% |
+| EconPapers | 20 | 20 | 0 | 100% |
+| ANPEC | 62 | 62 | 0 | 100% |
+| **Total** | **128** | **114** | **14** | **89%** |
+
+Controle detalhado: `data/2-papers/all_papers.xlsx` (planilha "Registros", colunas Baixado e Arquivo PDF).
+
+Script de verificacao: `data/2-papers/status_pdfs.py` (gera tabela resumo e lista registros faltantes).
 
 ### Dados processados
 
@@ -154,12 +163,14 @@ python main.py --verbose search \
 
 - **Google Scholar excluido**: retorna 12.000+ resultados com proporcao elevada de irrelevantes; periodicos relevantes ja cobertos pelo CAPES e RePEc.
 - **Web of Science excluido**: cobertura ja atendida pelo CAPES e RePEc.
-- **PDFs do EconPapers**: 19 de 24 baixados manualmente (5 nao disponiveis ou duplicatas).
-- **PDFs de CAPES e Scopus**: nao possuem URL direta para PDF nos metadados exportados. Download manual pendente via acesso institucional ou resolucao de DOI.
+- **PDFs do EconPapers**: 20 de 20 baixados (100%). Um arquivo em formato .doc (Goncalves et al. 2014).
+- **PDFs de Scopus**: 15 de 16 baixados (1 pendente: Costa et al. 2024, DOI: 10.1080/13504851.2024.2402927).
+- **PDFs de CAPES**: 13 de 26 baixados (50%). Restam 13 pendentes, maioria sem URL direta; download manual pendente via acesso institucional ou resolucao de DOI.
+- **PDFs de SciELO**: 4 de 4 baixados (100%). Os 2 ultimos foram inicialmente classificados como "extras" e depois associados aos registros SciELO corretos.
 
 ## Trabalho pendente
 
-1. Baixar manualmente os PDFs de CAPES (26), Scopus (16) e SciELO (4) → `data/2-papers/`
+1. Baixar PDFs faltantes: CAPES (13), Scopus (1) → `data/2-papers/`
 2. Executar triagem pre-LLM: `python main.py screen`
 3. Executar analise LLM (Stages 1-3): `python main.py analyze`
 4. Exportar resultados: `python main.py export`
