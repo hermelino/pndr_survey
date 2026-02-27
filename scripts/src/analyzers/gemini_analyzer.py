@@ -1,6 +1,6 @@
-"""Analisador LLM via Google Gemini SDK.
+"""Analisador LLM via Google GenAI SDK (google-genai).
 
-Usa google.generativeai para enviar texto extraído de PDFs ao Gemini
+Usa google.genai para enviar texto extraído de PDFs ao Gemini
 e parsear respostas estruturadas baseadas em questionários.
 """
 
@@ -11,7 +11,8 @@ import re
 import time
 from typing import Any, Dict, List, Optional
 
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 
 from src.models import ScreeningStatus
 
@@ -35,7 +36,7 @@ _INTRO_PHRASES = [
 
 
 class GeminiAnalyzer(BaseAnalyzer):
-    """Análise de papers via API Gemini (google.generativeai SDK)."""
+    """Análise de papers via API Gemini (google.genai SDK)."""
 
     def __init__(
         self,
@@ -62,12 +63,9 @@ class GeminiAnalyzer(BaseAnalyzer):
         self.rate_limit_seconds = rate_limit_seconds
         self.max_retries = max_retries
 
-        genai.configure(api_key=api_key)
-        self._model = genai.GenerativeModel(
-            model_name=model,
-            generation_config=genai.GenerationConfig(
-                temperature=temperature,
-            ),
+        self._client = genai.Client(api_key=api_key)
+        self._gen_config = types.GenerateContentConfig(
+            temperature=temperature,
         )
         self._last_call_time = 0.0
 
@@ -170,7 +168,11 @@ class GeminiAnalyzer(BaseAnalyzer):
 
         for attempt in range(1, self.max_retries + 1):
             try:
-                response = self._model.generate_content(prompt)
+                response = self._client.models.generate_content(
+                    model=self.model_name,
+                    contents=prompt,
+                    config=self._gen_config,
+                )
                 self._last_call_time = time.time()
                 return response.text.strip()
 
