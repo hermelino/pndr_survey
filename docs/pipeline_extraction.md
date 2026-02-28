@@ -193,6 +193,80 @@ Apos a analise LLM, triagem manual em `all_papers_llm_classif_final.xlsx`:
 
 Motivos de rejeicao: sem metodo econometrico, anterior a 2005, sem instrumentos PNDR, artigo fora do escopo, documento nao-cientifico.
 
+### Alteracoes manuais em `all_papers_llm_classif_final.xlsx`
+
+O arquivo `all_papers_llm_classif_final.xlsx` foi criado a partir de `all_papers_llm_classif.xlsx` (gerado automaticamente pelo pipeline LLM) e revisado manualmente pelo pesquisador. Sempre que `all_papers_llm_classif.xlsx` for regenerado, as alteracoes abaixo devem ser reincorporadas para produzir o `_final.xlsx` atualizado.
+
+**Resumo:** 79 celulas alteradas em 43 registros, afetando 5 colunas.
+
+#### 1. Triagem (35 registros: APROVADO → REJEITADO)
+
+A triagem manual rejeitou 35 papers que o LLM havia aprovado (87 → 52 aprovados, 31 → 66 rejeitados):
+
+| Arquivo PDF | Motivo Exclusao |
+|-------------|-----------------|
+| `anpec-2004-silva-silveira-ferreira.pdf` | sem instrumentos PNDR |
+| `anpec-2005-jayme-crocco.pdf` | *(sem motivo registrado)* |
+| `anpec-2006-guanziroli.pdf` | sem metodo econometrico |
+| `anpec-2008-carvalho.pdf` | sem instrumentos PNDR |
+| `anpec-2010-correa-paula-oreiro.pdf` | sem instrumentos PNDR |
+| `anpec-2010.pdf` | sem instrumentos PNDR |
+| `anpec-2012-assuncao-ortiz-pereira.pdf` | sem instrumentos PNDR |
+| `anpec-2013-artigos.pdf` | nao e estudo cientifico |
+| `anpec-2013-campos-castelar.pdf` | sem instrumentos PNDR |
+| `anpec-2021-okumura.pdf` | sem instrumentos PNDR |
+| `anpec-2022-bastos-manso-finatti.pdf` | sem instrumentos PNDR |
+| `anpec-2023-magalhaes-souza-domingues.pdf` | sem instrumentos PNDR |
+| `anpec-2023-marin-griebeler.pdf` | sem instrumentos PNDR |
+| `anpec-2023-shirasu.pdf` | sem metodo econometrico |
+| `anpec-2024-lazaretti-davanzo-valente.pdf` | sem instrumentos PNDR |
+| `anpec-2024-silva-castro.pdf` | sem instrumentos PNDR |
+| `anpec-2025-premio.pdf` | nao e estudo cientifico |
+| `anpec-2025-silva-chagas.pdf` | sem instrumentos PNDR |
+| `anpec-nd-diniz.pdf` | sem instrumentos PNDR |
+| `anpec-nd-silva-oliveira.pdf` | sem instrumentos PNDR |
+| `capes-1998-rodrigues-guilhoto.pdf` | anterior a 2005 |
+| `capes-2002-viola.pdf` | anterior a 2005 |
+| `capes-2009-avellar.pdf` | sem instrumentos PNDR |
+| `capes-2011-diniz-corrar.pdf` | sem instrumentos PNDR |
+| `capes-2012-benavente-crespi-maffioli.pdf` | sem instrumentos PNDR |
+| `capes-2013-vieira.pdf` | sem instrumentos PNDR |
+| `capes-2015-araujo-santos-rebello.pdf` | sem metodo econometrico |
+| `capes-2016-matsumoto-bittencourt-silva.pdf` | sem metodo econometrico |
+| `capes-2017-macedo-pires-sampaio.pdf` | sem metodo econometrico |
+| `capes-2019-yaguache-sandoval-inga.pdf` | sem instrumentos PNDR |
+| `capes-2022-matias-elicker-pereira.pdf` | sem instrumentos PNDR |
+| `econpapers-2022-guimaraes-queiroz-carvalho.pdf` | sem metodo econometrico |
+| `scielo-2025-quaglio-lopes-heck.pdf` | *(sem motivo registrado)* |
+| `scopus-1991-binswanger.pdf` | sem metodo econometrico |
+| `scopus-2015-junkes-tereso-afonso.pdf` | sem instrumentos PNDR |
+
+#### 2. Correcao de motivo de exclusao (1 registro)
+
+| Arquivo PDF | Motivo base | Motivo final |
+|-------------|-------------|--------------|
+| `anpec-2015-artigos.pdf` | LLM: sem metodo econometrico | LLM: nao e estudo cientifico |
+
+#### 3. Correcao de instrumentos PNDR (2 registros)
+
+| Arquivo PDF | S1_instrumentos_pndr base | S1_instrumentos_pndr final |
+|-------------|---------------------------|----------------------------|
+| `anpec-2024-calife-neto.pdf` | outros | FDNE |
+| `anpec-2025-veloso.pdf` | outros | FDNE |
+
+#### 4. Correcao de periodico/revista (6 registros)
+
+| Arquivo PDF | Coluna | Valor base | Valor final |
+|-------------|--------|------------|-------------|
+| `anpec-2025-premio.pdf` | S1_revista | XIX Premio Banco do Nordeste de Economia Regional | Cadernos de Financas Publicas |
+| `anpec-2025-premio.pdf` | Periodico | *(vazio)* | Cadernos de Financas Publicas |
+| `scopus-2018-resende-silva-filho.pdf` | S1_revista | Springer-Verlag GmbH Germany, part of Springer Nature | Review of Regional Research |
+| `capes-2009-avellar.pdf` | Periodico | Estudos Economicos (Sao Paulo) | Estudos Economicos |
+| `econpapers-2017-oliveira-resende-oliveira.pdf` | Periodico | *(vazio)* | Revista Brasileira de Estudos Regionais e Urbanos |
+| `scielo-2009-silva-resende-neto.pdf` | Periodico | Estudos Economicos (Sao Paulo) | Estudos Economicos |
+| `scielo-2022-gumiero.pdf` | Periodico | Revista Brasileira de Estudos Urbanos e Regionais | Revista Brasileira de Estudos Regionais e Urbanos |
+| `scopus-2009-silva-resende-neto.pdf` | Periodico | Estudos Economicos | Estudos Economicos |
+
 ## Consolidacao JSON enriquecido
 
 Script: `scripts/merge_papers_to_json.py`
