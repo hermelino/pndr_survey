@@ -125,7 +125,7 @@ Identificados apos a analise de indice de citacao. Estudos que apareceram como T
 | Avaliacao economica dos fundos (FNE, FNO, FCO) | anpec-2006 (congresso ANPEC) | scopus-2009-silva-resende-neto | 10.1590/s0101-41612009000100004 |
 | Eficacia do gasto publico: FNE, FNO e FCO | scielo-2009 (mesma pub., sem DOI) | scopus-2009-silva-resende-neto | 10.1590/s0101-41612009000100004 |
 
-Total de duplicatas: 9 (fase 1, DOI) + 10 (fase 3, PDF identico) + 8 (fase 4, manual TD/WP) = 27 removidas. **118 papers na base** (mantidos para consistencia com LLM), **46 aprovados** apos triagem.
+Total de duplicatas: 9 (fase 1, DOI) + 10 (fase 3, PDF identico) + 9 (fase 4, manual TD/WP) = 28 removidas. **118 papers na base** (mantidos para consistencia com LLM), **45 aprovados** apos triagem.
 
 Arquivo de auditoria fase 1: `data/1-records/processed/duplicates_removed.csv`
 Arquivo de auditoria fase 3: `data/2-papers/all_papers.xlsx` (aba "Duplicatas")
@@ -204,8 +204,8 @@ Apos a analise LLM, triagem manual em `all_papers_llm_classif_final.xlsx`:
 
 | Resultado | Quantidade |
 |-----------|-----------|
-| APROVADO | 46 |
-| REJEITADO | 72 |
+| APROVADO | 45 |
+| REJEITADO | 73 |
 | **Total** | **118** |
 
 Motivos de rejeicao: sem metodo econometrico, anterior a 2005, sem instrumentos PNDR, artigo fora do escopo, documento nao-cientifico, duplicata de versao publicada.
@@ -214,7 +214,7 @@ Motivos de rejeicao: sem metodo econometrico, anterior a 2005, sem instrumentos 
 
 O arquivo `all_papers_llm_classif_final.xlsx` foi criado a partir de `all_papers_llm_classif.xlsx` (gerado automaticamente pelo pipeline LLM) e revisado manualmente pelo pesquisador. Sempre que `all_papers_llm_classif.xlsx` for regenerado, as alteracoes abaixo devem ser reincorporadas para produzir o `_final.xlsx` atualizado.
 
-**Resumo:** 91 celulas alteradas em 49 registros, afetando 5 colunas.
+**Resumo:** 115 celulas alteradas em 73 registros, afetando 5 colunas.
 
 #### 1. Triagem (35 registros: APROVADO → REJEITADO, revisao manual)
 
@@ -286,7 +286,7 @@ A triagem manual rejeitou 35 papers que o LLM havia aprovado (87 → 52 aprovado
 
 #### 5. Triagem (6 registros: APROVADO → REJEITADO, duplicata de versao publicada)
 
-Versoes TD/congresso do mesmo trabalho publicado em periodico, marcadas como REJEITADO com motivo "duplicata de versao publicada" (52 → 46 aprovados, 66 → 72 rejeitados):
+Versoes TD/congresso do mesmo trabalho publicado em periodico, marcadas como REJEITADO com motivo "duplicata de versao publicada" (52 → 45 aprovados, 66 → 73 rejeitados):
 
 | Arquivo PDF | Versao publicada mantida |
 |-------------|-------------------------|
@@ -296,6 +296,33 @@ Versoes TD/congresso do mesmo trabalho publicado em periodico, marcadas como REJ
 | `econpapers-2007-silva-resende-neto.pdf` | `scopus-2009-silva-resende-neto.pdf` |
 | `anpec-2006-silva-resende-neto.pdf` | `scopus-2009-silva-resende-neto.pdf` |
 | `scielo-2009-silva-resende-neto.pdf` | `scopus-2009-silva-resende-neto.pdf` |
+| `econpapers-2014-goncalves-soares-linhares.pdf` | `econpapers-2014-viana-goncalves-linhares.pdf` |
+
+#### 6. Correcao de tipo de publicacao (20 registros ANPEC: artigo publicado → apresentacao em congresso)
+
+O LLM classificou 20 apresentacoes em congresso ANPEC como `"artigo publicado"` em `S1_tipo_trabalho`. Todos tinham `S1_revista = "[ne]"` (nao encontrada). Correcao manual: `S1_tipo_trabalho` alterado para `"apresentação em congresso"`.
+
+IDs corrigidos: 65, 80, 82, 84, 86, 88, 90, 94, 99, 100, 102, 104, 105, 106, 107, 108, 113, 114, 115, 116.
+
+#### 7. Correcao de periodico faltante (3 registros EconPapers)
+
+O LLM identificou a revista em `S1_revista`, mas o nome nao foi transferido para a coluna `Periodico`. Correcao manual:
+
+| Arquivo PDF | Periodico (corrigido) |
+|-------------|----------------------|
+| `econpapers-2014-viana-goncalves-linhares.pdf` | CEPAL Review |
+| `econpapers-2014-resende-cravo-pires.pdf` | Revista de Economia do Centro-Oeste |
+| `econpapers-2016-sousa-damasceno-vieira.pdf` | Revista Brasileira de Estudos Regionais e Urbanos |
+
+#### 8. Triagem (1 registro: APROVADO → REJEITADO, duplicata de versao publicada)
+
+Versao congresso ANPEC 2013 do mesmo trabalho publicado na CEPAL Review (Viana et al., 2014):
+
+| Arquivo PDF | Versao publicada mantida |
+|-------------|-------------------------|
+| `econpapers-2014-goncalves-soares-linhares.pdf` | `econpapers-2014-viana-goncalves-linhares.pdf` |
+
+Contagem final: 45 aprovados, 73 rejeitados.
 
 ## Consolidacao JSON enriquecido
 
@@ -309,7 +336,7 @@ Mescla tres fontes em um unico JSON (`data/2-papers/2-2-papers.json`):
 
 Para campos duplicados, prioridade: registros das bases > all_papers > LLM.
 
-Resultado: 118 papers com campos unificados (46 aprovados, 72 rejeitados), incluindo: metadados bibliograficos, resumo, palavras-chave, classificacao LLM em 3 stages, resultado da triagem e motivo de exclusao.
+Resultado: 118 papers com campos unificados (45 aprovados, 73 rejeitados), incluindo: metadados bibliograficos, resumo, palavras-chave, classificacao LLM em 3 stages, resultado da triagem e motivo de exclusao.
 
 ## Extracao e matching de referencias
 
@@ -317,9 +344,9 @@ Resultado: 118 papers com campos unificados (46 aprovados, 72 rejeitados), inclu
 
 Scripts: `data/3-ref-bib/extrair_referencias.py` e `estruturar_referencias.py`
 
-Para 54 dos estudos aprovados, as listas de referencias bibliograficas foram extraidas dos PDFs via Gemini e estruturadas em JSON com campos: raw, autor, titulo, ano, periodico, volume, issue, pages. Apos a remocao de 6 estudos duplicados (versoes TD/congresso), restam 48 JSONs ativos; os 6 removidos foram arquivados em `refs_por_estudo/_archived_duplicates/`.
+Para 54 dos estudos aprovados, as listas de referencias bibliograficas foram extraidas dos PDFs via Gemini e estruturadas em JSON com campos: raw, autor, titulo, ano, periodico, volume, issue, pages. Apos a remocao de 7 estudos duplicados (versoes TD/congresso), restam 47 JSONs ativos; os 7 removidos foram arquivados em `refs_por_estudo/_archived_duplicates/`.
 
-Resultado: 48 JSONs ativos em `data/3-ref-bib/refs_por_estudo/`, totalizando 1.272 referencias.
+Resultado: 47 JSONs ativos em `data/3-ref-bib/refs_por_estudo/`, totalizando ~1.249 referencias.
 
 ### Matching de citacoes entre estudos
 
@@ -386,10 +413,11 @@ Tres grupos de estudos foram identificados como duplicatas verdadeiras: o mesmo 
 | `econpapers-2015-oliveira-terra-resende` (TD IPEA 2133) + `anpec-2015-oliveira-terra-resende` (congresso) | `scopus-2018-oliveira-terra-resende` (DOI 10.1590/0103-6351/3397) |
 | `econpapers-2015-resende-silva-filho` (TD IPEA 2145) | `scopus-2018-resende-silva-filho` (DOI 10.1007/s10037-018-0123-5) |
 | `anpec-2006-silva-resende-neto` (congresso) + `econpapers-2007-silva-resende-neto` (TD IPEA 1259) + `scielo-2009-silva-resende-neto` (pub. sem DOI) | `scopus-2009-silva-resende-neto` (DOI 10.1590/s0101-41612009000100004) |
+| `econpapers-2014-goncalves-soares-linhares` (congresso ANPEC 2013) | `econpapers-2014-viana-goncalves-linhares` (CEPAL Review) |
 
 Script de marcacao: `scripts/mark_td_duplicates.py`
 
-**Resultados:** 48 estudos (23 publicados, 25 nao-publicados), **121 citacoes cruzadas**.
+**Resultados:** 47 estudos (23 publicados, 24 nao-publicados), **118 citacoes cruzadas**.
 
 Saidas:
 - `data/3-ref-bib/citation_index_results.json` — dados completos por estudo
