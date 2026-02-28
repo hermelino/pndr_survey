@@ -162,7 +162,7 @@ Controle detalhado: `data/2-papers/all_papers.xlsx` (planilha "Registros", colun
 | `data/1-records/processed/duplicates_removed.csv` | 9 duplicatas removidas (auditoria) |
 | `data/2-papers/_llm_checkpoint.json` | Checkpoint com resultados LLM (stages 1-3) para 118 papers |
 | `data/2-papers/all_papers_llm_classif.xlsx` | Classificacao LLM bruta (gerada automaticamente) |
-| `data/2-papers/all_papers_llm_classif_final.xlsx` | Classificacao LLM revisada manualmente (triagem final) |
+| `data/2-papers/all_papers_llm_classif_final.xlsx` | Classificacao LLM revisada manualmente a partir de `all_papers_llm_classif.xlsx` (triagem final) |
 | `data/2-papers/2-2-papers.json` | JSON enriquecido: registros + LLM + triagem (fonte principal) |
 
 ## Analise LLM
