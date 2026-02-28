@@ -34,7 +34,7 @@ data/2-papers/                  → Artigos e classificacao
   2-1-papers_scripts/           → Scripts de renomeacao e verificacao
   _llm_checkpoint.json          → Checkpoint da analise LLM
   all_papers_llm_classification_edited.xlsx → Classificacao revisada
-data/3-referencias-bibliograficas/ → Referencias extraidas dos estudos
+data/3-ref-bib/                → Referencias extraidas dos estudos
   refs_por_estudo/              → 54 JSONs com refs estruturadas + matching
 latex/                          → Artigo LaTeX (nao modificar via scripts)
 figures/                        → Figuras para o artigo

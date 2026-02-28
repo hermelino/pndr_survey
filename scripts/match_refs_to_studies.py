@@ -8,6 +8,11 @@ corresponde a algum paper em 2-2-papers.json. Adiciona campos:
 
 Usa fuzzy matching de título (token_sort_ratio) + verificação de sobrenomes.
 Fonte enriquecida: usa titulo do registro E titulo extraído pelo LLM (S1).
+
+Matching em duas faixas:
+  - Anos iguais: threshold >= 75 (FUZZY_THRESHOLD)
+  - Anos diferentes (±6): threshold >= 90 (YEAR_FLEX_THRESHOLD)
+    Captura working papers citados pelo ano de publicação diferente.
 """
 
 from __future__ import annotations
@@ -25,9 +30,11 @@ from unidecode import unidecode
 # ---------------------------------------------------------------------------
 BASE_DIR = Path(__file__).resolve().parent.parent
 PAPERS_JSON = BASE_DIR / "data" / "2-papers" / "2-2-papers.json"
-REFS_DIR = BASE_DIR / "data" / "3-referencias-bibliograficas" / "refs_por_estudo"
+REFS_DIR = BASE_DIR / "data" / "3-ref-bib" / "refs_por_estudo"
 
-FUZZY_THRESHOLD = 80
+FUZZY_THRESHOLD = 75
+YEAR_FLEX_THRESHOLD = 90   # threshold mais alto quando anos não batem
+MAX_YEAR_DIFF = 6          # tolerância máxima de diferença de ano
 
 STOPWORDS = {
     "the", "a", "an", "of", "in", "on", "at", "to", "for", "and", "or",
@@ -200,9 +207,17 @@ def find_match(
             if paper_stem == self_stem or paper_stem in self_stem:
                 continue
 
-        # Filtro por ano
-        if ref_ano and paper["ano"] and ref_ano != paper["ano"]:
-            continue
+        # Filtro por ano (com tolerância para working papers)
+        year_exact = True
+        if ref_ano and paper["ano"]:
+            try:
+                diff = abs(int(ref_ano) - int(paper["ano"]))
+            except ValueError:
+                diff = 0
+            if diff > MAX_YEAR_DIFF:
+                continue
+            if diff > 0:
+                year_exact = False
 
         # Similaridade de título (tenta tanto titulo do registro quanto titulo S1)
         score = 0
@@ -212,7 +227,9 @@ def find_match(
             if paper["s1_titulo_norm"]:
                 score = max(score, fuzz.token_sort_ratio(ref_titulo_norm, paper["s1_titulo_norm"]))
 
-        if score < FUZZY_THRESHOLD:
+        # Threshold mais alto quando anos não batem (exige match mais rigoroso)
+        threshold = FUZZY_THRESHOLD if year_exact else YEAR_FLEX_THRESHOLD
+        if score < threshold:
             continue
 
         # Verificação de sobrenomes

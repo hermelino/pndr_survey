@@ -211,11 +211,11 @@ Resultado: 118 papers com campos unificados, incluindo: metadados bibliograficos
 
 ### Extracao de referencias
 
-Scripts: `data/3-referencias-bibliograficas/extrair_referencias.py` e `estruturar_referencias.py`
+Scripts: `data/3-ref-bib/extrair_referencias.py` e `estruturar_referencias.py`
 
 Para 54 dos estudos aprovados, as listas de referencias bibliograficas foram extraidas dos PDFs via Gemini e estruturadas em JSON com campos: raw, autor, titulo, ano, periodico, volume, issue, pages.
 
-Resultado: 54 JSONs em `data/3-referencias-bibliograficas/refs_por_estudo/`, totalizando 1.410 referencias.
+Resultado: 54 JSONs em `data/3-ref-bib/refs_por_estudo/`, totalizando 1.410 referencias.
 
 ### Matching de citacoes entre estudos
 
@@ -223,9 +223,11 @@ Script: `scripts/match_refs_to_studies.py`
 
 Para cada referencia de cada estudo, verifica se corresponde a outro estudo presente na lista de 118 papers (triagem). O matching usa:
 
-1. **Filtro por ano** — ano da referencia deve coincidir com ano do paper
-2. **Similaridade de titulo** — `rapidfuzz.token_sort_ratio >= 80%`, comparando com titulo do registro E titulo extraido pelo LLM (S1)
-3. **Verificacao de sobrenomes** — pelo menos 1 sobrenome em comum (normalizado via unidecode)
+1. **Filtro por ano** — duas faixas de tolerancia:
+   - Anos iguais: threshold >= 75% (`FUZZY_THRESHOLD`)
+   - Anos diferentes (±6 anos): threshold >= 90% (`YEAR_FLEX_THRESHOLD`), captura working papers citados pelo ano de publicacao diferente
+2. **Similaridade de titulo** — `rapidfuzz.token_sort_ratio`, comparando com titulo do registro E titulo extraido pelo LLM (S1)
+3. **Verificacao de sobrenomes** — pelo menos 1 sobrenome em comum (normalizado via unidecode), com fallback fuzzy (ratio >= 85%)
 4. **Auto-exclusao** — nao marca o proprio estudo citante como match
 
 Campos adicionados a cada referencia nos JSONs:
@@ -234,9 +236,9 @@ Campos adicionados a cada referencia nos JSONs:
 |-------|------|-----------|
 | `cita_estudo_aprovado` | bool | True se match encontrado |
 | `estudo_citado_pdf` | str/null | Arquivo PDF do estudo citado |
-| `match_score` | float/null | Score do token_sort_ratio (80-100) |
+| `match_score` | float/null | Score do token_sort_ratio (75-100) |
 
-Resultado: **64 citacoes cruzadas** encontradas em **21 dos 54 arquivos** de referencias.
+Resultado: **80 citacoes cruzadas** encontradas em **23 dos 54 arquivos** de referencias.
 
 ## Comando de importacao
 
@@ -259,7 +261,7 @@ python main.py --verbose search \
 - **PDFs de CAPES**: 26 de 26 baixados (100%).
 - **PDFs de SciELO**: 4 de 4 baixados (100%). Os 2 ultimos foram inicialmente classificados como "extras" e depois associados aos registros SciELO corretos.
 - **Analise LLM**: modelo Gemini 2.0 Flash, questionarios em 3 stages (`scripts/questionnaires/`). Checkpoint salvo em `_llm_checkpoint.json` para retomada.
-- **Matching de citacoes**: threshold de 80% no token_sort_ratio, combinado com verificacao de sobrenomes para evitar falsos positivos. Score medio dos matches: 93.
+- **Matching de citacoes**: duas faixas — threshold 75% para anos iguais, 90% para anos diferentes (±6), combinado com verificacao de sobrenomes. Captura working papers citados pelo ano de publicacao final.
 
 ## Trabalho pendente
 

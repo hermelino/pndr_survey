@@ -57,7 +57,7 @@ pndr_survey/
 │   │   ├── all_papers_llm_classification_edited.xlsx  # Classificacao LLM revisada
 │   │   ├── _llm_checkpoint.json   # Checkpoint da analise LLM (stages 1-3)
 │   │   └── build_verified_xlsx.py # Gera xlsx verificado a partir do checkpoint
-│   └── 3-referencias-bibliograficas/  # Referencias bibliograficas dos estudos
+│   └── 3-ref-bib/                   # Referencias bibliograficas dos estudos
 │       ├── extrair_referencias.py     # Extracao de refs dos PDFs via Gemini
 │       ├── estruturar_referencias.py  # Estruturacao de refs em JSON
 │       ├── referencias_consolidadas.txt
@@ -109,7 +109,7 @@ Busca manual nas 5 bases                   PDFs coletados (118)
 | 6 | Triagem final (53 aprovados, 65 rejeitados) | Concluido |
 | 7 | Consolidacao JSON (registros + LLM) | Concluido |
 | 8 | Extracao de referencias (54 estudos) | Concluido |
-| 9 | Matching de citacoes entre estudos (64 citacoes cruzadas) | Concluido |
+| 9 | Matching de citacoes entre estudos (80 citacoes cruzadas) | Concluido |
 | 10 | Artigo LaTeX | Em andamento |
 
 Detalhes da extracao: [docs/pipeline_extraction.md](docs/pipeline_extraction.md)
