@@ -79,6 +79,10 @@ docs/pipeline_extraction.md     → Metodologia e log de extracao
 2. Implementar uma etapa por vez.
 3. Testar cada modulo isoladamente antes de integrar.
 
+## Skills Disponiveis
+
+- `/propagate-update` — Diagnostica alteracoes no pipeline, planeja a propagacao para estagios downstream, executa com confirmacao do usuario e gera relatorio. Usar sempre que uma alteracao num estagio do pipeline precise ser propagada (nova extracao, novas duplicatas, mudanca de criterios, correcoes manuais, re-analise LLM). Definicao em `.claude/commands/propagate-update.md`.
+
 ## Dependencias
 
 ```

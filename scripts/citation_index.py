@@ -76,12 +76,13 @@ def is_published(study: dict) -> bool:
     }
     UNPUBLISHED_KEYS = {
         # Textos para Discussão / Working Papers (verificado)
-        "econpapers-2007-silva-resende-neto",     # IPEA TD 1259
         "econpapers-2011-resende",                # IPEA TD 1777
         "econpapers-2014-goncalves-soares-linhares",  # WP ANPEC
         "econpapers-2014-resende",                # IPEA TD 1918
-        "econpapers-2015-oliveira-terra-resende",  # IPEA TD
-        "econpapers-2015-resende-silva-filho",     # IPEA TD 2145
+        # Removidos (marcados como duplicatas de versões publicadas):
+        #   econpapers-2007-silva-resende-neto  → scopus-2009-silva-resende-neto
+        #   econpapers-2015-oliveira-terra-resende → scopus-2018-oliveira-terra-resende
+        #   econpapers-2015-resende-silva-filho → scopus-2018-resende-silva-filho
     }
 
     if key in PUBLISHED_KEYS:
