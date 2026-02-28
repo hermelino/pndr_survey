@@ -138,9 +138,9 @@ Cada pasta contem um `.ris` integrado (com data de extracao no nome) e um `.xlsx
 
 ### PDFs
 
-Todos os PDFs foram movidos para `data/2-papers/` (sem subpastas) e renomeados com a convencao `<base>-<ano>-<sobrenome1>-<sobrenome2>-<sobrenome3>.pdf`.
+Todos os PDFs estao em `data/2-papers/2-2-papers-pdfs/` e renomeados com a convencao `<base>-<ano>-<sobrenome1>-<sobrenome2>-<sobrenome3>.pdf`.
 
-Scripts de renomeacao: `data/2-papers/rename_pdfs*.py` e `rename_scopus*.py`.
+Scripts de renomeacao e verificacao: `data/2-papers/2-1-papers_scripts/`.
 
 | Base | Total | Baixados | Faltando | % |
 |------|-------|----------|----------|---|
@@ -153,15 +153,90 @@ Scripts de renomeacao: `data/2-papers/rename_pdfs*.py` e `rename_scopus*.py`.
 
 Controle detalhado: `data/2-papers/all_papers.xlsx` (planilha "Registros", colunas Baixado e Arquivo PDF).
 
-Script de verificacao: `data/2-papers/status_pdfs.py` (gera tabela resumo e lista registros faltantes).
-
 ### Dados processados
 
 | Arquivo | Conteudo |
 |---------|----------|
 | `data/1-records/processed/bib_records.json` | 137 registros normalizados (BibRecord) |
-| `data/1-records/processed/bib_screened.json` | Registros apos triagem |
+| `data/1-records/processed/bib_screened.json` | Registros apos triagem pre-LLM |
 | `data/1-records/processed/duplicates_removed.csv` | 9 duplicatas removidas (auditoria) |
+| `data/2-papers/_llm_checkpoint.json` | Checkpoint com resultados LLM (stages 1-3) para 118 papers |
+| `data/2-papers/all_papers_llm_classification.xlsx` | Classificacao LLM bruta (gerada automaticamente) |
+| `data/2-papers/all_papers_llm_classification_edited.xlsx` | Classificacao LLM revisada manualmente (triagem final) |
+| `data/2-papers/2-2-papers.json` | JSON enriquecido: registros + LLM + triagem (fonte principal) |
+
+## Analise LLM
+
+Analise via Google Gemini (modelo `gemini-2.0-flash`) em 3 estagios sequenciais, executada sobre os 118 PDFs coletados. Script: `scripts/run_llm_all_papers.py`.
+
+### Stage 1 — Triagem
+
+Identifica se o paper e estudo empirico sobre instrumentos da PNDR. Campos extraidos: tipo de trabalho, revista, titulo, autores, ano, instrumentos PNDR, metodologia, uso de econometria, questao-chave.
+
+### Stage 2 — Metodologia
+
+Extrai detalhes metodologicos: metodo econometrico, tipo de dados, variaveis dependentes e de controle, setor economico, area geografica, unidade de tempo/espaco, periodo amostral.
+
+### Stage 3 — Resultados
+
+Extrai resultados: efeito parcial, significancia, direcao do efeito, outros resultados, implicacoes, limitacoes, sugestoes.
+
+### Triagem final
+
+Apos a analise LLM, triagem manual em `all_papers_llm_classification_edited.xlsx`:
+
+| Resultado | Quantidade |
+|-----------|-----------|
+| APROVADO | 53 |
+| REJEITADO | 65 |
+| **Total** | **118** |
+
+Motivos de rejeicao: sem metodo econometrico, anterior a 2005, sem instrumentos PNDR, artigo fora do escopo, documento nao-cientifico.
+
+## Consolidacao JSON enriquecido
+
+Script: `scripts/merge_papers_to_json.py`
+
+Mescla tres fontes em um unico JSON (`data/2-papers/2-2-papers.json`):
+
+1. `all_papers_llm_classification_edited.xlsx` — triagem + classificacao LLM (S1/S2/S3)
+2. `all_papers.xlsx` — URL, resumo, tipo, palavras-chave
+3. `bib_records.json` — metadados completos das bases (abstract, volume, issue, pages, idioma)
+
+Para campos duplicados, prioridade: registros das bases > all_papers > LLM.
+
+Resultado: 118 papers com campos unificados, incluindo: metadados bibliograficos, resumo, palavras-chave, classificacao LLM em 3 stages, resultado da triagem e motivo de exclusao.
+
+## Extracao e matching de referencias
+
+### Extracao de referencias
+
+Scripts: `data/3-referencias-bibliograficas/extrair_referencias.py` e `estruturar_referencias.py`
+
+Para 54 dos estudos aprovados, as listas de referencias bibliograficas foram extraidas dos PDFs via Gemini e estruturadas em JSON com campos: raw, autor, titulo, ano, periodico, volume, issue, pages.
+
+Resultado: 54 JSONs em `data/3-referencias-bibliograficas/refs_por_estudo/`, totalizando 1.410 referencias.
+
+### Matching de citacoes entre estudos
+
+Script: `scripts/match_refs_to_studies.py`
+
+Para cada referencia de cada estudo, verifica se corresponde a outro estudo presente na lista de 118 papers (triagem). O matching usa:
+
+1. **Filtro por ano** — ano da referencia deve coincidir com ano do paper
+2. **Similaridade de titulo** — `rapidfuzz.token_sort_ratio >= 80%`, comparando com titulo do registro E titulo extraido pelo LLM (S1)
+3. **Verificacao de sobrenomes** — pelo menos 1 sobrenome em comum (normalizado via unidecode)
+4. **Auto-exclusao** — nao marca o proprio estudo citante como match
+
+Campos adicionados a cada referencia nos JSONs:
+
+| Campo | Tipo | Descricao |
+|-------|------|-----------|
+| `cita_estudo_aprovado` | bool | True se match encontrado |
+| `estudo_citado_pdf` | str/null | Arquivo PDF do estudo citado |
+| `match_score` | float/null | Score do token_sort_ratio (80-100) |
+
+Resultado: **64 citacoes cruzadas** encontradas em **21 dos 54 arquivos** de referencias.
 
 ## Comando de importacao
 
@@ -183,10 +258,10 @@ python main.py --verbose search \
 - **PDFs de Scopus**: 16 de 16 baixados (100%).
 - **PDFs de CAPES**: 26 de 26 baixados (100%).
 - **PDFs de SciELO**: 4 de 4 baixados (100%). Os 2 ultimos foram inicialmente classificados como "extras" e depois associados aos registros SciELO corretos.
+- **Analise LLM**: modelo Gemini 2.0 Flash, questionarios em 3 stages (`scripts/questionnaires/`). Checkpoint salvo em `_llm_checkpoint.json` para retomada.
+- **Matching de citacoes**: threshold de 80% no token_sort_ratio, combinado com verificacao de sobrenomes para evitar falsos positivos. Score medio dos matches: 93.
 
 ## Trabalho pendente
 
-1. Executar triagem pre-LLM: `python main.py screen`
-3. Executar analise LLM (Stages 1-3): `python main.py analyze`
-4. Exportar resultados: `python main.py export`
-5. Integrar resultados no artigo LaTeX
+1. Integrar resultados no artigo LaTeX
+2. Gerar figuras de analise (rede de citacoes, distribuicao temporal, etc.)

@@ -1,0 +1,122 @@
+# Estudo #55
+# Oliveira, Guilherme Resende; Resende, Guilherme Mendes; Oliveira, Felipe Resende (2017)
+# Avaliação de (in)eficiência do programa empresarial do Fundo Constitucional de Financiamento do Centro-Oeste (FCO) em Goiás
+# Fonte: econpapers-2017-oliveira-resende-oliveira.pdf
+======================================================================
+
+AFONSO, A.; FERNANDES, S. Measuring Local Government Spending Efficiency: DEA Evidence 
+for the Lisbon Region. Regional Studies, v. 40, n. 1, p. 39-53, 2006. 
+ALMEIDA, M. A.; SILVA, A. M.; RESENDE, G. M. Uma análise dos fundos Constitucionais de 
+Financiamento do Nordeste (FNE), Norte (FNO) e Centro-oeste (FCO). IPEA, Brasília, 2006. 
+(Texto para discussão, n. 1206) 
+ALVARENGA, G. V.; PIANTO, D. M.; ARAÚJO, B. A. Impactos dos fundos setoriais nas empresas: 
+novas perspectivas a partir da função dose-resposta. Confederação Nacional da Indústria - Prêmio 
+CNI de Economia. 2012. 
+BANKER, R. D.; CHARNES, A.; COOPER, W. W. Some models for estimating technical and scale 
+inefficiencies in data envelopment analysis. Management Science, v. 30, n. 9, p. 1370-1382, 1984. 
+BENEGAS, M.; SILVA, F. G. Estimação da Eficiência Técnica do SUS nos Estados Brasileiros na 
+Presença de Insumos Não Discricionários. Revista Brasileira de Economia, Rio de Janeiro, v. 68 
+n. 2, p. 171–196, 2014. 
+BOUERI, R.; ROCHA, F.; RODOPOULOS, F. Avaliação da Qualidade do Gasto Público e 
+Mensuração da Eficiência. Brasília: Secretaria do Tesouro Nacional, 2015. 
+BRASIL. Ministério da Integração Nacional – MI. Fundos regionais e incentivos fiscais: contribuem 
+para a redução das desigualdades regionais e ajudam o Brasil a crescer. Publicação Anual – 
+2012. 
+BRASIL. Ministério da Integração Nacional - MI. Política Nacional de Desenvolvimento Regional – 
+PNDR. Sumário executivo, 2007. 
+CAZALS, C.; FLORENS, J. P.; SIMAR, L. Nonparametric Frontier Estimation: A Robust Approach. 
+Journal of Econometrics, v. 106, n. 1, p. 1–25, 2002. 
+CHARNES, A; COOPER, W. W.; RHODES, E. Measuring the efficiency of decision making units. 
+European Journal of Operational Research, v. 2, n. 6, p. 429-444, 1978. 
+CRAVO, T. A.; RESENDE, G. M.; CARVALHO, A. Y. The Impact of Brazilian Regional 
+Development Funds on Regional Economic Growth: A spatial panel approach. In: Annals of 54th 
+ERSA Congress, 26-29, Saint Petersburg, Russia, August, 2014. 
+DEPRINS, D., SIMAR, L., TULKENS, H. Measuring labor inefficiency in post o:ces. In: Marchand, 
+M., Pestieau, P., Tulkens, H. (Eds.). The Performance of Public Enterprises: Concepts and 
+Measurements. Amsterdam, North-Holland, pp. 243–267, 1984. 
+FARRELL, M. The measurement of productive efficiency. Journal of the Royal Statistical Society, 
+Series A, v. 120, n. 3, p. 253-290,1957.  
+FERREIRA, M. A.; BRAGA, M. J. Eficiência das Sociedades Cooperativas e de Capital na Indústria 
+de Laticínios. Revista Brasileira de Economia, v. 61, n. 2, p. 231–244, 2007. 
+FRIED, H.; LOVELL, C. A. K.; SCHMIDT, S. S. Efficiency and Productivity. In: FRIED, H.; 
+LOVELL, C. A. K.; SCHMIDT, S. S. The Measurement of Productive Efficiency and Productivity 
+Growth. Oxford University Press, 2008. 
+GONÇALVES, F. O.; FRANÇA, M. T. Eficiência na Provisão de Educação Pública Municipal: Uma 
+Análise em Três Estágios dos Municípios Brasileiros. Estudos Econômicos, v. 43, n. 2, p. 271-
+299, 2013. 
+
+Guilherme Resende Oliveira, Guilherme Mendes Resende, Felipe Resende Oliveira 
+ 
+Revista Brasileira de Estudos Regionais e Urbanos, vol. 11, n. 1, pp. 93-110, 2017 
+109
+IPEA - Instituto de Pesquisa Econômica Aplicada. Carta de Conjuntura, n. 18, Março, 2013. 
+KARKAZIS, J.; THANASSOULIS, E. Assessing the Effectiveness of Regional Development 
+Policies in Northern Greece Using Data Envelopment Analysis. Socio-Economic Planning 
+Sciences, v. 32, n. 2, p. 123-137, 1998. 
+LIMA, F. S.; MARINHO, E. Segurança Pública no Brasil: Eficiência e Defasagem Tecnológica. In: 
+Anais do 42º Encontro Nacional de Economia (Anpec), Natal-RN, 2014. 
+LIU, S.; LU, Y.; LU, W.; LIN, Y. A survey of DEA applications. Omega - The International Journal 
+of Management Science, v. 41, n. 5, p. 893–902, 2013. 
+MACEDO, F. C.; MATTOS, E. N. O papel dos fundos constitucionais de financiamento no 
+desenvolvimento regional brasileiro. Ensaios FEE, v. 29, n. 2, p. 355-384, 2008. 
+MACMILLAN, W. The estimation and applications of multi-regional economic planning models 
+using data environment analysis. Papers of Regional Science Association, v. 60, n. 1, p. 41-57, 
+1986. 
+MARTIC, M.; SAVIC, G. An application of DEA for comparative analysis and ranking of regions in 
+Serbia with regards to social-economic development. Jornal of Operational Research, v. 132, n. 
+2, p. 343-356, 2001. 
+OLIVEIRA, G. R.; MENEZES, R. T.; RESENDE, G. M. Efeito dose resposta do Fundo 
+Constitucional de Financiamento do Centro-Oeste (FCO) no Estado de Goiás. IPEA, Brasília, 
+2015. (Texto para discussão, n. 2133) 
+RESENDE, G. M. Avaliação dos impactos econômicos do Fundo Constitucional de Financiamento 
+do Nordeste entre 2004 e 2010. IPEA, Brasília, 2014b. (Texto para discussão, n. 1973) 
+RESENDE, G. M. Micro and macro impacts of regional development policies: the case of the FNE 
+industrial Loans in Brazil, 2000-2006. Regional Studies, v. 48, n. 4, p. 646-664, 2014a. 
+RESENDE, G. M.; CRAVO, T.; PIRES, M. Avaliação dos impactos econômicos do Fundo 
+Constitucional do Centro-Oeste (FCO) entre 2004 e 2010. IPEA, Brasília, 2014. (Texto para 
+discussão, n. 1969) 
+RESENDE, G. M.; NETO, A. M.; MAGALHÃES, J. C.; SOUSA, A. G. Monitoramento e avaliação 
+dos instrumentos da política nacional de desenvolvimento regional: uma proposta de avaliação 
+continuada. In: MONASTERIO, L. M.; NERI, M. C.; SOARES, S. S. Brasil em desenvolvimento 
+2014: Estado, planejamento e políticas públicas. Brasília: IPEA, 2014. 
+RESENDE, G. M.; SILVA, D.; FILHO, L. Avaliação dos Efeitos Econômicos dos Fundos 
+Constitucionais de Financiamento do Nordeste, do Norte e do Centro-Oeste: uma análise por 
+tipologia da política nacional de desenvolvimento regional entre 1999 e 2011. IPEA, 2015. (Texto 
+para discussão, n. 2145) 
+ROMAN, M; VASILESCU, M. Romanian labour market efficiency analysis. Mathematical 
+Applications in Science and Mechanics, p. 81-85, 2013. 
+RUGGIERO, J. On the measurement of technical efficiency in the public sector. European Journal 
+of Operational Research, v. 90, n. 3, p. 553–565, 1994. 
+SCHAFFER, A.; SIMAR, L.; RAULAND, J. Decomposing regional efficiency. University of the 
+State of Baden-Wuerttemberg and National Laboratory of the Helmholtz Association, October, 
+2010. (Working Paper Series in Economics, n. 10) 
+SILVA,A. M.; RESENDE, G. M.; SILVEIRA NETO, R. Eficácia do gasto público: uma avaliação 
+do FNE, FNO e FCO. Estudos Econômicos, v. 39, n. 1, p. 89-125, 2009. 
+
+Avaliação de (in)eficiência do programa empresarial do Fundo Constitucional de Financiamento do Centro-
+Oeste (FCO) em Goiás 
+ 
+Revista Brasileira de Estudos Regionais e Urbanos, vol. 11, n. 1, pp. 93-110, 2017 
+110
+SIMAR, L.; WILSON, P. W. Statistical Inference in Nonparametric Frontier Models: Recent 
+Developments and Perspectives. In: FRIED, H.; LOVELL, C. A. K.; SCHMIDT, S. S. The 
+Measurement of Productive Efficiency and Productivity Growth. Oxford University Press, 2008. 
+SOARES, R.; LINHARES, F.; GONÇALVES, M.; VIANA, L. Fondo Constitucional de 
+Financiamiento del Nordeste del Brasil: efectos diferenciados sobre el crecimiento económico de 
+los municipios, Revista de la CEPAL, v. 113, p. 183–201, 2014. 
+SOARES, R.; SOUSA, J.; PEREIRA NETO, A. Avaliação de impactos do FNE no emprego, na 
+massa salarial e no salário médio em empreendimentos financiados. Revista Econômica do 
+Nordeste, v. 40, n. 1, p. 217-234, 2009. 
+SOUSA, M. C. S.; ARAÚJO, P. L.; TANNURI-PIANTO, M. E. Residual and Technical Tax 
+Efficiency Scores for Brazilian Municipalities: a Two-Stage Approach. Estudos Econômicos, São 
+Paulo, v. 42, n.1, p. 43-74, 2012. 
+SOUSA, M. C. S.; CRIBARI-NETO, F.; STOSIC, B. Explaining DEA Technical Efficiency Scores 
+in an Outlier Corrected Environment: The Case of Public Services in Brazilian Municipalities. 
+Brazilian Review of Econometrics, v. 25, n. 2, p. 287–313, 2005. 
+SOUSA, M. C. S.; SOUZA, J. C. Escores robustos de eficiência e seus determinantes: o caso das 
+agências do banco do Brasil. Pesquisa e Planejamento Econômico, v. 44, n. 1, 2014. 
+YEUNG, L. L.; AZEVEDO, P. F. Além dos “achismos” e das evidências anedóticas: medindo a 
+eficiência dos tribunais brasileiros. Economia Aplicada, v. 16, n. 4, p. 643-663, 2012. 
+YOUNG, C. E.; ROCHA, J. Q. Relatório de pesquisa: avaliação dos critérios de sustentabilidade dos 
+financiamentos apoiados pelos Fundos Constitucionais Brasileiros. Documento de proyecto. 
+Comisión Económica para América Latina y el Caribe (CEPAL). Naciones Unidas, 2009.

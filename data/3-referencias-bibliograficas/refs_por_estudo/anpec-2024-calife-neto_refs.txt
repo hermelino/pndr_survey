@@ -1,0 +1,155 @@
+# Estudo #100
+#  (2024)
+# More GDP and Revenue, but no Social Development? The ...
+# Fonte: anpec-2024-calife-neto.pdf
+======================================================================
+
+ABADIE, A., DIAMOND, A. & HAINMULLER, J., Synthetic control methods for 
+comparative case studies: estimating the effect of California’s tobacco control program. 
+Journal of the American Statistical Association, 105(490): 493–505, 2010. 
+ABADIE, A., GARDEAZABAL, J., The economic costs of conflict: a case study of the 
+Basque Country. American Economic Review, Nashville, 93(1), 113–132, 2003. 
+
+ABADIE, A., DIAMOND, A. & HAINMULLER, J., Synth: an R package for synthetic 
+control methods in comparative case studies. Journal of Statistical Software, 43(13), p. 
+1-17, 2011. 
+Automotive Business.  FCA inaugura fábrica da Jeep em Pernambuco, Automotive 
+Business, 2015. Disponível em <https://automotivebusiness.com.br/pt/posts/noticias/fca-
+inaugura-fabrica-da-jeep-em-pernambuco/> Acesso em: 23/01/2024 
+Automotive Business.  Fiat Pernambuco tem três carros confirmados, Automotive 
+Business, 2014. Disponível em <https://automotivebusiness.com.br/pt/posts/noticias/fiat-
+pernambuco-tem-tres-carros-confirmados/> Acesso em: 23/01/2024 
+Automotive Business.  FCA abre 3° turno em Pernambuco e Temer prorroga 
+incentivo 
+ao 
+Nordeste, 
+Automotive 
+Business, 
+2014. 
+Disponível 
+em 
+<https://automotivebusiness.com.br/pt/posts/noticias/fca-abre-3deg-turno-em-
+pernambuco-e-temer-prorroga-incentivo-ao-nordeste/> Acesso em: 23/01/2024 
+Braga, Paulo Ricardo. “FIAT 35 anos: Pernambucanização - Revolução Mineira chega a 
+Pernambuco.” Automotive Business, 1 de agosto de 2011, 44-59. 
+BUSSO, M., GREGORY, J., and KLINE, P. Assessing the incidence and efficiency of 
+a pro- minent place based policy. American Economic Review, 103(2):897–947, 2013. 
+BRAKMAN, S., GARRETSEN, H., MARREWIJK, C. V., An Introduction to 
+Geographical and Urban Economics: A Spiky World, 3 ed., Padstow, Cambridge 
+University Press, 2020. 
+CORBI, R.; PAPAIOANNOU, E.; SURICO, P. Regional transfer multipliers. The 
+Review of Economic Studies, Oxford University Press, v. 86, n. 5, p. 1901–1934, 2019. 
+CRISCUOLO C., R. MARTIN, H. OVERMAN, J. VAN REENEN (2012), The Causal 
+Effects of an Industry Policy, NBER Working Paper 17842, Cambridge, MA. 
+CRISCUOLO, C., MARTIN, R., OVERMAN, H., REENEN, J. V., Some Causal Effects 
+of an Industrial Policy, American Economic Review: 109(1): 48-85, 2019. 
+DA MATA, D., RESENDE, G. Changing the climate for banking: The economic effects 
+of credit in a climate-vulnerable area. Journal of Development Economics. 146, 2018. 
+Diário de Pernambuco. Sudene tenta articular acordo entre Fiat e prefeitura de 
+Goiana, 
+Diário 
+de 
+Pernambuco, 
+2015. 
+Disponível 
+em 
+<https://www.diariodepernambuco.com.br/noticia/economia/2015/11/sudene-tenta-
+articular-acordo-entre-fiat-e-prefeitura-de-goiana.html> Acesso em: 06/02/2024  
+DURANTON, G., PUGA, D. (2004), Micro-foundations of Urban Agglomeration 
+Economies, in: J. V. Henderson ad J, F, Thisse (eds.), Handbook of Regional and Urban 
+Economics, Vol. 4, Elsevier, Amsterdam. 
+FONSECA, L. D. O. (2023). A importância do FPM para os impostos municipais e 
+serviços urbanos no Brasil: uma análise empírica. Tese de Doutorado, PIMES, UFPE. 
+GIVORD, P., RATHELOT, R., SILLARD, P., Place-based tx exemptions and 
+displacement effects: An evaliation of the Zones Franches Urbaines program, Regional 
+Science and Urban Econmics, 43(1): 151-163, 2013. 
+GONÇALVES, F. O.; ALMEIDA, A. T. C. e BARBOSA, G. B. (2018). Efetividade dos 
+incentivos fiscais à indústria sobre o volume de empregos e a massa salarial: um estudo 
+do fundo de apoio ao desenvolvimento industrial da paraíba. Working Paper. 
+HASAN, R., YI JIANG, Y., RAFOLS, R.M., Place-based preferential tax policy and 
+industrial development: Evidence from India’s program on industrially backward 
+districts, Journal of Development Economics, Volume 150, 2021. 
+IRFFI, G.; ARAÚJO, J. I. da S.; BASTOS, F. de S. Efeitos heterogêneos do Fundo 
+Constitucional de Financiamento do Nordeste na região do Semiárido. In: FÓRUM 
+BANCO DO NORDESTE DE DESENVOLVIMENTO; ENCONTRO REGIONAL DE 
+
+ECONOMIA, 22/21, 2016, Fortaleza. Anais Fortaleza: Banco do Nordeste do 
+Brasil/Anpec, 2014. 
+KLINE, P., MORETTI, E., Local Economic Development, Agglomeration Economies 
+and the Big Push: 100 years of Evidence from the Tenessee Valley Authority. The 
+Quarterly Journal of Economics, 129: 275-331, 2014. 
+LADOSKY, M. H. G., A Indústria Automobilística vista do espaço local: a experiência 
+da Jeep (FCA) em Pernambuco e de outras montadoras, 21 ed., Campina Grande, 
+EDUEPB, 2021. 
+LITSCHIG, S.; MORRISON, K. M. The impact of intergovernmental transfers on 
+education outcomes and poverty reduction. American Economic Journal: Applied 
+Economics, v. 5, n. 4, p. 206–40, 2013. 
+MORETTI, E. (2010). Local multipliers. American Economic Review, 100(2), 373-377. 
+Motor 1. Jeep, Fiat e Ram: fábrica de Goiana (PE) chega a 1,5 milhão de unidades, Motor 
+1, 2023. Disponível em <https://motor1.uol.com.br/news/688476/fabrica-goiana-
+producao-veiculos-
+brasil/#:~:text=F%C3%A1brica%20Goiana%20%2D%20Stellantis&text=Considerada
+%20uma%20das%20mais%20modernas,%2C%20sendo%2085%25%20deles%20perna
+mbucanos.> Acesso em: 06/02/2024. 
+NEUMARK, D. and H. SIMPSON (2015). Place-based policies. In Handbook of 
+regional and urban economics, Volume 5, pp. 1197–1287. Elsevier 
+O Globo. Grupo Fiat inaugura oficialmente sua fábrica em Goiana, Pernambuco, O 
+Globo, 2015. Disponível em <https://oglobo.globo.com/economia/carros/grupo-fiat-
+inaugura-oficialmente-sua-fabrica-em-goiana-pernambuco-16005689> 
+Acesso 
+em: 
+23/01/2024 
+OLIVEIRA, T. G. (2020) Impactos de Políticas de Apoio a Atividades Produtivas no 
+Brasil: uma Análise Empírica, Tese de Doutorado, Universidade Federal de Pernambuco, 
+Recife. 
+PELLEGRINI, G., MUCCIGROSSO, T., Do subsidized new firms survive longer? 
+Evidence from a counterfactual approach, Regional Studies, Taylor & Francis Journals, 
+vol. 51(10): 1483-1493, 2017. 
+PORTER, M. E., Location, Competition, and Economic Development: Local Clusters in 
+a Global Economy. Economic Development Quarterly, 14(1): 15-34, 2000. 
+RESENDE, G. M. (2012). Micro e macroimpactos de políticas de desenvolvimento 
+regional: O caso dos empréstimos do fne-industrial no estado de ceará. Technical report, 
+Texto para Discussão, Instituto de Pesquisa Econômica Aplicada (IPEA). 
+RESENDE, G. M. (2014a). Avaliação dos impactos econômicos do fundo constitucional 
+de financiamento do nordeste entre 2004 e 2010. Technical report, Texto para Discussão, 
+Instituto de Pesquisa Econômica Aplicada (IPEA). 
+RESENDE, G. M. (2014b). Measuring micro-and macro-impacts of regional 
+development policies:The case of the northeast regional fund (fne) industrial loans in 
+brazil, 2000-2006. Regional Studies. 
+Riato, Giovanna; Kutney, Pedro; Reis, Suely.” FCA abre fábrica mais moderna do mundo 
+no Brasil.” Automotive Business, 1 de junho de 2015, 6-13. 
+RIATO, Giovanna. Revolução Social em Goiana: em região sem tradição industrial, a 
+FCA inovou para recrutar e investiu em treinamento. Revista Automotive Business, 
+Edição Especial, junho de 2015. 
+SASSO, M., VARELA, P. S., RIGHETTO, P. Distribuição da cota-parte do ICMS: como 
+pode ser utilizada para promover melhores resultados na educação? 26: 1-25, 2021. 
+SHENOY, A., Regional development through place-based policies: Evidence from a 
+spatial discontinuity. Journal of Development Economics, 130:173–189, 2018. 
+
+SILVA, A. C. J. “Políticas recentes de industrialização do Nordeste brasileiro: o caso do 
+polo automotivo de Goiana-PE. 2016. 93 f. Monografia (Graduação em Ciências 
+Econômicas) – Universidade Federal da Paraíba, João Pessoa. 2016. 
+SOARES, R. B., LINHARES, F. C., GONÇALVES, M. F., e VIANA, L. F. G. (2014). 
+Fondo constitucional de financiamiento del nordeste del brasil: efectos diferenciados 
+sobre el crecimiento económico de los municipios. Revista CEPAL. 
+UNIDO. How Industrial Development Matters to the Well-Being of the Population: 
+Some 
+Statistical 
+Evidence. 
+UNIDO, 
+2020, 
+Disponível 
+em: 
+< 
+https://stat.unido.org/content/publications/how-industrial-development-matters-to-the-
+well-being-of-the-population> Acesso em: 24/01/2024 
+UOL. Reforma tributária vira palco de disputa bilionária entre montadoras, UOL, 
+2023. 
+Disponível 
+em: 
+<https://economia.uol.com.br/noticias/redacao/2023/08/16/reforma-tributaria-vira-
+palco-de-briga-bilionaria-entre-montadoras.htm> Acesso em 02/02/2024 
+WANG, J., The economic impact of special economic zones: Evidence from chinese 
+municipalities. Journal of development economics, 101:133–147, 2013. 
+VAN DIJK, J. J. (2017). Local employment multipliers in US cities. Journal of 
+Economic Geography, 17(2), 465-487.

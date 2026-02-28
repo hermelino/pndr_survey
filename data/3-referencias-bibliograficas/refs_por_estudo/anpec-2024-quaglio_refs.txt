@@ -1,0 +1,114 @@
+# Estudo #106
+#  (2024)
+# Área 1 – Economia Regional Análise Espacial do Fundo ...
+# Fonte: anpec-2024-quaglio.pdf
+======================================================================
+
+AQUINO, J. R. de. Agricultura Familiar no Nordeste e suas perspectivas. Brasil Debate, 24 
+jul. 2023. Disponível em: https://brasildebate.com.br/agricultura-familiar-no-nordeste-e-suas-
+perspectivas. Acesso em 16 maio. 2024.  
+AQUINO, J. R. de; ALVES, M. O; VIDA, M. F. de. Agricultura Familiar no Nordeste: Um 
+breve panorama dos seus ativos produtivos e da sua importância regional. Boletim regional, 
+urbano e ambiental. Edição Especial Agricultura, nº 23, IPEA. Brasília/DF, 2020. 
+AQUINO, J. R. de; SCHNEIDER, S. O Pronaf e o desenvolvimento rural brasileiro: avanços, 
+contradições e desafios para o futuro. In: GRISA, C.; SCHNEIDER, S. (Org.). Políticas 
+públicas de desenvolvimento rural no Brasil. Porto Alegre, RS: Editora da UFRGS, 2015. 
+p. 53-81, 2015. 
+ARAÚJO, T. B. Nordeste, Nordestes: que Nordeste? In: Ensaios sobre o desenvolvimento 
+brasileiros: heranças e urgências. pag. 165-197, Rio de Janeiro: Revan: Fase, 2000. 
+BANCO CENTRAL. Manual de Crédito Rural - MCR. Atualização até 10 de janeiro de 
+2024. Bacen. Brasília/DF. https://www3.bcb.gov.br/mcr. Acesso em 15 mar. 2024. 
+BANCO CENTRAL. Matriz de Dados do Crédito Rural - Crédito Concedido. Disponível 
+em: https://www.bcb.gov.br/estabilidadefinanceira/micrrural. Acesso em 15 abr. 2024. 
+BANCO DO NORDESTE. Relatório de Gestão do FNE 2023. Disponível em 
+<https://bnb.gov.br/etene/relatorios-fne>. Acesso em 06 jun. 2024. 
+BATISTA, H. R.; NEDER, H. D. Efeitos do Pronaf sobre a pobreza rural no Brasil (2001-
+2009). Revista de Economia e Sociologia Rural, v. 52, p. 147-166, 2014. 
+BIANCHINI, V. Vinte anos do Pronaf, 1995-2015: avanços e desafios. Brasília: SAF/MDA, 
+2015.  
+BITTENCOURT, G. A. Abrindo a caixa preta: o financiamento da agricultura familiar 
+no Brasil. 2003. Dissertação Mestrado. Instituto de Economia da Universidade Estadual de 
+Campinas – UNICAMP. Campinas: 2003. 
+CÂMARA, G.; A. M. V. MONTEIRO; S. DRUCK e M. S. CARVALHO. Análise Espacial e 
+Geoprocessamento. In: Druck, S.; Carvalho, M.S.; Câmara, G.; Monteiro, A.V.M. (eds.). 
+Análise Espacial de Dados Geográficos. Brasília, EMBRAPA, 2004 (ISBN: 85-7383-260-
+6). Capítulo 1. Disponível em: https://www.dpi.inpe.br/gilberto/livro/analise/. Acesso em: 03 
+abr. 2024.  
+CARVALHO, M. S.; CÂMARA, G.; CRUZ, O. G.; CORREA, V. Análise de Dados de Área. 
+In: Druck, S.; Carvalho, M.S.; Câmara, G.; Monteiro, A.V.M. (eds.). Análise Espacial de 
+Dados Geográficos. Brasília, EMBRAPA, 2004 (ISBN: 85-7383-260-6). Capítulo 5. 
+Disponível em: https://www.dpi.inpe.br/gilberto/livro/analise/. Acesso em: 03 abr. 2024. 
+CASTRO, C. N. de; FREITAS, R. E. Agricultura Familiar Nordestina, Políticas Públicas e 
+Segurança Alimentar. Texto para Discussão nº 2708. Instituto de Pesquisa Econômica 
+Aplicada, Brasília: Rio de Janeiro, Ipea, 2021. 
+DENT, B. D.; TORGUSON, J.; HODLER, T.  Cartography: Thematic Map Design. 6 ed. 
+McGraw-Hill, Georgia, 2009. 
+ELIAS, L. P. Sistemas Alimentares Sustentáveis e Agricultura Familiar no contexto do 
+desenvolvimento recente do estado de Santa Catarina. 2020. 233P. Tese. (Doutorado em 
+
+Desenvolvimento Econômico) – Instituto de Economia, Universidade Estadual de Campinas, 
+Campinas, SP, 2020. 
+FOSSÁ, J. L.; MATTE, A.; MATTEI, L. F. A trajetória do Pronaf: análise das operações de 
+crédito nos municípios brasileiros entre 2013 e 2020. Extensão Rural, v. 29, n. 1, p. e1-e1, 
+2022. 
+GRISA, C.; WESZ JUNIOR, V. J.; BUCHWEITZ, V. D. Revisitando o Pronaf: velhos 
+questionamentos, novas interpretações. Revista de Economia e Sociologia Rural, v. 52, n. 2, 
+p. 323-346, 2014.  
+GUANZIROLI, C. E. Pronaf dez anos depois: resultados e perspectivas para o 
+desenvolvimento rural. Revista de economia e sociologia rural, v. 45, p. 301-328, 2007.  
+GUANZIROLI, C. E.; BUAINAIN, A. M.; DI SABBATO, A. Dez anos de evolução da 
+agricultura familiar no Brasil: (1996 e 2006). Revista de Economia e Sociologia Rural, v. 
+50, n. 2, p. 351-370, 2012. 
+IBGE. Censo Agropecuário 2017. Disponível em: https://sidra.ibge.gov.br/pesquisa/censo-
+agropecuario/censo-agropecuario-2017. Acesso em 15 mar. 2024. 
+LASCOUMES, Pierre; LE GALÈS, Patrick. A Ação Pública Abordada pelos seus 
+Instrumentos. Revista Pós Ciências Sociais, v. 9, n. 18, abr. 2013. Disponível em: 
+https://periodicoseletronicos.ufma.br/index.php/rpcsoc/article/view/1331. Acesso em: 5 jun. 
+2024.  
+LOPES, G. C. L. A. Estrutura Produtiva do Nordeste no século XXI: dinâmica regional e 
+inserção externa. 2023. 228p. Tese. (Doutorado em Desenvolvimento Econômico) – Instituto 
+de Economia, Universidade Estadual de Campinas, Campinas, SP, 2023. 
+LOPES, G. C. L. de A.; MACEDO, F. C.; MONTEIRO NETO, A. Propostas Recentes de 
+Mudanças nos Fundos Constitucionais de Financiamento: em curso a desfiguração 
+progressiva da Política Nacional de Desenvolvimento Regional (PNDR). Revista Brasileira 
+de Gestão e Desenvolvimento Regional, Taubaté/SP, v. 17, n.3, p-411-423, 2021. 
+MACEDO, F. C.; PIRES, M. J. S; SAMPAIO, D. P. 25 anos de Fundos Constitucionais de 
+Financiamento no Brasil: avanços e desafios à luz da PNDR. EURE-Revista 
+Latinoamericana de Estudios Urbanos Regionales, v. 43, p. 257-277, 2017. 
+MATTEI, L. Impactos do Pronaf: análise de indicadores. Brasília – Ministério do 
+Desenvolvimento Agrário, Núcleo de Estudos Agrários Desenvolvimento Rural, Séries de 
+Estudos n. 11, 2005. 
+MONTEIRO NETO, A.; MACEDO, F. C. de; SILVA, R. de O. BNB e o desenvolvimento do 
+Nordeste brasileiro: reflexões sobre sua atuação recente, prospecções de atuações futuras. In: 
+VALENTE JUNIOR, A. S.; ALVES, M. O.; SANTOS, C. R. C. dos. (Org.). Banco do 
+Nordeste do Brasil: 70 anos de contribuição para o desenvolvimento regional. Fortaleza: 
+BNB, 2022. 
+PEDROSO. M. T. M. Experiências internacionais com a agricultura familiar e o caso 
+brasileiro: O desafio da nomeação e suas implicações práticas. In: BUAINAIN, Antônio 
+Márcio, ALVES, Eliseu Alves; SILVEIRA, José Maria da; NAVARRO, Zander (Editores). O 
+Mundo Rural no Brasil do Século 21: A formação de um novo padrão agrário e agrícola. 
+Brasília, Embrapa, 2014, p. 761 - 792. 
+PIRES, M. J. S.; QUAGLIO, G. M.; VASCONCELOS, R. R. A Metamorfose do capital em 
+Mato Grosso: heterogeneidades e perspectivas sobre o fundo constitucional de financiamento 
+
+do Centro-Oeste nas regiões imediatas (2002-2018). Texto para discussão. Instituto de 
+Pesquisa Econômica Aplicada. Brasília: Rio de Janeiro: Ipea, 2022. 
+RODRIGUES, G. M. O Pronaf na Zona da Mata Mineira: efeitos nos PIBs total e setorial dos 
+municípios. Revista de Economia e Sociologia Rural, v. 57, n. 1, p. 29-48, 2019  
+SILVA, R. de O.; MONTEIRO NETO, A. Estimativas do investimento microrregional por 
+meio de variáveis proxies de crédito público: fundos constitucionais de financiamento e 
+BNDES (2002-2019). Instituto de Pesquisa Econômica Aplicada. Brasília: Rio de Janeiro: 
+Ipea, 2022. 
+SECCHI, Leonardo. Políticas públicas: conceitos, esquemas de análise, casos práticos. São 
+Paulo: Cengage Learning, 2011. 
+SILVA, R. M. A. da et al. Características produtivas e socioambientais da agricultura familiar 
+no Semiárido brasileiro: evidências a partir do Censo Agropecuário de 2017. 
+Desenvolvimento e Meio Ambiente, v. 55, p. 314-338, 2020.  
+SOUZA, P. M. et al. Diferenças regionais de tecnologia na agricultura familiar no Brasil. 
+Revista de Economia e Sociologia Rural, v. 57, p. 594-617, 2019. 
+TYNER, J. A. Principles of map design. New York: Guilford Press, 2010.  
+VALADARES, A. O Programa Nacional de Fortalecimento da Agricultura Familiar (Pronaf): 
+uma revisão bibliográfica (2009-2019). Texto para Discussão, n. 2706. Instituto de Pesquisa 
+Econômica Aplicada. Brasília: Rio de Janeiro: Ipea 2021. 
+WESZ JUNIOR, V. J. O Pronaf pós-2014: intensificando a sua seletividade?. Revista grifos, 
+v. 30, n. 51, p. 89-113, 2021.

@@ -1,0 +1,51 @@
+# Estudo #20
+# Ricardo Brito Soares, Jânia Maria Pinho Sousa, Antonio Pereira Da Silva Neto (2017)
+# Avaliação de impacto do FNE no emprego, na massa salarial e no salário médio em empreendimentos financiados
+# Fonte: capes-2017-soares-sousa-neto.pdf
+======================================================================
+
+BECKER, S. O.; ICHINO, A. Estimation of average 
+treatment effects based on propensity score. The Stata 
+Journal 2, v. 4, p. 358-377, 2002.
+BRASIL. Ministério da Integração Nacional. 
+Documento: avaliações de desempenho dos Fundos 
+Constitucionais de Financiamento (FCO, FNE e FNO). 
+Brasília, DF, 2008.
+DEHEJIA, R. H.; WAHBA, S. Propensity score 
+matching methods for nonexperimental causal studies. 
+The Review of Economics and Statistics, v. 84, n. 1, 
+p. 151-161, 2002.
+DUARTE, G. B.; SILVEIRA NETO, R. M. Avaliando o 
+impacto do programa bolsa família sobre a freqüência 
+escolar: o caso da agricultura familiar no Nordeste 
+do Brasil. In: FÓRUM DE DESENVOLVIMENTO DO 
+NORDESTE BNB, 2008, Fortaleza. Anais… Fortaleza, 
+2008.
+
+Volume 40 | Nº 01 | Janeiro - Março | 2009
+232
+HECKMAN, J. J.; ICHIMURA, H.; TODD, P. Matching 
+as an econometric evaluation estimator: evidence 
+from evaluating a job training programme. Review of 
+Economic Studies, v. 64, p. 605-654, 1997.
+HECKMAN, J. J.; ICHIMURA, H.; TODD, P. Matching 
+as an econometric evaluation estimator. Review of 
+Economic Studies, v. 65, p. 261-294, 1998.
+RESENDE, A. C. C.; OLIVEIRA, A. M. H. Avaliando 
+resultados de um programa de transferência de renda: 
+o impacto do Bolsa-Escola sobre os gastos das 
+famílias brasileiras. Estudos Econômicos, v. 38, n. 2, p. 
+235-265, 2008.
+ROSEMBAU, P. R.; RUBIN, D. B. The central role of 
+propensity score in observational studies for causal 
+effects. Biometrica, v.70, n. 1, p. 41-55, 1983.
+SILVA, A. M. A.; RESENDE, G. M.; SIVEIRA NETO, 
+R. M. Eficácia do gasto público: uma avaliação do 
+FNE, FNO e FCO. Brasília, DF: OPEA, 2007. (Texto para 
+Discussão do IPEA, n. 1259). 
+ 
+ 
+Recebido para publicação em: 16.02.2009
+
+Volume 40 | Nº 01 | Janeiro - Março | 2009
+233

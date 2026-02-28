@@ -1,0 +1,87 @@
+# Estudo #82
+#  (2017)
+# efeitos não lineares dos fundos constitucionais de ...
+# Fonte: anpec-2017-oliveira-resende-goncalves.pdf
+======================================================================
+
+ANGRIST, J. D.; PISCHKE, J. S. Mostly harmless econometrics: an empiricist’s companion. 
+Princeton: Princeton University Press, 2009. 
+ 
+ALMEIDA JUNIOR, M.; RESENDE, G. M.; SILVA, A. M. Distribuição espacial dos fundos 
+constitucionais 
+de 
+financiamento 
+do 
+Nordeste, 
+Norte 
+e 
+Centro-Oeste. 
+Revista 
+de 
+Economia, v. 33, n. 2, p. 115-137, 2007.  
+ 
+CINTRA, M. A. Fundos constitucionais de fnanciamento (do Norte, do Nordeste e do Centro-Oeste). 
+Campinas: Editora Unicamp, 2007. (Relatório de Pesquisa). 
+ 
+HIRANO, K.; IMBENS, G. The propensity score with continuous treatments. In: GELMAN, A.; MENG, 
+X.-L. (Eds.).  Applied Bayesian modeling and causal inference from incomplete-data perspectives. 
+Nova Iorque: Wiley, 2004. 
+ 
+IMBENS, G. The role of the propensity score in estimating dose-response functions. Biometrika, v. 87, 
+n. 3, p. 706-710, 2000. 
+ 
+LIMA, M.; RESENDE, M. Convergence of per capita GDP in Brazil: an empirical note. Applied 
+Economics Letters. Volume 14, Issue 5, 2007. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+MACEDO, F. C.; MATTOS, E. N. O papel dos fundos constitucionais de fnanciamento no 
+desenvolvimento regional brasileiro. Ensaios FEE, v. 29, n. 2, p. 355-384, 2008.  
+ 
+MOHL, P.; HAGEN, T. Do Structural Funds promote regional growth? New evidence from various panel 
+data approaches. Regional Science and Urban Economics, v. 40, n. 5, p. 353-365, 2010. 
+ 
+OLIVEIRA, H. C.; DOMINGUES, E. P. Considerações sobre o impacto dos fundos constitucionais de 
+fnanciamento do Norte e do Centro-Oeste na redução da desigualdade regional no Brasil. In: Anais do 
+33º Encontro Nacional de Economia, Natal, Rio Grande do Norte, 2005.  
+ 
+OLIVEIRA, G.; MENEZES, R.; RESENDE, G. Efeito dose resposta do Fundo Constitucional de 
+Financiamento do Centro-Oeste (FCO) no Estado de Goiás. Brasília: Ipea, 2015. (Texto para 
+Discussão, n. 2133). 
+ 
+PROGRAMA DAS NAÇÕES UNIDAS PARA O DESENVOLVIMENTO (PNUD). Atlas do 
+Desenvolvimento Humano no Brasil. Brasília: PNUD, IPEA, FJP, 2013. 
+ 
+RAIS – RELATÓRIO ANUAL DE INFORMAÇÕES SOCIAIS. Brasília: Ministério do Trabalho, 2004 a 
+2011. 
+ 
+RESENDE, G. M. Micro e macroimpactos de políticas de desenvolvimento regional: o caso dos 
+empréstimos do FNE-industrial no Estado do Ceará. Brasília: Ipea, 2012. (Texto para Discussão, n. 
+1777). 
+ 
+______. Micro and macro impacts of regional development policies: the case of the FNE industrial Loans 
+in Brazil, 2000-2006. Regional Studies, v. 48, n. 4, p. 646-664, 2014. 
+ 
+RESENDE, G. M.; CRAVO, T.; PIRES, M. Avaliação dos impactos econômicos do Fundo 
+Constitucional do Centro-Oeste (FCO) entre 2004 e 2010. Brasília: Ipea, 2014. (Texto para Discussão, 
+n. 1969). 
+ 
+RESENDE, G.; SILVA, D.; SILVA FILHO, L. Avaliação dos efeitos econômicos dos Fundos 
+Constitucionais de Financiamento do Nordeste, do Norte e do Centro-Oeste: uma análise por 
+tipologia da Política Nacional de Desenvolvimento Regional entre 1999 e 2011. Brasília: Ipea, 2015. 
+(Texto para Discussão, n. 2145). 
+ 
+ROSENBAUM, P.; RUBIN, D. The central role of the propensity score in observational studies for 
+causal effects. Biometrika, v. 70, n. 1,p. 41-55, 1983. 
+ 
+SILVA, A. M.; RESENDE, G. M.; SILVEIRA, NETO, R. Eficácia do gasto público:  uma avaliação do 
+FNE, FNO e FCO. Estudos econômicos, São Paulo, v. 39, n. 1, p. 80-125, 2009. 
+ 
+SOARES, R.; SOUSA, J.; PEREIRA NETO, A. Avaliação de impactos do FNE no emprego, na massa 
+salarial e no salário médio em empreendimentos financiados. Revista Econômica do Nordeste, v. 40, n. 
+1, p. 217-234, 2009.

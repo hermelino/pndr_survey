@@ -1,0 +1,130 @@
+# Estudo #115
+#  (2025)
+# efeitos dinâmicos dos instrumentos da pndr sobre ...
+# Fonte: anpec-2025-souza-irffi-carneiro.pdf
+======================================================================
+
+ACEMOGLU, D.; JOHNSON, S.; ROBINSON, J. A. The colonial origins of comparative development:
+An empirical investigation. American Economic Review, American Economic Association, v. 91, n. 5, p.
+1369–1401, 2001.
+ACEMOGLU, D.; JOHNSON, S.; ROBINSON, J. A. Reversal of fortune: Geography and institutions in
+the making of the modern world income distribution. The Quarterly journal of economics, MIT Press,
+v. 117, n. 4, p. 1231–1294, 2002.
+ANDERSON, T. W.; HSIAO, C. Formulation and estimation of dynamic models using panel data. Journal
+of Econometrics, v. 18, n. 1, p. 47–82, 1982. Disponível em: <https://EconPapers.repec.org/RePEc:eee:
+econom:v:18:y:1982:i:1:p:47-82>.
+ANDREWS, D.; LU, B. Consistent model and moment selection procedures for gmm estimation with
+application to dynamic panel data models. Journal of Econometrics, v. 101, n. 1, p. 123–164, 2001.
+Disponível em: <https://EconPapers.repec.org/RePEc:eee:econom:v:101:y:2001:i:1:p:123-164>.
+ARELLANO, M.; BOND, S. Some tests of specification for panel data: Monte Carlo evidence and an
+application to employment equations. Review of Economic Studies, v. 58, p. 277–297, 1991.
+14
+
+ARELLANO, M.; BOVER, O. Another look at the instrumental variable estimation of error-components
+models. Journal of Econometrics, v. 68, n. 1, p. 29–51, 1995.
+BARROS, A. R. Desigualdades regionais no Brasil: natureza, causas, origens e solução. [S.l.]: Elsevier
+Brasil, 2012.
+BLUNDELL, R.; BOND, S. Initial conditions and moment restrictions in dynamic panel data models.
+Journal of Econometrics, v. 87, n. 1, p. 115–143, 1998.
+BRANDãO, C. A. Mudanças produtivas e econômicas e reconfiguração territorial no Brasil no início do
+século XXI. Revista Brasileira de Estudos Urbanos e Regionais, v. 21, p. 258–279, 2019.
+BRAZ, M. S.; BASTOS, F. d. S.; IRFFI, G. Impactos do financiamento empresarial via fdne sobre
+indicadores socioeconômicos municipais. In: ANPEC. Anais do 52º Encontro Nacional de Economia.
+Brasil, 2024.
+BRAZ, M. S.; IRFFI, G. Impactos dos incentivos fiscais da sudene sobre o mercado de tra-
+balho local. In: ANPEC. Anais do XXVIII Encontro Regional de Economia. Fortaleza,
+2023. Disponível em: <https://www.anpec.org.br/nordeste/2023/submissao/arquivos\_identificados/
+043-486978388a209fa0ea4db6f5e4cee997.pdf>.
+CAMBOTA, J. N.; VIANA, L. F. G. O impacto do Fundo Constitucional de Financiamento do Nordeste
+(FNE) no crescimento dos municípios: uma aplicação de painel dinâmico. Revista Controle - Doutrina e
+Artigos, v. 17, n. 1, p. 20–46, jul. 2019. Disponível em: <https://doi.org/10.32586/rcda.v17i1.472>.
+CARNEIRO, D.; VELOSO, P.; FERREIRA, W.; IRFFI, G. Análise do impacto dos instrumentos da
+pndr sobre a economia dos municípios nordestinos. In: ASSOCIAçãO NACIONAL DOS CENTROS DE
+PóS-GRADUAçãO EM ECONOMIA (ANPEC). Anais do 52º Encontro Nacional de Economia. Brasil,
+2024. Área 10 – Economia Regional e Urbana.
+COSTA, E. M.; CARNEIRO, D.; IRFFI, G. D.; VELOSO, P. A. S.; BRAZ, M. S.; DIAS, T. K.;
+ANDRADE, V. Effects of SUDENE’s tax incentives on job creation in the Northeast region of Brazil.
+Applied Economics Letters, Taylor & Francis, 2024.
+COSTA, E. M.; CARNEIRO, D. R. F.; IRFFI, G. D.; VELOSO, P. A. S.; BRAZ, M. S.; DIAS, T. K. M.;
+SILVA, M. V. A. Impacto dos incentivos fiscais da Sudene sobre o mercado de trabalho das empresas
+beneficiadas. In: ANPEC. Anais do 51º Encontro Nacional de Economia. [S.l.], 2023. Área 3 –
+Economia do Trabalho, Economia Social e Demografia.
+CRAVO, T. A.; RESENDE, G. M. The Brazilian regional development funds and economic growth.
+Helsinki, Finland, 2015.
+DANIEL, L. P.; BRAGA, M. J. Impactos do fundo constitucional de financiamento do norte: evidências do
+estimador de diferenças em diferenças. Planejamento e Políticas Públicas, IPEA, n. 55, p. 97–146, jul./set.
+2020. ISSN 0103-1538. Disponível em: <https://www.ipea.gov.br/ppp/index.php/PPP/article/view/945>.
+FERREIRA, W.; IRFFI, G.; CARNEIRO, D. A PNDR e o desenvolvimento econômico do Nordeste:
+uma análise do FDNE e dos incentivos fiscais da SUDENE. [S.l.], 2024.
+FILHO, L. A. d. S.; AZZONI, C. R.; CHAGAS, A. L. S. Impactos do Financiamento Público sobre a
+Economia dos Municípios Beneficiados. São Paulo, 2023.
+GARSOUS, G.; CORDERI, D.; VELASCO, M.; COLOMBO, A. Tax incentives and job creation in
+the tourism sector of Brazil's SUDENE area. World Development, v. 96, ago. 2017. Disponível em:
+<https://doi.org/10.1016/j.worlddev.2017.02.034>.
+15
+
+HANSEN, B. Econometrics. [S.l.]: Princeton University Press, 2022.
+HANSEN, L.; JAGANNATHAN, R. Implications of security market data for models of dynamic
+economies. Journal of Political Economy, v. 99, n. 2, p. 225–62, 1991. Disponível em: <https:
+//EconPapers.repec.org/RePEc:ucp:jpolec:v:99:y:1991:i:2:p:225-62>.
+IRFFI, G.; ARAúJO, J. A. d. S.; BASTOS, F. d. S. Efeitos heterogêneos do fundo constitucional de
+financiamento do nordeste na região do semiárido. Fórum Banco do Nordeste de Desenvolvimento,
+v. 22, 2016.
+IRFFI, G. D.; COSTA, E. M.; VELOSO, P. A.; NUNES, E. S.; CARNEIRO, D. R. F.; SAMPAIO, M. A. S.
+Evaluation of the impact of FDNE financing on the construction of wind farms and its effects on the labor
+market and economic indicators of municipalities in Sudene’s area of operation. Cadernos de Finanças
+Públicas, Brasília, v. 25, p. 1–28, 2025. Edição Especial.
+JR., R. E. L. On the mechanics of economic development. Journal of Monetary Economics, v. 22, n. 1,
+p. 3–42, 1988.
+KIVIET, J. F. Microeconometric dynamic panel data methods: Model specification and selection issues.
+Econometrics and Statistics, v. 13, p. 16–45, 2020.
+KRIPFGANZ, S. Generalized method of moments estimation of linear dynamic panel data models. In:
+Proceedings of the 2019 London Stata Conference. [S.l.: s.n.], 2019.
+KRUGMAN, P. Increasing returns and economic geography. Journal of political economy, v. 99, n. 3, p.
+483–499, 1991.
+LINHARES, F. C.; SOARES, R. B.; GONçALVES, M. F.; VIANA, L. F. G. Brazil’s Northeast Financing
+Constitutional Fund: Differentiated effects on municipal economic growth. CEPAL Review, v. 2014,
+n. 113, p. 175–192, 2014.
+NASCIMENTO, T. O.; HADDAD, E. A. Análise do Fundo Constitucional de Financiamento do Nordeste:
+uma aplicação de equilíbrio geral computável. In: ANPEC. Anais do 45º Encontro Nacional de
+Economia. [S.l.], 2017.
+NICKELL, S. Biases in dynamic models with fixed effects. Econometrica, v. 49, n. 6, p. 1417–26, 1981.
+Disponível em: <https://EconPapers.repec.org/RePEc:ecm:emetrp:v:49:y:1981:i:6:p:1417-26>.
+OLIVEIRA, G. R.; RESENDE, G. M.; SILVA, D. F. C.; GONçALVES, C. N. Micro-impacts of the
+Brazilian regional development funds: does lending size matter? Review of Development Economics,
+v. 23, n. 1, p. 293–313, fev. 2018. Disponível em: <https://doi.org/10.1111/rode.12539>.
+OLIVEIRA, T. G.; NETO, R. d. M. S. Descontinuidades espaciais e políticas territoriais: uma avaliação do
+fundo constitucional de financiamento do nordeste. In: ANPEC. Anais... [S.l.], 2021. Área 10 - Economia
+Regional e Urbana.
+RESENDE, G. Avaliação dos Impactos Regionais do Fundo Constitucional de Financiamento do Norte
+entre 2004 e 2010. [S.l.], 2014c. Disponível em: <https://EconPapers.repec.org/RePEc:ipe:ipetds:1973>.
+RESENDE, G. M. Avaliação dos impactos econômicos do Fundo Constitucional de Financiamento do
+Nordeste entre 2004 e 2010. [S.l.], 2014b.
+RESENDE, G. M.; SILVA, D. F. C.; FILHO, L. A. S. Avaliação econômica do Fundo Constitucional
+de Financiamento do Nordeste (FNE): uma análise espacial por tipologia da PNDR entre 1999 e
+2011. Revista Econômica do Nordeste, v. 48, n. 1, p. 9–29, set. 2017. Disponível em: <https:
+//doi.org/10.61673/ren.2017.701>.
+16
+
+RESENDE, G. M.; SILVA, D. F. C.; FILHO, L. A. S. Evaluation of the Brazilian regional development
+funds: a spatial panel data analysis by typology. Review of Regional Research, v. 38, n. 2, p. 191–217,
+out. 2018. Disponível em: <https://doi.org/10.1007/s10037-018-0123-5>.
+RIBEIRO, L. C. d. S.; CALDAS, R. M.; SOUZA, K. B.; CARDOSO, D. F.; DOMINGUES, E. P. Regional
+funding and regional inequalities in the Brazilian Northeast. Regional Science Policy & Practice, v. 12,
+n. 1, p. 43–59, fev. 2020. Disponível em: <https://doi.org/10.1111/rsp3.12230>.
+RIEGER, R. A.; LIMA, R. M. N.; RODRIGUES, C. T. O efeito do FNE no crescimento do emprego
+formal da região Nordeste. Revista Econômica do Nordeste, v. 51, n. 2, p. 155–168, jun. 2020. Disponível
+em: <https://doi.org/10.61673/ren.2020.1106>.
+ROMER, P. M. Increasing returns and long-run growth. Journal of Political Economy, v. 94, n. 5, p.
+1002–1037, 1986.
+ROODMAN, D. How to do xtabond2: An introduction to difference and system GMM in Stata.
+Stata Journal, v. 9, n. 1, p. 86–136, 2009. Disponível em: <https://ideas.repec.org/a/tsj/stataj/
+v9y2009i1p86-136.html>.
+SARGAN, J. The estimation of economic relationships using instrumental variables. Econometrica, v. 26,
+p. 393–415, 1958.
+SOLOW, R. M. A contribution to the theory of economic growth. The Quarterly Journal of Economics,
+v. 70, n. 1, p. 65–94, 1956.
+SWAN, T. W. Economic growth and capital accumulation. Economic record, v. 32, n. 2, p. 334–361, 1956.
+VIEIRA, R. d. S. Crescimento econômico no estado de são paulo: uma análise espacial. Editora UNESP,
+2009.
+17

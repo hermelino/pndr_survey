@@ -1,0 +1,106 @@
+# Estudo #114
+#  (2025)
+# avaliação do impacto da consultoria sebrae e do crédito do ...
+# Fonte: anpec-2025-lazaretti-davanzo-neves.pdf
+======================================================================
+
+ARNOLD, Jens Matthias; HUSSINGER, Katrin. Export behavior and firm productivity in German 
+manufacturing: a firm-level analysis. Review of World Economics, v. 141, p. 219–243, 2005. 
+AUDRETSCH, David B.; MAHMOOD, Talat. New firm survival: new results using a hazard function. The 
+Review of Economics and Statistics, Cambridge, v. 77, n. 1, p. 97–103, 1995. 
+BOTELHO, M. D. R.; SOUSA, G.; CARRIJO, M.; FERREIRA, J.; SILVA, A. Determinantes da 
+sobrevivência de micro e pequenas empresas industriais brasileiras (1996–2016). In: Encontro Nacional 
+de Economia – ANPEC, 2020. 
+CARVALHO, K. C. M.; FONSECA, L. F. C. Análise dos determinantes da entrada e sobrevivência das 
+empresas no Brasil. In: Encontro Nacional de Economia – ANPEC, 38., 2010, Salvador. Anais [...]. 
+Salvador: ANPEC, 2010. 
+CASAGRANDE, Dieison. O papel do mercado internacional e do BNDES na sobrevivência das firmas 
+brasileiras. In: Encontro Nacional de Economia – ANPEC, 52., 2024, São Paulo. Anais [...]. São Paulo: 
+ANPEC, 2024.  
+COAD, A.; HOLM, J. R.; KRAFFT, J.; QUATRARO, F. Firm age and performance. Journal of 
+Evolutionary Economics, v. 28, n. 1, p. 1–11, 2018. Disponível em: https://doi.org/10.1007/s00191-017-
+0532-6.  
+COLETI, Jamile; ANTONIASSI, L. S.; RODRIGUES, L. R.; MACEDO, K. G. O papel da consultoria 
+empresarial na sobrevivência das microempresas e nas empresas de pequeno porte. Brazilian Journal of 
+Development, v. 9, n. 2, p. 7640–7651, 2023. 
+COLOSIMO, Enrico Antonio; GIOLO, Suely Ruiz. Análise de sobrevivência aplicada. São Paulo: Editora 
+Blucher, 2022. 
+
+ 
+18 
+ 
+ 
+DAUNFELDT, S. O.; ELERT, N. When is Gibrat’s law a law? Small Business Economics, v. 41, n. 1, p. 
+133–147, 2011. Disponível em: https://doi.org/10.1007/s11187-011-9404-x. Acesso em: 10 de jun. 2025. 
+EHRL, Philipp; MONASTERIO, Leonardo Monteiro. Os empréstimos do BNDES e a sobrevivência de 
+empresas. 
+Brasília: 
+IPEA, 
+2019. 
+(Texto 
+para 
+Discussão, 
+n. 
+2518). 
+Disponível 
+em: 
+https://www.ipea.gov.br/portal/index.php?option=com_content&view=article&id=35120. Acesso em: 10 
+de jun. 2025. 
+EVANS, David S. Tests of alternative theories of firm growth. Journal of Political Economy, v. 95, n. 4, 
+p. 657–674, 1987. 
+EVANS, David S. The relationship between firm growth, size, and age: estimates for 100 manufacturing 
+industries. The Journal of Industrial Economics, v. 35, n. 4, p. 567–581, 1987. 
+HAASE, M. A. O. Sobrevivência de empresas no Brasil: nível de atividade, exportações e consumo das 
+famílias mantêm o crescimento econômico. 2023. 
+HALL, Bronwyn H. The relationship between firm size and firm growth in the U.S. manufacturing sector. 
+The Journal of Industrial Economics, v. 35, n. 4, p. 583–606, 1987. 
+Hosmer DW, Lemeshow S, May S. Applied survival analysis: regression modeling of time to event data. 
+2nd ed. Hoboken (NJ): Wiley-Interscience, 2008. 
+KHANDKER, S. R.; KOOLWAL, G. B.; SAMAD, H. A. Handbook on Impact Evaluation: quantitative 
+methods and pratices. 2010. 
+KANIOVSKI, Serguei; PENEDER, Michael; SMERAL, Egon. Determinants of firm survival in the 
+Austrian accommodation sector. Tourism Economics, v. 14, n. 3, p. 527–543, 2008. 
+KLEINBAUM, David G.; KLEIN, Mitchel. Survival analysis: a self-learning text. 3. ed. New York: 
+Springer, 2012. 
+LIN, D. Y.; WEI, L. J. The robust inference for the Cox proportional hazards model. Journal of the 
+American Statistical Association, v. 84, n. 408, p. 1074–1078, 1989. 
+MAFFIOLI, A.; NEGRI, J. A.; RODRIGUEZ, C. M.; VAZQUEZ-BARE, G. Public credit programmes 
+and firm performance in Brazil. Development Policy Review, v. 35, n. 5, p. 675–702, 2017. 
+MCKENZIE, David; WOODRUFF, Christopher. Business practices in small firms in developing countries. 
+Management Science, v. 63, n. 9, p. 2967–2981, 2017. 
+NAJBERG, Sheila; PUGA, Fernando Pimentel; OLIVEIRA, Paulo André de Souza de. Sobrevivência das 
+firmas no Brasil: dez. 1995/dez. 1997. Rio de Janeiro: IPEA, 2000. 
+NIQUITO, T. W.; ELY, R. A.; RIBEIRO, F. G. Avaliação de impacto das assistências técnicas do Sistema 
+S no mercado de trabalho. Revista Brasileira de Economia, Rio de Janeiro, v. 72, n. 2, p. 196–216, 
+abr./jun. 2018. 
+OH, I.; LEE, J. D.; HESHMATI, A.; CHOI, G. G. Evaluation of credit guarantee policy using propensity 
+score matching. Small Business Economics, v. 33, p. 335–351, 2009. 
+OLIVEIRA, Blandina; FORTUNATO, Adelino. Testing Gibrat's law: empirical evidence from a panel of 
+Portuguese manufacturing firms. International Journal of the Economics of Business, v. 13, n. 1, p. 65–
+81, 2006. 
+PEIXOTO, Betânia et al. Avaliação econômica de projetos sociais. São Paulo: Fundação Itaú Social, 
+2012. 
+RIBEIRO, A. V. A. S.; ANASTÁCIO, F. J.; BANDEIRA, P. V. R.; ANDRADE, J. D. N. T. O papel da 
+consultoria nas micro e pequenas empresas. ID on line: Revista de Psicologia, v. 17, n. 68, p. 134–150, 
+2023. 
+
+ 
+19 
+ 
+ 
+ROSA, Thiago Mendes; BERTHOLINI, Frederico; VILELA, Renan; CAMPOS, Sofia. Vida longa e 
+próspera: análise de sobrevivência dos MEIs beneficiados pelo Prospera. Brasília: Codeplan, 2018. (Texto 
+para Discussão, n. 45). 
+ROSENBAUM, P. R.; RUBIN, D. B. The central role of the propensity score in observational studies for 
+causal effects. Biometrika, v. 70, n. 1, p. 41–55, 1983. 
+SEBRAE. Sobrevivência das empresas mercantis brasileiras (2020–2024). Brasília, DF: SEBRAE, 2025. 
+SEBRAE. BANCO DO NORDESTE DO BRASIL (BNB). Avaliação de impacto da sinergia da 
+consultoria SEBRAE e do crédito do Banco do Nordeste sobre as Micro e Pequenas Empresas (MPE). 
+Brasília, DF: SEBRAE; Banco do Nordeste, 2024. 
+SEBRAE. Avaliação do impacto do atendimento do SEBRAE na sobrevivência das empresas brasileiras: 
+2017–2021. Brasília, DF: SEBRAE, 2021. 
+SEBRAE. Diretrizes plano anual 2024 – Sistema Sebrae. Brasília, DF: SEBRAE, 2023. 
+SILVA, N.; SACCARO, A. Efeitos do BNDES Finame nas firmas brasileiras: uma análise de 
+sobrevivência para os anos de 2002 a 2016. Estudos Econômicos (São Paulo), v. 51, p. 169–206, 2021. 
+ZHANG, Dongyang. Do credit squeezes influence firm survival? An empirical investigation of China. 
+Economic Systems, v. 44, n. 3, p. 100790, 2020.

@@ -1,0 +1,117 @@
+# Estudo #33
+# Borges, R.P.; Rodrigues, M. (2025)
+# Distribution of Constitutional Funds and Rural Credit in Brazilian Midwest Region
+# Fonte: scopus-2025-borges-rodrigues.pdf
+======================================================================
+
+Anselin, L. (1995). Local Indicators of Spatial Association—LISA. Geographical Analysis, 27(2), 
+93–115. https://doi.org/https://doi.org/10.1111/j.1538-4632.1995.tb00338.x
+Belik, W., & Paulillo, L. F. (2009). O Financiamento da produção agrícola brasileira na década 
+de 90: ajustamento e seletividade. In S. P. Leite (Ed.), Políticas públicas e agricultura no Brasil (pp. 
+97–122). Editora da UFRGS.
+Bellemare, M. F., & Wichman, C. J. (2020). Elasticities and the Inverse Hyperbolic Sine Trans­
+formation. Oxford Bulletin of Economics and Statistics, 82(1), 50–61. https://doi.org/https://doi.
+org/10.1111/obes.12325
+
+343
+Raysa Palheta Borges, Marcos Rodrigues. 
+Distribution of Constitutional Funds and Rural Credit in Brazilian Midwest Region
+Bowles, S., & Carlin, W. (2020). Inequality as experienced difference: A reformulation of the 
+Gini coefficient. Economics Letters, 186, 108789. https://doi.org/https://doi.org/10.1016/j.econ­
+let.2019.108789
+Cacho, M. M. y T. G. (2016). Soybean agri-food systems dynamics and the diversity of farm­
+ing styles on the agricultural frontier in Mato Grosso, Brazil. The Journal of Peasant Studies, 43(2), 
+419–441. https://doi.org/10.1080/03066150.2015.1016917
+Castro, E. R., & Teixeira, E. C. (2012). Rural credit and agricultural supply in Brazil. Agricultural 
+Economics, 43(3), 293–302. https://doi.org/https://doi.org/10.1111/j.1574-0862.2012.00583.x
+Central Bank of Brazil. (2023). Rural Credit Data Matrix. https://www.bcb.gov.br
+Cowell, F. A. (2011). Measuring Inequality (3rd ed.). Oxford University Press.
+Ely, R. A., Parfitt, R., Carraro, A., & Ribeiro, F. G. (2019). Rural credit and the time allocation 
+of agricultural households: The case of PRONAF in Brazil. Review of Development Economics, 23(4), 
+1863–1890. https://doi.org/https://doi.org/10.1111/rode.12606
+Filgueiras, G. C., Bentes, E. dos S., Carvalho, A. C., Araújo, A. C. de S., & Oliveira, C. D. C. 
+(2017). O papel do Fundo Constitucional de financiamento do Norte e do Programa Nacional de 
+Fortalecimento da Agricultura Familiar para a região Norte do Brasil. Agroecossistemas, 9(1), 116–
+130.
+Hartarska, V., Nadolnyak, D., & Shen, X. (2015). Agricultural credit and economic growth in 
+rural areas. Agricultural Finance Review, 75(3), 302–312. https://doi.org/10.1108/AFR-04-2015-
+0018
+Hoffmann, R., Botassio, D. C., & Jesus, J. G. (2019). Distribuição de renda: medidas de desigual­
+dade, pobreza, concentração, segregação e polarização (2nd ed.). Editora da USP.
+IBGE. (1996). Censo Agropecuário 1995-1996. https://sidra.ibge.gov.br/pesquisa/censo-agro­
+pecuario/censo-agropecuario-1995-1996
+IBGE. (2006). Censo Agropecuário 2006. Segunda Apuração. https://sidra.ibge.gov.br/pesqui­
+sa/censo-agropecuario/censo-agropecuario-2006/segunda-apuracao
+IBGE. (2017). Censo Agropecuário 2017. Resultados Definitivos. https://sidra.ibge.gov.br/pes­
+quisa/censo-agropecuario/censo-agropecuario-2017
+Katuka, B., Mudzingiri, C., & Vengesai, E. (2023). The effects of non-performing loans on bank 
+stability and economic performance in Zimbabwe. Asian Economic and Financial Review, 13(6), 
+396–405.
+Kuhn, L., & Bobojonov, I. (2023). The role of risk rationing in rural credit demand and uptake: 
+lessons from Kyrgyzstan. Agricultural Finance Review, 83(1), 1–20. https://doi.org/10.1108/AFR-
+04-2021-0039
+Lloyd, C. D. (2010). Spatial Data Analysis: An introduction for GIS users. Oxford University Press 
+Inc.
+Lopes, G. C. L. de A., Macedo, F. C. de, & Monteiro Neto, A. (2021). Propostas recentes de mu­
+danças nos fundos constitucionais de financiamento: em curso a desfiguração progressiva da Polí­
+tica Nacional de Desenvolvimento Regional (PNDR). Revista Brasileira de Gestão e Desenvolvimento 
+Regional, 17(3), 398–410. https://doi.org/10.54399/rbgdr.v17i3.6302
+Mapbiomas. (2025). MapBiomas Project - Collection 10 of the Annual Land Use Land Cover Maps 
+of Brazil. https://brasil.mapbiomas.org/
+Mueller, B., & Mueller, C. (2016). The political economy of the Brazilian model of agricultural 
+development: Institutions versus sectoral policy. The Quarterly Review of Economics and Finance, 62, 
+12–20. https://doi.org/http://dx.doi.org/10.1016/j.qref.2016.07.012
+Muhongayire, W., Hitayezu, P., Mbatia, O. L., & Mukoya-Wangia, S. M. (2013). Determinants 
+of Farmers’ Participation in Formal Credit Markets in Rural Rwanda. Journal of Agricultural Sciences, 
+4(2), 87–94. https://doi.org/10.1080/09766898.2013.11884706
+
+344
+ISSN 2029-4581   eISSN 2345-0037   Organizations and Markets in Emerging Economies
+Nadolnyak, D., Shen, X., & Hartarska, V. (2017). Farm income and output and lending by the 
+farm credit system. Agricultural Finance Review, 77(1), 125–136. https://doi.org/10.1108/AFR-03-
+2016-0020
+Neves, M. de C. R., Freitas, C. O., Silva, F. de F., Costa, D. R. de M., & Braga, M. J. (2020). Does 
+Access to Rural Credit Help Decrease Income Inequality in Brazil? Journal of Agricultural and Applied 
+Economics, 52(3), 440–460. https://doi.org/DOI: 10.1017/aae.2020.11
+Oliveira, G. R., Lima, A. F. R., & Arriel, M. F. (2016). Fundo Constitucional de Financiamento 
+do Centro-Oeste (FCO) em Goiás: Uma aplicação econométrica-espacial. Revista Brasileira de Eco­
+nomia de Empresas, 16(1), 7–23.
+Oliveira, G. R., Menezes, R. T., & Resende, G. M. (2018). Dose response effect of the constitu­
+tional financing fund of middle west (FCO) in the Goias state. Nova Economia, 28(3), 965–1000.
+Oliveira, G. R., Resende, G. M., Silva, D. F. C. da, & Gonçalves, C. N. (2019). Micro-impacts of 
+the Brazilian Regional Development Funds: Does lending size matter? Review of Development Eco­
+nomics, 23(1), 293–313. https://doi.org/https://doi.org/10.1111/rode.12539
+Pereira, B. M., & Brisola, M. V. (2022). Techno-economic Evolution of Soybean Production in 
+Brazil and Argentina. Journal of Agricultural Science, 14(8), 145–165. https://doi.org/10.5539/jas.
+v14n8p145
+Pereira, E. B., Souza, C. C. de, Frainer, D. M., & Silva, D. C. G. (2022). The Contribution of the 
+Constitutional Financing Fund of the West Center of Brazil (FCO) in Generation of Employment. 
+Desafio Online, 10(2), 386–407. https://doi.org/doi.org/10.55028/don.v10i2.12290
+Rausch, L. L., & Gibbs, K. H. (2016). Property Arrangements and Soy Governance in the Brazil­
+ian State of Mato Grosso: Implications for Deforestation-Free Production. Land 5(2). https://doi.
+org/10.3390/land5020007
+Resende, G. M. (2013). Regional development policy in brazil: a review of evaluation literature. 
+Redes, 18(3), 202–225. https://doi.org/10.17058/redes.v18i3.3565
+Resende, G. M. (2014). Measuring Micro- and Macro-Impacts of Regional Development Poli­
+cies: The Case of the Northeast Regional Fund (FNE) Industrial Loans in Brazil, 2000–2006. Re­
+gional Studies, 48(4), 646–664. https://doi.org/10.1080/00343404.2012.667872
+Resende, G. M., Silva, D. F. C., & Silva Filho, L. A. (2018). Evaluation of the Brazilian regional 
+development funds. Review of Regional Research, 38(2), 191–217. https://doi.org/10.1007/s10037-
+018-0123-5
+Ribeiro, L. C. S., Caldas, R. M., Souza, K. B., Cardoso, D. F., & Domingues, E. P. (2020). Re­
+gional funding and regional inequalities in the Brazilian Northeast. Regional Science Policy & Practice, 
+12(1), 43–59. https://doi.org/https://doi.org/10.1111/rsp3.12230
+Rodrigues, M., & Campos, I. (2019). Soybean cropping by family farmers: A new institution­
+al path for rural development in Brazilian Central-West. Italian Review of Agricultural Economics, 
+74(22), 29–39. https://doi.org/10.13128/rea-10851
+Silva, G. S. da, Amarante, P. A., & Amarante, J. C. A. (2022). Agricultural clusters and poverty in 
+municipalities in the Northeast Region of Brazil: A spatial perspective. Journal of Rural Studies, 92, 
+189–205. https://doi.org/https://doi.org/10.1016/j.jrurstud.2022.03.024
+Silva-Filho, L. A., Azzoni, C. R., Chagas, A. L. S., & Castro, G. (2023). Favorable credit to private 
+agents and the local economies in the deprived regions of Brazil: A spatial panel analysis. Letters in 
+Spatial and Resource Sciences, 16(1), 41. https://doi.org/10.1007/s12076-023-00363-7
+Weinhold, D., Killick, E., & Reis, E. J. (2013). Soybeans, poverty and inequality in the Brazilian 
+Amazon. World Development, 52, 132–143. https://doi.org/10.1016/j.worlddev.2012.11.016
+Xiong, N., Yang, X., Zhou, F., Wang, J., & Yue, D. (2022). Spatial distribution and influencing fac­
+tors of litter in urban areas based on machine learning – A case study of Beijing. Waste Management, 
+142, 88–100. https://doi.org/https://doi.org/10.1016/j.wasman.2022.01.039

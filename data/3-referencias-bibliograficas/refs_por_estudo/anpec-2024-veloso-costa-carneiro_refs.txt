@@ -1,0 +1,79 @@
+# Estudo #107
+#  (2024)
+# área 10 - economia regional e urbana
+# Fonte: anpec-2024-veloso-costa-carneiro.pdf
+======================================================================
+
+ALDIERI, L.; GRAFSTRÖM, J.; SUNDSTRÖM, K.; VINCI, C. Wind power and job creation. 
+Sustainability, v. 12, p. 1-23, 2019. 
+AGÊNCIA NACIONAL DE ENERGIA ELÉTRICA. ANEEL. Sistema de Informações de Geração da 
+ANEEL - SIGA. Disponível em: <https://dadosabertos.aneel.gov.br/dataset/siga-sistema-de-informacoes-
+de-geracao-da-aneel>. Acesso em: 07 jul. 2024. 
+ATHEY, S.; IMBENS, G. W. Identification and inference in nonlinear difference-in-differences models. 
+Econometrica, v. 74, n. 2, p. 431-497, 2006. Disponível em: <https://www.jstor.org/stable/3598807>. 
+Acesso em: 11 jul. 2024. 
+BIANCHINI, A.; et al. The impact of wind energy on employment and regional development: Evidence 
+from European countries. Renewable Energy, v. 138, p. 1165-1173, 2019. 
+BLANCO, I.; KJAER, C. Wind at work: Wind energy and job creation in the EU. Brussels: European Wind 
+Energy Association, 2009. 
+BEZERRA, F. D. Oportunidades para o Nordeste em energia eólica. Fortaleza: Banco do Nordeste do 
+Brasil, ano 6, n. 177, jul. 2021. (Caderno Setorial). 
+BROWN, J. P.; PENDER, J.; WISER, R.; LANTZ, E.; HOEN, B. Ex post analysis of economic impacts 
+from wind power development in U.S. counties. Energy Economics, v. 34, n. 6, p. 1743-1754, 2012. 
+BRUNNER, E.; SCHWEGMAN, D. Windfarms raise incomes and house prices in rural US, study finds. 
+Resilience, 4 ago. 2022. Disponível em: <https://www.resilience.org/stories/2022-08-04/windfarms-raise-
+incomes-and-house-prices-in-rural-us-study-finds/>. Acesso em: 11 jul. 2024. 
+
+ 
+DA SILVA, N. F.; et al. Wind energy in Brazil: From the power sector's expansion crisis model to the 
+favorable environment. Renewable and Sustainable Energy Reviews, v. 22, p. 686-697, 2013. 
+DE CHAISEMARTIN, C.; D’HAULTFOEUILLE, X. Fuzzy differences-in-differences. The Review of 
+Economic Studies, v. 85, n. 2, p. 999-1028, 2018. 
+DIÓGENES, J. R. F.; et al. Barriers to onshore wind energy implementation: A systematic review. Energy 
+Research & Social Science, v. 60, 101337, 2020. 
+DVOŘÁK, P.; et al. Renewable energy investment and job creation; a cross-sectoral assessment for the 
+Czech Republic with reference to EU benchmarks. Renewable and Sustainable Energy Reviews, v. 69, 
+p. 360-368, 2017. 
+FREIALDENHOVEN, S.; HANSEN, C.; SHAPIRO, J. M. Pre-event trends in the panel event-study 
+design. American Economic Review, v. 109, n. 9, p. 3307-3338, 2019. 
+GONÇALVES, S.; RODRIGUES, T. P.; CHAGAS, A. L. S. The impact of wind power on the Brazilian 
+labor market. Renewable and Sustainable Energy Reviews, v. 128, 109887, 2020. 
+HAINMUELLER, J. Entropy balancing for causal effects: A multivariate reweighting method to produce 
+balanced samples in observational studies. Political Analysis, v. 20, n. 1, p. 25-46, 2012. 
+HONDO, H.; MORIIZUMI, Y. Employment creation potential of renewable power generation 
+technologies: A life cycle approach. Renewable and Sustainable Energy Reviews, v. 79, p. 128-136, 
+2017. 
+KAHN-LANG, A.; LANG, K. The promise and pitfalls of differences-in-differences: Reflections on 16 
+and pregnant and other applications. Journal of Business & Economic Statistics, v. 38, n. 3, p. 613-620, 
+2020. 
+LLERA SASTRESA, E.; et al. Local impact of renewables on employment: Assessment methodology and 
+case study. Renewable and Sustainable Energy Reviews, v. 14, n. 2, p. 679-690, 2010. 
+MORENO, B.; LÓPEZ, A. J. The effect of renewable energy on employment. The case of Asturias (Spain). 
+Renewable and Sustainable Energy Reviews, v. 12, p. 732-751, 2008. 
+ONS - Operador Nacional do Sistema Elétrico. Relatório Anual 2023. Brasília: ONS, 2023.Disponível em: 
+https://www.ons.org.br/AcervoDigitalDocumentosEPublicacoes/2023-Relatorio-Anual-
+acessivel_21032024.pdf. Acesso em: 11 jul. 2024. 
+SAMPAIO, M. A. S. A implementação de parques eólicos e seus impactos sobre os municípios brasileiros. 
+2022. 75 f. Dissertação (Mestrado em Economia Rural) - Centro de Ciências Agrárias, Universidade 
+Federal do Ceará, Fortaleza, 2022. 
+SAMPAIO, M. A. S.; COSTA, E. M.; IRFFI, G. A implementação de parques eólicos e seus impactos sobre 
+os municípios brasileiros. In: XXVIII ENCONTRO REGIONAL DE ECONOMIA, 2023, Fortaleza. Anais 
+[...]. Fortaleza: Associação Nacional dos Centros de Pós-Graduação em Economia, 2023. 
+SLATTERY, M. C.; LANTZ, E.; JOHNSON, B. L. State and local economic impacts from wind energy 
+projects: Texas case study. Energy Policy, v. 39, n. 12, p. 7930-7940, 2011. 
+SIMAS, M. S. Energia eólica e desenvolvimento sustentável no Brasil: estimativa da geração de empregos 
+por meio de uma matriz insumo-produto ampliada. 2012. Tese (Doutorado) - Universidade de São Paulo. 
+
+ 
+SIMAS, M.; PACCA, S. Energia eólica, geração de empregos e desenvolvimento sustentável. Estudos 
+Avançados, v. 27, p. 99-116, 2013. 
+SILVA, S. S. F.; ALVES, A. C.; RAMALHO, A. M. C. Energia eólica e complementaridade energética: 
+estratégia e desafio para o desenvolvimento sustentável na região nordeste do Brasil. Qualitas Revista 
+Eletrônica, v. 19, n. 3, p. 53-72, 2020. 
+RÍO, P.; BURGUILLO, M. Assessing the impact of renewable energy deployment on local sustainability: 
+Towards a theoretical framework. Renewable and Sustainable Energy Reviews, v. 12, n. 5, p. 1325-1344, 
+2008. 
+ROTH, J. Pretest with caution: Event-study estimates after testing for parallel trends. American Economic 
+Review, v. 112, n. 5, p. 1784-1821, 2022. 
+WANG, Shifeng; WANG, Sicong. Impacts of wind energy on environment: A review. Renewable and 
+Sustainable Energy Reviews, v. 49, p. 437-443, 2015.

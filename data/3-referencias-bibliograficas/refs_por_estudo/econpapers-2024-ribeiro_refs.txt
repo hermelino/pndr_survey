@@ -1,0 +1,84 @@
+# Estudo #57
+# Ribeiro, Marcio (2024)
+# Uma avaliação dos impactos do Fundo Constitucional de Financiamento do Nordeste na agricultura familiar
+# Fonte: econpapers-2024-ribeiro.pdf
+======================================================================
+
+Agropecuário, I. C. (2017). Resultados definitivos. Rio de Janeiro, 8:1–105.
+Araújo, J. A., de Alencar, M. O., e Vieira Filho, J. E. R. (2020). Crédito rural e agricul-
+tura familiar no brasil: uma avaliação do programa nacional de fortalecimento da
+agricultura familiar. Redes. Revista do Desenvolvimento Regional, 25(2):2009–2034.
+Araujo, J. A. e Vieira Filho, J. E. R. (2018). Análise dos impactos do pronaf na agri-
+cultura do brasil no período de 2007 a 2016.
+Texto para discussão, Texto para
+discussão.
+Becker, S. O., Egger, P. H., e Von Ehrlich, M. (2012). Too much of a good thing? on the
+growth effects of the eu’s regional policy. European Economic Review, 56(4):648–668.
+Bia, M., Flores, C. A., Flores-Lagunes, A., e Mattei, A. (2014). A stata package for
+the application of semiparametric estimators of dose–response functions. The Stata
+Journal, 14(3):580–604.
+Bia, M. e Mattei, A. (2008). A stata package for the estimation of the dose-response
+function through adjustment for the generalized propensity score. The Stata Journal,
+8(3):354–373.
+Revista Brasileira de Estudos Regionais e Urbanos
+
+Uma avaliação dos impactos do Fundo Constitucional de Financiamento do Nordeste na agricultura familiar
+435
+CASTRO, C., RESENDE, G., e PIRES, M. (2014). Avaliação dos impactos regionais do
+programa nacional de fortalecimento da agricultura familiar. Texto para Discussão.
+Brasília: IPEA.
+Da Mata, D. e Resende, G. (2020). Changing the climate for banking: the economic
+effects of credit in a climate-vulnerable area. Journal of Development Economics,
+146:102459.
+Daniel, L. P. e Braga, M. J. (2020). Impactos do fundo constitucional de financiamento
+do norte:: Evidências do estimador de diferenças em diferenças. Planejamento e
+Políticas Públicas, (55).
+de Geografia e Estatística-IBGE, I. B. (2006).
+Censo agropecuário 2006: segunda
+apuração.
+de Oliveira, T. G. e Neto, R. d. M. S. (2021). Descontinuidades espaciais e políticas
+territoriais: Uma avaliação do fundo constitucional de financiamento do nordeste
+área 10-economia regional e urbana.
+Fan, J. e Gijbels, I. (1996). Local Polynomial Modelling and Its Applications: Mono-
+graphs on Statistics and Applied Probability 66, volume 66. CRC Press.
+Flores, C. A., Flores-Lagunes, A., Gonzalez, A., e Neumann, T. C. (2012). Estimating
+the effects of length of exposure to instruction in a training program: The case of
+job corps. Review of Economics and Statistics, 94(1):153–171.
+Garcias, M. d. O. e Kassouf, A. L. (2016). Assessment of rural credit impact on land
+and labor productivity for brazilian family farmers. Nova Economia, 26(3):721–746.
+Guedes, I. A., Almeida, A. T. C., e de Siqueira, L. B. O. (2021). Efeitos do microcrédito
+rural sobre a produção agropecuária na região nordeste: evidências do programa
+agroamigo. Revista de Economia e Sociologia Rural, 59(1):e210774.
+Hirano, K. e Imbens, G. (2004). The propensity score with continuous treatments.
+applied bayesian modeling and causal inference from incomplete-data perspectives.
+Linhares, F. C., Soares, R. B., Gonçalves, M. F., e Viana, L. F. G. (2014).
+Brazil’s
+northeast financing constitutional fund: Differentiated effects on municipal econo-
+mic growth. CEPAL Review, 2014(113):175–192.
+Maia, A. G., Eusébio, G. d. S., e da Silveira, R. L. F. (2020). Can credit help small
+family farming? evidence from brazil. Agricultural Finance Review, 80(2):212–230.
+Mendes Resende, G., Firmino Costa da Silva, D., e Abel da Silva Filho, L. (2018). Eva-
+luation of the brazilian regional development funds: A spatial panel data analysis
+by typology. Review of Regional Research, 38(2):191–217.
+Nelder, J. A. e Wedderburn, R. W. (1972). Generalized linear models. Journal of the
+Royal Statistical Society Series A: Statistics in Society, 135(3):370–384.
+Revista Brasileira de Estudos Regionais e Urbanos
+
+436
+M. B. Ribeiro
+Oliveira, G. R., Menezes, R. T., e Resende, G. M. (2018). Efeito dose resposta do fundo
+constitucional de fi nanciamento do centro-oeste (fco) no estado de goiás.
+Nova
+Economia, 28(3):965–1000.
+Rosenbaum, P. R. e Rubin, D. B. (1983). The central role of the propensity score in
+observational studies for causal effects. Biometrika, 70(1):41–55.
+Ruppert, D., Wand, M. P., e Carroll, R. J. (2003). Semiparametric regression. Num-
+ber 12. Cambridge university press.
+Silva, A. M. A. d., Resende, G. M., e Silveira Neto, R. d. M. (2009). Eficácia do gasto
+público: uma avaliação do fne, fno e fco. Estudos Econômicos (São Paulo), 39:89–
+125.
+Soares, R. B., Sousa, J. M. P., e Neto, A. P. (2009). Avaliação de impacto do fne no
+emprego, na massa salarial e no salário médio em empreendimentos financiados.
+Revista econômica do Nordeste, 40(1):217–234.
+Este artigo está licenciado com uma CC BY 4.0 license.
+Revista Brasileira de Estudos Regionais e Urbanos

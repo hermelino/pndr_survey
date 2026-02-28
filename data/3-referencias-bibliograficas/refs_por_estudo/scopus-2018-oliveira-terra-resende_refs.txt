@@ -1,0 +1,95 @@
+# Estudo #29
+# Oliveira, G.R.; Terra, R.T.; Mendes Resende, G. (2018)
+# Dose response effect of the constitutional financing fund of middle west (FCO) in the Goias state
+# Fonte: scopus-2018-oliveira-terra-resende.pdf
+======================================================================
+
+ABADIE, A.; IMBENS, G. Large sample properties of matching estimators for average Treat-
+ment Effects. Econometrica, v. 74 n.1 p. 235-267, 2006.
+998
+Nova Economia
+v.28 n.3 2018
+
+Efeito dose resposta do fundo constitucional de ﬁ nanciamento do centro-oeste (FCO) no estado de Goiás
+ACCETTURO, A.; DE BLASIO G. Policies for local development: an evaluation of Italy’s 
+“Patti Territoriali”. Regional Science and Urban Economics, v. 42, n. 1-2, p. 15-26, 2012.
+ALMEIDA, M. A.; SILVA, A. M.; RESENDE, G. M. Uma análise dos Fundos Constitucionais de 
+Financiamento do Nordeste (FNE), Norte (FNO) e Centro-Oeste (FCO). Brasília: Ipea, 2006. 
+(Texto para Discussão, n. 1206).
+ANGRIST, J. D.; PISCHKE, J. S. Mostly harmless econometrics: an empiricist’s companion. Princ-
+eton: Princeton University Press, 2009.
+BARRO, R.; SALA-I-MARTIN, X. Convergence. Journal of Political Economy, Chicago, v. 100, 
+n. 2, p. 223-251, 1992.
+BECKER, S.; ICHINO, A. Estimation of average treatment effects based on propensity scores. 
+Stata Journal, StataCorp LP, v. 2, n. 4, p. 358-377, 2002.
+BECKER, S.; CALIENDO, M. Sensitivity Analysis for average treatment effects. Stata Journal, 
+v. 7, n. 1, 2007. 
+BECKER S.; PETER, H.; EHRLICH, M. Going NUTS: the effect of EU structural funds on 
+regional performance. Journal of Public Economics, v. 94, n. 9-10, p. 578-590, 2010.
+______. Too much of a good thing? On the growth effects of the EU’s regional policy. 
+European Economic Review, v. 56, n. 4, p. 648-668, 2012.
+DALL’ERBA, S.; LE GALLO, J. Regional convergence and the impact of European structural 
+funds over 1989-1999: a spatial econometric analysis. Papers in Regional Science, v. 87, 
+n. 2, p. 219-244, 2008.
+DEHEJIA, R.; WAHBA, S. Propensity score-matching methods for non-experimental causal 
+studies. The Review of Economics and Statistics, v. 84, n. 1, p. 151-161, 2002.
+ESPOSTI R.; BUSSOLETTI S. Impact of objective 1 funds on regional growth convergence in 
+the European Union: a panel-data approach. Regional Studies, v. 42, n. 2, p. 159-173, 2008.
+HIRANO, K.; IMBENS, G. The propensity score with continuous treatments. In: GELMAN, 
+A.; MENG, X.-L. (Eds.). Applied Bayesian modeling and causal inference from incomplete-data 
+perspectives. Nova Iorque: Wiley, 2004.
+IMBENS, G. The role of the propensity score in estimating dose-response functions. Biometri-
+ka, v. 87, n. 3, p. 706-710, 2000.
+LEONARDI, R., The Impact and Added Value of Cohesion Policy, Regional Studies, Vol. 40.2, 
+2006.
+MOHL, P.; HAGEN, T. Do Structural Funds promote regional growth? New evidence from 
+various panel data approaches. Regional Science and Urban Economics, v. 40, n. 5, p. 353-365, 
+2010.
+Rais – RELATÓRIO ANUAL DE INFORMAÇÕES SOCIAIS. Brasília: Ministério do Trabalho, 
+2004 a 2011.
+RESENDE, G. M. Micro e macroimpactos de políticas de desenvolvimento regional: o caso dos 
+empréstimos do FNE-industrial no Estado do Ceará. Brasília: Ipea, 2012. (Texto para Dis-
+cussão, n. 1777).
+RESENDE, G. M. Avaliação dos impactos econômicos do Fundo Constitucional de Financiamento do 
+Nordeste entre 2004 e 2010. Brasília: Ipea, 2014a. (Texto para Discussão, n. 1973).
+999
+v.28 n.3 2018
+Nova Economia
+
+Oliveira, Menezes e Resende
+______. Micro and macro impacts of regional development policies: the case of the FNE 
+industrial Loans in Brazil, 2000-2006. Regional Studies, v. 48, n. 4, p. 646-664, 2014b.
+RESENDE, G. M.; CRAVO, T.; PIRES, M. Avaliação dos impactos econômicos do Fundo Constitu-
+cional do Centro-Oeste (FCO) entre 2004 e 2010. Brasília: Ipea, 2014. (Texto para Discussão, 
+n. 1969).
+RODRIGUEZ-POSE A.; FRATESI, U. Between development and social policies: the impact 
+of European structural funds in objective 1 regions. Regional Studies, v. 38, n. 1, p. 97-113, 
+2004.
+ROSENBAUM, P.; RUBIN, D. The central role of the propensity score in observational stud-
+ies for causal effects. Biometrika, v. 70, n. 1,p. 41-55, 1983.
+SILVA, A. M.; RESENDE, G. M.; SILVEIRA, NETO, R. Avaliação econômica dos Fundos Consti-
+tucionais de Financiamento do Nordeste e do Norte (FNE e FNO). Brasília: Ipea, 2006. (Texto 
+para Discussão, n. 1207).
+______. Eﬁ cácia do gasto público: uma avaliação do FNE, FNO e FCO. Estudos econômicos, 
+São Paulo, v. 39, n. 1, p. 80-125, 2009.
+SOARES, R.; SOUSA, J.; PEREIRA NETO, A. Avaliação de impactos do FNE no emprego, na 
+massa salarial e no salário médio em empreendimentos ﬁ nanciados. Revista Econômica do 
+Nordeste, v. 40, n. 1, p. 217-234, 2009.
+SOARES, R.; LINHARES, F.; GONÇALVES, M.; VIANA, L. Fondo Constitucional de Financia-
+miento del Nordeste del Brasil: efectos diferenciados sobre el crecimiento económico de 
+los municipios. Revista Cepal, n. 113, p. 183-201, 2014.
+Sobre os autores
+Guilherme Resende Oliveira - resendego@yahoo.com.br
+Gerente de Inteligência Territorial da Emater-GO e Professor da Faculdades Alves Faria - UniAlfa, Goiânia, Goias, Brasil. 
+ORCID: https://orcid.org/0000-0002-2170-3608.
+Rafael Terra Menezes - rﬂ terra@yahoo.com.br
+Professor Adjunto da Universidade de Brasília (UnB), Brasília, DF, Brasil. 
+ORCID: https://orcid.org/0000-0003-0195-1505.
+Guilherme Mendes Resende - guilherme.resende@cade.gov.br
+Economista-chefe do Conselho Administrativo de Defesa Econômica (CADE), Brasília, DF, Brasil. 
+ORCID: https://orcid.org/0000-0002-7138-5492.
+Sobre o artigo
+Recebido em 08 de maio de 2016. Aprovado em 10 de junho de 2017.
+This article is licensed under a Creative Commons Attribution 4.0 International License.
+1000 Nova Economia
+v.28 n.3 2018

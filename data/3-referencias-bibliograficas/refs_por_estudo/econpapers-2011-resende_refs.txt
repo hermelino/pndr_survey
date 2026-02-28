@@ -1,0 +1,82 @@
+# Estudo #49
+# Resende, Guilherme (2011)
+# Evaluating Micro and Macro Effects of Regional Development Policies: The Case of the Northeast Regional Fund (FNE) in Brazil, 2000-2006
+# Fonte: econpapers-2011-resende.pdf
+======================================================================
+
+ALMEIDA JUNIOR M., RESENDE G. M. and SILVA A. M. (2007) Distribuição espacial dos 
+fundos constitucionais de financiamento do Nordeste, Norte e Centro-Oeste. Revista de Economia, 
+Editora UFPR, v. 33, n. 2, p. 115-137.  
+ANGRIST J. and PISCHKE J. (2009) Mostly harmless econometrics: an empiricist's companion. 
+Princeton University Press, London, UK. 
+BANCO CENTRAL (2000). Juros e Spread Bancário no Brasil. Departamento de Estudos e 
+Pesquisas 
+do 
+Banco 
+Central. 
+ 
+Available 
+at: 
+http://www.bancocentral.gov.br/ftp/jurospread112000.pdf. 
+BANCO DO NORDESTE (2001) Programação do Fundo Constitucional de Financiamento do 
+Nordeste – FNE para o ano de 2001. Fortaleza, p. 1-136. 
+BANCO DO NORDESTE (2009) Programação do Fundo Constitucional de Financiamento do 
+Nordeste – FNE para o ano de 2009. Fortaleza, p. 1-159. 
+BARNOW B., CAIN G. and GOLDBERGE A. (1981) Selection on observables. Evaluation Studies 
+Review Annual 5, 43-59. 
+BARRO R. and SALA-I MARTIN X. (1991) Convergence across states and regions. Brooking 
+Papers on Economic Activity, n.1, p.107-182. 
+BARRO R. and SALA-I MARTIN X. (1992) Convergence. Journal of Political Economy, v.100, p. 
+223–51. 
+BARTIK, T. and BINGHAM, R. (1995) Can Economic Development Programs Be Evaluated? Staff 
+Working Papers 95-29, W.E. Upjohn Institute for Employment Research. 
+BRASIL. (2008) Constituição da República Federativa do Brasil.  
+BROCK W., DURLAUF S. and WEST K. (2003) Policy evaluation in uncertain economic 
+environments. Brookings Papers of Economic Activity, p. 235–322. 
+CARVALHO A. Y., DA MATA D. and RESENDE G. M. (2007) Clusterização dos municípios 
+brasileiros, In: Dinâmica dos Municípios, Brasília: IPEA. 
+CENSO DEMOGRÁFICO 2000: documentação dos microdados da amostra. Rio de Janeiro: IBGE. 
+CULLEN J., JACOB B. and LEVITT S. (2005) The Impact of School Choice on Student Outcomes: 
+An Analysis of the Chicago Public School.  Journal of Public Economics, v. 89, p. 729-760. 
+DALL’ERBA S. (1995) Distribution of regional income and regional funds in Europe 1989–1999: 
+An exploratory spatial data analysis. The Annals of Regional Science, v. 39, p.121–148. 
+DALL’ERBA S. and LE GALLO J. (2008) Regional convergence and the impact of European 
+structural funds over 1989–1999: A spatial econometric analysis. Papers in Regional Science, v. 87, 
+n. 2, p. 219-244. 
+ESPOSTI R. and BUSSOLETTI S. (2008) Impact of Objective 1 Funds on Regional Growth 
+Convergence in the European Union: A Panel-data Approach. Regional Studies, v. 42, n. 2, p.159-
+173. 
+GEHLKE C. and BIEHL K. (1934) Certain Effects of Grouping Upon the Size of the Correlation 
+Coefficient in Census Tract Material. Journal of American Statistical Association, v.29, n.169-170. 
+IPEADATA. Dados macroeconômicos e regionais. Available at: <http://www. ipeadata.gov.br> 
+JANN W. and WEGRICH K. (2007). Theories of the Policy Cycle. In Fischer, F; Miller, G.; Sidney, 
+M. (orgs.) “Handbook of Public Policy Analysis”. 
+LAW Nº  7827, (1989). < http://www.planalto.gov.br/ccivil_03/Leis/L7827.htm> 
+ 
+22
+
+LEONARDI R. (2006) Cohesion in the European Union. Regional Studies, v. 40, n.2, p.155-166. 
+OLIVEIRA H. and DOMINGUES E. P. (2005). Considerações sobre o impacto dos FNO e FCO na 
+redução da desigualdade regional no Brasil.In: XXXIII Encontro Nacional de Economia. 
+OPENSHAW S. and TAYLOR P. J. (1979) A million or so correlation coefficients: three 
+experiments on the modifiable areal unit problem. In: N. Wrigley, ed. Statistical Applications in the 
+Spatial Sciences. London: Pion, p.127-44. 
+RAIS (1998, 2000, 2003, 2006) MINISTÉRIO DO TRABALHO. Relatório Anual de Informações 
+Sociais. 
+ROBINSON W. S. (1950) Ecological correlations and the behaviour of individuals. American 
+Sociological Review, v.15 p.351-357. 
+RODRIGUEZ-POSE A. and FRATESI U. (2004) Between development and social policies: The 
+impact of European structural funds in objective 1 regions. Regional Studies, v.38, p. 97-113. 
+ROMERO R. and NOBLE M. (2008) Evaluating England’s ‘New Deal for Communities’ 
+programme using the difference-in-difference method. Journal of Economic Geography, v. 8, p. 759-
+778. 
+SILVA A. M., RESENDE G. M. and SILVEIRA NETO R. (2009). Eficácia do gasto público: uma 
+avaliação do FNE, FNO e FCO. Estudos Econômicos, v. 39, n. 1, p. 89-125. 
+SOARES R., SOUSA J. and PEREIRA NETO A. (2009) Avaliação de Impactos do FNE no 
+Emprego, na Massa Salarial e no Salário Médio em Empreendimentos Financiados. Revista 
+Econômica do Nordeste, v. 40, n. 1, p. 217-234. 
+TEMPLE J. (1999) The new growth evidence. Journal of Economic Literature, v.37, n.1, p.112-156. 
+WOODBRIDGE J. (2002) Econometric Analysis of Cross Section and Panel Data. Cambridge, MA: 
+MIT Press. 
+ 
+23

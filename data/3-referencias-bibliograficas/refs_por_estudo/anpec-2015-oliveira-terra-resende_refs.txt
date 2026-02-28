@@ -1,0 +1,73 @@
+# Estudo #78
+#  (2015)
+# Efeito Dose Resposta do Fundo Constitucional de ...
+# Fonte: anpec-2015-oliveira-terra-resende.pdf
+======================================================================
+
+Accetturo, A. & De Blasio, G. (2012), ‘Policies for local development: An evaluation of italy’s
+’patti territoriali”, Regional Science and Urban Economics 42(1), 15–26.
+Almeida, M. F., Silva, A. M. A. d. & Resende, G. M. (2006), ‘Uma an´alise dos fundos constituci-
+onais de ﬁnanciamento do nordeste (fne), norte (fno) e centro-oeste (fco)’.
+Alvarenga, G. V. (2012), ‘Impactos dos fundos setoriais nas empresas: novas perspectivas a partir
+da fun¸c˜ao dose-resposta’.
+Barro, R. J. & Sala-i Martin, X. (1992), ‘Convergence’, Journal of political Economy pp. 223–251.
+Becker, S. O., Egger, P. H. & Von Ehrlich, M. (2010), ‘Going nuts: The eﬀect of eu structural
+funds on regional performance’, Journal of Public Economics 94(9), 578–590.
+Becker, S. O., Egger, P. H. & Von Ehrlich, M. (2012), ‘Too much of a good thing? on the growth
+eﬀects of the eu’s regional policy’, European Economic Review 56(4), 648–668.
+Becker, S. O., Ichino, A. et al. (2002), ‘Estimation of average treatment eﬀects based on propensity
+scores’, The stata journal 2(4), 358–377.
+da Silva, A. M. A., Resende, G. M. & Raul da Mota, S. N. (2006), Avalia¸c˜ao econˆomica dos
+fundos constitucionais de ﬁnanciamento do nordeste e do norte (fne e fno), in ‘Anais do XXXIV
+Encontro Nacional de Economia [Proceedings of the 34th Brazilian Economics Meeting]’, num-
+ber 132, ANPEC-Associa¸c˜ao Nacional dos Centros de P´osgradua¸c˜ao em Economia [Brazilian
+Association of Graduate Programs in Economics].
+Dall’Erba, S. & Le Gallo, J. (2008), ‘Regional convergence and the impact of european structural
+funds over 1989–1999: A spatial econometric analysis*’, Papers in Regional Science 87(2), 219–
+244.
+Dehejia, R. H. & Wahba, S. (2002), ‘Propensity score-matching methods for nonexperimental
+causal studies’, Review of Economics and statistics 84(1), 151–161.
+Ertur, C., Le Gallo, J. & Baumont, C. (2006), ‘The european regional convergence process, 1980-
+1995: Do spatial regimes and spatial dependence matter?’, International Regional Science Re-
+view 29(1), 3–34.
+Esposti, R. & Bussoletti, S. (2008), ‘Impact of objective 1 funds on regional growth convergence
+in the european union: a panel-data approach’, Regional Studies 42(2), 159–173.
+Federal, S. (1988), ‘Constitui¸c˜ao da rep´ublica federativa do brasil’, Bras´ılia: Senado .
+Hirano, K. & Imbens, G. W. (2004), ‘The propensity score with continuous treatments’, Applied
+Bayesian modeling and causal inference from incomplete-data perspectives 226164, 73–84.
+19
+
+Imbens, G. W. (2000), ‘The role of the propensity score in estimating dose-response functions’,
+Biometrika 87(3), 706–710.
+Mohl, P. & Hagen, T. (2010), ‘Do eu structural funds promote regional growth? new evidence
+from various panel data approaches’, Regional Science and Urban Economics 40(5), 353–365.
+Nacional, M. D. I. (2009), ‘Relat´orio de desempenho operacional: Fundos constitucionais de ﬁ-
+nanciamento, 20 anos’.
+Nacional, M. D. I. (2012), ‘Fundos regionais e incentivos ﬁscais: contribuem para a redu¸c˜ao das
+desigualdades regionais e ajudam o brasil a crescer’.
+Nacional, M. D. I. (ND), ‘Pol´ıtica nacional de desenvolvimento regional, pndr’.
+Pischke, J.-S. & Angrist, J. (2009), ‘Mostly harmless econometrics: an empiricist‘s companion’.
+Resende, G. M. (2012), ‘Micro e macroimpactos de pol´ıticas de desenvolvimento regional: O caso
+dos empr´estimos do fne-industrial no estado de cear´a’.
+Resende, G. M. (2014a), ‘Avalia¸c˜ao dos impactos econˆomicos do fundo constitucional de ﬁnanci-
+amento do nordeste entre 2004 e 2010’.
+Resende, G. M. (2014b), ‘Measuring micro-and macro-impacts of regional development policies:
+The case of the northeast regional fund (fne) industrial loans in brazil, 2000–2006’, Regional
+studies 48(4), 646–664.
+Resende, G. M., Cravo, T. A. & Pires, M. J. d. S. (2014), ‘Avalia¸c˜ao dos impactos econˆomicos do
+fundo constitucional de ﬁnanciamento do centro-oeste (fco) entre 2004 e 2010’.
+Rodr´Iguez-Pose*, A. & Fratesi, U. (2004), ‘Between development and social policies: the impact
+of european structural funds in objective 1 regions’, Regional Studies 38(1), 97–113.
+Rosenbaum, P. R. & Rubin, D. B. (1983), ‘The central role of the propensity score in observational
+studies for causal eﬀects’, Biometrika 70(1), 41–55.
+Rubin, D. B. (1974), ‘Estimating causal eﬀects of treatments in randomized and nonrandomized
+studies.’, Journal of educational Psychology 66(5), 688.
+Silva, A. M. A. d., Resende, G. M., Neto, S. & da Mota, R. (2009), ‘Eﬁc´acia do gasto p´ublico:
+uma avalia¸c˜ao do fne, fno e fco’, Estudos Econˆomicos (S˜ao Paulo) 39(1), 89–125.
+Soares, R. B., Linhares, F. C., Gon¸calves, M. F. & Viana, L. F. G. (2014), ‘Fondo constitucional
+de ﬁnanciamiento del nordeste del brasil: efectos diferenciados sobre el crecimiento econ´omico
+de los municipios’, Revista de la CEPAL (113), 183–201.
+Soares, R., Sousa, J. & Neto, A. P. (2009), ‘Avalia¸c˜ao de impacto do fne no emprego, na massa
+salarial e no sal´ario m´edio em empreendimentos ﬁnanciados’, Revista econˆomica do Nordeste
+40(1), 217–234.
+20

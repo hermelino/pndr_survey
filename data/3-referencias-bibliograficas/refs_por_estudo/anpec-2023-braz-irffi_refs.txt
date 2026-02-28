@@ -1,0 +1,81 @@
+# Estudo #94
+#  (2023)
+# Economia Regional IMPACTOS DOS INCENTIVOS ...
+# Fonte: anpec-2023-braz-irffi.pdf
+======================================================================
+
+ABADIE, Alberto. Semiparametric difference-in-differences estimators. The Review of 
+Economic Studies, v. 72, n. 1, p. 1-19, 2005. 
+BRASIL. Lei n° 3.692, de 15 de dezembro de 1959. Institui a Superintendência do 
+Desenvolvimento do Nordeste e dá outras providências. Rio de Janeiro, RJ: Diário Oficial da 
+União, 1959. 
+BRASIL. Lei n° 4.239, de 27 de junho de 1963. Aprova o Plano Diretor do Desenvolvimento 
+do Nordeste para os anos de 1963, 1964 e 1965, e dá outras providências. Brasília, DF: Diário 
+Oficial da União, 1963. 
+BRASIL. Lei n° 5.508, de 11 de dezembro de 1968. Aprova a Quarta Etapa do Plano Diretor 
+de Desenvolvimento Econômico e Social do Nordeste, para os anos de 1969, 1970, 1971, 
+1972 e 1973, e dá outras providências. Brasília, DF: Diário Oficial da União, 1968. 
+BRASIL. MP nº 2.199-14 de 2001. Altera a legislação do imposto de renda no que se refere 
+aos incentivos fiscais de isenção e de redução, define diretrizes para os incentivos fiscais de 
+aplicação de parcela do imposto sobre a renda nos Fundos de Investimentos Regionais, e dá 
+outras providências. Brasília, DF: Diário Oficial da União, 2001.  
+BRASIL. Decreto n° 4.213, de 26 de abril de 2002. Define os setores da economia prioritários 
+para o desenvolvimento regional, nas áreas de atuação da extinta SUDENE, e dá outras 
+providências. Brasília, DF: Diário Oficial da União, 2002. 
+BRASIL. Ministério da Integração Nacional (MIN). Gabinete do Ministro. Portaria n° 283 de 
+4 de julho de 2013. Brasília, 2013.  
+
+23 
+ 
+BRASIL. MIN. Fundos regionais e incentivos fiscais: caderno de informações gerenciais. 
+2015 
+BRASIL. Lei Complementar n° 185, de 6 de outubro de 2021. Altera o art. 2º da Lei 
+Complementar nº 125, de 3 de janeiro de 2007, para incluir Municípios dos Estados de Minas 
+Gerais e do Espírito Santo na área de atuação da Superintendência do Desenvolvimento do 
+Nordeste (Sudene). Brasília, DF: Diário Oficial da União, 2021. 
+CALLAWAY, Brantly; SANT’ANNA, Pedro HC. Difference-in-differences with multiple 
+time periods. Journal of Econometrics, v. 225, n. 2, p. 200-230, 2021. 
+CARVALHO JÚNIOR, José Raimundo; BARRETO, Flávio Ataliba Flexa Daltro; 
+OLIVEIRA, Victor Hugo. Avaliação econométrica do Fundo de Desenvolvimento Industrial 
+do Estado do Ceará. 2006. 
+CERQUA, Augusto; PELLEGRINI, Guido. Do subsidies to private capital boost firms' 
+growth? A multiple regression discontinuity design approach. Journal of Public Economics, 
+v. 109, p. 114-126, 2014. 
+CHAUREY, Ritam. Location-based tax incentives: Evidence from India. Journal of Public 
+Economics, v. 156, p. 101-120, 2017. 
+DE OLIVEIRA, Tássia; SILVEIRA NETO, Raul da Mota. Incentivos Fiscais Territoriais ao 
+Desenvolvimento Local: uma Avaliação do Programa de Desenvolvimento do Estado de 
+Pernambuco-Prodepe. 2020. 
+DECRAMER, Stefaan; VANORMELINGEN, Stijn. The effectiveness of investment 
+subsidies: evidence from a regression discontinuity design. Small Business Economics, v. 
+47, p. 1007-1032, 2016. 
+GARSOUS, Grégoire et al. Tax incentives and job creation in the tourism sector of Brazil’s 
+SUDENE area. World Development, v. 96, p. 87-101, 2017. 
+GONÇALVES, Felipe de Oliveira; DE ALMEIDA, Aléssio Tony; BARBOSA, Gerrio dos 
+Santos. Efetividade dos incentivos fiscais à indústria sobre o volume de empregos e a massa 
+salarial: um estudo do Fundo de Apoio ao Desenvolvimento Industrial da Paraíba. 2018.  
+GOODMAN, David Edwin, et al. Os incentivos financeiros à industrialização do Nordeste e a 
+escolha de tecnologias. Instituto de Pesquisa Econômica Aplicada (IPEA), 1971. 
+HARGER, Kaitlyn; ROSS, Amanda. Do capital tax incentives attract new businesses? 
+Evidence across industries from the new markets tax credit. Journal of Regional Science, v. 
+56, n. 5, p. 733-753, 2016. 
+HECKMAN, James et al. Characterizing Selection Bias Using Experimental Data. 
+Econometrica, v. 66, n. 5, p. 1017–1098, 1998.  
+HECKMAN, James et al. Matching as an Econometric Evaluation Estimator: Evidence from 
+Evaluating a Job Training Programme. The Review of Economic Studies, v. 64, n. 4, p. 605–
+654, 1997. 
+IBGE. Pesquisa Nacional por Amostra de Domicílios (PNAD). Disponível em: 
+<https://www.ibge.gov.br/estatisticas/sociais/populacao/9127-pesquisa-nacional-por-amostra-
+de-domicilios.html?=&t=o-que-e>. Acesso em 10/05/2023.  
+LIMA, Ana Carolina da Cruz; LIMA, João Policarpo Rodrigues. Programas de 
+desenvolvimento local na região Nordeste do Brasil: uma avaliação preliminar da "guerra 
+fiscal". Economia e Sociedade, v. 19, p. 557-588, 2010. 
+OLIVEIRA JÚNIOR, José Nilo; DIAS, Adilson Freitas; TABOSA, Francisco José Silva. 
+Avaliação da Política de Incentivos Fiscais sobre a capacidade fiscal, ISS, emprego e valor 
+adicionado bruto da indústria no estado do Pará. Novos Cadernos NAEA, v. 17, n. 1, 2014. 
+SILVA, Alexandre Rezende et al. O programa produzir-Goiás e o impacto na promoção de 
+emprego, renda e arrecadação local. 2018. 
+VARSANO, Ricardo. Os incentivos fiscais do imposto de renda das empresas. Revista 
+Brasileira de Economia, v. 36, n. 2, p. 107-128, 1982. 
+
+24

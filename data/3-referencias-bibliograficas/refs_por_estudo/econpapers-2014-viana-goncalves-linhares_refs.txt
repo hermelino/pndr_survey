@@ -1,0 +1,169 @@
+# Estudo #51
+# Viana, Luiz Fernando Gonçalves; Gonçalves, Marcos Falcão; Linhares, Fabrício Carneiro; Soares, Ricardo Brito (2014)
+# Brazil’s Northeast Financing Constitutional Fund: Differentiated effects on municipal economic growth
+# Fonte: econpapers-2014-viana-goncalves-linhares.pdf
+======================================================================
+
+Aghion, P., P. Howitt and D. Mayer-Foulkes (2004), “The effect of 
+financial development on convergence: theory and evidence”, 
+nber Working Paper, No. 10358, Cambridge, Massachusetts, 
+National Bureau of Economic Research.
+Azariadis, C. and A. Drazen (1990), “Threshold externalities in 
+economic development”, The Quarterly Journal of Economics, 
+vol. 105, No. 2, Oxford, Oxford University Press.
+Banco do Nordeste (2011), Fundo Constitucional de Financiamento 
+do Nordeste – FNE. Relatório de resultados e impactos: 
+Exercício de 2011 – Primeiro semestre. 
+Barro, R. and X. Sala-i-Martin (1992), “Convergence”, Journal of 
+Political Economy, vol. 100, No. 2, Chicago, University of 
+Chicago Press.
+ (1991), “Convergence across states and regions”, Brookings 
+Papers on Economic Activity, vol. 22, No. 1, Washington, D.C., 
+The Brookings Institution. 
+Baumol, J.W. (1986), “Productivity growth, convergence, and welfare: 
+what the long-run data show”, The American Economic Review, 
+vol. 76, No. 5, Nashville, Tennessee, American Economic 
+Association, December.
+Bayoumi, T. and O. Melander (2008), “Credit matters: empirical 
+evidence on U.S. macro-financial linkages”, imf Working 
+Paper, No. 08/169, Washington, D.C., International 
+Monetary Fund.
+Bencivenga, V.R. and B.D. Smith (1991), “Financial intermediation 
+and endogenous growth”, Review of Economic Studies, vol. 58, 
+No. 2, Oxford, Oxford University Press.
+Bourguignon, F. (2002), “The distributional effects of growth: case 
+studies vs. cross-country regressions”, delta Working Paper, 
+No. 2002-23, Paris, delta (École normale supérieure).
+Boyd, J.H. and E.C. Prescott (1986), “Financial intermediary-
+coalitions”, Journal of Economic Theory, vol. 38, No. 2, 
+Amsterdam, Elsevier.
+Brazil (1999), “Lei nº 9.808, de 20 de julho de 1999. Define diretrizes 
+e incentivos fiscais para o desenvolvimento regional e dá outras 
+providências” [online] http://www.planalto.gov.br. 
+Cabral, E.C.S. (2008), “Convergência de renda per capita entre os 
+Estados brasileiros de 1939 a 2004”, thesis, Brasilia, University 
+of Brasilia.
+Chinelatto Neto, A. (2007), “Relações entre crédito e crescimento 
+econômico no Brasil, 2000 a 2006”, thesis, Viçosa, Minas 
+Gerais, Federal University of Viçosa.
+Dall’Erba, S., R. Guillain and J.L. Gallo (2011), “Impact of structural 
+funds on regional growth: how to reconsider a 7 year-old 
+black-box”, Working Paper. 
+Dall’Erba, S. and H.L.F. de Groot (2006), “A meta-analysis of eu 
+regional policy evaluation”, paper presented at the 53rd Annual 
+North American Meetings of the rsai, Toronto. 
+De Gregorio, J. and P.E. Guidotti (1995), “Financial development 
+and economic growth”, World Development, vol. 23, No. 3, 
+Amsterdam, Elsevier.
+Durlauf, S.N. and P.A. Johnson (1995), “Multiple regimes and cross-
+country growth behavior”, Journal of Applied Econometrics, 
+vol. 10, No. 4, John Wiley & Sons, Ltd. 
+Durlauf, S.N., P.A. Johnson and J.R.W. Temple (2004), “Growth 
+econometrics”, Vassar College Department of Economics 
+Working Paper, No. 61.
+Durlauf, S.N. and D.T. Quah (1999), “The new empirics of economic 
+growth”, Handbook of Macroeconomics, J.B. Taylor and M. 
+Woodford (ed.), vol. 1, Amsterdam, Elsevier.
+Goldsmith, R.W. (1969), Financial Structure and Development, New 
+Haven, Connecticut, Yale University Press.
+Greenwood, J. and B. Jovanovic (1990), “Financial development, 
+growth and the distribution of income”, Journal of Political 
+Economy, vol. 98, No. 5, Chicago, University of Chicago Press.
+Hansen, B.E. (2000), “Sample splitting and threshold estimation”, 
+Econometrica, vol. 68, No. 3, New York, The Econometric 
+Society.
+ (1996), “Inference when a nuisance parameter is not 
+identiffed under the null hypothesis”, Econometrica, vol. 64, 
+No. 2, New York, The Econometric Society.
+Jappelli, T. and M. Pagano (1994), “Saving, growth and liquidity 
+constraints”, Quarterly Journal of Economics, vol. 109, No. 
+1, Cambridge, Massachusetts, The mit Press.
+Keynes, J.M. (1936), General Theory of Employment, Interest, and 
+Money, London, Macmillan.
+King, R.G. and R. Levine (1993), “Finance, entrepreneurship, and 
+growth”, Journal of Monetary Economics, vol. 32, No. 3, 
+Amsterdam, Elsevier.
+Levine, R. (2004), “Finance and growth: theory and evidence”, 
+nber Working Paper, No. 10766, Cambridge, Massachusetts, 
+National Bureau of Economic Research.
+ (1992), “Financial structure and economic development”, 
+Policy Research Working Paper Series, No. 849, Washington, 
+D.C., World Bank.
+Mankiw, N., G.D. Romer and D.N. Weil (1992), “A contribution to 
+the empirics of economics”, Quarterly Journal of Economics, 
+vol. 107, No. 2, Oxford, Oxford University Press. 
+Marques Jr., T.E. and S.S. Porto Jr. (2004), “Desenvolvimento 
+financeiro e crescimento econômico no Brasil – Uma avaliação 
+econométrica”, Trabalho para Discussão, No. 11, Postgraduate 
+Programme in Economics/Federal University of Rio Grande 
+do Sul (ufrgs).
+Matos, O.C. (2002), “Desenvolvimento do sistema financeiro e 
+crescimento econômico no Brasil: Evidência de causalidade”, 
+Trabalho para discussão, No. 49, Central Bank of Brazil.
+McKinnon, R. (1973), Money and Capital in Economic Development, 
+Washington, D.C., The Brookings Institute.
+Mesquita, A.M. (1996), “Avaliação econômica do Fundo Constitucional 
+de Financiamento do Nordeste (fne)”, Dissertação de 
+Mestrado, Minas Gerais, Federal University of Minas Gerais.
+Ministry of National Integration (2010), 20 Anos de Fundos 
+Constitucionais de Financiamento (fco-fne-fno), Brasilia. 
+ (2005), Plano Nacional de Desenvolvimento Regional, 
+Brasilia.
+Oliveira, H.C. de and E.P. Domingues (2005), “Considerações sobre 
+o impacto dos Fundos Constitucionais de Financiamento do 
+Norte e do Centro-Oeste na redução da desigualdade regional 
+no Brasil”, Anais do XXXIII Encontro Nacional de Economia, 
+Rio de Janeiro, National Association of Post-Graduate Centres 
+of Economics (anpec).
+Oliveira, J.L. and others (2011), “Dinâmica regional e convergência 
+de renda: um estudo para os municípios cearenses no período 
+recente”, Dinâmica regional e convergência de renda. Uma 
+análise para os municípios brasileiros selecionados no 
+período 2002-2007, Brasilia, Institute of Applied Economic 
+Research (ipea).
+Penna, C.M. (2011), “Convergência dos pibs estaduais per capita no 
+Brasil”, thesis, Fortaleza, caen. 
+Phillips, P.C.B. and D. Sul (2007), “Transition modeling and 
+econometric convergence tests”, Econometrica, vol. 75, No. 
+6, New York, The Econometric Society.
+Resende, G.M. (2012a), “Measuring micro- and macro-impacts 
+of regional development policies: the case of the Northeast 
+Regional Fund (fne) industrial loans in Brazil, 2000-2006”, 
+Regional Studies, vol. 48, No. 4, Taylor & Francis.
+ (2012b), “Micro e macroimpactos de políticas de 
+desenvolvimento regional: o caso dos empréstimos do fne-
+industrial no estado do Ceará”, Texto para Discussão, No. 1777, 
+Rio de Janeiro, Institute of Applied Economic Research (ipea).
+
+C E P A L  R E V I E W  1 1 3  •  A U G U S T  2 0 1 4
+192
+BRAZIL’S NORTHEAST FINANCING CONSTITUTIONAL FUND: DIFFERENTIATED EFFECTS ON MUNICIPAL ECONOMIC GROWTH  •   
+FABRÍCIO CARNEIRO LINHARES, RICARDO BRITO SOARES, MARCOS FALCÃO GONÇALVES AND LUIZ FERNANDO GONÇALVES VIANA
+Rocha, B.P. and M.I. Nakane (2007), “Sistema financeiro e 
+desenvolvimento econômico: evidências de causalidade em 
+um painel para o Brasil”, Anais do XXXV Encontro Nacional 
+de Economia, Rio de Janeiro, National Association of Post-
+Graduate Centres of Economics (anpec). 
+Rodrigues, M.T. (1998), “Eficiência alocativa do Fundo Constitucional 
+de Financiamento do Nordeste (fne): uma visão de insumo-
+produto”, Dissertação, São Paulo, Luiz de Queiroz School of 
+Agriculture/University of São Paulo.
+Schumpeter, J.A. (1934), The Theory of Economic Development, 
+Cambridge, Massachusetts, Harvard University Press.
+Shaw, E.S. (1973), Financial Deepening in Economic Development, 
+New York, Oxford University Press.
+Silva, A.M., G.M. Resende and R. Silveira Neto (2009), “Eficácia 
+do gasto público: uma avaliação do fne, fno e fco”, Estudos 
+econômicos, vol. 39, No. 1, São Paulo.
+Soares, R., J. Sousa and A. Pereira Neto (2009), “Avaliação de 
+impacto do fne no emprego, na massa salarial e no salário 
+médio em empreendimentos financiados”, Revista Econômica 
+do Nordeste, vol. 40, No. 1, Fortaleza, Banco do Nordeste.
+Trompieri Neto, N., I. Castelar and F.C. Linhares (2008), 
+“Convergência de renda dos estados brasileiros: uma abordagem 
+de painel dinâmico com efeito threshold”, Anais do XXXVI 
+Encontro Nacional de Economia, Rio de Janeiro, National 
+Association of Post-Graduate Centres of Economics (anpec).
+Tsangarides, C.G. (2005), “Growth empirics under model uncertainty: 
+is Africa different?, imf Working Papers, No. 05/18, 
+Washington, D.C., International Monetary Fund.

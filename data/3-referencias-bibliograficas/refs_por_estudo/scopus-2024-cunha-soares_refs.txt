@@ -1,0 +1,104 @@
+# Estudo #31
+# Júnior, J.M.D.C.; Soares, R.B. (2024)
+# EFEITOS HETEROGÊNEOS DA INTENSIDADE DO TRATAMENTO: UMA ANÁLISE DO FUNDO CONSTITUCIONAL DE FINANCIAMENTO DO NORDESTE (FNE)
+# Fonte: scopus-2024-cunha-soares.pdf
+======================================================================
+
+avenyo, Elvis Korku; konte, Maty; mohnen, Pierre. The Employment Impact
+of Product Innovations in Sub-Saharan Africa: Firm-level Evidence. Rese-
+arch Policy, v. 48, n. 9, 2019.
+banco do nordeste do brasil — bnb. Fundo Constitucional de Financiamento do
+Nordeste (FNE): relatório de resultados e impactos exercício 2021. Fortaleza:
+Banco do Nordeste do Brasil, 2021.
+banco do nordeste do brasil — bnb. Programação Regional do FNE 2018. For-
+taleza: Banco do Nordeste do Brasil, 2018.
+becker, Sascha O.; egger, Peter H.; von ehrlich, Maximilian. Too Much of a
+Good Thing? On the Growth Eﬀects of the EU’s Regional Policy. European
+Economic Review, v. 56, n. 4, p. 648–668, 2012.
+beugelsdijk, Maaike; eijffinger, Sylvester C. W. The Eﬀectiveness of Structu-
+ral Policy in the European Union: An Empirical Analysis for the EU-15 in
+1995-2001*. Journal of Common Market Studies, v. 43, n. 1, p. 37–51, 2005.
+bia, Michela; mattei, Alessandra. A Stata Package for the Estimation of the
+Dose-response Function through Adjustment for the Generalized Propen-
+sity Score. The Stata Journal, v. 8, n. 3, p. 354–373, 2008.
+carneiro, Diego. Determinantes da eﬁciência da aplicação dos recursos do FNE
+pelos municípios beneﬁciados. Fortaleza: Banco do Nordeste do Brasil, 2018.
+cerulli, Giovanni. Ctreatreg: Command for Fitting Dose–Response Models
+under Exogenous and Endogenous Treatment. The Stata Journal, v. 15, n. 4,
+p. 1019–1045, 2015.
+chabe-ferret, Sylvain. To control or not to control? Bias of simple matching
+vs diﬀerence-in-diﬀerence matching in a dynamic framework. In: world
+congress of the econometric society, 10., Shanghai.
+dall’erba, Sandy; le gallo, Julie. Regional Convergence and the Impact of
+European Structural Funds over 1989–1999: A Spatial Econometric Analy-
+sis. Papers in Regional Science, v. 87, n. 2, p. 219–245, 2008.
+esposti, Roberto; bussoletti, Stefania. Impact of Objective 1 Funds on Regio-
+nal Growth Convergence in the European Union: A Panel-data Approach.
+Regional Studies, v. 42, n. 2, p. 159–173, 2008.
+gondim, Jane Mary; souza, Jânia Maria Pinho; pires, Inacio Jose Bessa. O Im-
+pacto dos Investimentos do FNE na Geração de Empregos no Nordeste:
+Período 2000-2006. Revista Econômica do Nordeste, v. 42, n. 1, p. 67–86,
+2011.
+hirano, Keisuke; imbens, Guido W. The Propensity Score with Continuous
+Treatments. In: Applied Bayesian modeling and causal inference from incomplete-
+
+30
+Cunha Júnior e Soares
+Economia Aplicada, v.28, n.1
+data perspectives. Organização: Andrew Gelman e Xiao-Li Meng. 1. ed.
+Nova Iorque: Wiley, 2004. p. 73–84.
+irffi, Guilherme; araújo, José Iranildo da Silva; bastos, Felipe de Sousa. Efei-
+tos heterogêneos do Fundo Constitucional de Financiamento do Nordeste
+na região do Semiárido. In: fórum banco do nordeste de desenvolvi-
+mento, 22.
+jaleta, Moti et al. Impact of Improved Maize Adoption on Household Food
+Security of Maize Producing Smallholder Farmers in Ethiopia. Food Secu-
+rity, v. 10, n. 1, p. 81–93, 2018.
+lima, m. c.; cardenete, m. a. The Impact of European Structural Funds in the
+South of Spain. European Planning Studies, v. 16, n. 10, p. 1445–1457, 2008.
+linhares, Fabrício Carneiro et al. Brazil’s Northeast Financing Constitutional
+Fund: Diﬀerentiated Eﬀects on Municipal Economic Growth. CEPAL Re-
+view, v. 2014, n. 113, p. 175–192, 2014.
+lolos, Sarantis E. G. The Eﬀect of EU Structural Funds on Regional Growth:
+Assessing the Evidence from Greece, 1990–2005. Economic Change and
+Restructuring, v. 42, n. 3, p. 211–228, 2009.
+menezes filho, Naercio; campos, Gabriela; komatsu, Bruno. A evolução da
+produtividade no Brasil. CPP Policy Paper, n. 12, 2014.
+oliveira, Guilherme Resende; menezes, Rafael Terra; resende, Guilherme Men-
+des. Efeito dose resposta do fundo constitucional de ﬁnanciamento do
+centro-oeste (FCO) no estado de Goiás. Nova Economia, v. 28, n. 3, p. 965–
+1000, 2018.
+oliveira, Régis Borges; hoffmann, Rodolfo. Evolução do emprego e dos sa-
+lários na agricultura brasileira, 1995 a 2013. In: congresso da sociedade
+brasileira de economia, administração e sociologia rural, 53., João Pes-
+soa. Anais Eletrônicos. Brasília: SOBER, 2015.
+pflueger, Carolin E; wang, Su. A Robust Test for Weak Instruments in Stata.
+The Stata Journal, v. 15, n. 1, p. 216–225, 2015.
+resende, Guilherme Mendes. Measuring micro-and macro-impacts of regio-
+nal development policies: The case of the Northeast Regional Fund (FNE)
+industrial loans in Brazil, 2000-2006. Regional Studies, v. 48, n. 4, p. 646–
+664, 2014.
+resende, Guilherme Mendes. Micro e macroimpactos de políticas de desenvolvi-
+mento regional: O caso dos empréstimos do FNE-industrial no estado de Ceará.
+Texto para Discussão. 2012.
+rodríguez-pose, Andrés; fratesi, Ugo. Between Development and Social Po-
+licies: The Impact of European Structural Funds in Objective 1 Regions.
+Regional Studies, v. 38, n. 1, p. 97–113, 2004.
+
+Efeitos heterogêneos da intensidade do tratamento
+31
+silva, Alexandre Manoel Angelo; resende, Guilherme; silveira neto, Raul da
+Mota. Uma Avaliação da Eﬁcácia do FNE, no período 1995-2000. Análise
+Econômica, v. 25, n. 48, 2007.
+soares, Ricardo Brito; sousa, Jânia Maria Pinho; pereira neto, Antônio. Ava-
+liação de impacto do FNE no emprego, na massa salarial e no salário mé-
+dio em empreendimentos ﬁnanciados. Revista Econômica do Nordeste, v. 40,
+n. 1, p. 217–234, 2009.
+vicente, Maria Carlota Meloni; baptistella, Celma da Silva Lago; francisco,
+Vera Lúcia Ferraz dos Santos. Evolução do mercado de trabalho na agro-
+pecuária paulista, 1995-2004. In: congresso da sociedade brasileira de
+economia, administração e sociologia rural, 43., Ribeirão Preto. Anais
+Eletrônicos. Brasília: SOBER, 2005.
+wooldridge, Jeﬀrey M. On Two Stage Least Squares Estimation of the Average
+Treatment Eﬀect in a Random Coeﬃcient Model. Economics Letters, v. 56,
+n. 2, p. 129–133, 1997.

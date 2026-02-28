@@ -1,0 +1,109 @@
+# Estudo #88
+#  (2021)
+# Uma Avaliação do Fundo Constitucional de Financiamento ...
+# Fonte: anpec-2021-oliveira-neto.pdf
+======================================================================
+
+Almeida, M. F., Silva, A. M. A. d., and Resende, G. M. (2006).
+Uma análise dos fundos
+constitucionais de ﬁnanciamento do nordeste (fne), norte (fno) e centro-oeste (fco).
+Becker, S. O., Egger, P. H., and Von Ehrlich, M. (2010). Going nuts: The effect of eu structural
+funds on regional performance. Journal of Public Economics, 94(9-10):578–590.
+Becker, S. O., Egger, P. H., and Von Ehrlich, M. (2012). Too much of a good thing? on the
+growth effects of the eu’s regional policy. European Economic Review, 56(4):648–668.
+Becker, S. O., Egger, P. H., and von Ehrlich, M. (2017). Effects of eu regional policy: 1989-
+2013. Regional Science and Urban Economics.
+Bernini, C. and Pellegrini, G. (2011). How are growth and productivity in private ﬁrms affected
+by public subsidy? evidence from a regional policy. Regional Science and Urban Economics,
+41(3):253–265.
+Bertrand, M., Duﬂo, E., and Mullainathan, S. (2004). How much should we trust differences-
+in-differences estimates? The Quarterly journal of economics, 119(1):249–275.
+Blundell, R. and Dias, M. C. (2009). Alternative approaches to evaluation in empirical microe-
+conomics. Journal of Human Resources, 44(3):565–640.
+Calonico, S., Cattaneo, M. D., and Titiunik, R. (2014). Robust nonparametric conﬁdence inter-
+vals for regression-discontinuity designs. Econometrica, 82(6):2295–2326.
+Cerqua, A. and Pellegrini, G. (2014). Do subsidies to private capital boost ﬁrms’ growth? a
+multiple regression discontinuity design approach. Journal of Public Economics, 109:114–
+126.
+
+19
+Cravo, T. A., Resende, G. M., and Carvalho, A. (2014).
+The impact of brazilian regional
+development funds on regional economic growth: A spatial panel approach. In 54th ERSA
+Congress, pages 26–29.
+Da Mata, D. and Resende, G. (2020). Changing the climate for banking: the economic effects
+of credit in a climate-vulnerable area. Journal of Development Economics, 146:102459.
+Dall’Erba, S. and Le Gallo, J. (2008). Regional convergence and the impact of european struc-
+tural funds over 1989–1999: A spatial econometric analysis. Papers in Regional Science,
+87(2):219–244.
+Dell, M. (2010). The persistent effects of peru’s mining mita. Econometrica, 78(6):1863–1903.
+Dell, M., Lane, N., and Querubin, P. (2015). State capacity, local governance, and economic
+development in vietnam. NBER Working Paper, pages 1–40.
+Galeano, E. V. and Feijó, C. (2012). Crédito e crescimento econômico: evidências a partir de
+um painel de dados regionais para a economia brasileira nos anos 2000. Revista econômica
+do Nordeste, 43(2):201–220.
+Gelman, A. and Imbens, G. (2019). Why high-order polynomials should not be used in regres-
+sion discontinuity designs. Journal of Business & Economic Statistics, 37(3):447–456.
+Giua, M. (2017). Spatial discontinuity for the impact assessment of the eu regional policy: The
+case of italian objective 1 regions. Journal of Regional Science, 57(1):109–131.
+Gonçalves, M. F. (2017). Avaliação dos impactos do Fundo Constitucional de Financiamento
+do Nordeste (FNE) uma abordagem de Equilíbrio Geral. PhD thesis, Universidade Federal
+de Viçosa, Curso de Pós-Graduação em Economia Aplicada, Viçosa.
+Irrf, Guilherme, A. J. d. S. and Bastos, F. D. S. (2016). Efeitos heterogêneos do fundo cons-
+titucional de ﬁnanciamento do nordeste na região do semiárido. In XXII Fórum Banco do
+Nordeste de Desenvolvimento E XXI Encontro Regional De Economia. ANPEC-Associação
+Nacional dos Centros de Pósgraduação em Economia [Brazilian Association of Graduate
+Programs in Economics].
+Keele, L. J. and Titiunik, R. (2015). Geographic boundaries as regression discontinuities. Poli-
+tical Analysis, 23(1):127–155.
+Kline, P. and Moretti, E. (2014).
+People, places, and public policy: Some simple welfare
+economics of local economic development programs. Annu. Rev. Econ., 6(1):629–662.
+Lessmann, C. and Seidel, A. (2017). Regional inequality, convergence, and its determinants–a
+view from outer space. European Economic Review, 92:110–132.
+Macedo, F. C. (2017). Diagnóstico do fundo constitucional de ﬁnanciamento do nordeste (fne).
+Macedo, F. C. and Mattos, E. N. (2008). O papel dos fundos constitucionais de ﬁnanciamento
+no desenvolvimento regional brasileiro. Ensaios fee, 29(2):355–384.
+Nascimento, T. O. and Haddad, E. A. (2017). Fundo constitucional de ﬁnanciamento do nor-
+deste: Uma aplicação de equilíbrio geral computável. In Anais do XLV Encontro Nacional de
+Economia. ANPEC-Associação Nacional dos Centros de Pósgraduação em Economia [Bra-
+zilian Association of Graduate Programs in Economics].
+
+20
+Oliveira, G. R.; Resende, G. M. G. C. N. and Silva, D. F. (2017). Efeito não lineares dos fundos
+constitucionais de ﬁnanciamento entre 2000 e 2012. In Anais do XLV Encontro Nacional de
+Economia. ANPEC-Associação Nacional dos Centros de Pósgraduação em Economia [Bra-
+zilian Association of Graduate Programs in Economics].
+Oliveira, G. R., De Menezes, R. T., and Resende, G. M. (2015). Efeito dose resposta do fundo
+constitucional de ﬁnanciamento do centro-oeste (fco) do estado de goiás. Technical report,
+Texto para Discussão, Instituto de Pesquisa Econômica Aplicada (IPEA).
+Pellegrini, G. and Muccigrosso, T. (2017). Do subsidized new ﬁrms survive longer? evidence
+from a counterfactual approach. Regional Studies, 51(10):1483–1493.
+Pellegrini, G., Terribile, F., Tarola, O., Muccigrosso, T., and Busillo, F. (2013). Measuring the
+effects of european regional policy on economic growth: A regression discontinuity appro-
+ach. Papers in Regional Science, 92(1):217–233.
+Resende, G. M. (2012). Micro e macroimpactos de políticas de desenvolvimento regional: O
+caso dos empréstimos do fne-industrial no estado de ceará. Technical report, Texto para
+Discussão, Instituto de Pesquisa Econômica Aplicada (IPEA).
+Resende, G. M. (2014). Measuring micro-and macro-impacts of regional development policies:
+The case of the northeast regional fund (fne) industrial loans in brazil, 2000-2006. Regional
+studies.
+Resende, G. M., da Silva, D. F. C., and da Silva Filho, L. A. (2017). Avaliação econômica do
+fundo constitucional de ﬁnanciamento do nordeste (fne): uma análise espacial por tipologia
+da pndr entre 1999 e 2011. Revista Econômica do Nordeste, 48(1):9–29.
+Shankar, R. and Shah, A. (2003). Bridging the economic divide within countries: A score-
+card on the performance of regional policies in reducing regional income disparities. World
+development, 31(8):1421–1441.
+Silva, A. M. A. d., Resende, G. M., Neto, S., and da Mota, R. (2009). Eﬁcácia do gasto público:
+uma avaliação do fne, fno e fco. Estudos Econômicos (São Paulo), 39(1):89–125.
+Silva, A. M. A. d., Resende, G. M., and Silveira Neto, R. d. M. (2006). Avaliação econômica
+dos fundos constitucionais de ﬁnanciamento do nordeste (fne) e do norte (fno).
+Silva, Alexandre Manoel Angelo; Resende, G. M. and Silveira Neto, R. M. (2007). Uma avali-
+ação da eﬁcácia do fne, no período 1995-2000. Análise econômica, 25(48).
+Soares, R., Sousa, J., and PEREIRA NETO, A. (2009).
+Avaliação de impactos do fne no
+emprego, na massa salarial e no salário médio em empreendimentos ﬁnanciados. Revista
+econômica do Nordeste, 40(1):217–234.
+Soares, R. B., Linhares, F. C., Gonçalves, M. F., and Viana, L. F. G. (2014). Fondo constitu-
+cional de ﬁnanciamiento del nordeste del brasil: efectos diferenciados sobre el crecimiento
+económico de los municipios. Revista CEPAL.

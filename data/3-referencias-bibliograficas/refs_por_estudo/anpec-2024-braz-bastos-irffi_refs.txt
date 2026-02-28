@@ -1,0 +1,92 @@
+# Estudo #105
+#  (2024)
+# impactos do financiamento empresarial via fdne sobre ...
+# Fonte: anpec-2024-braz-bastos-irffi.pdf
+======================================================================
+
+ABADIE, Alberto. Semiparametric difference-in-differences estimators. The Review of Economic 
+Studies, v. 72, n. 1, p. 1-19, 2005. 
+ANTUNES, Micaela et al. The Impact of Structural Funds on Regional Growth: A Panel Data Spatial 
+Analysis. Intereconomics, v. 55, n. 5, p. 312–319, 2020. 
+BATTY, M.; IPPOLITO, B. Financial Incentives, Hospital Care, and Health Outcomes: Evidence from 
+Fair Pricing Laws. American Economic Journal: Economic Policy, v. 9, n. 2, p. 28–56, 2017. 
+BECKER, Sascha O.; EGGER, Peter H.; VON EHRLICH, Maximilian. Absorptive Capacity and the 
+Growth and Investment Effects of Regional Transfers: A Regression Discontinuity Design with 
+Heterogeneous Treatment Effects. American Economic Journal: Economic Policy, v. 5, n. 4, p. 29–77, 
+2013. 
+BRAZ, Marleton Souza; IRFFI, Guilherme. Impactos dos incentivos fiscais da Sudene sobre o mercado de 
+trabalho local. XXVIII Encontro Regional de Economia. Fortaleza. Anais… Fortaleza, Anpec, 2023. 
+BUSATTO, Leonardo Maranhão. Impactos econômicos do programa Fundopem nas regiões do Rio Grande 
+do Sul : análise usando econometria espacial, 2010-2019. 2022. 
+CALLAWAY, B.; SANT’ANNA, P. H. C. Difference-in-differences with multiple time periods. Journal 
+of Econometrics, v. 225, n. 2, p. 200-230, 2021. 
+CARNEIRO, D.; VELOSO, P.; FERREIRA, W.; IRFFI, G. Análise do Impacto dos Instrumentos da PNDR 
+sobre a Economia dos Municípios Nordestinos. Não publicado, 2024. 
+CARVALHO JÚNIOR, José Raimundo; OLIVEIRA, Victor H.. O Fundo de desenvolvimento industrial 
+do Ceará: uma avaliação econométrica com dados em painel para o período de 1995 a 2001. 2003. 
+DE LA FUENTE, Angel et al. Infrastructure and Education as Instruments of Regional Policy: Evidence 
+from Spain. Economic Policy, v. 10, n. 20, p. 13–51, 1995. 
+DE OLIVEIRA, Heder; DOMINGUES, Edson. Considerações sobre o impacto dos Fundos Constitucionais 
+de financiamento do Norte e do Centro-Oeste na redução da desigualdade regional no Brasil. 2005. 
+DI CATALDO, Marco. The impact of EU Objective 1 funds on regional development: Evidence from the 
+U.K. and the prospect of Brexit. Journal of Regional Science, v. 57, n. 5, p. 814–839, 2017a. 
+DI CATALDO, Marco. The impact of EU Objective 1 funds on regional development: Evidence from the 
+U.K. and the prospect of Brexit. Journal of Regional Science, v. 57, n. 5, p. 814–839, 2017b. 
+DUBAS-JAKÓBCZYK, Katarzyna; KOZIEŁ, Anna. European Union Structural Funds as the Source of 
+Financing Health Care Infrastructure Investments in Poland—A Longitudinal Analysis. Frontiers in 
+Public Health, v. 10, 2022.  
+FIDRMUC, Jan; HULÉNYI, Martin; ZAJKOWSKA, Olga. The long and winding road to find the impact 
+of EU funds on regional growth: IV and spatial analyses. Regional Studies, v. 58, n. 3, p. 583–600, 2024. 
+
+FRATESI, Ugo; PERUCCA, Giovanni. EU regional development policy and territorial capital: A systemic 
+approach. Papers in Regional Science, v. 98, n. 1, p. 265–282, 2019. 
+GÓMEZ‐GALLEGO, Juan Cándido; MORENO‐ENGUIX, María del Rocío; GÓMEZ‐GALLEGO, María. 
+The relation between the index of economic freedom and good governance with efficiency of the European 
+Structural Funds. Papers in Regional Science, v. 101, n. 2, p. 327–350, 2022. 
+GOPALAN, Saji S. et al. Health sector demand-side financial incentives in low- and middle-income 
+countries: A systematic review on demand- and supply-side effects. Social Science & Medicine, v. 100, p. 
+72–83, 2014. 
+HANSON, Andrew. Local employment, poverty, and property value effects of geographically-targeted tax 
+incentives: An instrumental variables approach. Regional Science and Urban Economics, v. 39, n. 6, p. 
+721–731, 2009. 
+HECKMAN, James et al. Matching as an Econometric Evaluation Estimator: Evidence from Evaluating a 
+Job Training Programme. The Review of Economic Studies, v. 64, n. 4, p. 605–654, 1997. 
+HECKMAN, James et al. Characterizing Selection Bias Using Experimental Data. Econometrica, v. 66, 
+n. 5, p. 1017–1098, 1998.  
+KLEMM, Alexander; VAN PARYS, Stefan. Empirical evidence on the effects of tax incentives. 
+International Tax and Public Finance, v. 19, n. 3, p. 393–423, 2012. 
+KYRIACOU, Andreas P; ROCA-SAGALÉS, Oriol. The Impact of EU Structural Funds on Regional 
+Disparities within Member States. Environment and Planning C: Government and Policy, v. 30, n. 2, 
+p. 267–281, 2012. 
+MOHL, P.; HAGEN, T. Do EU structural funds promote regional growth? New evidence from various 
+panel data approaches. Regional Science and Urban Economics, v. 40, n. 5, Advances In Spatial 
+Econometrics, p. 353–365, 2010. 
+OLIVEIRA, Guilherme Resende; LIMA, Alex Felipe Rodrigues; ARRIEL, Marcos Fernando. Fundo 
+Constitucional de Financiamento do Centro-Oeste (FCO) em Goiás: Uma aplicação econométrica-espacial. 
+Revista Brasileira de Economia de Empresas, v. 16, n. 1, 2016.  
+REYNOLDS, C. Lockwood; ROHLIN, Shawn. DO LOCATION‐BASED TAX INCENTIVES IMPROVE 
+QUALITY OF LIFE AND QUALITY OF BUSINESS ENVIRONMENT?. Journal of Regional Science, 
+v. 54, n. 1, p. 1–32, 2014. 
+ROTH, Jonathan et al. What’s trending in difference-in-differences? A synthesis of the recent 
+econometrics literature. Journal of Econometrics, v. 235, n. 2, p. 2218-2244, 2023. 
+SCOTTI, Francesco; FLORI, Andrea; PAMMOLLI, Fabio. The economic impact of structural and 
+Cohesion Funds across sectors: Immediate, medium-to-long term effects and spillovers. Economic 
+Modelling, v. 111, p. 105833, 2022. 
+SILVA ET AL. FUNDOS CONSTITUCIONAIS E PIB MUNICIPAL: UMA ANÁLISE POR PAINEL 
+ESPACIAL. XXI ENABER, 2023. 
+HANSON, Andrew. Local employment, poverty, and property value effects of geographically-targeted tax 
+incentives: An instrumental variables approach. Regional Science and Urban Economics, v. 39, n. 6, p. 
+721–731, 2009. 
+KLEMM, Alexander; VAN PARYS, Stefan. Empirical evidence on the effects of tax incentives. 
+International Tax and Public Finance, v. 19, n. 3, p. 393–423, 2012. 
+KYRIACOU, Andreas P; ROCA-SAGALÉS, Oriol. The Impact of EU Structural Funds on Regional 
+Disparities within Member States. Environment and Planning C: Government and Policy, v. 30, n. 2, 
+p. 267–281, 2012. 
+MOHL, P.; HAGEN, T. Do EU structural funds promote regional growth? New evidence from various 
+panel data approaches. Regional Science and Urban Economics, v. 40, n. 5, Advances In Spatial 
+Econometrics, p. 353–365, 2010. 
+REYNOLDS, C. Lockwood; ROHLIN, Shawn. Do location‐based tax incentives improve quality of life 
+and quality of business environment? Journal of Regional Science, v. 54, n. 1, p. 1–32, 2014. 
+SCOTTI, Francesco; FLORI, Andrea; PAMMOLLI, Fabio. The economic impact of structural and 
+Cohesion Funds across sectors: Immediate, medium-to-long term effects and spillovers. Economic 
+Modelling, v. 111, p. 105833, 2022.

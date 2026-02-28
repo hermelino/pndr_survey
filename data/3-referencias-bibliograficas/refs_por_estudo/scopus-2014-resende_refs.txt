@@ -1,0 +1,84 @@
+# Estudo #38
+# Mendes Resende, G. (2014)
+# Measuring Micro- and Macro-Impacts of Regional Development Policies: The Case of the Northeast Regional Fund (FNE) Industrial Loans in Brazil, 2000-2006
+# Fonte: scopus-2014-resende.pdf
+======================================================================
+
+ALMEIDA JUNIOR M., RESENDE G. M. and SILVA A. M. (2007) Distribuição espacial dos fundos constitucionais de ﬁnanciamento do
+Nordeste, Norte e Centro-Oeste, Revista de Economia, Editora UFPR 33(2), 115–137.
+ANGRIST J. and PISCHKE J. (2009) Mostly Harmless Econometrics: An Empiricist’s Companion. Princeton University Press, London.
+ARMSTRONG H. W. (2002) European Union regional policy: reconciling the evaluation and convergence evidence, in CUADRADO-
+ROURA J. and PARELLADA M. (Eds) Regional Convergence in the European Union: Facts, Prospects and Policies. Advances in Spatial
+Sciences Series, pp. 231–272. Springer, Amsterdam.
+BANCO CENTRAL (2000) Juros e Spread Bancário no Brasil. Departamento de Estudos e Pesquisas do Banco Central (available at: http://
+www.bancocentral.gov.br/ftp/jurospread112000.pdf).
+BANCO DO NORDESTE (2001) Programação do Fundo Constitucional de Financiamento do Nordeste – FNE para o ano de 2001. Banco do
+Nordeste, Fortaleza.
+BANCO DO NORDESTE (2009) Programação do Fundo Constitucional de Financiamento do Nordeste – FNE para o ano de 2009. Banco do
+Nordeste, Fortaleza.
+BARNOW B., CAIN G. and GOLDBERGE A. (1981) Selection on observables, Evaluation Studies Review Annual No. 5, 43–59.
+BARRO R. and SALA-I-MARTIN X. (1991) Convergence across states and regions, Brooking Papers on Economic Activity No. 1,
+107–182.
+BARRO R. and SALA-I-MARTIN X. (1992) Convergence, Journal of Political Economy 100, 223–251.
+BARTIK T. and BINGHAM R. (1995) Can Economic Development Programs be Evaluated? Staff Working Papers Number 95-29. W. E.
+Upjohn Institute for Employment Research, Kalamazoo, MI.
+BRASIL (2008) Constituição da República Federativa do Brasil (available at: http://www.planalto.gov.br/ccivil_03/Constituicao/
+Constitui%C3%A7ao.htm).
+CARVALHO A. Y., DA MATA D. and RESENDE G. M. (2007) Clusterização dos municípios brasileiros, Dinâmica dos Municípios. Insti-
+tute of Applied Economic Research (IPEA), Brasilia.
+DALL’ERBA S. (1995) Distribution of regional income and regional funds in Europe 1989–1999: an exploratory spatial data analysis,
+Annals of Regional Science 39, 121–148.
+DALL’ERBA S. and LE GALLO J. (2008) Regional convergence and the impact of European structural funds over 1989–1999: a spatial
+econometric analysis, Papers in Regional Science 87(2), 219–244.
+ESPOSTI R. and BUSSOLETTI S. (2008) Impact of Objective 1 Funds on regional growth convergence in the European Union: a
+panel-data approach, Regional Studies 42(2), 159–173.
+FERREIRA P. C. (2004) Regional Policy in Brazil: A Review. Mimeograph.
+GEHLKE C. and BIEHL K. (1934) Certain effects of grouping upon the size of the correlation coefﬁcient in census tract material,
+Journal of the American Statistical Association 29, 169–170.
+INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA (IBGE) (2009) Sistema de Contas Regionais Referência 2009 – Produto interno bruto
+dos municípios 1999–2008 (available at: http://www.sidra.ibge.gov.br/bda/pesquisas/PIBMun/default.asp).
+IPEADATA. Dados macroeconômicos e regionais (available at: http://www.ipeadata.gov.br).
+JANN W. and WEGRICH K. (2007) Theories of the policy cycle, in FISCHER F., MILLER G. and SIDNEY M. (Eds) Handbook of Public
+Policy Analysis, pp. 43-62. CRC Press, New York, NY.
+KHANDKER S. R., KOOLWAL G. B. and SAMAD H. A. (2010) Handbook on Impact Evaluation: Quantitative Methods and Practices. The
+World Bank, Washington, DC.
+LEONARDI R. (2006) Cohesion in the European Union, Regional Studies 40(2), 155–166.
+MINISTÉRIO DO TRABALHO (1999, 2000, 2003, 2006) Relatório Anual de Informações Sociais (RAIS). Ministério do Trabalho, Brasilia.
+OLIVEIRA H. and DOMINGUES E. P. (2005) Considerações sobre o impacto dos FNO e FCO na redução da desigualdade regional no
+Brasil. Paper presented at the XXXIII Encontro Nacional de Economia conference, Natal.
+OPENSHAW S. and TAYLOR P. J. (1979) A million or so correlation coefﬁcients: three experiments on the modiﬁable areal unit
+problem, in WRIGLEY N. (Ed.) Statistical Applications in the Spatial Sciences, pp. 127–144. Pion, London.
+PEREIRA R. O. (2007) Ação do BNDES sobre o emprego formal: efeito nas empresas ﬁnanciadas, Revista do BNDES 14(27),
+27–42.
+PICHELMANN K. and ROEGER W. (2008) Employment and labour productivity in the EU: reconsidering a potential trade-off in
+the Lisbon strategy, in EICHENGREEN B., LANDESMANN M. and STIEFEL D. (Eds) The European Economy in an American Mirror,
+pp. 128–142. Routledge, London.
+POSTALI F. A. S. (2009) Petroleum royalties and regional development in Brazil: the economic growth of recipient towns, Resources
+Policy 34, 205–213.
+PRESIDÊNCIA DA REPÚBLICA (1989) Federal Law No. 7,827 of 27 September 1989 (available at: http://www.planalto.gov.br/ccivil_03/
+Leis/L7827.htm).
+PRESIDÊNCIA DA REPÚBLICA (2007) Decree No. 6,047 of 22 February 2007 (available at: http://www.planalto.gov.br/ccivil_03/_
+Ato2007-2010/2007/Decreto/D6047.htm).
+ROBINSON W. S. (1950) Ecological correlations and the behaviour of individuals, American Sociological Review 15, 351–357.
+RODRÍGUEZ-POSE A. and FRATESI U. (2004) Between development and social policies: the impact of European structural funds in
+Objective 1 regions, Regional Studies 38, 97–113.
+ROMERO R. and NOBLE M. (2008) Evaluating England’s ‘New Deal for Communities’ programme using the difference-
+in-difference method, Journal of Economic Geography 8, 759–778.
+The Case of FNE Industrial Loans in Brazil, 2000–2006
+663
+Downloaded by [Universite Laval] at 23:03 17 June 2014 
+
+ROSENBAUM P. and Rubin D. (1983) The central role of the propensity score in observational studies for causal effects, Biometrika
+70, 41–55.
+SILVA A. M., RESENDE G. M. and SILVEIRA NETO R. (2009) Eﬁcácia do gasto público: uma avaliação do FNE, FNO e FCO, Estudos
+Econômicos 39(1), 89–125.
+SOLOW R. M. (1956) A contribution to the theory of economic growth, Quarterly Journal of Economics 70, 65–94.
+SOARES R., SOUSA J. and PEREIRA NETO A. (2009) Avaliação de impactos do FNE no emprego, na massa salarial e no salário médio
+em empreendimentos ﬁnanciados, Revista Econômica do Nordeste 40(1), 217–234.
+SOUSA F. L. and OTTAVIANO G. I. P. (2009) The Effects of BNDES Loans on the Productivity of Brazilian Manufacturing Firms. Mimeo,
+Rio de Janeiro.
+TEMPLE J. (1999) The new growth evidence, Journal of Economic Literature 37(1), 112–156.
+WOOLDRIDGE J. (2002) Econometric Analysis of Cross Section and Panel Data. MIT Press, Cambridge, MA.
+664
+Guilherme M. Resende
+Downloaded by [Universite Laval] at 23:03 17 June 2014

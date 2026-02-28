@@ -1,0 +1,103 @@
+# Estudo #50
+# Resende, Guilherme (2014)
+# Avaliação dos Impactos Econômicos do Fundo Constitucional de Financiamento do Nordeste entre 2004 e 2010
+# Fonte: econpapers-2014-resende.pdf
+======================================================================
+
+Almeida Junior M.; Resende G. M.; Silva A. M. Distribuição espacial dos fundos 
+constitucionais de financiamento do Nordeste, Norte e Centro-Oeste. Revista de economia, v. 
+33, n. 2, p. 115-137, 2007.
+Angrist J.; Pischke J. Mostly harmless econometrics: an empiricist’s companion. 
+London, UK.: Princeton University Press, 2009.
+Armstrong,  H.; Taylor, J.   Regional economics and policy. Oxford: Blackwell 
+Publishers, 2000.
+Ávila, R. P.; Monastério, L. M. MAUP e a análise espacial: um estudo de caso para o 
+Rio Grande do Sul. Análise econômica, Rio Grande do Sul, n. 26, p. 239-265, 2008. 
+BNB – Banco do NORDESTE.  Fundo Constitucional de Financiamento do Nordeste – 
+FNE 2013 – Programação Regional. Banco do Nordeste, Fortaleza, p. 1-119, 2013.
+Barro, R. J. Government spending in a simple model of endogenous growth. Journal of 
+political economy, v. 98, p. 103-125, 1990.
+Bartik, T.; Bingham, R. Can economic development programs be evaluated?  W.E. 
+Upjohn Institute for Employment Research, 1995. (Staff Working Papers, n. 95-29).
+Behrens, K.; Thisse, J. F. Regional economics: a new economic geography perspective. 
+Regional science and urban economics, v. 37, p. 457-465, 2007.
+BRASIL. Decreto no 6.047. Política Nacional de Desenvolvimento Regional  (PNDR). 2007. 
+Disponível em: <http:// www.planalto.gov.br/ccivil_03/Ato2007-2010/2007/Decreto/ D6047.htm>.
+______. Lei no 7.827. 1989. Disponível em: <http://www.planalto.gov.br/ccivil_03/Leis/
+L7827. htm>.
+
+34
+R i o  d e  J a n e i r o ,  j a n e i r o  d e  2 0 1 4
+Briant, A.; Combes, P. P.; Lafourcade, M. Dots to boxes: do the size and shape of 
+spatial units jeopardize economic geography estimations? Journal of urban economics, v. 67, 
+p. 287-302, 2010.
+Caselli, F.; Esquivel, G.; Lefort, F. Reopening the convergence debate: a new look 
+at cross country growth empirics. Journal of economic growth, v. 3, n. 1, p. 363-389, 1996.
+Cheshire, P.; Hay, D. G. Urban problems in Western Europe: an economic analysis. 
+London: Unwin Hyman, 1989.
+Durlauf, S. N.; Johnson, P. A.; Temple, J. R. W. Growth econometrics. In: AGHIONA, 
+P., DURLAUF, S. (Ed.). Handbook of economic growth. Economic Growth, Elservier, 2005.
+FOTHERINGHAM A.; BUNSDEN, C.; CHARLTON M. Quantitative geography. 
+London: Sage, 2000.
+GALEANO, E. A. V.; FEIJÓ, C. Crédito e crescimento econômico: evidências a partir de um 
+painel de dados regionais para a economia brasileira. Revista econômica do Nordeste, v. 43, 
+p. 201-219, 2012. 
+Greene, W. H. Econometric analysis, 2003.
+IBGE – INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. Sistema de 
+contas regionais referência 2010 – Produto Interno Bruto dos municípios 1999-2010. 2012. 
+Disponível em: <http://www.sidra.ibge.gov.br/bda/ pesquisas/PIBMun/default.asp>.
+IPEADATA. Dados macroeconômicos e regionais. Disponível em: <http://www. ipeadata.
+gov.br>.
+Islam, N. Growth empirics: a panel data approach. Quarterly journal of economics, v. 110, 
+n. 4, p. 1.127-1.170, 1995.
+______. What have we learnt from the convergence debate? Journal of economic surveys, v. 
+17, p. 309-362, 2003.
+Khandker, S. R.; Koolwal, G. B.; Samad, H. A. Handbook on impact 
+evaluation: quantitative methods and practices. Washington D.C.: The World Bank, 2010.
+Lee, K.; Pesaran, M.; Smith, R. Growth and convergence in multi country empirical 
+stochastic Solow model. Journal of applied econometrics, v. 12, n. 4, p. 357-392, 1997.
+______. Growth empirics: a panel data approach: a comment. Quarterly journal of economics, 
+v. 113, n. 1, p. 319-323, 1998.
+Levine, R. Finance and growth: theory and evidence. In: AGHION, P.; DURLAUF, S. 
+(Ed.). Handbook of economic growth. 1. ed. Elsevier, 2005. v. 1, chap. 12. p. 865-934.
+
+Texto para
+Discussão
+1 9 1 8
+35
+Avaliação dos Impactos Econômicos do Fundo Constitucional de Financiamento do Nordeste 
+entre 2004 e 2010
+Menon, C. The bright side of MAUP: defining new measures of industrial agglomeration. 
+Papers in regional science, v. 91, n. 1, p. 3-28, 03. 2012. 
+Openshaw, S.; Taylor, P. J. The modifiable areal unit problem. In: WRIGLEY, N.; 
+Bennett, R. (Ed.). Quantitative geography, a British view. London: Routledge and Kegan, 
+1981.
+Peixoto, B. et al. Avaliação econômica de projetos sociais. 1. ed. São Paulo: Dinâmica 
+Gráfica e Editora, 2012.
+RAIS – RELATÓRIO ANUAL DE INFORMAÇÕES SOCIAIS. Brasília: Ministério do 
+Trabalho, 2004, 2006, 2008.
+Resende, G. M. Multiple dimensions of regional economic growth: the Brazilian case, 
+1991-2000. Papers in regional science, v. 90, n. 3, p. 629-662, 2011.
+______. Measuring micro- and macro-impacts of regional development policies: the case of 
+the FNE Industrial loans in Brazil, 2000-2006. Regional studies, 2012a. 
+______. Micro e macroimpactos de políticas de desenvolvimento regional: o caso dos 
+empréstimos do FNE-Industrial no Estado do Ceará. Ipea, 2012b. (Texto para Discussão, 
+n. 1777).
+Resende, G. M.; Carvalho, A. X. Y.; Sakowski, P. A. M. Evaluating multiple spatial 
+dimensions of economic growth in Brazil using spatial dynamic panel data models, 1970-
+2000. In: ENCONTRO NACIONAL DE ECONOMIA, 2012, Porto de Galinhas. Anais... 
+Porto de Galinhas: ANPEC, 2012.
+SILVA, A. M.; RESENDE, G. M.; SILVEIRA NETO, R. Uma avaliação da eficácia do FNE, 
+no período 1995-2000. Análise econômica (UFRGS), v. 25, p. 233-261, 2007. 
+______. Eficácia do gasto público: uma avaliação do FNE, FNO e FCO. Estudos econômicos, 
+v. 39, n. 1,  p. 89-125, 2009. 
+SOARES, R.; SOUSA, J.; PEREIRA NETO, A. Avaliação de impactos do FNE no emprego, 
+na massa salarial e no salário médio em empreendimentos financiados. Revista econômica do 
+Nordeste, v. 40, n. 1, p. 217-234, 2009.
+TEMPLE, J. The new growth evidence. Journal of economic literature, v. 37, p. 112-156, 
+1999.
+Yamamoto, D. Scales of regional income disparities in the USA, 1955-2003. Journal of 
+economic geography, v. 8, p. 79-103, 2008.
+
+36
+R i o  d e  J a n e i r o ,  j a n e i r o  d e  2 0 1 4

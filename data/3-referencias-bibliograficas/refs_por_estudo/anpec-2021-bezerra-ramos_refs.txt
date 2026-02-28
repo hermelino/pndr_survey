@@ -1,0 +1,98 @@
+# Estudo #86
+#  (2021)
+# Os ventos que geram energia também ...
+# Fonte: anpec-2021-bezerra-ramos.pdf
+======================================================================
+
+ABADIE, A.; DIAMOND, A.; HAINMUELLER, J. Synthetic control methods for
+comparative case studies: Estimating the eﬀect of california’s tobacco control program.
+Journal of the American statistical Association, Taylor & Francis, v. 105, n. 490, p.
+493–505, 2010. Citado 2 vezes nas páginas 5 e 7.
+ABADIE, A.; DIAMOND, A.; HAINMUELLER, J. Comparative politics and the synthetic
+control method. American Journal of Political Science, Wiley Online Library, v. 59, n. 2,
+p. 495–510, 2015. Citado 4 vezes nas páginas 5, 6, 12 e 14.
+ABADIE, A.; GARDEAZABAL, J. The economic costs of conﬂict: A case study of the
+basque country. American economic review, v. 93, n. 1, p. 113–132, 2003. Citado 2 vezes
+nas páginas 4 e 5.
+ABEEOLICA. Impactos socioeconômicos e ambientais da geração eólica no brasil.
+Abeeolica, 2020. Citado na página 11.
+ABEEOLICA. A energia da transformação e os bons ventos da diversidade. 2021. Citado
+na página 4.
+BOTOSARU, I.; FERMAN, B. On the role of covariates in the synthetic control method.
+The Econometrics Journal, Oxford University Press, v. 22, n. 2, p. 117–130, 2019. Citado
+na página 7.
+DELL’ANNA, F. Green jobs and energy eﬃciency as strategies for economic growth and
+the reduction of environmental impacts. Energy Policy, Elsevier, v. 149, p. 112031, 2021.
+Citado 2 vezes nas páginas 2 e 15.
+HAHN, J.; SHI, R. Synthetic control and inference. Econometrics, Multidisciplinary
+Digital Publishing Institute, v. 5, n. 4, p. 52, 2017. Citado na página 7.
+IBGE. Relatório anual de informações sociais. 2017. Citado 2 vezes nas páginas 2 e 8.
+IRENA. International renewable energy agency. 2020. Citado na página 3.
+MCCLELLAND, R.; GAULT, S. The synthetic control method as a tool to understand
+state policy. Washington, DC: The Urban Institute, 2017. Citado na página 7.
+NOBRE, P. et al. Solar smart grid as a path to economic inclusion and adaptation to
+climate change in the brazilian semiarid northeast. International Journal of Climate
+Change Strategies and Management, Emerald Publishing Limited, 2019. Citado na página
+4.
+PAI, S. et al. Solar has greater techno-economic resource suitability than wind for
+replacing coal mining jobs. Environmental Research Letters, IOP Publishing, v. 15, n. 3, p.
+034065, 2020. Citado 2 vezes nas páginas 2 e 15.
+RODRIGUES, R. E. d. A. Efeitos da construção de parques eólicos sobre indicadores
+econômicos e ﬁscais dos municípios brasileiros. 2019. Citado na página 11.
+16
+
+RUTOVITZ, J.; DOMINISH, E.; DOWNES, J. Calculating global energy sector jobs: 2015
+methodology. Institute for Sustainable Futures, UTS, 2015. Citado 2 vezes nas páginas 2
+e 15.
+SANTOS, L. H. B. et al. Caracterização e dinâmica do emprego no setor de energia
+renovável no brasil. Brazilian Journal of Development, v. 4, n. 6, p. 3109–3134, 2018.
+Citado na página 2.
+SILVA, R. C. da; NETO, I. de M.; SEIFERT, S. S. Electricity supply security and the
+future role of renewable energy sources in brazil. Renewable and Sustainable Energy
+Reviews, Elsevier, v. 59, p. 328–341, 2016. Citado na página 2.
+SIMAS, M.; PACCA, S. Energia eólica, geração de empregos e desenvolvimento sustentável.
+Estudos avançados, SciELO Brasil, v. 27, n. 77, p. 99–116, 2013. Citado na página 2.
+TCU. Relatório desenvolvimento sustentável nordeste 2030. 2017. Citado na página 2.
+WEI, M.; PATADIA, S.; KAMMEN, D. M. Putting renewables and energy eﬃciency to
+work: How many jobs can the clean energy industry generate in the us? Energy policy,
+Elsevier, v. 38, n. 2, p. 919–931, 2010. Citado na página 2.
+WHITE, H. A reality check for data snooping. Econometrica, Wiley Online Library, v. 68,
+n. 5, p. 1097–1126, 2000. Citado na página 6.
+17
+
+ANNEX A – Resultados do Método Controle Sintético
+(a) Emprego Itarema CE
+(b) Emprego Pedra Grande RN
+(c) Emprego Caetité BA
+(d) Emprego Acaraú CE
+Figura 12 – Resultados outros municípios - Empregos
+(a) Income Itarema CE
+(b) Income Pedra Grande RN
+(c) Income Caetité BA
+(d) Income Acaraú CE
+Figura 13 – Resultados outros municípios - Renda
+18
+
+ANNEX B – Testes de Placebo - Empregos
+(a) Employment Parazinho RN
+(b) Employment Pedra Grande RN
+(c) Employment João Câmara RN
+(d) Employment Itarema CE
+(e) Employment Igaporã BA
+(f) Employment Guanambi BA
+(g) Employment Caetité BA
+(h) Employment Acaraú CE
+Figura 14 – Placebo tests for Employment
+19
+
+ANNEX C – Testes de Placebo Renda
+(a) Income Parazinho RN
+(b) Income Pedra Grande RN
+(c) Income João Câmara RN
+(d) Income Itarema CE
+(e) Income Igaporã BA
+(f) Income Guanambi BA
+(g) Income Caetité BA
+(h) Income Acaraú CE
+Figura 15 – Placebo tests for Income
+20

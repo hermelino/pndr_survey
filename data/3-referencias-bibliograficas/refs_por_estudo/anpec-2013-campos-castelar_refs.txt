@@ -1,0 +1,718 @@
+# Estudo #76
+#  (2013)
+# avaliação da corrupção municipal a partir de microdados.
+# Fonte: anpec-2013-campos-castelar.pdf
+======================================================================
+
+e 
+laboratório clínico. 
+7. 
+Moradias 
+construídas 
+parcialmente 
+ou 
+fora 
+das 
+especificações técnicas.  
+2. 
+Pagamento 
+inelegível 
+com 
+desapropriação de terreno. 
+3. Divergências nos quantitativos de 
+medicamentos 
+distribuídos 
+pela 
+Secretaria de Saúde do Estado em 
+relação aos recebidos pela Central 
+de Abastecimento Farmacêutico do 
+Município. 
+4.Divergências nos quantitativos de 
+medicamentos 
+distribuídos 
+pela 
+Central 
+de 
+Abastecimento 
+Farmacêutico – CAF, em relação 
+aos 
+recebidos 
+pelas 
+Unidades 
+Básicas de Saúde do Município. 
+• 
+Inexistência 
+dos 
+documentos 
+de 
+despesas 
+realizadas com Recursos do 
+PAB 
+Fixo 
+no 
+mês 
+de 
+maio/2009. 
+ 
+Infraestrutura 
+ 
+5.Habilitação indevida do licitante 
+vencedor do certame licitatório. 
+6.Edital contendo exigências que 
+frustram o caráter competitivo do 
+certame. 
+ 
+Fonte: Elaborada pelo autor 
+Após tipificar os achados de auditoria em grave, médio ou formal (ineficiências), 
+excluíram-se os achados formais e montou-se uma base de dados com os achados graves, achados 
+médios e valores fiscalizados. Por município, somaram-se os achados graves e os médios, sendo 
+que este último foi ponderado por 0,25. Em seguida, ponderou-se o total dos achados do município 
+pelo valor fiscalizado (somente os valores dos programas executados direta e indiretamente pelos 
+municípios), obtendo um índice médio ponderado de 7,84, que, para fins de tipificação, foi 
+arredondado para 8, ver Anexo 1. O município cuja soma dos achados graves e médios ficou abaixo 
+de 8 foi tipificado como de baixa tendência à corrupção. O município cuja soma dos achados graves 
+e médios foi igual ou superior a 8 foi classificado como de alta tendência à corrupção.  
+
+ 
+Para fins de ilustração, considerando os achados relacionados no Quadro 01, no qual o 
+município especificado apresenta 13 ocorrências entre graves e médias e adotando a regra de 
+decisão definida acima, a classificação do referido município é de alta tendência à corrupção.  
+ 
+3. ESPECIFICAÇÃO DAS VARIÁVEIS EXPLICATIVAS DO MODELO 
+A escolha das variáveis explicativas levou em consideração os fatores que podem, a 
+priori, influenciar o comportamento ilícito do prefeito e dos seus principais auxiliares, bem como a 
+disponibilidade e a qualidade dos dados para uma parcela significativa dos municípios fiscalizados 
+pela Controladoria-Geral da União.  Em vista disso, as variáveis explicativas escolhidas para o 
+modelo foram: 
+ 
+3.1. Relação do volume de recursos federais transferidos fiscalizados e despesa orçamentária 
+dos municípios 
+ 
+A expectativa é de que essa variável retrate o grau de dependência dos recursos federais 
+transferidos, como também os problemas de eficiência institucional, a medida que essa dependência  
+mostra que o município não tem uma estrutura de governança permanente para o gerenciamento dos 
+recursos recebidos para financiar os programas, criando, assim, oportunidades para adoção de atos 
+de corrupção, inclusive atividades “rent-seeking”. Os desvios dessas receitas excepcionais e/ou  a 
+sua realização incompleta em obras e prestação de serviços não desapontariam a população, que 
+enxerga primodialmente as receitas orçamentárias municipais permanentes (recursos próprios, 
+fundo participação do município e quotas do ICMS e IPVA), ver  BROLLO et al.(2010), 
+IVANYANA; SHAR (2010) e FERRAZ; FINAN (2009).   
+ 
+Portanto, espera-se encontrar uma relação indireta entre volume de recursos de 
+transferências e corrupção, tendo em vista a falta de estrutura das prefeituras e os grupos de 
+interesses agindo para extração de renda ilegal para fins de financiamento de campanha e outros 
+interesses.  
+Os dados dessa variável foram obtidos diretamente dos relatórios de fiscalização, que 
+trazem o volume de recursos transferidos por programa e os valores fiscalizados, e da base de dados 
+FINBRAS da STN/MF, que contém os dados da execução orçamentária dos municípios brasileiros.  
+ 
+3.2 IFDM (Índice Firjan de Desenvolvimento Municipal)7 
+Consiste em uma proxy para o desenvolvimento municipal. Capta a renda per capita, a 
+escolaridade e a estrutura de saneamento e saúde da região. Preferiu-se o IFDM ao IDH municipal 
+do PNUD, tendo em vista que o IFDM é calculado anualmente, enquanto o IDH-M é baseado em 
+censo demográfico de 10 anos, o que implica em defasagens consideráveis quanto à real situação 
+dos municípios no que tange à educação, saúde e renda. Por exemplo: um IDH de 2000 de 
+determinado município, que foi fiscalizado em 2009, pode estar defasado com relação à situação 
+retratada pelo censo de 2000. O IFDM varia de 0 a 1. Quanto maior, mais desenvolvido é o 
+município, conforme a seguinte regra: 
+Desenvolvimento Baixo: 0 a 0,4 
+Desenvolvimento Regular: 0,4001 a 0,6 
+Desenvolvimento Moderado: 0,6001, a 0,8 
+                                                          
+7Calculado e divulgado pela Federação das Indústrias do Rio de Janeiro. www.imprensa@firjan.org.br 
+
+ 
+Desenvolvimento Alto: 0,8001 a 1. 
+A variável IFDM irá captar, também, os efeitos das qualidades das instituições, que, 
+normalmente, são boas em regiões de IFDM elevado.  Por isso, quanto maior o IFDM menor a 
+probabilidade de corrupção municipal. Alguns estudos cross country, com base em Índices de 
+Corrupção, mostram que países pobres ou em desenvolvimento e que possuem estrutura de 
+governança frágil e fuga de capital são mais corruptos (MAURO, 1995; TANZI, 1997; 
+KAUFMANN et al., 2000; BATTIE, 2010; NEEMAN et al., 2007; entre outros). 
+ 
+3.3 Densidade Populacional 
+ 
+Intuitivamente, pode-se, a priori, esperar que o sinal do coeficiente dessa variável seja 
+negativo, pois onde há dispersão, como nos municípios de baixa densidade demográfica, torna-se 
+mais propício o ambiente para as práticas administrativas ilícitas, haja vista a dificuldade de 
+controle por parte do próprio governo e da população. Por outro lado, poder-se-ia esperar um sinal 
+positivo, o que seguiria a lógica da ação coletiva, teorizada por OLSON (1965), a qual foca os 
+benefícios concentrados versus custos difusos nas ações coletivas (a idéia de se promoverem 
+quaisquer manifestações grupais é precedida de cálculos racionalmente elaborados com o intuito de 
+vislumbrar os possíveis ganhos e benefícios que o ato pode proporcionar) ao afirmar que, a menos 
+que o número de indivíduos de um grupo seja muito pequeno, ou ao menos que haja coerção ou 
+algum outro dispositivo especial para fazer as pessoas agirem em seu interesse comum, os 
+indivíduos racionais e auto interessados não agirão para atingir seus interesses comuns ou do grupo. 
+Com isso, é plausível esperar que munícipios de alta densidade demográfica tenham mais grupos 
+organizados e mais indivíduos atuando de forma de rent-seeking. 
+ 
+Em vista disso, prefere-se deixar em aberto a expectativa quanto ao sinal da variável. 
+ 
+3.4 Contágio de Fronteira: se o município faz fronteira com outro(s) considerado(s) 
+corrupto(s)  
+ 
+Consiste de uma variável tipo dummy (assume valor de 0 ou 1), que busca identificar se 
+há transferência de prática de corrupção ou se é área de dominância de grupos. Reflete o contágio 
+de um município para outro. Variável dessa natureza foi usada por KARAHAN et al. (2006). 
+Espera-se que o sinal do coeficiente dessa variável seja positivo com relação à probabilidade de 
+corrupção municipal. Seus valores serão: 1, quando fizer fronteira com um município corrupto; e 0, 
+(zero) caso contrário. 
+ 
+A classificação do município em um ou zero foi realizada a partir da classificação 
+realizada pela variável dependente, na qual indica quais municípios tem alta ou baixa tendência à 
+corrupção8.  
+ 
+3.5 Reeleição do prefeito municipal  
+ 
+A possibilidade de reeleição pode fazer com que os prefeitos gastem de forma eficiente 
+os recursos recebidos. Assim, se o prefeito que realizou o gasto não concorre mais, espera-se uma 
+atitude de gasto menos eficiente, havendo extração de renda indevida por ele ao longo do seu 
+segundo mandato. Empiricamente, não há um consenso sobre o sinal do coeficiente, em que pese 
+FERRAZ; FINAN (2009) encontrarem que a corrupção municipal é maior no segundo mandato. 
+Portanto, não há um sinal claro esperado. 
+                                                          
+8 Vale ressaltar que existe a possibilidade de um município não ter vizinhança corrupta pelo fato dos municípios 
+vizinhos não terem sido sorteados, mas isso não fragiliza a utilização dessa variável, visto que se trabalhou com 1822 
+municípios dos 5560, o que é uma fração considerável. 
+
+ 
+Especificamente, será uma variável dummy, onde 1 (um) expressa prefeito reeleito e 0 
+(zero) prefeito eleito.  
+ 
+ 
+3.6 Controle Social  
+ 
+Essa variável está relacionada ao nível de transparência do município, o que envolve 
+também as questões de prestação de contas dos recursos gastos e dos resultados.  Quanto maior a 
+transparência menor é a corrupção, ver KLITIGAARD (1994). Por isso, espera-se que a presença de 
+um controle social atuante reduza a probabilidade de corrupção municipal. Essa variável será obtida 
+a partir da leitura dos relatórios de fiscalização municipal, realizada pela CGU. Será considerado 
+controle fiscal atuante se não houver citação no relatório sobre problemas de atuação dos conselhos 
+e problemas de não informação do recebimento dos recursos junto à câmara ou sindicatos.   
+ 
+Consiste de uma variável dummy, em que 0 (zero) expressa que conselho social é 
+atuante e 1 conselho é não atuante. 
+ 
+3.7  Partido Político do Prefeito 
+ 
+Durante o período de intervenção militar e logo após o seu fim, tornou-se comum 
+afirmar (um tipo de sabedoria convencional) que os partidos de tradição de esquerda têm tendência 
+a serem menos corruptos com relação aos de direita e centro. Provavelmente, as razões dessa 
+assertiva decorrem do fato de esses partidos terem sido ou serem oposição e denunciarem atos de 
+corrupção, apresentarem em seus quadros pessoas cujas ações de lutas serem explicitadas em 
+palavras de defesa pela igualdade de direito, distribuição de renda, e pela moralidade de seus atos 
+políticos. Contudo, recentemente, os escândalos de corrupção têm envolvido muitos políticos e 
+filiados desses partidos de esquerda. Em vista disso, não há uma expectativa definida quanto ao 
+sinal do coeficiente dessa variável. Por isso, a preocupação maior será com relação a sua 
+significância.  
+ 
+Essa variável binária será 1 para partidos de tradição de  direita e/ou centro (PMDB, 
+DEM, PSDB, PTB, PR, PSC, PSD, dentre outros) e 0 (zero) para partidos de tradição de esquerda 
+(PT, PSB, PDT, PC do B, PPS, PSTU, dentre outros). 
+ 
+4.   RESULTADOS 
+ 
+A partir dos achados de fiscalizações constantes dos relatórios de fiscalizações,  os 
+municípios foram classificados como de alta tendência e baixa tendência à corrupção. Além disso, 
+foram extraídas informações da base de dados quanto ao valor fiscalizado e a atuação do controle 
+social. Dos 1.822 municípios fiscalizados pela Controladoria-Geral da União, utilizaram-se os 
+dados relativos a 1.623, pois foi descartada a segunda fiscalização para aqueles municípios que 
+foram sorteados duas vezes e desconsiderados os municípios para os quais não existiam 
+informações disponíveis para todas as variáveis ou os dados mostravam algum tipo de discrepância 
+(por exemplo: relação recurso fiscalizado/despesas orçamentária acima da unidade). 
+ 
+Antes da apresentação dos resultados do modelo estimado, é interessante mostrar  as 
+estatísticas descritivas dos dados utilizados na pesquisa, que permitem diversas comparações entre 
+as regiões.  
+ 
+Verificou-se (ver tabela em anexo) que para 923 municípios, em 56,93% há uma 
+tendência à alta corrupção, sendo os Estados do Maranhão, Bahia e Alagoas os que apresentaram o 
+
+ 
+maior número de municípios tipificados nessa categoria (alta tendência à corrupção). Os Estados de 
+São Paulo, Paraná, Minas Gerais e Rio Grande do Sul foram que apresentaram menores números de 
+municípios classificados como de alta tendência à corrupção. Em termos de região, a Região 
+Norte/Nordeste apresentou 569 municípios com alta tendência à corrupção, para um total de 759 
+municípios analisados (algo em torno de 74,96%), enquanto que a Região Sul/Sudeste apresentou 
+273 municípios nessa categoria, para um total de 711 municípios fiscalizados, ou seja, 38,3%.  
+ 
+Ressalta-se que, de certa forma, os 56,93% para alta tendência à corrupção alinham-se, 
+em termos de magnitude expressiva, à estimativa da CGU que, pelo menos em 75% das cidades, 
+apresentam problemas graves em processos licitatórios9, e aos resultados de FERRAZ; FINAM 
+(2010), que encontraram que, em 54% dos municípios auditados, houve casos de desvios de 
+recursos. Essa estimativa da CGU e os resultados encontrados por FERRAZ; FINAN (2010) 
+mostram, também, a consistência da metodologia adotada para fins de medir a variável dependente.  
+ 
+Com relação ao controle social, encontrou-se que, em 85,55% dos municípios 
+fiscalizados, não há uma boa atuação do controle social (ACS), ou seja, a transparência quanto aos 
+recursos públicos transferidos pelo Governo Federal e executados pelos municípios não é adequada. 
+ 
+A média da relação valor fiscalizado/despesa orçamentária (RFOM) relativo aos 1.623 
+municípios foi da ordem de 0,1817, ver Quadro 5, sendo os maiores valores médios, por Estado, 
+encontrados no Maranhão, Bahia, Roraima e Pará e os menores em Santa Catarina, São Paulo, 
+Paraná, Rio Grande do Sul e Minas Gerais, ver Anexo 2, o que sugere que quanto mais pobre os 
+municípios maior a sua dependência das transferências federais e menor a sua estrutura própria 
+arrecadadora de tributos.  
+ 
+A densidade demográfica (DD) média foi 96,12 habitantes por quilômetro quadrado. A 
+menor densidade foi 0,1952, município de Amajari (RR); a maior foi 13.434, município de São 
+João do Meriti (RJ). O desvio padrão da densidade demográfica foi de 545,80 hab/Km2. 
+ 
+O maior nível de desenvolvimento municipal, IFDM, é de 0,9330 (São Caetano do 
+Sul/SP), e o menor é de 0,3122 (Apicum-açu/MA). O nível médio de desenvolvimento municipal é 
+de 0,5953, que é considerado um índice regular pela categorização dada pela metodologia do índice 
+(ver imprensa@firjan.org.br).  
+ 
+Quadro 02 – Estatísticas Descritivas 
+Estatísticas 
+DD 
+IFDM 
+RFOM 
+ACS 
+LC 
+EP 
+PP 
+Média 
+96,12435 
+0,595326 
+0,181757 
+ 0,14365 
+0,61222  
+0,340321  
+0,77312  
+Mediana 
+24,66786 
+0,592693 
+0,132429 
+ 0,0000 
+1,00000  
+ 0,00000 
+1,000000  
+Máximo 
+13.434,6 
+0,933045 
+0,88884 
+ 1,0000 
+1,000000  
+1,00000  
+ 1,000000 
+Mínimo 
+0,195280 
+0,312271 
+0,003170 
+ 0,0000 
+0,000000  
+ 0,0000 
+ 0,000000 
+Desvio Padrão 
+547,9421 
+0,111882 
+0,15078 
+ 0,35084 
+ 0,55264 
+0,47396  
+ 0,418944 
+Fonte: elaborada pelo autor. 
+ 
+Resultados Empíricos 
+ 
+O modelo Logit foi estimado pelo método da verossimilhança. Em vista do tamanho 
+elevado da amostra e do fato de que os modelos Logit são essencialmente heteroscedásticos, foram 
+usados os erros padrão robustos de Huber-White, para fins dos cálculos das estimativas dos testes 
+individuais e em conjunto quanto à significância dos coeficientes estimados. A seguir reproduzem-
+se os resultados obtidos: 
+                                                          
+9Essa estimativa foi divulgada pela CGU, conforme Jornal Diário do Nordeste, de 7/10/2011. 
+
+ 
+ 
+Quadro 03 – Resultados da Estimação 
+DependentVariable: TC - Tendência à Corrupção 
+Variable 
+Coefficie
+nt 
+Std. Error 
+z-Statistic 
+Prob.   
+Constante 
+1.41903
+0.44235
+3.20796
+0.00130
+Atuação do Controle Social (ACS) 
+-0.52839
+0.15515
+-3.40564
+0.00070
+Recurso Fiscalizado/Orçamento Munipal (RFOM) 
+3.12964
+0.54020
+5.79345
+0.00000
+Índice Firjan de Desenvolvimento Municipal (IFDM) 
+-3.45369
+0.60667
+-5.69289
+0.00000
+Limítrofe Corrupto (LC) 
+0.49531
+0.11148
+4.44308
+0.00000
+Densidade Demográfica (DD)D 
+0.00039
+0.00014
+2.74476
+0.00610
+Eleição do Prefeito (EP) 
+0.09117
+0.11427
+0.79777
+0.42500
+Partido Político (PP) 
+0.14904
+0.12993
+1.14707
+0.25140
+  
+S.E. ofregression 
+0.4590 Akaikeinfocriterion 
+  
+1.22533
+Sum squaredresid 
+340.0213     Schwarz criterion 
+  
+1.25192
+Log likelihood 
+-985.7398 Hannan-Quinn riter. 
+  
+1.23519
+Restr. log likelihood 
+-1108.7680 Avg. loglikelihood 
+  
+-0.60773
+LR statistic (7df) 
+246.0560 McFadden R-squared 
+  
+0.11096
+Probability(LR stat) 
+0.00000
+  
+     Total obs: 1622 
+  
+ObswithDep=0 
+699
+ObswithDep=1 
+923
+Fonte: elaborado pelo autor. 
+ 
+ 
+Estimados os valores dos coeficientes ACS, RFOM, IFDM, DD, LC, PP e EP, pode-se 
+apresentar o modelo em termos do logaritmo da razão das probabilidades (ver equação 7), entre 
+parênteses estão os desvios padrões,  conforme segue, o que permite fazer previsão sobre a 
+tendência de corrupção  em um determinado município: 
+ 
+ 
+ 
+
+()
+() = 1.4119 −0.52839ACS + 3.1296RFOM −3.456IFDM + 0.4953LC + 0.00039DD + 0.0911EP + 0.1590PP   (7) 
+ 
+(0.4423)     (0.1551)         (0,5402) 
+(0.6066)  (0.1114)    (0.0001)    (0.1142)     (0.1299) 
+Das sete variáveis explicativas especificadas para o modelo, apenas as variáveis EP, 
+status da eleição do prefeito, e PP, partido político do prefeito, não foram significativas ao nível de 
+5%, o que não causa surpresa, visto que, conforme já mencionado, nas pesquisas já realizadas, que 
+consideraram essas variáveis, não há um consenso sobre os seus efeitos no nível de corrupção 
+municipal, FERRAZ; FINAN (2009). Além disso, o partido está contagiado por coligações que, 
+normalmente, não estão fundamentadas em ideologias e diretrizes partidárias. 
+ A direção do impacto de cada variável sobre a probabilidade de resposta é obviamente 
+verificada a partir dos sinais das estimativas dos parâmetros das variáveis. Os valores positivos 
+(negativos) no coeficiente do parâmetro implica que o aumento da variável explicativa eleva (reduz) 
+a probabilidade de resposta positiva (negativa), na variável dependente.  
+ 
+Como se verifica, no que concerne aos sinais dos coeficientes estimados, todos foram de 
+acordo com o esperado. Os sinais negativos para as variáveis IFDM, desenvolvimento municipal, e 
+ACS, atuação do controle social, refletem uma direção inversa na probabilidade da variável 
+dependente, por exemplo, quanto maior o IFDM municipal, menor a probabilidade de corrupção no 
+
+ 
+município; e quanto mais atuante for o controle social, menor, também, será a tendência de 
+corrupção municipal.  
+ 
+Quanto à variável DD, densidade demográfica, o resultado mostra um efeito positivo 
+sobre a probabilidade de resposta (Y=1/X), o que, possivelmente, decorre da influência de grupos, 
+que são mais presentes em grandes municípios, os quais não agem em busca de benefícios comuns 
+para a sociedade, (OLSON, 1965), e a fragilidade institucional no controle dos gastos decorrentes 
+de doações e transferências10. Além disso, um grande governo cria mais ocasiões para o indivíduo 
+interagir com os agentes governamentais, aumentando a exposição à corrupção, MOCAN (2004). 
+Por exemplo, a ação direta do fiscal de tributo junto ao contribuinte propicia um ambiente mais 
+vulnerável à solicitação ou oferta de propina. 
+ 
+Quanto à direção dos sinais das variáveis RFOM, volume de recursos 
+fiscalizados/despesa orçamentária, e LC, limítrofe corrupto, verifica-se que os efeitos são positivos, 
+mostrando que quanto maior a dependência dos municípios com relação às transferências federais, 
+maior a tendência à corrupção, e se a corrupção no município vizinho aumenta, haverá também um 
+aumento na tendência à corrupção no município estudado.  
+ 
+O Teste da Razão da Verossimilhança (LR statistic) é o mais recomendado para testar 
+globalmente a significância do coeficientes (WOOLDRIDGE, 2002, e KENNEDY, 2004). Esse 
+teste tem a mesma lógica do teste F, usado para os modelos lineares. Para verificar a hipótese nula 
+cujos coeficientes são zeros, usa-se a estatística -2(Lir –Lr), onde Lir é o logaritmo natural do ponto 
+máximo da função de verossimilhança apenas com a constante; e Lr o logaritmo natural do ponto 
+máximo da função de verossimilhança do modelo especificado. Então, compara-se o valor da 
+estatística com o valor crítico da qui-quadrado, considerando os graus de liberdade e o nível de 
+significância.  
+ 
+A estimação gerou um LR statistic consideravelmente grande, 246,056, implicando que, 
+conjuntamente, as variáveis explicativas são significativas, ou seja, o grupo das variáveis 
+explicativas têm efeitos sobre a probabilidade de resposta. A Probability (LR) igual a zero obtida na 
+estimação do modelo, ver Quadro IV,confirma a rejeição da hipótese nula.   
+ 
+Quanto à qualidade do ajuste do modelo, usa-se o Mcfadden R-Squared como pseudo R² 
+de modelos de resposta binária, o qual é baseado na função de verossimilhança do modelo 
+estimado.Se as variáveis explicativas não tiverem poder explicativo, então a razão Lur/Lo é igual a 
+1 e o pseudo R² será zero. Em geral, tem-se um Mcfadden R-Squared positivo e os seus valores, 
+dentro do intervalo aberto de 0 a 1, normalmente são baixos. A qualidade do ajuste, nesta situação, 
+é menos importante do que estimativas convincentes dos efeitos, ceteris paribus, das variáveis 
+explicativas (WOOLDRIDGE, 2002). 
+  
+Outra forma de verificar a qualidade de ajuste do modelo é através da proporção de 
+eventos previstos corretamente. Após estimar o modelo, calcula-se P(Y=1) para cada município, se 
+P(Y=1) for maior que 0,5, a previsão para o município é Y=1, caso contrário a previsão é Y=0. 
+Assim, comparam-se as previsões para cada município com as suas escolhas efetivas e calcula-se a 
+proporção de acerto. No caso, encontrou-se que a proporção dos eventos previstos corretamente foi 
+de 67,20%. 
+ 
+                                                          
+10ACEMOGLU et al (2004) enfatizam que diferentes grupos e indivíduos se beneficiam de diferentes instituições 
+econômicas e existe, geralmente, um conflito sobre essas escolhas sociais, ultimamente resolvido em favor dos grupos 
+com maior poder político. 
+
+ 
+Portanto, considerando os resultados da LRStatistic, o pseudo R² e a proporção de 
+eventos previstos corretamente, é plausível afirmar que a especificação do modelo foi adequada. 
+Vale lembrar que, para corrigir os possíveis problemas de heteroscedasticidade, foram usados os 
+erros padrões robustos de Huber-White. 
+O conhecimento do sinal do coeficiente é suficiente para determinar se a variável 
+explicativa teve efeito positivo ou negativo sobre a probabilidade de resposta na variável 
+dependente; no entanto, estes coeficientes não representam os efeitos marginais (WOOLDRIDGE, 
+2002). Isto é, os coeficientes estimados não podem ser interpretados como os efeitos marginais 
+sobre a variável dependente.  
+A meta principal dos modelos de escolha binária é explicar os efeitos das variáveis 
+explicativas sobre a probabilidade de resposta, P(Y=1), WOOLDRIDGE (2002). Os resultados dos 
+efeitos marginais variam de acordo com os valores das variáveis explicativas, isso devido à função 
+de distribuição acumulada logística (GREENE, 2003, e BIERENS, 2008). Assim, os efeitos 
+marginais do modelo estimado foram calculados e expostos no quadro a seguir: 
+Quadro 04 - Efeitos Marginais sobre a tendência à corrupção municipal 
+Variável Explicativa 
+Efeito Marginal 
+ACS- Atuação do Controle Social  
+-0,1307486 
+RFOM- Recurso Fiscalizado/Despesa Orçamentária 
+0,7575677 
+IFDM - Índice Firjan de Desenvolvimento Municipal 
+-0,8403003 
+LC - Limítrofe Corrupto 
+0,1201480 
+DD - Densidade Demográfica 
+0,0000935 
+EP - Eleição do Prefeito 
+0,02213 
+PP - Partido Político 
+0,0362832 
+Fonte: elaborado pelo autor. 
+ 
+O maior efeito sobre a probabilidade de resposta da variável dependente, tendência à 
+corrupção, refere-se ao nível de desenvolvimento municipal (IFDM), o qual mostra que melhorias 
+institucionais, no nível de educação, saúde e emprego contribuem para que haja um decréscimo na 
+probabilidade de corrupção, isto é, há uma probabilidade de se reduzir a corrupção municipal nessa 
+magnitude quando ocorre um aumento de um ponto no índice de desenvolvimento municipal.  
+O efeito marginal da variável relação Recurso Fiscalizado/Despesa Orçamentária 
+(RFOM) também é considerável, mas este vai na mesma direção da variável resposta, ou seja, um 
+aumento na relação implica em um aumento da tendência à corrupção, o que sugere a dependência 
+do município com relação aos recursos federais e mostra que a corrupção está  relacionada aos 
+aspectos institucionais e de rent- seeking. 
+Outros efeitos marginais consideráveis, mas em menores magnitudes, são os relativos às 
+variáveis do controle social (ACS), mostrando que o aumento da transparência reduz a 
+probabilidade de corrupção de forma razoável; e o inerente às influências fronteiriças (LC), que 
+mostra que há um efeito contágio na região, provavelmente devido ao domínio político e econômico 
+da região por grupos de interesses. O efeito marginal decorrente da densidade demográfica é muito 
+baixo sobre a probabilidade de corrupção municipal. 
+Por fim, os municípios que apresentam tendência alta à corrupção, em termos de 
+atributos, são aqueles que recebem muitas transferências de recursos federais com relação aos seus 
+orçamentos, o controle social tem fraca atuação, tem baixo nível de desenvolvimento municipal, 
+não são de baixa densidade demográfica e que são vizinhos de municípios com problemas de 
+corrupção. Assim, no que pese a variável dependente ter sido baseada em microdados e ter-se usado 
+medidas diretas de corrupção, os  resultados, principalmente quanto ao índice de desenvolvimento 
+econômico, controle social e volume de transferência, estão alinhados aos resultados das principais 
+pesquisas cross-country e com base em indicadores de percepção quanto às causas relacionadas à 
+corrupção, quais sejam fragilidade institucional, nível de renda e fatores educacionais. 
+
+ 
+ 
+5.  CONCLUSÃO 
+Inicialmente, destacam-se alguns fatos extraídos da base de dados utilizada na pesquisa. 
+Percebe-se, portanto, que dos 1.623 municípios considerados 923 municípios, ou seja, 56,93%, 
+foram classificados como de tendência à alta corrupção, sendo os Estados do Maranhão, Bahia, 
+Roraima e Alagoas os que apresentaram o maior número de municípios tipificados nessa categoria. 
+Os Estados de São Paulo, Paraná, Minas Gerais e Rio Grande do Sul foram os que apresentaram 
+menores números de municípios classificados como de alta tendência à corrupção. Em termos de 
+região, a Região Norte/Nordeste apresentou 569 municípios com alta tendência à corrupção, de um 
+total de 759 municípios fiscalizados, o que mostra uma magnitude significativa de 74,96%, 
+enquanto que a Região Sul/Sudeste apresentou 273 municípios nessa categoria, de um total de 711 
+municípios fiscalizados, 38,39%, percentual considerado baixo, se comparado ao da Região 
+Norte/Nordeste. Portanto, as regiões menos desenvolvidas do país concentram um maior número de 
+municípios classificados como de alta tendência à corrupção e os estados de maiores rendas detêm 
+maior número de municípios de baixa tendência à corrupção.     
+ Já a estimativa do modelo Logit mostrou resultados estatisticamente significantes para 
+as variáveis explicativas índice de desenvolvimento municipal, controle social, densidade 
+demográfica, volume de transferência dos recursos/despesa orçamentária e limítrofe corrupto, o que 
+permite inferir que os municípios que apresentam tendência alta à corrupção são aqueles que 
+recebem muitas transferências de recursos, o controle social tem fraca atuação, têm baixo nível de 
+desenvolvimento municipal, não são de baixa densidade demográfica e que são vizinhos de 
+municípios com problemas de corrupção.  
+Assim, no que pese o modelo ter utilizado microdados para um conjunto de variáveis e 
+ter se baseado em medidas diretas de corrupção, os seus resultados, principalmente quanto ao índice 
+de desenvolvimento econômico, controle social e volume de transferência, estão alinhados com os 
+resultados nas principais pesquisas cross-country e com base em indicadores de percepção quanto 
+às causas relacionadas à corrupção; quais sejam, fragilidade institucional, nível de renda e fatores 
+educacionais.  
+Comparados aos modelos que usam microdados, tais como os de BROLLO (2010), 
+FERRAZ  et al. (2008)  e FERRAZ; FINAN (2009), os resultados aqui obtidos mostram-se 
+compatíveis com aqueles, embora tenha se encontrado que o status da reeleição não influencia a 
+classificação do município como de alta ou baixa tendência à corrupção, ao contrário do que 
+afirmam FERRAZ; FINAN (2009).  
+Os valores absolutos dos coeficientes e os valores dos efeitos marginais foram mais 
+fortes 
+para 
+as 
+variáveis 
+explicativas 
+desenvolvimento 
+municipal, 
+relação 
+recursos 
+fiscalizados/despesa orçamentária, atuação do controle social e contágio dos municípios vizinhos, 
+mostrando a necessidade de aplicação de políticas públicas no que tange à redução das fragilidades 
+institucionais, à melhoria da estrutura municipal para executar recursos transferidos, ao aumento da 
+transparência e à conscientização e atuação da população para controlar os recursos extras obtidos 
+pelas prefeituras. 
+Uma outra aplicação que pode ser visualizada para o modelo estimado é a sua utilização 
+como instrumento de planejamento de auditorias, para fins de escolha de municípios a serem 
+fiscalizados. Nesse sentido, basta conhecer os valores das variáveis explicativas do modelo, aplicá-
+los no log da razão de probabilidades, especificada na equação (7), calculando em seguida a razão 
+usando antilogaritmos. Caso o resultado seja maior que 0,5, o município terá tendência alta à 
+corrupção, caso fique abaixo de 0,5, ele terá tendência baixa à corrupção. Com essa informação, 
+podem-se escolher os municípios a serem fiscalizados e/ou as técnicas de auditoria mais adequadas 
+para a execução dos trabalhos de campo, bem como formar expectativas quanto aos resultados dos 
+trabalhos de auditoria a serem aplicados naquele município. 
+
+ 
+6.  BIBLIOGRAFIA 
+ACEMOGLU, D; Johnson, S.; Robinson, J.Institutions as the fundamental cause of long-run 
+growth. NBER WP 10481, 2004. Disponível em <http://www.nber.org/papers/w10481>. Acesso em 
+25/05/2011 
+BARDHAN, P.  Corruption and Development: A Review of Issues. Journal of Economic Literature 
+n. 35, p. 1320-46, 1997. 
+BARRO, R. J.; SALA-I-MARTIN, Xavier. Economic Growth.MIT Press, 2004. 
+BIERENS, Herman J. The logit model: estimation and interpretation. 2008. Disponível em 
+<http://econ.la.psu.edu/~hbierens/ML LOGIT.PDF>. Acessoem 21/01/2012. 
+BECKER, Gary S. “Crime and punishment: an economic approach”. Journal of Political Economy, 
+v. 76, p. 169-217, 1968. 
+BROLLO, 
+Fernando; 
+NANNICCINI, 
+Tommaso; 
+PEROTI, 
+Roberto; 
+TABELINI, 
+Guido.“Thepoliticalresource Curse”. NBER WorkingPaper.n. 15705, 2010.Disponível em 
+<http://www.nber.org/papers/w15705>.Acesso em 25/07/2011.  
+EASTERLY, Willian. O Espetáculo do Crescimento. Rio de Janeiro: Ediouro, 2004. 
+FERRAZ, Claudio; FINAN, Frederico; MOREIRA, Diana Bello. “Corrupção, má gestão, e 
+desempenho educacional: evidência a partir da fiscalização dos municípios”. Julho, 2008. 
+Disponível em <http://www.anpec.org.br/encontro2008/artigos/200807211421560.pdf. Acesso em 
+28/05/2011. 
+FERRAZ, Cláudio; FINAN, Frederico.“Electoral accountability and corruption: evidence from the 
+audits of local governments”. NBER WorkingPaper n. 14937,2009. Disponível em 
+<http://www.nber.org/papers/w14937>. Acesso em 25/07/2011.  
+GASPARINI, 
+Carlos 
+Eduardo; 
+COSSIO, 
+Fernando 
+Andrés 
+Blanco. 
+“Transferências 
+Intergovernamentais”. In: MENDES, Marcos (Org.). Gasto Público Eficiente. Editora Topbooks: 
+SP, 2006. 
+GREENE, W.H. Econometric Analysis. 5. ed. New Jersey, 2003. 
+HANSEN, 
+Bruce 
+E. 
+Econometrics.University 
+of 
+Wisconsin. 
+2011. 
+Disponível 
+em 
+<www.ssc.wisc.edu/~bhansen>. Acessoem 22/02/2012. 
+IVANYANA, Maksym; SHAR, Anwar.“Decentralization (localization) and Corruption”. Policy 
+Research 
+Working 
+Paper 
+5299, 
+The 
+World 
+Bank, 
+may 
+2010. 
+Disponívelem<http://www.wds.worldbank.org/servlet/WDSContentServer/WDSP/IB/2010/05/10/0
+00158349_20100510090347/Rendered/PDF/WPS5299.pdf>Acessoem 22/12/2011. 
+KARAHAN Gokhan; RAZZOLINI, Laura; SHUGHART, Willian. “No pretense to Honesty: 
+country government corruption in Mississippi”.  Economic of Governance.v.7, n. 3, 2006. 
+KAUFMANN, Daniel; KRAAY, A; ZOIDO-LOBATON, P.. “Governance Matters: From 
+Measurement to Action.” FinanceandDevelopment, 37(2): 10-13, 2000. Disponível em 
+<http://www.imf.org/external/pubs/ft/fandd/2000/06/kauf.htm> Acesso em 12/11/2001. 
+KENNEDY, Peter .A Guide to Econometrics.4thEdition , The MIT Press, 1998. 
+KLITIGAARD, Robert. A Corrupção Sob Controle. Rio de Janeiro: Jorge Zahar Editor, 1994. 
+
+ 
+LAMBSDORFF, Johann Graf. How Corruption Affects Productivity, Kyklos, 56 (4), 2003. 
+ 
+MADDALA, G. S. Introduction to Econometrics. Second Edition. New York: Macmillan 
+Publishing Company, 1992  
+MAURO, Paolo. Corruption and Growth.The Quarterly Journal of Economics, n. 442, p. 681-712, 
+august 1995. 
+MOCAN, Naci. What Determines Corruption? International Evidence from MicroData.NBER. 
+Working Paper Series 10460, 2004. Disponível em <http://www.nber.org/papers/ w10460>. 
+Acessoem 25/07/2010. 
+NEEMAN, Z.; ,PASERMAN, D; SIMHON A. Corruption and Openness, C.E.P.R. Discussion 
+Papers, n. 4057, 2003.  
+OLKEN, Benjamin A. Corruption Perceptions vs. Corruption Reality.National Bureau of Economic 
+Researchn.12428, 2006.<http://www.nber.org/papers/w10460>. Acesso em 27/07/2011. 
+OLSON, Mancur. The logic of collective action: public goods and the theory of groups. Harvard 
+University press, 1965. 
+REINIKKA, R.; SVENSSON, J. Survey Techniques to Measure and Understand Corruption.Policy 
+Research Working Paper Series: 3071, Washington DC: World Bank, 2003. 
+ROSE-ACKERMAN, S. Corruption: A study in political economy. New York: Academic Press, 
+1978. 
+SHLEIFER, Andrei; VISHNY, Robert W. Corruption.Quaterly Journal of Economics, CIX, p. 599-
+617, 1993. 
+TANZI, Vito. Corruption Around the World. IMF Staff  Papers, vol. 45, p.559-94, dec. 1998. 
+TANZI, 
+Vito; 
+DAVOODI, 
+Hamid. 
+Corruption, 
+Public 
+Investment, 
+and 
+Growth.InternationalMonetaryFundWorkingPaper, p.97/139, 1997. 
+TRIBUNAL DE CONTAS DA UNIÃO. Relatório e Parecer Prévio sobre as contas do Governo da 
+República, exercício 2011. Disponível em <www.tcu.gov.br> Acesso em 10/09/2011. 
+VINOD, Thomas. A Qualidade do Crescimento. São Paulo: Editora UNESP, 2002. 
+WOOLDRIDGE, J.M. Econometric.Analysis of Cross Section and Panel Data. Cambridge, 
+Massachusetts: The MIT Press, 2002. 
+WORLD BANK: World Development Report 1997. Washington D.C.: World Bank, 1997.

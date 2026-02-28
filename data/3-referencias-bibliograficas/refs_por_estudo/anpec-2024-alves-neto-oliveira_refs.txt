@@ -1,0 +1,58 @@
+# Estudo #99
+#  (2024)
+# Incentivos Fiscais Estaduais: Desenvolvimento ou Captura ...
+# Fonte: anpec-2024-alves-neto-oliveira.pdf
+======================================================================
+
+ADEPE. Programa de Desenvolvimento do Estado de Pernambuco (Prodepe). 2024. <https://abrir.link/kcBpD>. 2, 3, 4, 11, 13, 14
+AUSTIN, B. A.; GLAESER, E. L.; SUMMERS, L. H. Jobs for the Heartland: Place-based policies in 21st century America. [S.l.], 2018. 1
+BAILEY, D.; PITELIS, C. N.; TOMLINSON, P. R. Place-based industrial and regional strategy–levelling the playing field. [S.l.]: Taylor &
+Francis, 2023. 977–983 p. 1
+BENEGAS, M.; TEIXEIRA, R. S. Investigação sobre a sobrevivência das empresas beneficiárias de incentivos fiscais no ceará no período
+de 2005 a 2010. [S.l.], 2012. 2
+BORUSYAK, K.; JARAVEL, X. Consistency and inference in bartik research designs. [S.l.], 2017. 5
+BRASIL. Relatório final do grupo de trabalho interministerial para redelimitação do semi-árido nordestino e do polígono das secas.
+Ministério da Integração Nacional, Brasília DF, 2005. 11
+CALLAWAY, B.; SANT’ANNA, P. H. Difference-in-differences with multiple time periods. Journal of econometrics, Elsevier, v. 225, n. 2, p.
+200–230, 2021. 2, 3, 5, 7, 8, 19
+CARVALHO, J. R.; BARRETO, F. A.; OLIVEIRA, V. H. d. Avaliação econométrica do fundo de desenvolvimento da indústria do ceará
+(fdi). Fortaleza, CAEN, nov, 2008. 16
+CHAISEMARTIN, C.; D’HAULTFOEUILLE, X. Two-way fixed effects estimators with heterogeneous treatment effects. American
+Economic Review, American Economic Association 2014 Broadway, Suite 305, Nashville, TN 37203, v. 110, n. 9, p. 2964–2996, 2020. 5
+FAJGELBAUM, P. D.; GAUBERT, C. Optimal spatial policies, geography, and sorting. The Quarterly Journal of Economics, Oxford
+University Press, v. 135, n. 2, p. 959–1036, 2020. 2
+FAJGELBAUM, P. D. et al. State taxes and spatial misallocation. The Review of Economic Studies, Oxford University Press, v. 86, n. 1, p.
+333–376, 2019. 1
+FERREIRA, S. G.; OLIVEIRA, L. Avaliação de impacto de um programa de incentivo fiscal com uso de método quase-experimental.
+Seminário. Instituto de Economia da Universidade Federal do Rio de Janeiro, Rio de Janeiro, RJ, Brasil, 2009. 16
+FU, C.; GREGORY, J. Estimation of an equilibrium model with externalities: Post-disaster neighborhood rebuilding. Econometrica, Wiley
+Online Library, v. 87, n. 2, p. 387–421, 2019. 2
+GLAESER, E. L.; GOTTLIEB, J. D. The economics of place-making policies. [S.l.], 2008. 1
+GONÇALVES, F. d. O.; ALMEIDA, A.; BARBOSA, G. Efetividade dos incentivos fiscais à indústria sobre o volume de empregos e a
+massa salarial: um estudo do fundo de apoio ao desenvolvimento industrial da paraíba. [S.l.], 2018. 2, 7, 16
+GOODMAN-BACON, A. Difference-in-differences with variation in treatment timing. Journal of Econometrics, Elsevier, v. 225, n. 2, p.
+254–277, 2021. 5
+JÚNIOR, J. R. d. A. C.; BARRETO, F. A. F. D.; OLIVEIRA, V. H. Avaliação econométrica do fundo de desenvolvimento industrial do
+estado do ceará. Distribuição de renda e políticas de desenvolvimento regional no Brasil, 2006. 2
+KLINE, P.; MORETTI, E. People, places, and public policy: Some simple welfare economics of local economic development programs.
+Annu. Rev. Econ., Annual Reviews, v. 6, n. 1, p. 629–662, 2014. 2
+LIMA, A. C.; LIMA, J. P. R. Estimulando o investimento no setor produtivo via renúncias fiscais: O programa de desenvolvimento do
+estado de pernambuco. Revista Brasileira de Estudos Regionais e Urbanos, v. 4, n. 1, 2015. 2
+LIMA, A. C. d. C.; LIMA, J. P. R. Programas de desenvolvimento local na região nordeste do brasil: uma avaliação preliminar da"guerra
+fiscal". Economia e Sociedade, SciELO Brasil, v. 19, p. 557–588, 2010. 2
+LIMA JÚNIOR, J. d. R. L. A contratação do gerenciamento na construção civil: uma abordagem sistêmica. 1990. 7
+MAGALHÃES, A. M.; SIQUEIRA, L. Pernambuco’s fiscal incentives program: An evaluation of recent performance. In: Latin American
+Business. [S.l.]: Routledge, 2014. p. 151–179. 2, 16
+NASCIMENTO, S. d. Guerra fiscal: uma análise quantitativa para estados participantes e não participantes. Revista Economia, p. 211–237,
+2009. 16
+NEUMARK, D.; SIMPSON, H. Place-based policies. In: Handbook of regional and urban economics. [S.l.]: Elsevier, 2015. v. 5, p. 1197–1287.
+1
+OLIVEIRA, T. G.; SILVEIRA NETO, R. d. M. S. Incentivos fiscais territoriais ao desenvolvimento local: uma avaliação do prodepe do
+estado de pernambuco. 2020. 2, 3, 7, 16
+OLIVEIRA, T. G. d. Impactos de políticas territoriais no brasil: uma análise empírica. Universidade Federal de Pernambuco, 2020. 3, 4, 9,
+11, 12, 13, 14
+SANT’ANNA, P. H.; ZHAO, J. Doubly robust difference-in-differences estimators. Journal of econometrics, Elsevier, v. 219, n. 1, p.
+101–122, 2020. 7, 16
+SUN, L.; ABRAHAM, S. Estimating dynamic treatment effects in event studies with heterogeneous treatment effects. Journal of
+econometrics, Elsevier, v. 225, n. 2, p. 175–199, 2021. 5
+20

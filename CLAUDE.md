@@ -9,24 +9,36 @@ Revisao sistematica (SLR) sobre instrumentos da PNDR. Duas fases:
 ## Estrutura
 
 ```
-scripts/            → Pipeline Python (main.py e o ponto de entrada)
+scripts/                        → Pipeline Python
+  main.py                       → CLI (search, screen, analyze, export, full)
+  run_llm_all_papers.py         → Execucao da analise LLM em lote
+  merge_papers_to_json.py       → Mescla registros + LLM → JSON enriquecido
+  match_refs_to_studies.py      → Matching de citacoes entre estudos
   src/
-    models.py       → BibRecord (bibliografico) + PaperRecord (analise LLM)
-    config.py       → Carregamento YAML + validacao
-    importer.py     → Importacao de RIS/CSV/Excel
-    dedup/          → Deduplicacao DOI + fuzzy title
-    extractors/     → Extracao de texto de PDFs
-    analyzers/      → Analise via LLM (BaseAnalyzer ABC)
-    screening/      → Triagem pre-LLM (PRISMA)
-    exporters/      → Excel, CSV, RIS, JSON
-    utils/          → Logging
-  keywords/         → Queries de busca por base (.txt)
-  questionnaires/   → Questionarios JSON para o LLM
-data/1-records/     → Registros bibliograficos + saidas do pipeline
-data/2-papers/      → PDFs dos artigos (nao versionados)
-latex/              → Artigo LaTeX (nao modificar via scripts)
-figures/            → Figuras para o artigo
-docs/pipeline_extraction.md → Metodologia e log de extracao
+    models.py                   → BibRecord (bibliografico) + PaperRecord (analise LLM)
+    config.py                   → Carregamento YAML + validacao
+    importer.py                 → Importacao de RIS/CSV/Excel
+    dedup/                      → Deduplicacao DOI + fuzzy title
+    extractors/                 → Extracao de texto de PDFs
+    analyzers/                  → Analise via LLM (BaseAnalyzer ABC)
+    screening/                  → Triagem pre-LLM (PRISMA)
+    exporters/                  → Excel, CSV, RIS, JSON
+    utils/                      → Logging
+  keywords/                     → Queries de busca por base (.txt)
+  questionnaires/               → Questionarios JSON para o LLM (3 stages)
+data/1-records/                 → Registros bibliograficos + saidas do pipeline
+  processed/                    → bib_records.json, bib_screened.json, duplicates_removed.csv
+data/2-papers/                  → Artigos e classificacao
+  2-2-papers.json               → JSON enriquecido (registros + LLM + triagem)
+  2-2-papers-pdfs/              → 118 PDFs renomeados (nao versionados)
+  2-1-papers_scripts/           → Scripts de renomeacao e verificacao
+  _llm_checkpoint.json          → Checkpoint da analise LLM
+  all_papers_llm_classification_edited.xlsx → Classificacao revisada
+data/3-referencias-bibliograficas/ → Referencias extraidas dos estudos
+  refs_por_estudo/              → 54 JSONs com refs estruturadas + matching
+latex/                          → Artigo LaTeX (nao modificar via scripts)
+figures/                        → Figuras para o artigo
+docs/pipeline_extraction.md     → Metodologia e log de extracao
 ```
 
 ## Regras de Codigo

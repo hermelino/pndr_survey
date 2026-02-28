@@ -1,0 +1,159 @@
+# Estudo #11
+# Ana Paula Macedo de Avellar (2009)
+# Impacto das políticas de fomento à inovação no Brasil sobre o gasto em atividades inovativas e em atividades de P&amp;amp;D das empresas
+# Fonte: capes-2009-avellar.pdf
+======================================================================
+
+Aerts, K.; Czarnitzki, D. Using innovation survey data to evaluate R&D 
+policy: the case of Belgium. ZEW: Centre for European Economic Research, 
+2004. (Discussion Paper n. 05-55). Disponível em: http://opus.zbw-kiel.de/
+volltexte/2004/2193/pdf/dp0455.pdf.
+ALMUS, M.; CZARNITZKI, D. The effects of public R&d subsidies on firms’ in-
+novation activities: the case of Eastern Germany. ZEW Discussion Paper, n. 01-10. 
+Centre for European Economic Research, Mannheim, 2001. Disponível em: 
+<ftp://ftp.zew.de/pub/zew-docs/dp/dp0110.pdf>.
+Araújo, B. C. P. O.; Pianto, D. M. Potencial exportador das firmas industriais 
+brasileiras. In: Anais do XXX Encontro Nacional de Pós-Gradu-
+ação em Economia, Natal, 2005.
+Bastos, V. Incentivos à inovação: tendências internacionais e no Brasil e o papel 
+do BNDES junto às grandes empresas. Revista do BNDES, Rio de Janeiro, v. 
+11, n. 21, p. 107-138, jun. 2004.
+Becker, S.; Ichino, A. Estimation of average treatment effects based on pro-
+pensity scores.  The Stata Journal, v. 2, n. 4, p. 358-377, 2002.
+
+Est. econ., São Paulo, 39(3): 629-649, jul-set 2009
+646 
+Impacto das Políticas de Fomento à Inovação no Brasil
+BIE. Bureau of Industry Economics. R&D, innovation and competitiveness: an 
+evaluation of the research and development tax concession. Research Report 50, 
+Australian Government Publishing Service, 1993.
+Bloom, N.; Griffith, R.; Van Reenen, J. Do R&D tax credit work? Evi-
+dence form a panel of countries 1979-1997. Journal of Public Economics, n.85, 
+p. 1-31, 2002.
+BUSINESS Council of Australia. Survey of research and development expen-
+diture by Australian businesses, 1999.
+Busom, I. An empirical evaluation of the effects of R&D subsidies. Berkeley, University 
+of California, May, 1999. (Burch Center Working Paper Series, n. B99-05).
+CANADIAN Department of Finance. The federal system of income tax 
+incentives for scientific research and experimental development. Evaluation 
+Report. Ottawa, Department of Finance, 1997.
+Corder, S.; Salles-Filho, S. Financiamento e incentivos ao sistema nacional 
+de inovação. Parcerias Estratégicas, n.19, dez. 2004.
+Czarnitzki, D.; Hanel, P.; Rosa, J. M. Evaluations the impact of R&D tax 
+credits on innovation: a microeconometric study on Canadian firms. ZEW: Centre 
+for European Economic Research, November, 2004 (Discussion Paper n. 04-
+77). Disponível em: <http://callisto.si.usherb.ca:8080/gredi/wpapers/GREDI-
+0501.pdf>.
+David, P. A.; Hall, B. H.; Toole, A.A. Is public R&D a complement or sub-
+stitute for private R&D? A review of the econometric evidence. Research Policy, 
+n. 29, p. 497-529, 2000.
+Davis, C.; Carden, F. Research effectiveness and R&D evaluation in developing 
+countries. Knowledge and Policy, 1998.
+Deheja, R. H.; Wahba, S. Propensity Score Matching Methods for Non-Exper-
+imental Causal Studies. National Bureau of Economic Research, 1998 (Working 
+Paper Series 6829). Disponível em: <http://www.nber.org/papers/w6829>. 
+Acesso em: 25 jul. 2006.
+DUGUET, E. Are R&D subsidies a substitute or a complement to privately funded 
+R&D? Evidence from France using propensity score methods for non-experi-
+mental Data. Revue d’Economie Politique, v. 114, n. 2, p. 263-292, 2004.
+FAHRENKROG, G. et al. (Eds.). RTD evaluation toolbox: assessing the socio-eco-
+nomic impact of RTD policies. Espanha: European Comission, Joint Research 
+Center, Institute for Prospective Technological Studies (IPTS), 2002.
+Griffith, R.; Redding, S.; Van Reenen, J. Measuring the Cost Effectiveness 
+of an R&D Tax Credit for the UK. Center for Economic Performance. London 
+School of Economics and Political Science, 2000.
+Guinet, J.; Kamata, H. Do tax-incentives promote innovation? The OECD 
+Observer, n. 202, Oct./Nov. 1996.
+
+Ana Paula Avellar	
+647
+Est. econ., São Paulo, 39(3): 629-649, jul-set 2009
+HALL, B.H. R&D tax policy during the eighties: success or failure? Working 
+Paper n. 4240. Cambridge, 1992. (NBER Working Papers Series)
+______.; Van Reenen, J. How effective are fiscal incentives for R&D? A review 
+of the evidence. Research Policy, 29, p. 449-469, 2000.
+______.; Wosinska, M. Effectiveness of the California R&D tax credit. Report 
+Prepared for The California Council on Science and Technology, June 1999. 
+Disponível em: <http://www.ccst.us/ccst/pubs/crest/pubs/pireports/html/hall.
+html>.
+Heckman, J. J. Sample selection bias as a specification error. Econometrica, 47, p. 
+153-161, 1979.
+HUSSINGER, K. R&D and subsidies at the firm level: an application of parametric 
+and semi-parametric two-step selection models. ZEW Discussion Paper, n. 03-63, 
+Centre for European Economic Research, Manheim, 2003.
+IBGE. Pesquisa Industrial de Inovação Tecnológica. Rio de Janeiro, 2004. (Série 
+Relatórios Metodológicos, v. 30, 110 p).
+INDUSTRY of Canada. A structuralist assessment of technology policies – taking 
+Schumpeter seriously on policy. Research Publications Program, Oct. 1998.(Work-
+ing Paper n. 25). 
+Lattimore, R. Research and development fiscal incentives in Australia: impacts and 
+policy lessons. In: Conference Policy Evaluation in Innovation 
+and Technology, Capítulo 07. Science and Technology Policy Division, 
+Paris, OECD, 1997.
+Leyden, D. P.; Link, A. N. Tax policies affecting R&D: an international com-
+parison. Technovation, n. 13, p. 17-25, 1993.
+MacDonald, C. R&D tax incentives: a comparison of the incentive effects of 
+refundable and non-refundable tax credits. Summer Research Paper, University 
+of Waterloo, 2003.
+Maddala, G.S.  Limited-Dependent and Qualitative Variable in Econometrics. 
+Econometric Society Monographs, n.3, Cambridge University Press, 1983.
+MANSFIELD, E. Public policy toward industrial innovation: an international 
+study of direct tax incentives for R&D. In: CLARK, K.; LORENZ, C. 
+(Eds.). The uneast alliance. Harvard Press, 1985.
+______.; Switzer, L. The effects of R&D tax credits and allowances in Canada. 
+Research Policy, n. 14, p. 97-107, 1985.
+Meyer-Stamer, J. New departures for technology policy in Brazil. Science and 
+Public Policy, p. 295-304, Oct. 1995.
+Ministério das Finanças e da Receita do Canadá. Por que e como 
+os governos apóiam atividades de pesquisa e desenvolvimento. Parcerias Estra-
+tégicas, n. 08, maio 2000.
+
+Est. econ., São Paulo, 39(3): 629-649, jul-set 2009
+648 
+Impacto das Políticas de Fomento à Inovação no Brasil
+OECD. The measurement of scientific and technological activities: proposed standard 
+practice for surveys on research and experimental development. Frascati Manual 
+2002. Paris, OECD, 2002.
+______. Tax incentives for research and development: trends and issues. Sci-
+ence Technology Industry, 2003. Disponível em: <http://www.oecd.org/
+dataoecd/12/27/2498389.pdf>.
+______. Manual de Oslo: diretrizes para coleta e interpretação de dados sobre inovação. 
+3. ed. Tradução: FINEP, Rio de Janeiro, 2005. 
+OFFICE OF TECHNOLOGY ASSESSMENT. The effectiveness of research and ex-
+perimentation tax credits. Congress of the United States, Sept. 1995.
+Papaconstantinou, G.; Polt, W. Policy evaluation in innovation and tech-
+nology: an overview. In: Conference Policy Evaluation in In-
+novation and Technology, Capítulo 01. Science and Technology 
+Policy Division, Paris, OECD, 1997.
+Parsons, Lori S. Reducing bias in a propensity score matched-pair sample using 
+Greedy matching techniques. Proceedings of the Twenty-Sixth Annual SAS Users 
+Group, 2001 (Paper 214-26). Disponível em:  < http://www2.sas.com/proceed-
+ings/sugi26/p214-26.pdf>. Acesso em: 24 jul.2006.
+Pessoa, D. G. C.; Nascimento, S. P. L. D.; Duarte R. P. N. Análise de dados 
+amostrais complexos. Escola Nacional de Ciências Estatísticas – ENCE. Minicurso 
+SINAPE, 1998.
+Prochnik, V.; Araújo, R. D. Uma análise do baixo grau de inovação na indús-
+tria brasileira a partir do estudo de firmas menos inovadoras. In: De Negri; 
+Salerno. Inovações, padrões tecnológicos e desempenho das firmas industriais 
+brasileiras. Instituto de Pesquisa Econômica Aplicada, 2005.
+SALAZAR, H.; VEJARANO, C.; ACEVEDO, J. M. Incentivos fiscales en ciencia, 
+tecnologia e innovación: revisión y análisis de la experiencia internacional. Bor-
+radores de investigación, n. 29, Colombia, Universidad del Rosario, 2002.
+Tassey, G. R&D trends in the U.S. economy: strategies and policy implications. US 
+Department of Commerce, NIST, Planning Report, 1999.
+UK. HM Treasury. Supporting growth in innovation: enhancing the R&D tax credit. 
+July 2005
+Velho, L.; Velho, P.; Saenz, T.W. P&D nos setores público e privado no Brasil: 
+complementares ou substitutos? Parcerias Estratégicas, n. 19, dez. 2004.
+Verbeek, M. A guide to modern econometrics. 2nd ed. John Wiley & Sons, 2000.  
+Wallsten, S. The effect of government-industry R&D programs on private R&D: 
+the case of the small business innovation research program. Rand Journal of 
+Economics, 1, p. 82-100, 2000.
+White, H. A heterocodasticity-consistent covariance matrix estimator and a direct 
+test for heterocodasticity. Econometrics, v. 48, p. 817-838, 1980.
+
+Ana Paula Avellar	
+649
+Est. econ., São Paulo, 39(3): 629-649, jul-set 2009
+Wooldridge, J. M. Econometric Analysis of Cross Section and Panel Data. Cam-
+bridge, Massachusetts: The MIT Press, 2002.

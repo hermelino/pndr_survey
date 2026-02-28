@@ -1,0 +1,72 @@
+# Estudo #41
+# de Santana Ribeiro, L.C.D.S.; Caldas, R.D.M.; de Souza, K.B.D.; Cardoso, D.F.; Domingues, E.P. (2020)
+# Regional funding and regional inequalities in the Brazilian Northeast
+# Fonte: scopus-2020-ribeiro-caldas-souza.pdf
+======================================================================
+
+Almeida, M. F., Resende, G. M., & Silva, A. M. A. (2007). Distribuição espacial dos fundos constitucionais de financiamento
+do Nordeste, Norte e Centro-Oeste. Revista de Economia, 33(2), 115–137.
+Almeida, M. F., Silva, A. M. A. D., & Resende, G. M. (2006). Uma análise dos fundos constitucionais de financiamento do
+Nordeste (FNE), Norte (FNO) e Centro-Oeste (FCO). IPEA - Texto para Discussão n. 1206, Brasília.
+Azzoni, C. R. (2001). Economic growth and regional income inequality in Brazil. The Annals of Regional Science, 35, 133–152.
+Baer, W. (2007). Brazilian economy: Growth and development (6th Rev. E ed.). Boulder, CO: Lynne Rienner.
+Baer, W., & Geiger, P. P. (1978). Industrialização, urbanização e a persistência das desigualdades regionais no Brasil. In
+W. Baer, P. P. Geiger, & P. R. Haddad (Eds.), Dimensões do desenvolvimento brasileiro. Rio de Janeiro: Editora Campus.
+pp. 65-110
+Brazilian Central Bank (2017). Focus - Relatório de Mercado. 29 de dezembro de 2017. URL: https://www.bcb.gov.br/pec/
+GCI/PORT/readout/R20171229.pdf
+Carvalho, T. S., Domingues, E. P., & Horridge, J. (2017). Controlling deforestation in the Brazilian Amazon: Regional economic
+impacts and land-use change. Land Use Policy, 64, 327–341. https://doi.org/10.1016/j.landusepol.2017.03.001
+Diniz, C. C. (1993). Desenvolvimento poligonal no Brasil: Nem desconcentração nem contínua polarização. Nova Economia,
+31(1), 35–64.
+Diniz, C. C. (2006). A busca de um projeto de nação: O papel do território e das políticas regional e urbana. Revista de
+Economia, 7(4), 1–18.
+Dixon, P., & Rimmer, M. (2002). Dynamic general equilibrium modelling for forecasting and policy. A practical guide and docu-
+mentation of MONASH. Amsterdam: Elsevier.
+Giesecke, J. A., & Madden, J. R. (2013). Regional computable general equilibrium modeling. In P. B. Dixon, &
+D. W. Jorgenson (Eds.), Handbook of computable general equilibrium modeling (pp. 379–475). Newnes, Oxford, Waltham:
+Elsevier.
+Haddad, E. A. (1999). Regional inequality and structural changes: Lessons from the Brazilian experience. Aldershot: Ashgate.
+Horridge, J. M. (2012). The TERM model and its database. In G. Wittwer (Ed.), Economic modeling of water. London: Springer.
+Horridge, J. M., Madden, J. R., & Wittwer, G. (2005). The impact of the 2002-03 drought on Australia. Journal of Policy
+Modeling, 27(3), pp. 285–308. https://doi.org/10.1016/j.jpolmod.2005.01.008
+IBGE - INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. Download. Estatísticas. Contas Nacionais. Available at:
+http://ibge.gov.br/home/download/estatistica.shtm Acess in:January, 2017.
+Johansen, L. (1960). A multisectoral model of economic growth. Amsterdam: North Holland Press.
+Nascimento, T. O., & Haddad, E. A. (2017). Análise do Fundo Constitucional de Financiamento do Nordeste: Uma aplicação
+de equilíbrio geral computável. In: 45 Encontro Nacional de Economia. Available at: https://www.anpec.org.br/
+encontro/2017/submissao/files_I/i10-31608a781674920d31ed5db32a5d9b26.pdf Access: January, 2017
+Oliveira, H. C., & Domingues, E. P. (2005). Desigualdades regionais e os Fundos Constitucionais de Financiamento do Norte
+e do Centro-Oeste. In: José Raimundo Carvalho; Klauss Hermanns. (Eds.). In Políticas públicas e desenvolvimento regional.
+Fortaleza: Coletânea CAEN/Konrad Adenauer. pp. 181-214
+Resende, G. M. (2014). Avaliação dos impactos econômicos do Fundo Constitucional de Financiamento do Nordeste entre
+2004 e 2010. Texto para Discussão IPEA, N. 1918.
+RIBEIRO ET AL.
+56
+
+Ribeiro, L. C. S., Domingues, E. P., Perobelli, F. S., & Hewings, G. J. D. (2018). Structuring investment and regional inequalities
+in the Brazilian Northeast. Regional Studies, 52(5), 727–739. https://doi.org/10.1080/00343404.2017.1327709
+Ribeiro, L. C. S., Silva, E. O. V., Andrade, J. R. L., & Souza, K. B. (2017). Tourism and regional development in the Brazilian
+Northeast. Tourism Economics, 23(3), 717–727. https://doi.org/10.1177/1354816616652752
+Rodrigues, M. T., & Guilhoto, J. J. M. (1998). Eficiência alocativa do Fundo Constitucional de Financiamento do Nordeste
+(FNE): Uma visão de insumo produto. Revista Econômica do Nordeste, Fortaleza, 29(3), 319–348.
+Senado Federal. (2016). Emenda Constitucional n
+95 de 15/12/2016. URL: http://legis.senado.leg.br/legislacao/
+DetalhaSigen.action?id=540698
+Shankar, R., & Shah, A. (2003). Bridging the economic divide within countries: A scorecard on the performance of regional
+policies in reducing regional income disparities. World Development, 31(8), 1421–1441.
+Silva, A. M. A., Resende, G., & Silveira Neto, R. D. M. (2007). Uma avaliação da eficácia do FNE, no período 1995-2000.
+Análise Econômica, 25(48), 213–241.
+Silveira Neto, R. M., & Azzoni, C. R. (2011). Non-spatial government policies and regional income inequality in Brazil.
+Regional Studies, 45(4), 453–461. https://doi.org/10.1080/00343400903241485
+Silveira Neto, R. M., & Azzoni, C. R. (2012). Social policy as regional policy: Market and nonmarket factors determining
+regional inequality. Journal of Regional Science, 52(3), 433–450. https://doi.org/10.1111/j.1467-9787.2011.00747.x
+Soares, R. B., Linhares, F., Gonçalves, M. F., & Viana, L. F. G. (2014). Efeitos diferenciados do Fundo Constitucional de
+Financiamento do Nordeste (FNE) no crescimento econômico dos municípios nordestinos. CEPAL Review, 113,
+184–201.
+Wittwer, G. (2012). Economic modeling of water. The Australian CGE experience. Amsterdam: Springer.
+How to cite this article: Ribeiro LCDS, Caldas RDM, Souza KBD, Cardoso DF, Domingues EP. Regional
+funding and regional inequalities in the Brazilian Northeast. Reg Sci Policy Pract. 2020;12:43–59. https://
+doi.org/10.1111/rsp3.12230
+RIBEIRO ET AL.
+57

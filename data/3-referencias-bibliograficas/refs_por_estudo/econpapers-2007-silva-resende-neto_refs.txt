@@ -1,0 +1,71 @@
+# Estudo #48
+# Silva, Alexandre; Resende, Guilherme; Silveira Neto, Raul (2007)
+# Eficácia do Gasto Público: Uma Avaliação do FNE, FNO e FCO
+# Fonte: econpapers-2007-silva-resende-neto.pdf
+======================================================================
+
+ANGRIST, E. J.; KRUEGER, A. B. Empirical Strategies in Labor Economics. In: 
+ASHENFELTER, O.; CARD, D. Handbook of Labor Economics, v. 3, 1999. 
+BECKER, S. O.; ICHINO, A. Estimation of average treatment effects based on 
+propensity score. The Stata Journal, v. 2, n. 4, p. 358-377, 2002. 
+BRASIL. Ministério do Planejamento Orçamento e Gestão, Secretaria de Orçamento 
+Federal (SOF). Vinculações de receitas dos orçamentos fiscal e da seguridade social e o poder 
+discricionário da alocação dos recursos do governo federal, v. 1, n. 1, 2003.  
+DEHEJIA, R. H.; WAHBA, S. Propensity Score-Matching Methods for Non-experimental 
+Causal Studies. The Review of Economics and Statistics, v. 84, n. 1, p. 151-161, Feb. 2002. 
+FRIENDLANDER, D.; GREENBERG, D. H.; ROBINS, P. K. Evaluating 
+Government Training Programs for Economically Disadvantaged. Journal of Economic 
+Perspectives, v. 35, Dec. 1997. 
+ROSEMBAUM, P.; RUBIN, D. The Central Role of Propensity Score in Observational 
+Studies for causal Effects. Biometrika, v. 70, 1983. 
+WOOLDRIDGE, J. M. Econometric Analysis of Cross Section and Panel Data. Cambridge: 
+MIT Press, 2002. 
+ 
+
+ 
+ 
+© Instituto de Pesquisa Econômica Aplicada – ipea 2006 
+EDITORIAL 
+Coordenação 
+Iranilde Rego 
+Supervisão 
+Aeromilson Mesquita 
+Revisão 
+Maria Aparecida Taboza 
+Samara Silva Nogueira 
+Camila de Paula Santos (estagiária) 
+Karen Varella Maia Corrêa (estagiária) 
+Olavo Mesquita de Carvalho (estagiário) 
+Sheila Santos de Lima (estagiária) 
+Editoração 
+Bernar José Vieira 
+Elidiane Bezerra Borges 
+Luis Carlos da Silva Marques 
+Gustavo de Souza Ferraz de Oliveira 
+Rosa Maria Banuth Arendt 
+Brasília 
+SBS – Quadra 1 − Bloco J − Ed. BNDES, 9
+o andar 
+70076-900 − Brasília – DF 
+Fone: (61) 3315-5090  
+Fax:   (61) 3315-5314 
+Correio eletrônico: editbsb@ipea.gov.br 
+Rio de Janeiro 
+Av. Nilo Peçanha, 50, 6
+o andar − Grupo 609 
+20044-900 − Rio de Janeiro – RJ 
+Fone: (21) 3515-8433 
+Fax:   (21) 3515-8402 
+Correio eletrônico: editrj@ipea.gov.br 
+Tiragem: 130  exemplares 
+ 
+ 
+COMITÊ EDITORIAL 
+Secretário-Executivo  
+Marco Aurélio Dias Pires 
+SBS – Quadra 1 − Bloco J − Ed. BNDES, 
+9
+o andar, sala 908  
+70076-900 − Brasília – DF 
+Fone: (61) 3315-5406  
+Correio eletrônico: madp@ipea.gov.br

@@ -1,0 +1,180 @@
+# Estudo #52
+# Resende, Guilherme; Firmino Costa da Silva, Diego; da Silva Filho, Luis (2015)
+# Avaliação dos Efeitos Econômicos dos Fundos Constitucionais de Financiamento do Nordeste, do Norte e do Centro-Oeste: uma análise por tipologia da política nacional de desenvolvimento regional entre 1999 e 2011
+# Fonte: econpapers-2015-resende-silva-filho.pdf
+======================================================================
+
+ALMEIDA JUNIOR, M.; RESENDE, G. M.; SILVA, A. M. Distribuição espacial dos fun­
+dos constitucionais de financiamento do Nordeste, Norte e Centro-Oeste. Revista de 
+Economia, v. 33, n. 2, p. 115-137, 2007.
+ÁVILA, R. P.; MONASTÉRIO, L. M. MAUP e a análise espacial: um estudo de caso para o 
+Rio Grande do Sul. Análise econômica, Rio Grande do Sul, n. 26, p. 239-265, 2008. 
+BALTAGI B. H. et al. Testing for serial correlation, spatial autocorrelation and random 
+effects using panel data. Texas: Texa A&M University, College Station, 2006. 
+BRASIL. Ministério da Integração Nacional. Política Nacional de Desenvolvimento 
+Regional. Brasília: SDR, 2012.
+BOARNET, M. G.; CHALERMPONG, S.; GEHO, E. Specification issues in models of 
+population and employment growth. 2005. (Papers in Regional Science, n. 84). 
+BRIANT, A.; COMBES, P. P.; LAFOURCADE, M. Dots to boxes: do the size and shape of 
+spatial units jeopardize economic geography estimations? Journal of Urban Economics, v. 67, 
+p. 287-302, 2010.
+CARVALHO, A. X. Y.; LALL, S. V.; TIMMINS, C. Decisão locacional de novos estabele­
+cimentos e o papel dos fundos constitucionais de financiamento. In: CARVALHO, A. et al. 
+Ensaios de economia regional e urbana. Brasília: Ipea, 2008.
+CHESHIRE, P.; HAY, D. G. Urban problems in Western Europe: an economic analysis. 
+London: Unwin Hyman, 1989.
+CINTRA, M. A. Fundos constitucionais de financiamento (do Norte, do Nordeste e do 
+Centro-Oeste). Campinas: Editora Unicamp, 2007. (Relatório de Pesquisa).
+CRAVO, T.; RESENDE, G. M.; CARVALHO, A. The impact of brazilian regional development 
+funds on regional economic growth: a spatial panel approach. In: ERSA CONGRESS, 54th, 
+2014, Saint Petersburg, Russia. Anais… Saint Petersburg: Aug. 2014.
+DEBARSY, N.; ERTUR, C. Testing for spatial autocorrelation in a fixed effects panel data 
+model. Regional Science and Urban Economics, 2011.
+ELHORST, J. P. Specification and Estimation of Spatial Panel Data Models. International 
+Regional Science Review, v. 26, 2003.
+______. Unconditional maximum likelihood estimation of linear and log-linear dynamic 
+models for spatial panels. Geographical Analysis, v. 37, p. 85-106, 2005.
+______. Spatial panel data models. In: FISCHER, M. M.; GETIS, A. (Eds.). Handbook of 
+applied spatial analysis. Berlin: Springer, 2010. p. 377-407.
+
+58
+B r a s í l i a ,  o u t u b r o  d e  2 0 1 5
+______. Spatial panel models. Seminars, The University of York, 2011.
+______. Dynamic spatial panels: models, methods and inferences. Journal of Geographical 
+Systems, v. 14, p. 5-28, 2012.
+ERTUR C., LE GALLO J. Regional growth and convergence: heterogenous reaction versus 
+interaction in spatial econometric approaches. Working papers, hal-00463274, 2008.
+ERTUR, C.; LE GALLO, J.; BAUMONT, C. The european regional convergence process, 
+1980-1995: Do spatial regimes and spatial dependence matter? International Regional Science 
+Review, v. 29, n. 1, p. 3-34, 2006.
+FERREIRA, M. N. C.; MENDES, F. A. T. Impactos dos fundo constitucional de financia­
+mento do Norte (FNO) sobre a agricultura paraense no período de 1990 a 1999. Movendo 
+Ideias, Belém, v. 8, n. 13, p.59-76, 2003.
+GALEANO, E. A. V.; FEIJÓ, C. Crédito e crescimento econômico: evidências a partir de um 
+painel de dados regionais para a economia brasileira. Revista Econômica do Nordeste, v. 43, 
+p. 201-219, 2012. 
+IBGE – INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA. Sistema de con­
+tas regionais referência 2010: produto interno bruto dos municípios 1999-2010. Brasília: 
+IBGE, 2012. Disponível em: <http://goo.gl/8Bd5Bz>.
+ISLAM, N. Growth empirics: a panel data approach. Quarterly Journal of Economics, v. 
+110, n. 4, p. 1127-1170, 1995.
+______. What have we learnt from the convergence debate? Journal of Economic Surveys, 
+v. 17, p. 309-362, 2003.
+LALL, S. V.; SHALIZI, Z. Location and growth in the Brazilian Northeast. Journal of 
+Regional Science, v. 43, p. 663-681, 2003.
+LEE, L.F.; YU, J. A spatial dynamic panel data model with both time and individual fixed 
+effects. Econometric Theory, v. 26, p. 564-597, 2010.
+LESAGE, J. P.; PACE, R. K. Introduction to Spatial Econometrics. CRC Press Taylor & 
+Francis Group, Boca Raton, 2009.
+MACEDO, F. C.; MATTOS, E. N. O papel dos fundos constitucionais de financiamento no 
+desenvolvimento regional brasileiro. Ensaios FEE, v. 29, n. 2, p. 355-384, 2008.
+MENON, C. The bright side of MAUP: defining new measures of industrial agglomeration. 
+Papers in Regional Science, v. 91, n. 1, p. 3-28, 2012. 
+MONTEIRO, J. A. B. Avaliação da utilização dos recursos do fundo constitucional de fi­
+nanciamento do Norte no estado de Roraima. 2011. Dissertação (Mestrado) – Universidade 
+Federal do Rio Grande do Sul, Porto Alegre, 2011.
+
+Texto para
+Discussão
+2 1 4 5
+59
+Avaliação dos Efeitos Econômicos dos Fundos Constitucionais de Financiamento do Nordeste, do Norte e do 
+Centro-Oeste: uma análise por tipologia da política nacional de desenvolvimento regional entre 1999 e 2011
+OLIVEIRA, H. C.; DOMINGUES, E. P. Considerações sobre o impacto dos fundos consti­
+tucionais de financiamento do Norte e do Centro-Oeste na redução da desigualdade regional 
+no Brasil. In: ENCONTRO NACIONAL DE ECONOMIA, 33., 2005, Natal, Rio Grande 
+do Norte. Anais... Natal, 2005.
+PEIXOTO, B. et al. Avaliação econômica de projetos sociais. MENEZES FILHO, N. A. 
+(Org.). Avaliação econômica de projetos sociais. 1. ed. São Paulo: Dinâmica Gráfica e Edi­
+tora, 2012.
+RESENDE, G. M. Multiple dimensions of regional economic growth: the Brazilian case, 
+1991-2000. Papers in regional science, v. 90, n. 3, p. 629-662, 2011.
+______. Measuring micro and macro-impacts of regional development policies: the case of the 
+FNE-Industrial loans in Brazil, 2000-2006. Regional studies, v. 48, n. 4, p. 646-664, 2014a. 
+______. Avaliação dos impactos econômicos do Fundo Constitucional de Financiamento 
+do Nordeste entre 2004 e 2010. Brasília: Ipea, 2014b. (Texto para Discussão, n. 1918).
+RESENDE, G. M.; CARVALHO, A. X. Y.; SAKOWSKI, P. A. M. Evaluating multiple spatial 
+dimensions of economic growth in Brazil using spatial dynamic panel data models, 1970-
+2000. In: ENCONTRO NACIONAL DE ECONOMIA, 2012, Porto de Galinhas. Anais... 
+Porto de Galinhas: ANPEC, 2012.
+RESENDE, G. M.; CRAVO, T. A. What about regions in regional science? A convergence 
+exercise using different geographic scales of European Union. Economics Bulletin, Access 
+Econ, v. 34, n. 3, p. 1381-1395, 2014.
+SILVA, A. M.; RESENDE, G. M.; SILVEIRA NETO, R. Eficácia do gasto público: uma ava­
+liação do FNE, FNO e FCO. Estudos econômicos, v. 39, n. 1, p. 89-125, 2009. 
+SOARES, R.; SOUSA, J.; PEREIRA NETO, A. Avaliação de impactos do FNE no emprego, 
+na massa salarial e no salário médio em empreendimentos financiados. Revista econômica do 
+Nordeste, v. 40, n. 1, p. 217-234, 2009.
+SOARES, R. et al.  Fondo Constitucional de Financiamiento del Nordeste del Brasil: efec­
+tos diferenciados sobre el crecimiento económico de los municípios. Revista Cepal, n. 113, 
+p. 183-201, 2014.
+YAMAMOTO, D. Scales of regional income disparities in the USA, 1955-2003. Journal of 
+Economic Geography, v. 8, p. 79-103, 2008.
+BIBLIOGRAFIA COMPLEMENTAR
+ANGRIST, J.; PISCHKE, J. Mostly harmless econometrics: an empiricist’s companion. 
+London: Princeton University Press, 2009.
+
+60
+B r a s í l i a ,  o u t u b r o  d e  2 0 1 5
+ARMSTRONG,  H.; TAYLOR, J. Regional economics and policy. Oxford: Blackwell 
+Publishers, 2000.
+BANCO DO NORDESTE. Fundo Constitucional de Financiamento do Nordeste (FNE 
+2013). Programação Regional. Fortaleza: Banco do Nordeste, 2013. p. 1-119.
+BARRO, R. J. Government spending in a simple model of endogenous growth. Journal of 
+Political Economy, v. 98, p. 103-125, 1990.
+BARTIK, T.; BINGHAM, R. Can economic development programs be evaluated? W.E. 
+Upjohn Institute for Employment Research, 1995. (Staff Working Papers, n. 29).
+BEHRENS, K.; THISSE, J. F. Regional economics: a new economic geography perspective. 
+Regional science and urban economics, v. 37, p. 457-465, 2007.
+BRASIL. Lei no 7.827, de 27 de setembro de 1989. Regulamenta o Art. 159, inciso I, alínea c, 
+da Constituição Federal, institui o Fundo Constitucional de Financiamento do Norte (FNO), 
+o Fundo Constitucional de Financiamento do Nordeste (FNE) e o Fundo Constitucional de 
+Financiamento do Centro-Oeste (FCO), e dá outras providências. Brasília: Congresso Nacio­
+nal, 1989. Disponível em: <http://goo.gl/XZ3cgU>.
+______. Decreto no 6.047, de 22 de fevereiro de 2007. Institui a Política Nacional de Desen­
+volvimento Regional  e da outras providências. Brasília: Congresso Nacional, 2007. Disponível 
+em: <http://goo.gl/Rzyc3u>.
+______. Ministério do Trabalho e Emprego. Relatório Anual de Informações Sociais (Rais). 
+Brasília, 2004. 
+______. Ministério do Trabalho e Emprego. Relatório Anual de Informações Sociais (Rais). 
+Brasília, 2006. 
+______. Ministério do Trabalho e Emprego. Relatório Anual de Informações Sociais (Rais). 
+Brasília, 2008. 
+CASELLI, F.; ESQUIVEL, G.; LEFORT, F. Reopening the convergence debate: a new look 
+at cross country growth empirics. Journal of Economic Growth, v. 3, n. 1, p. 363-389, 1996.
+DURLAUF, S. N.; JOHNSON, P. A.; TEMPLE, J. R. W. Growth econometrics. In: 
+AGHIONA, P.; DURLAUF, S. (Ed.). Handbook of economic growth. Amsterdam: 
+Elservier, 2005.
+FOTHERINGHAM A.; BUNSDEN, C.; CHARLTON M. Quantitative geography. 
+London: Sage, 2000.
+GREENE, W. H. Econometric analysis, 2003.
+KHANDKER, S. R.; KOOLWAL, G. B.; SAMAD, H. A. Handbook on impact evaluation:  
+quantitative methods and practices. Washington: The World Bank, 2010.
+
+Texto para
+Discussão
+2 1 4 5
+61
+Avaliação dos Efeitos Econômicos dos Fundos Constitucionais de Financiamento do Nordeste, do Norte e do 
+Centro-Oeste: uma análise por tipologia da política nacional de desenvolvimento regional entre 1999 e 2011
+LEE, K.; PESARAN, M.; SMITH, R. Growth and convergence in multi country empirical 
+stochastic Solow model. Journal of Applied Econometrics, v. 12, n. 4, p. 357-392, 1997.
+______. Growth empirics: a panel data approach: a comment. Quarterly Journal of 
+Economics, v. 113, n. 1, p. 319-323, 1998.
+LEE, L. F.; YU, J. A spatial dynamic panel data model with both time and individual fixed 
+effects. Econometric Theory, v. 26, p. 564-597, 2010.
+LEVINE, R. Finance and growth: theory and evidence. In: AGHION, P.; DURLAUF, S. 
+(Eds.). Handbook of economic growth. 1. ed., Elsevier, 2005. v. 1, chap. 12, p. 865-934.
+OPENSHAW, S.; TAYLOR, P. J. The modifiable areal unit problem. In: WRIGLEY, N.; 
+BENNETT, R. (Eds.). Quantitative geography, a British view. London: Routledge and 
+Kegan, 1981.
+RESENDE, G. M. Micro e macroimpactos de políticas de desenvolvimento regional: o 
+caso dos empréstimos do FNE-Industrial no estado do Ceará. Rio de Janeiro: Ipea, 2012. 
+(Texto para Discussão, n. 1777).
+SILVA, A. M.; RESENDE, G. M.; SILVEIRA NETO, R. Uma avaliação da eficácia do FNE 
+no período 1995-2000. Análise econômica, v. 25, p. 233-261, 2007. 
+TEMPLE, J. The new growth evidence. Journal of Economic Literature, v. 37, p. 112-156, 
+1999.
+
+62
+B r a s í l i a ,  o u t u b r o  d e  2 0 1 5

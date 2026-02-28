@@ -1,0 +1,37 @@
+# Estudo #43
+# Silva, Alexandre Manoel Angelo da; Resende, Guilherme Mendes; Silveira Neto, Raul da Mota (2009)
+# Eficácia do gasto público: uma avaliação do FNE, FNO e FCO
+# Fonte: scielo-2009-silva-resende-neto.pdf
+======================================================================
+
+Angrist, E.J.; Krueger, A.B. Empirical strategies in labor economics. In: 
+Ashenfelter, O.; Card, D., Handbook of Labor Economics , v. 3, 1999.
+Becker, S.O.; Ichino, A. Estimation of average treatment effects based on 
+propensity score. The Stata Journal, 2(4), p. 358-377, 2002.
+BRASIL. Ministério do Planejamento Orçamento e Gestão, Secretaria de Orçamento 
+Federal (SOF). Vinculações de receitas dos orçamentos fiscal e da seguridade social e o 
+poder discricionário da alocação dos recursos do governo federal, v. 1, n. 1, 2003. 
+Dehejia, R.H.; Wahba, S. Propensity score-matching methods for non-experi-
+mental causal studies. The Review of Economics and Statistics, 84(1), p. 151-161, 
+Feb. 2002.
+Friendlander, D.; Greenberg, D.H.; Robins, P.K.	 Evaluating gov-
+ernment training programs for economically disadvantaged. Journal of Economic 
+Perspectives, v. XXXV, Dec.1997.
+Magalhães, A.M.; Silveira Neto, R.M.; Dias, F.M.; Rands, A. A expe-
+riência recente do PRONAF em Pernambuco: uma análise por meio de propensity 
+score. Economia Aplicada, v. 10, n. 1, p. 57-74, 2006.
+Resende, A.C.C.; Oliveira, A.M.H.C. Avaliando resultados de um programa 
+de transferências de renda: o impacto do Bolsa-Família sobre os gastos das 
+famílias brasileiras. Anais do XXXIV Encontro Nacional de Economia. Salvador, 
+dez. 2006.
+Rosenbaum, P. Observational Studies. 2nd ed. New York: Springer, 2002. (Springer 
+series in statistics).
+______; Rubin, D. The central role of propensity score in observational studies for 
+causal effects. Biometrika, v. 70, 1983.
+Silveira Neto, R.M. Eficácia e viés de seleção em programas de qualificação em 
+trabalhadores em situação economicamente desvantajosa: evidências para o es-
+tado de Pernambuco. Revista Econômica do Nordeste, v. 4, n. 1, p. 1-22, 2002.
+Silverman, B.W. Density estimation for statistics and data analysis. London: Chap-
+man and Hall, 1986.
+Wooldridge, J. M. Econometric Analysis of Cross Section and Panel Data. Cam-
+bridge: MIT press, 2002.

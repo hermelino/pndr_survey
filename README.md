@@ -14,40 +14,60 @@ Identificar, classificar e sintetizar as evidencias empiricas sobre o impacto de
 
 ```
 pndr_survey/
-├── scripts/                  # Pipeline Python
-│   ├── main.py               # CLI (search, screen, analyze, export, full)
-│   ├── config.yaml           # Configuracao (nao versionado)
-│   ├── config.example.yaml   # Template
+├── scripts/                       # Pipeline Python
+│   ├── main.py                    # CLI (search, screen, analyze, export, full)
+│   ├── run_llm_all_papers.py      # Execucao da analise LLM em lote
+│   ├── test_llm_single.py         # Teste de analise LLM em PDF individual
+│   ├── merge_papers_to_json.py    # Mescla registros + classificacao LLM → JSON
+│   ├── match_refs_to_studies.py   # Matching de citacoes entre estudos da triagem
+│   ├── config.yaml                # Configuracao (nao versionado)
+│   ├── config.example.yaml        # Template
 │   ├── requirements.txt
-│   ├── keywords/             # Queries de busca por base (.txt)
-│   ├── questionnaires/       # Questionarios LLM (JSON, 3 stages)
+│   ├── keywords/                  # Queries de busca por base (.txt)
+│   ├── questionnaires/            # Questionarios LLM (JSON, 3 stages)
 │   └── src/
-│       ├── models.py         # BibRecord + PaperRecord
-│       ├── config.py         # Carregamento YAML
-│       ├── importer.py       # Importacao de RIS/CSV/Excel
-│       ├── dedup/            # Deduplicacao (DOI + fuzzy title)
-│       ├── extractors/       # Extracao de texto de PDFs
-│       ├── analyzers/        # Analise via Gemini (3 stages)
-│       ├── screening/        # Triagem pre-LLM (PRISMA)
-│       ├── exporters/        # Excel, CSV, RIS, JSON
-│       └── utils/            # Logging
-├── data/                     # Dados (nao versionados)
-│   ├── 1-records/            # Registros bibliograficos
-│   │   ├── all_records.ris   # 128 registros unicos (Zotero/Mendeley)
-│   │   ├── all_records.xlsx  # Registros + duplicatas + resumo
-│   │   ├── 1-1-records-scopus/    # 16 registros RIS
-│   │   ├── 1-2-records-scielo/    # 5 registros RIS
-│   │   ├── 1-3-records-capes/     # 30 registros RIS
-│   │   ├── 1-4-records-econpapers/# 24 registros RIS
+│       ├── models.py              # BibRecord + PaperRecord
+│       ├── config.py              # Carregamento YAML
+│       ├── importer.py            # Importacao de RIS/CSV/Excel
+│       ├── dedup/                 # Deduplicacao (DOI + fuzzy title)
+│       ├── extractors/            # Extracao de texto de PDFs
+│       ├── analyzers/             # Analise via Gemini (3 stages)
+│       ├── screening/             # Triagem pre-LLM (PRISMA)
+│       ├── exporters/             # Excel, CSV, RIS, JSON
+│       └── utils/                 # Logging
+├── data/
+│   ├── 1-records/                 # Registros bibliograficos
+│   │   ├── all_records.ris        # 128 registros unicos (Zotero/Mendeley)
+│   │   ├── all_records.xlsx       # Resumo de registros por base
+│   │   ├── 1-1-records-scopus/    # 16 registros RIS + Excel
+│   │   ├── 1-2-records-scielo/    # 5 registros RIS + Excel
+│   │   ├── 1-3-records-capes/     # 30 registros RIS + Excel
+│   │   ├── 1-4-records-econpapers/# 24 registros RIS + Excel
 │   │   ├── 1-5-records-anpec/     # 62 registros Excel
-│   │   └── processed/        # Saidas do pipeline (JSON, CSV)
-│   └── 2-papers/             # 118 PDFs renomeados (<base>-<ano>-<autores>.pdf)
-│       ├── all_papers.xlsx   # Controle: registros + status de download
-│       └── *.py              # Scripts de renomeacao e verificacao
-├── latex/                    # Artigo LaTeX (esqueleto)
-├── figures/                  # Figuras para o artigo
+│   │   └── processed/             # Saidas do pipeline (JSON, CSV)
+│   │       ├── bib_records.json   # 137 registros normalizados (BibRecord)
+│   │       ├── bib_screened.json  # Registros apos triagem pre-LLM
+│   │       └── duplicates_removed.csv
+│   ├── 2-papers/                  # Artigos e classificacao
+│   │   ├── 2-2-papers.json        # JSON enriquecido (registros + LLM + triagem)
+│   │   ├── 2-2-papers-pdfs/       # 118 PDFs renomeados
+│   │   ├── 2-1-papers_scripts/    # Scripts de renomeacao e verificacao
+│   │   ├── all_papers.xlsx        # Controle: registros + status de download
+│   │   ├── all_papers_llm_classification.xlsx        # Classificacao LLM bruta
+│   │   ├── all_papers_llm_classification_edited.xlsx  # Classificacao LLM revisada
+│   │   ├── _llm_checkpoint.json   # Checkpoint da analise LLM (stages 1-3)
+│   │   └── build_verified_xlsx.py # Gera xlsx verificado a partir do checkpoint
+│   └── 3-referencias-bibliograficas/  # Referencias bibliograficas dos estudos
+│       ├── extrair_referencias.py     # Extracao de refs dos PDFs via Gemini
+│       ├── estruturar_referencias.py  # Estruturacao de refs em JSON
+│       ├── referencias_consolidadas.txt
+│       ├── referencias_estruturadas.json
+│       └── refs_por_estudo/           # 54 JSONs + TXTs com refs por estudo
+├── latex/                         # Artigo LaTeX (esqueleto)
+├── figures/                       # Figuras para o artigo
 └── docs/
-    └── pipeline_extraction.md  # Metodologia e log de extracao
+    ├── pipeline_extraction.md     # Metodologia e log de extracao
+    └── archive/PLAN.md            # Plano de construcao original (historico)
 ```
 
 ## Pipeline
@@ -56,7 +76,7 @@ pndr_survey/
 FASE 1 — COLETA                           FASE 2 — ANALISE
 ========================                   ========================
 
-Busca manual nas 5 bases                   PDFs coletados
+Busca manual nas 5 bases                   PDFs coletados (118)
         |                                          |
         v                                          v
 [1] Importacao (RIS/CSV/Excel)             [4] Extracao de texto (pdfplumber)
@@ -68,7 +88,13 @@ Busca manual nas 5 bases                   PDFs coletados
 [3] Triagem pre-LLM (PRISMA)                  Stage 3: Resultados
                                                        |
                                                        v
-                                               [6] Exportacao (Excel/CSV/RIS/JSON)
+                                               [6] Triagem final (53 aprovados)
+                                                       |
+                                                       v
+                                               [7] Consolidacao JSON enriquecido
+                                                       |
+                                                       v
+                                               [8] Extracao e matching de citacoes
 ```
 
 ## Status Atual
@@ -79,8 +105,12 @@ Busca manual nas 5 bases                   PDFs coletados
 | 2 | Deduplicacao (118 unicos, 19 removidos) | Concluido |
 | 3 | Triagem pre-LLM | Concluido |
 | 4 | Coleta de PDFs (118 de 118, 100%) | Concluido |
-| 5 | Analise LLM (Stages 1-3) | Pendente |
-| 6 | Exportacao de resultados | Pendente |
+| 5 | Analise LLM (Stages 1-3, 118 papers) | Concluido |
+| 6 | Triagem final (53 aprovados, 65 rejeitados) | Concluido |
+| 7 | Consolidacao JSON (registros + LLM) | Concluido |
+| 8 | Extracao de referencias (54 estudos) | Concluido |
+| 9 | Matching de citacoes entre estudos (64 citacoes cruzadas) | Concluido |
+| 10 | Artigo LaTeX | Em andamento |
 
 Detalhes da extracao: [docs/pipeline_extraction.md](docs/pipeline_extraction.md)
 
@@ -108,29 +138,33 @@ python main.py screen --input-json ../data/1-records/processed/bib_records.json
 
 # Analise LLM (requer GEMINI_API_KEY)
 set GEMINI_API_KEY=sua-chave-aqui
-python main.py analyze --stage 1 --max-papers 5    # teste
-python main.py analyze                              # completo
+python run_llm_all_papers.py
 
-# Exportar resultados
-python main.py export --input-json ../data/1-records/processed/results.json
+# Consolidar registros + LLM em JSON enriquecido
+python merge_papers_to_json.py
+
+# Matching de citacoes entre estudos
+python match_refs_to_studies.py
 ```
 
 ## Referencia de Comandos
 
-| Comando | Descricao | Flags principais |
-|---------|-----------|------------------|
-| `search` | Importar registros de arquivos exportados | `--import-{base} FILE`, `--skip-dedup`, `--dry-run` |
-| `screen` | Triagem pre-LLM (tipo, idioma, PDF) | `--input-json FILE`, `--title-filter`, `--report` |
-| `analyze` | Analise LLM dos PDFs | `--stage {1,2,3,all}`, `--max-papers N`, `--input-dir DIR` |
-| `export` | Exportar resultados | `--formats {excel,csv,ris,json}`, `--input-json FILE` |
-| `full` | Pipeline completo | (combina todos acima) |
+| Comando / Script | Descricao | Flags principais |
+|------------------|-----------|------------------|
+| `main.py search` | Importar registros de arquivos exportados | `--import-{base} FILE`, `--skip-dedup`, `--dry-run` |
+| `main.py screen` | Triagem pre-LLM (tipo, idioma, PDF) | `--input-json FILE`, `--title-filter`, `--report` |
+| `main.py analyze` | Analise LLM dos PDFs | `--stage {1,2,3,all}`, `--max-papers N` |
+| `main.py export` | Exportar resultados | `--formats {excel,csv,ris,json}`, `--input-json FILE` |
+| `run_llm_all_papers.py` | Analise LLM em lote (todos os PDFs) | — |
+| `merge_papers_to_json.py` | Mescla registros + LLM → JSON enriquecido | — |
+| `match_refs_to_studies.py` | Matching de citacoes entre estudos da triagem | — |
 
-Opcoes globais: `--config FILE`, `--verbose`, `--output-dir DIR`
+Opcoes globais do `main.py`: `--config FILE`, `--verbose`, `--output-dir DIR`
 
 ## Documentacao
 
 | Arquivo | Conteudo |
 |---------|----------|
-| [docs/pipeline_extraction.md](docs/pipeline_extraction.md) | Metodologia, queries, dados coletados, trabalho pendente |
+| [docs/pipeline_extraction.md](docs/pipeline_extraction.md) | Metodologia, queries, dados coletados, analise LLM, citacoes |
 | [CLAUDE.md](CLAUDE.md) | Regras de codigo e convencoes do projeto |
 | [docs/archive/PLAN.md](docs/archive/PLAN.md) | Plano de construcao original (historico) |

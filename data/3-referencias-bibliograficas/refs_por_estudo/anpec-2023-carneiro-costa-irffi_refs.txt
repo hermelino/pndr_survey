@@ -1,0 +1,67 @@
+# Estudo #90
+#  (2023)
+# 1 AVALIAÇÃO DE EFICIÊNCIA DAS EMPRESAS ...
+# Fonte: anpec-2023-carneiro-costa-irffi.pdf
+======================================================================
+
+AMARAL, F. J.  do. Incentivos Fiscais e  Políticas Estaduais  de  Atração  de  Investimentos. Texto  
+para Discussão  nº  08. IPECE.  Ceará,  2003. 
+ANDERSEN, P.; PETERSEN, N. C. A Procedure for Ranking Efficient Units in Data Envelopment 
+Analysis. Management Science, v. 39, p. 1261–1264, 1993. 
+APARICIO, J.; LOPEZ, E, J. J.; MARTINEZ, M. R.; PASTOR, J. T.. Benchmarking in data envelopment 
+analysis: An approach based on genetic algorithms and parallel programming. Advances in Operations 
+Research, v. 2014, 2014. 
+ARTHUR, B. La localisation em grappes dans la `Silicon Valley’: à quel moment les rendements 
+croissants conduisent-ils à une position de monopole?. In:Économie Industrielle et Économie Spatiale, 
+Org. Alain RALLET & André TORRE, Ed. Economica, Paris. 
+BAEK, C.; LEE, J. The relevance of DEA benchmarking information and the least-distance measure. 
+Mathematical and Computer Modelling, v. 49, n.1-2, p. 265-275, 2009. 
+BANKER, R. D; CHANG, H. The super-efficiency procedure for outlier identification, not for ranking 
+efficient units. European Journal of Operational Research, vol. 175,  p 1311-1320, 2006. 
+BASTOS, V. D.; COSTA, L. M. DA. Déficit comercial, exportações e perspectivas da indústria química 
+brasileira. BNDES Setorial, n. 33, mar. 2011, p. 163-206, 2011. 
+BELOTTI, Federico et al. Stochastic frontier analysis using Stata. The Stata Journal, v. 13, n. 4, p. 719-
+758, 2013.  
+CALDERARO, F. R. S. Incentivos fiscais à exportação. São Paulo: Resenha Tributária, p. 17, 1973. 
+CANEL, L. X. C. Análise de projetos de desenvolvimento na Região Nordeste do Brasil: a experiência do 
+Sistema FINOR nos anos de 1962 a 2001. 2005. Tese (Doutorado) - Programa de Pós-Graduação em 
+Engenharia de Produção, Universidade Federal de Pernambuco, Recife, 2005. 
+CHARNES, A.; COOPER, W.; RHODES, E. Measuring the efficiency of decision making units. 
+European journal of operational research, v. 2, n. 6, p. 429-444, 1978. 
+COSTA, E. M. Financiamento, alocação de recursos e eficiência das Instituições federais de ensino 
+superior–IFES. Tese (Doutorado) PIMES/UFPE, Recife, 2010. 
+GALINARI, Rangel et al. O efeito das economias de aglomeração sobre os salários industriais: uma 
+aplicação ao caso brasileiro. Revista de Economia Contemporânea, v. 11, p. 391-420, 2007. 
+GLAESER, E. L. The economics of location-based tax incentives. Available at SSRN 
+289834, 2001. 
+GOLANY, B.; ROLL, Y. An application procedure for DEA. Omega, v. 17, n. 3, p. 237-250, 1989. 
+HIRSCHMAN, A. O. Desenvolvimento industrial no nordeste brasileiro e o mecanismo de crédito fiscal 
+do artigo 34/18. Revista Brasileira de Economia, Rio de Janeiro, v. 21, n. 4, p. 5-34, 1967.. 
+KRUGMAN, P. (1991), Geography and Trade. Leuven-London: Leuven University Press/MIT Press, 
+Boston. 
+RAY, S. C. Data Envelopment Analysis: A Nonparametric Method of Production Analysis. Handbook of 
+production economics, p. 409-470, 2022. 
+
+ 
+19 
+ 
+MORAIS, R. N. S. Análise da eficiência em regiões industriais incentivadas: o caso do Polo Industrial de 
+Manaus (PIM). 2019. Tese (Programa Stricto Sensu em Economia de Empresas) - Universidade Católica 
+de Brasília, Brasília, 2019.  
+OLIVEIRA, G.; RESENDE, G.; OLIVEIRA, F. Avaliação de (in)eficiência do Programa Empresarial do 
+Fundo Constitucional de Financiamento do Centro-Oeste (FCO) em Goiás. Revista Brasileira de 
+Estudos Regionais e Urbanos, v. 11, n. 1, p. 93-110, 2017. 
+ROMAN, M.; VASILESCU, M. Romanian labour market efficiency analysis. Mathematical Applications 
+in Science and Mechanics, p. 81-85, 2013. 
+SIMONSEN, M. H. O Sistema Brasileiro de Incentivos Fiscais. Ensaios Econômicos da EPGE, nº 12, 
+FGV, 1974. 
+SOARES, F. K.; ANDREZA, , F. M. P.; ROSENBLUM, P. M.; MATO, R. A. S. A Indústria de Papel e 
+Celulose no Brasil e no Mundo. Brasília, 2022. 
+SOKOLOVSKA, O.; SOKOLOVSKIY, D. Market and government failures related to the introduction of 
+tax incentives regime. Economie şi Sociologie, n. 4, p. 17-26, 2015. United Nations. Conference on 
+Trade and Development. Tax incentives and foreign direct investment: A global survey. UN, 2000. 
+VARSANO, Ricardo. Os incentivos fiscais do imposto de renda das empresas. Revista Brasileira de 
+Economia, v. 36, n. 2, p. 107-128, 1982.  
+VIEIRA, K. J. A. Eficiência da gestão fiscal: um estudo a partir da concessão de regimes especiais do 
+ICMS para os setores industrial, atacadista e distribuidor no Distrito Federal. 2018. Dissertação (Mestrado 
+Profissional em Economia) - Universidade de Brasília, Brasília, 2018.

@@ -1,0 +1,36 @@
+# Estudo #8
+# Mansueto Facundo Almeida Júnior, Guilherme Resende, Alexandre Manoel Angelo da Silva (2007)
+# Distribuição espacial dos fundos constitucionais de financiamento do Nordeste, Norte e Centro-Oeste
+# Fonte: capes-2007-almeida-resende-silva.pdf
+======================================================================
+
+ARAÚJO, T. B. (1995). “Nordeste, nordestes: que nordeste?” In AFFONSO, R.
+& SILVA, P. (orgs.). Desigualdades regionais e desenvolvimento. São Paulo:
+Fundap, Editora da Unesp.
+BRASIL (vários anos a). Ministério da Integração Nacional. Programação de
+Financiamento para o Fundo Constitucional de Financiamento do Nordeste.
+BRASIL (vários anos b). Programação de Financiamento para o Fundo
+Constitucional de Financiamento do Norte.
+BRASIL (vários anos c). Programação de Financiamento para o Fundo
+Constitucional de Financiamento do Centro-Oeste.
+GRUPO DE TRABALHO PARA O DESENVOLVIMENTO DO NORDESTE - GTDN
+(1997). “Uma política de desenvolvimento econômico para o Nordeste,
+1959.” Revista Econômica do Nordeste 28(4).
+IBGE (1991). Censo Demográfico, 1991. Rio de Janeiro: IBGE.
+IBGE (2000). Censo Demográfico, 2000. Rio de Janeiro: IBGE.
+IPEADATA 
+(2006). 
+Dados 
+regionais. 
+Disponível 
+em: 
+<http://
+www.ipeadata.com.br>. Acesso em: 25 jan. 2006.
+SANTANA, A. (coord.) (2002). O fundo constitucional de financiamento do
+Norte e o desenvolvimento da Amazônia. Belém-Pará: M&S Editora.
+SISTEMA DE INFORMAÇÕES GERENCIAIS DOS FUNDOS CONSTITUCIONAIS
+DE FINANCIAMENTO (FNE, FNO, FCO). Vários anos.
+WOOLDRIDGE, J. M. (2002). Econometric analysis of cross section and panel
+data. Cambridge: MIT Press.
+Recebido em: 15 nov. 2006
+Aceite em: 4 jan. 2007

@@ -1,0 +1,81 @@
+# Estudo #84
+#  (2020)
+# Incentivos Fiscais Territoriais ao Desenvolvimento Local
+# Fonte: anpec-2020-oliveira-neto.pdf
+======================================================================
+
+Bertrand, M., Duﬂo, E., and Mullainathan, S. (2004). How much should we trust differences-
+in-differences estimates? The Quarterly journal of economics, 119(1):249–275.
+Bobonis, G. J. and Shatz, H. J. (2007). Agglomeration, adjustment, and state policies in the
+location of foreign direct investment in the united states. The Review of Economics and
+Statistics, 89(1):30–43.
+Bondonio, D. and Greenbaum, R. T. (2007). Do local tax incentives affect economic growth?
+what mean impacts miss in the analysis of enterprise zone policies. Regional Science and
+Urban Economics, 37(1):121–136.
+Busso, M., Gregory, J., and Kline, P. (2013). Assessing the incidence and efﬁciency of a pro-
+minent place based policy. American Economic Review, 103(2):897–947.
+Carvalho, J. R., BARRETO, F. A., and Oliveira, V. H. d. (2007). Avaliação econométrica do
+fundo de desenvolvimento industrial do ceará (fdi).
+Casagrande, D. L. (2018). AEnsaios em economia internacional: produtividade, intensidade
+dos fatores e abertura comercial. PhD thesis, Universidade Federal de Pernambuco, Pro-
+grama de Pós Graduação em Economia (PIMES), Recife.
+Chaurey, R. (2016). Location-based tax incentives: Evidence from india. Journal of Public
+Economics.
+Da Cruz Lima, A. C. and Lima, J. P. R. (2015). Estimulando o investimento no setor produtivo
+via renúncias ﬁscais: O programa de desenvolvimento do estado de pernambuco. Revista
+Brasileira de Estudos Regionais e Urbanos, 4(1).
+Dulci, O. S. (2002). Guerra ﬁscal, desenvolvimento desigual e relações federativas no brasil.
+Revista de Sociologia e Política, (18):95.
+Faini, R. and Schiantarelli, F. (1987). Incentives and investment decisions: the effectiveness of
+regional policy. Oxford Economic Papers, 39(3):516–533.
+Ferreira, S. and Oliveira, L. (2009). Avaliação do impácto de um programa de incentivo ﬁscal
+com uso de método quase-experimental.
+Glaeser, E. L. and Gottlieb, J. D. (2008). The economics of place-making policies. Technical
+report, National Bureau of Economic Research.
+Gonçalves, F. O.; Almeida, A. T. C. and Barbosa, G. B. (2018). Efetividade dos incentivos
+ﬁscais à indústria sobre o volume de empregos e a massa salarial: um estudo do fundo de
+apoio ao desenvolvimento industrial da paraíba. Working Paper.
+Harger, K. and Ross, A. (2016). Do capital tax incentives attract new businesses? evidence
+across industries from the new markets tax credit. Journal of Regional Science, 56(5):733–
+753.
+Harris, R. and Trainor, M. (2005). Capital subsidies and their impact on total factor productivity:
+Firm-level evidence from northern ireland. Journal of Regional Science, 45(1):49–74.
+
+20
+Kline, P. and Moretti, E. (2013). Local economic development, agglomeration economies, and
+the big push: 100 years of evidence from the tennessee valley authority.
+The Quarterly
+Journal of Economics, 129(1):275–331.
+Magalhães, A. M. and Siqueira, L. (2007). Pernambuco’s ﬁscal incentives program: An evalu-
+ation of recent performance. Latin American Business Review, 7(3-4):151–179.
+Nascimento, S. P. d. (2009). Guerra ﬁscal: uma análise quantitativa para estados participantes
+e não participantes. Revista EconomiA, pages 211–237.
+Neumark, D. and Kolko, J. (2010). Do enterprise zones create jobs? evidence from california’s
+enterprise zone program. Journal of Urban Economics, 68(1):1–19.
+Oliveira Júnior, J. N.; Dias, A. F. and Tabosa, F. J. S. (2014). Avaliação da política de incentivos
+ﬁscais sobre a capacidade ﬁscal, iss, emprego e valor adicionado bruto da indústria no estado
+do pará. Novos Cadernos do NAEA.
+Pellegrini, G. and Muccigrosso, T. (2017). Do subsidized new ﬁrms survive longer? evidence
+from a counterfactual approach. Regional Studies, 51(10):1483–1493.
+Prado, S. and Cavalcanti, C. E. G. (2000). A guerra ﬁscal no Brasil. FAPESP.
+Resende, G. M. (2012). Micro e macroimpactos de políticas de desenvolvimento regional: O
+caso dos empréstimos do fne-industrial no estado de ceará. Technical report, Texto para
+Discussão, Instituto de Pesquisa Econômica Aplicada (IPEA).
+Resende, G. M. (2014). Measuring micro-and macro-impacts of regional development policies:
+The case of the northeast regional fund (fne) industrial loans in brazil, 2000-2006. Regional
+studies.
+Rosenbaum, P. R. and Rubin, D. B. (1983). The central role of the propensity score in observa-
+tional studies for causal effects. Biometrika, 70(1):41–55.
+Shenoy, A. (2018). Regional development through place-based policies: Evidence from a spa-
+tial discontinuity. Journal of Development Economics, 130:173–189.
+Silva, A. M. A. d., Resende, G. M., Neto, S., and da Mota, R. (2009). Eﬁcácia do gasto público:
+uma avaliação do fne, fno e fco. Estudos Econômicos (São Paulo), 39(1):89–125.
+Silva, A. M. A. d., Resende, G. M., and Silveira Neto, R. d. M. (2006). Avaliação econômica
+dos fundos constitucionais de ﬁnanciamento do nordeste (fne) e do norte (fno).
+Soares, R., Sousa, J., and PEREIRA NETO, A. (2009).
+Avaliação de impactos do fne no
+emprego, na massa salarial e no salário médio em empreendimentos ﬁnanciados. Revista
+econômica do Nordeste, 40(1):217–234.
+Varsano, R. (1997). A guerra ﬁscal do icms: quem ganha e quem perde.
+Wang, J. (2013). The economic impact of special economic zones: Evidence from chinese
+municipalities. Journal of development economics, 101:133–147.

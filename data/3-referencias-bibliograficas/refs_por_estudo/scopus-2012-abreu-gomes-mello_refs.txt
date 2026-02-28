@@ -1,0 +1,133 @@
+# Estudo #27
+# Abreu, U.G.P.; Gomes, E.G.; Soares de Mello, J.C.C.B.S.; Santos, S.A.; Catto, D.F. (2012)
+# Heifer retention program in the pantanal: A study with data envelopment analysis (DEA) and malmquist index
+# Fonte: scopus-2012-abreu-gomes-mello.pdf
+======================================================================
+
+ABREU, U.G.P.; McMANUS, C.; SANTOS, S.A. Cattle ranching, 
+conservation and transhumance in Brazilian Pantanal. Pastoralism 
+- Research, Policy and Practice, v.1, p.99-114, 2010.
+ABREU, U.G.P.; GOMES, E.G.; LOPES, P.S. et al. Avaliação 
+sistêmica da introdução de tecnologias na pecuária de gado de corte 
+do Pantanal com modelos de análise envoltória de dados (DEA). 
+Revista Brasileira de Zootecnia, v.37, p.2069-2076, 2008a.
+ABREU, U.G.P.; CARVALHO, T.B.; MORAES, A.S. Análise 
+do preço do bezerro pago no Pantanal da Nhecolândia, no 
+período de 2001 a 2008. Corumbá: Embrapa Pantanal, 2008b. 
+7p. (Comunicado Técnico, 70).
+ABREU, U.G.P.; LOPES, P.S.; TORRES, R.A. et al. Avaliação da 
+introdução de tecnologias no sistema de produção de gado de 
+corte no Pantanal. Desempenho e descarte de matrizes. Revista 
+Brasileira de Zootecnia, v.35, p.2496-2503, 2006a.
+ABREU, U.G.P.; LOPES, P.S.; BAPTISTA, A.J.M. et al.  Avaliação 
+da introdução de tecnologias no sistema de produção de gado de 
+corte no Pantanal. Análise de eﬁciência. Revista Brasileira de 
+Zootecnia, v.35, p.1242-1250, 2006b.
+ABREU, U.G.P.; CEZAR, I.M.; TORRES, R.A. Análise bioeconômica 
+da introdução de período de monta em sistemas de produção de 
+rebanhos de cria na região do Brasil Central. Revista Brasileira 
+de Zootecnia, v.32, p.1198-1206, 2003.
+ANGULO MEZA, L.; SOARES DE MELLO, J.C.C.B.; GOMES, E.G. 
+et al. Seleção de variáveis em DEA aplicada a uma análise do mercado 
+de energia elétrica. Investigação Operacional, v.27, p.21-36, 2007.
+ARZUBI, A.; BERBEL, J. Determinación de índices de eﬁciência
+mediante DEA em explotaciones lecheras de Buenos Aires. 
+Investigaciones Agrárias: Producción y Sanidad Animales, 
+v.17, p.103-123, 2002.
+BANKER, R.; CHARNES, A.; COOPER, W.W. Some models for 
+estimating technical and scale inefﬁciencies in Data Envelopment
+Analysis. Management Science, v.30, p. 1078-1092, 1984.
+BOUSSOFIANE, A.; DYSON, R.G.; THANASSOULIS, E. Applied 
+data envelopment analysis. European Journal of Operational 
+Research, v.52, p.1-15, 1991. 
+CARVALHO, T.B.; ABREU, U.G.P.; ALMEIDA, B.S. Custo 
+de Produção em Pecuária de Corte em 2009, no Pantanal 
+de Corumbá (MS). Corumbá: Embrapa Pantanal, 2009. 6p. 
+(Comunicado Técnico, 76).
+0
+0.5
+1
+1.5
+2
+2.5
+3
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+Farms
+Techinical efficiency and technological progress
+0
+50
+100
+150
+200
+250
+300
+Percentage increase in the number of Heifers
+of 0 to 1 year of age
+effch
+techch
+Heifers
+Figure 1 - Technical efﬁciency (effch) and technological progress
+(techch) indexes in relation to the percentage growth of 
+0 to 1-year-old heifers, in the period from 2004 to 2008.
+
+1943
+Heifer Retention Program in the Pantanal: a study with data envelopment analysis (DEA) and Malmquist index
+R. Bras. Zootec., v.41, n.8, p.1937-1943, 2012
+CEZAR, I.M.; SKERRATT, S.; DENT; J.B. Sistema participativo 
+de geração e transferência de tecnologia para pecuaristas: o caso 
+aplicado à Embrapa Gado de Corte. Caderno de Ciência & 
+Tecnologia, v.17, n.2, p.135-170, 2000.
+CHARNES, A; COOPER, W.W.; RHODES, E. Measuring the efﬁciency
+of decision-making units. European Journal Operational 
+Research, v.2, p.429-444, 1978.
+COOPER, W.W.; SEIFORD, L.M.; ZHU, J. Handbook on data 
+envelopment analysis. Boston: Kluwer Academic Publishers, 
+2004. 608p.
+EMROUZNEJAD, A.; PARKER, B.R.; TAVARES, G. Evaluation of 
+research in efﬁciency and productivity: A survey and analysis of
+the ﬁrst 30 years of scholarly literature in DEA. Socio-Economic 
+Planning Sciences, v.42, p.151-157, 2008.
+FÄRE, R.; GROSSKOPF, S.; NORRIS, M. et al. Productivity 
+growth, technical progress and efﬁciency change in industrialized
+countries. American Economic Review, v.84, p.66-83, 1994.
+FUNDO 
+CONSTITUCIONAL 
+DE 
+FINANCIAMENTO 
+DE 
+CENTRO-OESTE - FCO. 2.ed. Fev., 2009. Report. Available at: 
+<http://www.integracao.gov.br/fundos/fundos_constitucionais/
+index.asp?area=FCO%20-%20Programação%202009>. Accessed on: 
+May 19, 2009.
+FERREIRA, C.M.C.; GOMES, A.P.  Introdução à análise envoltória 
+de dados – Teoria, modelos e aplicações. 1.ed. Viçosa, MG: 
+Editora UFV, 2009. 389p. 
+GOMES, E.G. Uso de modelos DEA em agricultura: revisão da 
+literatura. Engevista, v.10, p.27-51, 2008.
+GROSSKOPF, S. Some remarks on productivity and its decompositions. 
+Journal of Productivity Analysis, v.20, p.459-474, 2003.
+MAQUIVAR, M.; GALINA, C.S. Factors affecting the readiness and 
+preparation of replacement heifers in tropical breeding environments. 
+Reproduction in Domestic Animals, v.45, p.937-942, 2010.
+OIAGEN, R.P.; BARCELLOS, J.O.J.; CHRISTOFARI, L.F. et al. 
+Análise da sensibilidade da metodologia dos centros de custos 
+mediante a introdução de tecnologias em um sistema de produção 
+de cria. Revista Brasileira de Zootecnia, v.38, p.1155-1162, 2009.
+SENRA, L.F.A.C.; NANCI, L.C.; SOARES DE MELLO, J.C.C.B. 
+et al. Estudo sobre métodos de seleção de variáveis em DEA. 
+Pesquisa Operacional, v.27, p.191-207, 2007.
+SOARES DE MELLO, J.C.C.B.; GOMES, E.G.; ANGULO MEZA, L. 
+et al. Selección de variables para el incremento del poder de 
+discriminación de los modelos DEA. Revista Investigación de 
+la Escuela de Perfeccionamiento en Investigación Operativa, 
+n.24, p.40-52, 2004.

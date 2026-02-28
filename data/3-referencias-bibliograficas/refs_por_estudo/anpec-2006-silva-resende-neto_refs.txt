@@ -1,0 +1,43 @@
+# Estudo #66
+#  (2006)
+# AVALIAÇÃO ECONÔMICA DOS FUNDOS ...
+# Fonte: anpec-2006-silva-resende-neto.pdf
+======================================================================
+
+Angrist, E.J. e Krueger, A.B. (1999). Empirical Strategies in Labor Economics. In: Ashenfelter, O. e
+Card, D., Handbook of Labor Economics , vol.3.
+Ashenfelter, O.(1978). Estimating the Effect of Training Programs on Earnings. Review of Economics
+Studies, vol. 60.
+Becker, S.O. e Ichino, A. (2002). “Estimation of average treatment effects based on propensity score”,
+The Stata Journal, 2(4), p.358-377.
+Bolfarine , H e Bussab, W. º (2000). Elementos de Amostragem. Instituto de Matemática e Estatística,
+Universidade de São Paulo, Versão Preliminar.
+Dehejia, R.H. e Wahba, S. (1998). “Causal Effects in Non-Experimental Studies: Re-Evaluating the
+Evaluation of Training Programs”, NBER Working Paper  6586.
+---------------------------------- (1999). ““Causal Effects in Non-Experimental Studies: Re-Evaluating the
+Evaluation of Training Programs”, Journal of the American Association, December, 94 (448), p. 1053-
+1062.
+-----------------------------------(2002). “Propensity Score-Matching Methods for Nonexperimental Causal
+Studies”, The Review of Economics and Statistics, February 84(1), p. 151-161.
+Freeman, R.D. (1986). Demand for Education. In: Ashenfelter, O. e Card, D., Handbook of Labor
+Economics , vol.1
+Friendlander, D., Greenberg, D.H. e Robins, P.K. (1997). “Evaluating Government Training Programs for
+Economically Disadvantaged, Journal of Economic Perspectives, vol. XXXV, December.
+Heckman, J. (1999). “Policies to Foster Human Capital”, NBER Woorking Paper 7288.
+Heckman, J. e Simth, J.A. (1999). “The pre-Programme Earnings Dip and the Determinants of
+Participation in a Social Programme: Implications for Simple Programme Evaluation Strategies”, The
+Economic Journal, vol. 109, n. 457.
+La Londe, R., (1995). “The Promise of Public Sector-Sponsored Training Programs”, Journal of
+Economics Perspectives,  ((2), 149-68.
+-----------------  (1986). “Evaluating the Econometric Evaluations of Training Programs with Experimental
+Data”, American Economic Review, September, 76(4), pp. 604-620.
+
+22
+Mallar, C.D. et al., (1982). “Evaluation of Economic Impact of the Job Cops Program: Third Follow-up
+Report”. Report prepared for U.S. Department of Labor under Contract No. 23-3476-06. Mathematic
+Policy, Inc. September.
+Mincer, J.(1973). Schooling Experience and Earnings. NBER, New York.
+Rosembaum, P. e Rubin, D. (1983). “The Central Role of Propensity Score in Observational Studies for
+causal Effects”, Biometrika, vol.70.
+Wooldridge, J. M. (2002). Econometric Analysis of Cross Section and Panel Data. Cambridge: MIT
+press.

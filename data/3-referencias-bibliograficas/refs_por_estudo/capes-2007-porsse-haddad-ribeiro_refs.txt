@@ -1,0 +1,51 @@
+# Estudo #9
+# Alexandre Alves Porsse, Eduardo A. Haddad, Eduardo Pontual Ribeiro (2007)
+# Economic Effects of Regional Tax Incentives: A General Equilibrium Approach
+# Fonte: capes-2007-porsse-haddad-ribeiro.pdf
+======================================================================
+
+Armington, P. S. (1969). “A Theory of Demand for Products Distinguished by Place of
+Production.” International Monetary Fund Staff Papers, Vol. 16, No. 1, pp. 159-178.
+De Melo, J., and Robinson, S. (1989). “Product Differentiation and Foreign Trade in
+CGE Models of Small Economies.” Policy, Planning and Research Working Pa-
+pers, WPS 144. Washington DC, World Bank.
+Dixon, P. D., and Parmenter, B. R. (1996). “Computable General Equilibrium Modeling
+for Policy Analysis and Forecasting.” In H. M. Amman, D. A. Kendrick and J. Rust
+(Eds.), Handbook of Computational Economics,Vol.1,pp.3-85,Amsterdam,Elsevier.
+Dixon, P. D., Parmenter, B. R., Sutton, J., and Vincent, D. P. (1982). “ORANI: A
+Multisectoral Model of the Australian Economy.” Amsterdam: North-Holland.
+Guilhoto, J. J. M. (1995). “Um Modelo Computável de Equilíbrio Geral para
+Planejamento e Análise de Políticas Públicas (PAPA) na Economia Brasileira.”
+Tese de Livre Docência. Piracicaba: ESALQ. June.
+Haddad, E. A. (1999). “Regional Inequality and Structural Changes: Lessons from the
+Brazilian Experience.” Aldershot: Ashgate.
+Haddad, E. A., and Domingues, E. P. (2001). “EFES: Um Modelo de Aplicado de
+Equilíbrio Geral para a Economia Brasileira: Projeções Setoriais para 1999-2004.”
+Estudos Econômicos, Vol. 31, No. 1, pp. 89-125.
+Porsse, Haddad, and Ribeiro
+215
+Downloaded by [University of Lethbridge] at 16:34 14 June 2016 
+
+Haddad, E. A., Domingues, E. P., and Perobelli, F. S. (2002). “Regional Effects of Eco-
+nomic Integration: The Case of Brazil.” Journal of Policy Modeling, Vol. 24, No. 5,
+pp. 453-482.
+Haddad, E. A., and Hewings, G. J. D. (1999). “The Short-Run Regional Effects of New
+Investments and Technological Upgrade in the Brazilian Automobile Industry: An
+Interregional Computable General Equilibrium Analysis.” Oxford Development
+Studies, Vol. 27, No. 3, pp. 359-383.
+Kenyon, D. A. (1997). “Theories of Interjurisdictional Competition.” New England
+Economic Review, March-April, pp. 13-28.
+Perroni, C., and Rutherford, T. F. (1995). “Regular Flexibility of Nested CES Func-
+tions.” European Economic Review, Vol. 39, No. 2, pp. 335-343.
+Peter, M. W. et al. (1996). The Theoretical Structure of MONASH-MRF.” Preliminary
+Working Paper no. OP-85, IMPACT Project, Monash University, Clayton, April.
+Porsse, A. A. (2005). “Competição Tributária e Efeitos Econômicos Regionais: Uma
+Análise de Equilíbrio Geral Computável.” Doctoral Dissertation. Porto Alegre:
+Universidade Federal do Rio Grande do Sul.
+Prado, S., and Cavalcanti, C. E. G. (2000). “A Guerra Fiscal no Brasil.” São Paulo:
+Fundap/ Fapesp.
+Wilson, J. D., and Wildasin, D. E. (2004). “Capital Tax Competition: Bane or Boon?”
+Journal of Public Economics, Vol. 88, No. 6, pp. 1065-1091.
+doi:10.1300/J140v07n03_09
+216 Latin American Business: Equity Distortion in Regional Resource Allocation in Brazil
+Downloaded by [University of Lethbridge] at 16:34 14 June 2016

@@ -1,0 +1,141 @@
+# Estudo #102
+#  (2024)
+# análise do impacto dos instrumentos da pndr sobre ...
+# Fonte: anpec-2024-carneiro-veloso-ferreira.pdf
+======================================================================
+
+ALMEIDA JÚNIOR, Mansueto Facundo; RESENDE, Guilherme Mendes; SILVA, Alexandre Manoel Ângelo. 
+Distribuição espacial dos fundos constitucionais de financiamento do Nordeste, Norte e Centro-Oeste. Revista de 
+Economia, v. 33, n. 2, 2007. 
+AKERLOF, G. A. The Market for “Lemons”: Quality Uncertainty and the Market Mechanism. The Quarterly 
+Journal of Economics, v. 84, n. 3, p. 488–500, 1970. 
+ARAUJO, Victor Leonardo de. Preferência pela liquidez dos bancos públicos no ciclo de expansão do crédito 
+no Brasil: 2003-2010. Texto para Discussão, 2012. 
+ARTHUR, B. La localisation em grappes dans la `Silicon Valley’: à quel moment les rendements croissants 
+conduisent-ils à une position de monopole?. In:Économie Industrielle et Économie Spatiale, Org. Alain RALLET 
+& André TORRE, Ed. Economica, Paris. 1995. 
+BARZEL, Y. Measurement Cost and the Organization of Markets. Journal of Law and Economics - The University 
+of Chicago Press, v. 25, n. 1, p. 27–48, Abril de 1982.  
+
+BRASIL. Produto interno bruto dos municípios 2021 / IBGE, Coordenação de Contas Nacionais, IBGE: Rio de 
+Janeiro, 2023. 
+BRAZ, M.; IRFFI, G. Impactos dos Incentivos Fiscais da Sudene sobre o Mercado de Trabalho Local. 51º Encontro 
+Nacional 
+de 
+Economia, 
+Rio 
+de 
+Janeiro, 
+2023. 
+Disponível 
+em: 
+https://www.anpec.org.br/encontro/2023/submissao/files_I/i10-
+1fc7476a72357a918e649cd0e47a199e.pdf  Acesso: 27/04/2024. 
+BONAVITA, Renan Peppe. Regulação Mitigadora das Assimetrias de Informação no Mercado Privado de 
+Microcrédito Brasileiro. Trabalho de Conclusão de Curso. FGV São Paulo, 2015. 
+CALLAWAY, Brantly; SANT’ANNA, Pedro HC. Difference-in-differences with multiple time periods. Journal 
+of Econometrics, v. 225, n. 2, p. 200-230, 2021. 
+CARNEIRO, Diego; CAMBOTA, Jacqueline Nogueira. Avaliação do Fundo Constitucional de Financiamento do 
+Nordeste: uma revisão sistemática da literatura. Artigos do ETENE, 2018. Disponível em: 
+https://www.bnb.gov.br/s482-dspace/handle/123456789/672 Acesso: 27/04/2024. 
+CARNEIRO, D.; COSTA, E.; IRFFI, G.; VELOSO, P.; BRAZ, M.; DIAS, T.; ANDRADE, V.; Avaliação de 
+Eficiência das Empresas Beneficiadas pela Política de Incentivos Fiscais Conduzida pela Sudene. 51º Encontro 
+Nacional 
+de 
+Economia, 
+Rio 
+de 
+Janeiro, 
+2023. 
+Disponível 
+em: 
+https://www.anpec.org.br/encontro/2023/submissao/files_I/i10-
+a86c184e25910350378a0acdd40d8846.pdf  Acesso: 27/04/2024. 
+CRAVO, Tulio Antonio; RESENDE, Guilherme Mendes; CARVALHO, A. Y. The Impact of Brazilian Regional 
+Development Funds on Regional Economic Growth: A spatial panel approach. In:  ERSA Congress, 54, Anais… 
+2014. p. 26-29. 
+CROCCO, M., CAVALCANTE, A., BARRA, C., & VAL, V. Em busca de uma teoria da localização das agencias 
+bancárias: Algumas evidências do caso brasileiro. In Jayme, Jr., F. G. & Crocco, M., editors, Moeda e Território: 
+Uma Interpretação da Dinâmica Regional Brasileira. Autêntica, Belo Horizonte, 2006. 
+DO MONTE, K.; IRFFI, G.; BASTOS, F.; CARNEIRO, D. Análise do Fundo Constitucional de Financiamento 
+do Nordeste (FNE) sobre Indicadores Econômicos Municipais no Período 2010-2020. 51º Encontro Nacional de 
+Economia, Rio de Janeiro, 2023. Disponível em: https://www.anpec.org.br/encontro/2023/submissao/files_I/i10-
+15d94afb6fa11d29b3c0d2a8fe736f0c.pdf  Acesso: 27/04/2024. 
+FREITAS, Ana Paula Gonçalves; PAULA, Luiz Fernando R. Concentração regional do crédito e consolidação 
+bancária no Brasil: uma análise pós-real. Revista Economia, v. 11, n. 1, p. 97-123, 2010. 
+GALINARI, Rangel et al. O efeito das economias de aglomeração sobre os salários industriais: uma aplicação ao 
+caso brasileiro. Revista de Economia Contemporânea, v. 11, p. 391-420, 2007. 
+GARDNER, John. Two-stage differences in differences. arXiv preprint arXiv:2207.05943, 2022. 
+https://doi.org/10.48550/arXiv.2207.05943. 
+GARSOUS, Grégoire et al. Tax incentives and job creation in the tourism sector of Brazil’s SUDENE area. World 
+Development, v. 96, p. 87-101, 2017. 
+GUMIERO, R. Momentos da Trajetória do Estado na Amazônia: Preâmbulo entre o Modelo de Integração 
+Econômica e os Investimentos Setoriais do Fundo Constitucional de Financiamento do Norte e do Fundo de 
+Desenvolvimento da Amazônia em Carajás, Pará. Revista Brasileira de Estudos Urbanos e Regionais, v. 24, 
+e202245pt, 2022. 
+GONDIM, Jane Mary; SOUZA, Jânia Maria Pinho; PIRES, Inacio Jose Bessa. O Impacto dos Investimentos do 
+FNE na Geração de Empregos no Nordeste: Período 2000-2006. Revista Econômica do Nordeste, v. 42, n. 1, p. 
+67-86, 2011. 
+IRFFI, Guilherme; ARAÚJO, José Iranildo da Silva; BASTOS, Felipe de Sousa. Efeitos Heterogêneos do Fundo 
+Constitucional de Financiamento do Nordeste na Região do Semiárido. In: Fórum Banco do Nordeste de 
+Desenvolvimento/Encontro Regional de Economia, 22I/21, Anais. 
+2016. 
+KRUGMAN, P. Geography and Trade. Leuven-London: Leuven University Press/MIT Press, Boston, 1991. 
+LECHNER, M. The estimation of causal effects by difference-in-difference methods. Foundations and Trends 
+in Econometrics, v. 4, n. 3, p. 165–224, 2011. 
+LINHARES, Fabrício Carneiro; SOARES, Ricardo Brito; GONÇALVES, Marcos Falcão; VIANA, Luiz 
+Fernando Gonçalves. Brazil’s Northeast Financing Constitutional Fund: Differentiated effects on municipal 
+economic growth. CEPAL Review, v. 2014, n. 113, p. 175-192, 2014. 
+
+MAZER, Vitor de Barros et al. Avaliação dos impactos econômicos do Fundo Constitucional de 
+Financiamento do Nordeste nos municípios de Pernambuco entre os anos de 2006 e 2016. 2020. Dissertação 
+de Mestrado. Universidade Federal de Pernambuco. 
+OLIVEIRA, Guilherme Resende; RESENDE, Guilherme Mendes; GONÇALVES, Caio Nogueira; SILVA, 
+Diego Firmino; Efeitos Não Lineares dos Fundos Constitucionais de Financiamento entre 2000 e 2012. In: 
+Encontro Nacional de Economia, 45, Anais, 2017. 
+OLIVEIRA, T. G. Impactos de Políticas Territoriais no Brasil: Uma Análise Empírica. Tese de Doutorado. 
+Programa de Pós Graduação em Economia do Departamento de Economia da Universidade Federal de 
+Pernambuco, PIMES/UFPE. Recife-PE, 2020. 
+PICHELMANN, Karl; ROEGER, Werner. Employment and labour productivity in the EU: reconsidering a 
+potential trade-off in the Lisbon strategy. In: The european economy in an American mirror. Routledge, 2007. 
+p. 140-154. 
+PORTA, R. L.; SILANES, F. Lopez-de; SHLEIFER, A. Government ownership of banks. The Journal of Finance, 
+Wiley Online Library, v. 57, n. 1, p. 265–301, 2002. 
+PORTUGAL, R.; SILVA, S.; MOURÃO, K. Fundo de Desenvolvimento da Amazônia (FDA): análise do esforço 
+fiscal por meio de indicadores de desempenho. Cadernos Cepec, v. 4, p. 1-17, 2015. 
+RESENDE, Guilherme Mendes. Micro e macroimpactos de políticas de desenvolvimento regional: O caso dos 
+financiamentos do FNE-industrial no estado do Ceará. Brasília: Ipea, 2012. (Texto para Discussão, 1777). 
+RESENDE, Guilherme M. Measuring micro-and macro-impacts of regional development policies: The case of the 
+Northeast Regional Fund (FNE) industrial loans in Brazil, 2000– 2006. Regional Studies, v. 48, n. 4, p. 646-664, 
+2014a. 
+RESENDE, Guilherme Mendes; CRAVO, Tulio Antônio; PIRES, Murilo José de Souza. Avaliação dos impactos 
+econômicos do Fundo Constitucional de Financiamento do Centro-Oeste (FCO) entre 2004 e 2010. Brasília: Ipea, 
+2014b. (Texto para Discussão, 1918). 
+RESENDE, Guilherme Mendes; DA SILVA FILHO, Luís Abel. Avaliação dos Impactos Econômicos do Fundo 
+Constitucional de Financiamento do Nordeste (FNE): O Caso da Bahia, 2004-2010. Revista Desenbahia, n. 20, 
+29-58, 2014. 
+RESENDE, Guilherme Mendes et al. Monitoramento e avaliação dos instrumentos da política nacional de 
+desenvolvimento regional: uma proposta de avaliação contínua. Brasília: Ipea, 2014. 
+RESENDE, Guilherme Mendes; SILVA, Diego Firmino Costa; SILVA FILHO, Luís Abel. Avaliação econômica 
+do Fundo Constitucional de Financiamento do Nordeste (FNE): uma análise espacial por tipologia da PNDR entre 
+1999 e 2011. Revista Econômica do Nordeste, v. 48, n. 1, p. 9-29, 2017. 
+RÜTTENAUER, Tobias; AKSOY, Ozan. When Can We Use Two-Way Fixed-Effects (TWFE): A Comparison 
+of TWFE and Novel Dynamic Difference-in-Differences Estimators. arXiv preprint arXiv:2402.09928, 2024. 
+SHIRASU, M. R.; CORRÊA, C. G. IRFFI, G. D. Análise conceitual do instrumento de Incentivos Fiscais como 
+promotor do desenvolvimento regional. In: XVIII Encontro Regional de Economia do Nordeste. Anais do 
+Encontro. Fortaleza, 2023. 
+SILVA, Alexandre Manoel Ângelo; RESENDE, Guilherme; SILVEIRA NETO, Raul da Mota. Uma Avaliação 
+da Eficácia do FNE, no período 1995-2000. Análise Econômica, v. 25, n. 48, 2007. 
+SIMONSEN, M. H. O Sistema Brasileiro de Incentivos Fiscais. Ensaios Econômicos da EPGE, nº 12, FGV, 1974. 
+SOARES, R.; SOUSA, J.; PEREIRA NETO, Antonio. Avaliação de impactos do FNE no emprego, na massa 
+salarial e no salário médio em empreendimentos financiados. Revista Econômica do Nordeste, v. 40, n. 1, p. 217-
+234, 2009. 
+STIGLITZ, J. E. The role of the state in financial markets. The World Bank Economic Review, Oxford University 
+Press, v. 7, n. suppl_1, p. 19–52, 1993.3 
+United Nations. Conference on Trade and Development. Tax incentives and foreign direct investment: A global 
+survey. UN, 2000. 
+TITELMAN KARDONSKY, Daniel. La banca de desarrollo y el financiamiento productivo. CEPAL, 2003. 
+VIANA, Luiz Fernando Gonçalves; CAMBOTA, Jacqueline Nogueira. O impacto do Fundo Constitucional de 
+Financiamento do Nordeste (FNE) no crescimento dos municípios de sua área de atuação: uma aplicação de painel 
+dinâmico. In: Encontro Nacional da Associação Brasileira de Estudos Regionais e Urbanos, 15, Anais. 2017. 
+WOOLDRIDGE, Jeffrey M. Econometric analysis of cross section and panel data. MIT press, 2010.

@@ -1,0 +1,151 @@
+# Estudo #54
+# Oliveira, Guilherme; Terra, Rafael; Resende, Guilherme (2015)
+# Efeito Dose Resposta do Fundo Constitucional de Financiamento do Centro-Oeste (FCO) do Estado de Goiás
+# Fonte: econpapers-2015-oliveira-terra-resende.pdf
+======================================================================
+
+ACCETTURO, A.; DE BLASIO G. Policies for local development: an evaluation of Italy’s 
+“Patti Territoriali”. Regional Science and Urban Economics, v. 42, n. 1-2, p. 15-26, 2012.
+ALMEIDA, M. A.; SILVA, A. M.; RESENDE, G. M. Uma análise dos fundos constitucio-
+nais de financiamento do Nordeste (FNE), Norte (FNO) e Centro-Oeste (FCO). Brasília: 
+Ipea, 2006. (Texto para Discussão, n. 1206).
+ANGRIST, J. D.; PISCHKE, J. S. Mostly harmless econometrics: an empiricist’s companion. 
+Princeton: Princeton University Press, 2009.
+
+38
+B r a s í l i a ,  s e t e m b r o  d e  2 0 1 5
+BARRO, R.; SALA-I-MARTIN, X. Convergence. Journal of Political Economy, Chicago, 
+v. 100, n. 2, p. 223-251, 1992.
+BECKER, S.; ICHINO, A. Estimation of average treatment effects based on propensity 
+scores. Stata Journal, StataCorp LP, v. 2, n. 4, p. 358-377, 2002.
+BECKER S.; PETER, H.; EHRLICH, M. Going NUTS: the effect of EU structural funds on 
+regional performance. Journal of Public Economics, v. 94, n. 9-10, p. 578-590, 2010.
+______. Too much of a good thing? On the growth effects of the EU’s regional policy. European 
+Economic Review, v. 56, n. 4, p. 648-668, 2012.
+DALL’ERBA, S.; LE GALLO, J. Regional convergence and the impact of European structural 
+funds over 1989-1999: a spatial econometric analysis. Papers in Regional Science, v. 87, 
+n. 2, p. 219-244, 2008.
+DEHEJIA, R.; WAHBA, S. Propensity score-matching methods for non-experimental causal 
+studies. The Review of Economics and Statistics, v. 84, n. 1, p. 151-161, 2002.
+ESPOSTI R.; BUSSOLETTI S. Impact of objective 1 funds on regional growth con-
+vergence in the European Union: a panel-data approach. Regional Studies, v. 42, n. 2, 
+p. 159-173, 2008.
+HIRANO, K.; IMBENS, G. The propensity score with continuous treatments. In: GELMAN, 
+A.; MENG, X.-L. (Eds.).  Applied Bayesian modeling and causal inference from incomple-
+te-data perspectives. Nova Iorque: Wiley, 2004.
+IMBENS, G. The role of the propensity score in estimating dose-response functions. Biome-
+trika, v. 87, n. 3, p. 706-710, 2000.
+LEONARDI, R., The Impact and Added Value of Cohesion Policy, Regional Studies, v. 40 
+n. 2, 2006.
+MOHL, P.; HAGEN, T. Do Structural Funds promote regional growth? New evidence from 
+various panel data approaches. Regional Science and Urban Economics, v. 40, n. 5, p. 353-
+365, 2010.
+RESENDE, G. M. Micro e macroimpactos de políticas de desenvolvimento regional: o 
+caso dos empréstimos do FNE-industrial no Estado do Ceará. Brasília: Ipea, 2012. (Texto para 
+Discussão, n. 1777).
+RESENDE, G. M. Avaliação dos impactos econômicos do fundo constitucional de 
+financiamento do Nordeste entre 2004 e 2010. Brasília: Ipea, 2014a. (Texto para 
+Discussão, n. 1973).
+______. Micro and macro impacts of regional development policies: the case of the FNE 
+industrial Loans in Brazil, 2000-2006. Regional Studies, v. 48, n. 4, p. 646-664, 2014b.
+
+Texto para
+Discussão
+2 1 3 3
+39
+Efeito Dose Resposta do Fundo Constitucional de Financiamento do Centro-Oeste (FCO) do Estado de Goiás
+RESENDE, G. M.; CRAVO, T.; PIRES, M. Avaliação dos impactos econômicos do Fundo 
+Constitucional do Centro-Oeste (FCO) entre 2004 e 2010. Brasília: Ipea, 2014. (Texto para 
+Discussão, n. 1969).
+RODRIGUEZ-POSE A.; FRATESI, U. Between development and social policies: the impact of 
+European structural funds in objective 1 regions. Regional Studies, v. 38, n. 1, p. 97-113, 2004.
+ROSENBAUM, P.; RUBIN, D. The central role of the propensity score in observational studies 
+for causal effects. Biometrika, v. 70, n. 1,p. 41-55, 1983.
+SILVA, A. M.; RESENDE, G. M.; SILVEIRA, NETO, R. Avaliação econômica dos fundos 
+constitucionais de financiamento do Nordeste e do Norte (FNE e FNO). Brasília: Ipea, 
+2006. (Texto para Discussão, n. 1207).
+______.  Eficácia do gasto público:  uma avaliação do FNE, FNO e FCO. Estudos econômicos, 
+São Paulo, v. 39, n. 1, p. 80-125, 2009.
+SOARES, R.; SOUSA, J.; PEREIRA NETO, A. Avaliação de impactos do FNE no emprego, 
+na massa salarial e no salário médio em empreendimentos financiados. Revista Econômica do 
+Nordeste, v. 40, n. 1, p. 217-234, 2009.
+SOARES, R. et al.  Fondo Constitucional de Financiamiento del Nordeste del Brasil: efectos 
+diferenciados sobre el crecimiento económico de los municípios. Revista Cepal, n. 113, 
+p. 183-201, 2014.
+BIBLIOGRAFIA COMPLEMENTAR
+ALVARENGA, G. V; PIANTO, D. M.; ARAÚJO, B. C. Impactos dos fundos setoriais nas 
+empresas: novas perspectivas a partir da função dose-resposta. Prêmio CNI de Economia, 
+Brasília, 2012. Disponível em: <http://goo.gl/qh5TVg>.
+BRASIL. Constituição da República Federativa do Brasil de 1988, de 5 de outubro de 1988. 
+Brasília: Assembleia Constituinte, 1988. Disponível em: <http://goo.gl/XuY5PA>. 
+ERTUR, C.; BAUMONT, C. The European regional convergence process, 1980-1995: do 
+spatial regimes and spatial dependence matter? International Regional Science Review, v. 29, 
+n. 1, p. 3-34, 2006.
+ERTUR, C.; LE GALLO, J. Regional convergence and the impact of European structural 
+funds over 1989-1999: a spatial econometric analysis. Papers in Regional Science, v. 87, n. 2, 
+p. 219-244, 2008.
+MI – MINISTÉRIO DA INTEGRAÇÃO NACIONAL. Fundos regionais e incentivos fiscais: 
+contribuem para a redução das desigualdades regionais e ajudam o Brasil a crescer. Brasília: 
+SDR, 2012.
+
+40
+B r a s í l i a ,  s e t e m b r o  d e  2 0 1 5
+______. Política nacional de desenvolvimento regional – PNDR (sumário executivo). 
+Brasília: SDR, 2012.
+______. Relatório de desempenho operacional: fundos constitucionais de financiamento – 
+20 anos. Brasília: SDR, 2009.
+RUBIN, D. Estimating causal effects of treatments in randomized and nonrandomized studies. 
+Journal of Educational Psychology, v. 66, n. 5, p. 688-701, 1974.
+
+
+Ipea – Instituto de Pesquisa Econômica Aplicada
+EDITORIAL
+Coordenação
+Cláudio Passos de Oliveira
+Supervisão
+Everson da Silva Moura
+Reginaldo da Silva Domingos
+Revisão
+Ângela Pereira da Silva de Oliveira
+Clícia Silveira Rodrigues
+Idalina Barbara de Castro
+Leonardo Moreira Vallejo
+Marcelo Araujo de Sales Aguiar
+Marco Aurélio Dias Pires
+Olavo Mesquita de Carvalho
+Regina Marta de Aguiar
+Erika Adami Santos Peixoto (estagiária)
+Laryssa Vitória Santana (estagiária)
+Manuella Sâmella Borges Muniz (estagiária)
+Pedro Henrique Ximendes Aragão (estagiário)
+Thayles Moura dos Santos (estagiária)
+Editoração
+Bernar José Vieira
+Cristiano Ferreira de Araújo
+Daniella Silva Nogueira
+Danilo Leite de Macedo Tavares
+Diego André Souza Santos
+Jeovah Herculano Szervinsk Junior
+Leonardo Hideki Higa
+Capa
+Luís Cláudio Cardoso da Silva
+Projeto Gráfico
+Renato Rodrigues Bueno
+Livraria Ipea
+SBS – Quadra 1 - Bloco J - Ed. BNDES, Térreo. 
+70076-900 – Brasília – DF
+Fone: (61) 2026-5336
+Correio eletrônico: livraria@ipea.gov.br
+The manuscripts in languages other than Portuguese  
+published herein have not been proofread.
+
+
+Composto em adobe garamond pro 12/16 (texto)
+Frutiger 67 bold condensed (títulos, gráficos e tabelas)
+Brasília-DF
+
+
+Missão do Ipea
+Aprimorar as políticas públicas essenciais ao desenvolvimento brasileiro
+por meio da produção e disseminação de conhecimentos e da assessoria
+ao Estado nas suas decisões estratégicas.

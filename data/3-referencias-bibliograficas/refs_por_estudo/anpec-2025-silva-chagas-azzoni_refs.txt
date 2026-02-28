@@ -1,0 +1,50 @@
+# Estudo #116
+#  (2025)
+# energia eólica e emprego: evidências da expansão dos ...
+# Fonte: anpec-2025-silva-chagas-azzoni.pdf
+======================================================================
+
+ALMAZÁN-GÓMEZ, M. et al. Socioeconomic impacts of wind farms in small and rural areas: a case study
+in north-eastern spain. Clean Technologies and Environmental Policy, Springer, p. 1–14, 2025.
+AQUILA, G. et al. Wind power generation: An impact analysis of incentive strategies for cleaner energy
+provision in brazil. Journal of Cleaner Production, Elsevier, v. 137, p. 1100–1108, 2016.
+BORBA, B. S. M.; SZKLO, A.; SCHAEFFER, R. Plug-in hybrid electric vehicles as a way to maximize the
+integration of variable renewable energy in power systems: The case of wind generation in northeastern
+brazil. Energy, Elsevier, v. 37, n. 1, p. 469–481, 2012.
+
+15
+BRASIL. Decreto n° 4.213, de 26 de abril de 2002. Brasília, DF: [s.n.], 2002. Define os setores da
+economia prioritários para o desenvolvimento regional, nas áreas de atuação da extinta SUDENE, e dá
+outras providências. Disponível em: <https://www.planalto.gov.br/ccivil_03/decreto/2002/d4213.htm>.
+BROWN, J. P. et al. Ex post analysis of economic impacts from wind power development in us counties.
+Energy Economics, Elsevier, v. 34, n. 6, p. 1743–1754, 2012.
+BUTTS, K. Difference-in-differences estimation with spatial spillovers. arXiv preprint arXiv:2105.03737,
+2023.
+COSTA, H.; VEIGA, L. Local labor impact of wind energy investment: an analysis of portuguese
+municipalities. Energy Economics, Elsevier, v. 94, p. 105055, 2021.
+GONÇALVES, S.; RODRIGUES, T. P.; CHAGAS, A. L. S. The impact of wind power on the brazilian labor
+market. Renewable and Sustainable Energy Reviews, Elsevier, v. 128, p. 109887, 2020.
+HARTLEY, P. R. et al. Local employment impact from competing energy sources: Shale gas versus wind
+generation in texas. Energy economics, Elsevier, v. 49, p. 610–619, 2015.
+KARASMANAKI, E. Is it safe to live near wind turbines? reviewing the impacts of wind turbine noise.
+Energy for Sustainable Development, Elsevier, v. 69, p. 87–102, 2022.
+LESSA, L. C. R. et al. A instalação de parques eólicos nos municípios nordestinos afeta o mercado de
+trabalho local? 2024.
+LIMA, M. et al. Renewable energy in reducing greenhouse gas emissions: Reaching the goals of the paris
+agreement in brazil. Environmental Development, Elsevier, v. 33, p. 100504, 2020.
+MORENO, B.; LÓPEZ, A. J. The effect of renewable energy on employment. the case of asturias (spain).
+Renewable and Sustainable Energy Reviews, Elsevier, v. 12, n. 3, p. 732–751, 2008.
+NUNES, A. M. M. et al. Impact assessment of public policies in the municipalities covered by the brazilian
+incentive program for alternative electricity sources (proinfa). Renewable Energy, Elsevier, v. 235, p.
+121342, 2024.
+ROTH, J. et al. What’s trending in difference-in-differences? a synthesis of the recent econometrics literature.
+Journal of Econometrics, Elsevier, v. 235, n. 2, p. 2218–2244, 2023.
+SIMAS, M.; PACCA, S. Assessing employment in renewable energy technologies: A case study for wind
+power in brazil. Renewable and Sustainable Energy Reviews, Elsevier, v. 31, p. 83–90, 2014.
+VASCONCELLOS, H. A. S.; COUTO, L. C. Estimation of socioeconomic impacts of wind power projects
+in brazil’s northeast region using interregional input-output analysis. Renewable and Sustainable Energy
+Reviews, Elsevier, v. 149, p. 111376, 2021.
+ZHANG, R. et al. Job losses or gains? the impact of supply-side energy transition on employment in china.
+Energy, Elsevier, v. 308, p. 132804, 2024.
+
+16

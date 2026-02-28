@@ -1,0 +1,202 @@
+# Estudo #42
+# Monte, K.A.D.; Irffi, G.; de Sousa Bastos, F.; Carneiro, D.R.F. (2025)
+# Analysis of the Northeast Constitutional Financing Fund (FNE) on Municipal Economic Indicators in the Period 2010–2020
+# Fonte: scopus-2025-monte-irffi-bastos.pdf
+======================================================================
+
+Al‐Majali, Ahmad A. 2018. “Crowding out Effect of Public Borrowing:
+The Case of Jordan.” International Review of Management and
+Marketing 8, no. 1: 119–125.
+Alter, Adrian, Alan Xiaochen Feng, and Nico Valckx. 2018. “Under-
+standing the Macro‐Financial Effects of Household Debt: A Global Per-
+spective.” Working Paper. International Monetary Fund. https://www.
+imf.org/en/Publications/WP/Issues/2018/04/06/Understanding-the-
+Macro-Financial-Effects-of-Household-Debt-A-Global-Perspective-45744.
+Asiedu, E., I. Kalonda‐Kanyama, L. Ndikumana, and A. Nti‐Addae.
+2013. “Access to Credit By Firms in Sub‐Saharan Africa: How Relevant
+Is Gender?” American Economic Review: Papers & Proceedings 103, no.
+3: 293–297.
+Aterido, R., T. Beck, and L. Iacovone. 2013. “Access to Finance in Sub‐
+Saharan Africa: Is There a Gender Gap?” World Development 47:
+102–120.
+Bahadir, B., and I. Gumus. 2016. “Credit Decomposition and Business
+Cycles in Emerging Market Economies.” Journal of International
+Economics 103: 250–262.
+Beck, T., B. Büyükkarabacak, F. K. Rioja, and N. T. Valev. 2012. BE
+Journal of Macroeconomics 12, no. 1: 1–44.
+Bia, M., and A. Mattei. 2008. “A Stata Package for the Estimation of the
+Dose‐Response Function through Adjustment for the Generalized
+Propensity Score.”Stata Journal: Promoting communications on statistics
+and Stata 8, no. 3: 354–373.
+Büyükkarabacak, B., and S. Krause. 2009. “Studying the Effects of
+Household and Firm Credit on the Trade Balance: The Composition of
+Funds Matters.” Economic Inquiry 47, no. 4: 653–666.
+Cabeza‐García, L., E. B. Del Brio, and M. L. Oscanoa‐Victorio. 2019.
+“Female Financial Inclusion and Its Impacts on Inclusive Economic
+Development.” Women's Studies International Forum 77: 102300.
+Cambota, J. N., and L. F. G. Viana. 2019, p. 20 a 46. “O Impacto Do
+Fundo Constitucional De Financiamento Do Nordeste (Fne) No Cres-
+cimento Dos Municípios: Uma Aplicação De Painel Dinâmico.” Revista
+Controle ‐ Doutrina e Artigos 17, no. 1: 20–46.
+Carneiro, D. 2018 (Artigos ETENE). Determinantes da Eficiência da
+Aplicação dos Recursos do FNE Pelos Municípios Beneficiados. Fortaleza,
+Banco do Nordeste do Brasil, ago.
+Carreño, N. S., H. A. Hernández Escolar, and J. A. Méndez Sayago.
+2011. “Microcrédito Y Bienestar: Una Evaluación Empírica.” Sociedad
+y Economía no. 21: 195–220. http://www.scielo.org.co/pdf/soec/n21/
+n21a09.pdf.
+Castilho, M. R. 1994. Algumas Considerações Sobre o uso de Modelos
+Computáveis de Equilíbrio Geral Como Instrumento de Análise do Setor
+Externo Brasileiro. Rio de Janeiro: Fundação Centro de Estudos do
+Comércio Exterior, (Texto para Discussão n° 97).
+Cunha Junior, J. M. 2020. Ensaios Sobre Tratamento em Níveis. Tese
+(Doutorado em Economia) – Programa de Pós‐Graduação em Economia
+da Faculdade de Economia, Administração, Atuária e Contabilidade,
+Universidade Federal do Ceará, Fortaleza/CE.
+Duflo, E. 2011. Women Empowerment and Economic Development.
+National Bureau of Economic Research Working Paper 17702.
+Emran, M. Shahe, and Subika Farazi. 2009. “Lazy Banks? Government
+Borrowing and Private Credit in Developing Countries.” Working Pa-
+per. Institute for International Economic Policy. https://www2.gwu.
+edu/~iiep/assets/docs/papers/Emran_IIEPWP2009-9.pdf.
+Galor, O., and J. Zeira. 1993. “Income Distribution and Macro-
+economics.” Review of Economic Studies 60, no. 1: 35–52.
+Garcia, L. B. B., and G. A. De. A. Pereira 2021. Avaliação dos Impactos
+do Programa NossoCrédito Sobre o PIB dos Municípios do Espírito
+Santo: uma Abordagem Utilizando o Escore de Propensão Generalizado
+e a Função Dose‐Resposta. Trabalho apresentado no XXIV Encontro de
+Economia da Região Sul ‐ Anpec Sul. Florianópolis.
+Gonçalves, M. F. 2017. Avaliação dos impactos do Fundo Constitucional
+de Financiamento do Nordeste (FNE): Uma abordagem de equilíbrio
+geral. Tese (Doutorado em Economia Aplicada) – Departamento de
+Economia Rural, Universidade Federal de Viçosa, Viçosa/MG.
+Guardabascio, B., and M. Ventura. 2014. “Estimating the Dose–Response
+Function Through a Generalized Linear Model Approach.” Stata Journal:
+Promoting communications on statistics and Stata 14, no. 1: 141–158.
+Hirano, K., and G. W. Imbens. 2004. “The Propensity Score with Con-
+tinuous Treatments.” In Applied Bayesian Modeling and Causal Infer-
+ence from Incomplete‐Data Perspectives, edited by A. Gelman and X.‐L.
+Meng, 73–84. West Sussex, England: Wiley InterScience.
+692 of 886
+Journal of Regional Science, 2025
+ 14679787, 2025, 3, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/jors.12759 by UFC - Universidade Federal do Ceara, Wiley Online Library on [25/02/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+Imbens, G. 2000. “The Role of the Propensity Score in Estimating Dose‐
+Response Functions.” Biometrika 87, no. 3: 706–710.
+Irffi, G. D., J. I. S. Araújo, and F. S. Bastos. 2019, 4. “Efeitos hetero-
+gêneos do Fundo Constitucional de Financiamento do Nordeste na
+região do semiárido.” In MATA, Daniel da; FREITAS, Rogério Edivaldo;
+RESENDE, Guilherme Mendes. Avaliação de políticas públicas no Brasil:
+uma análise do semiárido, 367 a 397. Brasília: Ipea.
+Islam, N. 1995. “Growth Empirics: A Panel Data Approach.” Quarterly
+Journal of Economics 110, no. 4: 1127–1170.
+Jappelli, T., and M. Pagano. 1994. “Saving, Growth, and Liquidity
+Constraints.” Quarterly Journal of Economics 109, no. 1: 83–109.
+Kim, Y. K. 2016. “Macroeconomic Effects of Household Debt: An Em-
+pirical Analysis.” Review of Keynesian Economics 4, no. 2: 127–150.
+Law, S. H., M. N. A. Naseem, A. Roslan, and N. Singh. 2021. “Business
+Credit, Household Credit and Economic Performance in Malaysia: A
+Quantile Regression Approach.” Malaysian Journal of Economic Studies
+58, no. 2: 293–314.
+Levine, R. 2005. “Finance and Growth: Theory and Evidence.”
+Handbook of Economic Growth 1: 865–934.
+Mendonça, K. V. 2014. Ensaios sobre Microcrédito: Trajetória de
+Crescimento, Renovação e Inadimplência dos Beneficiários. (Doutorado
+em Economia) – Programa de Pós‐Graduação em Economia, Uni-
+versidade Federal do Ceará, Fortaleza/CE.
+Mian, A., A. Sufi, and E. Verner. 2017. “Household Debt and Business
+Cycles Worldwide.” Quarterly Journal of Economics 132, no. 4:
+1755–1817.
+Monzoni Neto, M. P. 2006. Impacto em Renda do Microcrédito: Uma
+Investigação Empírica Sobre Geração de Renda do Crédito Popular
+Solidário (São Paulo Confia), no Município de São Paulo. – Escola de
+Administração de Empresas de São Paulo, Fundação Getúlio Vargas,
+São Paulo. Disponível em.
+Najberg, S., F. J. Z. Rigolon, and S. P. Vieira. 1995. Modelo de Equilíbrio
+Geral Computável Como Instrumento de Política Econômica: Uma
+Análise de Câmbio x tarifas, 24 f. (Textos para discussão n° 30), 1995.
+Rio de Janeiro: Banco Nacional de Desenvolvimento Econômico e
+Social.
+Nascimento, T. O., and E. A. Haddad 2017. Análise do Fundo Con-
+stitucional de Financiamento do Nordeste: Uma Aplicação de Equilíbrio
+Geral Computável. Trabalho apresentado no 45° Encontro Nacional de
+Economia, Natal/RN.
+Oliveira, G. R., R. T. Menezes, and G. M. Resende. 2018. “Efeito Dose
+Resposta Do Fundo Constitucional De Financiamento Do Centro‐Oeste
+(Fco) No Estado De Goiás.” Nova Economia 28, no. 3: 965–1000.
+Pagano, M. 1993. “Financial Markets and Growth.” European Economic
+Review 37, no. 2–3: 613–622.
+Resende, G. M. 2012. Texto para discussão n° 1777. Micro e Macro-
+impactos de Políticas de Desenvolvimento Regional: o caso dos emprésti-
+mos do FNE‐Industrial no estado do Ceará. Rio de Janeiro: Ipea.
+Resende, G. M. 2013. “Regional Development Policy in Brazil: a Review
+of Evaluation Literature.” Redes 18, no. 3: 202–225.
+Resende, G. M. 2014. Avaliação dos impactos do Fundo Constitucional
+de Financiamento do Nordeste entre 2004 e 2010. Rio de Janeiro: Ipea.
+Texto para discussão n° 1918.
+Resende, G. M., D. F. C. Silva, and L. A. S. Filho 2015a. Brasil: Dez anos
+da Política Nacional de Desenvolvimento Regional (PNDR). Brasília:
+Ipea, 2015. Boletim Regional, Urbano e Ambiental, Brasília, n. 11.
+Resende, G. M., D. F. C. Silva, and L. A. S. Filho. 2015b. Texto para
+Discussão n. 2145. Avaliação dos Efeitos Econômicos dos Fundos Con-
+stitucionais de Financiamento do Nordeste, do Norte e do Centro Oeste:
+Uma análise por tipologia da Política Nacional de Desenvolvimento
+Regional entre 1999 e 2011. Brasília: Ipea.
+Ribeiro, L. C. S., et al. 2020. Regional Funding and Regional Inequalities
+in the Brazilian Northeast. Regional Science Policy e Practice, 43 a 59.
+Wiley Blackwell, ISSN 1757‐7802, Azores‐Portugal, 12, 1, fev.
+Righetti, C. C. B. 2012. Efeitos do Microcrédito na Geração de Renda em
+Microempreendimentos: Avaliação de Impactos do Programa Real Mi-
+crocrédito. Disponível em.
+Sassi, S., and A. Gasmi. 2014. “The Effect of Enterprise and Household
+Credit on Economic Growth: New Evidence From European Union
+Countries.” Journal of Macroeconomics 39: 226–231.
+Shapiro, S. S., and R. S. Francia. 1972. “An Approximate Analysis of
+Variance Test for Normality.” Journal of the American Statistical
+Association 67: 215–216.
+Silva, A. M. A., G. M. Resende, and R. M. S. Neto. 2006. Texto para
+discussão n° 1207. Avaliação Econômica dos Fundos Constitucionais de
+Financiamento do Nordeste (FNE) e do Norte (FNO). Brasília: Ipea.
+Silva, A. M. A., G. M. Resende, and R. M. Silveira Neto. 2009. “Eficácia
+do Gasto Público: Uma Avaliação do FNE, FNO E FCO.” Estudos
+Econômicos (São Paulo) 39, no. 1: 89–125, jan‐mar.
+Silva, D. F. C., and G. M. Resende. 2019, 4. “Efeito Econômico Espacial
+dos Empréstimos do Fundo Constitucional de Financiamento do Nor-
+deste no Semiárido Brasileiro.” In Avaliação de políticas públicas no
+Brasil: uma análise do semiárido, edited by D. Mata, R. E. Freitas, and
+G. M. Resende, 297 a 325. Brasília: Ipea.
+da Silva‐Filho, L. A., C. R. Azzoni, A. L. Chagas, and G. Castro. 2023.
+“Favorable Credit to Private Agents and the Local Economies in the
+Deprived Regions of Brazil: A Spatial Panel Analysis.” Letters in Spatial
+and Resource Sciences 16, no. 1: 41.
+Siti
+Nurazira
+Mohd
+Daud,
+D.,
+P.
+Jan
+M
+Podivinsky,
+and
+S. Khairunnisa Abd Samad. 2021. “Household Debt and Country Eco-
+nomic Growth: Does a Magic Threshold Exist?” International Journal of
+Business and Society 22, no. 1: 161–174.
+Soares, R. B., et al 2014a. Avaliações de Impacto e Eficiência das Em-
+presas Beneficiadas Pelo FNE: Geração de emprego, Massa salarial e
+Salário Médio 2000–2008. Fortaleza: Banco do Nordeste. Série Avaliação
+de Políticas e Programas do BNB, n. 13.
+Soares, R. B., et al 2014b. Fondo Constitucional de Financiamiento del
+Nordeste del Brasil: Efectos Diferenciados Sobre el Crecimiento Eco-
+nómico de los Municipios. Revista de la Cepal, 113: 183–201.
+Soares, R. B., J. M. P. Sousa, and A. P. Neto. 2009. Avaliação de Impacto
+do FNE no Emprego, na Massa Salarial e no Salário Médio em Em-
+preendimentos Financiados. Fortaleza: Revista Economia do Nordeste,
+40, 01.
+Stiglitz, J., J. Jaramillo‐Vallejo, and Y. U. N. G. C. H. A. I. Park. 1993.
+The Role of the State in Financial Markets. World Bank Research
+Observer. Annual Conference on Development Economics.
+Swamy, V. 2014. “Financial Inclusion, Gender Dimension, and Eco-
+nomic Impact on Poor Households.” World development 56: 1–15.
+693 of 886
+ 14679787, 2025, 3, Downloaded from https://onlinelibrary.wiley.com/doi/10.1111/jors.12759 by UFC - Universidade Federal do Ceara, Wiley Online Library on [25/02/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
