@@ -102,6 +102,20 @@ def is_published(study: dict) -> bool:
     return False
 
 
+def _classify_label(result: dict) -> str:
+    """Return a human-readable classification label consistent with is_published()."""
+    src = result.get("source", "")
+    if result.get("is_published"):
+        pub_type = result.get("publication_type", "")
+        return pub_type if pub_type else f"periódico ({src})"
+    # Unpublished: use source-based label
+    labels = {
+        "anpec": "apresentação congresso",
+        "econpapers": "texto p/ discussão",
+    }
+    return labels.get(src, f"não-publicado ({src})")
+
+
 # ── Load studies ───────────────────────────────────────────────────────────
 def load_studies():
     """Load all 54 studies from ref JSON files + bib_screened metadata."""
@@ -450,7 +464,7 @@ def generate_report(studies, results, cross_citations):
     for i, r in enumerate(results, 1):
         pub_flag = "Sim" if r["is_published"] else "Não"
         short_key = r["key"][:43]
-        pub_type = r["publication_type"][:18] if r["publication_type"] else r["source"]
+        pub_type = _classify_label(r)[:18]
         lines.append(
             f"{i:4d} {short_key:<45} {r['year']:>4} {pub_flag:>4} "
             f"{r['citations_received_from_published']:>3} "
@@ -477,6 +491,27 @@ def generate_report(studies, results, cross_citations):
     else:
         lines.append("  Nenhum artigo não-publicado recebeu citação de artigos publicados.")
 
+    lines.append("")
+
+    # Highlight unpublished articles with IC = 0 (not cited by published)
+    lines.append("=" * 90)
+    lines.append("ARTIGOS NÃO-PUBLICADOS COM IC = 0 (não citados por publicados)")
+    lines.append("=" * 90)
+    unpub_zero = [r for r in results if not r["is_published"] and r["IC_published"] == 0]
+    if unpub_zero:
+        lines.append("")
+        lines.append(f"{'Estudo':<45} {'Ano':>4} {'Tipo':<25} {'Cit. total':>10}")
+        lines.append("-" * 90)
+        for r in unpub_zero:
+            pub_type = _classify_label(r)[:23]
+            cit_all = r["citations_received_from_all"]
+            lines.append(
+                f"{r['key']:<45} {r['year']:>4} {pub_type:<25} {cit_all:>10}"
+            )
+        lines.append("-" * 90)
+        lines.append(f"Total: {len(unpub_zero)} artigos não-publicados sem citação de publicados")
+    else:
+        lines.append("  Todos os artigos não-publicados receberam ao menos uma citação de publicados.")
     lines.append("")
 
     # Detail: cross-citations per study
