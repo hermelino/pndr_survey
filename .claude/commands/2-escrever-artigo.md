@@ -144,9 +144,13 @@ Usar as seguintes marcações para elementos não textuais:
 | `[REMOVER]` | Elemento da tese que NÃO deve ser incluído no artigo |
 | `[REESCREVER]` | Conteúdo que precisa de reescrita substancial |
 
-### 4. Aguardar aprovação
+### 4. Salvar o roteiro
 
-Após apresentar o roteiro, **parar e perguntar ao usuário:**
+Salvar automaticamente o roteiro em formato Markdown no diretório `latex/`, com o nome `roteiro_<seção>.md` (ex: `latex/roteiro_metodo.md`, `latex/roteiro_introducao.md`). Se o argumento for `todos`, salvar como `latex/roteiro_completo.md`.
+
+### 5. Aguardar aprovação
+
+Após apresentar e salvar o roteiro, **parar e perguntar ao usuário:**
 
 > "O roteiro acima está adequado? Você gostaria de adicionar, remover ou modificar algum tópico antes de prosseguir com a redação?"
 
