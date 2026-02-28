@@ -1,0 +1,647 @@
+==========================================================================================
+ÍNDICE DE CITAÇÃO PARA REVISÃO SISTEMÁTICA DA PNDR
+==========================================================================================
+
+Total de estudos:              54
+  Publicados (periódico):      24
+  Não publicados (TD/conf.):   30
+Total de citações cruzadas:    141
+
+Distribuição por ano:
+  2005:  1 estudos (0 pub, 1 não-pub)
+  2006:  1 estudos (0 pub, 1 não-pub)
+  2007:  3 estudos (2 pub, 1 não-pub)
+  2008:  1 estudos (1 pub, 0 não-pub)
+  2009:  4 estudos (4 pub, 0 não-pub)
+  2011:  1 estudos (0 pub, 1 não-pub)
+  2012:  1 estudos (1 pub, 0 não-pub)
+  2013:  1 estudos (0 pub, 1 não-pub)
+  2014:  4 estudos (2 pub, 2 não-pub)
+  2015:  4 estudos (1 pub, 3 não-pub)
+  2017:  5 estudos (3 pub, 2 não-pub)
+  2018:  2 estudos (2 pub, 0 não-pub)
+  2020:  2 estudos (1 pub, 1 não-pub)
+  2021:  2 estudos (0 pub, 2 não-pub)
+  2022:  1 estudos (1 pub, 0 não-pub)
+  2023:  2 estudos (0 pub, 2 não-pub)
+  2024: 11 estudos (4 pub, 7 não-pub)
+  2025:  8 estudos (2 pub, 6 não-pub)
+
+FÓRMULA:
+  IC(A) = citações de artigos publicados em [X+1, 2025]
+          / total de artigos publicados em [X+1, 2025]
+
+  onde X = ano do artigo A
+  'Publicado' = artigo em periódico (scopus, scielo, capes-periódico)
+
+------------------------------------------------------------------------------------------
+Rank Estudo                                         Ano Pub? Cit   N     IC Tipo                
+------------------------------------------------------------------------------------------
+   1 econpapers-2017-oliveira-resende-oliveira     2017  Sim   4  10 0.4000 artigo publicado    
+   2 scopus-2018-resende-silva-filho               2018  Sim   3   8 0.3750 artigo publicado    
+   3 anpec-2017-nascimento-haddad                  2017  Não   3  10 0.3000 apresentação congr  
+   4 econpapers-2011-resende                       2011  Não   5  17 0.2941 texto p/ discussão  
+   5 scielo-2009-silva-resende-neto                2009  Sim   5  17 0.2941 artigo publicado    
+   6 econpapers-2014-resende                       2014  Não   4  14 0.2857 texto p/ discussão  
+   7 scopus-2014-resende                           2014  Sim   4  14 0.2857 artigo publicado    
+   8 econpapers-2014-goncalves-soares-linhares     2014  Não   3  14 0.2143 texto p/ discussão  
+   9 capes-2007-almeida-resende-silva              2007  Sim   4  22 0.1818 periódico (capes)   
+  10 anpec-2023-braz-irffi                         2023  Não   1   6 0.1667 apresentação congr  
+  11 anpec-2023-carneiro-costa-irffi               2023  Não   1   6 0.1667 apresentação congr  
+  12 anpec-2020-oliveira-neto                      2020  Não   1   7 0.1429 apresentação congr  
+  13 anpec-2021-oliveira-neto                      2021  Não   1   7 0.1429 apresentação congr  
+  14 scopus-2020-ribeiro-caldas-souza              2020  Sim   1   7 0.1429 artigo publicado    
+  15 anpec-2005-oliveira-domingues                 2005  Não   3  24 0.1250 apresentação congr  
+  16 anpec-2006-silva-resende-neto                 2006  Não   3  24 0.1250 apresentação congr  
+  17 scopus-2018-oliveira-terra-resende            2018  Sim   1   8 0.1250 artigo publicado    
+  18 scopus-2017-garsous-novoa-velasco             2017  Sim   1  10 0.1000 artigo publicado    
+  19 anpec-2015-oliveira-terra-resende             2015  Não   1  13 0.0769 apresentação congr  
+  20 econpapers-2015-oliveira-arriel-rodrigues     2015  Sim   1  13 0.0769 texto para discuss  
+  21 econpapers-2015-resende-silva-filho           2015  Não   1  13 0.0769 texto p/ discussão  
+  22 econpapers-2007-silva-resende-neto            2007  Não   1  22 0.0455 texto p/ discussão  
+  23 anpec-2013-campos-castelar                    2013  Não   0  16 0.0000 apresentação congr  
+  24 anpec-2017-oliveira-resende-goncalves         2017  Não   0  10 0.0000 apresentação congr  
+  25 anpec-2021-bezerra-ramos                      2021  Não   0   7 0.0000 apresentação congr  
+  26 anpec-2024-alves-neto-oliveira                2024  Não   0   2 0.0000 apresentação congr  
+  27 anpec-2024-braz-bastos-irffi                  2024  Não   0   2 0.0000 apresentação congr  
+  28 anpec-2024-calife-neto                        2024  Não   0   2 0.0000 apresentação congr  
+  29 anpec-2024-carneiro-veloso-ferreira           2024  Não   0   2 0.0000 apresentação congr  
+  30 anpec-2024-filho-alves                        2024  Não   0   2 0.0000 apresentação congr  
+  31 anpec-2024-quaglio                            2024  Não   0   2 0.0000 apresentação congr  
+  32 anpec-2024-veloso-costa-carneiro              2024  Não   0   2 0.0000 apresentação congr  
+  33 anpec-2025-gondim                             2025  Não   0   0 0.0000 apresentação congr  
+  34 anpec-2025-lazaretti-davanzo-neves            2025  Não   0   0 0.0000 apresentação congr  
+  35 anpec-2025-shirasu                            2025  Não   0   0 0.0000 apresentação congr  
+  36 anpec-2025-silva-chagas-azzoni                2025  Não   0   0 0.0000 apresentação congr  
+  37 anpec-2025-souza-irffi-carneiro               2025  Não   0   0 0.0000 apresentação congr  
+  38 anpec-2025-veloso                             2025  Não   0   0 0.0000 apresentação congr  
+  39 capes-2007-porsse-haddad-ribeiro              2007  Sim   0  22 0.0000 periódico (capes)   
+  40 capes-2008-paes-siqueira                      2008  Sim   0  21 0.0000 periódico (capes)   
+  41 capes-2009-avellar                            2009  Sim   0  17 0.0000 periódico (capes)   
+  42 capes-2009-nascimento-lima                    2009  Sim   0  17 0.0000 periódico (capes)   
+  43 capes-2017-soares-sousa-neto                  2017  Sim   0  10 0.0000 periódico (capes)   
+  44 econpapers-2014-viana-goncalves-linhares      2014  Sim   0  14 0.0000 artigo publicado    
+  45 econpapers-2015-oliveira-terra-resende        2015  Não   0  13 0.0000 texto p/ discussão  
+  46 econpapers-2024-ribeiro                       2024  Sim   0   2 0.0000 artigo publicado    
+  47 scielo-2022-gumiero                           2022  Sim   0   6 0.0000 periódico (scielo)  
+  48 scopus-2009-silva-resende-neto                2009  Sim   0  17 0.0000 artigo publicado    
+  49 scopus-2012-abreu-gomes-mello                 2012  Sim   0  16 0.0000 artigo publicado    
+  50 scopus-2024-costa-carneiro-irffi              2024  Sim   0   2 0.0000 artigo publicado    
+  51 scopus-2024-cunha-soares                      2024  Sim   0   2 0.0000 artigo publicado    
+  52 scopus-2024-filho-moreira-silva               2024  Sim   0   2 0.0000 artigo publicado    
+  53 scopus-2025-borges-rodrigues                  2025  Sim   0   0 0.0000 artigo publicado    
+  54 scopus-2025-monte-irffi-bastos                2025  Sim   0   0 0.0000 artigo publicado    
+------------------------------------------------------------------------------------------
+
+==========================================================================================
+ARTIGOS NÃO-PUBLICADOS COM IC > 0 (candidatos à inclusão)
+==========================================================================================
+
+  anpec-2017-nascimento-haddad
+    Ano: 2017, IC: 0.3000
+    Título: Análise do Fundo Constitucional de Financiamento do ...
+    Citado por (publicados):
+      - scopus-2020-ribeiro-caldas-souza
+      - scopus-2024-filho-moreira-silva
+      - scopus-2025-monte-irffi-bastos
+
+  econpapers-2011-resende
+    Ano: 2011, IC: 0.2941
+    Título: Evaluating Micro and Macro Effects of Regional Development Policies: The Case of the Northeast Regio
+    Citado por (publicados):
+      - econpapers-2017-oliveira-resende-oliveira
+      - scopus-2018-oliveira-terra-resende
+      - scopus-2018-resende-silva-filho
+      - scopus-2024-filho-moreira-silva
+      - scopus-2025-monte-irffi-bastos
+
+  econpapers-2014-resende
+    Ano: 2014, IC: 0.2857
+    Título: Avaliação dos Impactos Econômicos do Fundo Constitucional de Financiamento do Nordeste entre 2004 e 
+    Citado por (publicados):
+      - econpapers-2015-oliveira-arriel-rodrigues
+      - econpapers-2017-oliveira-resende-oliveira
+      - scopus-2020-ribeiro-caldas-souza
+      - scopus-2025-monte-irffi-bastos
+
+  econpapers-2014-goncalves-soares-linhares
+    Ano: 2014, IC: 0.2143
+    Título: Brazil’s Northeast Financing Constitutional Fund: Differentiated effects on municipal economic growt
+    Citado por (publicados):
+      - econpapers-2017-oliveira-resende-oliveira
+      - econpapers-2024-ribeiro
+      - scopus-2020-ribeiro-caldas-souza
+
+  anpec-2023-braz-irffi
+    Ano: 2023, IC: 0.1667
+    Título: Economia Regional IMPACTOS DOS INCENTIVOS ...
+    Citado por (publicados):
+      - scopus-2024-costa-carneiro-irffi
+
+  anpec-2023-carneiro-costa-irffi
+    Ano: 2023, IC: 0.1667
+    Título: 1 AVALIAÇÃO DE EFICIÊNCIA DAS EMPRESAS ...
+    Citado por (publicados):
+      - scopus-2024-costa-carneiro-irffi
+
+  anpec-2020-oliveira-neto
+    Ano: 2020, IC: 0.1429
+    Título: Incentivos Fiscais Territoriais ao Desenvolvimento Local
+    Citado por (publicados):
+      - scopus-2024-cunha-soares
+
+  anpec-2021-oliveira-neto
+    Ano: 2021, IC: 0.1429
+    Título: Uma Avaliação do Fundo Constitucional de Financiamento ...
+    Citado por (publicados):
+      - econpapers-2024-ribeiro
+
+  anpec-2005-oliveira-domingues
+    Ano: 2005, IC: 0.1250
+    Título: considerações sobre o impacto dos fundos constitucionais
+    Citado por (publicados):
+      - econpapers-2014-viana-goncalves-linhares
+      - scopus-2014-resende
+      - scopus-2020-ribeiro-caldas-souza
+
+  anpec-2006-silva-resende-neto
+    Ano: 2006, IC: 0.1250
+    Título: AVALIAÇÃO ECONÔMICA DOS FUNDOS ...
+    Citado por (publicados):
+      - scopus-2018-oliveira-terra-resende
+      - scopus-2020-ribeiro-caldas-souza
+      - scopus-2025-monte-irffi-bastos
+
+  anpec-2015-oliveira-terra-resende
+    Ano: 2015, IC: 0.0769
+    Título: Efeito Dose Resposta do Fundo Constitucional de ...
+    Citado por (publicados):
+      - scopus-2018-oliveira-terra-resende
+
+  econpapers-2015-resende-silva-filho
+    Ano: 2015, IC: 0.0769
+    Título: Avaliação dos Efeitos Econômicos dos Fundos Constitucionais de Financiamento do Nordeste, do Norte e
+    Citado por (publicados):
+      - scopus-2025-monte-irffi-bastos
+
+  econpapers-2007-silva-resende-neto
+    Ano: 2007, IC: 0.0455
+    Título: Eficácia do Gasto Público: Uma Avaliação do FNE, FNO e FCO
+    Citado por (publicados):
+      - capes-2017-soares-sousa-neto
+
+==========================================================================================
+ARTIGOS NÃO-PUBLICADOS COM IC = 0 (não citados por publicados)
+==========================================================================================
+
+Estudo                                         Ano Tipo                      Cit. total
+------------------------------------------------------------------------------------------
+anpec-2013-campos-castelar                    2013 apresentação congresso             0
+econpapers-2015-oliveira-terra-resende        2015 texto p/ discussão                 0
+anpec-2017-oliveira-resende-goncalves         2017 apresentação congresso             1
+anpec-2021-bezerra-ramos                      2021 apresentação congresso             0
+anpec-2024-alves-neto-oliveira                2024 apresentação congresso             0
+anpec-2024-braz-bastos-irffi                  2024 apresentação congresso             2
+anpec-2024-calife-neto                        2024 apresentação congresso             0
+anpec-2024-carneiro-veloso-ferreira           2024 apresentação congresso             2
+anpec-2024-filho-alves                        2024 apresentação congresso             0
+anpec-2024-quaglio                            2024 apresentação congresso             0
+anpec-2024-veloso-costa-carneiro              2024 apresentação congresso             1
+anpec-2025-gondim                             2025 apresentação congresso             0
+anpec-2025-lazaretti-davanzo-neves            2025 apresentação congresso             0
+anpec-2025-shirasu                            2025 apresentação congresso             0
+anpec-2025-silva-chagas-azzoni                2025 apresentação congresso             0
+anpec-2025-souza-irffi-carneiro               2025 apresentação congresso             0
+anpec-2025-veloso                             2025 apresentação congresso             0
+------------------------------------------------------------------------------------------
+Total: 17 artigos não-publicados sem citação de publicados
+
+==========================================================================================
+DETALHE: CITAÇÕES CRUZADAS POR ESTUDO
+==========================================================================================
+
+  econpapers-2017-oliveira-resende-oliveira (2017, PUB)
+    Citado por (7):
+      ← anpec-2021-oliveira-neto (2021, np)
+      ← anpec-2023-braz-irffi (2023, np)
+      ← anpec-2023-carneiro-costa-irffi (2023, np)
+      ← econpapers-2024-ribeiro (2024, pub)
+      ← scopus-2024-filho-moreira-silva (2024, pub)
+      ← scopus-2025-borges-rodrigues (2025, pub)
+      ← scopus-2025-monte-irffi-bastos (2025, pub)
+    Cita (6):
+      → capes-2007-almeida-resende-silva (2007, pub)
+      → econpapers-2014-resende (2014, np)
+      → scopus-2014-resende (2014, pub)
+      → econpapers-2011-resende (2011, np)
+      → scielo-2009-silva-resende-neto (2009, pub)
+      → econpapers-2014-goncalves-soares-linhares (2014, np)
+
+  scopus-2018-resende-silva-filho (2018, PUB)
+    Citado por (6):
+      ← anpec-2021-oliveira-neto (2021, np)
+      ← anpec-2024-filho-alves (2024, np)
+      ← anpec-2025-souza-irffi-carneiro (2025, np)
+      ← econpapers-2024-ribeiro (2024, pub)
+      ← scopus-2025-borges-rodrigues (2025, pub)
+      ← scopus-2025-monte-irffi-bastos (2025, pub)
+    Cita (1):
+      → econpapers-2011-resende (2011, np)
+
+  anpec-2017-nascimento-haddad (2017, NÃO-PUB)
+    Citado por (5):
+      ← anpec-2021-oliveira-neto (2021, np)
+      ← anpec-2025-souza-irffi-carneiro (2025, np)
+      ← scopus-2020-ribeiro-caldas-souza (2020, pub)
+      ← scopus-2024-filho-moreira-silva (2024, pub)
+      ← scopus-2025-monte-irffi-bastos (2025, pub)
+    Cita (4):
+      → capes-2007-almeida-resende-silva (2007, pub)
+      → scopus-2014-resende (2014, pub)
+      → anpec-2005-oliveira-domingues (2005, np)
+      → econpapers-2011-resende (2011, np)
+
+  econpapers-2011-resende (2011, NÃO-PUB)
+    Citado por (17):
+      ← anpec-2015-oliveira-terra-resende (2015, np)
+      ← anpec-2017-nascimento-haddad (2017, np)
+      ← anpec-2017-oliveira-resende-goncalves (2017, np)
+      ← anpec-2020-oliveira-neto (2020, np)
+      ← anpec-2021-oliveira-neto (2021, np)
+      ← anpec-2024-calife-neto (2024, np)
+      ← anpec-2024-carneiro-veloso-ferreira (2024, np)
+      ← anpec-2025-gondim (2025, np)
+      ← econpapers-2014-goncalves-soares-linhares (2014, np)
+      ← econpapers-2014-resende (2014, np)
+      ← econpapers-2015-oliveira-terra-resende (2015, np)
+      ← econpapers-2015-resende-silva-filho (2015, np)
+      ← econpapers-2017-oliveira-resende-oliveira (2017, pub)
+      ← scopus-2018-oliveira-terra-resende (2018, pub)
+      ← scopus-2018-resende-silva-filho (2018, pub)
+      ← scopus-2024-filho-moreira-silva (2024, pub)
+      ← scopus-2025-monte-irffi-bastos (2025, pub)
+    Cita (3):
+      → capes-2007-almeida-resende-silva (2007, pub)
+      → anpec-2005-oliveira-domingues (2005, np)
+      → scielo-2009-silva-resende-neto (2009, pub)
+
+  scielo-2009-silva-resende-neto (2009, PUB)
+    Citado por (10):
+      ← anpec-2015-oliveira-terra-resende (2015, np)
+      ← anpec-2020-oliveira-neto (2020, np)
+      ← anpec-2021-oliveira-neto (2021, np)
+      ← econpapers-2011-resende (2011, np)
+      ← econpapers-2014-viana-goncalves-linhares (2014, pub)
+      ← econpapers-2015-resende-silva-filho (2015, np)
+      ← econpapers-2017-oliveira-resende-oliveira (2017, pub)
+      ← econpapers-2024-ribeiro (2024, pub)
+      ← scopus-2014-resende (2014, pub)
+      ← scopus-2025-monte-irffi-bastos (2025, pub)
+
+  econpapers-2014-resende (2014, NÃO-PUB)
+    Citado por (9):
+      ← anpec-2015-oliveira-terra-resende (2015, np)
+      ← anpec-2017-oliveira-resende-goncalves (2017, np)
+      ← anpec-2021-oliveira-neto (2021, np)
+      ← anpec-2024-carneiro-veloso-ferreira (2024, np)
+      ← anpec-2025-gondim (2025, np)
+      ← econpapers-2015-oliveira-arriel-rodrigues (2015, pub)
+      ← econpapers-2017-oliveira-resende-oliveira (2017, pub)
+      ← scopus-2020-ribeiro-caldas-souza (2020, pub)
+      ← scopus-2025-monte-irffi-bastos (2025, pub)
+    Cita (2):
+      → capes-2007-almeida-resende-silva (2007, pub)
+      → econpapers-2011-resende (2011, np)
+
+  scopus-2014-resende (2014, PUB)
+    Citado por (12):
+      ← anpec-2017-nascimento-haddad (2017, np)
+      ← anpec-2020-oliveira-neto (2020, np)
+      ← anpec-2021-oliveira-neto (2021, np)
+      ← anpec-2024-calife-neto (2024, np)
+      ← anpec-2024-carneiro-veloso-ferreira (2024, np)
+      ← anpec-2025-gondim (2025, np)
+      ← anpec-2025-souza-irffi-carneiro (2025, np)
+      ← econpapers-2015-resende-silva-filho (2015, np)
+      ← econpapers-2017-oliveira-resende-oliveira (2017, pub)
+      ← scopus-2024-filho-moreira-silva (2024, pub)
+      ← scopus-2025-borges-rodrigues (2025, pub)
+      ← scopus-2025-monte-irffi-bastos (2025, pub)
+    Cita (3):
+      → capes-2007-almeida-resende-silva (2007, pub)
+      → anpec-2005-oliveira-domingues (2005, np)
+      → scielo-2009-silva-resende-neto (2009, pub)
+
+  econpapers-2014-goncalves-soares-linhares (2014, NÃO-PUB)
+    Citado por (9):
+      ← anpec-2015-oliveira-terra-resende (2015, np)
+      ← anpec-2021-oliveira-neto (2021, np)
+      ← anpec-2024-calife-neto (2024, np)
+      ← anpec-2024-carneiro-veloso-ferreira (2024, np)
+      ← anpec-2025-gondim (2025, np)
+      ← anpec-2025-souza-irffi-carneiro (2025, np)
+      ← econpapers-2017-oliveira-resende-oliveira (2017, pub)
+      ← econpapers-2024-ribeiro (2024, pub)
+      ← scopus-2020-ribeiro-caldas-souza (2020, pub)
+    Cita (2):
+      → anpec-2005-oliveira-domingues (2005, np)
+      → econpapers-2011-resende (2011, np)
+
+  capes-2007-almeida-resende-silva (2007, PUB)
+    Citado por (13):
+      ← anpec-2015-oliveira-terra-resende (2015, np)
+      ← anpec-2017-nascimento-haddad (2017, np)
+      ← anpec-2017-oliveira-resende-goncalves (2017, np)
+      ← anpec-2021-oliveira-neto (2021, np)
+      ← anpec-2024-carneiro-veloso-ferreira (2024, np)
+      ← econpapers-2011-resende (2011, np)
+      ← econpapers-2014-resende (2014, np)
+      ← econpapers-2015-oliveira-terra-resende (2015, np)
+      ← econpapers-2015-resende-silva-filho (2015, np)
+      ← econpapers-2017-oliveira-resende-oliveira (2017, pub)
+      ← scopus-2014-resende (2014, pub)
+      ← scopus-2018-oliveira-terra-resende (2018, pub)
+      ← scopus-2020-ribeiro-caldas-souza (2020, pub)
+
+  anpec-2023-braz-irffi (2023, NÃO-PUB)
+    Citado por (5):
+      ← anpec-2024-braz-bastos-irffi (2024, np)
+      ← anpec-2024-carneiro-veloso-ferreira (2024, np)
+      ← anpec-2025-gondim (2025, np)
+      ← anpec-2025-souza-irffi-carneiro (2025, np)
+      ← scopus-2024-costa-carneiro-irffi (2024, pub)
+    Cita (2):
+      → anpec-2020-oliveira-neto (2020, np)
+      → econpapers-2017-oliveira-resende-oliveira (2017, pub)
+
+  anpec-2023-carneiro-costa-irffi (2023, NÃO-PUB)
+    Citado por (3):
+      ← anpec-2024-carneiro-veloso-ferreira (2024, np)
+      ← anpec-2025-veloso (2025, np)
+      ← scopus-2024-costa-carneiro-irffi (2024, pub)
+    Cita (1):
+      → econpapers-2017-oliveira-resende-oliveira (2017, pub)
+
+  anpec-2020-oliveira-neto (2020, NÃO-PUB)
+    Citado por (3):
+      ← anpec-2023-braz-irffi (2023, np)
+      ← anpec-2024-alves-neto-oliveira (2024, np)
+      ← scopus-2024-cunha-soares (2024, pub)
+    Cita (4):
+      → econpapers-2011-resende (2011, np)
+      → scopus-2014-resende (2014, pub)
+      → scielo-2009-silva-resende-neto (2009, pub)
+      → anpec-2006-silva-resende-neto (2006, np)
+
+  anpec-2021-oliveira-neto (2021, NÃO-PUB)
+    Citado por (2):
+      ← anpec-2025-souza-irffi-carneiro (2025, np)
+      ← econpapers-2024-ribeiro (2024, pub)
+    Cita (10):
+      → capes-2007-almeida-resende-silva (2007, pub)
+      → scopus-2014-resende (2014, pub)
+      → anpec-2017-nascimento-haddad (2017, np)
+      → econpapers-2017-oliveira-resende-oliveira (2017, pub)
+      → econpapers-2014-resende (2014, np)
+      → econpapers-2011-resende (2011, np)
+      → scopus-2018-resende-silva-filho (2018, pub)
+      → scielo-2009-silva-resende-neto (2009, pub)
+      → anpec-2006-silva-resende-neto (2006, np)
+      → econpapers-2014-goncalves-soares-linhares (2014, np)
+
+  scopus-2020-ribeiro-caldas-souza (2020, PUB)
+    Citado por (2):
+      ← anpec-2025-souza-irffi-carneiro (2025, np)
+      ← scopus-2025-borges-rodrigues (2025, pub)
+    Cita (6):
+      → capes-2007-almeida-resende-silva (2007, pub)
+      → anpec-2017-nascimento-haddad (2017, np)
+      → anpec-2005-oliveira-domingues (2005, np)
+      → econpapers-2014-resende (2014, np)
+      → anpec-2006-silva-resende-neto (2006, np)
+      → econpapers-2014-goncalves-soares-linhares (2014, np)
+
+  anpec-2005-oliveira-domingues (2005, NÃO-PUB)
+    Citado por (9):
+      ← anpec-2017-nascimento-haddad (2017, np)
+      ← anpec-2017-oliveira-resende-goncalves (2017, np)
+      ← anpec-2024-braz-bastos-irffi (2024, np)
+      ← econpapers-2011-resende (2011, np)
+      ← econpapers-2014-goncalves-soares-linhares (2014, np)
+      ← econpapers-2014-viana-goncalves-linhares (2014, pub)
+      ← econpapers-2015-resende-silva-filho (2015, np)
+      ← scopus-2014-resende (2014, pub)
+      ← scopus-2020-ribeiro-caldas-souza (2020, pub)
+
+  anpec-2006-silva-resende-neto (2006, NÃO-PUB)
+    Citado por (8):
+      ← anpec-2020-oliveira-neto (2020, np)
+      ← anpec-2021-oliveira-neto (2021, np)
+      ← anpec-2024-carneiro-veloso-ferreira (2024, np)
+      ← econpapers-2015-oliveira-terra-resende (2015, np)
+      ← econpapers-2015-resende-silva-filho (2015, np)
+      ← scopus-2018-oliveira-terra-resende (2018, pub)
+      ← scopus-2020-ribeiro-caldas-souza (2020, pub)
+      ← scopus-2025-monte-irffi-bastos (2025, pub)
+
+  scopus-2018-oliveira-terra-resende (2018, PUB)
+    Citado por (1):
+      ← scopus-2025-borges-rodrigues (2025, pub)
+    Cita (4):
+      → capes-2007-almeida-resende-silva (2007, pub)
+      → econpapers-2011-resende (2011, np)
+      → anpec-2006-silva-resende-neto (2006, np)
+      → anpec-2015-oliveira-terra-resende (2015, np)
+
+  scopus-2017-garsous-novoa-velasco (2017, PUB)
+    Citado por (2):
+      ← anpec-2025-souza-irffi-carneiro (2025, np)
+      ← scopus-2024-costa-carneiro-irffi (2024, pub)
+
+  anpec-2015-oliveira-terra-resende (2015, NÃO-PUB)
+    Citado por (1):
+      ← scopus-2018-oliveira-terra-resende (2018, pub)
+    Cita (5):
+      → capes-2007-almeida-resende-silva (2007, pub)
+      → econpapers-2011-resende (2011, np)
+      → econpapers-2014-resende (2014, np)
+      → scielo-2009-silva-resende-neto (2009, pub)
+      → econpapers-2014-goncalves-soares-linhares (2014, np)
+
+  econpapers-2015-oliveira-arriel-rodrigues (2015, PUB)
+    Citado por (2):
+      ← anpec-2024-braz-bastos-irffi (2024, np)
+      ← scopus-2025-borges-rodrigues (2025, pub)
+    Cita (1):
+      → econpapers-2014-resende (2014, np)
+
+  econpapers-2015-resende-silva-filho (2015, NÃO-PUB)
+    Citado por (2):
+      ← anpec-2024-filho-alves (2024, np)
+      ← scopus-2025-monte-irffi-bastos (2025, pub)
+    Cita (6):
+      → capes-2007-almeida-resende-silva (2007, pub)
+      → scopus-2014-resende (2014, pub)
+      → anpec-2005-oliveira-domingues (2005, np)
+      → econpapers-2011-resende (2011, np)
+      → scielo-2009-silva-resende-neto (2009, pub)
+      → anpec-2006-silva-resende-neto (2006, np)
+
+  econpapers-2007-silva-resende-neto (2007, NÃO-PUB)
+    Citado por (2):
+      ← anpec-2017-oliveira-resende-goncalves (2017, np)
+      ← capes-2017-soares-sousa-neto (2017, pub)
+
+  anpec-2017-oliveira-resende-goncalves (2017, NÃO-PUB)
+    Citado por (1):
+      ← anpec-2025-souza-irffi-carneiro (2025, np)
+    Cita (5):
+      → capes-2007-almeida-resende-silva (2007, pub)
+      → anpec-2005-oliveira-domingues (2005, np)
+      → econpapers-2014-resende (2014, np)
+      → econpapers-2011-resende (2011, np)
+      → econpapers-2007-silva-resende-neto (2007, np)
+
+  anpec-2024-alves-neto-oliveira (2024, NÃO-PUB)
+    Cita (1):
+      → anpec-2020-oliveira-neto (2020, np)
+
+  anpec-2024-braz-bastos-irffi (2024, NÃO-PUB)
+    Citado por (2):
+      ← anpec-2025-gondim (2025, np)
+      ← anpec-2025-souza-irffi-carneiro (2025, np)
+    Cita (4):
+      → anpec-2023-braz-irffi (2023, np)
+      → anpec-2024-carneiro-veloso-ferreira (2024, np)
+      → anpec-2005-oliveira-domingues (2005, np)
+      → econpapers-2015-oliveira-arriel-rodrigues (2015, pub)
+
+  anpec-2024-calife-neto (2024, NÃO-PUB)
+    Cita (3):
+      → econpapers-2011-resende (2011, np)
+      → scopus-2014-resende (2014, pub)
+      → econpapers-2014-goncalves-soares-linhares (2014, np)
+
+  anpec-2024-carneiro-veloso-ferreira (2024, NÃO-PUB)
+    Citado por (2):
+      ← anpec-2025-gondim (2025, np)
+      ← anpec-2025-souza-irffi-carneiro (2025, np)
+    Cita (10):
+      → capes-2007-almeida-resende-silva (2007, pub)
+      → anpec-2023-braz-irffi (2023, np)
+      → anpec-2023-carneiro-costa-irffi (2023, np)
+      → scopus-2014-resende (2014, pub)
+      → anpec-2024-braz-bastos-irffi (2024, np)
+      → scielo-2022-gumiero (2022, pub)
+      → econpapers-2014-goncalves-soares-linhares (2014, np)
+      → econpapers-2011-resende (2011, np)
+      → econpapers-2014-resende (2014, np)
+      → anpec-2006-silva-resende-neto (2006, np)
+
+  anpec-2024-filho-alves (2024, NÃO-PUB)
+    Cita (2):
+      → econpapers-2015-resende-silva-filho (2015, np)
+      → scopus-2018-resende-silva-filho (2018, pub)
+
+  anpec-2024-veloso-costa-carneiro (2024, NÃO-PUB)
+    Citado por (1):
+      ← anpec-2025-souza-irffi-carneiro (2025, np)
+    Cita (1):
+      → scopus-2024-costa-carneiro-irffi (2024, pub)
+
+  anpec-2025-gondim (2025, NÃO-PUB)
+    Cita (7):
+      → anpec-2023-braz-irffi (2023, np)
+      → anpec-2024-carneiro-veloso-ferreira (2024, np)
+      → scopus-2014-resende (2014, pub)
+      → anpec-2024-braz-bastos-irffi (2024, np)
+      → econpapers-2014-goncalves-soares-linhares (2014, np)
+      → econpapers-2011-resende (2011, np)
+      → econpapers-2014-resende (2014, np)
+
+  anpec-2025-souza-irffi-carneiro (2025, NÃO-PUB)
+    Cita (12):
+      → anpec-2024-braz-bastos-irffi (2024, np)
+      → anpec-2023-braz-irffi (2023, np)
+      → anpec-2024-carneiro-veloso-ferreira (2024, np)
+      → scopus-2014-resende (2014, pub)
+      → scopus-2017-garsous-novoa-velasco (2017, pub)
+      → anpec-2024-veloso-costa-carneiro (2024, np)
+      → econpapers-2014-goncalves-soares-linhares (2014, np)
+      → anpec-2017-nascimento-haddad (2017, np)
+      → anpec-2017-oliveira-resende-goncalves (2017, np)
+      → anpec-2021-oliveira-neto (2021, np)
+      → scopus-2018-resende-silva-filho (2018, pub)
+      → scopus-2020-ribeiro-caldas-souza (2020, pub)
+
+  anpec-2025-veloso (2025, NÃO-PUB)
+    Cita (2):
+      → anpec-2023-carneiro-costa-irffi (2023, np)
+      → scopus-2024-costa-carneiro-irffi (2024, pub)
+
+  capes-2017-soares-sousa-neto (2017, PUB)
+    Cita (1):
+      → econpapers-2007-silva-resende-neto (2007, np)
+
+  econpapers-2014-viana-goncalves-linhares (2014, PUB)
+    Cita (2):
+      → anpec-2005-oliveira-domingues (2005, np)
+      → scielo-2009-silva-resende-neto (2009, pub)
+
+  econpapers-2015-oliveira-terra-resende (2015, NÃO-PUB)
+    Cita (3):
+      → capes-2007-almeida-resende-silva (2007, pub)
+      → econpapers-2011-resende (2011, np)
+      → anpec-2006-silva-resende-neto (2006, np)
+
+  econpapers-2024-ribeiro (2024, PUB)
+    Cita (5):
+      → anpec-2021-oliveira-neto (2021, np)
+      → econpapers-2014-goncalves-soares-linhares (2014, np)
+      → scopus-2018-resende-silva-filho (2018, pub)
+      → econpapers-2017-oliveira-resende-oliveira (2017, pub)
+      → scielo-2009-silva-resende-neto (2009, pub)
+
+  scielo-2022-gumiero (2022, PUB)
+    Citado por (1):
+      ← anpec-2024-carneiro-veloso-ferreira (2024, np)
+
+  scopus-2024-costa-carneiro-irffi (2024, PUB)
+    Citado por (1):
+      ← anpec-2025-veloso (2025, np)
+    Cita (3):
+      → anpec-2023-braz-irffi (2023, np)
+      → anpec-2023-carneiro-costa-irffi (2023, np)
+      → scopus-2017-garsous-novoa-velasco (2017, pub)
+
+  scopus-2024-cunha-soares (2024, PUB)
+    Cita (1):
+      → anpec-2020-oliveira-neto (2020, np)
+
+  scopus-2024-filho-moreira-silva (2024, PUB)
+    Cita (4):
+      → anpec-2017-nascimento-haddad (2017, np)
+      → econpapers-2017-oliveira-resende-oliveira (2017, pub)
+      → econpapers-2011-resende (2011, np)
+      → scopus-2014-resende (2014, pub)
+
+  scopus-2025-borges-rodrigues (2025, PUB)
+    Cita (6):
+      → econpapers-2017-oliveira-resende-oliveira (2017, pub)
+      → econpapers-2015-oliveira-arriel-rodrigues (2015, pub)
+      → scopus-2018-oliveira-terra-resende (2018, pub)
+      → scopus-2014-resende (2014, pub)
+      → scopus-2018-resende-silva-filho (2018, pub)
+      → scopus-2020-ribeiro-caldas-souza (2020, pub)
+
+  scopus-2025-monte-irffi-bastos (2025, PUB)
+    Cita (9):
+      → anpec-2017-nascimento-haddad (2017, np)
+      → econpapers-2017-oliveira-resende-oliveira (2017, pub)
+      → econpapers-2011-resende (2011, np)
+      → scopus-2014-resende (2014, pub)
+      → econpapers-2014-resende (2014, np)
+      → econpapers-2015-resende-silva-filho (2015, np)
+      → anpec-2006-silva-resende-neto (2006, np)
+      → scielo-2009-silva-resende-neto (2009, pub)
+      → scopus-2018-resende-silva-filho (2018, pub)

@@ -10,6 +10,8 @@
       "Bash(python main.py:*)",
       "Skill(keybindings-help)",
       "Skill(keybindings-help:*)",
+      "Skill(propagate-update)",
+      "Skill(propagate-update:*)",
       "Bash(python3:*)",
       "Bash(findstr:*)",
       "Bash(git commit -m \"$\\(cat <<''EOF''\nComplete LLM analysis of 118 papers \\(87 approved, 31 rejected\\)\n\nAdd standalone analysis script with checkpoint recovery and improve\nGemini API retry logic for 429/RESOURCE_EXHAUSTED errors with\nretryDelay extraction and exponential backoff.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")"
