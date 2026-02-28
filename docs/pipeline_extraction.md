@@ -273,6 +273,16 @@ onde X = ano do artigo A
 | anpec | Nao publicado | Apresentacoes em congresso |
 | econpapers | Manual | TDs/WPs = nao publicado; artigos em periodico = publicado |
 
+**Estudos com versao TD e versao publicada (mesmo trabalho, entradas distintas):**
+
+Alguns estudos aparecem mais de uma vez no dataset porque foram primeiro divulgados como texto para discussao (TD) ou apresentacao em congresso e depois publicados em periodico. Eles nao sao duplicatas no sentido estrito (titulos e anos diferem), mas representam o mesmo trabalho em estagios diferentes. O pipeline os mantem como entradas separadas, pois vieram de bases diferentes e passaram na deduplicacao. Para fins do IC, a versao publicada e a que conta como "publicado"; a versao TD/congresso e classificada como "nao publicado".
+
+| Versao nao-publicada | Versao publicada | Observacao |
+|----------------------|------------------|------------|
+| `econpapers-2015-oliveira-terra-resende` (TD, 2015) | `scopus-2018-oliveira-terra-resende` (periodico, 2018) | Mesmo estudo; TD do IPEA publicado posteriormente |
+| `econpapers-2015-resende-silva-filho` (TD, 2015) | `scopus-2018-resende-silva-filho` (periodico, 2018) | Mesmo estudo; IPEA TD 2145 publicado posteriormente |
+| `anpec-2006-silva-resende-neto` (congresso, 2006) + `econpapers-2007-silva-resende-neto` (TD, 2007) | `scielo-2009-silva-resende-neto` + `scopus-2009-silva-resende-neto` (periodico, 2009) | Mesmo estudo em 4 versoes (congresso → TD → periodico); scielo e scopus sao a mesma publicacao |
+
 **Resultados:** 54 estudos (24 publicados, 30 nao-publicados), **141 citacoes cruzadas**, **13 artigos nao-publicados com IC > 0**.
 
 Saidas:
