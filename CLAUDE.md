@@ -83,6 +83,8 @@ docs/pipeline_extraction.md     → Metodologia e log de extracao
 
 - `/propagate-update` — Diagnostica alteracoes no pipeline, planeja a propagacao para estagios downstream, executa com confirmacao do usuario e gera relatorio. Usar sempre que uma alteracao num estagio do pipeline precise ser propagada (nova extracao, novas duplicatas, mudanca de criterios, correcoes manuais, re-analise LLM). Definicao em `.claude/commands/propagate-update.md`.
 
+- `/escrever-artigo [secao]` — Redator academico para o artigo LaTeX. Sugere roteiro de topicos com marcacoes especiais (tabelas, figuras, quadros) baseado no Cap. 1 da tese, incorporando as inovacoes metodologicas do pndr_survey (5 bases, LLM, IC, deduplicacao). Somente escreve conteudo apos aprovacao explicita do usuario. Secoes: `introducao`, `politica`, `metodo`, `resultados`, `conclusao`, `resumo`, `todos`. Definicao em `.claude/commands/escrever-artigo.md`.
+
 ## Dependencias
 
 ```
@@ -100,4 +102,4 @@ Instalar com: `pip install -r scripts/requirements.txt`
 
 ## Referencias
 
-- **Projeto original:** `C:\github\tese\survey_extraction_system` (somente leitura)
+- **Projeto original (tese):** `C:\OneDrive\github\tese` (somente leitura, capitulo de referencia em `arquivos_latex/latex_tese/2-textuais/1-survey/`)
