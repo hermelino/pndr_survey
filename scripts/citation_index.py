@@ -497,7 +497,10 @@ def generate_report(studies, results, cross_citations):
     lines.append("=" * 90)
     lines.append("ARTIGOS NÃO-PUBLICADOS COM IC = 0 (não citados por publicados)")
     lines.append("=" * 90)
-    unpub_zero = [r for r in results if not r["is_published"] and r["IC_published"] == 0]
+    unpub_zero = sorted(
+        [r for r in results if not r["is_published"] and r["IC_published"] == 0],
+        key=lambda r: (r["year"], r["key"]),
+    )
     if unpub_zero:
         lines.append("")
         lines.append(f"{'Estudo':<45} {'Ano':>4} {'Tipo':<25} {'Cit. total':>10}")

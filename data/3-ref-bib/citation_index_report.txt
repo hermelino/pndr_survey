@@ -197,6 +197,7 @@ ARTIGOS NÃO-PUBLICADOS COM IC = 0 (não citados por publicados)
 Estudo                                         Ano Tipo                      Cit. total
 ------------------------------------------------------------------------------------------
 anpec-2013-campos-castelar                    2013 apresentação congresso             0
+econpapers-2015-oliveira-terra-resende        2015 texto p/ discussão                 0
 anpec-2017-oliveira-resende-goncalves         2017 apresentação congresso             1
 anpec-2021-bezerra-ramos                      2021 apresentação congresso             0
 anpec-2024-alves-neto-oliveira                2024 apresentação congresso             0
@@ -212,7 +213,6 @@ anpec-2025-shirasu                            2025 apresentação congresso     
 anpec-2025-silva-chagas-azzoni                2025 apresentação congresso             0
 anpec-2025-souza-irffi-carneiro               2025 apresentação congresso             0
 anpec-2025-veloso                             2025 apresentação congresso             0
-econpapers-2015-oliveira-terra-resende        2015 texto p/ discussão                 0
 ------------------------------------------------------------------------------------------
 Total: 17 artigos não-publicados sem citação de publicados
 
