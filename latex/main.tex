@@ -21,8 +21,7 @@ brazil            % Último idioma é o idioma padrão
 
 % --- Page Layout ---
 \usepackage[top=2.5cm, bottom=2.5cm, left=3cm, right=2.5cm]{geometry}
-\usepackage{setspace}
-\onehalfspacing
+\OnehalfSpacing
 
 % --- Fonts ---
 \usepackage{lmodern}
@@ -30,9 +29,7 @@ brazil            % Último idioma é o idioma padrão
 % --- Math ---
 \usepackage{amsmath,amssymb}
 
-% --- Tables ---
-\usepackage{booktabs}
-\usepackage{tabularx}
+% --- Tables (booktabs e tabularx já carregados por memoir/abntex2) ---
 \usepackage{longtable}
 \usepackage{multirow}
 
@@ -54,26 +51,31 @@ brazil            % Último idioma é o idioma padrão
 
 % --- Misc ---
 \usepackage{enumerate}
+\usepackage{enumitem}
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{indentfirst}
+\usepackage{../docs/prisma-flow-diagram}
 
 % =============================================================================
-\title{Avaliação dos Instrumentos da PNDR: Uma Revisão Sistemática da Literatura Empírica (2005--2025)}
+% --- Metadados abnTeX2 ---
+\titulo{Avaliação dos Instrumentos da PNDR: Uma Revisão Sistemática da Literatura Empírica (2005--2025)}
+\tituloestrangeiro{Evaluation of PNDR Instruments: A Systematic Review of the Empirical Literature (2005--2025)}
 
-\author{
+\autor{
     Hermelino Nepomuceno de Souza\thanks{CAEN/UFC.} \and
     Guilherme Diniz Irffi\thanks{CAEN/UFC.} \and
     Diego Rafael Fonseca Carneiro\thanks{CAEN/UFC.} \and
     Felipe de Sousa Bastos\thanks{CAEN/UFC.}
 }
 
-\date{\today}
+\data{\today}
 
 % =============================================================================
 \begin{document}
 
 \maketitle
+\textual
 
 % --- Abstract ---
 \begin{abstract}
@@ -114,6 +116,6 @@ brazil            % Último idioma é o idioma padrão
 % REFERENCES
 % =============================================================================
 \bibliographystyle{abntex2-alf}
-% \bibliography{references}
+\bibliography{references}
 
 \end{document}

@@ -19,7 +19,7 @@ Você é um redator acadêmico especializado em **economia aplicada**, com domí
 - **Arquivo:** `latex/main.tex`
 - **Título:** "Avaliação dos Instrumentos da PNDR: Uma Revisão Sistemática da Literatura Empírica (2005--2025)"
 - **Autor:** Hermelino Nepomuceno de Souza (CAEN/UFC)
-- **Formato:** article, 12pt, natbib+apalike, português (babel)
+- **Formato:** abntex2 (modo article), 12pt, abntex2cite (alf), português
 - **Seções:** Introdução, Política Regional no Brasil, Método, Discussão dos Resultados, Considerações Finais
 
 ### Projeto de referência (tese)
@@ -168,11 +168,12 @@ Somente após aprovação explícita do usuário:
 2. **Idioma:** Português formal brasileiro, norma culta
 3. **Tom:** Técnico-científico, impessoal, objetivo
 4. **Extensão:** Adequada a artigo (NÃO tese); cada seção deve ser concisa
-5. **Citações:** Usar `\citeonline{}` para citações integradas ao texto e `\cite{}` para citações entre parênteses — manter compatibilidade com natbib+apalike
-6. **Labels:** Usar `\label{sec:...}`, `\label{tab:...}`, `\label{fig:...}` consistentes
-7. **Tabelas:** Usar `booktabs` (toprule, midrule, bottomrule), com `\fonte{}` quando aplicável
-8. **Figuras:** Referenciar com `\graphicspath{{../figures/}}`
-9. **Notas de rodapé:** Usar `\footnote{}` com parcimônia
+5. **Quebras de linha:** Cada parágrafo deve ser escrito em uma única linha contínua, sem quebras de linha no meio de frases. Quebras de linha só devem ocorrer entre parágrafos (linha em branco) ou em ambientes LaTeX (tabelas, listas, etc.)
+6. **Citações:** Usar `\citeonline{}` para citações integradas ao texto e `\cite{}` para citações entre parênteses — comandos nativos do abntex2cite
+7. **Labels:** Usar `\label{sec:...}`, `\label{tab:...}`, `\label{fig:...}` consistentes
+8. **Tabelas:** Usar `booktabs` (toprule, midrule, bottomrule), com `\fonte{}` quando aplicável
+9. **Figuras:** Referenciar com `\graphicspath{{../figures/}}`
+10. **Notas de rodapé:** Usar `\footnote{}` com parcimônia
 
 ### Cuidados linguísticos
 
