@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nReplace Google Scholar with ANPEC searcher and log extraction results\n\nGoogle Scholar excluded due to 12k+ irrelevant results; relevant\njournals already covered by CAPES and RePEc. Add ANPEC searcher\n\\(site:anpec.org.br via Google Search, import Excel/RIS/CSV\\).\nUpdate README with extraction log: 132 raw records from 4 databases,\n125 unique after deduplication.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)",
+      "Bash(powershell -Command:*)",
+      "Bash(ls \"c:\\\\OneDrive\\\\github\\\\tese\\\\survey_extraction_system\"\" 2>nul || echo \"Directory not found \")",
+      "Bash(python main.py:*)",
+      "Skill(keybindings-help)",
+      "Skill(keybindings-help:*)",
+      "Bash(python3:*)",
+      "Bash(findstr:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nComplete LLM analysis of 118 papers \\(87 approved, 31 rejected\\)\n\nAdd standalone analysis script with checkpoint recovery and improve\nGemini API retry logic for 429/RESOURCE_EXHAUSTED errors with\nretryDelay extraction and exponential backoff.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")"
+    ]
+  }
+}

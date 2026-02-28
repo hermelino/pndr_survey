@@ -13,7 +13,7 @@ except ImportError:
     import fitz  # PyMuPDF < 1.24
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-XLSX = BASE_DIR / "2-papers" / "all_papers_llm_classification_edited.xlsx"
+XLSX = BASE_DIR / "2-papers" / "all_papers_llm_classif_final.xlsx"
 PDF_DIR = BASE_DIR / "2-papers" / "2-2-papers-pdfs"
 OUT_DIR = Path(__file__).resolve().parent / "refs_por_estudo"
 

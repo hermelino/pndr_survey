@@ -20,6 +20,7 @@ pndr_survey/
 │   ├── test_llm_single.py         # Teste de analise LLM em PDF individual
 │   ├── merge_papers_to_json.py    # Mescla registros + classificacao LLM → JSON
 │   ├── match_refs_to_studies.py   # Matching de citacoes entre estudos da triagem
+│   ├── citation_index.py         # Indice de citacao (IC) para revisao sistematica
 │   ├── config.yaml                # Configuracao (nao versionado)
 │   ├── config.example.yaml        # Template
 │   ├── requirements.txt
@@ -53,8 +54,8 @@ pndr_survey/
 │   │   ├── 2-2-papers-pdfs/       # 118 PDFs renomeados
 │   │   ├── 2-1-papers_scripts/    # Scripts de renomeacao e verificacao
 │   │   ├── all_papers.xlsx        # Controle: registros + status de download
-│   │   ├── all_papers_llm_classification.xlsx        # Classificacao LLM bruta
-│   │   ├── all_papers_llm_classification_edited.xlsx  # Classificacao LLM revisada
+│   │   ├── all_papers_llm_classif.xlsx        # Classificacao LLM bruta
+│   │   ├── all_papers_llm_classif_final.xlsx  # Classificacao LLM revisada
 │   │   ├── _llm_checkpoint.json   # Checkpoint da analise LLM (stages 1-3)
 │   │   └── build_verified_xlsx.py # Gera xlsx verificado a partir do checkpoint
 │   └── 3-ref-bib/                   # Referencias bibliograficas dos estudos
@@ -62,7 +63,9 @@ pndr_survey/
 │       ├── estruturar_referencias.py  # Estruturacao de refs em JSON
 │       ├── referencias_consolidadas.txt
 │       ├── referencias_estruturadas.json
-│       └── refs_por_estudo/           # 54 JSONs + TXTs com refs por estudo
+│       ├── refs_por_estudo/           # 54 JSONs + TXTs com refs por estudo
+│       ├── citation_index_results.json # Indice de citacao por estudo (JSON)
+│       └── citation_index_report.txt   # Relatorio do indice de citacao
 ├── latex/                         # Artigo LaTeX (esqueleto)
 ├── figures/                       # Figuras para o artigo
 └── docs/
@@ -95,6 +98,9 @@ Busca manual nas 5 bases                   PDFs coletados (118)
                                                        |
                                                        v
                                                [8] Extracao e matching de citacoes
+                                                      |
+                                                      v
+                                               [9] Indice de citacao (IC)
 ```
 
 ## Status Atual
@@ -109,8 +115,9 @@ Busca manual nas 5 bases                   PDFs coletados (118)
 | 6 | Triagem final (53 aprovados, 65 rejeitados) | Concluido |
 | 7 | Consolidacao JSON (registros + LLM) | Concluido |
 | 8 | Extracao de referencias (54 estudos) | Concluido |
-| 9 | Matching de citacoes entre estudos (80 citacoes cruzadas) | Concluido |
-| 10 | Artigo LaTeX | Em andamento |
+| 9 | Matching de citacoes entre estudos (141 citacoes cruzadas) | Concluido |
+| 10 | Indice de citacao (13 nao-publicados com IC > 0) | Concluido |
+| 11 | Artigo LaTeX | Em andamento |
 
 Detalhes da extracao: [docs/pipeline_extraction.md](docs/pipeline_extraction.md)
 
@@ -145,6 +152,9 @@ python merge_papers_to_json.py
 
 # Matching de citacoes entre estudos
 python match_refs_to_studies.py
+
+# Indice de citacao
+python citation_index.py
 ```
 
 ## Referencia de Comandos
@@ -158,6 +168,7 @@ python match_refs_to_studies.py
 | `run_llm_all_papers.py` | Analise LLM em lote (todos os PDFs) | — |
 | `merge_papers_to_json.py` | Mescla registros + LLM → JSON enriquecido | — |
 | `match_refs_to_studies.py` | Matching de citacoes entre estudos da triagem | — |
+| `citation_index.py` | Indice de citacao (IC) para artigos nao-publicados | — |
 
 Opcoes globais do `main.py`: `--config FILE`, `--verbose`, `--output-dir DIR`
 

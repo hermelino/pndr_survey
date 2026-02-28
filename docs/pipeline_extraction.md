@@ -161,8 +161,8 @@ Controle detalhado: `data/2-papers/all_papers.xlsx` (planilha "Registros", colun
 | `data/1-records/processed/bib_screened.json` | Registros apos triagem pre-LLM |
 | `data/1-records/processed/duplicates_removed.csv` | 9 duplicatas removidas (auditoria) |
 | `data/2-papers/_llm_checkpoint.json` | Checkpoint com resultados LLM (stages 1-3) para 118 papers |
-| `data/2-papers/all_papers_llm_classification.xlsx` | Classificacao LLM bruta (gerada automaticamente) |
-| `data/2-papers/all_papers_llm_classification_edited.xlsx` | Classificacao LLM revisada manualmente (triagem final) |
+| `data/2-papers/all_papers_llm_classif.xlsx` | Classificacao LLM bruta (gerada automaticamente) |
+| `data/2-papers/all_papers_llm_classif_final.xlsx` | Classificacao LLM revisada manualmente (triagem final) |
 | `data/2-papers/2-2-papers.json` | JSON enriquecido: registros + LLM + triagem (fonte principal) |
 
 ## Analise LLM
@@ -183,7 +183,7 @@ Extrai resultados: efeito parcial, significancia, direcao do efeito, outros resu
 
 ### Triagem final
 
-Apos a analise LLM, triagem manual em `all_papers_llm_classification_edited.xlsx`:
+Apos a analise LLM, triagem manual em `all_papers_llm_classif_final.xlsx`:
 
 | Resultado | Quantidade |
 |-----------|-----------|
@@ -199,7 +199,7 @@ Script: `scripts/merge_papers_to_json.py`
 
 Mescla tres fontes em um unico JSON (`data/2-papers/2-2-papers.json`):
 
-1. `all_papers_llm_classification_edited.xlsx` — triagem + classificacao LLM (S1/S2/S3)
+1. `all_papers_llm_classif_final.xlsx` — triagem + classificacao LLM (S1/S2/S3)
 2. `all_papers.xlsx` — URL, resumo, tipo, palavras-chave
 3. `bib_records.json` — metadados completos das bases (abstract, volume, issue, pages, idioma)
 
@@ -239,6 +239,45 @@ Campos adicionados a cada referencia nos JSONs:
 | `match_score` | float/null | Score do token_sort_ratio (75-100) |
 
 Resultado: **80 citacoes cruzadas** encontradas em **23 dos 54 arquivos** de referencias.
+
+### Indice de citacao (IC)
+
+Script: `scripts/citation_index.py`
+
+Calcula um indice de citacao para cada estudo, medindo a importancia que a literatura publicada atribui aos artigos nao-publicados (textos para discussao, apresentacoes em congresso). Usado como criterio para inclusao de artigos nao-publicados na revisao sistematica.
+
+**Formula:**
+
+```
+IC(A) = citacoes recebidas de artigos publicados em [X+1, 2025]
+        / total de artigos publicados em [X+1, 2025]
+
+onde X = ano do artigo A
+```
+
+**Metodologia de matching (independente do match_refs_to_studies.py):**
+
+1. **Matching por autor** — extrai sobrenomes do filename e compara com campo `autor` das referencias (normalizados via unidecode)
+2. **Matching por ano** — tolerancia de ±2 anos (captura working papers citados pelo ano de publicacao)
+3. **Matching por titulo** — similaridade de palavras-chave entre titulo do estudo e titulo/raw da referencia
+4. **Restricao cronologica** — estudo citante deve ser do mesmo ano ou posterior ao estudo citado
+5. **Penalizacao single-author** — autores unicos (ex: "Resende") exigem evidencia de titulo para evitar falsos positivos
+
+**Classificacao publicado/nao-publicado:**
+
+| Fonte | Classificacao | Justificativa |
+|-------|---------------|---------------|
+| scopus | Publicado | Periodicos indexados |
+| scielo | Publicado | Periodicos indexados |
+| capes | Publicado | Periodicos CAPES (todos tem journal) |
+| anpec | Nao publicado | Apresentacoes em congresso |
+| econpapers | Manual | TDs/WPs = nao publicado; artigos em periodico = publicado |
+
+**Resultados:** 54 estudos (24 publicados, 30 nao-publicados), **141 citacoes cruzadas**, **13 artigos nao-publicados com IC > 0**.
+
+Saidas:
+- `data/3-ref-bib/citation_index_results.json` — dados completos por estudo
+- `data/3-ref-bib/citation_index_report.txt` — relatorio com ranking e citacoes detalhadas
 
 ## Comando de importacao
 

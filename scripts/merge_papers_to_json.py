@@ -1,7 +1,7 @@
-"""Mescla all_papers_llm_classification_edited.xlsx com registros das bases de dados.
+"""Mescla all_papers_llm_classif_final.xlsx com registros das bases de dados.
 
 Combina:
-  1. all_papers_llm_classification_edited.xlsx (triagem + análise LLM S1/S2/S3)
+  1. all_papers_llm_classif_final.xlsx (triagem + análise LLM S1/S2/S3)
   2. all_papers.xlsx (URL, Resumo, Tipo, Palavras-chave, ID)
   3. bib_records.json (metadados completos das bases: abstract, keywords, volume, etc.)
 
@@ -26,7 +26,7 @@ from unidecode import unidecode
 BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = BASE_DIR / "data"
 
-LLM_XLSX = DATA_DIR / "2-papers" / "all_papers_llm_classification_edited.xlsx"
+LLM_XLSX = DATA_DIR / "2-papers" / "all_papers_llm_classif_final.xlsx"
 ALL_PAPERS_XLSX = DATA_DIR / "2-papers" / "all_papers.xlsx"
 BIB_RECORDS_JSON = DATA_DIR / "1-records" / "processed" / "bib_records.json"
 LLM_CHECKPOINT = DATA_DIR / "2-papers" / "_llm_checkpoint.json"
@@ -348,7 +348,7 @@ def merge_papers(llm_papers: dict, all_papers: dict, bib_matched: dict, checkpoi
 def main():
     print("Carregando dados...")
 
-    print("  1. all_papers_llm_classification_edited.xlsx")
+    print("  1. all_papers_llm_classif_final.xlsx")
     llm_papers = load_llm_xlsx()
     print(f"     {len(llm_papers)} papers")
 

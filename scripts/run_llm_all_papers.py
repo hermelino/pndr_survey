@@ -6,7 +6,7 @@ Pipeline:
   3. Stage 1 (triagem): 10 perguntas → filtra por is_scientific_study + instrumentos + econometria
   4. Stage 2 (metodologia): 10 perguntas nos que passam
   5. Stage 3 (resultados): 7 perguntas nos que passam
-  6. Salva tudo em all_papers_llm_classification.xlsx
+  6. Salva tudo em all_papers_llm_classif.xlsx
 
 Inclui checkpoint JSON para retomar em caso de falha.
 """
@@ -35,7 +35,7 @@ PROJECT_DIR = SCRIPT_DIR.parent
 DATA_DIR = PROJECT_DIR / "data" / "2-papers"
 PDF_DIR = DATA_DIR / "2-2-papers-pdfs"
 INPUT_XLSX = DATA_DIR / "all_papers.xlsx"
-OUTPUT_XLSX = DATA_DIR / "all_papers_llm_classification.xlsx"
+OUTPUT_XLSX = DATA_DIR / "all_papers_llm_classif.xlsx"
 CHECKPOINT_FILE = DATA_DIR / "_llm_checkpoint.json"
 
 # --- Logging ---
@@ -261,7 +261,7 @@ def run_analysis():
 
 
 def write_output_xlsx(papers, checkpoint, q1_ids, q2_ids, q3_ids):
-    """Gera all_papers_llm_classification.xlsx com todos os resultados."""
+    """Gera all_papers_llm_classif.xlsx com todos os resultados."""
 
     wb = openpyxl.Workbook()
     ws = wb.active

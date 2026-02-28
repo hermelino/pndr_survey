@@ -1,4 +1,4 @@
-"""Atualiza a aba 'Resumo' de all_papers_llm_classification_edited.xlsx
+"""Atualiza a aba 'Resumo' de all_papers_llm_classif_final.xlsx
 com estatísticas agregadas de todas as colunas S1, S2 e S3."""
 
 import re
@@ -8,7 +8,7 @@ from pathlib import Path
 import openpyxl
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 
-XLSX = Path(__file__).resolve().parent.parent / "all_papers_llm_classification_edited.xlsx"
+XLSX = Path(__file__).resolve().parent.parent / "all_papers_llm_classif_final.xlsx"
 
 # ── Styles ──────────────────────────────────────────────────────────────────
 HEADER_FILL = PatternFill(start_color="4472C4", end_color="4472C4", fill_type="solid")

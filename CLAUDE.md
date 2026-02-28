@@ -14,6 +14,7 @@ scripts/                        → Pipeline Python
   run_llm_all_papers.py         → Execucao da analise LLM em lote
   merge_papers_to_json.py       → Mescla registros + LLM → JSON enriquecido
   match_refs_to_studies.py      → Matching de citacoes entre estudos
+  citation_index.py             → Indice de citacao (IC) para revisao sistematica
   src/
     models.py                   → BibRecord (bibliografico) + PaperRecord (analise LLM)
     config.py                   → Carregamento YAML + validacao
@@ -33,9 +34,11 @@ data/2-papers/                  → Artigos e classificacao
   2-2-papers-pdfs/              → 118 PDFs renomeados (nao versionados)
   2-1-papers_scripts/           → Scripts de renomeacao e verificacao
   _llm_checkpoint.json          → Checkpoint da analise LLM
-  all_papers_llm_classification_edited.xlsx → Classificacao revisada
+  all_papers_llm_classif_final.xlsx → Classificacao revisada
 data/3-ref-bib/                → Referencias extraidas dos estudos
   refs_por_estudo/              → 54 JSONs com refs estruturadas + matching
+  citation_index_results.json   → Indice de citacao por estudo (JSON)
+  citation_index_report.txt     → Relatorio do indice de citacao
 latex/                          → Artigo LaTeX (nao modificar via scripts)
 figures/                        → Figuras para o artigo
 docs/pipeline_extraction.md     → Metodologia e log de extracao
