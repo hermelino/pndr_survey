@@ -8,12 +8,12 @@ Data de elaboração: 2026-02-28
 
 > **Descrição:** Apresentar o objetivo da revisão sistemática (avaliar estudos empíricos com abordagem econométrica sobre instrumentos da PNDR), justificar a adoção do protocolo PRISMA 2020 e descrever o fluxo geral de busca, triagem e seleção.
 > **Fonte na tese:** `1-3-metodo.tex`, linhas 7–23
-> **Adaptações necessárias:** `[REESCREVER]` Texto mais conciso e direto, adaptado a formato de artigo. Atualizar referência ao PRISMA com números do novo pipeline (5 bases, 128 registros brutos, 118 após dedup fase 1, 46 aprovados).
+> **Adaptações necessárias:** `[REESCREVER]` Texto mais conciso e direto, adaptado a formato de artigo. Atualizar referência ao PRISMA com números do novo pipeline (5 bases, 128 registros brutos, 118 após dedup fase 1, 45 aprovados).
 
 [DIAGRAMA] Diagrama 1: Fluxo PRISMA 2020
 - Fonte: `figuras/1-survey/diagrama_prisma.tex` (tese) — a ser refeito
 - Descrição: Fluxo de identificação, triagem, elegibilidade e inclusão dos estudos
-- Adaptação: `[REESCREVER]` Refazer com números atualizados: 5 bases → 128 registros brutos → dedup (27 removidas em 4 fases) → 118 únicos → triagem LLM + manual → 46 aprovados, 72 rejeitados
+- Adaptação: `[REESCREVER]` Refazer com números atualizados: 5 bases → 128 registros brutos → dedup (28 removidas em 4 fases) → 118 únicos → triagem LLM + manual → 45 aprovados, 73 rejeitados
 
 ---
 
@@ -45,7 +45,7 @@ Data de elaboração: 2026-02-28
 
 ## 3.4 Processo de deduplicação `[NOVO]`
 
-> **Descrição:** Descrever o algoritmo de deduplicação em 4 fases: (1) DOI exato — 5 removidas; (2) título fuzzy (token_sort_ratio ≥ 80%) — 4 removidas; (3) PDF idêntico — 10 removidas; (4) manual TD/WP (versões duplicadas de trabalhos publicados) — 8 removidas. Total: 27 duplicatas removidas. Explicar a prioridade de retenção (Scopus > SciELO > CAPES > EconPapers > ANPEC).
+> **Descrição:** Descrever o algoritmo de deduplicação em 4 fases: (1) DOI exato — 5 removidas; (2) título fuzzy (token_sort_ratio ≥ 80%) — 4 removidas; (3) PDF idêntico — 10 removidas; (4) manual TD/WP (versões duplicadas de trabalhos publicados) — 9 removidas. Total: 28 duplicatas removidas. Explicar a prioridade de retenção (Scopus > SciELO > CAPES > EconPapers > ANPEC).
 > **Fonte na tese:** Não descrito
 > **Adaptações necessárias:** `[NOVO]` Seção inteiramente nova. Dados em `pipeline_extraction.md` (seção "Deduplicacao").
 
@@ -54,11 +54,11 @@ Data de elaboração: 2026-02-28
 - Descrição: 4 fases × quantidade removida, com exemplos representativos
 - Adaptação: `[NOVO]`
 
-`[NOTA]` A fase 4 (manual TD/WP) foi realizada após a análise de índice de citação, quando se identificou que 8 entradas correspondiam a versões working paper/congresso de artigos já publicados em periódicos. A versão publicada (Scopus) foi mantida.
+`[NOTA]` A fase 4 (manual TD/WP) foi realizada após a análise de índice de citação, quando se identificou que 9 entradas correspondiam a versões working paper/congresso de artigos já publicados em periódicos. A versão publicada (Scopus ou EconPapers/periódico) foi mantida.
 
 ---
 
-## 3.5 Análise assistida por LLM `[NOVO]`
+## 3.5 Análise assistida por LLM `[NÃO INCLUIR]`
 
 > **Descrição:** Descrever o pipeline de classificação automatizada via Gemini 2.0 Flash em 3 estágios sequenciais, aplicado aos 118 PDFs. Stage 1 (Triagem): identifica tipo de trabalho, instrumentos PNDR, uso de econometria. Stage 2 (Metodologia): extrai método econométrico, variáveis, amostra. Stage 3 (Resultados): extrai efeitos parciais, significância, direção. Descrever o papel do LLM como assistente (não como decisor) e a revisão manual subsequente.
 > **Fonte na tese:** Não existe
@@ -78,9 +78,9 @@ Data de elaboração: 2026-02-28
 
 ## 3.6 Triagem final `[NOVO]`
 
-> **Descrição:** Descrever o processo de triagem final combinando resultado do LLM (Stage 1) com revisão manual do pesquisador. Apresentar os números: de 118 registros, 46 aprovados e 72 rejeitados. Detalhar os motivos de rejeição: sem instrumentos PNDR (35), sem método econométrico (17), não é estudo científico (10), anterior a 2005 (2), duplicata de versão publicada (6), outros (2). Destacar que a revisão manual rejeitou 35 papers que o LLM havia aprovado (taxa de correção de ~40%).
+> **Descrição:** Descrever o processo de triagem final combinando resultado do LLM (Stage 1) com revisão manual do pesquisador. Apresentar os números: de 118 registros, 45 aprovados e 73 rejeitados. Detalhar os motivos de rejeição: sem instrumentos PNDR (35), sem método econométrico (17), não é estudo científico (10), anterior a 2005 (2), duplicata de versão publicada (7), outros (2). Destacar que a revisão manual rejeitou 35 papers que o LLM havia aprovado (taxa de correção de ~40%).
 > **Fonte na tese:** `1-3-metodo.tex`, linhas 26 (parcial — na tese era 37 aprovados com fluxo diferente)
-> **Adaptações necessárias:** `[REESCREVER]` Números completamente diferentes (46 vs. 37). Processo de triagem novo (LLM + manual vs. apenas manual).
+> **Adaptações necessárias:** `[REESCREVER]` Números completamente diferentes (45 vs. 37). Processo de triagem novo (LLM + manual vs. apenas manual).
 
 [TABELA] Tabela 3: Resultado da triagem final
 - Fonte: `data/2-papers/2-2-papers.json` (campo `triagem` e `motivo_exclusao`)
@@ -89,9 +89,9 @@ Data de elaboração: 2026-02-28
 
 ---
 
-## 3.7 Índice de citação (IC) `[NOVO]`
+## 3.7 Índice de citação (IC) `[NÃO INCLUIR]`
 
-> **Descrição:** Apresentar o índice de citação como ferramenta para medir a relevância dos estudos não publicados dentro da rede de literatura sobre PNDR. Fórmula: IC(A) = citações recebidas de artigos publicados em [X+1, 2025] / total de artigos publicados em [X+1, 2025]. Descrever a metodologia de matching (autor + ano + título, com tolerância) e a classificação publicado/não-publicado por base. Apresentar ranking dos principais estudos e destacar que 9 dos 25 artigos não publicados possuem IC > 0.
+> **Descrição:** Apresentar o índice de citação como ferramenta para medir a relevância dos estudos não publicados dentro da rede de literatura sobre PNDR. Fórmula: IC(A) = citações recebidas de artigos publicados em [X+1, 2025] / total de artigos publicados em [X+1, 2025]. Descrever a metodologia de matching (autor + ano + título, com tolerância) e a classificação publicado/não-publicado por base. Apresentar ranking dos principais estudos e destacar que 8 dos 23 artigos não publicados possuem IC > 0.
 > **Fonte na tese:** Não existe
 > **Adaptações necessárias:** `[NOVO]` Seção inteiramente nova. Dados em `citation_index_report.txt` e `citation_index_results.json`.
 
@@ -109,14 +109,14 @@ Data de elaboração: 2026-02-28
 
 ## 3.8 Descrição dos estudos obtidos
 
-> **Descrição:** Caracterizar a amostra final de 46 estudos (2005–2025): distribuição temporal, tipo de publicação (23 publicados em periódicos, 25 não publicados — TDs e congressos, sendo 2 que foram resolvidos como duplicatas), autores mais recorrentes, panorama metodológico (escala MSM), distribuição por instrumento avaliado (FC, FD, IF). Incluir mapa de distribuição da literatura.
+> **Descrição:** Caracterizar a amostra final de 45 estudos (2005–2025): distribuição temporal, tipo de publicação (22 publicados em periódicos, 23 não publicados — TDs e congressos), autores mais recorrentes, panorama metodológico (escala MSM), distribuição por instrumento avaliado (FC, FD, IF). Incluir mapa de distribuição da literatura.
 > **Fonte na tese:** `1-3-metodo.tex`, linhas 34–60
-> **Adaptações necessárias:** `[REESCREVER]` Atualizar todos os números (37→46, 18 publicados→23, etc.). Adaptar distribuição temporal. Manter escala MSM mas atualizar contagens de métodos.
+> **Adaptações necessárias:** `[REESCREVER]` Atualizar todos os números (37→45, 18 publicados→22, etc.). Adaptar distribuição temporal. Manter escala MSM mas atualizar contagens de métodos.
 
 [FIGURA] Figura 1: Mapa de distribuição dos artigos (litmap)
 - Fonte: `figuras/1-survey/litmap_0910.png` (tese)
 - Descrição: Mapa visual da distribuição da literatura
-- Adaptação: `[REESCREVER]` Refazer com 46 estudos e dados atualizados
+- Adaptação: `[REESCREVER]` Refazer com 45 estudos e dados atualizados
 
 `[REMOVER]` Detalhamento excessivo da escala MSM (parágrafos sobre escore 5 e aleatoriedade, que ocupam espaço desproporcional no formato artigo). Manter apenas parágrafo-síntese do panorama metodológico.
 
@@ -128,10 +128,10 @@ Data de elaboração: 2026-02-28
 |---------|---------------|---------------------|
 | Bases de busca | 3 (ANPEC, CAPES, RePEc) | 5 (Scopus, SciELO, CAPES, EconPapers, ANPEC) |
 | Registros coletados | ~135 | 128 brutos → 118 após dedup fase 1 |
-| Estudos aprovados | 37 | 46 |
-| Deduplicação | Não descrita | 4 fases (27 removidas) |
+| Estudos aprovados | 37 | 45 |
+| Deduplicação | Não descrita | 4 fases (28 removidas) |
 | Classificação | Manual | LLM-assistida (Gemini 2.0 Flash, 3 estágios) + revisão manual |
-| Índice de citação | Não disponível | IC calculado para 48 estudos (121 citações) |
+| Índice de citação | Não disponível | IC calculado para 45 estudos (118 citações) |
 | Subseções novas | — | 3.4, 3.5, 3.6, 3.7 (todas `[NOVO]`) |
 
 ---
@@ -144,9 +144,9 @@ Data de elaboração: 2026-02-28
 | 2 | TABELA | Bases de dados e registros | `[NOVO]` |
 | 3 | QUADRO | Expressões de busca por base | `[NOVO]` |
 | 4 | TABELA | Duplicatas removidas por fase | `[NOVO]` |
-| 5 | DIAGRAMA | Pipeline de classificação LLM | `[NOVO]` a criar |
-| 6 | QUADRO | Campos extraídos por estágio LLM | `[NOVO]` |
+| 5 | DIAGRAMA | Pipeline de classificação LLM | `[NÃO INCLUIR]` a criar |
+| 6 | QUADRO | Campos extraídos por estágio LLM | `[NÃO INCLUIR]` |
 | 7 | TABELA | Resultado da triagem final | `[NOVO]` |
-| 8 | TABELA | Ranking por índice de citação | `[NOVO]` |
-| 9 | EQUAÇÃO | Fórmula do IC | `[NOVO]` |
+| 8 | TABELA | Ranking por índice de citação | `[NÃO INCLUIR]` |
+| 9 | EQUAÇÃO | Fórmula do IC | `[NÃO INCLUIR]` |
 | 10 | FIGURA | Mapa de distribuição dos artigos | `[REESCREVER]` |

@@ -1,0 +1,168 @@
+% Arquivo: latex/metodo.tex
+% Seção 3: Método
+% Gerado a partir do roteiro latex/roteiro_metodo.md
+
+\subsection{Estratégia de busca e seleção}
+\label{subsec:estrategia-busca}
+
+O objetivo desta revisão sistemática é identificar e sintetizar estudos empíricos que
+empreguem abordagem econométrica para avaliar o efeito de instrumentos de financiamento
+da PNDR --- Fundos Constitucionais de Financiamento, Fundos de Desenvolvimento Regional
+e Incentivos Fiscais --- sobre indicadores socioeconômicos locais. O protocolo de busca,
+triagem e seleção segue as diretrizes PRISMA 2020 (\textit{Preferred Reporting Items for
+Systematic Reviews and Meta-Analyses}), conforme \citeonline{Pageetal2021}, com o intuito
+de assegurar transparência e reprodutibilidade em cada etapa do processo.
+
+A busca foi conduzida em cinco bases de dados acadêmicas --- Scopus, SciELO, Portal de
+Periódicos da CAPES, EconPapers/RePEc e anais dos encontros da ANPEC. A consulta a
+múltiplas fontes justifica-se pela elevada dispersão dos registros: periódicos nacionais
+de economia tendem a apresentar menor cobertura em bases de dados internacionais, e
+parte relevante da produção sobre instrumentos da PNDR concentra-se em \textit{working
+papers}, textos para discussão e apresentações em congressos nacionais, veículos nem
+sempre indexados por essas bases. Das cinco fontes, obtiveram-se 137 registros. Após a
+remoção de 19 duplicatas em três fases automatizadas, 118 registros únicos foram
+submetidos à análise de elegibilidade. A triagem combinou classificação automatizada com
+revisão dos autores, resultando na inclusão de 45 estudos e exclusão de
+73. A Figura~\ref{fig:diagrama_prisma} apresenta o diagrama de fluxo PRISMA 2020 com
+o detalhamento quantitativo de cada etapa.\footnote{Os scripts de coleta, deduplicação
+e triagem estão disponíveis no repositório de replicação do autor em
+\url{https://github.com/hermelino/pndr_survey}.}
+
+% TODO: Inserir diagrama PRISMA 2020 com números atualizados
+% Fluxo: 5 bases → 137 registros → dedup (19 removidas) → 118 únicos
+%        → triagem → 45 aprovados, 73 rejeitados
+
+\subsection{Bases de dados consultadas}
+\label{subsec:bases-dados}
+
+A seleção das cinco bases visa garantir cobertura abrangente da literatura. A
+Scopus indexa os principais periódicos internacionais de economia; a SciELO
+complementa a cobertura de periódicos nacionais em acesso aberto; o Portal de
+Periódicos da CAPES agrega centenas de bases de dados nacionais e internacionais;
+o EconPapers/RePEc concentra \textit{working papers} e textos para discussão com
+ampla cobertura em economia; e os anais da ANPEC capturam trabalhos apresentados
+nos encontros nacionais e regionais de economia, incluindo estudos ainda não
+publicados em periódicos. A Tabela~\ref{tab:bases-registros} resume o número de
+registros obtidos em cada fonte.
+
+\begin{table}[h]
+\centering
+\caption{Registros obtidos por base de dados}
+\label{tab:bases-registros}
+\begin{tabular}{lr}
+\toprule
+Base de dados & Registros \\
+\midrule
+Scopus & 16 \\
+SciELO & 5 \\
+Portal de Periódicos da CAPES & 30 \\
+EconPapers/RePEc & 24 \\
+ANPEC (encontros nacionais e regionais) & 62 \\
+\midrule
+\textbf{Total bruto} & \textbf{137} \\
+\bottomrule
+\end{tabular}
+\fonte{Elaboração própria.}
+\end{table}
+
+\subsection{Expressões de busca e critérios de inclusão e exclusão}
+\label{subsec:criterios}
+
+A estratégia de busca empregou combinação de três blocos de termos conectados pelo
+operador AND: (1)~instrumentos de financiamento (``fundo constitucional'', ``fundo
+de desenvolvimento'', ``incentivo fiscal'', com variações em inglês); (2)~organizações
+e siglas associadas à PNDR (FNE, FNO, FCO, FDNE, FDCO, SUDENE, SUDAM, PNDR); e
+(3)~delimitação geográfica (Nordeste, Amazônia, Centro-Oeste, Brasil). Dentro de
+cada bloco, os termos foram conectados pelo operador OR. As expressões exatas foram
+adaptadas à sintaxe de cada base.
+
+São admissíveis a compor a amostra artigos publicados em periódicos, \textit{working
+papers}, textos para discussão e apresentações em congressos. Os critérios de inclusão
+adotados foram: (i)~estudos empíricos que avaliem pelo menos um instrumento de
+financiamento da PNDR; (ii)~emprego de abordagem econométrica que permita isolamento
+do efeito da política sobre indicadores socioeconômicos; e (iii)~publicação em
+qualquer dos formatos acima.
+
+Os critérios de exclusão foram: (a)~estudos que não avaliem explicitamente
+instrumentos da PNDR; (b)~abordagens exclusivamente qualitativas ou descritivas;
+(c)~avaliações sem emprego de métodos econométricos de controle de fatores simultâneos
+à política; (d)~estudos anteriores a 2005, ano a partir do qual se identificam as
+primeiras avaliações empíricas desses instrumentos; e (e)~duplicatas de versão
+publicada, casos em que um mesmo trabalho aparece como texto para discussão ou
+apresentação em congresso e como artigo em periódico, retendo-se a versão publicada.
+
+\subsection{Processo de deduplicação}
+\label{subsec:deduplicacao}
+
+A consulta a múltiplas bases de dados implica a presença de registros duplicados,
+uma vez que um mesmo estudo pode estar indexado em mais de uma fonte. Para tratamento
+dessas ocorrências, aplicou-se algoritmo automatizado em três fases sequenciais:
+correspondência por identificador DOI, similaridade de título e identidade de arquivo
+PDF. Ao todo, 19 duplicatas foram identificadas e removidas, reduzindo o conjunto de
+137 para 118 registros únicos. Em caso de duplicata entre bases, adotou-se como
+critério de retenção a seguinte ordem de prioridade: Scopus, SciELO, Portal CAPES,
+EconPapers e ANPEC, privilegiando a versão com metadados mais completos.
+
+\subsection{Triagem final}
+\label{subsec:triagem-final}
+
+Os 118 registros únicos foram submetidos a processo de triagem em duas etapas. Na
+primeira, uma classificação automatizada identificou os registros com maior
+probabilidade de atender aos critérios de inclusão. Na segunda, os registros foram
+avaliados integralmente, com revisão das classificações automatizadas. A decisão
+final de inclusão ou exclusão baseou-se na avaliação dos autores.
+
+Dos 118 registros, 45 foram incluídos na revisão e 73 excluídos. A
+Tabela~\ref{tab:triagem} apresenta a distribuição dos motivos de exclusão.
+
+\begin{table}[h]
+\centering
+\caption{Registros excluídos por motivo de rejeição}
+\label{tab:triagem}
+\begin{tabular}{lr}
+\toprule
+Motivo de exclusão & Registros \\
+\midrule
+Sem instrumentos da PNDR & 35 \\
+Sem método econométrico & 17 \\
+Documento não científico & 10 \\
+Duplicata de versão publicada & 7 \\
+Anterior a 2005 & 2 \\
+Outros & 2 \\
+\midrule
+\textbf{Total excluídos} & \textbf{73} \\
+\bottomrule
+\end{tabular}
+\fonte{Elaboração própria.}
+\end{table}
+
+\subsection{Descrição dos estudos obtidos}
+\label{subsec:descricao-estudos}
+
+A aplicação dos critérios descritos nas subseções anteriores resultou em amostra
+de 45 estudos empíricos, datados de 2005 a 2025. Destes, 22 são artigos publicados
+em periódicos nacionais ou internacionais, e os demais 23 são textos para discussão
+ou trabalhos apresentados em congressos.
+
+A produção acadêmica sobre o tema distribui-se de forma desigual ao longo do
+período. De 2005 a 2013, identificaram-se apenas 8 estudos. No intervalo de 2014 a
+2019, a produção elevou-se para 11 trabalhos, refletindo o amadurecimento da
+literatura. O crescimento mais expressivo concentrou-se entre 2020 e 2025, com 26
+estudos --- mais da metade da amostra ---, indicando intensificação recente do
+interesse acadêmico pela avaliação empírica dos instrumentos da PNDR.
+
+A escala \textit{Maryland Scientific Methods} (MSM), descrita em
+\citeonline{MadalenoWaights2016}, classifica a robustez dos métodos de avaliação de
+impacto em escores de 1 (menos robusto) a 5 (mais robusto), segundo a capacidade de
+lidar com vieses de seleção. Dentre os estudos selecionados, predominam abordagens
+com escore 3 --- métodos que controlam por características observáveis, porém sem
+garantir completa eliminação de vieses de seleção. Os métodos mais frequentes
+incluem painel de efeitos fixos, diferenças em diferenças, \textit{Propensity Score
+Matching}, painel espacial e regressão MQO. Abordagens quase experimentais com
+escore 4, como \textit{Regression Discontinuity Design}, permanecem pouco
+utilizadas. A ausência de avaliações com escore máximo de robustez reflete as
+restrições inerentes ao desenho não aleatório da política, em que a alocação de
+recursos tende a ser determinada pela demanda das firmas.
+
+% TODO: Inserir figura do mapa de distribuição dos artigos (litmap)
+% atualizado com 45 estudos

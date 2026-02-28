@@ -70,8 +70,9 @@ docs/pipeline_extraction.md     → Metodologia e log de extracao
 
 ### LaTeX
 - O artigo em `latex/` e editado separadamente do pipeline.
+- Classe `abntex2` em modo `article` (sem chapters).
+- Citacoes via `abntex2cite` com opcao `alf` (ABNT alfabetico).
 - Figuras referenciadas com `\graphicspath{{../figures/}}`.
-- Bibliografia via `natbib` + `apalike`.
 
 ## Fluxo de Trabalho
 

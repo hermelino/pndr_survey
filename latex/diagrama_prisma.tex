@@ -1,0 +1,45 @@
+% Diagrama de fluxo PRISMA 2020
+
+
+\scriptsize
+\resizebox{\textwidth}{!}{
+	\prismaflowstart
+
+	% Nodes at the top
+	\prismaflownode{n1a}{left=of tc, text width=5cm}{
+	\raggedright Registros identificados:
+	\begin{itemize}[leftmargin=1.5em]
+	 	\item Scopus (n = 16)
+	 	\item SciELO (n = 5)
+	 	\item Portal CAPES (n = 30)
+	 	\item EconPapers/RePEc (n = 24)
+	 	\item ANPEC (n = 62)
+	\end{itemize}}{};
+	\prismaflownode{n2}{below=of tc |- n1a.south}{Registros após remoção de duplicatas (n = 118)}{n1a};
+
+	% Screening Phase
+	\prismaflownode{n3}{below=of n2}{Registros triados (n = 118)}{n2};
+
+	\prismaflownode{n4}{below=of n3, yshift=-1cm}{Publicações avaliadas em texto completo (n = 118)}{n3};
+	\prismaflownode{n4r}{right=of n4, yshift=0cm}{
+	\raggedright Publicações excluídas (n = 73):
+	\begin{itemize}[leftmargin=1em]
+		\item Não é estudo científico (n = 10)
+		\item Estudo anterior a 2005 (n = 2)
+		\item Não avalia instrumentos da PNDR (n = 35)
+		\item Não aplica método econométrico (n = 17)
+		\item Versão \textit{working paper} de artigo publicado (n = 9)
+	\end{itemize}}{};
+	\prismaflowarrow{n4}{n4r};
+
+	% Inclusion Phase
+	\prismaflownode{n5}{below=of n4, yshift=-1cm}{Estudos incluídos na revisão (n = 45)}{n4};
+
+	% Labels
+	\prismalabel{1.3*\mh}{n1a.west}{Identificação};
+	\prismalabel{1.3*\mh}{n1a.west |- {$(n2)!0.6!(n3)$}}{Triagem};
+	\prismalabel{1.3*\mh}{n1a.west |- n4}{Elegibilidade};
+	\prismalabel{1.3*\mh}{n1a.west |- n5}{Inclusão};
+
+	\prismaflowend
+}

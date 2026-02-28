@@ -5,8 +5,30 @@ import json
 import re
 from pathlib import Path
 
+import openpyxl
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+XLSX = BASE_DIR / "2-papers" / "all_papers_llm_classif_final.xlsx"
 REFS_DIR = Path(__file__).resolve().parent / "refs_por_estudo"
 OUT_DIR = REFS_DIR  # JSON e TXT na mesma pasta
+
+
+def load_rejected_keys() -> set[str]:
+    """Retorna o conjunto de chaves (stem do PDF) rejeitadas na triagem."""
+    wb = openpyxl.load_workbook(XLSX, read_only=True)
+    ws = wb["Classificação LLM"]
+    headers = [cell.value for cell in ws[1]]
+    col = {h: i for i, h in enumerate(headers) if h}
+    triagem_idx = col["Triagem"]
+    pdf_idx = col["Arquivo PDF"]
+    rejected = set()
+    for row in ws.iter_rows(min_row=2, max_row=ws.max_row):
+        if row[triagem_idx].value == "REJEITADO":
+            pdf = (row[pdf_idx].value or "")
+            if pdf:
+                rejected.add(Path(pdf).stem)
+    wb.close()
+    return rejected
 
 # ── helpers ─────────────────────────────────────────────────────────────────
 
@@ -443,7 +465,12 @@ def process_file(txt_path: Path) -> dict:
 def main():
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    txt_files = sorted(REFS_DIR.glob("*_refs.txt"))
+    rejected = load_rejected_keys()
+    all_txt = sorted(REFS_DIR.glob("*_refs.txt"))
+    txt_files = [f for f in all_txt if f.stem.replace("_refs", "") not in rejected]
+    skipped = len(all_txt) - len(txt_files)
+    if skipped:
+        print(f"Ignorando {skipped} arquivo(s) de estudos rejeitados na triagem")
     print(f"Arquivos a processar: {len(txt_files)}")
 
     all_results = {}

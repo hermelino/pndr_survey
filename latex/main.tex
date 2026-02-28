@@ -6,12 +6,18 @@
 %
 % Author:  Hermelino Nepomuceno de Souza
 % =============================================================================
-\documentclass[12pt,a4paper]{article}
+\documentclass[
+12pt,             % Tamanho da fonte
+a4paper,          % Tamanho da folha A4
+article,          % Modo artigo (sem chapters)
+oneside,          % Impressão em apenas uma face
+english,          % Hifenizações em inglês
+brazil            % Último idioma é o idioma padrão
+]{abntex2}
 
-% --- Encoding and Language ---
+% --- Encoding ---
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[brazil]{babel}
 
 % --- Page Layout ---
 \usepackage[top=2.5cm, bottom=2.5cm, left=3cm, right=2.5cm]{geometry}
@@ -35,12 +41,10 @@
 \graphicspath{{../figures/}}
 \usepackage{float}
 
-% --- Citations ---
-\usepackage{natbib}
-\bibliographystyle{apalike}
+% --- Citations (ABNT) ---
+\usepackage[alf, abnt-emphasize=bf, recuo=0cm, abnt-etal-cite=2, abnt-etal-list=0, abnt-etal-text=it]{abntex2cite}
 
 % --- Hyperlinks ---
-\usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -52,12 +56,16 @@
 \usepackage{enumerate}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{indentfirst}
 
 % =============================================================================
 \title{Avaliação dos Instrumentos da PNDR: Uma Revisão Sistemática da Literatura Empírica (2005--2025)}
 
 \author{
-    Hermelino Nepomuceno de Souza\thanks{CAEN/UFC. E-mail: hermelino@example.com}
+    Hermelino Nepomuceno de Souza\thanks{CAEN/UFC.} \and
+    Guilherme Diniz Irffi\thanks{CAEN/UFC.} \and
+    Diego Rafael Fonseca Carneiro\thanks{CAEN/UFC.} \and
+    Felipe de Sousa Bastos\thanks{CAEN/UFC.}
 }
 
 \date{\today}
@@ -92,7 +100,7 @@
 
 \section{Método}
 \label{sec:metodo}
-% TODO: Migrar conteúdo de 1-3-metodo.tex
+\input{metodo}
 
 \section{Discussão dos Resultados}
 \label{sec:resultados}
@@ -105,6 +113,7 @@
 % =============================================================================
 % REFERENCES
 % =============================================================================
+\bibliographystyle{abntex2-alf}
 % \bibliography{references}
 
 \end{document}

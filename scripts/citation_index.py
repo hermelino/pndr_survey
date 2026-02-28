@@ -16,10 +16,13 @@ import unicodedata
 from collections import defaultdict
 from pathlib import Path
 
+import openpyxl
+
 # ── Paths ──────────────────────────────────────────────────────────────────
 BASE = Path(r"C:\OneDrive\github\pndr_survey")
 REF_DIR = BASE / "data" / "3-ref-bib" / "refs_por_estudo"
 BIB_FILE = BASE / "data" / "1-records" / "processed" / "bib_screened.json"
+XLSX = BASE / "data" / "2-papers" / "all_papers_llm_classif_final.xlsx"
 OUTPUT = BASE / "data" / "3-ref-bib" / "citation_index_results.json"
 REPORT = BASE / "data" / "3-ref-bib" / "citation_index_report.txt"
 
@@ -117,9 +120,29 @@ def _classify_label(result: dict) -> str:
     return labels.get(src, f"não-publicado ({src})")
 
 
+# ── Load rejected keys ────────────────────────────────────────────────────
+def load_rejected_keys() -> set[str]:
+    """Retorna o conjunto de chaves (stem do PDF) rejeitadas na triagem."""
+    wb = openpyxl.load_workbook(XLSX, read_only=True)
+    ws = wb["Classificação LLM"]
+    headers = [cell.value for cell in ws[1]]
+    col = {h: i for i, h in enumerate(headers) if h}
+    triagem_idx = col["Triagem"]
+    pdf_idx = col["Arquivo PDF"]
+    rejected = set()
+    for row in ws.iter_rows(min_row=2, max_row=ws.max_row):
+        if row[triagem_idx].value == "REJEITADO":
+            pdf = (row[pdf_idx].value or "")
+            if pdf:
+                rejected.add(Path(pdf).stem)
+    wb.close()
+    return rejected
+
+
 # ── Load studies ───────────────────────────────────────────────────────────
 def load_studies():
-    """Load all 54 studies from ref JSON files + bib_screened metadata."""
+    """Load all studies from ref JSON files + bib_screened metadata,
+    excluding studies rejected in the screening spreadsheet."""
     # Load bib_screened for publication_type lookup
     with open(BIB_FILE, "r", encoding="utf-8") as f:
         bib_records = json.load(f)
@@ -134,8 +157,13 @@ def load_studies():
         key_name = lastnames[0] if lastnames else ""
         bib_index[(src, yr, key_name)] = rec
 
+    rejected = load_rejected_keys()
     studies = {}
-    json_files = sorted(f for f in os.listdir(REF_DIR) if f.endswith(".json"))
+    all_json = sorted(f for f in os.listdir(REF_DIR) if f.endswith(".json"))
+    json_files = [f for f in all_json if f.replace("_refs.json", "") not in rejected]
+    skipped = len(all_json) - len(json_files)
+    if skipped:
+        print(f"  Ignorando {skipped} estudo(s) rejeitado(s) na triagem")
 
     for fname in json_files:
         key = fname.replace("_refs.json", "")
