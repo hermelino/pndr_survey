@@ -81,9 +81,9 @@ docs/pipeline_extraction.md     → Metodologia e log de extracao
 
 ## Skills Disponiveis
 
-- `/propagate-update` — Diagnostica alteracoes no pipeline, planeja a propagacao para estagios downstream, executa com confirmacao do usuario e gera relatorio. Usar sempre que uma alteracao num estagio do pipeline precise ser propagada (nova extracao, novas duplicatas, mudanca de criterios, correcoes manuais, re-analise LLM). Definicao em `.claude/commands/propagate-update.md`.
+- `/propagate-update` — Diagnostica alteracoes no pipeline, planeja a propagacao para estagios downstream, executa com confirmacao do usuario e gera relatorio. Usar sempre que uma alteracao num estagio do pipeline precise ser propagada (nova extracao, novas duplicatas, mudanca de criterios, correcoes manuais, re-analise LLM). Definicao em `.claude/commands/1-propagate-update.md`.
 
-- `/escrever-artigo [secao]` — Redator academico para o artigo LaTeX. Sugere roteiro de topicos com marcacoes especiais (tabelas, figuras, quadros) baseado no Cap. 1 da tese, incorporando as inovacoes metodologicas do pndr_survey (5 bases, LLM, IC, deduplicacao). Somente escreve conteudo apos aprovacao explicita do usuario. Secoes: `introducao`, `politica`, `metodo`, `resultados`, `conclusao`, `resumo`, `todos`. Definicao em `.claude/commands/escrever-artigo.md`.
+- `/escrever-artigo [secao]` — Redator academico para o artigo LaTeX. Sugere roteiro de topicos com marcacoes especiais (tabelas, figuras, quadros) baseado no Cap. 1 da tese, incorporando as inovacoes metodologicas do pndr_survey (5 bases, LLM, IC, deduplicacao). Somente escreve conteudo apos aprovacao explicita do usuario. Secoes: `introducao`, `politica`, `metodo`, `resultados`, `conclusao`, `resumo`, `todos`. Definicao em `.claude/commands/2-escrever-artigo.md`.
 
 ## Dependencias
 
