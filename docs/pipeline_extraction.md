@@ -110,7 +110,7 @@ Prioridade de retencao: Scopus > SciELO > CAPES > EconPapers > ANPEC (em caso de
 | Uma nota sobre os impactos dos incentivos fiscais no mercado de trabalho | ANPEC | SciELO |
 | Efeito dose resposta do FCO (variantes de titulo) | EconPapers (2x) | EconPapers |
 
-### Removidos manualmente — versoes TD/WP e duplicatas de publicacao (8)
+### Removidos manualmente — versoes TD/WP e duplicatas de publicacao (9)
 
 Identificados apos a analise de indice de citacao. Estudos que apareceram como TD/congresso E como artigo publicado em periodico, ou mirrors EconPapers de artigos ja indexados no Scopus. A versao publicada (Scopus) foi mantida; as demais foram marcadas como duplicatas.
 
@@ -124,8 +124,9 @@ Identificados apos a analise de indice de citacao. Estudos que apareceram como T
 | Eficacia do gasto publico: FNE, FNO e FCO | econpapers-2007 (TD IPEA 1259) | scopus-2009-silva-resende-neto | 10.1590/s0101-41612009000100004 |
 | Avaliacao economica dos fundos (FNE, FNO, FCO) | anpec-2006 (congresso ANPEC) | scopus-2009-silva-resende-neto | 10.1590/s0101-41612009000100004 |
 | Eficacia do gasto publico: FNE, FNO e FCO | scielo-2009 (mesma pub., sem DOI) | scopus-2009-silva-resende-neto | 10.1590/s0101-41612009000100004 |
+| Efeitos regionais do FNE (congresso ANPEC 2013) | econpapers-2014-goncalves-soares-linhares (nome alternativo) | econpapers-2014-viana-goncalves-linhares (CEPAL Review) | — |
 
-Total de duplicatas: 9 (fase 1, DOI) + 10 (fase 3, PDF identico) + 9 (fase 4, manual TD/WP) = 28 removidas. **118 papers na base** (mantidos para consistencia com LLM), **38 aprovados** apos triagem.
+Total de duplicatas: 9 (fases 1-2, DOI + fuzzy titulo) + 10 (fase 3, PDF identico) + 9 (fase 4, manual TD/WP) = 28 removidas. **118 papers na base** (mantidos para consistencia com LLM), **38 aprovados** apos triagem.
 
 Arquivo de auditoria fase 1: `data/1-records/processed/duplicates_removed.csv`
 Arquivo de auditoria fase 3: `data/2-papers/all_papers.xlsx` (aba "Duplicatas")

@@ -7,9 +7,11 @@
 
 O objetivo desta revisão sistemática é identificar e sintetizar estudos empíricos que empreguem abordagem econométrica para avaliar o efeito de instrumentos de financiamento da PNDR -- Fundos Constitucionais de Financiamento, Fundos de Desenvolvimento Regional e Incentivos Fiscais -- sobre indicadores socioeconômicos locais. O protocolo de busca, triagem e seleção segue as diretrizes PRISMA 2020 (\textit{Preferred Reporting Items for Systematic Reviews and Meta-Analyses}), conforme \citeonline{Pageetal2021}, com o intuito de assegurar transparência e reprodutibilidade em cada etapa do processo.
 
-A busca foi conduzida em cinco bases de dados acadêmicas -- Scopus, SciELO, Portal de Periódicos da CAPES, EconPapers/RePEc e anais dos encontros da ANPEC. A consulta a múltiplas fontes justifica-se pela elevada dispersão dos registros: periódicos nacionais de economia tendem a apresentar menor cobertura em bases de dados internacionais, e parte relevante da produção sobre instrumentos da PNDR concentra-se em \textit{working papers}, textos para discussão e apresentações em congressos nacionais, veículos nem sempre indexados por essas bases. Das cinco fontes, obtiveram-se 137 registros. Após a remoção de 19 duplicatas em três fases automatizadas, 118 registros únicos foram submetidos à análise de elegibilidade. A triagem combinou classificação automatizada com revisão dos autores, resultando na inclusão de 38 estudos e exclusão de 80. A Figura~\ref{fig:diagrama_prisma} apresenta o diagrama de fluxo PRISMA 2020 com o detalhamento quantitativo de cada etapa.\footnote{Os scripts de coleta, deduplicação e triagem estão disponíveis no repositório de replicação do autor em \url{https://github.com/hermelino/pndr_survey}.}
+A busca foi conduzida em cinco bases de dados acadêmicas: Scopus, SciELO, Portal de Periódicos da CAPES, EconPapers/RePEc e anais dos encontros da ANPEC. A consulta a múltiplas fontes justifica-se pela elevada dispersão dos registros: periódicos nacionais de economia tendem a apresentar menor cobertura em bases de dados internacionais, além de parte relevante da produção sobre instrumentos da PNDR concentrar-se em \textit{working papers}, textos para discussão e apresentações em congressos nacionais, veículos nem sempre indexados por essas bases.
 
-\begin{figure}[H]
+Das cinco fontes, obtiveram-se 137 registros. Após a remoção de 19 duplicatas em três etapas automatizadas, 118 registros únicos foram submetidos à análise de elegibilidade. A triagem combinou classificação automatizada com revisão dos autores, resultando na inclusão de 38 estudos e exclusão de 80. A Figura~\ref{fig:diagrama_prisma} apresenta o diagrama de fluxo PRISMA 2020 com o detalhamento quantitativo de cada etapa.\footnote{Os scripts de coleta, deduplicação e triagem estão disponíveis no repositório do autor em \url{https://github.com/hermelino/pndr_survey}.}
+
+\begin{figure}[htb]
 \centering
 \caption{Diagrama de fluxo PRISMA 2020}
 \label{fig:diagrama_prisma}
@@ -20,14 +22,16 @@ A busca foi conduzida em cinco bases de dados acadêmicas -- Scopus, SciELO, Por
 \subsection{Bases de dados consultadas}
 \label{subsec:bases-dados}
 
-A seleção das cinco bases visa garantir cobertura abrangente da literatura. A Scopus indexa os principais periódicos internacionais de economia; a SciELO complementa a cobertura de periódicos nacionais em acesso aberto; o Portal de Periódicos da CAPES agrega centenas de bases de dados nacionais e internacionais; o EconPapers/RePEc concentra \textit{working papers} e textos para discussão com ampla cobertura em economia; e os anais da ANPEC capturam trabalhos apresentados nos encontros nacionais e regionais de economia, incluindo estudos ainda não publicados em periódicos.
+A seleção das cinco bases visa garantir cobertura abrangente da literatura, contemplando periódicos indexados internacionalmente, repositórios de literatura cinzenta e anais de congressos. A Scopus foi consultada por meio de busca avançada via \textit{proxy} institucional da CAPES, fornecendo acesso aos principais periódicos internacionais de economia com metadados estruturados. A SciELO complementa a cobertura com periódicos nacionais em acesso aberto, captando publicações em língua portuguesa nem sempre indexadas em bases internacionais. O Portal de Periódicos da CAPES agrega centenas de bases nacionais e internacionais, sendo acessado via busca avançada com autenticação CAFe. O EconPapers/RePEc concentra \textit{working papers} e textos para discussão com ampla cobertura em economia, sendo particularmente relevante para captar versões preliminares de estudos posteriormente publicados em periódicos. Por fim, os anais da ANPEC foram consultados por meio de busca via Google Search com restrição de domínio (\texttt{site:anpec.org.br}), capturando trabalhos apresentados nos encontros nacionais e regionais de economia.
+
+A inclusão de \textit{working papers}, textos para discussão e trabalhos apresentados em congressos contribui para mitigar possível viés de publicação, uma vez que estudos com resultados nulos ou inconclusivos tendem a apresentar menor probabilidade de publicação em periódicos \textit{peer-reviewed}. Bases como Google Scholar e Web of Science não foram incluídas: a primeira tende a retornar proporção elevada de resultados irrelevantes em buscas com termos amplos, e a segunda apresenta cobertura já atendida pelo Portal CAPES e pelo EconPapers/RePEc.
 
 \subsection{Expressões de busca e critérios de inclusão e exclusão}
 \label{subsec:criterios}
 
 A estratégia de busca empregou combinação de três blocos de termos conectados pelo operador AND: (1)~instrumentos de financiamento (``fundo constitucional'', ``fundo de desenvolvimento'', ``incentivo fiscal'', com variações em inglês); (2)~organizações e siglas associadas à PNDR (FNE, FNO, FCO, FDNE, FDCO, SUDENE, SUDAM, PNDR); e (3)~delimitação geográfica (Nordeste, Amazônia, Centro-Oeste, Brasil). Dentro de cada bloco, os termos foram conectados pelo operador OR. As expressões exatas foram adaptadas à sintaxe de cada base.
 
-São admissíveis a compor a amostra artigos publicados em periódicos, \textit{working papers}, textos para discussão e apresentações em congressos. Os critérios de inclusão adotados foram: (i)~estudos empíricos que avaliem pelo menos um instrumento de financiamento da PNDR; (ii)~emprego de abordagem econométrica que permita isolamento do efeito da política sobre indicadores socioeconômicos; e (iii)~publicação em qualquer dos formatos acima.
+São admissíveis a compor a amostra artigos publicados em periódicos, \textit{working papers}, textos para discussão e apresentações em congressos. Os critérios de inclusão adotados foram: (i)~estudos empíricos que avaliem pelo menos um instrumento de financiamento da PNDR; (ii)~emprego de abordagem econométrica que permita isolamento do efeito da política sobre indicadores socioeconômicos\footnote{Foram também incluídos estudos que empregam Análise Envoltória de Dados (DEA) e Equilíbrio Geral Computável (EGC). Embora não se configurem como métodos econométricos em sentido estrito, essas abordagens integram o corpo de evidências quantitativas sobre os instrumentos da PNDR e são frequentemente citadas pela literatura econométrica da área, justificando sua inclusão para fins de completude da revisão.}; e (iii)~publicação em qualquer dos formatos acima.
 
 Os critérios de exclusão foram: (a)~estudos que não avaliem explicitamente instrumentos da PNDR; (b)~abordagens exclusivamente qualitativas ou descritivas; (c)~avaliações sem emprego de métodos econométricos de controle de fatores simultâneos à política; (d)~estudos anteriores a 2005, ano a partir do qual se identificam as primeiras avaliações empíricas desses instrumentos; e (e)~duplicatas de versão publicada, casos em que um mesmo trabalho aparece como texto para discussão ou apresentação em congresso e como artigo em periódico, retendo-se a versão publicada.
 
@@ -36,19 +40,44 @@ Os critérios de exclusão foram: (a)~estudos que não avaliem explicitamente in
 
 A consulta a múltiplas bases de dados implica a presença de registros duplicados, uma vez que um mesmo estudo pode estar indexado em mais de uma fonte. Para tratamento dessas ocorrências, aplicou-se algoritmo automatizado em três fases sequenciais: correspondência por identificador DOI, similaridade de título e identidade de arquivo PDF. Ao todo, 19 duplicatas foram identificadas e removidas, reduzindo o conjunto de 137 para 118 registros únicos. Em caso de duplicata entre bases, adotou-se como critério de retenção a seguinte ordem de prioridade: Scopus, SciELO, Portal CAPES, EconPapers e ANPEC, privilegiando a versão com metadados mais completos.
 
+\subsection{Classificação assistida por modelo de linguagem}
+\label{subsec:classificacao-llm}
+
+Os 118 registros únicos foram processados por modelo de linguagem de grande porte (Gemini 2.0 Flash, Google) em três estágios sequenciais, com o objetivo de extrair informações estruturadas dos textos completos em formato PDF. No Estágio~1 (triagem), o modelo identifica se o registro constitui estudo empírico sobre instrumentos da PNDR e extrai metadados básicos: tipo de publicação, título, autores, ano, instrumentos avaliados, tipo de metodologia e emprego de econometria. Registros classificados como estudos empíricos relevantes avançam para o Estágio~2 (metodologia), no qual são extraídos detalhes do método econométrico, tipo de dados, variáveis dependentes e de controle, unidade de análise e período amostral. No Estágio~3 (resultados), o modelo registra o efeito parcial estimado, significância estatística, direção do efeito, implicações de política e limitações declaradas pelos autores.
+
+Os questionários aplicados ao modelo em cada estágio foram estruturados em formato padronizado com campos tipados (seleção simples, seleção múltipla e texto livre), instruções de contexto e diretrizes de preenchimento que exigem referência à página-fonte ou marcação explícita de informação ausente. Essa estrutura permite comparabilidade entre registros e facilita a verificação posterior.
+
+As classificações produzidas pelo modelo foram integralmente revisadas pelos autores. Ao todo, 125 células foram corrigidas em 78 dos 118 registros, afetando campos de triagem, tipo de publicação, instrumentos avaliados e nome do periódico. As alterações mais relevantes envolveram a reclassificação de 35 registros de aprovado para rejeitado -- casos em que o modelo classificou como elegíveis estudos que, à leitura integral, não atendiam aos critérios de inclusão -- e a correção do tipo de publicação de 20 registros da ANPEC, classificados pelo modelo como artigos publicados quando se tratava de apresentações em congresso.
+
 \subsection{Triagem final}
 \label{subsec:triagem-final}
 
-Os 118 registros únicos foram submetidos a processo de triagem em duas etapas. Na primeira, uma classificação automatizada identificou os registros com maior probabilidade de atender aos critérios de inclusão. Na segunda, os registros foram avaliados integralmente, com revisão das classificações automatizadas. A decisão final de inclusão ou exclusão baseou-se na avaliação dos autores.
+A triagem final dos 118 registros únicos foi conduzida em duas etapas. Na primeira, as classificações do Estágio~1 do modelo de linguagem serviram como filtro inicial, identificando os registros com maior probabilidade de atender aos critérios de inclusão. Na segunda, todos os registros foram avaliados integralmente pelos autores, com leitura dos textos completos e revisão das classificações automatizadas. A decisão final de inclusão ou exclusão baseou-se exclusivamente no julgamento dos autores, cabendo ao modelo de linguagem papel auxiliar de pré-classificação.
 
-Dos 118 registros, 38 foram incluídos na revisão e 80 excluídos.
+Dos 118 registros, 38 foram incluídos na revisão e 80 excluídos. Os motivos de exclusão distribuem-se em cinco categorias: ausência de avaliação explícita de instrumentos da PNDR (n~=~40), ausência de método econométrico (n~=~21), documento sem caráter de estudo científico (n~=~10), versão \textit{working paper} ou apresentação em congresso de artigo já incluído na amostra em sua versão publicada (n~=~7) e publicação anterior a 2005 (n~=~2).
+
+\subsection{Índice de citação cruzada}
+\label{subsec:indice-citacao}
+
+Como 20 dos 38 estudos incluídos na amostra -- mais da metade -- correspondem a textos para discussão ou apresentações em congressos, trabalhos que não passaram por processo de avaliação por pares, torna-se necessário um critério objetivo para aferir sua relevância. Para esse fim, calculou-se um índice de citação cruzada (IC), que mensura a importância que a literatura publicada em periódicos atribui a esses trabalhos. O IC é definido como:
+
+\begin{equation}
+\label{eq:ic}
+IC(A) = \frac{\text{citações recebidas de artigos publicados em } [X+1,\; 2025]}{\text{total de artigos publicados em } [X+1,\; 2025]}
+\end{equation}
+
+\noindent onde $X$ corresponde ao ano de publicação do estudo $A$.
+
+A identificação de citações cruzadas baseou-se em algoritmo de correspondência automática aplicado às listas de referências bibliográficas dos 38 estudos incluídos na revisão. O algoritmo emprega correspondência por sobrenomes dos autores, tolerância de $\pm 2$ anos na data de publicação e similaridade de título por \textit{token sort ratio}. Aplica-se ainda restrição cronológica, de modo que apenas estudos publicados no mesmo ano ou em anos posteriores ao estudo-alvo são considerados como citantes.
+
+No conjunto de 38 estudos, foram identificadas 114 citações cruzadas. Dos 20 estudos não publicados em periódicos, 8 apresentaram IC positivo, indicando que receberam ao menos uma citação de artigo publicado. Os três maiores índices correspondem a textos para discussão de ampla circulação, com IC variando de 0,17 a 0,38. Os 12 estudos não publicados com IC igual a zero correspondem majoritariamente a trabalhos recentes (2024--2025), para os quais o intervalo de observação é insuficiente para acumular citações.
 
 \subsection{Descrição dos estudos obtidos}
 \label{subsec:descricao-estudos}
 
 A aplicação dos critérios descritos nas subseções anteriores resultou em amostra de 38 estudos empíricos, datados de 2005 a 2025. Destes, 18 são artigos publicados em periódicos nacionais ou internacionais, e os demais 20 são textos para discussão ou trabalhos apresentados em congressos.
 
-A produção acadêmica sobre o tema distribui-se de forma desigual ao longo do período, como mostra a Tabela~\ref{tab:estudos-ano}. De 2005 a 2013, identificaram-se apenas 5 estudos. No intervalo de 2014 a 2019, a produção elevou-se para 11 trabalhos, refletindo o amadurecimento da literatura. O crescimento mais expressivo concentrou-se entre 2020 e 2025, com 22 estudos --- mais da metade da amostra ---, indicando intensificação recente do interesse acadêmico pela avaliação empírica dos instrumentos da PNDR.
+A produção acadêmica sobre o tema distribui-se de forma desigual ao longo do período, como mostra a Tabela~\ref{tab:estudos-ano}. De 2005 a 2015, identificaram-se apenas 9 estudos. No intervalo de 2016 a 2020, a produção elevou-se para 9 trabalhos adicionais, refletindo o amadurecimento da literatura. O crescimento mais expressivo concentrou-se entre 2021 e 2025, com 20 estudos -- mais da metade da amostra --, indicando intensificação recente do interesse acadêmico pela avaliação empírica dos instrumentos da PNDR.
 
 A Tabela~\ref{tab:instrumentos} apresenta a frequência de menções a cada instrumento da PNDR nos estudos incluídos. Como parte dos trabalhos avalia mais de um instrumento simultaneamente, o total de menções excede o número de estudos. Os Fundos Constitucionais de Financiamento -- FNE, FNO e FCO -- concentram a maior parte das avaliações, seguidos pelos incentivos fiscais administrados pela Sudene e pelos Fundos de Desenvolvimento Regional.
 
@@ -57,11 +86,11 @@ A Tabela~\ref{tab:instrumentos} apresenta a frequência de menções a cada inst
 \centering
 \begin{minipage}[t]{0.38\textwidth}
 \centering
-\caption{Estudos por período}
+\caption{Artigos por período}
 \label{tab:estudos-ano}
 \begin{tabular}{lr}
 \toprule
-Período & Estudos \\
+Período & Qtd. artigos \\
 \midrule
 2005--2010 & 3 \\
 2011--2015 & 6 \\
@@ -75,11 +104,11 @@ Período & Estudos \\
 \begin{minipage}[t]{0.58\textwidth}
 \centering
 \small
-\caption{Estudos por unidade amostral}
+\caption{Artigos por unidade amostral}
 \label{tab:unidade-amostral}
 \begin{tabular}{lr}
 \toprule
-Unidade amostral & Estudos \\
+Unidade Amostral & Qtd. artigos \\
 \midrule
 Município & 26 \\
 Empresa & 11 \\
@@ -96,12 +125,11 @@ UF & 2 \\
 \small
 \centering
 \begin{minipage}[t]{0.38\textwidth}
-\small
 \caption{Top-10 autores (autorias e coautorias)}
 \label{tab:autores-todos}
 \begin{tabular}{lr}
 \toprule
-Autor & Estudos \\
+Autor & Qtd. artigos \\
 \midrule
 Irffi, G. D. & 11 \\
 Resende, G. M. & 10 \\
@@ -120,19 +148,19 @@ Oliveira, T. G. & 3 \\
 \hfill
 \begin{minipage}[t]{0.58\textwidth}
 \centering
-\caption{Menções por instrumento \\ da PNDR}
+\caption{Instrumento da PNDR avaliado}
 \label{tab:instrumentos}
 \begin{tabular}{lr}
 \toprule
-Instrumento & Menções \\
+Instrumento & Qtd. artigos \\
 \midrule
 FNE & 26 \\
 FNO & 9 \\
 FCO & 13 \\
-FDNE & 9 \\
+FDNE & 8 \\
 FDA & 1 \\
 FDCO & 1 \\
-IF -- Sudene & 10 \\
+IF -- Sudene & 9 \\
 IF -- Sudam & 1 \\
 \bottomrule
 \end{tabular}
@@ -145,28 +173,24 @@ IF -- Sudam & 1 \\
 \begin{table}[h]
 \centering
 \small
-\caption{Métodos econométricos mais frequentes}
+\caption[Métodos mais Frequentes]{Métodos mais Frequentes\footnote{MSM: \textit{Maryland Scientific Methods Scale} \cite{MadalenoWaights2016}; n.c.: não classificável.}}
 \label{tab:metodos}
-\begin{tabular}{lr}
+\begin{tabular}{lrc}
 \toprule
-Método & Estudos \\
+Método & Estudos & MSM \\
 \midrule
-Diferenças em Diferenças escalonado & 6 \\
-Equilíbrio Geral Computável (EGC) & 2 \\
-Análise Envoltória de Dados (DEA) & 3 \\
-Diferenças em Diferenças (DiD) & 3 \\
-\textit{Generalized Propensity Score} (GPS) & 3 \\
-\textit{Propensity Score Matching} (PSM) & 3 \\
+Diferenças em Diferenças Escalonado & 6 & 3 \\
+Equilíbrio Geral Computável (EGC) & 2 & n.c. \\
+Análise Envoltória de Dados (DEA) & 3 & n.c. \\
+Diferenças em Diferenças (DiD) & 3 & 3 \\
+\textit{Generalized Propensity Score} (GPS) & 3 & 3 \\
+\textit{Propensity Score Matching} (PSM) & 3 & 3 \\
 \bottomrule
 \end{tabular}
 \fonte{Elaboração própria.}
 \end{table}
 
-A Tabela~\ref{tab:autores-todos} apresenta os dez autores mais frequentes considerando autorias e 
-coautorias. Tabela~\ref{tab:unidade-amostral} descreve a unidade de análise adotada em cada estudo. 
-Predominam análises no nível municipal, seguidas por estudos com dados no nível da firma ou empresa. A Tabela~\ref{tab:metodos} apresenta os seis métodos econométricos mais frequentes na amostra.
+A Tabela~\ref{tab:autores-todos} apresenta os dez autores mais frequentes considerando autorias e coautorias. A Tabela~\ref{tab:unidade-amostral} descreve a unidade de análise adotada em cada estudo. Predominam análises em nível de agregação municipal, seguidas por estudos com dados no nível firma ou empresa; como dois estudos empregam mais de uma unidade, o total de menções excede o número de trabalhos. A Tabela~\ref{tab:metodos} apresenta os seis métodos mais frequentes na amostra.
 
-A escala \textit{Maryland Scientific Methods} (MSM), descrita em \citeonline{MadalenoWaights2016}, classifica a robustez dos métodos de avaliação de impacto em escores de 1 (menos robusto) a 5 (mais robusto), segundo a capacidade de lidar com vieses de seleção. Dentre os estudos selecionados, predominam abordagens com escore 3 --- métodos que controlam por características observáveis, porém sem garantir completa eliminação de vieses de seleção. Os métodos mais frequentes incluem painel de efeitos fixos, diferenças em diferenças, \textit{Propensity Score Matching}, painel espacial e regressão MQO. Abordagens quase experimentais com escore 4, como \textit{Regression Discontinuity Design}, permanecem pouco utilizadas. A ausência de avaliações com escore máximo de robustez reflete as restrições inerentes ao desenho não aleatório da política, em que a alocação de recursos tende a ser determinada pela demanda das firmas.
+Para além da frequência dos métodos, cabe avaliar a robustez das estratégias empíricas empregadas. A escala \textit{Maryland Scientific Methods} (MSM), descrita em \citeonline{MadalenoWaights2016}, classifica a robustez dos métodos de avaliação de impacto em escores de 1 (menos robusto) a 5 (mais robusto), segundo a capacidade de lidar com vieses de seleção. Entre os estudos selecionados, predominam abordagens com escore 3 -- métodos que controlam por características observáveis, porém sem garantir completa eliminação de vieses de seleção. Os métodos mais frequentes incluem painel de efeitos fixos, diferenças em diferenças, \textit{Propensity Score Matching}, painel espacial e regressão MQO. Abordagens quase experimentais com escore 4, como \textit{Regression Discontinuity Design}, permanecem pouco utilizadas. Cabe notar que métodos como Análise Envoltória de Dados (DEA) e Equilíbrio Geral Computável (EGC), presentes na amostra, não são classificáveis pela escala MSM por não se destinarem à identificação de efeitos causais -- o primeiro mensura eficiência relativa e o segundo simula efeitos de equilíbrio a partir de calibração de parâmetros. A ausência de avaliações com escore máximo de robustez reflete as restrições inerentes ao desenho não aleatório da política, em que a alocação de recursos tende a ser determinada pela demanda das firmas.
 
-% TODO: Inserir figura do mapa de distribuição dos artigos (litmap)
-% atualizado com 38 estudos

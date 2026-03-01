@@ -108,7 +108,7 @@ Busca manual nas 5 bases                   PDFs coletados (118)
 | Etapa | Descricao | Status |
 |-------|-----------|--------|
 | 1 | Busca manual + importacao (5 bases) | Concluido |
-| 2 | Deduplicacao (118 unicos, 27 removidos incl. 8 TD/WP manuais) | Concluido |
+| 2 | Deduplicacao (118 unicos, 28 removidos incl. 9 TD/WP manuais) | Concluido |
 | 3 | Triagem pre-LLM | Concluido |
 | 4 | Coleta de PDFs (118 de 118, 100%) | Concluido |
 | 5 | Analise LLM (Stages 1-3, 118 papers) | Concluido |
@@ -116,7 +116,7 @@ Busca manual nas 5 bases                   PDFs coletados (118)
 | 7 | Consolidacao JSON (registros + LLM) | Concluido |
 | 8 | Extracao de referencias (45 estudos ativos) | Concluido |
 | 9 | Matching de citacoes entre estudos (68 citacoes cruzadas) | Concluido |
-| 10 | Indice de citacao | Concluido |
+| 10 | Indice de citacao (114 citacoes cruzadas; 38 estudos: 18 pub, 20 nao-pub) | Concluido |
 | 11 | Artigo LaTeX | Em andamento |
 
 Detalhes da extracao: [docs/pipeline_extraction.md](docs/pipeline_extraction.md)
