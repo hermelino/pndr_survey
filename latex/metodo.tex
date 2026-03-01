@@ -74,28 +74,6 @@ Período & Estudos \\
 \hfill
 \begin{minipage}[t]{0.58\textwidth}
 \centering
-\caption{Menções por instrumento da PNDR}
-\label{tab:instrumentos}
-\begin{tabular}{lr}
-\toprule
-Instrumento & Menções \\
-\midrule
-FNE & 27 \\
-FNO & 11 \\
-FCO & 14 \\
-FDNE & 10 \\
-FDA & 3 \\
-FDCO & 1 \\
-IF -- Sudene & 12 \\
-IF -- Sudam & 4 \\
-\bottomrule
-\end{tabular}
-\fonte{Elaboração própria.}
-\end{minipage}
-\end{table}
-
-\begin{table}[h]
-\centering
 \small
 \caption{Estudos por unidade amostral}
 \label{tab:unidade-amostral}
@@ -110,14 +88,14 @@ UF & 5 \\
 \bottomrule
 \end{tabular}
 \fonte{Elaboração própria.}
+\end{minipage}
 \end{table}
 
 
-A Tabela~\ref{tab:autores-todos} apresenta os dez autores 
-mais frequentes considerando autorias e coautorias.
-
 \begin{table}[h]
+\small
 \centering
+\begin{minipage}[t]{0.38\textwidth}
 \small
 \caption{Top-10 autores (autorias e coautorias)}
 \label{tab:autores-todos}
@@ -138,10 +116,31 @@ Oliveira, T. G. & 3 \\
 \bottomrule
 \end{tabular}
 \fonte{Elaboração própria.}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.58\textwidth}
+\centering
+\caption{Menções por instrumento \\ da PNDR}
+\label{tab:instrumentos}
+\begin{tabular}{lr}
+\toprule
+Instrumento & Menções \\
+\midrule
+FNE & 27 \\
+FNO & 11 \\
+FCO & 14 \\
+FDNE & 10 \\
+FDA & 3 \\
+FDCO & 1 \\
+IF -- Sudene & 12 \\
+IF -- Sudam & 4 \\
+\bottomrule
+\end{tabular}
+\fonte{Elaboração própria.}
+\end{minipage}
 \end{table}
 
 
-A Tabela~\ref{tab:unidade-amostral} descreve a unidade de análise adotada em cada estudo. Predominam análises no nível municipal, seguidas por estudos com dados no nível da firma ou empresa. A Tabela~\ref{tab:metodos} apresenta os seis métodos econométricos mais frequentes na amostra.
 
 \begin{table}[h]
 \centering
@@ -162,6 +161,10 @@ Diferenças em Diferenças (DiD) & 3 \\
 \end{tabular}
 \fonte{Elaboração própria.}
 \end{table}
+
+A Tabela~\ref{tab:autores-todos} apresenta os dez autores mais frequentes considerando autorias e 
+coautorias. Tabela~\ref{tab:unidade-amostral} descreve a unidade de análise adotada em cada estudo. 
+Predominam análises no nível municipal, seguidas por estudos com dados no nível da firma ou empresa. A Tabela~\ref{tab:metodos} apresenta os seis métodos econométricos mais frequentes na amostra.
 
 A escala \textit{Maryland Scientific Methods} (MSM), descrita em \citeonline{MadalenoWaights2016}, classifica a robustez dos métodos de avaliação de impacto em escores de 1 (menos robusto) a 5 (mais robusto), segundo a capacidade de lidar com vieses de seleção. Dentre os estudos selecionados, predominam abordagens com escore 3 --- métodos que controlam por características observáveis, porém sem garantir completa eliminação de vieses de seleção. Os métodos mais frequentes incluem painel de efeitos fixos, diferenças em diferenças, \textit{Propensity Score Matching}, painel espacial e regressão MQO. Abordagens quase experimentais com escore 4, como \textit{Regression Discontinuity Design}, permanecem pouco utilizadas. A ausência de avaliações com escore máximo de robustez reflete as restrições inerentes ao desenho não aleatório da política, em que a alocação de recursos tende a ser determinada pela demanda das firmas.
 

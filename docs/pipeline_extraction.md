@@ -125,7 +125,7 @@ Identificados apos a analise de indice de citacao. Estudos que apareceram como T
 | Avaliacao economica dos fundos (FNE, FNO, FCO) | anpec-2006 (congresso ANPEC) | scopus-2009-silva-resende-neto | 10.1590/s0101-41612009000100004 |
 | Eficacia do gasto publico: FNE, FNO e FCO | scielo-2009 (mesma pub., sem DOI) | scopus-2009-silva-resende-neto | 10.1590/s0101-41612009000100004 |
 
-Total de duplicatas: 9 (fase 1, DOI) + 10 (fase 3, PDF identico) + 9 (fase 4, manual TD/WP) = 28 removidas. **118 papers na base** (mantidos para consistencia com LLM), **45 aprovados** apos triagem.
+Total de duplicatas: 9 (fase 1, DOI) + 10 (fase 3, PDF identico) + 9 (fase 4, manual TD/WP) = 28 removidas. **118 papers na base** (mantidos para consistencia com LLM), **41 aprovados** apos triagem.
 
 Arquivo de auditoria fase 1: `data/1-records/processed/duplicates_removed.csv`
 Arquivo de auditoria fase 3: `data/2-papers/all_papers.xlsx` (aba "Duplicatas")
@@ -204,8 +204,8 @@ Apos a analise LLM, triagem manual em `all_papers_llm_classif_final.xlsx`:
 
 | Resultado | Quantidade |
 |-----------|-----------|
-| APROVADO | 45 |
-| REJEITADO | 73 |
+| APROVADO | 41 |
+| REJEITADO | 77 |
 | **Total** | **118** |
 
 Motivos de rejeicao: sem metodo econometrico, anterior a 2005, sem instrumentos PNDR, artigo fora do escopo, documento nao-cientifico, duplicata de versao publicada.
@@ -214,7 +214,7 @@ Motivos de rejeicao: sem metodo econometrico, anterior a 2005, sem instrumentos 
 
 O arquivo `all_papers_llm_classif_final.xlsx` foi criado a partir de `all_papers_llm_classif.xlsx` (gerado automaticamente pelo pipeline LLM) e revisado manualmente pelo pesquisador. Sempre que `all_papers_llm_classif.xlsx` for regenerado, as alteracoes abaixo devem ser reincorporadas para produzir o `_final.xlsx` atualizado.
 
-**Resumo:** 115 celulas alteradas em 73 registros, afetando 5 colunas.
+**Resumo:** 123 celulas alteradas em 77 registros, afetando 5 colunas.
 
 #### 1. Triagem (35 registros: APROVADO → REJEITADO, revisao manual)
 
@@ -322,7 +322,20 @@ Versao congresso ANPEC 2013 do mesmo trabalho publicado na CEPAL Review (Viana e
 |-------------|-------------------------|
 | `econpapers-2014-goncalves-soares-linhares.pdf` | `econpapers-2014-viana-goncalves-linhares.pdf` |
 
-Contagem final: 45 aprovados, 73 rejeitados.
+Contagem apos secao 8: 45 aprovados, 73 rejeitados.
+
+#### 9. Triagem (4 registros: APROVADO → REJEITADO, revisao manual pos-analise)
+
+Revisao manual adicional apos analise de instrumentos e metodos:
+
+| Arquivo PDF | Motivo Exclusao | Justificativa |
+|-------------|-----------------|---------------|
+| `capes-2009-nascimento-lima.pdf` | sem metodo econometrico | Usa metodo Shift-Share (decomposicao contabil), nao econometria |
+| `capes-2008-paes-siqueira.pdf` | fora do escopo | CGE para reforma fiscal visando equidade regional; nao avalia efeitos dos instrumentos PNDR |
+| `scielo-2022-gumiero.pdf` | sem metodo econometrico | Analise qualitativa de documentos institucionais sobre FNO/FDA em Carajas |
+| `anpec-2021-bezerra-ramos.pdf` | sem instrumentos PNDR | Analise de controle sintetico para energia eolica no semiarido; nao avalia instrumentos PNDR |
+
+Contagem final: 41 aprovados, 77 rejeitados.
 
 ## Consolidacao JSON enriquecido
 
@@ -336,7 +349,7 @@ Mescla tres fontes em um unico JSON (`data/2-papers/2-2-papers.json`):
 
 Para campos duplicados, prioridade: registros das bases > all_papers > LLM.
 
-Resultado: 118 papers com campos unificados (45 aprovados, 73 rejeitados), incluindo: metadados bibliograficos, resumo, palavras-chave, classificacao LLM em 3 stages, resultado da triagem e motivo de exclusao.
+Resultado: 118 papers com campos unificados (41 aprovados, 77 rejeitados), incluindo: metadados bibliograficos, resumo, palavras-chave, classificacao LLM em 3 stages, resultado da triagem e motivo de exclusao.
 
 ## Extracao e matching de referencias
 

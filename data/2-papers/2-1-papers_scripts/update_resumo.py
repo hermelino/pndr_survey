@@ -2,7 +2,7 @@
 com estatísticas agregadas de todas as colunas S1, S2 e S3."""
 
 import re
-from collections import Counter
+from collections import Counter, defaultdict
 from pathlib import Path
 
 import openpyxl
@@ -80,6 +80,127 @@ def _bucket(val, rules):
     return val[:60]
 
 
+# ── Categorização de variáveis dependentes ────────────────────────────────
+VAR_DEP_CATEGORIES = [
+    ("PIB/Renda", [
+        "pib", "gdp", "renda", "income", "produto", "output", "gva",
+        "valor adicionado", "consumo", "consumption", "investimento",
+        "investment", "atividade", "activity level",
+    ]),
+    ("Emprego", [
+        "emprego", "employment", "vínculo", "vinculo", "ocupação", "ocupacao",
+        "trabalhador", "job", "labor", "trabalho formal",
+    ]),
+    ("Salários/Massa salarial", [
+        "salário", "salario", "wage", "massa salarial",
+        "remuneração", "remuneracao", "rendimento",
+    ]),
+    ("Produtividade", ["produtividade", "productivity"]),
+    ("Produção agropecuária", [
+        "agrícola", "agricola", "agropecuária", "agropecuaria",
+        "pecuária", "pecuaria", "livestock", "vbp", "rebanho",
+        "produção bruta", "agricultural",
+    ]),
+    ("Desigualdade/Pobreza", [
+        "gini", "pobreza", "poverty", "bolsa família", "bolsa familia",
+        "informalidade", "informality", "desigualdade", "inequality",
+    ]),
+    ("Desenvolvimento social", [
+        "ifdm", "mortalidade", "mortality", "educação", "educacao",
+        "ideb", "saeb", "saúde", "saude", "health", "pré-natal",
+        "pre-natal", "prenatal", "nascido", "birth",
+    ]),
+    ("Receitas municipais", [
+        "receita", "revenue", "arrecadação", "arrecadacao", "icms",
+        "tribut", "fiscal", "transferência", "transferencia",
+    ]),
+    ("Sobrevivência de firmas", [
+        "sobrevivência", "sobrevivencia", "survival", "fechamento",
+        "closure", "cnpj",
+    ]),
+]
+CATEGORY_NAMES = [c[0] for c in VAR_DEP_CATEGORIES]
+
+# ── Normalização de nomes de instrumentos ─────────────────────────────────
+INSTRUMENT_NORM = {
+    "fne": "FNE", "fno": "FNO", "fco": "FCO",
+    "fdne": "FDNE", "fda": "FDA", "fdco": "FDCO",
+    "incentivos fiscais sudene": "IF – Sudene",
+    "incentivos fiscais da sudene": "IF – Sudene",
+    "incentivos fiscais sudam": "IF – Sudam",
+    "incentivos fiscais da sudam": "IF – Sudam",
+    "if-sudene": "IF – Sudene", "if – sudene": "IF – Sudene",
+    "if-sudam": "IF – Sudam", "if – sudam": "IF – Sudam",
+}
+INSTRUMENT_ORDER = [
+    "FNE", "FNO", "FCO", "FDNE", "FDA", "FDCO",
+    "IF – Sudene", "IF – Sudam",
+]
+DIR_LABELS = ["Positivo", "Negativo", "Misto", "Nulo", "Não informado"]
+
+
+def _normalize_instrument(name):
+    """Normaliza nome do instrumento para forma canônica.
+
+    Retorna None para instrumentos fora do escopo da PNDR
+    (ex.: BNDES, outros, Prodepe).
+    """
+    s = name.strip().lower().rstrip(")")
+    if s in INSTRUMENT_NORM:
+        return INSTRUMENT_NORM[s]
+    for key, val in INSTRUMENT_NORM.items():
+        if key in s:
+            return val
+    return None  # ignora instrumentos fora do escopo
+
+
+def _categorize_var_dep(var_dep_str):
+    """Retorna set de categorias que casam com a string de variável dependente."""
+    if not var_dep_str:
+        return set()
+    vl = var_dep_str.lower()
+    cats = set()
+    for cat_name, keywords in VAR_DEP_CATEGORIES:
+        for kw in keywords:
+            if kw in vl:
+                cats.add(cat_name)
+                break
+    return cats if cats else {"Outros"}
+
+
+def _section_header_wide(ws, row, first_col, col_names):
+    """Escreve cabeçalho de uma matriz com múltiplas colunas."""
+    c = ws.cell(row=row, column=1, value=first_col)
+    c.font = HEADER_FONT
+    c.fill = HEADER_FILL
+    c.border = THIN_BORDER
+    c.alignment = Alignment(horizontal="center")
+    for i, name in enumerate(col_names, 2):
+        c = ws.cell(row=row, column=i, value=name)
+        c.font = HEADER_FONT
+        c.fill = HEADER_FILL
+        c.border = THIN_BORDER
+        c.alignment = Alignment(horizontal="center", wrap_text=True)
+
+
+def _data_row_wide(ws, row, first_col, values, bold=False, fill=None):
+    """Escreve linha de dados de uma matriz com múltiplas colunas."""
+    c1 = ws.cell(row=row, column=1, value=first_col)
+    c1.border = THIN_BORDER
+    if bold:
+        c1.font = Font(bold=True)
+    if fill:
+        c1.fill = fill
+    for i, val in enumerate(values, 2):
+        c = ws.cell(row=row, column=i, value=val if val else "")
+        c.border = THIN_BORDER
+        c.alignment = Alignment(horizontal="center")
+        if bold:
+            c.font = Font(bold=True)
+        if fill:
+            c.fill = fill
+
+
 def main():
     wb = openpyxl.load_workbook(XLSX)
     ws_main = wb["Classificação LLM"]
@@ -106,6 +227,8 @@ def main():
     unidade_espacial_c = Counter()
     direcao_c = Counter()
     significancia_c = Counter()
+    inst_x_cat = defaultdict(Counter)     # instrumento → {categoria: n}
+    inst_direction = defaultdict(Counter)  # instrumento → {direção: n}
 
     tipo_dados_rules = {
         "painel": "Painel",
@@ -177,15 +300,30 @@ def main():
                 else:
                     tipo_pub_c[v] += 1
 
-            # Instrumentos: split by comma
+            # Instrumentos: split by comma + tabulação cruzada
             v_raw = row[col.get("S1_instrumentos_pndr", 0)].value
             if v_raw and str(v_raw).strip() not in ("", "[ne]"):
                 cleaned = re.sub(r"\s*\[.*?\]", "", str(v_raw))
+
+                # Variável dependente e direção para tabulação cruzada
+                vd_idx = col.get("S2_var_dependente")
+                var_dep = _normalize(row[vd_idx].value) if vd_idx else None
+                cats = _categorize_var_dep(var_dep)
+
+                de_idx = col.get("S3_direcao_efeito")
+                dir_raw = _normalize(row[de_idx].value) if de_idx else None
+                dir_norm = _bucket(dir_raw, direcao_rules) or "Não informado"
+
                 for inst in cleaned.split(","):
                     inst = inst.strip()
                     if inst:
-                        inst = inst[0].upper() + inst[1:]
-                        instrumentos_c[inst] += 1
+                        norm = _normalize_instrument(inst)
+                        if norm is None:
+                            continue
+                        instrumentos_c[norm] += 1
+                        for cat in cats:
+                            inst_x_cat[norm][cat] += 1
+                        inst_direction[norm][dir_norm] += 1
 
             v = _normalize(row[col.get("S2_metodo_econometrico", 0)].value)
             if v:
@@ -254,10 +392,17 @@ def main():
     # 3. Aprovados por Base
     r = _write_counter(ws, r, "Aprovados por Base", "Qtd", base_c, aprovados)
 
-    # 4. Aprovados por Ano
-    _section_header(ws, r, "Aprovados por Ano", "Qtd"); r += 1
-    for ano, qtd in sorted(ano_c.items()):
-        _data_row(ws, r, ano, qtd); r += 1
+    # 4. Aprovados por Período (faixas conforme metodo.tex)
+    PERIODOS = [
+        ("2005–2010", range(2005, 2011)),
+        ("2011–2015", range(2011, 2016)),
+        ("2016–2020", range(2016, 2021)),
+        ("2021–2025", range(2021, 2026)),
+    ]
+    _section_header(ws, r, "Aprovados por Período", "Qtd"); r += 1
+    for label, years in PERIODOS:
+        qtd = sum(ano_c.get(y, 0) + ano_c.get(str(y), 0) for y in years)
+        _data_row(ws, r, label, qtd); r += 1
     _data_row(ws, r, "Total", aprovados, bold=True, fill=LIGHT_FILL); r += 1
     r += 1
 
@@ -271,10 +416,39 @@ def main():
     _data_row(ws, r, "Total artigos", tipo_pub_c.get("Artigo publicado em periódico", 0), bold=True, fill=LIGHT_FILL); r += 1
     r += 1
 
-    # 7. Instrumentos da PNDR
-    r = _write_counter(ws, r, "Instrumentos da PNDR (menções)", "Qtd", instrumentos_c)
+    # 7a. Instrumentos da PNDR (contagem simples)
+    r = _write_counter(ws, r, "Instrumentos da PNDR (estudos)", "Qtd", instrumentos_c)
 
-    # 7. Método Econométrico
+    # 7b. Instrumentos × Desfecho socioeconômico avaliado
+    used_cats = [c for c in CATEGORY_NAMES
+                 if any(inst_x_cat[inst][c] > 0 for inst in INSTRUMENT_ORDER)]
+    if any(inst_x_cat[inst].get("Outros", 0) > 0 for inst in INSTRUMENT_ORDER):
+        used_cats.append("Outros")
+    _section_header_wide(ws, r, "Instrumento", used_cats + ["Total"])
+    r += 1
+    for inst in INSTRUMENT_ORDER:
+        if instrumentos_c.get(inst, 0) > 0:
+            values = [inst_x_cat[inst].get(c, 0) for c in used_cats]
+            _data_row_wide(ws, r, inst, values + [instrumentos_c[inst]])
+            r += 1
+    # Linha de totais por categoria
+    cat_totals = [sum(inst_x_cat[inst].get(c, 0) for inst in INSTRUMENT_ORDER)
+                  for c in used_cats]
+    _data_row_wide(ws, r, "Total", cat_totals + [sum(instrumentos_c.values())],
+                   bold=True, fill=LIGHT_FILL)
+    r += 2
+
+    # 7c. Direção do efeito por instrumento
+    _section_header_wide(ws, r, "Instrumento", DIR_LABELS + ["Total"])
+    r += 1
+    for inst in INSTRUMENT_ORDER:
+        if instrumentos_c.get(inst, 0) > 0:
+            values = [inst_direction[inst].get(d, 0) for d in DIR_LABELS]
+            _data_row_wide(ws, r, inst, values + [instrumentos_c[inst]])
+            r += 1
+    r += 1
+
+    # 8. Método Econométrico
     _section_header(ws, r, "Método Econométrico (aprovados)", "Qtd"); r += 1
     for k, v in metodo_c.most_common(25):
         _data_row(ws, r, k[:80], v); r += 1
@@ -297,7 +471,9 @@ def main():
 
     # Column widths
     ws.column_dimensions["A"].width = 50
-    ws.column_dimensions["B"].width = 12
+    ws.column_dimensions["B"].width = 18
+    for letter in "CDEFGHIJKL":
+        ws.column_dimensions[letter].width = 16
 
     wb.save(XLSX)
     print(f"Aba Resumo atualizada com sucesso! ({r} linhas)")
