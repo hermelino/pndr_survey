@@ -21,6 +21,7 @@ Os dados do pipeline são a fonte de verdade. Em caso de conflito entre o artigo
 | 5 | Registros por base | `data/1-records/1-*/` | Contagens brutas por base (arquivos RIS/Excel) |
 | 6 | Duplicatas removidas | `data/1-records/processed/duplicates_removed.csv` | Auditoria de dedup |
 | 7 | Questionários LLM | `scripts/questionnaires/stage_*.json` | Campos extraídos por estágio |
+| 8 | Classificação final | `data/2-papers/all_papers_llm_classif_final.xlsx` | Triagem revisada, instrumentos, métodos, tipo publicação |
 
 ---
 
@@ -50,28 +51,113 @@ Os dados do pipeline são a fonte de verdade. Em caso de conflito entre o artigo
 | Período 2014–2019 | Contar por ano no IC report | 3.6 |
 | Período 2020–2025 | Contar por ano no IC report | 3.6 |
 
-### 3. Consistência interna do artigo
+### 3. Tabelas derivadas
+
+Tabelas compiladas a partir dos estudos aprovados. Fonte: `2-2-papers.json` (campos aninhados em `s1`, `s2`, `s3`).
+
+**IMPORTANTE:** Os campos de extração LLM estão em dicionários aninhados, não em chaves de nível superior:
+- `p['s1']['instrumentos_pndr']` — instrumentos PNDR
+- `p['s1']['tipo_trabalho']` — tipo de publicação (artigo publicado, texto p/ discussão, apresentação em congresso)
+- `p['s1']['autores']` — autores (string com nomes)
+- `p['s2']['metodo_econometrico']` — método econométrico principal
+- `p['s2']['unidade_espacial']` — unidade amostral (município, empresa, UF, etc.)
+- `p['autores']` — autores no nível superior (formato `Sobrenome, Iniciais; ...`)
+- `p['ano']` — ano no nível superior
+
+| Tabela | Label LaTeX | Dado | Como calcular |
+|--------|-------------|------|---------------|
+| Estudos por período | `tab:estudos-ano` | Contagem por faixa de ano | Agrupar `p['ano']` dos aprovados em 2005–2010, 2011–2015, 2016–2020, 2021–2025 |
+| Menções por instrumento | `tab:instrumentos` | Frequência de cada instrumento | Parsear `p['s1']['instrumentos_pndr']` (separar por vírgula/ponto-e-vírgula), normalizar para maiúsculas, contar. Mapear variantes: `IF Sudene` / `incentivo fiscal Sudene` → `IF -- Sudene`; `FDA` → `FDA`; etc. |
+| Top-10 autores | `tab:autores-todos` | Autorias e coautorias | Parsear `p['autores']` (formato `Sobrenome, I.; ...`), separar por `;`, normalizar nomes, contar frequência global |
+| Unidade amostral | `tab:unidade-amostral` | Unidade de análise | Extrair `p['s2']['unidade_espacial']`, normalizar categorias: `município` / `municipal` → `Município`; `empresa` / `firma` → `Empresa`; `UF` / `estado` → `UF`; etc. |
+| Métodos econométricos | `tab:metodos` | Métodos mais frequentes | Extrair `p['s2']['metodo_econometrico']`, agrupar variantes similares (ex: `DiD` / `Diferenças em Diferenças`), contar top-6 |
+
+**Procedimento de recontagem:**
+
+```python
+import json
+from collections import Counter
+
+with open('data/2-papers/2-2-papers.json', encoding='utf-8') as f:
+    data = json.load(f)
+
+aprovados = [p for p in data if p.get('triagem') == 'APROVADO']
+
+# --- tab:estudos-ano ---
+anos = Counter(int(p['ano']) for p in aprovados)
+for faixa, (ini, fim) in {'2005-2010': (2005,2010), '2011-2015': (2011,2015),
+                           '2016-2020': (2016,2020), '2021-2025': (2021,2025)}.items():
+    print(f'{faixa}: {sum(c for a,c in anos.items() if ini<=a<=fim)}')
+
+# --- tab:instrumentos ---
+instrumentos = Counter()
+for p in aprovados:
+    raw = p.get('s1', {}).get('instrumentos_pndr', '')
+    if isinstance(raw, str):
+        for part in raw.replace(';', ',').split(','):
+            part = part.strip().upper()
+            if part:
+                instrumentos[part] += 1
+for i, c in instrumentos.most_common():
+    print(f'{i}: {c}')
+
+# --- tab:autores-todos ---
+autores = Counter()
+for p in aprovados:
+    raw = p.get('autores', '')
+    for a in raw.split(';'):
+        nome = a.strip()
+        if nome:
+            autores[nome] += 1
+for a, c in autores.most_common(10):
+    print(f'{a}: {c}')
+
+# --- tab:unidade-amostral ---
+unidades = Counter()
+for p in aprovados:
+    raw = p.get('s2', {}).get('unidade_espacial', '')
+    unidades[raw] += 1
+for u, c in unidades.most_common():
+    print(f'{u}: {c}')
+
+# --- tab:metodos ---
+metodos = Counter()
+for p in aprovados:
+    raw = p.get('s2', {}).get('metodo_econometrico', '')
+    metodos[raw] += 1
+for m, c in metodos.most_common(10):
+    print(f'{m}: {c}')
+```
+
+### 4. Consistência interna do artigo
 
 Verificar que o **mesmo número** aparece de forma idêntica em todas as ocorrências:
 
 | Número | Ocorrências esperadas |
 |--------|----------------------|
-| Total bruto (ex: 137) | 3.1 (texto), 3.2 (tabela total), 3.4 (texto) |
+| Total bruto (ex: 137) | 3.1 (texto), diagrama PRISMA (total), 3.4 (texto) |
 | Duplicatas removidas (ex: 19) | 3.1 (texto), 3.4 (texto) |
-| Registros únicos (ex: 118) | 3.1 (texto), 3.4 (texto), 3.5 (texto) |
-| Aprovados (ex: 45) | 3.1 (texto), 3.5 (texto), 3.6 (texto) |
-| Rejeitados (ex: 73) | 3.1 (texto), 3.5 (texto + tabela) |
+| Registros únicos (ex: 118) | 3.1 (texto), 3.4 (texto), 3.5 (texto), diagrama PRISMA |
+| Aprovados (ex: 38) | 3.1 (texto), 3.5 (texto), 3.6 (texto), diagrama PRISMA (inclusão) |
+| Rejeitados (ex: 80) | 3.1 (texto), 3.5 (texto), diagrama PRISMA (exclusão) |
+| Não-publicados (ex: 20) | 3.6 (texto) |
+| Tab. estudos-ano total | Deve somar = aprovados |
+| Tab. instrumentos | Cada valor deve ser verificável via `s1.instrumentos_pndr` |
+| Tab. autores | Cada valor deve ser verificável via `autores` |
+| Tab. unidade amostral | Cada valor deve ser verificável via `s2.unidade_espacial` |
+| Tab. métodos | Cada valor deve ser verificável via `s2.metodo_econometrico` |
 
 ---
 
 ## Arquivos LaTeX a verificar
 
-| Arquivo | Seção |
-|---------|-------|
-| `latex/metodo.tex` | Seção 3: Método (todas as subseções) |
-| `latex/main.tex` | Abstract, se houver números |
-| `latex/introducao.tex` | Se existir e contiver números do pipeline |
-| `latex/resultados.tex` | Se existir e contiver contagens de estudos |
+| Arquivo | Seção | Tabelas |
+|---------|-------|---------|
+| `latex/metodo.tex` | Seção 3: Método (todas as subseções) | `tab:estudos-ano`, `tab:instrumentos`, `tab:autores-todos`, `tab:unidade-amostral`, `tab:metodos` |
+| `latex/diagrama_prisma.tex` | Diagrama de fluxo PRISMA 2020 | — |
+| `latex/main.tex` | Abstract, se houver números | — |
+| `latex/introducao.tex` | Se existir e contiver números do pipeline | — |
+| `latex/resultados.tex` | Se existir e contiver contagens de estudos | — |
 
 ---
 
@@ -118,6 +204,41 @@ Distribuição temporal:
   2020-2025:  XX
 ```
 
+3. Executar o script Python da seção "3. Tabelas derivadas" para extrair os valores atuais das tabelas derivadas. Montar tabela de referência:
+
+```
+TABELAS DERIVADAS (38 aprovados)
+=================================
+tab:estudos-ano (períodos da tabela):
+  2005-2010:  XX
+  2011-2015:  XX
+  2016-2020:  XX
+  2021-2025:  XX
+  TOTAL:      XX (deve = aprovados)
+
+tab:instrumentos (menções, um estudo pode contar >1):
+  FNE:          XX
+  FNO:          XX
+  FCO:          XX
+  FDNE:         XX
+  FDA:          XX
+  FDCO:         XX
+  IF -- Sudene: XX
+  IF -- Sudam:  XX
+
+tab:autores-todos (top-10 autorias+coautorias):
+  [listar top-10 com contagem]
+
+tab:unidade-amostral:
+  Município:   XX
+  Empresa:     XX
+  UF:          XX
+  [outros]:    XX
+
+tab:metodos (top-6 métodos econométricos):
+  [listar top-6 com contagem]
+```
+
 ### FASE 2 — Comparação com o artigo
 
 1. Ler cada arquivo LaTeX listado acima.
@@ -156,6 +277,14 @@ Apresentar ao usuário:
 #### A VERIFICAR
 | # | Arquivo | Linha | Valor | Observação |
 |---|---------|-------|-------|------------|
+
+### Tabelas derivadas
+[Tabela da Fase 1, seção tabelas derivadas]
+
+#### Divergências nas tabelas
+| # | Tabela | Item | Valor artigo | Valor correto | Observação |
+|---|--------|------|-------------|---------------|------------|
+| 1 | tab:instrumentos | FDNE | 9 | 8 | Remoção de anpec-2024-calife-neto |
 
 ### Correções propostas
 [Lista de substituições exatas, com old_string → new_string]
