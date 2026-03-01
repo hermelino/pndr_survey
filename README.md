@@ -63,7 +63,7 @@ pndr_survey/
 │       ├── estruturar_referencias.py  # Estruturacao de refs em JSON
 │       ├── referencias_consolidadas.txt
 │       ├── referencias_estruturadas.json
-│       ├── refs_por_estudo/           # 45 JSONs ativos + TXTs com refs por estudo
+│       ├── refs_por_estudo/           # 43 JSONs ativos + TXTs com refs por estudo
 │       ├── citation_index_results.json # Indice de citacao por estudo (JSON)
 │       └── citation_index_report.txt   # Relatorio do indice de citacao
 ├── latex/                         # Artigo LaTeX (esqueleto)
@@ -91,7 +91,7 @@ Busca manual nas 5 bases                   PDFs coletados (118)
 [3] Triagem pre-LLM (PRISMA)                  Stage 3: Resultados
                                                        |
                                                        v
-                                               [6] Triagem final (38 aprovados)
+                                               [6] Triagem final (36 aprovados)
                                                        |
                                                        v
                                                [7] Consolidacao JSON enriquecido
@@ -112,11 +112,11 @@ Busca manual nas 5 bases                   PDFs coletados (118)
 | 3 | Triagem pre-LLM | Concluido |
 | 4 | Coleta de PDFs (118 de 118, 100%) | Concluido |
 | 5 | Analise LLM (Stages 1-3, 118 papers) | Concluido |
-| 6 | Triagem final (38 aprovados, 80 rejeitados) | Concluido |
+| 6 | Triagem final (36 aprovados, 82 rejeitados) | Concluido |
 | 7 | Consolidacao JSON (registros + LLM) | Concluido |
-| 8 | Extracao de referencias (45 estudos ativos) | Concluido |
-| 9 | Matching de citacoes entre estudos (68 citacoes cruzadas) | Concluido |
-| 10 | Indice de citacao (114 citacoes cruzadas; 38 estudos: 18 pub, 20 nao-pub) | Concluido |
+| 8 | Extracao de referencias (43 estudos ativos) | Concluido |
+| 9 | Matching de citacoes entre estudos (67 citacoes cruzadas) | Concluido |
+| 10 | Indice de citacao (114 citacoes cruzadas; 36 estudos: 17 pub, 19 nao-pub) | Concluido |
 | 11 | Artigo LaTeX | Em andamento |
 
 Detalhes da extracao: [docs/pipeline_extraction.md](docs/pipeline_extraction.md)

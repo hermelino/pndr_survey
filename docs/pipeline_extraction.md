@@ -126,7 +126,7 @@ Identificados apos a analise de indice de citacao. Estudos que apareceram como T
 | Eficacia do gasto publico: FNE, FNO e FCO | scielo-2009 (mesma pub., sem DOI) | scopus-2009-silva-resende-neto | 10.1590/s0101-41612009000100004 |
 | Efeitos regionais do FNE (congresso ANPEC 2013) | econpapers-2014-goncalves-soares-linhares (nome alternativo) | econpapers-2014-viana-goncalves-linhares (CEPAL Review) | — |
 
-Total de duplicatas: 9 (fases 1-2, DOI + fuzzy titulo) + 10 (fase 3, PDF identico) + 9 (fase 4, manual TD/WP) = 28 removidas. **118 papers na base** (mantidos para consistencia com LLM), **38 aprovados** apos triagem.
+Total de duplicatas: 9 (fases 1-2, DOI + fuzzy titulo) + 10 (fase 3, PDF identico) + 9 (fase 4, manual TD/WP) = 28 removidas. **118 papers na base** (mantidos para consistencia com LLM), **36 aprovados** apos triagem.
 
 Arquivo de auditoria fase 1: `data/1-records/processed/duplicates_removed.csv`
 Arquivo de auditoria fase 3: `data/2-papers/all_papers.xlsx` (aba "Duplicatas")
@@ -205,8 +205,8 @@ Apos a analise LLM, triagem manual em `all_papers_llm_classif_final.xlsx`:
 
 | Resultado | Quantidade |
 |-----------|-----------|
-| APROVADO | 38 |
-| REJEITADO | 80 |
+| APROVADO | 36 |
+| REJEITADO | 82 |
 | **Total** | **118** |
 
 Motivos de rejeicao: sem metodo econometrico, anterior a 2005, sem instrumentos PNDR, artigo fora do escopo, documento nao-cientifico, duplicata de versao publicada.
@@ -348,7 +348,18 @@ Revisao manual adicional apos verificacao de instrumentos e metodos:
 | `anpec-2025-silva-chagas-azzoni.pdf` | sem instrumentos PNDR | Avalia impacto de energia eolica no emprego via incentivos Sudene, sem instrumentos especificos da PNDR |
 | `anpec-2024-calife-neto.pdf` | sem instrumentos PNDR | Avalia impacto da industria automotiva em Goiana-PE via FDNE; FDNE isolado nao configura instrumento especifico da PNDR |
 
-Contagem final: 38 aprovados, 80 rejeitados.
+Contagem apos secao 10: 38 aprovados, 80 rejeitados.
+
+#### 11. Triagem (2 registros: APROVADO → REJEITADO, revisao manual pos-analise)
+
+Revisao manual adicional apos verificacao de metodos e variaveis de resultado:
+
+| Arquivo PDF | Motivo Exclusao | Justificativa |
+|-------------|-----------------|---------------|
+| `anpec-2024-quaglio.pdf` | sem metodo econometrico | Analise espacial descritiva do FNE no Pronaf; nao aplica metodo econometrico |
+| `scopus-2012-abreu-gomes-mello.pdf` | outras variaveis de resultado | Avalia retencao de novilhas no Pantanal via DEA e indice Malmquist; variaveis de resultado fora do escopo da PNDR |
+
+Contagem final: 36 aprovados, 82 rejeitados.
 
 ## Consolidacao JSON enriquecido
 
@@ -362,7 +373,7 @@ Mescla tres fontes em um unico JSON (`data/2-papers/2-2-papers.json`):
 
 Para campos duplicados, prioridade: registros das bases > all_papers > LLM.
 
-Resultado: 118 papers com campos unificados (38 aprovados, 80 rejeitados), incluindo: metadados bibliograficos, resumo, palavras-chave, classificacao LLM em 3 stages, resultado da triagem e motivo de exclusao.
+Resultado: 118 papers com campos unificados (36 aprovados, 82 rejeitados), incluindo: metadados bibliograficos, resumo, palavras-chave, classificacao LLM em 3 stages, resultado da triagem e motivo de exclusao.
 
 ## Extracao e matching de referencias
 
@@ -370,9 +381,9 @@ Resultado: 118 papers com campos unificados (38 aprovados, 80 rejeitados), inclu
 
 Scripts: `data/3-ref-bib/extrair_referencias.py` e `estruturar_referencias.py`
 
-Para 54 dos estudos aprovados, as listas de referencias bibliograficas foram extraidas dos PDFs via Gemini e estruturadas em JSON com campos: raw, autor, titulo, ano, periodico, volume, issue, pages. Apos a remocao de 7 estudos duplicados (versoes TD/congresso) e 2 estudos rejeitados em revisao posterior, restam 45 JSONs ativos; os 9 removidos foram arquivados em `refs_por_estudo/_archived_duplicates/`.
+Para 54 dos estudos aprovados, as listas de referencias bibliograficas foram extraidas dos PDFs via Gemini e estruturadas em JSON com campos: raw, autor, titulo, ano, periodico, volume, issue, pages. Apos a remocao de 7 estudos duplicados (versoes TD/congresso) e 4 estudos rejeitados em revisao posterior, restam 43 JSONs ativos; os 11 removidos foram arquivados em `refs_por_estudo/_archived_duplicates/`.
 
-Resultado: 45 JSONs ativos em `data/3-ref-bib/refs_por_estudo/`, totalizando ~1.196 referencias.
+Resultado: 43 JSONs ativos em `data/3-ref-bib/refs_por_estudo/`, totalizando ~1.138 referencias.
 
 ### Matching de citacoes entre estudos
 
@@ -395,7 +406,7 @@ Campos adicionados a cada referencia nos JSONs:
 | `estudo_citado_pdf` | str/null | Arquivo PDF do estudo citado |
 | `match_score` | float/null | Score do token_sort_ratio (75-100) |
 
-Resultado: **68 citacoes cruzadas** encontradas em **19 dos 45 arquivos** de referencias.
+Resultado: **67 citacoes cruzadas** encontradas em **18 dos 43 arquivos** de referencias.
 
 ### Indice de citacao (IC)
 
@@ -443,7 +454,7 @@ Tres grupos de estudos foram identificados como duplicatas verdadeiras: o mesmo 
 
 Script de marcacao: `scripts/mark_td_duplicates.py`
 
-**Resultados:** 38 estudos (18 publicados, 20 nao-publicados), **114 citacoes cruzadas**.
+**Resultados:** 36 estudos (17 publicados, 19 nao-publicados), **114 citacoes cruzadas**.
 
 Saidas:
 - `data/3-ref-bib/citation_index_results.json` — dados completos por estudo
