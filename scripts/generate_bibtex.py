@@ -28,6 +28,25 @@ _TYPE_MAP = {"JOUR": "article", "RPRT": "techreport", "CPAPER": "inproceedings"}
 _SUFFIXES = {"junior", "júnior", "neto", "filho", "sobrinho"}
 _PARTICLES = {"de", "da", "do", "dos", "das", "e"}
 
+# Stopwords (prepositions, articles, conjunctions) to lowercase in titles
+_TITLE_STOPWORDS = {
+    # Portuguese
+    "de", "da", "do", "dos", "das", "e", "ou", "em", "no", "na", "nos", "nas",
+    "ao", "aos", "por", "pela", "pelo", "pelos", "pelas", "com", "sem", "entre",
+    "sobre", "para", "um", "uma", "uns", "umas", "o", "a", "os", "as", "à", "às",
+    "via",
+    # English
+    "of", "the", "in", "on", "at", "to", "for", "and", "or", "but", "with",
+    "from", "by", "an",
+}
+
+# Known acronyms that must be uppercase in titles
+_TITLE_ACRONYMS = {
+    "pndr", "fdne", "fne", "fno", "fco", "fdco", "fda",
+    "sudene", "sudam", "ipea", "bndes", "bnb",
+    "pronaf", "prodepe",
+}
+
 
 def parse_ris(ris_path: Path) -> list[dict[str, list[str]]]:
     """Parse RIS em lista de dicts {tag: [valores]}."""
@@ -52,6 +71,36 @@ def parse_ris(ris_path: Path) -> list[dict[str, list[str]]]:
             else:
                 current.setdefault(tag, []).append(value)
     return entries
+
+
+def _fix_title_casing(title: str) -> str:
+    """Fix title casing: lowercase stopwords, uppercase known acronyms.
+
+    Preserves first word of the title and first word after colon.
+    """
+
+    def _fix_word(word: str, is_start: bool) -> str:
+        m = re.search(r"[a-zA-ZÀ-ÿ]+", word)
+        if not m:
+            return word
+        core = m.group()
+        core_lower = core.lower()
+        if core_lower in _TITLE_ACRONYMS:
+            return word[: m.start()] + core.upper() + word[m.end() :]
+        if not is_start and core_lower in _TITLE_STOPWORDS:
+            return word[: m.start()] + core.lower() + word[m.end() :]
+        return word
+
+    words = title.split()
+    if not words:
+        return title
+
+    result: list[str] = []
+    is_start = True
+    for word in words:
+        result.append(_fix_word(word, is_start))
+        is_start = word.rstrip().endswith(":")
+    return " ".join(result)
 
 
 def _split_given_surname(full_name: str) -> tuple[str, str]:
@@ -190,7 +239,8 @@ def entry_to_bibtex(entry: dict[str, list[str]], used: set[str]) -> str:
         lines.append(f'\tauthor = {{{" and ".join(normalized)}}},')
 
     if title:
-        lines.append(f"\ttitle = {{{{{title}}}}},")
+        title_fixed = _fix_title_casing(title)
+        lines.append(f"\ttitle = {{{{{title_fixed}}}}},")
 
     if year:
         lines.append(f"\tyear = {{{year}}},")
