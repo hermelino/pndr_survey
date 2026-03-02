@@ -15,6 +15,8 @@ scripts/                        → Pipeline Python
   merge_papers_to_json.py       → Mescla registros + LLM → JSON enriquecido
   match_refs_to_studies.py      → Matching de citacoes entre estudos
   citation_index.py             → Indice de citacao (IC) para revisao sistematica
+  generate_approved_ris.py      → Filtra RIS para estudos aprovados
+  generate_bibtex.py            → Converte RIS aprovado → BibTeX (references.bib)
   src/
     models.py                   → BibRecord (bibliografico) + PaperRecord (analise LLM)
     config.py                   → Carregamento YAML + validacao
