@@ -30,19 +30,21 @@ Você é o orquestrador de atualizações do pipeline de revisão sistemática `
 [9b] Tabela IC LaTeX                   → tabela_ic.tex (generate_ic_table.py)
       ↓
 [10] Documentação                      → pipeline_extraction.md, README.md
+      ↓
+[11] Artigo (via /atualizar-artigo)    → metodo.tex, diagrama_prisma.tex, main.tex
 ```
 
-**Regra de propagação:** Se o estágio N é afetado, todos os estágios N+1..10 devem ser avaliados. Nem todos precisam ser re-executados — alguns podem não ser afetados pela mudança específica.
+**Regra de propagação:** Se o estágio N é afetado, todos os estágios N+1..11 devem ser avaliados. Nem todos precisam ser re-executados — alguns podem não ser afetados pela mudança específica.
 
 ## Cenários de atualização
 
 | # | Cenário | Estágio origem | Estágios potencialmente afetados |
 |---|---------|----------------|----------------------------------|
-| 1 | Nova extração de registros | 1 | 2→3→4→5→6→7→8→9→10 |
-| 2 | Novas duplicatas identificadas | 2 | 3→6→7→8→9→10 |
-| 3 | Mudança nos critérios de triagem | 6 | 7→8→9→10 |
-| 4 | Correções manuais na classificação LLM | 6 | 7→10 |
-| 5 | Re-análise LLM (novo modelo/questionário) | 5 | 6→7→8→9→10 |
+| 1 | Nova extração de registros | 1 | 2→3→4→5→6→7→8→9→10→11 |
+| 2 | Novas duplicatas identificadas | 2 | 3→6→7→8→9→10→11 |
+| 3 | Mudança nos critérios de triagem | 6 | 7→8→9→10→11 |
+| 4 | Correções manuais na classificação LLM | 6 | 7→10→11 |
+| 5 | Re-análise LLM (novo modelo/questionário) | 5 | 6→7→8→9→10→11 |
 
 ## Artefatos do pipeline e seus caminhos
 
@@ -126,6 +128,7 @@ scripts/mark_td_duplicates.py                # Marcação de duplicatas TD/WP
    - Nenhum dado perdido inadvertidamente
 3. Se algum passo falhar, parar e reportar — não tentar forçar.
 4. Atualizar `pipeline_extraction.md` e `README.md` com as novas contagens.
+5. Invocar `/atualizar-artigo` para verificar e corrigir números no artigo LaTeX (`metodo.tex`, `diagrama_prisma.tex`, `main.tex`) contra os dados atualizados do pipeline.
 
 ### FASE 4 — RELATÓRIO
 
