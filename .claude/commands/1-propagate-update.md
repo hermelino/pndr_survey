@@ -27,6 +27,8 @@ Você é o orquestrador de atualizações do pipeline de revisão sistemática `
       ↓
 [9] Índice de citação                  → citation_index_results.json (citation_index.py)
       ↓
+[9b] Tabela IC LaTeX                   → tabela_ic.tex (generate_ic_table.py)
+      ↓
 [10] Documentação                      → pipeline_extraction.md, README.md
 ```
 
@@ -57,6 +59,8 @@ data/2-papers/_llm_checkpoint.json                 # Checkpoint LLM
 data/2-papers/2-2-papers.json                      # JSON enriquecido (MASTER)
 data/2-papers/approved_papers.ris                   # RIS dos estudos aprovados (generate_approved_ris.py)
 latex/references.bib                                # BibTeX (manual + gerado por generate_bibtex.py)
+latex/bibtex_key_map.json                           # Mapeamento PDF→chave BibTeX (generate_bibtex.py)
+latex/tabela_ic.tex                                 # Tabela IC LaTeX (generate_ic_table.py)
 data/2-papers/2-2-papers-pdfs/                     # PDFs renomeados
 data/3-ref-bib/refs_por_estudo/                    # JSONs de referências por estudo
 data/3-ref-bib/refs_por_estudo/_archived_duplicates/  # Refs arquivadas de duplicatas
@@ -77,6 +81,7 @@ scripts/generate_approved_ris.py             # RIS dos estudos aprovados
 scripts/generate_bibtex.py                  # RIS → BibTeX (atualiza references.bib)
 scripts/match_refs_to_studies.py             # Matching de citações
 scripts/citation_index.py                    # Índice de citação
+scripts/generate_ic_table.py                # Tabela IC LaTeX (usa bibtex_key_map.json)
 scripts/mark_td_duplicates.py                # Marcação de duplicatas TD/WP
 ```
 

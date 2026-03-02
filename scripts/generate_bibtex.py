@@ -9,6 +9,7 @@ Uso: python generate_bibtex.py
 
 from __future__ import annotations
 
+import json
 import re
 import sys
 from pathlib import Path
@@ -18,6 +19,7 @@ from unidecode import unidecode
 BASE_DIR = Path(__file__).resolve().parent.parent
 RIS_PATH = BASE_DIR / "data" / "2-papers" / "approved_papers.ris"
 BIB_PATH = BASE_DIR / "latex" / "references.bib"
+KEY_MAP_PATH = BASE_DIR / "latex" / "bibtex_key_map.json"
 
 MARKER_START = "% === INÍCIO SEÇÃO GERADA (generate_bibtex.py) — NÃO EDITAR ABAIXO ==="
 MARKER_END = "% === FIM SEÇÃO GERADA ==="
@@ -227,6 +229,15 @@ def entry_to_bibtex(entry: dict[str, list[str]], used: set[str]) -> str:
     return "\n".join(lines)
 
 
+def _extract_pdf_name(entry: dict[str, list[str]]) -> str | None:
+    """Extrai nome do PDF (sem extensão) do campo N1."""
+    for n1 in entry.get("N1", []):
+        if n1.startswith("PDF: "):
+            name = n1.replace("PDF: ", "").strip()
+            return name[:-4] if name.endswith(".pdf") else name
+    return None
+
+
 def _get_existing_keys(bib_path: Path) -> set[str]:
     """Extrai chaves BibTeX existentes na seção manual do .bib."""
     keys: set[str] = set()
@@ -273,11 +284,26 @@ def main() -> None:
         print(f"Chaves manuais existentes: {sorted(used_keys)}")
 
     bibtex_entries: list[str] = []
+    key_map: dict[str, str] = {}
+
     for entry in entries:
-        bibtex_entries.append(entry_to_bibtex(entry, used_keys))
+        bib_str = entry_to_bibtex(entry, used_keys)
+        bibtex_entries.append(bib_str)
+        # Mapear pdf_name → bibtex_key
+        pdf_name = _extract_pdf_name(entry)
+        key_match = re.match(r"@\w+\{(\w+),", bib_str)
+        if pdf_name and key_match:
+            key_map[pdf_name] = key_match.group(1)
 
     update_bib(BIB_PATH, bibtex_entries)
+
+    # Salvar mapeamento PDF → chave BibTeX
+    KEY_MAP_PATH.write_text(
+        json.dumps(key_map, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
+
     print(f"\nBibTeX atualizado: {BIB_PATH}")
+    print(f"Mapeamento: {KEY_MAP_PATH} ({len(key_map)} entradas)")
     print(f"Entradas geradas: {len(bibtex_entries)}")
     generated_keys = sorted(k for k in used_keys if k not in {"Pageetal2021", "MadalenoWaights2016"})
     print(f"Chaves geradas: {', '.join(generated_keys)}")

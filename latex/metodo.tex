@@ -194,38 +194,4 @@ A Tabela~\ref{tab:autores-todos} apresenta os dez autores mais frequentes consid
 
 Para além da frequência dos métodos, cabe avaliar a robustez das estratégias empíricas empregadas. A escala \textit{Maryland Scientific Methods} (MSM), descrita em \citeonline{MadalenoWaights2016}, classifica a robustez dos métodos de avaliação de impacto em escores de 1 (menos robusto) a 5 (mais robusto), segundo a capacidade de lidar com vieses de seleção. Entre os estudos selecionados, predominam abordagens com escore 3 -- métodos que controlam por características observáveis, porém sem garantir completa eliminação de vieses de seleção. Os métodos mais frequentes incluem painel de efeitos fixos, diferenças em diferenças, \textit{Propensity Score Matching}, painel espacial e regressão MQO. Abordagens quase experimentais com escore 4, como \textit{Regression Discontinuity Design}, permanecem pouco utilizadas. Cabe notar que métodos como Análise Envoltória de Dados (DEA) e Equilíbrio Geral Computável (EGC), presentes na amostra, não são classificáveis pela escala MSM por não se destinarem à identificação de efeitos causais -- o primeiro mensura eficiência relativa e o segundo simula efeitos de equilíbrio a partir de calibração de parâmetros. A ausência de avaliações com escore máximo de robustez reflete as restrições inerentes ao desenho não aleatório da política, em que a alocação de recursos tende a ser determinada pela demanda das firmas.
 
-\begin{table}[htb]
-\centering
-\small
-\caption{Índice de citação cruzada (IC) dos estudos não publicados}
-\label{tab:ic-nao-publicados}
-\begin{tabular}{lrrrr}
-\toprule
-Estudo & Ano & Cit. & $N$ & IC \\
-\midrule
-Resende (TD IPEA 2002)              & 2014 & 5 & 13 & 0,38 \\
-Nascimento; Haddad                  & 2017 & 3 &  9 & 0,33 \\
-Resende (TD IPEA 1676)              & 2011 & 5 & 15 & 0,33 \\
-Oliveira; Domingues                 & 2005 & 3 & 17 & 0,18 \\
-Oliveira; Silveira Neto             & 2020 & 1 &  6 & 0,17 \\
-Oliveira; Silveira Neto             & 2021 & 1 &  6 & 0,17 \\
-Braz; Irffi                         & 2023 & 1 &  6 & 0,17 \\
-Carneiro; Costa; Irffi              & 2023 & 1 &  6 & 0,17 \\
-Oliveira; Resende; Gonçalves        & 2017 & 0 &  9 & 0,00 \\
-Alves; Silveira Neto; Oliveira      & 2024 & 0 &  2 & 0,00 \\
-Bastos; Braz; Irffi                 & 2024 & 0 &  2 & 0,00 \\
-Carneiro; Veloso; Ferreira; Irffi   & 2024 & 0 &  2 & 0,00 \\
-Filho; Alves; Barbosa; Lima         & 2024 & 0 &  2 & 0,00 \\
-Veloso; Costa; Carneiro; Irffi      & 2024 & 0 &  2 & 0,00 \\
-Gondim; Carneiro; Nepomuceno; Irffi & 2025 & 0 &  0 & --- \\
-Lazaretti; Davanzo; Neves           & 2025 & 0 &  0 & --- \\
-Shirasu; Carneiro; Bastos; Irffi    & 2025 & 0 &  0 & --- \\
-Souza; Irffi; Carneiro; Bastos      & 2025 & 0 &  0 & --- \\
-Veloso; Costa; Irffi; Carneiro      & 2025 & 0 &  0 & --- \\
-\bottomrule
-\end{tabular}
-\nota{Cit.\ = citações recebidas de artigos publicados em periódicos; $N$ = total de artigos 
-publicados posteriores ao estudo; IC = Cit./$N$. Estudos de 2025 têm $N=0$ (sem publicações 
-posteriores), IC não calculável (---).}
-\fonte{Elaboração própria.}
-\end{table}
+\input{tabela_ic}

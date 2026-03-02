@@ -17,6 +17,7 @@ scripts/                        → Pipeline Python
   citation_index.py             → Indice de citacao (IC) para revisao sistematica
   generate_approved_ris.py      → Filtra RIS para estudos aprovados
   generate_bibtex.py            → Converte RIS aprovado → BibTeX (references.bib)
+  generate_ic_table.py          → Gera tabela IC LaTeX com citeonline (tabela_ic.tex)
   src/
     models.py                   → BibRecord (bibliografico) + PaperRecord (analise LLM)
     config.py                   → Carregamento YAML + validacao
