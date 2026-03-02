@@ -72,9 +72,26 @@ def normalizar_instrumento(raw: str) -> list[str]:
 def normalizar_autor(raw: str) -> list[str]:
     """
     Normaliza nomes de autores para formato consistente: Sobrenome, Iniciais
+    Unifica variantes do mesmo autor (ex: "Mendes Resende, G." e "Resende, Guilherme")
     """
     if not raw or not isinstance(raw, str):
         return []
+
+    # Mapeamento manual de variantes conhecidas baseado em análise dos dados
+    VARIANTES = {
+        'Mendes Resende, G.': 'Resende, G.M.',
+        'Resende, Guilherme': 'Resende, G.M.',
+        'Oliveira, Guilherme Resende': 'Oliveira, G.R.',
+        'Oliveira, G.R.': 'Oliveira, G.R.',
+        'Ricardo Brito Soares': 'Soares, R.B.',
+        'Soares, Ricardo Brito': 'Soares, R.B.',
+        'Soares, R.B.': 'Soares, R.B.',
+    }
+
+    # Casos especiais: registros mal formatados sem ponto-e-vírgula
+    if raw == 'Ricardo Brito Soares, Jânia Maria Pinho Sousa, Antonio Pereira Da Silva Neto':
+        # Retornar lista de autores extraídos manualmente
+        return ['Soares, R.B.', 'Sousa, J.M.P.', 'Neto, A.P.S.']
 
     autores = []
     # Split por ponto-e-vírgula
@@ -83,14 +100,9 @@ def normalizar_autor(raw: str) -> list[str]:
         if not nome:
             continue
 
-        # Formato esperado: "Sobrenome, Iniciais" ou "Sobrenome, Nome Completo"
-        # Unificar variantes:
-        # "Mendes Resende, G." → "Resende, G. M."
-        # "Resende, Guilherme" → "Resende, G. M."
-        # "Oliveira, Guilherme Resende" → "Oliveira, G. R."
-
-        # Simplificação: usar o nome como está (já foi normalizado no pipeline)
-        autores.append(nome)
+        # Aplicar normalização de variantes conhecidas
+        nome_norm = VARIANTES.get(nome, nome)
+        autores.append(nome_norm)
 
     return autores
 
