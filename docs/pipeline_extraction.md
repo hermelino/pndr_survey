@@ -128,7 +128,7 @@ Identificados apos a analise de indice de citacao. Estudos que apareceram como T
 | Eficacia do gasto publico: FNE, FNO e FCO | scielo-2009 (mesma pub., sem DOI) | scopus-2009-silva-resende-neto | 10.1590/s0101-41612009000100004 |
 | Efeitos regionais do FNE (congresso ANPEC 2013) | econpapers-2014-goncalves-soares-linhares (nome alternativo) | econpapers-2014-viana-goncalves-linhares (CEPAL Review) | — |
 
-Total de duplicatas: 9 (fases 1-2, DOI + fuzzy titulo) + 10 (fase 3, PDF identico) + 9 (fase 4, manual TD/WP) = 28 removidas. **118 papers das bases** (mantidos para consistencia com LLM) + **1 inclusao manual** = **119 papers na base**, **36 aprovados** apos triagem.
+Total de duplicatas: 9 (fases 1-2, DOI + fuzzy titulo) + 10 (fase 3, PDF identico) + 9 (fase 4, manual TD/WP) = 28 removidas. **118 papers das bases** (mantidos para consistencia com LLM) + **1 inclusao manual** = **119 papers na base**, **35 aprovados** apos triagem.
 
 Arquivo de auditoria fase 1: `data/1-records/processed/duplicates_removed.csv`
 Arquivo de auditoria fase 3: `data/2-papers/all_papers.xlsx` (aba "Duplicatas")
@@ -209,12 +209,12 @@ Apos a analise LLM, triagem manual em `all_papers_llm_classif_final.xlsx`:
 
 | Resultado | Quantidade |
 |-----------|-----------|
-| APROVADO (bases) | 35 |
+| APROVADO (bases) | 34 |
 | APROVADO (inclusao manual) | 1 |
-| REJEITADO | 83 |
+| REJEITADO | 84 |
 | **Total** | **119** |
 
-Motivos de rejeicao: sem instrumentos PNDR (40), sem metodo econometrico (22), documento nao-cientifico (10), duplicata de versao publicada (8), anterior a 2005 (2), variaveis de resultado fora do escopo (1).
+Motivos de rejeicao: sem instrumentos PNDR (40), sem metodo econometrico (23), documento nao-cientifico (10), duplicata de versao publicada (8), anterior a 2005 (2), variaveis de resultado fora do escopo (1).
 
 ### Alteracoes manuais em `all_papers_llm_classif_final.xlsx`
 
@@ -364,7 +364,7 @@ Revisao manual adicional apos verificacao de metodos e variaveis de resultado:
 | `anpec-2024-quaglio.pdf` | sem metodo econometrico | Analise espacial descritiva do FNE no Pronaf; nao aplica metodo econometrico |
 | `scopus-2012-abreu-gomes-mello.pdf` | outras variaveis de resultado | Avalia retencao de novilhas no Pantanal via DEA e indice Malmquist; variaveis de resultado fora do escopo da PNDR |
 
-Contagem final (bases): 35 aprovados, 83 rejeitados. Com inclusao manual: **36 aprovados**, 83 rejeitados, **119 total**.
+Contagem final (bases): 34 aprovados, 84 rejeitados. Com inclusao manual: **35 aprovados**, 84 rejeitados, **119 total**.
 
 ## Consolidacao JSON enriquecido
 
@@ -378,7 +378,7 @@ Mescla tres fontes em um unico JSON (`data/2-papers/2-2-papers.json`):
 
 Para campos duplicados, prioridade: registros das bases > all_papers > LLM.
 
-Resultado: 119 papers com campos unificados (36 aprovados — 35 das bases + 1 inclusao manual —, 83 rejeitados), incluindo: metadados bibliograficos, resumo, palavras-chave, classificacao LLM em 3 stages, resultado da triagem e motivo de exclusao.
+Resultado: 119 papers com campos unificados (35 aprovados — 34 das bases + 1 inclusao manual —, 84 rejeitados), incluindo: metadados bibliograficos, resumo, palavras-chave, classificacao LLM em 3 stages, resultado da triagem e motivo de exclusao.
 
 ## Extracao e matching de referencias
 
@@ -459,11 +459,39 @@ Tres grupos de estudos foram identificados como duplicatas verdadeiras: o mesmo 
 
 Script de marcacao: `scripts/mark_td_duplicates.py`
 
-**Resultados:** 36 estudos (18 publicados, 18 nao-publicados), **114 citacoes cruzadas**.
+**Resultados:** 35 estudos (17 publicados, 18 nao-publicados), **104 citacoes cruzadas**.
 
 Saidas:
 - `data/3-ref-bib/citation_index_results.json` — dados completos por estudo
 - `data/3-ref-bib/citation_index_report.txt` — relatorio com ranking e citacoes detalhadas
+
+## Geracao de tabelas derivadas para o artigo
+
+Script: `scripts/generate_latex_tables.py`
+
+Regenera automaticamente as tabelas derivadas do artigo LaTeX a partir dos dados consolidados em `2-2-papers.json`:
+
+- **tab:estudos-ano** — Distribuicao temporal dos estudos aprovados por periodo (2005-2010, 2011-2015, 2016-2020, 2021-2026)
+- **tab:instrumentos** — Frequencia de mencoes a cada instrumento da PNDR (FNE, FNO, FCO, FDNE, FDA, FDCO, IF Sudene, IF Sudam, BNDES)
+- **tab:autores-todos** — Top-10 autores por autorias e coautorias
+- **tab:unidade-amostral** — Unidades de analise (Municipio, Empresa, UF, Area Minima Comparavel)
+- **tab:metodos** — Metodos econometricos mais frequentes (top-6) com classificacao MSM
+
+O script aplica normalizacao automatica:
+- **Instrumentos:** Remove referencias de pagina, unifica variantes (ex: "incentivo fiscal Sudene" → "IF -- Sudene")
+- **Autores:** Preserva formato "Sobrenome, Iniciais" conforme campo `autores` do JSON
+- **Unidades:** Normaliza variantes (ex: "municipio"/"municipal" → "Municipio", "empresa"/"firma" → "Empresa")
+- **Metodos:** Unifica variantes de nomes (ex: "DiD"/"Diferencas em Diferencas" → "Diferencas em Diferencas (DiD)")
+
+Uso:
+```bash
+cd scripts
+python generate_latex_tables.py > ../latex/tabelas_geradas.tex
+```
+
+Saida: Fragmentos LaTeX prontos para insercao em `metodo.tex`.
+
+**Nota:** Este script deve ser executado sempre que houver mudancas nos estudos aprovados (ex: adicao/remocao de estudos, correcoes em metadados LLM).
 
 ## Comando de importacao
 

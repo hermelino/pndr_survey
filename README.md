@@ -91,7 +91,7 @@ Busca manual nas 5 bases                   PDFs coletados (119)
 [3] Triagem pre-LLM (PRISMA)                  Stage 3: Resultados
                                                        |
                                                        v
-                                               [6] Triagem final (36 aprov., 83 rej.)
+                                               [6] Triagem final (35 aprov., 84 rej.)
                                                        |
                                                        v
                                                [7] Consolidacao JSON enriquecido
@@ -112,11 +112,11 @@ Busca manual nas 5 bases                   PDFs coletados (119)
 | 3 | Triagem pre-LLM | Concluido |
 | 4 | Coleta de PDFs (119 de 119, 100%) | Concluido |
 | 5 | Analise LLM (Stages 1-3, 118 papers das bases) | Concluido |
-| 6 | Triagem final (36 aprovados, 83 rejeitados, 119 total) | Concluido |
+| 6 | Triagem final (35 aprovados, 84 rejeitados, 119 total) | Concluido |
 | 7 | Consolidacao JSON (registros + LLM) | Concluido |
-| 8 | Extracao de referencias (43 estudos ativos) | Concluido |
+| 8 | Extracao de referencias (42 estudos ativos) | Concluido |
 | 9 | Matching de citacoes entre estudos (67 citacoes cruzadas) | Concluido |
-| 10 | Indice de citacao (114 citacoes cruzadas; 36 estudos: 18 pub, 18 nao-pub) | Concluido |
+| 10 | Indice de citacao (104 citacoes cruzadas; 35 estudos: 17 pub, 18 nao-pub) | Concluido |
 | 11 | Artigo LaTeX | Em andamento |
 
 Detalhes da extracao: [docs/pipeline_extraction.md](docs/pipeline_extraction.md)
@@ -169,6 +169,10 @@ python citation_index.py
 | `merge_papers_to_json.py` | Mescla registros + LLM → JSON enriquecido | — |
 | `match_refs_to_studies.py` | Matching de citacoes entre estudos da triagem | — |
 | `citation_index.py` | Indice de citacao (IC) para artigos nao-publicados | — |
+| `generate_approved_ris.py` | Filtra RIS para estudos aprovados | — |
+| `generate_bibtex.py` | Converte RIS aprovado → BibTeX (references.bib) | — |
+| `generate_ic_table.py` | Gera tabela IC LaTeX com \citeonline (tabela_ic.tex) | — |
+| `generate_latex_tables.py` | Regenera tabelas derivadas do artigo (estudos-ano, instrumentos, autores, unidade-amostral, metodos) | — |
 
 Opcoes globais do `main.py`: `--config FILE`, `--verbose`, `--output-dir DIR`
 
@@ -178,4 +182,5 @@ Opcoes globais do `main.py`: `--config FILE`, `--verbose`, `--output-dir DIR`
 |---------|----------|
 | [docs/pipeline_extraction.md](docs/pipeline_extraction.md) | Metodologia, queries, dados coletados, analise LLM, citacoes |
 | [CLAUDE.md](CLAUDE.md) | Regras de codigo e convencoes do projeto |
+| [docs/update_reports/](docs/update_reports/) | Relatorios de atualizacoes do pipeline (propagate-update) |
 | [docs/archive/PLAN.md](docs/archive/PLAN.md) | Plano de construcao original (historico) |

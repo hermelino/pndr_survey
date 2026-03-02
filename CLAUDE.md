@@ -18,6 +18,7 @@ scripts/                        → Pipeline Python
   generate_approved_ris.py      → Filtra RIS para estudos aprovados
   generate_bibtex.py            → Converte RIS aprovado → BibTeX (references.bib)
   generate_ic_table.py          → Gera tabela IC LaTeX com citeonline (tabela_ic.tex)
+  generate_latex_tables.py      → Regenera todas as tabelas derivadas do artigo (estudos-ano, instrumentos, autores, unidade-amostral, metodos)
   src/
     models.py                   → BibRecord (bibliografico) + PaperRecord (analise LLM)
     config.py                   → Carregamento YAML + validacao
@@ -45,6 +46,7 @@ data/3-ref-bib/                → Referencias extraidas dos estudos
 latex/                          → Artigo LaTeX (nao modificar via scripts)
 figures/                        → Figuras para o artigo
 docs/pipeline_extraction.md     → Metodologia e log de extracao
+docs/update_reports/            → Relatorios de atualizacao do pipeline (propagate-update)
 ```
 
 ## Regras de Codigo
