@@ -14,6 +14,7 @@ Output: Fragmentos LaTeX prontos para inserção em metodo.tex
 
 import json
 import re
+import rispy
 from collections import Counter
 from pathlib import Path
 
@@ -67,6 +68,71 @@ def normalizar_instrumento(raw: str) -> list[str]:
             instrumentos.append('BNDES')
 
     return instrumentos
+
+
+def normalizar_autor_ris(autor: str) -> str:
+    """
+    Normaliza nomes de autores do RIS para formato consistente: Sobrenome, Iniciais
+    Unifica variantes do mesmo autor.
+    """
+    if not autor:
+        return ''
+
+    autor = autor.strip()
+
+    # Mapeamento manual de variantes conhecidas baseado em análise dos dados
+    VARIANTES = {
+        # Irffi
+        'IRFFI, Guilherme': 'Irffi, G.D.',
+        'Irffi, G.': 'Irffi, G.D.',
+        'Irffi, Guilherme Diniz': 'Irffi, G.D.',
+        'IRFFI, Guilherme Diniz': 'Irffi, G.D.',
+        # Carneiro
+        'CARNEIRO, Diego': 'Carneiro, D.R.F.',
+        'Carneiro, D.R.F.': 'Carneiro, D.R.F.',
+        'Carneiro, Diego Rafael Fonseca': 'Carneiro, D.R.F.',
+        'CARNEIRO, Diego Rafael Fonseca': 'Carneiro, D.R.F.',
+        # Resende
+        'Mendes Resende, G.': 'Resende, G.M.',
+        'Resende, Guilherme': 'Resende, G.M.',
+        'Resende, Guilherme Mendes': 'Resende, G.M.',
+        'RESENDE, Guilherme Mendes': 'Resende, G.M.',
+        # Oliveira G.R.
+        'Oliveira, Guilherme Resende': 'Oliveira, G.R.',
+        'OLIVEIRA, Guilherme Resende': 'Oliveira, G.R.',
+        'Oliveira, G.R.': 'Oliveira, G.R.',
+        # Oliveira T.G.
+        'OLIVEIRA, Tássia Germano de': 'Oliveira, T.G.',
+        # Veloso
+        'VELOSO, Pedro': 'Veloso, P.A.S.',
+        'Veloso, P.A.S.': 'Veloso, P.A.S.',
+        'VELOOSO, Pedro Alexandre Santos': 'Veloso, P.A.S.',
+        # Silveira Neto
+        'SILVEIRA NETO, Raul da Mota': 'Silveira Neto, R.M.',
+        'NETO, Raul da Mota Silveira': 'Silveira Neto, R.M.',
+        # Costa
+        'COSTA, Edward': 'Costa, E.M.',
+        'Costa, E.M.': 'Costa, E.M.',
+        'COSTA, Edward Martins': 'Costa, E.M.',
+        # Braz
+        'BRAZ, Marleton Souza': 'Braz, M.S.',
+        'Braz, M.S.': 'Braz, M.S.',
+        'BRAZ, Marleton': 'Braz, M.S.',
+        # Bastos
+        'BASTOS, Felipe': 'Bastos, F.S.',
+        'BASTOS, Felipe de Sousa': 'Bastos, F.S.',
+        'de Sousa Bastos, F.': 'Bastos, F.S.',
+        # Alves
+        'ALVES, Denis Fernandes': 'Alves, D.F.',
+        # Shirasu
+        'SHIRASU, Maitê': 'Shirasu, M.',
+        # Soares
+        'Ricardo Brito Soares': 'Soares, R.B.',
+        'Soares, Ricardo Brito': 'Soares, R.B.',
+        'Soares, R.B.': 'Soares, R.B.',
+    }
+
+    return VARIANTES.get(autor, autor)
 
 
 def normalizar_autor(raw: str) -> list[str]:
@@ -257,11 +323,20 @@ def main():
     # ========================
     # TAB: AUTORES (TOP-10)
     # ========================
+    # Ler autores do approved_papers.ris (fonte mais confiável)
+    ris_path = Path(__file__).parent.parent / 'data' / '2-papers' / 'approved_papers.ris'
     autores = Counter()
-    for p in aprovados:
-        raw = p.get('autores', '')
-        for autor in normalizar_autor(raw):
-            autores[autor] += 1
+
+    with open(ris_path, 'r', encoding='utf-8') as f:
+        ris_records = list(rispy.load(f))
+
+    for rec in ris_records:
+        authors = rec.get('authors', [])
+        if isinstance(authors, list):
+            for autor in authors:
+                if autor:
+                    autor_norm = normalizar_autor_ris(autor)
+                    autores[autor_norm] += 1
 
     print("=== TAB:AUTORES-TODOS (TOP-10) ===")
     print("\\begin{table}[h]")
