@@ -14,6 +14,8 @@ Revisao sistematica sobre instrumentos da PNDR (2000-2025). Busca manual em 5 ba
 | 1-4 | EconPapers/RePEc | 11 | 11 | 100% | Concluido |
 | 1-5 | ANPEC | 61 | 61 | 100% | Concluido |
 | **Total (apos dedup)** | | **118** | **118** | **100%** | **Concluido** |
+| **Inclusao manual** | | **1** | **1** | **100%** | **Concluido** |
+| **Total geral** | | **119** | **119** | **100%** | **Concluido** |
 
 ## Estrategia de busca
 
@@ -126,7 +128,7 @@ Identificados apos a analise de indice de citacao. Estudos que apareceram como T
 | Eficacia do gasto publico: FNE, FNO e FCO | scielo-2009 (mesma pub., sem DOI) | scopus-2009-silva-resende-neto | 10.1590/s0101-41612009000100004 |
 | Efeitos regionais do FNE (congresso ANPEC 2013) | econpapers-2014-goncalves-soares-linhares (nome alternativo) | econpapers-2014-viana-goncalves-linhares (CEPAL Review) | — |
 
-Total de duplicatas: 9 (fases 1-2, DOI + fuzzy titulo) + 10 (fase 3, PDF identico) + 9 (fase 4, manual TD/WP) = 28 removidas. **118 papers na base** (mantidos para consistencia com LLM), **36 aprovados** apos triagem.
+Total de duplicatas: 9 (fases 1-2, DOI + fuzzy titulo) + 10 (fase 3, PDF identico) + 9 (fase 4, manual TD/WP) = 28 removidas. **118 papers das bases** (mantidos para consistencia com LLM) + **1 inclusao manual** = **119 papers na base**, **36 aprovados** apos triagem.
 
 Arquivo de auditoria fase 1: `data/1-records/processed/duplicates_removed.csv`
 Arquivo de auditoria fase 3: `data/2-papers/all_papers.xlsx` (aba "Duplicatas")
@@ -167,9 +169,11 @@ Scripts de renomeacao e verificacao: `data/2-papers/2-1-papers_scripts/`.
 | CAPES | 26 | 26 | 0 | 100% |
 | EconPapers | 11 | 11 | 0 | 100% |
 | ANPEC | 61 | 61 | 0 | 100% |
-| **Total** | **118** | **118** | **0** | **100%** |
+| **Total (bases)** | **118** | **118** | **0** | **100%** |
+| Inclusao manual | 1 | 1 | 0 | 100% |
+| **Total geral** | **119** | **119** | **0** | **100%** |
 
-Controle detalhado: `data/2-papers/all_papers.xlsx` (planilha "Registros", colunas Baixado e Arquivo PDF).
+Controle detalhado: `data/2-papers/all_papers.xlsx` (planilha "Registros", colunas Baixado e Arquivo PDF). O estudo `manual-2026-oliveira-carneiro-souza.pdf` foi incluido manualmente (publicacao identificada fora das bases consultadas).
 
 ### Dados processados
 
@@ -185,7 +189,7 @@ Controle detalhado: `data/2-papers/all_papers.xlsx` (planilha "Registros", colun
 
 ## Analise LLM
 
-Analise via Google Gemini (modelo `gemini-2.0-flash`) em 3 estagios sequenciais, executada sobre os 118 PDFs coletados. Script: `scripts/run_llm_all_papers.py`.
+Analise via Google Gemini (modelo `gemini-2.5-flash-lite`) em 3 estagios sequenciais, executada sobre os 118 PDFs das bases. O estudo incluido manualmente (`manual-2026-oliveira-carneiro-souza.pdf`) nao passou pela analise LLM. Script: `scripts/run_llm_all_papers.py`.
 
 ### Stage 1 — Triagem
 
@@ -205,11 +209,12 @@ Apos a analise LLM, triagem manual em `all_papers_llm_classif_final.xlsx`:
 
 | Resultado | Quantidade |
 |-----------|-----------|
-| APROVADO | 36 |
-| REJEITADO | 82 |
-| **Total** | **118** |
+| APROVADO (bases) | 35 |
+| APROVADO (inclusao manual) | 1 |
+| REJEITADO | 83 |
+| **Total** | **119** |
 
-Motivos de rejeicao: sem metodo econometrico, anterior a 2005, sem instrumentos PNDR, artigo fora do escopo, documento nao-cientifico, duplicata de versao publicada.
+Motivos de rejeicao: sem instrumentos PNDR (40), sem metodo econometrico (22), documento nao-cientifico (10), duplicata de versao publicada (8), anterior a 2005 (2), variaveis de resultado fora do escopo (1).
 
 ### Alteracoes manuais em `all_papers_llm_classif_final.xlsx`
 
@@ -359,7 +364,7 @@ Revisao manual adicional apos verificacao de metodos e variaveis de resultado:
 | `anpec-2024-quaglio.pdf` | sem metodo econometrico | Analise espacial descritiva do FNE no Pronaf; nao aplica metodo econometrico |
 | `scopus-2012-abreu-gomes-mello.pdf` | outras variaveis de resultado | Avalia retencao de novilhas no Pantanal via DEA e indice Malmquist; variaveis de resultado fora do escopo da PNDR |
 
-Contagem final: 36 aprovados, 83 rejeitados.
+Contagem final (bases): 35 aprovados, 83 rejeitados. Com inclusao manual: **36 aprovados**, 83 rejeitados, **119 total**.
 
 ## Consolidacao JSON enriquecido
 
@@ -373,7 +378,7 @@ Mescla tres fontes em um unico JSON (`data/2-papers/2-2-papers.json`):
 
 Para campos duplicados, prioridade: registros das bases > all_papers > LLM.
 
-Resultado: 119 papers com campos unificados (36 aprovados, 83 rejeitados), incluindo: metadados bibliograficos, resumo, palavras-chave, classificacao LLM em 3 stages, resultado da triagem e motivo de exclusao.
+Resultado: 119 papers com campos unificados (36 aprovados — 35 das bases + 1 inclusao manual —, 83 rejeitados), incluindo: metadados bibliograficos, resumo, palavras-chave, classificacao LLM em 3 stages, resultado da triagem e motivo de exclusao.
 
 ## Extracao e matching de referencias
 
@@ -381,7 +386,7 @@ Resultado: 119 papers com campos unificados (36 aprovados, 83 rejeitados), inclu
 
 Scripts: `data/3-ref-bib/extrair_referencias.py` e `estruturar_referencias.py`
 
-Para 54 dos estudos aprovados, as listas de referencias bibliograficas foram extraidas dos PDFs via Gemini e estruturadas em JSON com campos: raw, autor, titulo, ano, periodico, volume, issue, pages. Apos a remocao de 7 estudos duplicados (versoes TD/congresso) e 4 estudos rejeitados em revisao posterior, restam 43 JSONs ativos; os 11 removidos foram arquivados em `refs_por_estudo/_archived_duplicates/`.
+Para 54 dos estudos aprovados (incluindo o estudo manual), as listas de referencias bibliograficas foram extraidas dos PDFs via Gemini e estruturadas em JSON com campos: raw, autor, titulo, ano, periodico, volume, issue, pages. Apos a remocao de 7 estudos duplicados (versoes TD/congresso) e 4 estudos rejeitados em revisao posterior, restam 43 JSONs ativos; os 11 removidos foram arquivados em `refs_por_estudo/_archived_duplicates/`.
 
 Resultado: 43 JSONs ativos em `data/3-ref-bib/refs_por_estudo/`, totalizando ~1.138 referencias.
 

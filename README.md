@@ -51,7 +51,7 @@ pndr_survey/
 │   │       └── duplicates_removed.csv
 │   ├── 2-papers/                  # Artigos e classificacao
 │   │   ├── 2-2-papers.json        # JSON enriquecido (registros + LLM + triagem)
-│   │   ├── 2-2-papers-pdfs/       # 118 PDFs renomeados
+│   │   ├── 2-2-papers-pdfs/       # 119 PDFs renomeados (118 bases + 1 manual)
 │   │   ├── 2-1-papers_scripts/    # Scripts de renomeacao e verificacao
 │   │   ├── all_papers.xlsx        # Controle: registros + status de download
 │   │   ├── all_papers_llm_classif.xlsx        # Classificacao LLM bruta
@@ -79,7 +79,7 @@ pndr_survey/
 FASE 1 — COLETA                           FASE 2 — ANALISE
 ========================                   ========================
 
-Busca manual nas 5 bases                   PDFs coletados (118)
+Busca manual nas 5 bases                   PDFs coletados (119)
         |                                          |
         v                                          v
 [1] Importacao (RIS/CSV/Excel)             [4] Extracao de texto (pdfplumber)
@@ -91,7 +91,7 @@ Busca manual nas 5 bases                   PDFs coletados (118)
 [3] Triagem pre-LLM (PRISMA)                  Stage 3: Resultados
                                                        |
                                                        v
-                                               [6] Triagem final (36 aprovados)
+                                               [6] Triagem final (36 aprov., 83 rej.)
                                                        |
                                                        v
                                                [7] Consolidacao JSON enriquecido
@@ -108,11 +108,11 @@ Busca manual nas 5 bases                   PDFs coletados (118)
 | Etapa | Descricao | Status |
 |-------|-----------|--------|
 | 1 | Busca manual + importacao (5 bases) | Concluido |
-| 2 | Deduplicacao (118 unicos, 28 removidos incl. 9 TD/WP manuais) | Concluido |
+| 2 | Deduplicacao (118 unicos das bases, 28 removidos incl. 9 TD/WP manuais) + 1 inclusao manual = 119 | Concluido |
 | 3 | Triagem pre-LLM | Concluido |
-| 4 | Coleta de PDFs (118 de 118, 100%) | Concluido |
-| 5 | Analise LLM (Stages 1-3, 118 papers) | Concluido |
-| 6 | Triagem final (36 aprovados, 83 rejeitados) | Concluido |
+| 4 | Coleta de PDFs (119 de 119, 100%) | Concluido |
+| 5 | Analise LLM (Stages 1-3, 118 papers das bases) | Concluido |
+| 6 | Triagem final (36 aprovados, 83 rejeitados, 119 total) | Concluido |
 | 7 | Consolidacao JSON (registros + LLM) | Concluido |
 | 8 | Extracao de referencias (43 estudos ativos) | Concluido |
 | 9 | Matching de citacoes entre estudos (67 citacoes cruzadas) | Concluido |
