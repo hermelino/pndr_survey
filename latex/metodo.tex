@@ -9,7 +9,7 @@ O objetivo desta revisão sistemática é identificar e sintetizar estudos empí
 
 A busca foi conduzida em cinco bases de dados acadêmicas: Scopus, SciELO, Portal de Periódicos da CAPES, EconPapers/RePEc e anais dos encontros da ANPEC. A consulta a múltiplas fontes justifica-se pela elevada dispersão dos registros: periódicos nacionais de economia tendem a apresentar menor cobertura em bases de dados internacionais, além de parte relevante da produção sobre instrumentos da PNDR concentrar-se em \textit{working papers}, textos para discussão e apresentações em congressos nacionais, veículos nem sempre indexados por essas bases.
 
-Das cinco fontes, obtiveram-se 137 registros. Após a remoção de 19 duplicatas em três etapas automatizadas, 118 registros únicos foram submetidos à análise de elegibilidade. A triagem combinou classificação automatizada com revisão dos autores, resultando na inclusão de 38 estudos e exclusão de 80. A Figura~\ref{fig:diagrama_prisma} apresenta o diagrama de fluxo PRISMA 2020 com o detalhamento quantitativo de cada etapa.\footnote{Os scripts de coleta, deduplicação e triagem estão disponíveis no repositório do autor em \url{https://github.com/hermelino/pndr_survey}.}
+Das cinco fontes, obtiveram-se 137 registros. Após a remoção de 19 duplicatas em três etapas automatizadas, 118 registros únicos foram submetidos à análise de elegibilidade. A triagem combinou classificação automatizada com revisão dos autores, resultando na inclusão de 36 estudos e exclusão de 82. A Figura~\ref{fig:diagrama_prisma} apresenta o diagrama de fluxo PRISMA 2020 com o detalhamento quantitativo de cada etapa.\footnote{Os scripts de coleta, deduplicação e triagem estão disponíveis no repositório do autor em \url{https://github.com/hermelino/pndr_survey}.}
 
 \begin{figure}[htb]
 \centering
@@ -54,12 +54,12 @@ As classificações produzidas pelo modelo foram integralmente revisadas pelos a
 
 A triagem final dos 118 registros únicos foi conduzida em duas etapas. Na primeira, as classificações do Estágio~1 do modelo de linguagem serviram como filtro inicial, identificando os registros com maior probabilidade de atender aos critérios de inclusão. Na segunda, todos os registros foram avaliados integralmente pelos autores, com leitura dos textos completos e revisão das classificações automatizadas. A decisão final de inclusão ou exclusão baseou-se exclusivamente no julgamento dos autores, cabendo ao modelo de linguagem papel auxiliar de pré-classificação.
 
-Dos 118 registros, 38 foram incluídos na revisão e 80 excluídos. Os motivos de exclusão distribuem-se em cinco categorias: ausência de avaliação explícita de instrumentos da PNDR (n~=~40), ausência de método econométrico (n~=~21), documento sem caráter de estudo científico (n~=~10), versão \textit{working paper} ou apresentação em congresso de artigo já incluído na amostra em sua versão publicada (n~=~7) e publicação anterior a 2005 (n~=~2).
+Dos 118 registros, 36 foram incluídos na revisão e 82 excluídos. Os motivos de exclusão distribuem-se em seis categorias: ausência de avaliação explícita de instrumentos da PNDR (n~=~40), ausência de método econométrico (n~=~22), documento sem caráter de estudo científico (n~=~10), versão \textit{working paper} ou apresentação em congresso de artigo já incluído na amostra em sua versão publicada (n~=~7), publicação anterior a 2005 (n~=~2) e variáveis de resultado fora do escopo (n~=~1).
 
 \subsection{Índice de citação cruzada}
 \label{subsec:indice-citacao}
 
-Como 20 dos 38 estudos incluídos na amostra -- mais da metade -- correspondem a textos para discussão ou apresentações em congressos, trabalhos que não passaram por processo de avaliação por pares, torna-se necessário um critério objetivo para aferir sua relevância. Para esse fim, calculou-se um índice de citação cruzada (IC), que mensura a importância que a literatura publicada em periódicos atribui a esses trabalhos. O IC é definido como:
+Como 19 dos 36 estudos incluídos na amostra -- mais da metade -- correspondem a textos para discussão ou apresentações em congressos, trabalhos que não passaram por processo de avaliação por pares, torna-se necessário um critério objetivo para aferir sua relevância. Para esse fim, calculou-se um índice de citação cruzada (IC), que mensura a importância que a literatura publicada em periódicos atribui a esses trabalhos. O IC é definido como:
 
 \begin{equation}
 \label{eq:ic}
@@ -68,14 +68,14 @@ IC(A) = \frac{\text{citações recebidas de artigos publicados em } [X+1,\; 2025
 
 \noindent onde $X$ corresponde ao ano de publicação do estudo $A$.
 
-A identificação de citações cruzadas baseou-se em algoritmo de correspondência automática aplicado às listas de referências bibliográficas dos 38 estudos incluídos na revisão. O algoritmo emprega correspondência por sobrenomes dos autores, tolerância de $\pm 2$ anos na data de publicação e similaridade de título por \textit{token sort ratio}. Aplica-se ainda restrição cronológica, de modo que apenas estudos publicados no mesmo ano ou em anos posteriores ao estudo-alvo são considerados como citantes.
+A identificação de citações cruzadas baseou-se em algoritmo de correspondência automática aplicado às listas de referências bibliográficas dos 36 estudos incluídos na revisão. O algoritmo emprega correspondência por sobrenomes dos autores, tolerância de $\pm 2$ anos na data de publicação e similaridade de título por \textit{token sort ratio}. Aplica-se ainda restrição cronológica, de modo que apenas estudos publicados no mesmo ano ou em anos posteriores ao estudo-alvo são considerados como citantes.
 
-No conjunto de 38 estudos, foram identificadas 114 citações cruzadas. Dos 20 estudos não publicados em periódicos, 8 apresentaram IC positivo, indicando que receberam ao menos uma citação de artigo publicado. Os três maiores índices correspondem a textos para discussão de ampla circulação, com IC variando de 0,17 a 0,38. Os 12 estudos não publicados com IC igual a zero correspondem majoritariamente a trabalhos recentes (2024--2025), para os quais o intervalo de observação é insuficiente para acumular citações.
+No conjunto de 36 estudos, foram identificadas 114 citações cruzadas. Dos 19 estudos não publicados em periódicos, 8 apresentaram IC positivo, indicando que receberam ao menos uma citação de artigo publicado. Os três maiores índices correspondem a textos para discussão de ampla circulação, com IC variando de 0,17 a 0,38. Os 11 estudos não publicados com IC igual a zero correspondem majoritariamente a trabalhos recentes (2024--2025), para os quais o intervalo de observação é insuficiente para acumular citações. A Tabela~\ref{tab:ic-nao-publicados} apresenta o índice de citação cruzada para os 19 estudos não publicados incluídos na revisão.
 
 \subsection{Descrição dos estudos obtidos}
 \label{subsec:descricao-estudos}
 
-A aplicação dos critérios descritos nas subseções anteriores resultou em amostra de 38 estudos empíricos, datados de 2005 a 2025. Destes, 18 são artigos publicados em periódicos nacionais ou internacionais, e os demais 20 são textos para discussão ou trabalhos apresentados em congressos.
+A aplicação dos critérios descritos nas subseções anteriores resultou em amostra de 36 estudos empíricos, datados de 2005 a 2025. Destes, 17 são artigos publicados em periódicos nacionais ou internacionais, e os demais 19 são textos para discussão ou trabalhos apresentados em congressos.
 
 A produção acadêmica sobre o tema distribui-se de forma desigual ao longo do período, como mostra a Tabela~\ref{tab:estudos-ano}. De 2005 a 2015, identificaram-se apenas 9 estudos. No intervalo de 2016 a 2020, a produção elevou-se para 9 trabalhos adicionais, refletindo o amadurecimento da literatura. O crescimento mais expressivo concentrou-se entre 2021 e 2025, com 20 estudos -- mais da metade da amostra --, indicando intensificação recente do interesse acadêmico pela avaliação empírica dos instrumentos da PNDR.
 
@@ -173,11 +173,11 @@ IF -- Sudam & 1 \\
 \begin{table}[h]
 \centering
 \small
-\caption[Métodos mais Frequentes]{Métodos mais Frequentes\footnote{MSM: \textit{Maryland Scientific Methods Scale} \cite{MadalenoWaights2016}; n.c.: não classificável.}}
+\caption[Métodos mais frequentes]{Métodos mais frequentes\footnote{MSM: \textit{Maryland Scientific Methods Scale} \cite{MadalenoWaights2016}; n.c.: não classificável.}}
 \label{tab:metodos}
 \begin{tabular}{lrc}
 \toprule
-Método & Estudos & MSM \\
+Método & Qtd. artigos & MSM \\
 \midrule
 Diferenças em Diferenças Escalonado & 6 & 3 \\
 Equilíbrio Geral Computável (EGC) & 2 & n.c. \\
@@ -194,3 +194,38 @@ A Tabela~\ref{tab:autores-todos} apresenta os dez autores mais frequentes consid
 
 Para além da frequência dos métodos, cabe avaliar a robustez das estratégias empíricas empregadas. A escala \textit{Maryland Scientific Methods} (MSM), descrita em \citeonline{MadalenoWaights2016}, classifica a robustez dos métodos de avaliação de impacto em escores de 1 (menos robusto) a 5 (mais robusto), segundo a capacidade de lidar com vieses de seleção. Entre os estudos selecionados, predominam abordagens com escore 3 -- métodos que controlam por características observáveis, porém sem garantir completa eliminação de vieses de seleção. Os métodos mais frequentes incluem painel de efeitos fixos, diferenças em diferenças, \textit{Propensity Score Matching}, painel espacial e regressão MQO. Abordagens quase experimentais com escore 4, como \textit{Regression Discontinuity Design}, permanecem pouco utilizadas. Cabe notar que métodos como Análise Envoltória de Dados (DEA) e Equilíbrio Geral Computável (EGC), presentes na amostra, não são classificáveis pela escala MSM por não se destinarem à identificação de efeitos causais -- o primeiro mensura eficiência relativa e o segundo simula efeitos de equilíbrio a partir de calibração de parâmetros. A ausência de avaliações com escore máximo de robustez reflete as restrições inerentes ao desenho não aleatório da política, em que a alocação de recursos tende a ser determinada pela demanda das firmas.
 
+\begin{table}[htb]
+\centering
+\small
+\caption{Índice de citação cruzada (IC) dos estudos não publicados}
+\label{tab:ic-nao-publicados}
+\begin{tabular}{lrrrr}
+\toprule
+Estudo & Ano & Cit. & $N$ & IC \\
+\midrule
+Resende (TD IPEA 2002)              & 2014 & 5 & 13 & 0,38 \\
+Nascimento; Haddad                  & 2017 & 3 &  9 & 0,33 \\
+Resende (TD IPEA 1676)              & 2011 & 5 & 15 & 0,33 \\
+Oliveira; Domingues                 & 2005 & 3 & 17 & 0,18 \\
+Oliveira; Silveira Neto             & 2020 & 1 &  6 & 0,17 \\
+Oliveira; Silveira Neto             & 2021 & 1 &  6 & 0,17 \\
+Braz; Irffi                         & 2023 & 1 &  6 & 0,17 \\
+Carneiro; Costa; Irffi              & 2023 & 1 &  6 & 0,17 \\
+Oliveira; Resende; Gonçalves        & 2017 & 0 &  9 & 0,00 \\
+Alves; Silveira Neto; Oliveira      & 2024 & 0 &  2 & 0,00 \\
+Bastos; Braz; Irffi                 & 2024 & 0 &  2 & 0,00 \\
+Carneiro; Veloso; Ferreira; Irffi   & 2024 & 0 &  2 & 0,00 \\
+Filho; Alves; Barbosa; Lima         & 2024 & 0 &  2 & 0,00 \\
+Veloso; Costa; Carneiro; Irffi      & 2024 & 0 &  2 & 0,00 \\
+Gondim; Carneiro; Nepomuceno; Irffi & 2025 & 0 &  0 & --- \\
+Lazaretti; Davanzo; Neves           & 2025 & 0 &  0 & --- \\
+Shirasu; Carneiro; Bastos; Irffi    & 2025 & 0 &  0 & --- \\
+Souza; Irffi; Carneiro; Bastos      & 2025 & 0 &  0 & --- \\
+Veloso; Costa; Irffi; Carneiro      & 2025 & 0 &  0 & --- \\
+\bottomrule
+\end{tabular}
+\nota{Cit.\ = citações recebidas de artigos publicados em periódicos; $N$ = total de artigos 
+publicados posteriores ao estudo; IC = Cit./$N$. Estudos de 2025 têm $N=0$ (sem publicações 
+posteriores), IC não calculável (---).}
+\fonte{Elaboração própria.}
+\end{table}
