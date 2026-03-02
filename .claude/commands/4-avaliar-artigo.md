@@ -356,6 +356,17 @@ Se nenhum problema justificar alteração na skill de escrita, registrar: "Nenhu
 4. **Resultados:** Apresentação organizada por eixo temático ou instrumento; tabelas-resumo; discussão comparativa. Proporção: ~25-30%.
 5. **Conclusão:** Síntese (não repetição) dos achados; implicações de política; limitações; agenda futura. Proporção: ~5-10%.
 
+### Equilíbrio entre rigor técnico e aplicação prática
+
+**ASPECTO CRÍTICO:** O artigo deve equilibrar explicação técnica dos resultados e sua aplicação/consequência prática para a política.
+
+- **Problema comum:** Artigos que apresentam apenas resultados técnicos (estatísticas, contagens, distribuições) sem traduzir seu significado para formuladores de política ou gestores públicos
+- **Problema oposto:** Artigos que fazem recomendações de política sem fundamentação técnica adequada
+- **Equilíbrio desejado:** Cada resultado técnico deve ser seguido de interpretação sobre "o que isso significa para a política?" ou "qual a implicação prática deste achado?"
+- **Avaliar especialmente:** Seções de Resultados e Considerações Finais — verificar se há ponte clara entre os achados empíricos e as consequências práticas para o desenvolvimento regional
+
+Este aspecto deve ser avaliado transversalmente nas dimensões D1 (coerência argumentativa) e D4 (conformidade com convenções de artigo em economia aplicada).
+
 ### Vícios comuns a evitar (e reportar se encontrados)
 
 - Parágrafos que iniciam com citação (o argumento deve preceder a evidência)

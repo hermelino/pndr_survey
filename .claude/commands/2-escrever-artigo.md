@@ -168,12 +168,13 @@ Somente após aprovação explícita do usuário:
 2. **Idioma:** Português formal brasileiro, norma culta
 3. **Tom:** Técnico-científico, impessoal, objetivo
 4. **Extensão:** Adequada a artigo (NÃO tese); cada seção deve ser concisa
-5. **Quebras de linha:** Cada parágrafo deve ser escrito em uma única linha contínua, sem quebras de linha no meio de frases. Quebras de linha só devem ocorrer entre parágrafos (linha em branco) ou em ambientes LaTeX (tabelas, listas, etc.)
+5. **Quebras de linha:** Cada parágrafo deve ser escrito em uma única linha contínua, sem quebras de linha no meio de frases. **LIMITE: parágrafos não devem exceder 5-6 frases ou 150 palavras.** Se o parágrafo ultrapassar esse limite, divida-o em parágrafos menores agrupados por subtema. Quebras de linha só devem ocorrer entre parágrafos (linha em branco) ou em ambientes LaTeX (tabelas, listas, etc.)
 6. **Citações:** Usar `\citeonline{}` para citações integradas ao texto e `\cite{}` para citações entre parênteses — comandos nativos do abntex2cite
 7. **Labels:** Usar `\label{sec:...}`, `\label{tab:...}`, `\label{fig:...}` consistentes
 8. **Tabelas:** Usar `booktabs` (toprule, midrule, bottomrule), com `\fonte{}` quando aplicável
 9. **Figuras:** Referenciar com `\graphicspath{{../figures/}}`
 10. **Notas de rodapé:** Usar `\footnote{}` com parcimônia
+11. **Contextualização metodológica:** Ao iniciar subseção que discute abordagem econométrica ou estatística específica (ex: 'Modelos de Efeitos Fixos', 'Modelos Espaciais', 'Diferenças em Diferenças'), incluir 1-2 frases iniciais explicando brevemente: (i) o que caracteriza o método; (ii) sua vantagem metodológica em relação a abordagens mais simples. Exemplo: "Modelos de painel com efeitos fixos controlam características não observáveis constantes no tempo (município) e choques temporais comuns (tempo), permitindo estimativas mais robustas do efeito da política que regressões cross-section." Essa contextualização facilita compreensão de leitores menos especializados sem comprometer rigor.
 
 ### Cuidados linguísticos
 
@@ -184,7 +185,8 @@ Somente após aprovação explícita do usuário:
 - **Paralelismo:** Manter estruturas paralelas em enumerações e comparações
 - **Evitar:** Gerundismo ("vai estar fazendo"), pleonasmo, ambiguidade, coloquialismo
 - **Preferir:** Voz passiva sintética quando adequada; frases diretas e objetivas
-- **Evitar repetição:** Variar vocabulário sem sacrificar precisão técnica
+- **Evitar repetição:** Variar vocabulário sem sacrificar precisão técnica. **REGRA QUANTITATIVA:** Termos-chave (ex: 'efeitos', 'crescimento', 'resultados', 'os autores') não devem aparecer mais de 3 vezes por parágrafo ou 5 vezes por subseção sem variação. Usar sinônimos técnicos adequados ('impactos', 'influência'; 'expansão do produto', 'dinâmica econômica'; 'os pesquisadores', nome do autor). Verificar repetições antes de apresentar texto ao usuário.
+- **Extensão de parágrafos:** Limite parágrafos a 5-6 frases ou 150 palavras. Parágrafos excessivamente longos (>10 linhas no PDF) devem ser divididos em unidades menores, cada uma com um subtema claro.
 
 ### Procedimento de escrita
 
@@ -262,6 +264,8 @@ Subseções esperadas:
 6. Síntese comparativa dos resultados `[NOVO]`
 
 **Adaptações vs. tese:** Atualizar com os 46 estudos (vs. 37). Incorporar novos estudos identificados. Usar dados do `2-2-papers.json` para precisão. Adicionar seção de síntese comparativa.
+
+**Organização de múltiplos estudos:** Quando apresentar 3 ou mais estudos empíricos em uma subseção: (i) agrupar por critério lógico explícito (fundo avaliado, resultado obtido, método específico, período); (ii) usar conectivos lógicos entre estudos ('Estudo posterior...', 'Em contraste...', 'Confirmando esse achado...'); (iii) considerar tabela-resumo se houver 4+ estudos com informações estruturadas (autor, fundo, período, resultado). Evitar apresentação puramente cronológica sem justificativa temática.
 
 ### Seção 5: Considerações Finais
 

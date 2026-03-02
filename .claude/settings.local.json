@@ -14,7 +14,31 @@
       "Skill(propagate-update:*)",
       "Bash(python3:*)",
       "Bash(findstr:*)",
-      "Bash(git commit -m \"$\\(cat <<''EOF''\nComplete LLM analysis of 118 papers \\(87 approved, 31 rejected\\)\n\nAdd standalone analysis script with checkpoint recovery and improve\nGemini API retry logic for 429/RESOURCE_EXHAUSTED errors with\nretryDelay extraction and exponential backoff.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")"
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nComplete LLM analysis of 118 papers \\(87 approved, 31 rejected\\)\n\nAdd standalone analysis script with checkpoint recovery and improve\nGemini API retry logic for 429/RESOURCE_EXHAUSTED errors with\nretryDelay extraction and exponential backoff.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(python compare_excel.py:*)",
+      "Bash(python -X utf8:*)",
+      "Bash(python:*)",
+      "Bash(del \"c:\\\\OneDrive\\\\github\\\\pndr_survey\\\\check_undocumented.py\")",
+      "Bash(git commit:*)",
+      "Bash(git status:*)",
+      "Bash(ls:*)",
+      "Bash(copy \"c:\\\\OneDrive\\\\github\\\\pndr_survey\\\\data\\\\2-papers\\\\all_papers_llm_classif_final.xlsx\" \"c:\\\\OneDrive\\\\github\\\\pndr_survey\\\\data\\\\2-papers\\\\_temp_classif_copy.xlsx\")",
+      "Bash(cmd /c copy:*)",
+      "Bash(cmd /c dir \"c:\\\\OneDrive\\\\github\\\\pndr_survey\\\\data\\\\2-papers\\\\all_papers*\")",
+      "Bash(cmd /c \"dir /b c:\\\\OneDrive\\\\github\\\\pndr_survey\\\\data\\\\2-papers\"\")",
+      "Bash(git -C \"c:\\\\OneDrive\\\\github\\\\pndr_survey\" status)",
+      "Bash(git -C \"c:\\\\OneDrive\\\\github\\\\pndr_survey\" diff)",
+      "Bash(git -C \"c:\\\\OneDrive\\\\github\\\\pndr_survey\" log --oneline -5)",
+      "Bash(git -C \"c:\\\\OneDrive\\\\github\\\\pndr_survey\" add latex/metodo.tex scripts/generate_ic_table.py latex/tabela_ic.tex)",
+      "Bash(git -C \"c:\\\\OneDrive\\\\github\\\\pndr_survey\" commit -m \"$\\(cat <<''EOF''\nAdd max published IC reference in metodo.tex and simplify IC table footnote\n\nMove the comparison with highest published IC \\(0.44, Oliveira2017\\) from\ntable footnote to body text, and add conclusion that IC results do not\njustify excluding unpublished studies.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git -C \"c:\\\\OneDrive\\\\github\\\\pndr_survey\" push)",
+      "Bash(.venv/Scripts/python.exe:*)",
+      "Bash(\"c:/OneDrive/github/pndr_survey/_audit_tmp.py\" << 'ENDOFSCRIPT'\nimport re\nimport json\n\n# 12. tabela_ic.tex\nwith open\\(\"latex/tabela_ic.tex\", \"r\", encoding=\"utf-8\"\\) as f:\n    tex = f.read\\(\\)\n\nciteonline = re.findall\\(r\"\\\\\\\\citeonline\\\\{\\([^}]+\\)\\\\}\", tex\\)\nrows = [l for l in tex.split\\(\"\\\\n\"\\) if \"&\" in l and \"\\\\\\\\\\\\\\\\\" in l]\nprint\\(f\"=== 12. tabela_ic.tex ===\"\\)\nprint\\(f\"Data rows: {len\\(rows\\)}\"\\)\nprint\\(f\"citeonline refs: {len\\(citeonline\\)}\"\\)\nprint\\(f\"Contains Oliveira2026: {'Oliveira2026' in tex}\"\\)\nfor l in tex.split\\(\"\\\\n\"\\):\n    if \"oliveira\" in l.lower\\(\\):\n        print\\(f\"  {l.strip\\(\\)[:150]}\"\\)\n\n# 13. pipeline_extraction.md\nprint\\(\\)\nwith open\\(\"docs/pipeline_extraction.md\", \"r\", encoding=\"utf-8\"\\) as f:\n    md = f.read\\(\\)\nprint\\(\"=== 13. pipeline_extraction.md ===\"\\)\nfor line in md.split\\(\"\\\\n\"\\):\n    if re.search\\(r\"\\\\d{2,}\", line\\) and line.strip\\(\\):\n        print\\(f\"  {line.strip\\(\\)[:160]}\"\\)\nprint\\(f\"Contains oliveira: {'oliveira' in md.lower\\(\\)}\"\\)\nfor l in md.split\\(\"\\\\n\"\\):\n    if \"oliveira\" in l.lower\\(\\):\n        print\\(f\"  Oliveira: {l.strip\\(\\)[:160]}\"\\)\n\n# 14. README.md\nprint\\(\\)\nwith open\\(\"README.md\", \"r\", encoding=\"utf-8\"\\) as f:\n    readme = f.read\\(\\)\nprint\\(\"=== 14. README.md ===\"\\)\nfor line in readme.split\\(\"\\\\n\"\\):\n    if re.search\\(r\"\\\\d{2,}\", line\\) and line.strip\\(\\):\n        print\\(f\"  {line.strip\\(\\)[:160]}\"\\)\nprint\\(f\"Contains oliveira: {'oliveira' in readme.lower\\(\\)}\"\\)\nENDOFSCRIPT)",
+      "Bash(dir:*)",
+      "Bash(pdflatex:*)",
+      "Bash(git log:*)",
+      "Bash(latexmk:*)",
+      "Bash(bibtex:*)"
     ]
   }
 }

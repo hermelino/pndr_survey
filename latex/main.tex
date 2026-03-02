@@ -32,6 +32,7 @@ brazil            % Último idioma é o idioma padrão
 % --- Tables (booktabs e tabularx já carregados por memoir/abntex2) ---
 \usepackage{longtable}
 \usepackage{multirow}
+\usepackage{afterpage}  % Para posicionamento de tabelas
 
 % --- Figures ---
 \usepackage{graphicx}
@@ -56,6 +57,11 @@ brazil            % Último idioma é o idioma padrão
 \usepackage{subcaption}
 \usepackage{indentfirst}
 \usepackage{../docs/prisma-flow-diagram}
+
+% --- Contador e nome para Quadros (ABNT) ---
+\newcounter{quadro}
+\renewcommand{\thequadro}{\arabic{quadro}}
+\newcommand{\quadroname}{Quadro}
 
 % =============================================================================
 % --- Metadados abnTeX2 ---
@@ -96,9 +102,7 @@ brazil            % Último idioma é o idioma padrão
 \label{sec:introducao}
 % TODO: Migrar conteúdo de 1-1-introducao.tex
 
-\section{Política Regional no Brasil}
-\label{sec:politica-regional}
-% TODO: Migrar conteúdo de 1-2-politica-regional-no-brasil.tex
+\input{politica-regional}
 
 \section{Método}
 \label{sec:metodo}
