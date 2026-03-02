@@ -34,6 +34,19 @@ def format_ic(value: float, n_after: int) -> str:
     return formatted
 
 
+def get_max_published_ic(ic_data: list[dict], key_map: dict[str, str]) -> tuple[str, float] | None:
+    """Retorna (citeonline, IC) do estudo publicado com maior IC, ou None."""
+    published = [
+        e for e in ic_data
+        if e.get("is_published") and e.get("n_published_after", 0) > 0
+    ]
+    if not published:
+        return None
+    best = max(published, key=lambda x: x.get("IC_published", 0))
+    bib_key = key_map.get(best["key"], best["key"])
+    return bib_key, best["IC_published"]
+
+
 def generate_table(ic_data: list[dict], key_map: dict[str, str]) -> str:
     """Gera string LaTeX da tabela IC para estudos não publicados."""
     # Filtrar apenas não publicados
