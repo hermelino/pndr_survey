@@ -173,8 +173,65 @@ python citation_index.py
 | `generate_bibtex.py` | Converte RIS aprovado → BibTeX (references.bib) | — |
 | `generate_ic_table.py` | Gera tabela IC LaTeX com \citeonline (tabela_ic.tex) | — |
 | `generate_latex_tables.py` | Regenera tabelas derivadas do artigo (estudos-ano, instrumentos, autores, unidade-amostral, metodos) | — |
+| `generate_figures.py` | Gera figuras para o artigo LaTeX (mapas, graficos) | `--list`, `--validate`, `--force`, `--verbose` |
 
 Opcoes globais do `main.py`: `--config FILE`, `--verbose`, `--output-dir DIR`
+
+## Geracao de Figuras
+
+O projeto inclui scripts R para gerar figuras da secao de Politica Regional do artigo LaTeX, orquestrados via wrapper Python.
+
+### Figuras Geradas
+
+| Figura | Script R | Descricao |
+|--------|----------|-----------|
+| `distribuicao_pib_relativo_municipal.png` | `mapa_distribuicao_pib_municipal.R` | Mapas de distribuicao do PIB per capita relativo (2002, 2010, 2019, 2021) |
+| `tipologia_II_simples_com_legenda.png` | `mapa_tipologia_simples.R` | Mapa de tipologia regional 2018 (9 categorias: renda × dinamismo) |
+| `icf_superint_setor.png` | `grafico_resumo_icf.R` | Grafico de incentivos fiscais por superintendencia e setor |
+
+**Figura externa (nao gerada):** `tipologia_I.JPG` (fonte: Decreto nº 6.047/2007)
+
+### Comandos
+
+```bash
+cd scripts
+
+# Listar figuras e status (existencia, tamanho, ultima modificacao)
+python generate_figures.py --list
+
+# Validar dependencias (R, dados RDS, shapefiles)
+python generate_figures.py --validate
+
+# Gerar figuras (incremental, apenas se desatualizadas)
+python generate_figures.py
+
+# Forcar regeneracao de todas as figuras
+python generate_figures.py --force
+
+# Logging DEBUG
+python generate_figures.py --verbose
+```
+
+### Dependencias
+
+- **R** (auto-deteccao ou configurado em `config.yaml`)
+  - Instalacao: https://cran.r-project.org/bin/windows/base/
+  - Pacotes: `ggplot2`, `sf`, `tidyverse`, `RColorBrewer`, `readxl`
+- **Dados RDS** do projeto `tese` (configurado em `config.yaml`)
+- **Shapefiles** IBGE (configurado em `config.yaml`)
+
+### Configuracao
+
+Edite `scripts/config.yaml`, secao `figures:`:
+
+```yaml
+figures:
+  external_data_dir: "C:/OneDrive/github/tese/bulding_dataset_R/output/data"
+  external_shapefiles_dir: "C:/OneDrive/DATABASES"
+  r_executable: ""  # Vazio = auto-detect
+```
+
+Documentacao completa: [data/r_scripts/README.md](data/r_scripts/README.md)
 
 ## Documentacao
 

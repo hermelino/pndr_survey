@@ -81,3 +81,24 @@ output:
 logging:
   level: INFO                 # Console: INFO ou DEBUG (--verbose)
   file_level: DEBUG           # Arquivo: sempre DEBUG
+
+# --- Geração de Figuras ---
+figures:
+  # Diretório de dados RDS do projeto tese
+  external_data_dir: "C:/OneDrive/github/tese/bulding_dataset_R/output/data"
+
+  # Diretório base de shapefiles e dados geoespaciais (IBGE, Semiárido, Amazônia Legal)
+  external_shapefiles_dir: "C:/OneDrive/DATABASES"
+
+  # Diretório de scripts R (relativo ou absoluto)
+  r_scripts_dir: "../data/r_scripts"
+
+  # Diretório de saída das figuras
+  output_dir: "../figures"
+
+  # Executável R (auto-detect se vazio ou omitido)
+  # Vazio = busca via PATH ou C:/Program Files/R/R-*/bin/Rscript.exe
+  r_executable: ""  # Exemplo: "C:/Program Files/R/R-4.4.2/bin/Rscript.exe"
+
+  # Forçar regeneração de todas as figuras (ignora timestamps)
+  force_regenerate: false
