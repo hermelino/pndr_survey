@@ -359,7 +359,7 @@ Revisao manual adicional apos verificacao de metodos e variaveis de resultado:
 | `anpec-2024-quaglio.pdf` | sem metodo econometrico | Analise espacial descritiva do FNE no Pronaf; nao aplica metodo econometrico |
 | `scopus-2012-abreu-gomes-mello.pdf` | outras variaveis de resultado | Avalia retencao de novilhas no Pantanal via DEA e indice Malmquist; variaveis de resultado fora do escopo da PNDR |
 
-Contagem final: 36 aprovados, 82 rejeitados.
+Contagem final: 36 aprovados, 83 rejeitados.
 
 ## Consolidacao JSON enriquecido
 
@@ -373,7 +373,7 @@ Mescla tres fontes em um unico JSON (`data/2-papers/2-2-papers.json`):
 
 Para campos duplicados, prioridade: registros das bases > all_papers > LLM.
 
-Resultado: 118 papers com campos unificados (36 aprovados, 82 rejeitados), incluindo: metadados bibliograficos, resumo, palavras-chave, classificacao LLM em 3 stages, resultado da triagem e motivo de exclusao.
+Resultado: 119 papers com campos unificados (36 aprovados, 83 rejeitados), incluindo: metadados bibliograficos, resumo, palavras-chave, classificacao LLM em 3 stages, resultado da triagem e motivo de exclusao.
 
 ## Extracao e matching de referencias
 
@@ -454,7 +454,7 @@ Tres grupos de estudos foram identificados como duplicatas verdadeiras: o mesmo 
 
 Script de marcacao: `scripts/mark_td_duplicates.py`
 
-**Resultados:** 36 estudos (17 publicados, 19 nao-publicados), **114 citacoes cruzadas**.
+**Resultados:** 36 estudos (18 publicados, 18 nao-publicados), **114 citacoes cruzadas**.
 
 Saidas:
 - `data/3-ref-bib/citation_index_results.json` — dados completos por estudo

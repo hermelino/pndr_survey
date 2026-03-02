@@ -27,7 +27,7 @@ def load_json(path: Path) -> list | dict:
 def format_ic(value: float, n_after: int) -> str:
     """Formata IC para LaTeX: valor com vírgula decimal ou --- se N=0."""
     if n_after == 0:
-        return "---"
+        return "--"
     if value == 0:
         return "0{,}00"
     formatted = f"{value:.2f}".replace(".", "{,}")
@@ -48,11 +48,11 @@ def generate_table(ic_data: list[dict], key_map: dict[str, str]) -> str:
         r"\begin{table}[htb]",
         r"\centering",
         r"\small",
-        r"\caption{Índice de citação cruzada (IC) dos estudos não publicados}",
+        r"\caption{Índice de Citação Cruzada (IC) dos artigos não publicados}",
         r"\label{tab:ic-nao-publicados}",
-        r"\begin{tabular}{lrrrr}",
+        r"\begin{tabular}{lr}",
         r"\toprule",
-        r"Estudo & Ano & Cit. & $N$ & IC \\",
+        r"Artigo & IC \\",
         r"\midrule",
     ]
 
@@ -68,25 +68,16 @@ def generate_table(ic_data: list[dict], key_map: dict[str, str]) -> str:
             missing_keys.append(pdf_key)
             estudo = pdf_key
 
-        year = entry.get("year", "")
-        cit = entry.get("citations_received_from_published", 0)
         n_after = entry.get("n_published_after", 0)
         ic_val = entry.get("IC_published", 0)
-
         ic_str = format_ic(ic_val, n_after)
 
-        lines.append(
-            f"{estudo} & {year} & {cit} & {n_after:>2} & {ic_str} \\\\"
-        )
+        lines.append(f"{estudo} & {ic_str} \\\\")
 
     lines.extend([
         r"\bottomrule",
         r"\end{tabular}",
-        r"\nota{Cit.\ = citações recebidas de artigos publicados em periódicos; "
-        r"$N$ = total de artigos ",
-        r"publicados posteriores ao estudo; IC = Cit./$N$. Estudos de 2025 têm "
-        r"$N=0$ (sem publicações ",
-        r"posteriores), IC não calculável (---).}",
+        r"\nota{-- = IC não calculável ($N=0$, sem publicações posteriores).}",
         r"\fonte{Elaboração própria.}",
         r"\end{table}",
     ])

@@ -112,11 +112,11 @@ Busca manual nas 5 bases                   PDFs coletados (118)
 | 3 | Triagem pre-LLM | Concluido |
 | 4 | Coleta de PDFs (118 de 118, 100%) | Concluido |
 | 5 | Analise LLM (Stages 1-3, 118 papers) | Concluido |
-| 6 | Triagem final (36 aprovados, 82 rejeitados) | Concluido |
+| 6 | Triagem final (36 aprovados, 83 rejeitados) | Concluido |
 | 7 | Consolidacao JSON (registros + LLM) | Concluido |
 | 8 | Extracao de referencias (43 estudos ativos) | Concluido |
 | 9 | Matching de citacoes entre estudos (67 citacoes cruzadas) | Concluido |
-| 10 | Indice de citacao (114 citacoes cruzadas; 36 estudos: 17 pub, 19 nao-pub) | Concluido |
+| 10 | Indice de citacao (114 citacoes cruzadas; 36 estudos: 18 pub, 18 nao-pub) | Concluido |
 | 11 | Artigo LaTeX | Em andamento |
 
 Detalhes da extracao: [docs/pipeline_extraction.md](docs/pipeline_extraction.md)

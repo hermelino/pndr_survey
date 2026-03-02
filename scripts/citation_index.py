@@ -69,13 +69,14 @@ def is_published(study: dict) -> bool:
     """
     key = study.get("key", "")
 
-    # Manual overrides for econpapers entries with known status
+    # Manual overrides for entries with known status
     PUBLISHED_KEYS = {
         # Publicados em periódico (verificado manualmente)
         "econpapers-2014-viana-goncalves-linhares",  # Revista de la CEPAL
         "econpapers-2015-oliveira-arriel-rodrigues",  # Economia & Região
         "econpapers-2017-oliveira-resende-oliveira",  # Plan. e Políticas Públicas
         "econpapers-2024-ribeiro",                    # Economia Aplicada
+        "manual-2026-oliveira-carneiro-souza",        # Rev. Cadernos de Finanças Públicas
     }
     UNPUBLISHED_KEYS = {
         # Textos para Discussão / Working Papers (verificado)

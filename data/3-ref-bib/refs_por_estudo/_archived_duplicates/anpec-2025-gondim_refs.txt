@@ -1,0 +1,123 @@
+# Estudo #118
+#  (2025)
+# Área 1 – Economia Regional INSTRUMENTOS DA PNDR ...
+# Fonte: anpec-2025-gondim.pdf
+======================================================================
+
+ALÉM, Ana Cláudia; MADEIRA, Rodrigo Ferreira. As instituições financeiras públicas de 
+desenvolvimento e o financiamento de longo prazo. 2015. 
+ALMEIDA, Eduardo. Econometria espacial. Campinas–SP. Alínea, v. 31, 2012. 
+ANSELIN, Luc. Interactive techniques and exploratory spatial data analysis. 1996. 
+BAER, Werner. A economia brasileira. NBL Editora, 2003. 
+BANCO DO NORDESTE. Relatório de Gestão do FNE: exercício 2019. Banco do Nordeste 
+do Brasil, 2020. 
+BAUMONT, Catherine. Spatial effects in housing price models: do housing prices capitalize 
+urban development policies in the agglomeration of Dijon (1999)?. 2004. Tese de Doutorado. 
+Laboratoire d'économie et de gestion (LEG). 
+BRASIL. Produto interno bruto dos municípios 2021 / IBGE, Coordenação de Contas 
+Nacionais, IBGE: Rio de Janeiro, 2023 
+BRAZ, Marleton Souza; IRFFI, Guilherme. Impactos dos incentivos fiscais da Sudene sobre o 
+mercado de trabalho local. XXVIII Encontro Regional de Economia. Fortaleza. Anais… 
+Fortaleza, Anpec, 2023. 
+CANO, Wilson et al. Raízes da concentração industrial em São Paulo. São Paulo: Difel, 1977. 
+CARNEIRO, D. Determinantes da Eficiência da Aplicação dos Recursos do FNE pelos 
+municípios beneficiados. Fortaleza, Banco do Nordeste do Brasil, ago. 2018 (Artigos ETENE). 
+CARNEIRO, Diego; COSTA, Eduardo; IRFFI, Guilherme; VELOSO, Pedro; BRAZ, Mariana; 
+DIAS, Tiago; ANDRADE, Vânia. Avaliação de Eficiência das Empresas Beneficiadas pela 
+Política de Incentivos Fiscais Conduzida pela Sudene. In: 51º ENCONTRO NACIONAL DE 
+ECONOMIA, 
+Rio 
+de 
+Janeiro, 
+2023. 
+Disponível 
+em: 
+https://www.anpec.org.br/encontro/2023/submissao/files_I/i10a86c184e25910350378a0acdd4
+0d8846.pdf. Acesso em: 27/04/2024 
+CARNEIRO, Diego; VELOSO, Pedro; Ferreira, Wendel; IRFFI, Guilherme. Análise do 
+Impacto dos Instrumentos da PNDR sobre a Economia dos Municípios Nordestinos. 2024. 
+CRAVO, Tulio Antonio; RESENDE, Guilherme Mendes; CARVALHO, A. Y. The Impact of 
+Brazilian Regional Development Funds on Regional Economic Growth: A spatial panel 
+approach. In: CONGRESSO ERSA, 54., 2014. São Pertersburgo. Anais … São Pertersburgo: 
+ERSA, 2014. p. 26-29. 
+CROCCO, Marco et al. Polarização regional e sistema financeiro. CROCCO et al. Moeda e 
+território: uma interpretação da dinâmica regional brasileira. Belo Horizonte: Autêntica, p. 231-
+269, 2006. 
+DO MONTE, K.; IRFFI, G.; BASTOS, F.; CARNEIRO, D. Análise do Fundo Constitucional 
+de Financiamento do Nordeste (FNE) sobre Indicadores Econômicos Municipais no Período 
+2010-2020. 51º Encontro Nacional de Economia, Rio de Janeiro, 2023. 
+ELHORST, J. Paul; ELHORST, J. Paul. Spatial panel data models. Spatial econometrics: From 
+cross-sectional data to spatial panels, p. 37-93, 2014. 
+FERREIRA, Wendel; CARNEIRO, Diego; IRFFI, Guilherme. A PNDR E O 
+DESENVOLVIMENTO ECONÔMICO DO NORDESTE: UMA ANÁLISE DO FDNE E 
+DOS INCENTIVOS FISCAIS DA SUDENE. 2024 
+FURTADO, Celso. Formação econômica do Brasil. Companhia das Letras, 2020. 
+GARSOUS, Grégoire et al. Tax incentives and job creation in the tourism sector of Brazil’s 
+SUDENE area. World Development, v. 96, p. 87-101, 2017. 
+HAUSMAN, Jerry A. Specification tests in econometrics. Econometrica: Journal of the 
+econometric society, p. 1251-1271, 1978. 
+HIRSCHMAN, A. The strategy of economic development. New Haven: Yale University Press, 
+1958. 
+
+21 
+ 
+IRFFI, Guilherme et al. Avaliação de impacto do financiamento do FDNE na construção de 
+Parques Eólicos e seus efeitos no mercado de trabalho e indicadores econômicos dos municípios 
+na área de atuação da Sudene. CADERNOS DE FINANÇAS PÚBLICAS, v. 25, n. 1, 2025. 
+KRUGMAN, P. Geography and Trade. Leuven-London: Leuven University Press/MIT Press, 
+Boston, 19 
+Lee, L.-F., and J. Yu. 2010a. Estimation of spatial autoregressive panel data models with fixed 
+effects. Journal of Econometrics 154: 165–185. https://doi.org/10.1016/j.jeconom.2009.08.001. 
+LESAGE, James P.; PACE, R. Kelley. Spatial econometric models. In: Handbook of applied 
+spatial analysis: Software tools, methods and applications. Berlin, Heidelberg: Springer Berlin 
+Heidelberg, 2009. p. 355-376. 
+LEVIN, Andrew; LIN, Chien-Fu; CHU, Chia-Shang James. Unit root tests in panel data: 
+asymptotic and finite-sample properties. Journal of econometrics, v. 108, n. 1, p. 1-24, 2002. 
+LINHARES, Fabrício Carneiro; SOARES, Ricardo Brito; GONÇALVES, Marcos Falcão; 
+VIANA, Luiz Fernando Gonçalves. Brazil’s Northeast Financing Constitutional Fund: 
+Differentiated effects on municipal economic growth. CEPAL Review, v. 2014, n. 113, p. 175-
+192, 2014. 
+Manski, C. F. (1993). Identification of endogenous social effects: The reflection problem. The 
+review of economic studies, 60 (3): 531-542.  
+MARSHALL, A. Principles of economics. London: Macmillan, 1890. 
+MORAN, Patrick AP. Notes on continuous stochastic phenomena. Biometrika, v. 37, n. 1/2, p. 
+17-23, 1950. 
+MYRDAL, Gunnar. Teoria econômica e regiões subdesenvolvidas. Rio de Janeiro: ISEB, 1960 
+(1957). 
+ODLAND, John. Spatial autocorrelation. 2020. 
+OLIVEIRA, Rodrigo; NETO, Raul da Mota Silveira. Estrutura produtiva ou escolaridade? Uma 
+análise dos fatores explicativos da desigualdade de renda entre as regiões Sudeste e Nordeste 
+por quantil para o período entre os anos de 1970 e 2010. Revista Econômica do Nordeste, p. 
+74-91, 2016. 
+RESENDE, Guilherme Mendes. Micro e macroimpactos de políticas de desenvolvimento 
+regional: o caso dos empréstimos do FNE-industrial no estado de Ceará. Brasília: IPEA, 2012. 
+(Texto para Discussão nº 1777) 
+RESENDE, Guilherme Mendes; DA SILVA FILHO, Luís Abel. Avaliação dos Impactos 
+Econômicos do Fundo Constitucional de Financiamento do Nordeste (FNE): o caso da Bahia, 
+2004-2010. Revista Desenbahia, n. 20, 29-58, 2014. 
+RESENDE, Guilherme Mendes; SILVA, Diego Firmino Costa; SILVA FILHO, Luís Abel. 
+Avaliação econômica do Fundo Constitucional de Financiamento do Nordeste (FNE): uma 
+análise espacial por tipologia da PNDR entre 1999 e 2011. Revista Econômica do Nordeste, v. 
+48, n. 1, p. 9-29, 2017. 
+RIBEIRO, L. C. S. et al. Regional funding and regional inequalities in the Brazilian Northeast.  
+RÜTTENAUER, Tobias; AKSOY, Ozan. When Can We Use Two-Way Fixed-Effects 
+(TWFE): A Comparison of TWFE and Novel Dynamic Difference-in-Differences Estimators. 
+arXiv preprint arXiv:2402.09928, 2024. 
+SALA-I-MARTIN, Xavier X. Regional cohesion: evidence and theories of regional growth and 
+convergence. European economic review, v. 40, n. 6, p. 1325-1352, 1996. 
+SEIFI, A., MOTAGHI, S., EBRAHIM, S., & AHMADI, M. S. (2020). Effect of terrorism 
+activities on capital flight in the Middle East. In E3S Web of Conferences (Vol. 157, p. 03017). 
+EDP Sciences. 
+STIGLITZ, Joseph E.; WEISS, Andrew. Credit rationing in markets with imperfect 
+information. The American economic review, v. 71, n. 3, p. 393-410, 1981. 
+
+22 
+ 
+SUDENE, Relatório de Gestão do exercício de 2023. Aesso em 13/02/2025: 
+https://www.gov.br/sudene/pt-br/acesso-a-informacao/institucional/gestao-
+institucional/arquivos/sudene-rg2023.pdf 
+WALD, Abraham. Tests of statistical hypotheses concerning several parameters when the 
+number of observations is large. Transactions of the American Mathematical society, v. 54, n. 
+3, p. 426-482, 1943. 
+WOOLDRIDGE, Jeffrey M. Econometric analysis of cross section and panel data. MIT press, 
+2010.
