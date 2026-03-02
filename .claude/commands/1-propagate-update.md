@@ -19,6 +19,8 @@ Você é o orquestrador de atualizações do pipeline de revisão sistemática `
       ↓
 [7] Consolidação JSON                  → 2-2-papers.json (merge_papers_to_json.py)
       ↓
+[7b] RIS aprovados                     → approved_papers.ris (generate_approved_ris.py)
+      ↓
 [8] Extração+matching refs             → refs_por_estudo/*.json (match_refs_to_studies.py)
       ↓
 [9] Índice de citação                  → citation_index_results.json (citation_index.py)
@@ -51,6 +53,7 @@ data/2-papers/all_papers_llm_classif.xlsx          # Classificação LLM bruta
 data/2-papers/all_papers_llm_classif_final.xlsx    # Classificação LLM revisada (MANUAL)
 data/2-papers/_llm_checkpoint.json                 # Checkpoint LLM
 data/2-papers/2-2-papers.json                      # JSON enriquecido (MASTER)
+data/2-papers/approved_papers.ris                   # RIS dos estudos aprovados (generate_approved_ris.py)
 data/2-papers/2-2-papers-pdfs/                     # PDFs renomeados
 data/3-ref-bib/refs_por_estudo/                    # JSONs de referências por estudo
 data/3-ref-bib/refs_por_estudo/_archived_duplicates/  # Refs arquivadas de duplicatas
@@ -67,6 +70,7 @@ scripts/main.py search --import-{base} FILE  # Reimportação de registros
 scripts/main.py screen --input-json FILE     # Triagem pré-LLM
 scripts/run_llm_all_papers.py                # Análise LLM em lote
 scripts/merge_papers_to_json.py              # Consolidação JSON
+scripts/generate_approved_ris.py             # RIS dos estudos aprovados
 scripts/match_refs_to_studies.py             # Matching de citações
 scripts/citation_index.py                    # Índice de citação
 scripts/mark_td_duplicates.py                # Marcação de duplicatas TD/WP
