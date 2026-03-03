@@ -371,7 +371,7 @@ def validate_dataset(df: pd.DataFrame, schema: Dict[str, Any]) -> list[str]:
 
 **Erros no projeto tese:** Se durante a conversão R → Python for identificado um erro metodológico ou estatístico no script R original do projeto tese, **reportar imediatamente ao usuário** antes de replicar o erro. Documentar o erro encontrado, explicar o impacto nos resultados, e implementar a versão correta no pndr_survey.
 
-**Exemplo real:** `fc_variables.R:127-152` calculava per capita no nível de transação (~1,17M linhas) em vez de município-ano (~55K linhas), enviesando os valores pela quantidade de operações por município. Corrigido em `process_fc_data.py`.
+**Exemplo real:** `fc_variables.R:127-152` calculava per capita no nível de transação (~1,17M linhas) em vez de município-ano (~55K linhas), enviesando os valores pela quantidade de operações por município. Corrigido em `process_fc_data.py`. Nota: a tabela FC (`fc_tabela_resumo.tex`) agora usa participação média no PIB anual (%) em vez de per capita.
 
 ### 8. Integração com Pipeline pndr_survey
 

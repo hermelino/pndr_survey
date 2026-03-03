@@ -44,7 +44,16 @@
       "Bash(pip install:*)",
       "Bash(find:*)",
       "Skill(processar-dados)",
-      "Skill(processar-dados:*)"
+      "Skill(processar-dados:*)",
+      "Bash(head:*)",
+      "Bash(cmd /c \"dir /s /b C:\\\\OneDrive\\\\github\\\\tese\\\\*resumo*fc*\")",
+      "Bash(cmd /c \"dir /s /b C:\\\\OneDrive\\\\github\\\\tese\\\\*resumo*fundo*\")",
+      "Bash(cmd /c \"dir /s /b C:\\\\OneDrive\\\\github\\\\tese\\\\*painel_fc*\")",
+      "Bash(cmd /c \"dir /s /b C:\\\\OneDrive\\\\github\\\\tese\\\\bulding_dataset_R\\\\output\"\" 2>nul || echo \"No output directory found \")",
+      "Bash(cmd /c:*)",
+      "Bash(Select-String -Pattern \"undefined|Error|missing\" -SimpleMatch)",
+      "Bash(.venvScriptspip install pyreadr)",
+      "Bash(copy:*)"
     ]
   }
 }

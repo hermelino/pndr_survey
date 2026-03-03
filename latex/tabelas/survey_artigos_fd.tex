@@ -1,0 +1,160 @@
+% Arquivo: latex/tabelas/survey_artigos_fd.tex
+% Quadro de estudos sobre impacto dos Fundos de Desenvolvimento
+% Fonte: Revisão sistemática - dados extraídos do pipeline pndr_survey
+
+% IMPORTANTE: Este arquivo requer:
+% - Pacotes: longtable, multirow, afterpage, enumitem, array
+% - Macros: \fc e \metodo (definidas em tabelas/tabela_macros.tex)
+% - Comando \citeonline (do pacote abntex2cite)
+% - Contador: quadro (definido no main.tex)
+
+\afterpage{\clearpage%
+\tiny%
+\setlength{\extrarowheight}{1pt}%
+\setlength{\tabcolsep}{2pt}%
+\linespread{0.9}\selectfont%
+\renewcommand{\arraystretch}{1.2}%
+\renewcommand{\tablename}{\quadroname}%
+\renewcommand{\thetable}{\arabic{quadro}}%
+\stepcounter{quadro}%
+\begin{longtable}{|>{\raggedright\arraybackslash}p{1.4cm}
+		|>{\raggedright\arraybackslash}p{1.5cm}
+		|>{\raggedright\arraybackslash}p{1.5cm}
+		|>{\raggedright\arraybackslash}p{2cm}
+		|>{\raggedright\arraybackslash}p{1.5cm}
+		|>{\raggedright\arraybackslash}p{2cm}
+		|>{\raggedright\arraybackslash}p{4.2cm}|}
+
+	\caption{Estudos de Impacto dos Fundos de Desenvolvimento} \label{tab:estudos_fd} \\
+
+\hline
+	\begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.4cm}@{}}Método\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.5cm}@{}}Artigo\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.5cm}@{}}Publicação\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2cm}@{}}Amostragem\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.5cm}@{}}Variável Independente\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2cm}@{}}Variável Dependente\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{4.2cm}@{}}Resultado\end{tabular} \\
+	\hline
+	\endfirsthead
+
+	\multicolumn{7}{c}%
+	{{\quadroname\ \thetable{} -- Continuação}} \\
+	\hline
+	\begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.4cm}@{}}Método\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.5cm}@{}}Artigo\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.5cm}@{}}Publicação\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2cm}@{}}Amostragem\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.5cm}@{}}Variável Independente\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2cm}@{}}Variável Dependente\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{4.2cm}@{}}Resultado\end{tabular} \\
+	\hline
+	\endhead
+
+	\hline
+	\multicolumn{7}{r}{{Continua}} \\
+	\endfoot
+
+	\hline
+	\multicolumn{7}{l}{
+		\tiny
+		\parbox{14.8cm}{%
+			\vspace{0.1cm}
+			Fonte: Elaborado pelo autor. Siglas: AC - Apresentação em congresso; NS - Não significativo.
+	}}
+	\endlastfoot
+
+	\hline
+Painel Espacial & \citeonline{FerreiraIrffiCarneiro2024}
+	& AC
+	& \fc[2cm]{\item NE \item 2010-2021}
+	& \fc[1.5cm]{\item FDNE}
+	& \fc[2cm]{\item IDM}
+	& \fc[4.2cm]{
+		\item IDM renda \hfill 0,019\textsuperscript{*}
+		\item IDM, IDM saúde e IDM educação \hfill NS\phantom{\textsuperscript{*}}
+	} \\
+
+	\cline{2-7}
+
+	& \citeonline{gondim2025}
+	& Rev. Cadernos de Finanças Públicas
+	& \fc[2cm]{\item NE \item 2010-2021}
+	& \fc[1.5cm]{\item FDNE (\textit{dummy})}
+	& \fc[2cm]{\item $\Delta$ ln(PIB pc)}
+	& \fc[4.2cm]{
+		\item Efeito direto \hfill NS\phantom{\textsuperscript{*}}
+		\item Efeito indireto \hfill 0,0252\textsuperscript{*}
+		\item Efeito total \hfill 0,0351\textsuperscript{*}
+	} \\
+	\cline{6-7}
+	& & & &
+	& \fc[2cm]{\item $\Delta$ ln(VAB pc)}
+	& \fc[4.2cm]{
+		\item Efeito direto \hfill 0,0409\textsuperscript{*}
+		\item Efeito indireto \hfill NS\phantom{\textsuperscript{*}}
+		\item Efeito total \hfill 0,6014\textsuperscript{*}
+	} \\
+
+	\hline
+DID Dois Estágios & \citeonline{Carneiroetal2024a}
+	& AC
+	& \fc[2cm]{\item NE \item 2002-2019}
+	& \fc[1.5cm]{\item FDNE}
+	& \fc[2cm]{\item log PIB\textit{pc}, VAB setorial}
+	& \fc[4.2cm]{
+		\item PIB\textit{pc} \hfill 0,063\textsuperscript{*}
+		\item VAB\textit{pc} serviços \hfill 0,111\textsuperscript{*}
+		\item Arrecadação \hfill 0,207\textsuperscript{*}
+		\item VAB ind. e VAB agro. \hfill NS\phantom{\textsuperscript{*}}
+	} \\
+
+	\hline
+DID Escalonado
+	& \citeonline{BrazBastosIrffi2024}
+	& AC
+	& \fc[2cm]{\item NE \item 2002-2021}
+	& \fc[1.5cm]{\item FDNE}
+	& \fc[2cm]{\item PIB\textit{pc}, emprego, renda, IDEB}
+	& \fc[4.2cm]{
+		\item PIB\textit{pc} \hfill 24,07\%\textsuperscript{*}
+		\item Renda \hfill 4,63\%\textsuperscript{*}
+		\item IDEB anos iniciais \hfill 18,67\%\textsuperscript{*}
+		\item IDEB anos finais \hfill 21,49\%\textsuperscript{*}
+		\item Emprego, pobreza, mortalidade infantil e saúde \hfill NS\phantom{\textsuperscript{*}}
+	} \\
+	\cline{2-7}
+
+	& \citeonline{Irffietal2025}
+	& Rev. Cadernos de Finanças Públicas
+	& \fc[2cm]{\item NE \item 1999-2022}
+	& \fc[1.5cm]{\item FDNE-parques eólicos}
+	& \fc[2cm]{\item PIB\textit{pc}, VAB, emprego, massa salarial}
+	& \fc[4.2cm]{
+		\item PIB\textit{pc} \hfill 18,97\%\textsuperscript{*}
+		\item VAB indústria \hfill 71,90\%\textsuperscript{*}
+		\item VAB serviço \hfill 10,24\%\textsuperscript{*}
+		\item Emprego \hfill 23,41\%\textsuperscript{*}
+		\item Redução temporária do VAB-agro durante construção
+	} \\
+
+	\hline
+Painel Dinâmico GMM
+	& \citeonline{Souza2025}
+	& AC
+	& \fc[2cm]{\item N, NE, CO \item 2002-2021}
+	& \fc[1.5cm]{\item FDNE, FDA, FDCO (+ FC + IF)}
+	& \fc[2cm]{\item PIB\textit{pc}, emprego, renda}
+	& \fc[4.2cm]{
+		\item Heterogeneidade entre fundos, regiões e setores
+		\item FDCO inconclusivo (poucos projetos)
+	} \\
+
+\end{longtable}%
+\normalsize%
+\setlength{\extrarowheight}{0pt}%
+\setlength{\tabcolsep}{6pt}%
+\linespread{1.5}\selectfont%
+\renewcommand{\tablename}{Tabela}%
+\renewcommand{\thetable}{\arabic{table}}%
+}
