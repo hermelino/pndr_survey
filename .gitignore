@@ -27,6 +27,10 @@
 # =============================================================================
 # Data (large files - keep only scripts, not raw data)
 # =============================================================================
+# ESTRATÉGIA: Versionar apenas inputs originais das 5 bases.
+# Todos os outputs intermediários e finais serão regenerados via pipeline.
+
+# Regra geral: ignorar tudo em data/
 data/**/*.csv
 data/**/*.xlsx
 data/**/*.xls
@@ -38,7 +42,35 @@ data/**/*.parquet
 data/**/*.pdf
 data/**/*.doc
 data/**/*.json
+data/**/*.txt
+data/**/*.jsonl
+
+# EXCEÇÃO 1: Versionar inputs originais das 5 bases (RIS + XLSX de controle)
+!data/1-records/1-1-records-scopus/*.ris
+!data/1-records/1-1-records-scopus/*.xlsx
+!data/1-records/1-2-records-scielo/*.ris
+!data/1-records/1-2-records-scielo/*.xlsx
+!data/1-records/1-3-records-capes/*.ris
+!data/1-records/1-3-records-capes/*.xlsx
+!data/1-records/1-4-records-econpapers/*.ris
+!data/1-records/1-4-records-econpapers/*.xlsx
+!data/1-records/1-5-records-anpec/*.xlsx
+
+# EXCEÇÃO 2: Versionar RIS consolidado final (opcional - pode ser regenerado)
+!data/1-records/all_records.ris
+
+# EXCEÇÃO 3: Versionar scripts em data/ (Python, R, etc.)
+!data/**/*.py
+!data/**/*.R
+!data/**/*.sh
+
+# EXCEÇÃO 4: Manter .gitkeep para preservar estrutura de diretórios
 !data/.gitkeep
+!data/**/.gitkeep
+
+# EXCEÇÃO 5: Manter READMEs e documentação
+!data/**/README.md
+!data/**/DATASETS.md
 
 # =============================================================================
 # OS / IDE

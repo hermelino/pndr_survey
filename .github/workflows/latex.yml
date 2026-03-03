@@ -1,0 +1,75 @@
+name: Compile LaTeX
+
+# Executa apenas em pushes para latex/ ou quando solicitado manualmente
+on:
+  push:
+    paths:
+      - 'latex/**'
+      - 'figures/**'
+  workflow_dispatch:
+
+jobs:
+  compile-pdf:
+    name: Compile Article PDF
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            texlive-latex-extra \
+            texlive-fonts-recommended \
+            texlive-lang-portuguese \
+            texlive-bibtex-extra \
+            biber
+
+      - name: Compile LaTeX (first pass)
+        run: |
+          cd latex
+          pdflatex -interaction=nonstopmode main.tex
+
+      - name: Run BibTeX
+        run: |
+          cd latex
+          bibtex main || echo "⚠️  BibTeX warnings (may be OK)"
+
+      - name: Compile LaTeX (second pass)
+        run: |
+          cd latex
+          pdflatex -interaction=nonstopmode main.tex
+
+      - name: Compile LaTeX (third pass)
+        run: |
+          cd latex
+          pdflatex -interaction=nonstopmode main.tex
+
+      - name: Check PDF generation
+        run: |
+          if [ -f latex/main.pdf ]; then
+            echo "✅ PDF compiled successfully"
+            ls -lh latex/main.pdf
+          else
+            echo "❌ PDF not generated"
+            exit 1
+          fi
+
+      - name: Upload PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: article-pdf-${{ github.sha }}
+          path: latex/main.pdf
+          retention-days: 90
+
+      - name: Upload build logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: latex-logs-${{ github.sha }}
+          path: |
+            latex/*.log
+            latex/*.blg
+          retention-days: 7

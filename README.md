@@ -233,10 +233,84 @@ figures:
 
 Documentacao completa: [data/r_scripts/README.md](data/r_scripts/README.md)
 
+## Reprodutibilidade
+
+Este projeto é **completamente reproduzível**. Qualquer pessoa pode clonar o repositório e regenerar todos os outputs (tabelas, figuras, artigo PDF) a partir dos dados originais.
+
+### 🚀 Quick Start
+
+```bash
+# 1. Clonar repositório
+git clone https://github.com/<USER>/pndr_survey.git
+cd pndr_survey
+
+# 2. Configurar ambiente
+python -m venv .venv && .venv\Scripts\activate
+pip install -r scripts/requirements.txt
+
+# 3. Configurar pipeline
+cp scripts/config.example.yaml scripts/config.yaml
+# Edite config.yaml com suas configurações (API key, paths de dados externos)
+
+# 4. Pipeline completo
+make all          # GNU Make (Git Bash/WSL)
+# ou
+build.bat all     # Windows nativo
+```
+
+### 📊 Níveis de Reprodutibilidade
+
+| Nível | Descrição | Tempo | Requer |
+|-------|-----------|-------|--------|
+| **Nível 1: Completo** | Refazer toda análise do zero | ~3-5h | Python, R, PDFs, API key, dados externos |
+| **Nível 2: Parcial** | Regenerar outputs a partir de dados processados | ~10min | Python, R, dados externos |
+| **Nível 3: Compilação** | Apenas compilar LaTeX → PDF | ~1min | LaTeX |
+
+**Documentação completa:** [REPRODUCING.md](REPRODUCING.md)
+
+### 📁 Estrutura de Arquivos
+
+**Versionados (no Git):**
+- Inputs originais: RIS/Excel das 5 bases acadêmicas
+- Scripts Python/R de processamento e geração
+- Código LaTeX do artigo
+- Documentação e configurações
+
+**Não versionados (gerados pelo pipeline):**
+- PDFs dos estudos (119 arquivos, ~119 MB) — [como obter](data/DATASETS.md)
+- Dados intermediários (JSONs processados, checkpoints LLM)
+- Outputs finais (tabelas LaTeX, figuras PNG, references.bib)
+
+**Comandos disponíveis:**
+```bash
+make setup       # Instalar dependências
+make import      # Importar registros das 5 bases
+make screen      # Triagem pré-LLM
+make analyze     # Análise LLM (requer GEMINI_API_KEY e PDFs)
+make citations   # Matching de citações + índice
+make tables      # Gerar tabelas LaTeX
+make figures     # Gerar figuras (mapas, gráficos)
+make latex       # Compilar PDF do artigo
+make all         # Pipeline completo
+make clean       # Limpar outputs gerados
+```
+
+Equivalente Windows: `build.bat <comando>`
+
+### 🔗 Recursos
+
+- **Guia de reprodutibilidade:** [REPRODUCING.md](REPRODUCING.md)
+- **Dados externos:** [data/DATASETS.md](data/DATASETS.md)
+- **Build scripts:** [Makefile](Makefile), [build.bat](build.bat)
+
+---
+
 ## Documentacao
 
 | Arquivo | Conteudo |
 |---------|----------|
+| [REPRODUCING.md](REPRODUCING.md) | **Guia completo de reprodutibilidade** (Nivel 1, 2, 3) |
+| [data/DATASETS.md](data/DATASETS.md) | Como obter dados externos (PDFs, RDS, shapefiles) |
 | [docs/pipeline_extraction.md](docs/pipeline_extraction.md) | Metodologia, queries, dados coletados, analise LLM, citacoes |
 | [CLAUDE.md](CLAUDE.md) | Regras de codigo e convencoes do projeto |
 | [docs/update_reports/](docs/update_reports/) | Relatorios de atualizacoes do pipeline (propagate-update) |
