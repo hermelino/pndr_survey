@@ -77,7 +77,7 @@
 
 **[TABELA]** Tabela 1: Resumo dos Fundos Constitucionais de Financiamento
 - Fonte: `tabelas/1-survey/fc_tabela_resumo.tex` (tese)
-- Descrição: Dados de aplicações dos FCs por período e tipologia municipal (PIB *per capita* e valores aplicados)
+- Descrição: Dados de aplicações dos FCs por período e tipologia municipal (participação média no PIB anual e valores aplicados)
 - Adaptação: Verificar se a tabela existe no diretório `latex/tabelas/` do artigo; caso contrário, recriar com base nos dados da tese. Avaliar necessidade de atualizar números se houver dados mais recentes.
 
 ---

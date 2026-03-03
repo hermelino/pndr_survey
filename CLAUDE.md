@@ -93,6 +93,8 @@ docs/update_reports/            → Relatorios de atualizacao do pipeline (propa
 
 - `/processar-dados [comando]` — Converte, escreve e revisa scripts de manipulacao de dados e estatisticas descritivas do projeto tese para o contexto pndr_survey. Executa conversao R → Python, gera tabelas LaTeX/Excel, cria graficos academicos e valida datasets. Comandos: `explorar` (lista scripts R disponiveis), `converter [script.R]` (converte script especifico), `stats` (estatisticas descritivas), `plot [tipo]` (graficos), `validar` (validacao de dados). Exclui estimacao econometrica. Definicao em `.claude/commands/5-processar-dados.md`.
 
+- `/revisor-latex [escopo]` — Revisor automatizado de comandos LaTeX. Verifica consistencia estrutural (ambientes, labels, referencias cruzadas), conformidade ABNT/abntex2 (\fonte{}, \cite/\citeonline, caption/label), tipografia (non-breaking spaces, espacamento) e corrige automaticamente erros seguros sem necessidade de aprovacao. Nunca altera conteudo textual, dados numericos ou conteudo de tabelas. Escopo: `main`, `metodo`, `resultados`, `politica`, `tabelas`, `todos` (padrao). Definicao em `.claude/commands/6-revisor-latex.md`.
+
 ## Dependencias
 
 ```
