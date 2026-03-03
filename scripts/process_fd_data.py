@@ -2,17 +2,22 @@
 """Processa dados de Fundos de Desenvolvimento (FD): FDNE, FDA, FDCO.
 
 Carrega, padroniza e agrega dados dos três fundos de desenvolvimento regional
-para gerar resumos por fundo e setor.
+para gerar resumos por fundo, setor e tipologia PNDR 2007.
 
 Entrada:
     data/external_data/fds_contratacoes.xlsx  (contratos: FDA, FDNE, FDCO)
     data/external_data/fdne_liberacoes_ate_jun_2023.xlsx  (liberações FDNE)
+    tese/bulding_dataset_R/output/data/painel_fd_agregado.rds  (painel municipal)
+    tese/bulding_dataset_R/output/data/resumo_fd.xlsx  (resumo com tipologia)
+    data/external_data/tipologia_2007.xlsx  (tipologia PNDR)
+    data/external_data/br_ibge_populacao_municipio.csv  (população municipal)
 
 Saída:
-    data/external_data/resumo_fd.xlsx         (resumo por fundo/setor)
-    data/external_data/fd_liberacoes_ano.xlsx  (liberações FDNE por ano)
+    data/external_data/resumo_fd.xlsx  (resumo por fundo/setor + tipologia + per capita)
 
-Referência R: tese/bulding_dataset_R/source_code/fd_variables.R
+Referência R:
+    tese/bulding_dataset_R/source_code/fd_variables.R
+    tese/bulding_dataset_R/source_code/grafico_resumo_fd.R
 
 Uso:
     python process_fd_data.py
@@ -291,6 +296,148 @@ def generate_resumo(contratacoes: pd.DataFrame) -> pd.DataFrame:
     return resumo
 
 
+TESE_ROOT = Path("C:/OneDrive/github/tese")
+TESE_RESUMO_FD = TESE_ROOT / "bulding_dataset_R" / "output" / "data" / "resumo_fd.xlsx"
+TESE_PAINEL_FD = TESE_ROOT / "bulding_dataset_R" / "output" / "data" / "painel_fd_agregado.rds"
+
+
+def load_tipologia_resumo() -> pd.DataFrame:
+    """Carrega resumo FD por tipologia/fundo/setor da tese.
+
+    O resumo da tese contém valores deflacionados (IPCA) agrupados por
+    tipologia2007, INSTR e SETOR — necessário para o gráfico facetado.
+
+    Returns:
+        DataFrame com tipologia2007, INSTR, SETOR, valor
+    """
+    if not TESE_RESUMO_FD.exists():
+        logger.warning(f"Resumo FD tese não encontrado: {TESE_RESUMO_FD}")
+        return pd.DataFrame()
+
+    df = pd.read_excel(TESE_RESUMO_FD, sheet_name="Sheet 1")
+    # Filtrar linhas sem tipologia
+    df = df[df["tipologia2007"].notna()].copy()
+    df["valor_bi"] = df["valor"] / 1e9
+
+    logger.info(f"Resumo tipologia FD: {len(df)} registros "
+                f"({df['INSTR'].nunique()} fundos, "
+                f"{df['tipologia2007'].nunique()} tipologias)")
+    return df
+
+
+def compute_pib_share_fd() -> pd.DataFrame:
+    """Calcula participação média no PIB de FD por tipologia PNDR 2007.
+
+    Para cada município-ano: share = fd / (pib * 1000).
+    Média por município, depois média por tipologia.
+
+    Returns:
+        DataFrame com tipologia2007, INSTR, pib_media (long format)
+    """
+    try:
+        import pyreadr
+    except ImportError:
+        logger.warning("pyreadr não instalado — participação PIB FD não calculada")
+        return pd.DataFrame()
+
+    if not TESE_PAINEL_FD.exists():
+        logger.warning(f"Painel FD tese não encontrado: {TESE_PAINEL_FD}")
+        return pd.DataFrame()
+
+    # Tipologia
+    tip_path = DATA_DIR / "tipologia_2007.xlsx"
+    if not tip_path.exists():
+        logger.warning(f"Tipologia não encontrada: {tip_path}")
+        return pd.DataFrame()
+
+    # PIB municipal (IBGE, em R$ 1.000)
+    pib_path = Path("C:/OneDrive/DATABASES/MUNICÍPIOS/pib_municipios.xlsx")
+    if not pib_path.exists():
+        logger.warning(f"PIB municipal não encontrado: {pib_path}")
+        return pd.DataFrame()
+
+    # 1. Carregar painel municipal FD
+    rds = pyreadr.read_r(str(TESE_PAINEL_FD))
+    painel = list(rds.values())[0]
+    painel["COD_MUNIC"] = painel["COD_MUNIC"].astype(int)
+    painel["year"] = painel["year"].astype(int)
+
+    # 2. Tipologia
+    tip = pd.read_excel(tip_path, sheet_name="Table 1")
+    tip = tip.iloc[:, [0, 5]].copy()
+    tip.columns = ["id_municipio", "tipologia2007"]
+    tip["id_municipio"] = pd.to_numeric(tip["id_municipio"], errors="coerce").astype("Int64")
+
+    # 3. PIB municipal
+    pib = pd.read_excel(pib_path)
+    pib = pib.rename(columns={"id_municipio": "CD_MUN"})
+    pib["CD_MUN"] = pd.to_numeric(pib["CD_MUN"], errors="coerce")
+    pib["ano"] = pd.to_numeric(pib["ano"], errors="coerce")
+    pib["pib"] = pd.to_numeric(pib["pib"], errors="coerce")
+    pib = pib[["ano", "CD_MUN", "pib"]].dropna()
+
+    # 4. Join
+    merged = (
+        painel
+        .merge(tip, left_on="COD_MUNIC", right_on="id_municipio", how="left")
+        .merge(
+            pib,
+            left_on=["COD_MUNIC", "year"],
+            right_on=["CD_MUN", "ano"],
+            how="left",
+        )
+    )
+    valid = merged[
+        merged["tipologia2007"].notna()
+        & merged["pib"].notna()
+        & (merged["pib"] > 0)
+    ].copy()
+
+    logger.info(f"Participação PIB FD: {len(valid)}/{len(merged)} obs válidas")
+
+    # 5. Participação no PIB: fd / (pib * 1000)
+    valid["fdne_pib"] = valid["fdne"] / (valid["pib"] * 1000)
+    valid["fda_pib"] = valid["fda"] / (valid["pib"] * 1000)
+    valid["fdco_pib"] = valid["fdco"] / (valid["pib"] * 1000)
+
+    # 6. Média por tipologia (wide): média por município, depois por tipologia
+    pib_by_mun = (
+        valid.groupby(["COD_MUNIC", "tipologia2007"])
+        .agg(
+            fdne_pib_media=("fdne_pib", "mean"),
+            fda_pib_media=("fda_pib", "mean"),
+            fdco_pib_media=("fdco_pib", "mean"),
+        )
+        .reset_index()
+    )
+    medias_wide = (
+        pib_by_mun.groupby("tipologia2007")
+        .agg(
+            fdne_pib_media=("fdne_pib_media", "mean"),
+            fda_pib_media=("fda_pib_media", "mean"),
+            fdco_pib_media=("fdco_pib_media", "mean"),
+        )
+        .reset_index()
+    )
+
+    # 7. Converter para long format (INSTR, tipologia2007, pib_media)
+    medias_long = medias_wide.melt(
+        id_vars="tipologia2007",
+        value_vars=["fdne_pib_media", "fda_pib_media", "fdco_pib_media"],
+        var_name="INSTR",
+        value_name="pib_media",
+    )
+    medias_long["INSTR"] = medias_long["INSTR"].map({
+        "fdne_pib_media": "FDNE",
+        "fda_pib_media": "FDA",
+        "fdco_pib_media": "FDCO",
+    })
+
+    logger.info(f"Participação PIB FD médio por tipologia:\n"
+                f"{medias_wide.round(6).to_string(index=False)}")
+    return medias_long
+
+
 def main() -> int:
     """Ponto de entrada principal."""
     parser = argparse.ArgumentParser(
@@ -332,17 +479,25 @@ def main() -> int:
         # 4. Gerar resumo por fundo/setor
         resumo = generate_resumo(contratacoes)
 
-        # 5. Salvar outputs
+        # 5. Carregar dados de tipologia (da tese) e per capita
+        resumo_tipologia = load_tipologia_resumo()
+        medias_pib = compute_pib_share_fd()
+
+        # 6. Salvar outputs
         out_resumo = DATA_DIR / "resumo_fd.xlsx"
         with pd.ExcelWriter(out_resumo) as writer:
             resumo.to_excel(writer, index=False, sheet_name="por_fundo_setor")
             contratacoes.to_excel(writer, index=False, sheet_name="contratos")
             if not fdne_liberacoes.empty:
                 fdne_liberacoes.to_excel(writer, index=False, sheet_name="fdne_liberacoes_ano")
+            if not resumo_tipologia.empty:
+                resumo_tipologia.to_excel(writer, index=False, sheet_name="por_fundo_setor_tipologia")
+            if not medias_pib.empty:
+                medias_pib.to_excel(writer, index=False, sheet_name="medias_pib_tipologia")
 
         logger.info(f"\nSalvo: {out_resumo}")
 
-        # 6. Resumo final
+        # 7. Resumo final
         logger.info("\n" + "=" * 60)
         logger.info("RESUMO DOS FUNDOS DE DESENVOLVIMENTO")
         logger.info("=" * 60)

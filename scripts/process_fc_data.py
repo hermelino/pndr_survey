@@ -334,11 +334,11 @@ def load_all_fc_data() -> pd.DataFrame:
     return combined
 
 
-def load_auxiliar_data() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
-    """Carrega dados auxiliares: tipologia, população, IPCA.
+def load_auxiliar_data() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+    """Carrega dados auxiliares: tipologia, população, IPCA, PIB municipal.
 
     Returns:
-        Tupla (tipologia, populacao, ipca) como DataFrames
+        Tupla (tipologia, populacao, ipca, pib) como DataFrames
     """
     # Tipologia 2007
     tip = pd.read_excel(DATA_DIR / "tipologia_2007.xlsx")
@@ -366,7 +366,18 @@ def load_auxiliar_data() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     logger.info(f"IPCA: {len(ipca)} anos, fator range: "
                 f"{ipca['ipca_fator'].min():.3f} - {ipca['ipca_fator'].max():.3f}")
 
-    return tip, pop, ipca
+    # PIB municipal (IBGE, em R$ 1.000)
+    pib_path = Path("C:/OneDrive/DATABASES/MUNICÍPIOS/pib_municipios.xlsx")
+    pib = pd.read_excel(pib_path)
+    pib = pib.rename(columns={"id_municipio": "CD_MUN"})
+    pib["CD_MUN"] = pd.to_numeric(pib["CD_MUN"], errors="coerce")
+    pib["ano"] = pd.to_numeric(pib["ano"], errors="coerce")
+    pib["pib"] = pd.to_numeric(pib["pib"], errors="coerce")
+    pib = pib[["ano", "CD_MUN", "pib"]].dropna()
+    logger.info(f"PIB municipal: {pib['CD_MUN'].nunique()} municípios, "
+                f"anos {int(pib['ano'].min())}-{int(pib['ano'].max())}")
+
+    return tip, pop, ipca, pib
 
 
 def build_panel(
@@ -374,6 +385,7 @@ def build_panel(
     tipologia: pd.DataFrame,
     populacao: pd.DataFrame,
     ipca: pd.DataFrame,
+    pib: pd.DataFrame,
 ) -> pd.DataFrame:
     """Constrói painel município/ano com valores deflacionados.
 
@@ -382,6 +394,7 @@ def build_panel(
         tipologia: Tipologia 2007
         populacao: População municipal
         ipca: Fator IPCA
+        pib: PIB municipal (IBGE, em R$ 1.000)
 
     Returns:
         Painel agregado por (ano, CD_MUN, INSTR)
@@ -423,6 +436,13 @@ def build_panel(
     panel["fc_pc"] = panel["fc_deflac"] / panel["populacao"]
     panel["fc_pc"] = panel["fc_pc"].replace([float("inf"), float("-inf")], 0)
 
+    # Join com PIB municipal
+    panel = panel.merge(pib, on=["ano", "CD_MUN"], how="left")
+
+    # Participação no PIB: fc / (pib * 1000) — ambos nominais, mesmo ano
+    panel["fc_pib"] = panel["fc"] / (panel["pib"] * 1000)
+    panel["fc_pib"] = panel["fc_pib"].replace([float("inf"), float("-inf")], 0).fillna(0)
+
     logger.info(f"Painel: {len(panel)} obs, {panel['CD_MUN'].nunique()} municípios, "
                 f"tipologia preenchida: {panel['tipologia2007'].notna().sum()}/{len(panel)}")
 
@@ -433,12 +453,8 @@ def generate_summary_table(panel: pd.DataFrame) -> pd.DataFrame:
     """Gera tabela resumo por fundo, tipologia e subperíodo.
 
     Replica o formato da tabela fc_tabela_resumo.tex.
-    Totais e per capita calculados a partir do painel agregado (município-ano).
-    Per capita = mean(fc_deflac / populacao) por município-ano.
-
-    Nota: o script R original (fc_variables.R:127-152) calculava per capita
-    no nível de transação individual, o que produz valores enviesados pelo
-    número de operações por município. Aqui corrigimos para município-ano.
+    Totais e participação no PIB calculados a partir do painel agregado (município-ano).
+    Participação no PIB = mean(fc / PIB) por município-ano.
 
     Args:
         panel: Painel agregado (município-ano) com fc_deflac, fc_pc
@@ -468,12 +484,12 @@ def generate_summary_table(panel: pd.DataFrame) -> pd.DataFrame:
                 total = df_period["fc_deflac"].sum() / 1e6
                 row[f"total_{period_key}"] = total
 
-                # Per capita: média no nível município-ano
-                valid_pc = df_period["fc_pc"].replace(
+                # Participação no PIB: média no nível município-ano
+                valid_pib = df_period["fc_pib"].replace(
                     [float("inf"), float("-inf")], float("nan")
                 ).dropna()
-                pc_mean = valid_pc.mean() if len(valid_pc) > 0 else 0
-                row[f"pc_{period_key}"] = pc_mean
+                pib_mean = valid_pib.mean() if len(valid_pib) > 0 else 0
+                row[f"pib_{period_key}"] = pib_mean
 
             rows.append(row)
 
@@ -561,10 +577,12 @@ def generate_latex_table(summary: pd.DataFrame) -> str:
             return f"{x:,.1f}".replace(",", "X").replace(".", ",").replace("X", ".")
         return f"{x:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
 
-    def fmt_pc(x: float) -> str:
-        if abs(x) < 0.01:
+    def fmt_pib(x: float) -> str:
+        """Formata participação no PIB como percentual."""
+        pct = x * 100
+        if abs(pct) < 0.01:
             return "0,00"
-        return f"{x:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
+        return f"{pct:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
 
     lines = [
         r"\begin{table}[h!]",
@@ -575,7 +593,7 @@ def generate_latex_table(summary: pd.DataFrame) -> str:
         r"	\renewcommand{\arraystretch}{1.2}",
         r"	\begin{tabular}{llcccccc}",
         r"		\toprule",
-        r"		\multirow{2}{*}{Fundo} & \multirow{2}{*}{Tipologia} & \multicolumn{3}{c}{Valor total (R\$ Milhões)} & \multicolumn{3}{c}{Média \textit{per capita}} \\",
+        r"		\multirow{2}{*}{Fundo} & \multirow{2}{*}{Tipologia} & \multicolumn{3}{c}{Valor total (R\$ Milhões)} & \multicolumn{3}{c}{Participação média no PIB anual (\%)} \\",
         r"		\cmidrule(lr){3-5} \cmidrule(lr){6-8}",
         r"		& & 2002-2008 & 2009-2015 & 2016-2021 & 2002-2008 & 2009-2015 & 2016-2021 \\",
         r"		\midrule",
@@ -596,9 +614,9 @@ def generate_latex_table(summary: pd.DataFrame) -> str:
             t1 = fmt_total(row["total_2002_2008"])
             t2 = fmt_total(row["total_2009_2015"])
             t3 = fmt_total(row["total_2016_2021"])
-            p1 = fmt_pc(row["pc_2002_2008"])
-            p2 = fmt_pc(row["pc_2009_2015"])
-            p3 = fmt_pc(row["pc_2016_2021"])
+            p1 = fmt_pib(row["pib_2002_2008"])
+            p2 = fmt_pib(row["pib_2009_2015"])
+            p3 = fmt_pib(row["pib_2016_2021"])
 
             lines.append(
                 f"{prefix} & {tip} & {t1} & {t2} & {t3} & {p1} & {p2} & {p3} \\\\"
@@ -640,10 +658,10 @@ def main() -> int:
         fc = load_all_fc_data()
 
         # 2. Carregar dados auxiliares
-        tipologia, populacao, ipca = load_auxiliar_data()
+        tipologia, populacao, ipca, pib = load_auxiliar_data()
 
         # 3. Construir painel
-        panel = build_panel(fc, tipologia, populacao, ipca)
+        panel = build_panel(fc, tipologia, populacao, ipca, pib)
 
         # 4. Gerar resumo (per capita no nível município-ano)
         summary = generate_summary_table(panel)

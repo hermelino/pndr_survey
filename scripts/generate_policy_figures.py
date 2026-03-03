@@ -211,76 +211,133 @@ def generate_fc_figure() -> Path:
 
 
 def generate_fd_figure() -> Path:
-    """Gera figura FD por fundo e setor.
+    """Gera figura FD por fundo, setor e tipologia (3 painéis: FDNE, FDA, FDCO).
 
-    Stacked bar chart: FDNE, FDA, FDCO por setor
-    Valores em R$ bilhões liberados.
+    Barras empilhadas por tipologia, coloridas por setor.
+    Linha vermelha de per capita no eixo secundário.
+
+    Referência R: grafico_resumo_fd.R
 
     Returns:
         Caminho da figura salva
     """
     resumo_path = DATA_DIR / "resumo_fd.xlsx"
-    df = pd.read_excel(resumo_path, sheet_name="por_fundo_setor")
+    setor_tip = pd.read_excel(resumo_path, sheet_name="por_fundo_setor_tipologia")
+    medias_pib = pd.read_excel(resumo_path, sheet_name="medias_pib_tipologia")
 
-    # Filtrar apenas dados por setor (excluir TOTAL)
-    df = df[df["SETOR2"] != "TOTAL"].copy()
-
-    # Converter para bilhões
-    df["valor_bi"] = df["VALOR_LIBERADO"] / 1e9
-
-    # Pivot: setor como colunas, fundo como linhas
     fundos = ["FDNE", "FDA", "FDCO"]
-    setores = [s for s in df["SETOR2"].unique() if s != "Outro"]
-    # Adicionar "Outro" no final se existir
-    if "Outro" in df["SETOR2"].values:
-        setores.append("Outro")
+    tipologias = ["Alta Renda", "Baixa Renda", "Dinâmica", "Estagnada"]
+    tip_labels = {"Alta Renda": "Alta\nRenda", "Baixa Renda": "Baixa\nRenda",
+                  "Dinâmica": "Dinâmica", "Estagnada": "Estagnada"}
 
-    pivot = df.pivot_table(
-        index="FUNDO", columns="SETOR2", values="valor_bi", fill_value=0
-    )
-    pivot = pivot.reindex(fundos)  # Garantir ordem
-    pivot = pivot.fillna(0)
+    # RColorBrewer Set3
+    set3_colors = [
+        "#8DD3C7", "#FFFFB3", "#BEBADA", "#FB8072", "#80B1D3", "#FDB462",
+        "#B3DE69", "#FCCDE5", "#D9D9D9", "#BC80BD", "#CCEBC5", "#FFED6F",
+    ]
 
-    # Criar figura
-    fig, ax = plt.subplots(figsize=(10, 5.5))
+    # Escala Y comum: máximo total por (fundo, tipologia)
+    max_vals = []
+    for fundo in fundos:
+        df_f = setor_tip[setor_tip["INSTR"] == fundo]
+        for tip in tipologias:
+            total = df_f[df_f["tipologia2007"] == tip]["valor_bi"].sum()
+            if total > 0:
+                max_vals.append(total)
+    limite_y = max(max_vals) * 1.05 if max_vals else 1
 
-    x = np.arange(len(fundos))
-    width = 0.6
-    bottom = np.zeros(len(fundos))
+    # Escala participação PIB comum
+    max_pib = medias_pib["pib_media"].max() if len(medias_pib) > 0 else 0.001
+    limite_pib = max_pib * 1.1
 
-    for setor in setores:
-        if setor in pivot.columns:
-            values = pivot[setor].values
-            color = SECTOR_COLORS.get(setor, "#D9D9D9")
-            ax.bar(x, values, width, bottom=bottom, label=setor, color=color, edgecolor="white", linewidth=0.5)
+    fig, axes = plt.subplots(1, 3, figsize=(18, 7), sharey=True)
+
+    for ax_idx, fundo in enumerate(fundos):
+        ax = axes[ax_idx]
+        df_f = setor_tip[setor_tip["INSTR"] == fundo]
+
+        # Todas as tipologias (fixed scale como ggplot facet_wrap)
+        tips_presentes = tipologias
+
+        # Setores ordenados por valor total (decrescente)
+        setores_order = (
+            df_f.groupby("SETOR")["valor_bi"].sum()
+            .sort_values(ascending=False)
+            .index.tolist()
+        )
+
+        # Atribuir cores via SECTOR_COLORS (consistente com outros gráficos)
+        cores_setor = {}
+        fallback_idx = 0
+        for s in setores_order:
+            if s in SECTOR_COLORS:
+                cores_setor[s] = SECTOR_COLORS[s]
+            else:
+                cores_setor[s] = set3_colors[fallback_idx % len(set3_colors)]
+                fallback_idx += 1
+
+        x = np.arange(len(tips_presentes))
+        x_labels = [tip_labels.get(t, t) for t in tips_presentes]
+        width = 0.7
+        bottom = np.zeros(len(tips_presentes))
+
+        for setor in setores_order:
+            values = []
+            for tip in tips_presentes:
+                val = df_f[(df_f["tipologia2007"] == tip) & (df_f["SETOR"] == setor)]["valor_bi"].sum()
+                values.append(val)
+            values = np.array(values)
+            ax.bar(x, values, width, bottom=bottom, label=setor,
+                   color=cores_setor[setor], edgecolor="white", linewidth=0.5)
             bottom += values
 
-    ax.set_xticks(x)
-    ax.set_xticklabels(fundos, fontsize=14)
-    ax.set_ylabel("Valor liberado (R$ bilhões)", fontsize=13)
-    ax.yaxis.set_major_formatter(mticker.FuncFormatter(fmt_br))
-    ax.set_ylim(0, max(bottom) * 1.1)
+        # Linha participação PIB (eixo secundário via escala)
+        pib_data = medias_pib[medias_pib["INSTR"] == fundo]
+        pib_vals = []
+        for tip in tips_presentes:
+            row = pib_data[pib_data["tipologia2007"] == tip]
+            pib_vals.append(float(row["pib_media"].iloc[0]) if len(row) > 0 else 0)
 
-    # Estilo
-    ax.spines["top"].set_visible(False)
-    ax.spines["right"].set_visible(False)
-    ax.grid(axis="y", alpha=0.3, linestyle="--")
-    ax.tick_params(axis="both", labelsize=12)
+        # Escalar participação PIB para o eixo Y principal
+        pib_scaled = [max(0, v / limite_pib * limite_y) for v in pib_vals]
+        ax.plot(x, pib_scaled, color="red", linewidth=1.2, marker="o",
+                markersize=5, zorder=5)
 
-    # Legenda
-    ax.legend(
-        loc="upper center",
-        bbox_to_anchor=(0.5, -0.12),
-        ncol=min(3, len(setores)),
-        fontsize=11,
-        frameon=False,
-    )
+        ax.set_xticks(x)
+        ax.set_xticklabels(x_labels, fontsize=13)
+        ax.set_title(fundo, fontsize=16)
+        ax.set_ylim(0, limite_y)
 
-    # Adicionar valores totais no topo das barras
-    for i, total in enumerate(bottom):
-        if total > 0:
-            ax.text(i, total + 0.05, f"R$ {fmt_br(total)} bi",
-                    ha="center", va="bottom", fontsize=10, fontweight="bold")
+        ax.spines["top"].set_visible(False)
+        ax.spines["right"].set_visible(False)
+        ax.grid(axis="y", alpha=0.3, linestyle="--")
+        ax.tick_params(axis="both", labelsize=12)
+
+        if ax_idx == 0:
+            ax.set_ylabel("Valor (R$ bilhões)", fontsize=14)
+            ax.yaxis.set_major_formatter(mticker.FuncFormatter(fmt_br))
+        else:
+            ax.tick_params(axis="y", labelleft=False)
+
+        # Eixo secundário participação PIB (apenas no último painel)
+        if ax_idx == 2:
+            ax2 = ax.twinx()
+            ax2.set_ylim(0, limite_pib * 100)
+            ax2.set_ylabel("% do PIB", fontsize=14)
+            ax2.yaxis.set_major_formatter(mticker.FuncFormatter(
+                lambda v, p: f"{v:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
+            ))
+            ax2.tick_params(axis="y", labelsize=12)
+            ax2.spines["top"].set_visible(False)
+
+        # Legenda individual por painel
+        ax.legend(
+            loc="upper center",
+            bbox_to_anchor=(0.5, -0.12),
+            ncol=min(4, len(setores_order)),
+            fontsize=10,
+            frameon=False,
+        )
 
     plt.tight_layout()
 
