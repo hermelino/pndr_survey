@@ -314,4 +314,5 @@ Equivalente Windows: `build.bat <comando>`
 | [docs/pipeline_extraction.md](docs/pipeline_extraction.md) | Metodologia, queries, dados coletados, analise LLM, citacoes |
 | [CLAUDE.md](CLAUDE.md) | Regras de codigo e convencoes do projeto |
 | [docs/update_reports/](docs/update_reports/) | Relatorios de atualizacoes do pipeline (propagate-update) |
+| [docs/processar-dados-guide.md](docs/processar-dados-guide.md) | **Guia da skill processar-dados** (conversao R → Python) |
 | [docs/archive/PLAN.md](docs/archive/PLAN.md) | Plano de construcao original (historico) |

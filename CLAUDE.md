@@ -91,6 +91,8 @@ docs/update_reports/            → Relatorios de atualizacao do pipeline (propa
 
 - `/escrever-artigo [secao]` — Redator academico para o artigo LaTeX. Sugere roteiro de topicos com marcacoes especiais (tabelas, figuras, quadros) baseado no Cap. 1 da tese, incorporando as inovacoes metodologicas do pndr_survey (5 bases, LLM, IC, deduplicacao). Somente escreve conteudo apos aprovacao explicita do usuario. Secoes: `introducao`, `politica`, `metodo`, `resultados`, `conclusao`, `resumo`, `todos`. Definicao em `.claude/commands/2-escrever-artigo.md`.
 
+- `/processar-dados [comando]` — Converte, escreve e revisa scripts de manipulacao de dados e estatisticas descritivas do projeto tese para o contexto pndr_survey. Executa conversao R → Python, gera tabelas LaTeX/Excel, cria graficos academicos e valida datasets. Comandos: `explorar` (lista scripts R disponiveis), `converter [script.R]` (converte script especifico), `stats` (estatisticas descritivas), `plot [tipo]` (graficos), `validar` (validacao de dados). Exclui estimacao econometrica. Definicao em `.claude/commands/5-processar-dados.md`.
+
 ## Dependencias
 
 ```

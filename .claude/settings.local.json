@@ -38,7 +38,13 @@
       "Bash(pdflatex:*)",
       "Bash(git log:*)",
       "Bash(latexmk:*)",
-      "Bash(bibtex:*)"
+      "Bash(bibtex:*)",
+      "Bash(wc:*)",
+      "Bash(git ls-files:*)",
+      "Bash(pip install:*)",
+      "Bash(find:*)",
+      "Skill(processar-dados)",
+      "Skill(processar-dados:*)"
     ]
   }
 }
