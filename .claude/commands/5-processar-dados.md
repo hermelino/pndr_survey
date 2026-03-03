@@ -12,6 +12,76 @@ Converter, escrever e revisar scripts de manipulação de dados do projeto **tes
 
 **Exclusão:** Estimação de modelos econométricos (regressões, painéis, etc.)
 
+**Período dos dados:** Todos os datasets serão atualizados até o ano **2023** (ampliação do período 2002-2021 da tese para 2002-2023).
+
+**Regras de dados externos:**
+1. **Sempre copiar para o projeto:** Dados de origens externas devem ser copiados para `data/external_data/` antes de serem usados. Scripts nunca referenciam paths externos diretamente.
+2. **Dados indisponíveis → pendentes:** Se algum arquivo não estiver disponível, marcar como `# TODO: pendente` no código e prosseguir com os dados existentes.
+3. **Documentar fontes:** Toda fonte de dados deve estar registrada em `docs/fontes_dados_pndr.md` com URL oficial, período e status.
+
+## Dados Externos Disponíveis
+
+### Fundos Constitucionais (FC)
+Origem: `C:/OneDrive/DATABASES/FUNDOS CONSTITUCIONAIS/`
+Destino: `data/external_data/fc/`
+
+| Arquivo | Sheet | Período |
+|---------|-------|---------|
+| `FCO - Contratações 2000 a 2018.xlsx` | "FCO" | 2000-2018 |
+| `FNE - Contratações 2000 a 2018.xlsx` | "FNE" | 2000-2018 |
+| `FNO - Contratações 2000 a 2018.xlsx` | "FNO" | 2000-2018 |
+| `Consolidado Dez_2019 - FCF.xlsx` | "Consolidado 2019" | 2019 |
+| `Consolidado Dez_2020 - FCF.xlsx` | "Consolidado 2020" | 2020 |
+| `Consolidado Dez_2021 - FCF.xlsx` | "Dezembro" | 2021 |
+| Consolidados 2022-2023 (a obter) | — | 2022-2023 |
+
+**Script R de referência:** `tese/bulding_dataset_R/source_code/fc_variables.R`
+
+### Fundos de Desenvolvimento (FD)
+Localização: `data/external_data/`
+
+| Arquivo | Instrumento | Formato |
+|---------|-------------|---------|
+| `fdne_liberacoes_ate_jun_2023.xlsx` | FDNE | Excel |
+| `fda_liberacoes_ate_2025.pdf` | FDA | PDF (requer extração) |
+| `fds_contratacoes.xlsx` | FDS | Excel |
+
+**Script R de referência:** `tese/bulding_dataset_R/source_code/fd_variables.R`
+
+### Incentivos Fiscais (IF)
+Localização: `data/external_data/`
+
+| Arquivo | Instrumento | Formato |
+|---------|-------------|---------|
+| `if_sudam/Merged.xlsx` | SUDAM (consolidado) | Excel |
+| `if_sudam/*.pdf` (14 PDFs: 2010-2020 + 2021-2023) | SUDAM (anuais) | PDF |
+| `if_sudene.json` | SUDENE | JSON |
+
+**Script R de referência:** `tese/bulding_dataset_R/source_code/if_variables.R`
+
+### Dados Auxiliares
+Destino: `data/external_data/auxiliar/`
+
+| Arquivo | Descrição | Status |
+|---------|-----------|--------|
+| `populacao_municipios.csv` | População municipal (IBGE) | PENDENTE — copiar |
+| `br_ibge_ipca.anual_2002_2020.csv` | Deflator IPCA anual | PENDENTE — copiar e atualizar até 2023 |
+| `tipologia_2007.xlsx` | Tipologia PNDR 2007 (Decreto nº 6.047/2007) | PENDENTE — copiar |
+| `cod_municipios_IBGE.csv` | Códigos e nomes dos municípios | PENDENTE — copiar |
+
+**Fontes e URLs:** Ver `docs/fontes_dados_pndr.md`
+
+### Scripts Python de Processamento (a criar)
+
+| Script | Entrada | Saída | Referência R |
+|--------|---------|-------|-------------|
+| `scripts/process_sudam_pdfs.py` | PDFs SUDAM anuais | `if_sudam/sudam_incentivos_consolidado.xlsx` | — |
+| `scripts/process_if_data.py` | SUDENE JSON + SUDAM Excel | `painel_icf.parquet`, `classif_incent_fiscais.xlsx` | `if_variables.R` |
+| `scripts/process_fd_data.py` | FDNE Excel + FDA PDF | `resumo_fd.xlsx`, `painel_fd_agregado.parquet` | `fd_variables.R` |
+| `scripts/process_fc_data.py` | FC Excel (6 arquivos) | `painel_fc.parquet`, `fc_tabela_resumo.tex` | `fc_variables.R` |
+| `scripts/generate_policy_figures.py` | Painéis processados | Figuras PNG (matplotlib) | `grafico_resumo_*.R` |
+| `scripts/generate_policy_tables.py` | Painéis processados | Tabelas LaTeX | `descritive_estats_tipologia.R` |
+
 ## Contexto dos Projetos
 
 ### Projeto Tese (Fonte)
@@ -290,7 +360,20 @@ def validate_dataset(df: pd.DataFrame, schema: Dict[str, Any]) -> list[str]:
     return errors
 ```
 
-### 7. Integração com Pipeline pndr_survey
+### 7. Rigor Estatístico na Construção de Variáveis
+
+**Atenção especial** ao converter variáveis e indicadores do projeto tese:
+
+- **Nível de agregação:** Verificar se médias, per capita e outras estatísticas são calculadas no nível correto (ex: município-ano vs transação individual). Médias no nível errado produzem valores enviesados.
+- **Ponderação:** Confirmar se médias ponderadas usam os pesos corretos (ex: população, área, PIB).
+- **Deflação:** Verificar ano-base do deflator e consistência temporal.
+- **Denominadores:** Garantir que divisões (per capita, taxas) usam o denominador do período correto.
+
+**Erros no projeto tese:** Se durante a conversão R → Python for identificado um erro metodológico ou estatístico no script R original do projeto tese, **reportar imediatamente ao usuário** antes de replicar o erro. Documentar o erro encontrado, explicar o impacto nos resultados, e implementar a versão correta no pndr_survey.
+
+**Exemplo real:** `fc_variables.R:127-152` calculava per capita no nível de transação (~1,17M linhas) em vez de município-ano (~55K linhas), enviesando os valores pela quantidade de operações por município. Corrigido em `process_fc_data.py`.
+
+### 8. Integração com Pipeline pndr_survey
 
 **Localização de Scripts:**
 - Scripts de processamento: `scripts/data_processing/`
@@ -307,7 +390,7 @@ def add_stats_subcommand(subparsers):
     parser.set_defaults(func=run_stats)
 ```
 
-### 8. Documentação
+### 9. Documentação
 
 Para cada script convertido, criar:
 
