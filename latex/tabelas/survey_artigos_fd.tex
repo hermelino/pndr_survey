@@ -17,46 +17,43 @@
 \renewcommand{\tablename}{\quadroname}%
 \renewcommand{\thetable}{\arabic{quadro}}%
 \stepcounter{quadro}%
-\begin{longtable}{|>{\raggedright\arraybackslash}p{1.4cm}
-		|>{\raggedright\arraybackslash}p{1.5cm}
-		|>{\raggedright\arraybackslash}p{1.5cm}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{1.6cm}
+		|>{\raggedright\arraybackslash}p{1.7cm}
 		|>{\raggedright\arraybackslash}p{2cm}
 		|>{\raggedright\arraybackslash}p{1.5cm}
-		|>{\raggedright\arraybackslash}p{2cm}
+		|>{\raggedright\arraybackslash}p{2.6cm}
 		|>{\raggedright\arraybackslash}p{4.2cm}|}
 
 	\caption{Estudos de Impacto dos Fundos de Desenvolvimento} \label{tab:estudos_fd} \\
 
 \hline
-	\begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.4cm}@{}}Método\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.5cm}@{}}Artigo\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.5cm}@{}}Publicação\end{tabular}
+	\begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.6cm}@{}}Método\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.7cm}@{}}Artigo\end{tabular}
 	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2cm}@{}}Amostragem\end{tabular}
 	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.5cm}@{}}Variável Independente\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2cm}@{}}Variável Dependente\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2.6cm}@{}}Variável Dependente\end{tabular}
 	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{4.2cm}@{}}Resultado\end{tabular} \\
 	\hline
 	\endfirsthead
 
-	\multicolumn{7}{c}%
+	\multicolumn{6}{c}%
 	{{\quadroname\ \thetable{} -- Continuação}} \\
 	\hline
-	\begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.4cm}@{}}Método\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.5cm}@{}}Artigo\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.5cm}@{}}Publicação\end{tabular}
+	\begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.6cm}@{}}Método\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.7cm}@{}}Artigo\end{tabular}
 	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2cm}@{}}Amostragem\end{tabular}
 	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.5cm}@{}}Variável Independente\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2cm}@{}}Variável Dependente\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2.6cm}@{}}Variável Dependente\end{tabular}
 	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{4.2cm}@{}}Resultado\end{tabular} \\
 	\hline
 	\endhead
 
 	\hline
-	\multicolumn{7}{r}{{Continua}} \\
+	\multicolumn{6}{r}{{Continua}} \\
 	\endfoot
 
 	\hline
-	\multicolumn{7}{l}{
+	\multicolumn{6}{l}{
 		\tiny
 		\parbox{14.8cm}{%
 			\vspace{0.1cm}
@@ -66,31 +63,29 @@
 
 	\hline
 Painel Espacial & \citeonline{FerreiraIrffiCarneiro2024}
-	& AC
 	& \fc[2cm]{\item NE \item 2010-2021}
 	& \fc[1.5cm]{\item FDNE}
 	& \fc[2cm]{\item IDM}
-	& \fc[4.2cm]{
+	& \fc[4.5cm]{
 		\item IDM renda \hfill 0,019\textsuperscript{*}
 		\item IDM, IDM saúde e IDM educação \hfill NS\phantom{\textsuperscript{*}}
 	} \\
 
-	\cline{2-7}
+	\cline{2-6}
 
 	& \citeonline{gondim2025}
-	& Rev. Cadernos de Finanças Públicas
 	& \fc[2cm]{\item NE \item 2010-2021}
 	& \fc[1.5cm]{\item FDNE (\textit{dummy})}
 	& \fc[2cm]{\item $\Delta$ ln(PIB pc)}
-	& \fc[4.2cm]{
+	& \fc[4.5cm]{
 		\item Efeito direto \hfill NS\phantom{\textsuperscript{*}}
 		\item Efeito indireto \hfill 0,0252\textsuperscript{*}
 		\item Efeito total \hfill 0,0351\textsuperscript{*}
 	} \\
-	\cline{6-7}
-	& & & &
+	\cline{5-6}
+	& & &
 	& \fc[2cm]{\item $\Delta$ ln(VAB pc)}
-	& \fc[4.2cm]{
+	& \fc[4.5cm]{
 		\item Efeito direto \hfill 0,0409\textsuperscript{*}
 		\item Efeito indireto \hfill NS\phantom{\textsuperscript{*}}
 		\item Efeito total \hfill 0,6014\textsuperscript{*}
@@ -98,11 +93,10 @@ Painel Espacial & \citeonline{FerreiraIrffiCarneiro2024}
 
 	\hline
 DID Dois Estágios & \citeonline{Carneiroetal2024a}
-	& AC
 	& \fc[2cm]{\item NE \item 2002-2019}
 	& \fc[1.5cm]{\item FDNE}
 	& \fc[2cm]{\item log PIB\textit{pc}, VAB setorial}
-	& \fc[4.2cm]{
+	& \fc[4.5cm]{
 		\item PIB\textit{pc} \hfill 0,063\textsuperscript{*}
 		\item VAB\textit{pc} serviços \hfill 0,111\textsuperscript{*}
 		\item Arrecadação \hfill 0,207\textsuperscript{*}
@@ -112,25 +106,23 @@ DID Dois Estágios & \citeonline{Carneiroetal2024a}
 	\hline
 DID Escalonado
 	& \citeonline{BrazBastosIrffi2024}
-	& AC
 	& \fc[2cm]{\item NE \item 2002-2021}
 	& \fc[1.5cm]{\item FDNE}
 	& \fc[2cm]{\item PIB\textit{pc}, emprego, renda, IDEB}
-	& \fc[4.2cm]{
+	& \fc[4.5cm]{
 		\item PIB\textit{pc} \hfill 24,07\%\textsuperscript{*}
 		\item Renda \hfill 4,63\%\textsuperscript{*}
 		\item IDEB anos iniciais \hfill 18,67\%\textsuperscript{*}
 		\item IDEB anos finais \hfill 21,49\%\textsuperscript{*}
 		\item Emprego, pobreza, mortalidade infantil e saúde \hfill NS\phantom{\textsuperscript{*}}
 	} \\
-	\cline{2-7}
+	\cline{2-6}
 
 	& \citeonline{Irffietal2025}
-	& Rev. Cadernos de Finanças Públicas
 	& \fc[2cm]{\item NE \item 1999-2022}
 	& \fc[1.5cm]{\item FDNE-parques eólicos}
 	& \fc[2cm]{\item PIB\textit{pc}, VAB, emprego, massa salarial}
-	& \fc[4.2cm]{
+	& \fc[4.5cm]{
 		\item PIB\textit{pc} \hfill 18,97\%\textsuperscript{*}
 		\item VAB indústria \hfill 71,90\%\textsuperscript{*}
 		\item VAB serviço \hfill 10,24\%\textsuperscript{*}
@@ -141,11 +133,10 @@ DID Escalonado
 	\hline
 Painel Dinâmico GMM
 	& \citeonline{Souza2025}
-	& AC
 	& \fc[2cm]{\item N, NE, CO \item 2002-2021}
 	& \fc[1.5cm]{\item FDNE, FDA, FDCO (+ FC + IF)}
 	& \fc[2cm]{\item PIB\textit{pc}, emprego, renda}
-	& \fc[4.2cm]{
+	& \fc[4.5cm]{
 		\item Heterogeneidade entre fundos, regiões e setores
 		\item FDCO inconclusivo (poucos projetos)
 	} \\

@@ -2,11 +2,12 @@
 % Macros para formatação de tabelas de resultados da revisão sistemática
 
 % Macro principal para formatação de células com listas
-% Uso: \fc[largura]{conteúdo em itemize}
-% Padrão: largura = 4.8cm
-\newcommand{\fc}[2][4.8cm]{%
-	\parbox[t]{#1}{\raggedright%
-		\begin{itemize}[leftmargin=*,nosep,topsep=0pt,before=\vspace{-0.6\baselineskip},labelsep=0.4em]
+% Uso: \fc{conteúdo em itemize}
+% O parâmetro opcional [largura] é mantido por compatibilidade mas ignorado;
+% a largura é determinada automaticamente pela coluna (\linewidth).
+\newcommand{\fc}[2][0cm]{%
+	\parbox[t]{\linewidth}{%
+		\begin{itemize}[leftmargin=*,nosep,topsep=0pt,before=\vspace{-0.6\baselineskip},labelsep=0.15em]
 			#2
 		\end{itemize}%
 		\vspace{0.3\baselineskip}%

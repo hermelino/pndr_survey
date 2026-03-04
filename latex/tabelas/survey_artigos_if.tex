@@ -20,46 +20,43 @@
 \renewcommand{\tablename}{\quadroname}%
 \renewcommand{\thetable}{\arabic{quadro}}%
 \stepcounter{quadro}%
-\begin{longtable}{|>{\raggedright\arraybackslash}p{1.4cm}
-		|>{\raggedright\arraybackslash}p{1.5cm}
-		|>{\raggedright\arraybackslash}p{1.5cm}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{1.6cm}
+		|>{\raggedright\arraybackslash}p{1.7cm}
 		|>{\raggedright\arraybackslash}p{2cm}
 		|>{\raggedright\arraybackslash}p{1.5cm}
-		|>{\raggedright\arraybackslash}p{2cm}
+		|>{\raggedright\arraybackslash}p{2.6cm}
 		|>{\raggedright\arraybackslash}p{4.2cm}|}
 
 	\caption{Estudos de Impacto dos Incentivos Fiscais} \label{tab:estudos_if} \\
 
 	\hline
-	\begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.4cm}@{}}Método\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.5cm}@{}}Artigo\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.5cm}@{}}Publicação\end{tabular}
+	\begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.6cm}@{}}Método\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.7cm}@{}}Artigo\end{tabular}
 	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2cm}@{}}Amostragem\end{tabular}
 	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.5cm}@{}}Variável Independente\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2cm}@{}}Variável Dependente\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2.6cm}@{}}Variável Dependente\end{tabular}
 	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{4.2cm}@{}}Resultado\end{tabular} \\
 	\hline
 	\endfirsthead
 
-	\multicolumn{7}{c}%
+	\multicolumn{6}{c}%
 	{{\quadroname\ \thetable{} -- Continuação}} \\
 	\hline
-	\begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.4cm}@{}}Método\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.5cm}@{}}Artigo\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.5cm}@{}}Publicação\end{tabular}
+	\begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.6cm}@{}}Método\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.7cm}@{}}Artigo\end{tabular}
 	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2cm}@{}}Amostragem\end{tabular}
 	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.5cm}@{}}Variável Independente\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2cm}@{}}Variável Dependente\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2.6cm}@{}}Variável Dependente\end{tabular}
 	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{4.2cm}@{}}Resultado\end{tabular} \\
 	\hline
 	\endhead
 
 	\hline
-	\multicolumn{7}{r}{{Continua}} \\
+	\multicolumn{6}{r}{{Continua}} \\
 	\endfoot
 
 	\hline
-	\multicolumn{7}{l}{
+	\multicolumn{6}{l}{
 		\tiny
 		\parbox{14.8cm}{%
 			\vspace{0.1cm}
@@ -69,21 +66,19 @@
 
 	\hline
 DID & \citeonline{Garsous2017}
-	& \textit{World Development}
 	& \fc[2cm]{\item BA, RJ, ES, MG \item 1998-2009}
 	& \fc[1.5cm]{\item IF-SUDENE (turismo)}
 	& \fc[2cm]{\item Emprego no turismo (log)}
-	& \fc[4.2cm]{
+	& \fc[4.5cm]{
 		\item Emprego turismo \hfill 20\%\textsuperscript{*}, 30\%\textsuperscript{*}
 	} \\
 
-	\cline{2-7}
+	\cline{2-6}
 	& \citeonline{Oliveira2020a}
-	& AC
 	& \fc[2cm]{\item PE \item 2000-2017}
 	& \fc[1.5cm]{\item Prodepe + IF-SUDENE}
 	& \fc[2cm]{\item Emprego, salário médio, massa salarial}
-	& \fc[4.2cm]{
+	& \fc[4.5cm]{
 		\item Emprego \hfill 8,6\%\textsuperscript{*}
 		\item Salário médio \hfill $-$10,3\%\textsuperscript{*}
 		\item Massa salarial \hfill NS\phantom{\textsuperscript{*}}
@@ -91,23 +86,21 @@ DID & \citeonline{Garsous2017}
 
 	\hline
 DID Escalonado & \citeonline{Braz2023}
-	& AC
 	& \fc[2cm]{\item SUDENE \item 2002-2021}
 	& \fc[1.5cm]{\item IF-SUDENE}
 	& \fc[2cm]{\item Emprego, renda}
-	& \fc[4.2cm]{
+	& \fc[4.5cm]{
 		\item Emprego \hfill 3,2\%\textsuperscript{*}
 		\item Renda \hfill 1,2\%\textsuperscript{*}
 		\item Efeito crescente e duradouro
 	} \\
 
-	\cline{2-7}
+	\cline{2-6}
 	& \citeonline{Alves2024}
-	& AC
 	& \fc[2cm]{\item PE \item 2000-2017}
 	& \fc[1.5cm]{\item Prodepe + IF-SUDENE}
 	& \fc[2cm]{\item Emprego, salário médio, massa salarial}
-	& \fc[4.2cm]{
+	& \fc[4.5cm]{
 		\item Emprego \hfill 22,3\%\textsuperscript{*}
 		\item Massa salarial \hfill 15,1\%\textsuperscript{*}
 		\item Salário médio \hfill $-$8,2\%\textsuperscript{*}
@@ -116,11 +109,10 @@ DID Escalonado & \citeonline{Braz2023}
 
 	\hline
 DEA + SFA & \citeonline{Carneiro2023a}
-	& Rev. Cadernos de Finanças Públicas
 	& \fc[2cm]{\item NE \item 2011-2019}
 	& \fc[1.5cm]{\item IF-SUDENE}
 	& \fc[2cm]{\item Eficiência produtiva (massa salarial)}
-	& \fc[4.2cm]{
+	& \fc[4.5cm]{
 		\item Empresas eficientes no Semiárido
 		\item Intensivas em mão de obra
 		\item Ineficiência associada ao setor, não à empresa
@@ -128,21 +120,19 @@ DEA + SFA & \citeonline{Carneiro2023a}
 
 	\hline
 DID Dois Estágios & \citeonline{Carneiroetal2024a}
-	& AC
 	& \fc[2cm]{\item NE, MG, ES \item 2002-2019}
 	& \fc[1.5cm]{\item IF-SUDENE (+ FNE, FDNE)}
 	& \fc[2cm]{\item log PIB\textit{pc}, VAB setorial}
-	& \fc[4.2cm]{
+	& \fc[4.5cm]{
 		\item IF-SUDENE \hfill NS\phantom{\textsuperscript{*}}
 	} \\
 
 	\hline
 Controle Sintético & \citeonline{Costa2024}
-	& \textit{Applied Economics Letters}
 	& \fc[2cm]{\item NE \item 2006-2019}
 	& \fc[1.5cm]{\item IF-SUDENE}
 	& \fc[2cm]{\item Vínculos (log)}
-	& \fc[4.2cm]{
+	& \fc[4.5cm]{
 		\item Todos os setores \hfill 19,6\%\textsuperscript{*}
 		\item Indústria \hfill 18,3\%\textsuperscript{*}
 		\item Efeitos por até 5 anos
@@ -151,11 +141,10 @@ Controle Sintético & \citeonline{Costa2024}
 
 	\hline
 Painel Espacial & \citeonline{FerreiraIrffiCarneiro2024}
-	& AC
 	& \fc[2cm]{\item NE \item 2010-2021}
 	& \fc[1.5cm]{\item IF-SUDENE (+ FDNE)}
 	& \fc[2cm]{\item IDM e subcomponentes}
-	& \fc[4.2cm]{
+	& \fc[4.5cm]{
 		\item IDM \hfill 0,020\textsuperscript{*}
 		\item IDM saúde \hfill 0,024\textsuperscript{*}
 		\item IDM renda \hfill 0,012\textsuperscript{*}
@@ -163,24 +152,22 @@ Painel Espacial & \citeonline{FerreiraIrffiCarneiro2024}
 		\item Transbordamento renda \hfill 0,002\textsuperscript{*}
 	} \\
 
-	\cline{2-7}
+	\cline{2-6}
 	& \citeonline{gondim2025}
-	& Rev. Cadernos de Finanças Públicas
 	& \fc[2cm]{\item NE \item 2010-2021}
 	& \fc[1.5cm]{\item IF-SUDENE (+ FNE, FDNE)}
 	& \fc[2cm]{\item $\Delta$ ln(PIB\textit{pc}), $\Delta$ ln(VAB\textit{pc})}
-	& \fc[4.2cm]{
+	& \fc[4.5cm]{
 		\item VAB agropecuário\textit{pc} \hfill Significativo\textsuperscript{*}
 		\item PIB\textit{pc} \hfill NS\phantom{\textsuperscript{*}}
 	} \\
 
 	\hline
 Painel Dinâmico GMM & \citeonline{Souza2025}
-	& AC
 	& \fc[2cm]{\item N, NE, CO \item 2002-2021}
 	& \fc[1.5cm]{\item IF-SUDENE, IF-SUDAM (+ FC, FD)}
 	& \fc[2cm]{\item PIB\textit{pc}, emprego, renda}
-	& \fc[4.2cm]{
+	& \fc[4.5cm]{
 		\item IF-SUDAM inconclusivo (poucas observações)
 		\item Heterogeneidade entre instrumentos e regiões
 	} \\
