@@ -59,6 +59,13 @@ brazil            % Último idioma é o idioma padrão
 \usepackage{indentfirst}
 \usepackage{../docs/prisma-flow-diagram}
 
+% --- Fonte/Nota alinhadas à esquerda (override abntex2) ---
+\renewcommand{\fonte}[1]{%
+  \begin{flushleft}
+    \footnotesize Fonte: #1
+  \end{flushleft}
+}
+
 % --- Contador e nome para Quadros (ABNT) ---
 \newcounter{quadro}
 \renewcommand{\thequadro}{\arabic{quadro}}

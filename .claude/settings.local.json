@@ -54,7 +54,10 @@
       "Bash(Select-String -Pattern \"undefined|Error|missing\" -SimpleMatch)",
       "Bash(.venvScriptspip install pyreadr)",
       "Bash(copy:*)",
-      "WebFetch(domain:www.ufsm.br)"
+      "WebFetch(domain:www.ufsm.br)",
+      "Bash(git init:*)",
+      "Bash(git remote add:*)",
+      "Bash(git pull:*)"
     ]
   }
 }

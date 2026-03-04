@@ -42,6 +42,11 @@ import pandas as pd
 
 matplotlib.use("Agg")
 
+plt.rcParams.update({
+    "font.family": "serif",
+    "font.serif": ["Times New Roman", "DejaVu Serif"],
+})
+
 logger = logging.getLogger(__name__)
 
 PROJECT_ROOT = Path(__file__).parent.parent
@@ -66,7 +71,7 @@ def fmt_br(x: float, pos: int | None = None) -> str:
     """Formata número no padrão brasileiro (ponto para milhar, vírgula para decimal)."""
     if x == 0:
         return "0"
-    return f"{x:,.1f}".replace(",", "X").replace(".", ",").replace("X", ".")
+    return f"{x:,.0f}".replace(",", ".")
 
 
 def generate_fc_figure() -> Path:
@@ -304,17 +309,21 @@ def generate_fd_figure() -> Path:
                 markersize=5, zorder=5)
 
         ax.set_xticks(x)
-        ax.set_xticklabels(x_labels, fontsize=13)
-        ax.set_title(fundo, fontsize=16)
+        ax.set_xticklabels(x_labels, fontsize=28)
+        ax.set_title(fundo, fontsize=26, pad=16, color="black")
         ax.set_ylim(0, limite_y)
 
-        ax.spines["top"].set_visible(False)
-        ax.spines["right"].set_visible(False)
+        spine_color = "black"
+        ax.spines["top"].set_color(spine_color)
+        ax.spines["right"].set_color(spine_color)
+        ax.spines["left"].set_color(spine_color)
+        ax.spines["bottom"].set_color(spine_color)
         ax.grid(axis="y", alpha=0.3, linestyle="--")
-        ax.tick_params(axis="both", labelsize=12)
+        ax.tick_params(axis="both", labelsize=18, colors=spine_color)
+        ax.tick_params(axis="y", which="both", right=False)
 
         if ax_idx == 0:
-            ax.set_ylabel("Valor (R$ bilhões)", fontsize=14)
+            ax.set_ylabel("R$ bilhões", fontsize=18, labelpad=12, color="black")
             ax.yaxis.set_major_formatter(mticker.FuncFormatter(fmt_br))
         else:
             ax.tick_params(axis="y", labelleft=False)
@@ -323,21 +332,50 @@ def generate_fd_figure() -> Path:
         if ax_idx == 2:
             ax2 = ax.twinx()
             ax2.set_ylim(0, limite_pib * 100)
-            ax2.set_ylabel("% do PIB", fontsize=14)
+            ax2.set_ylabel("% do PIB", fontsize=18, labelpad=12, color="black")
+            ax2.spines["right"].set_color(spine_color)
+            ax2.spines["left"].set_visible(False)
+            # Alinhar ticks do eixo direito com o esquerdo (1:1)
+            left_ticks = axes[0].get_yticks()
+            n_ticks = len([t for t in left_ticks if 0 <= t <= limite_y])
+            ax2.yaxis.set_major_locator(mticker.LinearLocator(numticks=n_ticks))
             ax2.yaxis.set_major_formatter(mticker.FuncFormatter(
-                lambda v, p: f"{v:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
+                lambda v, p: f"{v:,.1f}".replace(",", "X").replace(".", ",").replace("X", ".")
             ))
-            ax2.tick_params(axis="y", labelsize=12)
-            ax2.spines["top"].set_visible(False)
+            ax2.tick_params(axis="y", labelsize=18, colors="black")
+            ax2.spines["top"].set_color(spine_color)
 
-        # Legenda individual por painel
-        ax.legend(
-            loc="upper center",
-            bbox_to_anchor=(0.5, -0.12),
-            ncol=min(4, len(setores_order)),
-            fontsize=10,
-            frameon=False,
-        )
+    # Legenda unificada: coletar handles/labels únicos de todos os painéis
+    all_handles: list = []
+    all_labels: list[str] = []
+    for ax in axes:
+        handles, labels = ax.get_legend_handles_labels()
+        for h, l in zip(handles, labels):
+            if l not in all_labels:
+                all_handles.append(h)
+                all_labels.append(l)
+
+    # Linha 1: setores (barras) — 4 colunas
+    leg1 = fig.legend(
+        all_handles, all_labels,
+        loc="lower center",
+        bbox_to_anchor=(0.5, -0.12),
+        ncol=len(all_labels),
+        fontsize=24,
+        frameon=False,
+    )
+
+    # Linha 2: linha vermelha (Participação % média no PIB local)
+    red_line = plt.Line2D([0], [0], color="red", linewidth=1.2, marker="o", markersize=5)
+    fig.legend(
+        [red_line], ["Participação % média no PIB local (eixo à direita)"],
+        loc="lower center",
+        bbox_to_anchor=(0.5, -0.20),
+        ncol=1,
+        fontsize=24,
+        frameon=False,
+    )
+    fig.add_artist(leg1)
 
     plt.tight_layout()
 
@@ -399,10 +437,12 @@ def generate_if_figure() -> Path:
     ax.set_ylabel("Quantidade de incentivos", fontsize=13)
     ax.set_ylim(0, max(bottom) * 1.12)
 
-    ax.spines["top"].set_visible(False)
-    ax.spines["right"].set_visible(False)
+    ax.spines["top"].set_color("black")
+    ax.spines["right"].set_color("black")
+    ax.spines["left"].set_color("black")
+    ax.spines["bottom"].set_color("black")
     ax.grid(axis="y", alpha=0.3, linestyle="--")
-    ax.tick_params(axis="both", labelsize=12)
+    ax.tick_params(axis="both", labelsize=12, colors="black")
 
     ax.legend(
         loc="upper center",

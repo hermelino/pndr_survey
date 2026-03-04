@@ -161,7 +161,9 @@ df_summary = (df
 **Para LaTeX:**
 - Usar pandas `.to_latex()` com parâmetros ABNT
 - Salvar em `latex/tabelas/` com nomenclatura descritiva
-- Formato compatível com `abntex2` (booktabs, threeparttable)
+- Formato compatível com `abntex2` (booktabs)
+- Notas de rodapé da tabela: usar `\multicolumn{N}{l}{\footnotesize Nota: texto.}` na última linha antes de `\bottomrule`, alinhadas à esquerda (`l`). Nunca usar `threeparttable` ou `\tablenotes`
+- Fonte da tabela: usar `\fonte{Elaborada pelo autor.}` após `\end{tabular}`, dentro do ambiente `table`. Nunca inserir fonte dentro do `tabular`
 
 **Para Excel:**
 - Usar openpyxl para formatação
