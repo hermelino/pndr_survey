@@ -110,15 +110,13 @@ Todo ambiente `table` deve seguir o padrão canônico:
     \renewcommand{\arraystretch}{1.2}
     \begin{tabular}{...}
         \toprule ... \midrule ... \bottomrule
+        \multicolumn{N}{l}{\footnotesize Nota: ... Fonte: ...} \\  % rodapé C12
     \end{tabular}
-    \nota{...}   % opcional, antes de \fonte
-    \fonte{...}  % obrigatório
 \end{table}
 ```
 
 Verificações:
-- [ ] Todo `table` e `figure` contém `\fonte{}` APÓS `\end{tabular}`/`\includegraphics` e ANTES de `\end{table}`/`\end{figure}`
-- [ ] `\fonte{}` NÃO está dentro do ambiente `tabular`
+- [ ] Todo `table` e `figure` contém rodapé com Fonte (via `\multicolumn` dentro do `tabular` conforme C12, ou via `\fonte{}` após `\end{tabular}`)
 - [ ] Posicionamento usa `[htbp]`, nunca `[h!]` ou `[H]`
 - [ ] `\caption{}` está ANTES de `\begin{tabular}` (requisito abntex2)
 - [ ] `\label{}` está imediatamente após `\caption{}`
@@ -126,16 +124,16 @@ Verificações:
 - [ ] Tabelas usam `booktabs` (`\toprule`, `\midrule`, `\bottomrule`), não `\hline`
 
 Erros comuns a corrigir:
-- `\footnotesize{Fonte: ...}` dentro do `tabular` → mover para `\fonte{...}` após `\end{tabular}`
-- `\multicolumn{N}{l}{\footnotesize{Fonte: ...}}` dentro do `tabular` → mover para `\fonte{...}` após `\end{tabular}`
+- `\footnotesize{Fonte: ...}` dentro do `tabular` sem seguir o padrão C12 → reportar
 - `[h!]` ou `[H]` → substituir por `[htbp]`
 
-**Exceção:** Quadros (`longtable`) seguem padrão próprio com `\endlastfoot` contendo a fonte — não se aplica esta verificação.
+**Exceções (NÃO corrigir):**
+- Quadros (`longtable`) seguem padrão próprio com `\endlastfoot` contendo a fonte
+- Tabelas que usam `\multicolumn{N}{l}{\footnotesize Nota: ... Fonte: ...}` como última linha do `tabular` — este é o **padrão C12** e NÃO deve ser substituído por `\nota{}`/`\fonte{}` separados
 
 **Correção automática:**
 - `[h!]` → `[htbp]` (seguro)
-- Reportar `\footnotesize{Fonte:...}` dentro do `tabular` como `[REPORT]` com instrução de migrar para `\fonte{}`
-- Reportar ausência de `\fonte{}` ao usuário
+- Reportar ausência de rodapé (nem `\fonte{}` nem `\multicolumn` com Fonte) ao usuário
 
 ### C6. Chaves `{}` balanceadas
 
@@ -205,31 +203,36 @@ Termos em inglês/latim que aparecem no projeto devem ser consistentemente forma
 - `n = X` → `n~=~X` dentro de parênteses quando representar contagem
 - NÃO alterar expressões matemáticas complexas
 
-### C12. Rodapé de floats: `\nota{}` e `\fonte{}` alinhados à esquerda em texto contínuo
+### C12. Rodapé de floats: Nota e Fonte alinhados à esquerda em linha única
 
-Em ambientes `table` e `figure`, os comandos `\nota{}` e `\fonte{}` devem:
-1. Estar **alinhados à esquerda** (não centralizados)
-2. Aparecer em **texto contínuo** (mesma linha, sem quebra entre `\nota{}` e `\fonte{}`)
+Em ambientes `table` e `figure`, o rodapé (nota + fonte) deve:
+1. Estar **alinhado à esquerda** da primeira coluna (não centralizado)
+2. Aparecer em **linha única** (Nota e Fonte juntos)
 
-Padrão esperado:
+**Padrão adotado** — rodapé como última linha do `tabular` via `\multicolumn`:
 ```latex
+\bottomrule
+\multicolumn{N}{l}{\footnotesize Nota: texto. Fonte: texto.} \\
 \end{tabular}
-\nota{Texto da nota.}
-\fonte{Elaboração própria.}
 \end{table}
 ```
 
-Erros a verificar:
-- [ ] `\nota{}` ou `\fonte{}` dentro de ambiente `\centering` sem ajuste de alinhamento
-- [ ] Quebra de linha (`\\` ou `\newline`) entre `\nota{}` e `\fonte{}`
-- [ ] `\nota{}` ou `\fonte{}` com `\centering` explícito
+Este padrão:
+- Alinha à borda esquerda da primeira coluna (não à margem da página)
+- Mantém Nota e Fonte em linha contínua
+- Funciona mesmo com `\centering` ativo no float
+- É o mesmo padrão usado nos quadros `longtable` (via `\endlastfoot`)
 
-Se `\centering` estiver ativo no float (o caso normal), inserir `\flushleft` ou `\raggedright` antes de `\nota{}`/`\fonte{}` para garantir alinhamento à esquerda. Verificar se `\nota` e `\fonte` do abntex2 já aplicam alinhamento — se sim, apenas reportar inconsistências.
+**IMPORTANTE:** NÃO substituir este padrão por `\nota{}` + `\fonte{}` separados. Os comandos abntex2 `\nota{}` e `\fonte{}` criam parágrafos separados e ficam centralizados quando `\centering` está ativo, violando os requisitos acima.
+
+Erros a verificar:
+- [ ] `\nota{}` e `\fonte{}` usados separadamente em tabelas que deveriam usar `\multicolumn`
+- [ ] Rodapé centralizado em vez de alinhado à esquerda
+- [ ] Nota e Fonte em linhas separadas
 
 **Correção automática:**
-- Remover `\\` ou `\newline` entre `\nota{}` e `\fonte{}`
-- NÃO alterar o conteúdo textual dentro de `\nota{}` ou `\fonte{}`
-- NÃO adicionar `\flushleft` automaticamente — reportar ao usuário se necessário
+- NÃO alterar o conteúdo textual dentro do rodapé
+- Reportar tabelas que usam `\nota{}` + `\fonte{}` separados como `[REPORT]` com sugestão de migrar para `\multicolumn`
 
 ### C13. Comentários e TODOs
 
