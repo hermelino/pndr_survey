@@ -197,15 +197,17 @@ Somente após aprovação explícita do usuário:
    - **Ordem dentro do float:** `\centering` → `\caption{}` → `\label{}` → `\footnotesize` → `\renewcommand{\arraystretch}{1.2}` → `\begin{tabular}` → conteúdo → `\end{tabular}` → `\nota{}` (opcional) → `\fonte{}` → `\end{table}`.
    - **Linhas:** Usar `booktabs` (`\toprule`, `\midrule`, `\bottomrule`, `\cmidrule`). Nunca usar `\hline` em tabelas (reservado para quadros).
    - **`\caption{}` e `\label{}`:** Sempre ANTES do conteúdo (requisito abntex2). `\label{}` imediatamente após `\caption{}`.
-   - **`\fonte{}`:** Obrigatório, posicionado APÓS `\end{tabular}` e DENTRO do ambiente `table`. Nunca inserir fonte dentro do `tabular` nem usar `\footnotesize{Fonte: ...}`.
-   - **`\nota{}`:** Se necessário, posicionar APÓS `\end{tabular}` e ANTES de `\fonte{}`.
+   - **`\fonte{}`:** Obrigatório, posicionado APÓS `\end{tabular}` e DENTRO do ambiente `table`. Nunca inserir fonte dentro do `tabular` nem usar `\footnotesize{Fonte: ...}`. Esta regra aplica-se **inclusive** a tabelas em formato `landscape` e tabelas incluídas via `\input{}`.
+   - **`\nota{}`:** Se necessário, posicionar APÓS `\end{tabular}` e ANTES de `\fonte{}`. Em hipótese alguma inserir `Nota:` ou `Fonte:` como última linha do `tabular`.
    - **Tamanho de fonte:** Usar `\footnotesize` antes de `\begin{tabular}` para tabelas de dados. Para tabelas pequenas, omitir.
    - **Espaçamento:** Sempre incluir `\renewcommand{\arraystretch}{1.2}` para legibilidade.
 
    Para **Quadros** (`longtable` com bordas), seguir o padrão dos arquivos `survey_artigos_*.tex` com `\hline`, `\endfirsthead`, `\endhead`, `\endfoot`, `\endlastfoot`.
 9. **Figuras:** Referenciar com `\graphicspath{{../figures/}}`
 10. **Notas de rodapé:** Usar `\footnote{}` com parcimônia
-11. **Contextualização metodológica:** Ao iniciar subseção que discute abordagem econométrica ou estatística específica (ex: 'Modelos de Efeitos Fixos', 'Modelos Espaciais', 'Diferenças em Diferenças'), incluir 1-2 frases iniciais explicando brevemente: (i) o que caracteriza o método; (ii) sua vantagem metodológica em relação a abordagens mais simples. Exemplo: "Modelos de painel com efeitos fixos controlam características não observáveis constantes no tempo (município) e choques temporais comuns (tempo), permitindo estimativas mais robustas do efeito da política que regressões cross-section." Essa contextualização facilita compreensão de leitores menos especializados sem comprometer rigor.
+11. **Consistência numérica:** Ao referenciar contagens que apareçam em diagramas, tabelas ou figuras incluídos via `\input{}`, verificar que os valores no texto narrativo coincidam **exatamente** com os valores no arquivo incluído. Após editar qualquer contagem, executar busca textual nos demais arquivos `.tex` da seção para garantir consistência.
+12. **Proporção de subseções:** Subseções com mais de 3 tabelas ou quadros devem ser subdivididas em subseções menores, cada uma com escopo delimitado.
+13. **Contextualização metodológica:** Ao iniciar subseção que discute abordagem econométrica ou estatística específica (ex: 'Modelos de Efeitos Fixos', 'Modelos Espaciais', 'Diferenças em Diferenças'), incluir 1-2 frases iniciais explicando brevemente: (i) o que caracteriza o método; (ii) sua vantagem metodológica em relação a abordagens mais simples. Exemplo: "Modelos de painel com efeitos fixos controlam características não observáveis constantes no tempo (município) e choques temporais comuns (tempo), permitindo estimativas mais robustas do efeito da política que regressões cross-section." Essa contextualização facilita compreensão de leitores menos especializados sem comprometer rigor.
 
 ### Cuidados linguísticos
 

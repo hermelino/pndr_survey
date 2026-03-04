@@ -5,6 +5,7 @@
 **Nível:** Seção
 **Arquivo(s) avaliado(s):** `latex/politica-regional.tex`, `latex/main.tex`, `latex/tabelas/fc_tabela_resumo.tex`
 **Trecho avaliado:** Integral (linhas 1–99 de `politica-regional.tex`)
+**Status:** Correções aplicadas em 2026-03-04 (commit `a53a240`). Achados marcados com [CORRIGIDO] ou [PENDENTE] abaixo.
 
 ---
 
@@ -43,9 +44,9 @@ Há, contudo, dois problemas relevantes. Primeiro, na subseção `origens_evoluc
 
 | # | Sev. | Local | Descrição | Recomendação |
 |---|------|-------|-----------|--------------|
-| 1 | [C] | subsec:fcs, §4, linha 56 | Frase truncada: "Considerando que a PNDR tem como objetivo prioritário a redução das desigualdades regionais." é oração subordinada sem oração principal. Período incompleto. | Completar a frase com a conclusão do raciocínio (ex.: "...essa distribuição sugere alinhamento parcial dos FCs com as prioridades da política"). |
-| 2 | [I] | subsec:origens_evolucao, §5–6, linhas 22–24 | Regressão temporal: parágrafo 5 avança de 1964 a 2001 (FINAM/FINOR), e parágrafo 6 retorna a 1964. A narrativa perde linearidade cronológica. | Reorganizar: (a) encerrar o parágrafo do Regime Militar em ~1985, reservando a revogação de FINAM/FINOR para menção posterior; ou (b) fundir os dois parágrafos com transição explícita ("Paralelamente à expansão institucional, teve início um processo de esvaziamento..."). |
-| 3 | [M] | subsec:fcs, §3, linha 54 | O parágrafo analítico sobre participação no PIB (FNE, FCO, FNO) é extenso e denso. A transição para o parágrafo seguinte (frase truncada) é abrupta. | Considerar dividir a análise por fundo em parágrafos menores ou usar transição mais clara antes da conclusão. |
+| 1 | [C] | subsec:fcs, §4, linha 56 | **[CORRIGIDO]** Frase truncada: "Considerando que a PNDR tem como objetivo prioritário a redução das desigualdades regionais." é oração subordinada sem oração principal. Período incompleto. | Completar a frase com a conclusão do raciocínio (ex.: "...essa distribuição sugere alinhamento parcial dos FCs com as prioridades da política"). |
+| 2 | [I] | subsec:origens_evolucao, §5–6, linhas 22–24 | **[CORRIGIDO]** Regressão temporal: parágrafo 5 avança de 1964 a 2001 (FINAM/FINOR), e parágrafo 6 retorna a 1964. A narrativa perde linearidade cronológica. | Reorganizar: (a) encerrar o parágrafo do Regime Militar em ~1985, reservando a revogação de FINAM/FINOR para menção posterior; ou (b) fundir os dois parágrafos com transição explícita ("Paralelamente à expansão institucional, teve início um processo de esvaziamento..."). |
+| 3 | [M] | subsec:fcs, §3, linha 54 | **[PENDENTE]** O parágrafo analítico sobre participação no PIB (FNE, FCO, FNO) é extenso e denso. A transição para o parágrafo seguinte (frase truncada) é abrupta. | Considerar dividir a análise por fundo em parágrafos menores ou usar transição mais clara antes da conclusão. |
 
 ---
 
@@ -61,9 +62,9 @@ As tabelas e figuras estão bem posicionadas em relação ao texto que as refere
 
 | # | Sev. | Local | Descrição | Recomendação |
 |---|------|-------|-----------|--------------|
-| 4 | [S] | Parágrafo introdutório, linha 9 | Ausência de subseção dedicada à "Dinâmica recente da desigualdade regional". O parágrafo introdutório é muito breve para fundamentar a persistência das desigualdades com dados e evidências. | Considerar expandir o parágrafo introdutório com 1–2 parágrafos adicionais sobre a evolução recente dos indicadores de desigualdade regional, ou criar subseção própria. |
-| 5 | [S] | subsec:pndr, linhas 26–43 | A subseção sobre PNDR é a mais extensa da seção, cobrindo desde a CF/1988 até a tipologia de 2018. Poderia ser dividida em duas: "Fundamentos constitucionais e PNDR I" e "PNDR II e tipologia municipal". | Divisão opcional; a subseção atual é coerente, mas a extensão pode dificultar a leitura. |
-| 6 | [M] | subsec:fds, linhas 58–76 | O último parágrafo (linha 67) sobre FDA e FDCO é curto e telegráfico comparado ao tratamento detalhado do FDNE no parágrafo anterior. A desproporção sugere menor profundidade analítica para esses dois fundos. | Equilibrar a cobertura dos três fundos, mesmo que brevemente, ou justificar a ênfase no FDNE (por exemplo, por ser o de maior volume). |
+| 4 | [S] | Parágrafo introdutório, linha 9 | **[CORRIGIDO]** Ausência de subseção dedicada à "Dinâmica recente da desigualdade regional". O parágrafo introdutório é muito breve para fundamentar a persistência das desigualdades com dados e evidências. | Considerar expandir o parágrafo introdutório com 1–2 parágrafos adicionais sobre a evolução recente dos indicadores de desigualdade regional, ou criar subseção própria. |
+| 5 | [S] | subsec:pndr, linhas 26–43 | **[PENDENTE]** A subseção sobre PNDR é a mais extensa da seção, cobrindo desde a CF/1988 até a tipologia de 2018. Poderia ser dividida em duas: "Fundamentos constitucionais e PNDR I" e "PNDR II e tipologia municipal". | Divisão opcional; a subseção atual é coerente, mas a extensão pode dificultar a leitura. |
+| 6 | [M] | subsec:fds, linhas 58–76 | **[PENDENTE]** O último parágrafo (linha 67) sobre FDA e FDCO é curto e telegráfico comparado ao tratamento detalhado do FDNE no parágrafo anterior. A desproporção sugere menor profundidade analítica para esses dois fundos. | Equilibrar a cobertura dos três fundos, mesmo que brevemente, ou justificar a ênfase no FDNE (por exemplo, por ser o de maior volume). |
 
 ---
 
@@ -77,14 +78,14 @@ Foram identificados, contudo, dois erros de digitação e um erro gramatical de 
 
 | # | Sev. | Local | Descrição | Recomendação |
 |---|------|-------|-----------|--------------|
-| 7 | [C] | subsec:fds, §2, linha 65 | Ausência de verbo de ligação: "Esses municípios os maiores beneficiários do FDNE" — falta o verbo "são". | Corrigir para: "Esses municípios são os maiores beneficiários do FDNE". |
-| 8 | [I] | subsec:fds, §3, linha 67 | Erro de digitação: "estagnandos" (deveria ser "estagnados"). | Corrigir para "estagnados". |
-| 9 | [I] | subsec:fds, §3, linha 67 | Erro de digitação: "principalmennte" (deveria ser "principalmente"). | Corrigir para "principalmente". |
-| 10 | [M] | subsec:pndr, §2, linha 31 | Parágrafo excessivamente longo (~185 palavras), cobrindo criação dos FCs, extinção das superintendências, ADA/ADENE e criação de FDA/FDNE. | Dividir em dois parágrafos: um sobre os Fundos Constitucionais (Lei 7.827/1989) e outro sobre a reestruturação institucional (extinção das superintendências, criação de ADA/ADENE, FDA/FDNE). |
-| 11 | [M] | subsec:pndr, §5, linha 37 | Parágrafo longo (~165 palavras) sobre as limitações e o FNDR. | Considerar separar a discussão sobre limitações da PNDR I daquela sobre a reestruturação institucional (SUDAM, SUDENE, SUDECO). |
-| 12 | [M] | subsec:origens_evolucao, §5, linha 22 | Parágrafo longo (~160 palavras) cobrindo todo o Regime Militar de 1964 a 2001. | Dividir em dois: um sobre a expansão institucional (SUDAM, SUFRAMA, SUDECO) e outro sobre o período dos PNDs e os fundos FINAM/FINOR. |
-| 13 | [M] | subsec:fcs, §2, linha 50 | "No ano 2020" — falta preposição. | Corrigir para "No ano de 2020" ou "Em 2020". |
-| 14 | [S] | subsec:fcs, §2, linha 50 | "os valores aplicados mais que dobraram" — construção informal. | Substituir por "os valores aplicados mais que duplicaram" ou "cresceram mais de 100%". |
+| 7 | [C] | subsec:fds, §2, linha 65 | **[CORRIGIDO]** Ausência de verbo de ligação: "Esses municípios os maiores beneficiários do FDNE" — falta o verbo "são". | Corrigir para: "Esses municípios são os maiores beneficiários do FDNE". |
+| 8 | [I] | subsec:fds, §3, linha 67 | **[CORRIGIDO]** Erro de digitação: "estagnandos" (deveria ser "estagnados"). | Corrigir para "estagnados". |
+| 9 | [I] | subsec:fds, §3, linha 67 | **[CORRIGIDO]** Erro de digitação: "principalmennte" (deveria ser "principalmente"). | Corrigir para "principalmente". |
+| 10 | [M] | subsec:pndr, §2, linha 31 | **[CORRIGIDO]** Parágrafo excessivamente longo (~185 palavras), cobrindo criação dos FCs, extinção das superintendências, ADA/ADENE e criação de FDA/FDNE. | Dividir em dois parágrafos: um sobre os Fundos Constitucionais (Lei 7.827/1989) e outro sobre a reestruturação institucional (extinção das superintendências, criação de ADA/ADENE, FDA/FDNE). |
+| 11 | [M] | subsec:pndr, §5, linha 37 | **[PENDENTE]** Parágrafo longo (~165 palavras) sobre as limitações e o FNDR. | Considerar separar a discussão sobre limitações da PNDR I daquela sobre a reestruturação institucional (SUDAM, SUDENE, SUDECO). |
+| 12 | [M] | subsec:origens_evolucao, §5, linha 22 | **[CORRIGIDO]** Parágrafo longo (~160 palavras) cobrindo todo o Regime Militar de 1964 a 2001. | Dividir em dois: um sobre a expansão institucional (SUDAM, SUFRAMA, SUDECO) e outro sobre o período dos PNDs e os fundos FINAM/FINOR. |
+| 13 | [M] | subsec:fcs, §2, linha 50 | **[CORRIGIDO]** "No ano 2020" — falta preposição. | Corrigir para "No ano de 2020" ou "Em 2020". |
+| 14 | [S] | subsec:fcs, §2, linha 50 | **[CORRIGIDO]** "os valores aplicados mais que dobraram" — construção informal. | Substituir por "os valores aplicados mais que duplicaram" ou "cresceram mais de 100%". |
 
 ---
 
@@ -100,10 +101,10 @@ Do ponto de vista do equilíbrio entre rigor técnico e implicações para polí
 
 | # | Sev. | Local | Descrição | Recomendação |
 |---|------|-------|-----------|--------------|
-| 15 | [I] | subsec:fcs, Tabela resumo_fc, linha 28 do .tex da tabela | `\fonte{}` diz "Elaborada pelo autor" (singular), enquanto as figuras nas linhas 75 e 93 dizem "Elaborada pelos autores" (plural). O artigo tem 4 autores. | Uniformizar para "Elaborada pelos autores" em todas as tabelas e figuras. |
-| 16 | [M] | subsec:fcs, §2, linha 50 | "Conforme Tabela~\ref{tab:resumo_fc}" — falta artigo definido. | Corrigir para "Conforme a Tabela~\ref{tab:resumo_fc}" ou "conforme apresentado na Tabela~\ref{tab:resumo_fc}". |
-| 17 | [S] | subsec:fcs–ifs, geral | A discussão dos dados quantitativos de cada instrumento tende ao descritivo ("os valores foram X, a participação foi Y") sem traduzir sistematicamente as implicações para a eficácia da política regional. | Após apresentar dados de cada instrumento, acrescentar 1–2 frases interpretativas sobre o que os números sugerem em termos de eficácia ou alinhamento com os objetivos da PNDR. |
-| 18 | [S] | subsec:ifs, fig:incentivos, linha 90 | Caption da figura: "Distribuição dos benefícios de Incentivo Fiscal (2010-2021)" não especifica as dimensões do gráfico (superintendência, setor, tipologia), que são mencionadas no texto. | Considerar tornar a caption mais descritiva: "Distribuição dos benefícios de Incentivo Fiscal, por superintendência, setor e tipologia municipal (2010-2021)". |
+| 15 | [I] | subsec:fcs, Tabela resumo_fc, linha 28 do .tex da tabela | **[CORRIGIDO]** `\fonte{}` diz "Elaborada pelo autor" (singular), enquanto as figuras nas linhas 75 e 93 dizem "Elaborada pelos autores" (plural). O artigo tem 4 autores. | Uniformizar para "Elaborada pelos autores" em todas as tabelas e figuras. |
+| 16 | [M] | subsec:fcs, §2, linha 50 | **[CORRIGIDO]** "Conforme Tabela~\ref{tab:resumo_fc}" — falta artigo definido. | Corrigir para "Conforme a Tabela~\ref{tab:resumo_fc}" ou "conforme apresentado na Tabela~\ref{tab:resumo_fc}". |
+| 17 | [S] | subsec:fcs–ifs, geral | **[PENDENTE]** A discussão dos dados quantitativos de cada instrumento tende ao descritivo ("os valores foram X, a participação foi Y") sem traduzir sistematicamente as implicações para a eficácia da política regional. | Após apresentar dados de cada instrumento, acrescentar 1–2 frases interpretativas sobre o que os números sugerem em termos de eficácia ou alinhamento com os objetivos da PNDR. |
+| 18 | [S] | subsec:ifs, fig:incentivos, linha 90 | **[CORRIGIDO]** Caption da figura: "Distribuição dos benefícios de Incentivo Fiscal (2010-2021)" não especifica as dimensões do gráfico (superintendência, setor, tipologia), que são mencionadas no texto. | Considerar tornar a caption mais descritiva: "Distribuição dos benefícios de Incentivo Fiscal, por superintendência, setor e tipologia municipal (2010-2021)". |
 
 ---
 
@@ -117,9 +118,9 @@ Há uma inconsistência no padrão de labels: a seção usa `sec:politica-region
 
 | # | Sev. | Local | Descrição | Recomendação |
 |---|------|-------|-----------|--------------|
-| 19 | [M] | Labels das subseções | Inconsistência: `sec:politica-regional` usa hífen, mas `subsec:origens_evolucao`, `subsec:pndr`, `subsec:fcs`, `subsec:fds`, `subsec:ifs` usam underscore. | Padronizar todos os labels com underscore ou com hífen (preferir underscore, que é mais comum em LaTeX). |
-| 20 | [M] | subsec:fcs, Tabela resumo_fc | A tabela usa `\scriptsize` em vez de `\footnotesize` como especificado nas regras da skill `/escrever-artigo`. | Avaliar se `\scriptsize` é necessário (tabela com 7 colunas pode justificar). Se não, padronizar para `\footnotesize`. |
-| 21 | [S] | Comentário, linha 87 | Comentário "% Gerado por: scripts/generate_figures.py (data/r_scripts/grafico_resumo_icf.R)" referencia um script R. Dado que o projeto usa Python, o comentário pode estar desatualizado. | Verificar se o script R ainda é a fonte real da figura ou se deve referenciar apenas o script Python. |
+| 19 | [M] | Labels das subseções | **[CORRIGIDO]** Inconsistência: `sec:politica-regional` usa hífen, mas `subsec:origens_evolucao`, `subsec:pndr`, `subsec:fcs`, `subsec:fds`, `subsec:ifs` usam underscore. | Padronizar todos os labels com underscore ou com hífen (preferir underscore, que é mais comum em LaTeX). |
+| 20 | [M] | subsec:fcs, Tabela resumo_fc | **[PENDENTE]** A tabela usa `\scriptsize` em vez de `\footnotesize` como especificado nas regras da skill `/escrever-artigo`. | Avaliar se `\scriptsize` é necessário (tabela com 7 colunas pode justificar). Se não, padronizar para `\footnotesize`. |
+| 21 | [S] | Comentário, linha 87 | **[CORRIGIDO]** Comentário "% Gerado por: scripts/generate_figures.py (data/r_scripts/grafico_resumo_icf.R)" referencia um script R. Dado que o projeto usa Python, o comentário pode estar desatualizado. | Verificar se o script R ainda é a fonte real da figura ou se deve referenciar apenas o script Python. |
 
 ---
 
@@ -145,41 +146,41 @@ A seção apresenta diversos méritos que merecem destaque:
 
 ### Críticas [C]
 
-1. **Completar a frase truncada na subseção de FCs** (achado #1, D1): A oração "Considerando que a PNDR tem como objetivo prioritário a redução das desigualdades regionais." é um período incompleto. Deve ser completada com a conclusão do raciocínio sobre a distribuição dos recursos por tipologia.
+1. ~~**Completar a frase truncada na subseção de FCs** (achado #1, D1)~~ **[CORRIGIDO]**
 
-2. **Inserir verbo de ligação ausente** (achado #7, D3): "Esses municípios os maiores beneficiários do FDNE" → "Esses municípios **são** os maiores beneficiários do FDNE".
+2. ~~**Inserir verbo de ligação ausente** (achado #7, D3)~~ **[CORRIGIDO]**
 
 ### Importantes [I]
 
-3. **Resolver regressão temporal em `origens_evolucao`** (achado #2, D1): Reorganizar parágrafos 5–6 para manter linearidade cronológica, evitando salto de 2001 para 1964.
+3. ~~**Resolver regressão temporal em `origens_evolucao`** (achado #2, D1)~~ **[CORRIGIDO]**
 
-4. **Corrigir erros de digitação** (achados #8 e #9, D3): "estagnandos" → "estagnados"; "principalmennte" → "principalmente".
+4. ~~**Corrigir erros de digitação** (achados #8 e #9, D3)~~ **[CORRIGIDO]**
 
-5. **Uniformizar autoria em `\fonte{}`** (achado #15, D4): Padronizar "Elaborada pelos autores" (plural) em todas as tabelas e figuras.
+5. ~~**Uniformizar autoria em `\fonte{}`** (achado #15, D4)~~ **[CORRIGIDO]**
 
 ### Menores [M]
 
-6. **Dividir parágrafos longos** (achados #10, #11, #12, D3): Três parágrafos nas subseções `pndr` e `origens_evolucao` excedem 150 palavras; dividi-los em unidades menores.
+6. **Dividir parágrafos longos** (achados #10, #11, #12, D3): #10 e #12 corrigidos; #11 **[PENDENTE]** (parágrafo sobre limitações da PNDR I, ~115 palavras — abaixo do limite).
 
-7. **Corrigir preposição** (achado #13, D3): "No ano 2020" → "No ano de 2020" ou "Em 2020".
+7. ~~**Corrigir preposição** (achado #13, D3)~~ **[CORRIGIDO]**
 
-8. **Adicionar artigo em referência à tabela** (achado #16, D4): "Conforme Tabela" → "Conforme a Tabela".
+8. ~~**Adicionar artigo em referência à tabela** (achado #16, D4)~~ **[CORRIGIDO]**
 
-9. **Padronizar labels** (achado #19, D5): Escolher entre hífen e underscore e aplicar consistentemente.
+9. ~~**Padronizar labels** (achado #19, D5)~~ **[CORRIGIDO]**
 
-10. **Avaliar tamanho de fonte da tabela** (achado #20, D5): Verificar se `\scriptsize` é necessário ou se `\footnotesize` basta.
+10. **Avaliar tamanho de fonte da tabela** (achado #20, D5): **[PENDENTE]** — `\scriptsize` mantido; tabela com 8 colunas justifica fonte menor.
 
 ### Sugestões [S]
 
-11. **Expandir contextualização da desigualdade** (achado #4, D2): Considerar subseção ou parágrafos adicionais sobre dinâmica recente.
+11. ~~**Expandir contextualização da desigualdade** (achado #4, D2)~~ **[CORRIGIDO]**
 
-12. **Acrescentar interpretação analítica dos dados** (achado #17, D4): Após dados quantitativos, incluir frases sobre implicações para a eficácia da política.
+12. **Acrescentar interpretação analítica dos dados** (achado #17, D4): **[PENDENTE]** — parcialmente atendido pela conclusão do achado #1.
 
-13. **Tornar caption da fig:incentivos mais descritiva** (achado #18, D4): Especificar dimensões apresentadas no gráfico.
+13. ~~**Tornar caption da fig:incentivos mais descritiva** (achado #18, D4)~~ **[CORRIGIDO]**
 
-14. **Atualizar comentário sobre script gerador** (achado #21, D5): Verificar se referência a script R está atualizada.
+14. ~~**Atualizar comentário sobre script gerador** (achado #21, D5)~~ **[CORRIGIDO]**
 
-15. **Substituir "mais que dobraram"** (achado #14, D3): Usar construção mais formal.
+15. ~~**Substituir "mais que dobraram"** (achado #14, D3)~~ **[CORRIGIDO]**
 
 ---
 
