@@ -171,7 +171,38 @@ Somente após aprovação explícita do usuário:
 5. **Quebras de linha:** Cada parágrafo deve ser escrito em uma única linha contínua, sem quebras de linha no meio de frases. **LIMITE: parágrafos não devem exceder 5-6 frases ou 150 palavras.** Se o parágrafo ultrapassar esse limite, divida-o em parágrafos menores agrupados por subtema. Quebras de linha só devem ocorrer entre parágrafos (linha em branco) ou em ambientes LaTeX (tabelas, listas, etc.)
 6. **Citações:** Usar `\citeonline{}` para citações integradas ao texto e `\cite{}` para citações entre parênteses — comandos nativos do abntex2cite
 7. **Labels:** Usar `\label{sec:...}`, `\label{tab:...}`, `\label{fig:...}` consistentes
-8. **Tabelas:** Usar `booktabs` (toprule, midrule, bottomrule), com `\fonte{}` obrigatoriamente posicionado após `\end{tabular}` e dentro do ambiente `table`. Nunca inserir fonte dentro do `tabular`.
+8. **Tabelas:** Seguir rigorosamente o padrão abaixo para **todas** as tabelas:
+
+   ```latex
+   \begin{table}[htbp]
+       \centering
+       \caption{Título da tabela}
+       \label{tab:identificador}
+       \footnotesize
+       \renewcommand{\arraystretch}{1.2}
+       \begin{tabular}{...}
+           \toprule
+           ... cabeçalho ...
+           \midrule
+           ... dados ...
+           \bottomrule
+       \end{tabular}
+       \nota{Texto da nota, se necessário.}
+       \fonte{Elaboração própria.}
+   \end{table}
+   ```
+
+   Regras obrigatórias:
+   - **Posicionamento:** Sempre `[htbp]`. Nunca usar `[h!]` ou `[H]`.
+   - **Ordem dentro do float:** `\centering` → `\caption{}` → `\label{}` → `\footnotesize` → `\renewcommand{\arraystretch}{1.2}` → `\begin{tabular}` → conteúdo → `\end{tabular}` → `\nota{}` (opcional) → `\fonte{}` → `\end{table}`.
+   - **Linhas:** Usar `booktabs` (`\toprule`, `\midrule`, `\bottomrule`, `\cmidrule`). Nunca usar `\hline` em tabelas (reservado para quadros).
+   - **`\caption{}` e `\label{}`:** Sempre ANTES do conteúdo (requisito abntex2). `\label{}` imediatamente após `\caption{}`.
+   - **`\fonte{}`:** Obrigatório, posicionado APÓS `\end{tabular}` e DENTRO do ambiente `table`. Nunca inserir fonte dentro do `tabular` nem usar `\footnotesize{Fonte: ...}`.
+   - **`\nota{}`:** Se necessário, posicionar APÓS `\end{tabular}` e ANTES de `\fonte{}`.
+   - **Tamanho de fonte:** Usar `\footnotesize` antes de `\begin{tabular}` para tabelas de dados. Para tabelas pequenas, omitir.
+   - **Espaçamento:** Sempre incluir `\renewcommand{\arraystretch}{1.2}` para legibilidade.
+
+   Para **Quadros** (`longtable` com bordas), seguir o padrão dos arquivos `survey_artigos_*.tex` com `\hline`, `\endfirsthead`, `\endhead`, `\endfoot`, `\endlastfoot`.
 9. **Figuras:** Referenciar com `\graphicspath{{../figures/}}`
 10. **Notas de rodapé:** Usar `\footnote{}` com parcimônia
 11. **Contextualização metodológica:** Ao iniciar subseção que discute abordagem econométrica ou estatística específica (ex: 'Modelos de Efeitos Fixos', 'Modelos Espaciais', 'Diferenças em Diferenças'), incluir 1-2 frases iniciais explicando brevemente: (i) o que caracteriza o método; (ii) sua vantagem metodológica em relação a abordagens mais simples. Exemplo: "Modelos de painel com efeitos fixos controlam características não observáveis constantes no tempo (município) e choques temporais comuns (tempo), permitindo estimativas mais robustas do efeito da política que regressões cross-section." Essa contextualização facilita compreensão de leitores menos especializados sem comprometer rigor.

@@ -97,13 +97,45 @@ Padrões a verificar em ambientes `figure` e `table`:
 - Mover `\label{}` para imediatamente após `\caption{}` se estiver em posição diferente
 - NÃO mover `\caption{}` automaticamente — reportar posicionamento invertido ao usuário
 
-### C5. Comando `\fonte{}` em ambientes flutuantes
+### C5. Padrão de ambientes `table` e comando `\fonte{}`
 
-Todo ambiente `figure` e `table` deve conter `\fonte{}` antes de `\end{figure}` ou `\end{table}`.
+Todo ambiente `table` deve seguir o padrão canônico:
 
-**Exceção:** Tabelas que usam `\footnotesize{Fonte: ...}` dentro do tabular (padrão legado — avisar mas não corrigir automaticamente).
+```latex
+\begin{table}[htbp]
+    \centering
+    \caption{...}
+    \label{tab:...}
+    \footnotesize
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{...}
+        \toprule ... \midrule ... \bottomrule
+    \end{tabular}
+    \nota{...}   % opcional, antes de \fonte
+    \fonte{...}  % obrigatório
+\end{table}
+```
 
-**Correção automática:** Não adicionar `\fonte{}` automaticamente — reportar ausência ao usuário.
+Verificações:
+- [ ] Todo `table` e `figure` contém `\fonte{}` APÓS `\end{tabular}`/`\includegraphics` e ANTES de `\end{table}`/`\end{figure}`
+- [ ] `\fonte{}` NÃO está dentro do ambiente `tabular`
+- [ ] Posicionamento usa `[htbp]`, nunca `[h!]` ou `[H]`
+- [ ] `\caption{}` está ANTES de `\begin{tabular}` (requisito abntex2)
+- [ ] `\label{}` está imediatamente após `\caption{}`
+- [ ] Tabelas de dados incluem `\footnotesize` e `\renewcommand{\arraystretch}{1.2}`
+- [ ] Tabelas usam `booktabs` (`\toprule`, `\midrule`, `\bottomrule`), não `\hline`
+
+Erros comuns a corrigir:
+- `\footnotesize{Fonte: ...}` dentro do `tabular` → mover para `\fonte{...}` após `\end{tabular}`
+- `\multicolumn{N}{l}{\footnotesize{Fonte: ...}}` dentro do `tabular` → mover para `\fonte{...}` após `\end{tabular}`
+- `[h!]` ou `[H]` → substituir por `[htbp]`
+
+**Exceção:** Quadros (`longtable`) seguem padrão próprio com `\endlastfoot` contendo a fonte — não se aplica esta verificação.
+
+**Correção automática:**
+- `[h!]` → `[htbp]` (seguro)
+- Reportar `\footnotesize{Fonte:...}` dentro do `tabular` como `[REPORT]` com instrução de migrar para `\fonte{}`
+- Reportar ausência de `\fonte{}` ao usuário
 
 ### C6. Chaves `{}` balanceadas
 
@@ -173,7 +205,33 @@ Termos em inglês/latim que aparecem no projeto devem ser consistentemente forma
 - `n = X` → `n~=~X` dentro de parênteses quando representar contagem
 - NÃO alterar expressões matemáticas complexas
 
-### C12. Comentários e TODOs
+### C12. Rodapé de floats: `\nota{}` e `\fonte{}` alinhados à esquerda em texto contínuo
+
+Em ambientes `table` e `figure`, os comandos `\nota{}` e `\fonte{}` devem:
+1. Estar **alinhados à esquerda** (não centralizados)
+2. Aparecer em **texto contínuo** (mesma linha, sem quebra entre `\nota{}` e `\fonte{}`)
+
+Padrão esperado:
+```latex
+\end{tabular}
+\nota{Texto da nota.}
+\fonte{Elaboração própria.}
+\end{table}
+```
+
+Erros a verificar:
+- [ ] `\nota{}` ou `\fonte{}` dentro de ambiente `\centering` sem ajuste de alinhamento
+- [ ] Quebra de linha (`\\` ou `\newline`) entre `\nota{}` e `\fonte{}`
+- [ ] `\nota{}` ou `\fonte{}` com `\centering` explícito
+
+Se `\centering` estiver ativo no float (o caso normal), inserir `\flushleft` ou `\raggedright` antes de `\nota{}`/`\fonte{}` para garantir alinhamento à esquerda. Verificar se `\nota` e `\fonte` do abntex2 já aplicam alinhamento — se sim, apenas reportar inconsistências.
+
+**Correção automática:**
+- Remover `\\` ou `\newline` entre `\nota{}` e `\fonte{}`
+- NÃO alterar o conteúdo textual dentro de `\nota{}` ou `\fonte{}`
+- NÃO adicionar `\flushleft` automaticamente — reportar ao usuário se necessário
+
+### C13. Comentários e TODOs
 
 - [ ] Listar todos os `% TODO:` encontrados nos arquivos
 - [ ] Verificar se há código comentado extenso (>10 linhas consecutivas) — apenas reportar
@@ -188,7 +246,7 @@ Termos em inglês/latim que aparecem no projeto devem ser consistentemente forma
 
 1. Listar todos os arquivos `.tex` no escopo definido por `$ARGUMENTS`
 2. Ler cada arquivo integralmente
-3. Para cada verificação (C1–C12), varrer os arquivos e registrar achados
+3. Para cada verificação (C1–C13), varrer os arquivos e registrar achados
 
 ### FASE 2 — Classificação dos achados
 
