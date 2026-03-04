@@ -142,7 +142,7 @@ A avaliação organiza-se em **seis dimensões**, cada uma com critérios espec�
 - **Método:** A descrição metodológica é suficiente para reprodutibilidade?
 - **Citações:** As citações são pertinentes, atuais e adequadamente integradas ao texto?
 - **Formatação ABNT:** O uso de `\citeonline{}` e `\cite{}` é correto e consistente?
-- **Tabelas e figuras:** Seguem convenções acadêmicas (título, fonte, notas)?
+- **Tabelas e figuras:** Seguem convenções acadêmicas (título antes do conteúdo, rodapé C12 com Nota+Fonte em `\multicolumn` alinhado à esquerda)?
 - **Extensão:** A seção ou o documento tem extensão compatível com artigo (e não com capítulo de tese)?
 
 ### D5. Qualidade do LaTeX

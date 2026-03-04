@@ -162,12 +162,17 @@ df_summary = (df
 - Usar pandas `.to_latex()` com parâmetros ABNT
 - Salvar em `latex/tabelas/` com nomenclatura descritiva
 - Formato compatível com `abntex2` (booktabs)
-- Notas de rodapé da tabela: usar `\multicolumn{N}{l}{\footnotesize Nota: texto.}` na última linha antes de `\bottomrule`, alinhadas à esquerda (`l`). Nunca usar `threeparttable` ou `\tablenotes`
-- Fonte da tabela: usar `\fonte{Elaborada pelo autor.}` após `\end{tabular}`, dentro do ambiente `table`. Nunca inserir fonte dentro do `tabular`
+- Rodapé da tabela (**padrão C12**): Nota e Fonte juntos em **linha única** via `\multicolumn{N}{l}{\footnotesize Nota: texto. Fonte: Elaboração própria.} \\` como última linha do `tabular`, após `\bottomrule`. `N` = número de colunas. Se não houver nota, usar apenas `{\footnotesize Fonte: texto.}`. Nunca usar `\nota{}` + `\fonte{}` separados, `threeparttable` ou `\tablenotes`
 
 **Para Excel:**
 - Usar openpyxl para formatação
 - Salvar em `data/` com timestamp
+
+**Migração de tabelas existentes:** Ao encontrar tabelas `.tex` que usem `\fonte{}` ou `\nota{}` como comandos separados após `\end{tabular}`, migrar para padrão C12:
+1. Remover `\nota{...}` e `\fonte{...}` de fora do `tabular`
+2. Inserir `\multicolumn{N}{l}{\footnotesize Nota: ... Fonte: ...} \\` como última linha do `tabular`, após `\bottomrule`
+3. `N` = número de colunas da tabela
+4. Reportar ao usuário antes de aplicar a migração
 
 **Exemplo de Função:**
 
@@ -177,30 +182,53 @@ def generate_latex_table(
     output_path: str,
     caption: str,
     label: str,
+    fonte: str = "Elaboração própria.",
+    nota: str = "",
     float_format: str = "%.2f"
 ) -> None:
-    """Gera tabela LaTeX compatível com abntex2.
+    """Gera tabela LaTeX compatível com abntex2, padrão C12.
 
     Args:
         df: DataFrame com dados da tabela
         output_path: Caminho do arquivo .tex
         caption: Legenda da tabela
         label: Label para referência cruzada
+        fonte: Texto da fonte (obrigatório)
+        nota: Texto da nota (opcional)
         float_format: Formato de números decimais
     """
-    latex_str = df.to_latex(
+    n_cols = len(df.columns)
+    footer_text = f"Nota: {nota} Fonte: {fonte}" if nota else f"Fonte: {fonte}"
+    footer_line = (
+        f"\\multicolumn{{{n_cols}}}{{l}}"
+        f"{{\\footnotesize {footer_text}}} \\\\"
+    )
+
+    # Gerar corpo da tabela manualmente para inserir rodapé C12
+    body = df.to_latex(
         index=False,
         escape=False,
         float_format=float_format,
-        caption=caption,
-        label=f'tab:{label}',
-        position='htbp'
+    )
+    # Inserir footer_line após \bottomrule
+    body = body.replace("\\bottomrule", f"\\bottomrule\n{footer_line}")
+
+    # Montar float completo
+    latex_str = (
+        f"\\begin{{table}}[htbp]\n"
+        f"    \\centering\n"
+        f"    \\caption{{{caption}}}\n"
+        f"    \\label{{tab:{label}}}\n"
+        f"    \\footnotesize\n"
+        f"    \\renewcommand{{\\arraystretch}}{{1.2}}\n"
+        f"    {body}"
+        f"\\end{{table}}\n"
     )
 
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(latex_str)
 
-    logging.info(f"Tabela LaTeX gerada: {output_path}")
+    logging.info(f"Tabela LaTeX gerada (C12): {output_path}")
 ```
 
 ### 4. Geração de Gráficos

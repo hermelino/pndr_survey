@@ -97,9 +97,9 @@ Padrões a verificar em ambientes `figure` e `table`:
 - Mover `\label{}` para imediatamente após `\caption{}` se estiver em posição diferente
 - NÃO mover `\caption{}` automaticamente — reportar posicionamento invertido ao usuário
 
-### C5. Padrão de ambientes `table` e comando `\fonte{}`
+### C5. Padrão de ambientes `table` e rodapé C12
 
-Todo ambiente `table` deve seguir o padrão canônico:
+Todo ambiente `table` deve seguir o **padrão C12** (único padrão aceito):
 
 ```latex
 \begin{table}[htbp]
@@ -110,30 +110,31 @@ Todo ambiente `table` deve seguir o padrão canônico:
     \renewcommand{\arraystretch}{1.2}
     \begin{tabular}{...}
         \toprule ... \midrule ... \bottomrule
-        \multicolumn{N}{l}{\footnotesize Nota: ... Fonte: ...} \\  % rodapé C12
+        \multicolumn{N}{l}{\footnotesize Nota: ... Fonte: ...} \\
     \end{tabular}
 \end{table}
 ```
 
 Verificações:
-- [ ] Todo `table` e `figure` contém rodapé com Fonte (via `\multicolumn` dentro do `tabular` conforme C12, ou via `\fonte{}` após `\end{tabular}`)
+- [ ] Todo `table` contém rodapé C12 via `\multicolumn{N}{l}{\footnotesize ...}` com Fonte, como última linha do `tabular` após `\bottomrule`
 - [ ] Posicionamento usa `[htbp]`, nunca `[h!]` ou `[H]`
 - [ ] `\caption{}` está ANTES de `\begin{tabular}` (requisito abntex2)
 - [ ] `\label{}` está imediatamente após `\caption{}`
 - [ ] Tabelas de dados incluem `\footnotesize` e `\renewcommand{\arraystretch}{1.2}`
 - [ ] Tabelas usam `booktabs` (`\toprule`, `\midrule`, `\bottomrule`), não `\hline`
+- [ ] **Nenhuma** tabela usa `\nota{}` ou `\fonte{}` como comandos separados após `\end{tabular}`
 
-Erros comuns a corrigir:
-- `\footnotesize{Fonte: ...}` dentro do `tabular` sem seguir o padrão C12 → reportar
-- `[h!]` ou `[H]` → substituir por `[htbp]`
+Erros a reportar:
+- `\nota{}` e/ou `\fonte{}` usados como comandos separados → `[REPORT]` com instrução de migrar para `\multicolumn` C12
+- `\footnotesize{Fonte: ...}` dentro do `tabular` sem seguir o padrão C12 → `[REPORT]`
+- Ausência de rodapé (sem `\multicolumn` com Fonte) → `[REPORT]`
+- `[h!]` ou `[H]` → `[AUTO]` substituir por `[htbp]`
 
 **Exceções (NÃO corrigir):**
-- Quadros (`longtable`) seguem padrão próprio com `\endlastfoot` contendo a fonte
-- Tabelas que usam `\multicolumn{N}{l}{\footnotesize Nota: ... Fonte: ...}` como última linha do `tabular` — este é o **padrão C12** e NÃO deve ser substituído por `\nota{}`/`\fonte{}` separados
+- Quadros (`longtable`) seguem padrão próprio com `\endlastfoot` contendo o rodapé C12 via `\multicolumn`
 
 **Correção automática:**
 - `[h!]` → `[htbp]` (seguro)
-- Reportar ausência de rodapé (nem `\fonte{}` nem `\multicolumn` com Fonte) ao usuário
 
 ### C6. Chaves `{}` balanceadas
 
@@ -203,36 +204,35 @@ Termos em inglês/latim que aparecem no projeto devem ser consistentemente forma
 - `n = X` → `n~=~X` dentro de parênteses quando representar contagem
 - NÃO alterar expressões matemáticas complexas
 
-### C12. Rodapé de floats: Nota e Fonte alinhados à esquerda em linha única
+### C12. Rodapé C12: Nota e Fonte alinhados à esquerda em linha única (padrão único)
 
-Em ambientes `table` e `figure`, o rodapé (nota + fonte) deve:
-1. Estar **alinhado à esquerda** da primeira coluna (não centralizado)
-2. Aparecer em **linha única** (Nota e Fonte juntos)
+O **padrão C12** é o único padrão aceito para rodapé de tabelas e quadros. Requisitos:
+1. Nota e Fonte **alinhados à esquerda** da primeira coluna (não centralizados)
+2. Nota e Fonte em **linha única** (juntos no mesmo `\multicolumn`)
+3. Posicionado como **última linha do `tabular`**, após `\bottomrule`
 
-**Padrão adotado** — rodapé como última linha do `tabular` via `\multicolumn`:
 ```latex
 \bottomrule
 \multicolumn{N}{l}{\footnotesize Nota: texto. Fonte: texto.} \\
 \end{tabular}
-\end{table}
 ```
 
-Este padrão:
+Características:
+- `N` = número de colunas da tabela
 - Alinha à borda esquerda da primeira coluna (não à margem da página)
-- Mantém Nota e Fonte em linha contínua
 - Funciona mesmo com `\centering` ativo no float
-- É o mesmo padrão usado nos quadros `longtable` (via `\endlastfoot`)
+- Mesmo padrão para quadros `longtable` (via `\endlastfoot`)
+- Se não houver nota, usar apenas `{\footnotesize Fonte: texto.}`
 
-**IMPORTANTE:** NÃO substituir este padrão por `\nota{}` + `\fonte{}` separados. Os comandos abntex2 `\nota{}` e `\fonte{}` criam parágrafos separados e ficam centralizados quando `\centering` está ativo, violando os requisitos acima.
+**PROIBIDO:** Usar `\nota{}` e/ou `\fonte{}` como comandos separados após `\end{tabular}`. Esses comandos abntex2 criam parágrafos centralizados, violando o alinhamento à esquerda.
 
 Erros a verificar:
-- [ ] `\nota{}` e `\fonte{}` usados separadamente em tabelas que deveriam usar `\multicolumn`
-- [ ] Rodapé centralizado em vez de alinhado à esquerda
-- [ ] Nota e Fonte em linhas separadas
+- [ ] `\nota{}` ou `\fonte{}` usados como comandos separados → `[REPORT]` migrar para C12
+- [ ] Rodapé centralizado em vez de alinhado à esquerda → `[REPORT]`
+- [ ] Nota e Fonte em linhas separadas → `[REPORT]`
+- [ ] Tabela sem rodapé (sem `\multicolumn` com Fonte) → `[REPORT]`
 
-**Correção automática:**
-- NÃO alterar o conteúdo textual dentro do rodapé
-- Reportar tabelas que usam `\nota{}` + `\fonte{}` separados como `[REPORT]` com sugestão de migrar para `\multicolumn`
+**Correção automática:** Nenhuma — apenas `[REPORT]` com instrução de migrar para C12. NÃO alterar o conteúdo textual dentro do rodapé.
 
 ### C13. Comentários e TODOs
 
