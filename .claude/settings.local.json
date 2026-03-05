@@ -57,7 +57,8 @@
       "WebFetch(domain:www.ufsm.br)",
       "Bash(git init:*)",
       "Bash(git remote add:*)",
-      "Bash(git pull:*)"
+      "Bash(git pull:*)",
+      "Bash(del /q main.aux main.bbl main.blg main.log main.out main.toc main.fls main.fdb_latexmk)"
     ]
   }
 }
