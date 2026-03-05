@@ -58,7 +58,15 @@
       "Bash(git init:*)",
       "Bash(git remote add:*)",
       "Bash(git pull:*)",
-      "Bash(del /q main.aux main.bbl main.blg main.log main.out main.toc main.fls main.fdb_latexmk)"
+      "Bash(del /q main.aux main.bbl main.blg main.log main.out main.toc main.fls main.fdb_latexmk)",
+      "Bash(git check-ignore:*)",
+      "WebFetch(domain:www.pnas.org)",
+      "WebFetch(domain:academic.oup.com)",
+      "WebFetch(domain:pubmed.ncbi.nlm.nih.gov)",
+      "WebFetch(domain:www.mdpi.com)",
+      "WebFetch(domain:pmc.ncbi.nlm.nih.gov)",
+      "Bash(Rscript:*)",
+      "Bash(grep:*)"
     ]
   }
 }

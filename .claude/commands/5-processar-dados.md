@@ -60,14 +60,19 @@ Localização: `data/external_data/`
 **Script R de referência:** `tese/bulding_dataset_R/source_code/if_variables.R`
 
 ### Dados Auxiliares
-Destino: `data/external_data/auxiliar/`
+Destino: `data/external_data/`
 
 | Arquivo | Descrição | Status |
 |---------|-----------|--------|
-| `populacao_municipios.csv` | População municipal (IBGE) | PENDENTE — copiar |
-| `br_ibge_ipca.anual_2002_2020.csv` | Deflator IPCA anual | PENDENTE — copiar e atualizar até 2023 |
-| `tipologia_2007.xlsx` | Tipologia PNDR 2007 (Decreto nº 6.047/2007) | PENDENTE — copiar |
-| `cod_municipios_IBGE.csv` | Códigos e nomes dos municípios | PENDENTE — copiar |
+| `populacao_municipios.csv` | População municipal (IBGE) | Disponível |
+| `populacao_fc.rds` | População municipal (formato RDS, para scripts R) | Disponível |
+| `br_ibge_ipca.anual_2002_2020.csv` | Deflator IPCA anual | Disponível |
+| `tipologia_2007.xlsx` | Tipologia PNDR 2007 (Decreto nº 6.047/2007) | Disponível |
+| `cod_municipios_IBGE.csv` | Códigos e nomes dos municípios | Disponível |
+| `classif_incent_fiscais.xlsx` | Classificação ICF por superintendência, tipologia e setor | Disponível |
+| `painel_icf.rds` | Painel de incentivos fiscais (formato RDS, para scripts R) | Disponível |
+| `resumo_fd.xlsx` | Resumo FD por tipologia, instrumento e setor (20 obs) | Disponível |
+| `painel_fd_agregado.rds` | Painel de fundos de desenvolvimento agregado (formato RDS) | Disponível |
 
 **Fontes e URLs:** Ver `docs/fontes_dados_pndr.md`
 
@@ -80,6 +85,19 @@ Destino: `data/external_data/auxiliar/`
 | `scripts/process_fd_data.py` | FDNE Excel + FDA PDF | `resumo_fd.xlsx`, `painel_fd_agregado.parquet` | `fd_variables.R` |
 | `scripts/process_fc_data.py` | FC Excel (6 arquivos) | `painel_fc.parquet`, `fc_tabela_resumo.tex` | `fc_variables.R` |
 | `scripts/generate_policy_figures.py` | Painéis processados | Figuras PNG (matplotlib) | `grafico_resumo_*.R` |
+
+### Scripts R de Figuras (executáveis diretamente)
+
+Scripts R mantidos em `data/r_scripts/` que geram figuras diretamente em `figures/`. Dados lidos de `data/external_data/`.
+
+| Script R | Dados de entrada | Saída | Observação |
+|----------|-----------------|-------|------------|
+| `grafico_resumo_icf.R` | `classif_incent_fiscais.xlsx`, `painel_icf.rds`, `populacao_fc.rds`, `tipologia_2007.xlsx` | `figures/icf_superint_setor.png` | Barras empilhadas por superintendência (SUDENE/SUDAM), tipologia PNDR e setor. Fonte serif, face plain. |
+| `grafico_resumo_fd.R` | `resumo_fd.xlsx`, `painel_fd_agregado.rds`, `populacao_fc.rds`, `tipologia_2007.xlsx` | `figures/fd_fundo_setor.png` | Barras empilhadas por fundo (FDNE/FDA/FDCO), tipologia PNDR e setor. Fonte serif, face plain. |
+
+**Execução:** `cd data/r_scripts && Rscript grafico_resumo_icf.R` ou `Rscript grafico_resumo_fd.R`
+
+**Auxiliar:** `data/r_scripts/output_helpers.R` — funções `save_plot()`, `save_data()`, etc. (legado do projeto tese, mantido por compatibilidade).
 | `scripts/generate_policy_tables.py` | Painéis processados | Tabelas LaTeX | `descritive_estats_tipologia.R` |
 
 ## Contexto dos Projetos

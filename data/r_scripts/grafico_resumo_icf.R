@@ -13,12 +13,13 @@ pacman::p_load(tidyverse, ggplot2, RColorBrewer, scales, readxl)
 source("./output_helpers.R")
 
 # Carregar dados necessários
-resumo_icf <- readxl::read_excel("../output/data/classif_incent_fiscais.xlsx")
+data_dir <- "../external_data"
+resumo_icf <- readxl::read_excel(file.path(data_dir, "classif_incent_fiscais.xlsx"))
 
 # Carregar dados para calcular per capita
-painel_icf <- readr::read_rds("../output/data/painel_icf.rds")
-populacao <- readr::read_rds("../output/data/populacao_fc.rds")
-tipologia2007 <- readxl::read_excel("C:/OneDrive/DATABASES/MUNICÍPIOS/tipologia_2007.xlsx", sheet="Table 1") %>%
+painel_icf <- readr::read_rds(file.path(data_dir, "painel_icf.rds"))
+populacao <- readr::read_rds(file.path(data_dir, "populacao_fc.rds"))
+tipologia2007 <- readxl::read_excel(file.path(data_dir, "tipologia_2007.xlsx"), sheet="Table 1") %>%
   select(1,6) %>% rename_with(~c("id_municipio","tipologia2007")) %>%
   mutate(id_municipio = as.numeric(id_municipio))
 
@@ -147,8 +148,10 @@ grafico <-
     y = "Quantidade",
     caption = ""
   ) +
-  theme_minimal() +
+  theme_minimal(base_family = "serif") +
   theme(
+    # Fonte serif (compatível com LaTeX) em todos os elementos
+    text = element_text(family = "serif"),
     # Fontes maiores para todos os elementos de texto
     axis.text.x = element_text(angle = 0, hjust = 0.5, size = 16),
     axis.text.y = element_text(size = 16),
@@ -187,7 +190,10 @@ grafico <-
 # =============================================================================
 
 # Salvar o gráfico com configurações otimizadas para LaTeX
-save_plot(grafico, "icf_superint_setor", width = 14, height = 7, format = "png")
+figures_dir <- "../../figures"
+if (!dir.exists(figures_dir)) dir.create(figures_dir, recursive = TRUE)
+ggsave(file.path(figures_dir, "icf_superint_setor.png"), grafico,
+       width = 14, height = 7, units = "in", dpi = 300)
 
 # Exibir o gráfico
 print(grafico)

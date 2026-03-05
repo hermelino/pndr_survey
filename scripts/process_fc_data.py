@@ -595,7 +595,7 @@ def generate_latex_table(summary: pd.DataFrame) -> str:
         r"	\renewcommand{\arraystretch}{1.2}",
         r"	\begin{tabular}{llcccccc}",
         r"		\toprule",
-        r"		\multirow{2}{*}{Fundo} & \multirow{2}{*}{Tipologia} & \multicolumn{3}{c}{Valor total (R\$ Milhões)} & \multicolumn{3}{c}{Participação média no PIB municipal (\%)} \\",
+        r"		\multirow{2}{*}{Fundo} & \multirow{2}{*}{\shortstack[l]{Tipologia\\PNDR}} & \multicolumn{3}{c}{Valor total (R\$ Milhões)} & \multicolumn{3}{c}{Partic. média no PIB municipal (\%)} \\",
         r"		\cmidrule(lr){3-5} \cmidrule(lr){6-8}",
         r"		& & 2002-2008 & 2009-2015 & 2016-2021 & 2002-2008 & 2009-2015 & 2016-2021 \\",
         r"		\midrule",
