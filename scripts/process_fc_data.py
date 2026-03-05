@@ -466,9 +466,11 @@ def generate_summary_table(panel: pd.DataFrame) -> pd.DataFrame:
 
     rows: list[dict] = []
 
-    for instr in ["FNE", "FCO", "FNO"]:
+    for instr in ["FNE", "FNO", "FCO"]:
         df_instr = panel_tip[panel_tip["INSTR"] == instr]
-        tipologias = sorted(df_instr["tipologia2007"].dropna().unique())
+        desired_order = ["Baixa Renda", "Estagnada", "Dinâmica", "Alta Renda"]
+        available = df_instr["tipologia2007"].dropna().unique()
+        tipologias = [t for t in desired_order if t in available]
 
         for tip in tipologias:
             df_tip = df_instr[df_instr["tipologia2007"] == tip]
@@ -599,7 +601,7 @@ def generate_latex_table(summary: pd.DataFrame) -> str:
         r"		\midrule",
     ]
 
-    for instr in ["FNE", "FCO", "FNO"]:
+    for instr in ["FNE", "FNO", "FCO"]:
         df_instr = summary[summary["INSTR"] == instr]
         n_rows = len(df_instr)
 
@@ -622,7 +624,7 @@ def generate_latex_table(summary: pd.DataFrame) -> str:
                 f"{prefix} & {tip} & {t1} & {t2} & {t3} & {p1} & {p2} & {p3} \\\\"
             )
 
-        if instr != "FNO":
+        if instr != "FCO":
             lines.append(r"		\midrule")
 
     lines.extend([
