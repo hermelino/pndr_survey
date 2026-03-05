@@ -3,10 +3,11 @@
 Índice de Citação para Revisão Sistemática da PNDR.
 
 Para cada artigo (publicado ou não) do ano X:
-  IC(A) = citações recebidas de artigos publicados em X+1..2026
-          / total de artigos publicados em X+1..2026
+  IC(A) = citações recebidas de artigos publicados em X..2026
+          / total de artigos publicados em X..2026
 
 "Publicado" = artigo publicado em periódico (fonte scopus, scielo, capes-periódico).
+Intervalo fechado [X, 2026]: inclui o próprio ano de publicação do estudo.
 """
 
 import json
@@ -365,7 +366,7 @@ def build_cross_citations(studies: dict) -> dict:
 def compute_citation_index(studies: dict, cross_citations: dict):
     """
     Para cada artigo A do ano X:
-    IC(A) = citações de artigos publicados em [X+1, 2026] / total publicados em [X+1, 2026]
+    IC(A) = citações de artigos publicados em [X, 2026] / total publicados em [X, 2026]
     """
     # Build reverse map: cited_key -> list of citing studies
     cited_by = defaultdict(list)
@@ -380,32 +381,34 @@ def compute_citation_index(studies: dict, cross_citations: dict):
     for key, study in studies.items():
         year_x = study["year"]
 
-        # Published articles from X+1 to 2026 in dataset
+        # Published articles from X to 2026 in dataset (excluding self)
         published_after = [
             k for k, s in studies.items()
-            if s["is_published"] and s["year"] > year_x and s["year"] <= 2026
+            if k != key
+            and s["is_published"] and s["year"] >= year_x and s["year"] <= 2026
         ]
         n_published_after = len(published_after)
 
-        # All articles from X+1 to 2026 (for alternative index)
+        # All articles from X to 2026 (for alternative index, excluding self)
         all_after = [
             k for k, s in studies.items()
-            if s["year"] > year_x and s["year"] <= 2026
+            if k != key
+            and s["year"] >= year_x and s["year"] <= 2026
         ]
         n_all_after = len(all_after)
 
-        # Citations received from published articles in X+1..2026
+        # Citations received from published articles in X..2026
         cit_from_published = [
             cb for cb in cited_by.get(key, [])
             if studies[cb["citing_study"]]["is_published"]
-            and studies[cb["citing_study"]]["year"] > year_x
+            and studies[cb["citing_study"]]["year"] >= year_x
             and studies[cb["citing_study"]]["year"] <= 2026
         ]
 
-        # Citations received from ALL articles in X+1..2026
+        # Citations received from ALL articles in X..2026
         cit_from_all = [
             cb for cb in cited_by.get(key, [])
-            if studies[cb["citing_study"]]["year"] > year_x
+            if studies[cb["citing_study"]]["year"] >= year_x
             and studies[cb["citing_study"]]["year"] <= 2026
         ]
 
@@ -478,8 +481,8 @@ def generate_report(studies, results, cross_citations):
 
     # Formula
     lines.append("FÓRMULA:")
-    lines.append("  IC(A) = citações de artigos publicados em [X+1, 2026]")
-    lines.append("          / total de artigos publicados em [X+1, 2026]")
+    lines.append("  IC(A) = citações de artigos publicados em [X, 2026]")
+    lines.append("          / total de artigos publicados em [X, 2026]")
     lines.append("")
     lines.append("  onde X = ano do artigo A")
     lines.append("  'Publicado' = artigo em periódico (scopus, scielo, capes-periódico)")

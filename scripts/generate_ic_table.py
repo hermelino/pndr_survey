@@ -136,7 +136,7 @@ def generate_table(
     lines.extend([
         r"\bottomrule",
         r"\end{tabular}",
-        r"\nota{-- = IC não calculável ($N=0$, sem publicações posteriores).}",
+        r"\nota{-- = IC não calculável ($N=0$, sem outros artigos publicados no intervalo).}",
         r"\fonte{Elaboração própria.}",
         r"\end{table}",
     ])
