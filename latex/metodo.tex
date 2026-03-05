@@ -9,7 +9,7 @@ O objetivo desta revisão sistemática é identificar e sintetizar estudos empí
 
 A busca foi conduzida em cinco bases de dados acadêmicas: Scopus, SciELO, Portal de Periódicos da CAPES, EconPapers/RePEc e anais dos encontros da ANPEC. A consulta a múltiplas fontes justifica-se pela elevada dispersão dos registros: periódicos nacionais de economia tendem a apresentar menor cobertura em bases de dados internacionais. Parte relevante da produção sobre instrumentos da PNDR concentra-se em \textit{working papers}, textos para discussão e apresentações em congressos nacionais, veículos nem sempre indexados por essas bases.
 
-Das cinco fontes, obtiveram-se 146 registros, aos quais se acrescentou 1 documento identificado manualmente fora das bases consultadas. Após a remoção de 28 duplicatas em três etapas automatizadas, 119 registros únicos foram submetidos à análise de elegibilidade. A triagem combinou pré-classificação assistida por ferramentas computacionais com revisão integral dos autores, resultando na inclusão de 35 estudos e exclusão de 84. A Figura~\ref{fig:diagrama_prisma} apresenta o diagrama de fluxo PRISMA 2020 com o detalhamento quantitativo de cada etapa.\footnote{Os scripts de coleta, deduplicação e triagem estão disponíveis no repositório do autor em \url{https://github.com/hermelino/pndr_survey}.}
+Das cinco fontes, obtiveram-se 146 registros, aos quais se acrescentou 1 documento identificado manualmente fora das bases consultadas. Após a remoção de 28 duplicatas em três etapas automatizadas, 119 registros únicos foram submetidos à análise de elegibilidade. A triagem combinou pré-classificação assistida por ferramentas computacionais com revisão integral dos autores, resultando na inclusão de 34 estudos e exclusão de 85. A Figura~\ref{fig:diagrama_prisma} apresenta o diagrama de fluxo PRISMA 2020 com o detalhamento quantitativo de cada etapa.\footnote{Os scripts de coleta, deduplicação e triagem estão disponíveis no repositório do autor em \url{https://github.com/hermelino/pndr_survey}.}
 
 \begin{figure}[htb]
 \centering
@@ -58,14 +58,14 @@ As classificações produzidas pelo modelo foram integralmente revisadas pelos a
 \subsection{Triagem final}
 \label{subsec:metodo-triagem-final}
 
-A triagem final dos 119 registros únicos foi conduzida em duas etapas. Na primeira, as classificações do Estágio~1 do modelo de linguagem serviram como filtro inicial, identificando os registros com maior probabilidade de atender aos critérios de inclusão. Na segunda, todos os registros foram avaliados integralmente pelos autores, com leitura dos textos completos e revisão das classificações automatizadas. A decisão final de inclusão ou exclusão baseou-se exclusivamente no julgamento dos autores, cabendo ao modelo de linguagem papel auxiliar de pré-classificação. Um estudo identificado em versão publicada fora das bases consultadas foi incluído manualmente, com a respectiva versão de congresso reclassificada como duplicata, resultando em 35 estudos aprovados.
+A triagem final dos 119 registros únicos foi conduzida em duas etapas. Na primeira, as classificações do Estágio~1 do modelo de linguagem serviram como filtro inicial, identificando os registros com maior probabilidade de atender aos critérios de inclusão. Na segunda, todos os registros foram avaliados integralmente pelos autores, com leitura dos textos completos e revisão das classificações automatizadas. A decisão final de inclusão ou exclusão baseou-se exclusivamente no julgamento dos autores, cabendo ao modelo de linguagem papel auxiliar de pré-classificação. Um estudo identificado em versão publicada fora das bases consultadas foi incluído manualmente, com a respectiva versão de congresso reclassificada como duplicata, resultando em 34 estudos aprovados.
 
-Dos 119 registros submetidos à triagem, 35 foram incluídos na revisão e 84 excluídos. Os motivos de exclusão distribuem-se em seis categorias: ausência de avaliação explícita de instrumentos da PNDR (n~=~40), ausência de método econométrico (n~=~23), documento sem caráter de estudo científico (n~=~10), versão \textit{working paper} ou apresentação em congresso de artigo já incluído na amostra em sua versão publicada (n~=~8), publicação anterior a 2005 (n~=~2) e variáveis de resultado fora do escopo (n~=~1).
+Dos 119 registros submetidos à triagem, 34 foram incluídos na revisão e 85 excluídos. Os motivos de exclusão distribuem-se em seis categorias: ausência de avaliação explícita de instrumentos da PNDR (n~=~40), ausência de método econométrico (n~=~23), documento sem caráter de estudo científico (n~=~10), versão \textit{working paper} ou apresentação em congresso de artigo já incluído na amostra em sua versão publicada (n~=~8), publicação anterior a 2005 (n~=~2) e variáveis de resultado fora do escopo (n~=~2).
 
 \subsection{Índice de citação cruzada}
 \label{subsec:metodo-indice-citacao}
 
-Tendo em vista que 18 dos 35 estudos incluídos na amostra correspondem a textos para discussão ou apresentações em congressos -- trabalhos que não passaram por processo de avaliação por pares --, torna-se necessário aplicar critério objetivo para aferir sua relevância acadêmica e justificar sua inclusão na revisão. Inspirado em abordagens que utilizam análise de citação como proxy de relevância acadêmica de fontes não publicadas em periódicos \cite{Sibbald2015, Kousha2022}, calculou-se um índice de citação cruzada (IC), que mensura, dentro da própria amostra da revisão, a importância que os artigos publicados em periódicos atribuem a esses trabalhos. O IC é definido como:
+Tendo em vista que 18 dos 34 estudos incluídos na amostra correspondem a textos para discussão ou apresentações em congressos -- trabalhos que não passaram por processo de avaliação por pares --, torna-se necessário aplicar critério objetivo para aferir sua relevância acadêmica e justificar sua inclusão na revisão. Inspirado em abordagens que utilizam análise de citação como proxy de relevância acadêmica de fontes não publicadas em periódicos \cite{Sibbald2015, Kousha2022}, calculou-se um índice de citação cruzada (IC), que mensura, dentro da própria amostra da revisão, a importância que os artigos publicados em periódicos atribuem a esses trabalhos. O IC é definido como:
 
 \begin{equation}
 \label{eq:ic}
@@ -74,20 +74,20 @@ IC_i = \frac{C_i}{N_i}
 
 \noindent onde $C_i$ denota o número de citações recebidas pelo estudo $i$ de artigos publicados em periódicos no intervalo $(t_i,\; 2026]$, $N_i$ é o total de artigos publicados em periódicos nesse mesmo intervalo e $t_i$ corresponde ao ano de publicação do estudo $i$. Para estudos publicados no último ano do intervalo ($t_i = 2026$), o denominador é nulo e o IC é indefinido.
 
-A identificação de citações cruzadas baseou-se em algoritmo de correspondência automática aplicado às listas de referências bibliográficas dos 35 estudos incluídos na revisão. O algoritmo emprega correspondência por sobrenomes dos autores, tolerância de $\pm 2$ anos na data de publicação e similaridade de título por \textit{token sort ratio}. Aplica-se ainda restrição cronológica, de modo que apenas estudos publicados no mesmo ano ou em anos posteriores ao estudo-alvo são considerados como citantes.
+A identificação de citações cruzadas baseou-se em algoritmo de correspondência automática aplicado às listas de referências bibliográficas dos 34 estudos incluídos na revisão. O algoritmo emprega correspondência por sobrenomes dos autores, tolerância de $\pm 2$ anos na data de publicação e similaridade de título por \textit{token sort ratio}. Aplica-se ainda restrição cronológica, de modo que apenas estudos publicados no mesmo ano ou em anos posteriores ao estudo-alvo são considerados como citantes.
 
 \input{tabela_ic}
 
-A Tabela~\ref{tab:ic-resultados} apresenta o índice de citação cruzada para os 35 estudos incluídos na revisão. No conjunto, foram identificadas 104 citações cruzadas. Dos 18 estudos não publicados em periódicos, 10 apresentaram IC positivo, com valores variando de 0,14 a 0,43 -- comparáveis ao maior IC observado entre os artigos publicados, de 0,44 \cite{Oliveira2017}. Esses resultados indicam que os trabalhos não publicados em periódicos exercem influência relevante sobre a literatura da área.
+A Tabela~\ref{tab:ic-resultados} apresenta o índice de citação cruzada para os 34 estudos incluídos na revisão. No conjunto, foram identificadas 98 citações cruzadas. Dos 18 estudos não publicados em periódicos, 10 apresentaram IC positivo, com valores variando de 0,17 a 0,50 -- comparáveis ao maior IC observado entre os artigos publicados, de 0,47 \cite{Silva2009}. Esses resultados indicam que os trabalhos não publicados em periódicos exercem influência relevante sobre a literatura da área.
 
-Os 8 estudos não publicados restantes apresentam IC igual a zero e correspondem a trabalhos recentes (2024--2025), para os quais o intervalo de observação é insuficiente para acumular citações. Esses estudos atendem integralmente aos critérios de elegibilidade definidos na Subseção~\ref{subsec:metodo-criterios}. Diante dessas evidências, optou-se pela manutenção de todos os 18 estudos na amostra. A subseção seguinte descreve as características dos 35 estudos selecionados.
+Os 8 estudos não publicados restantes apresentam IC igual a zero e correspondem a trabalhos recentes (2024--2025), para os quais o intervalo de observação é insuficiente para acumular citações. Esses estudos atendem integralmente aos critérios de elegibilidade definidos na Subseção~\ref{subsec:metodo-criterios}. Diante dessas evidências, optou-se pela manutenção de todos os 18 estudos na amostra. A subseção seguinte descreve as características dos 34 estudos selecionados.
 
 \subsection{Descrição dos estudos obtidos}
 \label{subsec:metodo-descricao-estudos}
 
-A aplicação dos critérios descritos nas subseções anteriores resultou em amostra de 35 estudos empíricos, datados de 2005 a 2026. Destes, 17 são artigos publicados em periódicos nacionais ou internacionais, e os demais 18 são textos para discussão ou trabalhos apresentados em congressos.
+A aplicação dos critérios descritos nas subseções anteriores resultou em amostra de 34 estudos empíricos, datados de 2005 a 2026. Destes, 16 são artigos publicados em periódicos nacionais ou internacionais, e os demais 18 são textos para discussão ou trabalhos apresentados em congressos.
 
-A produção acadêmica sobre o tema distribui-se de forma desigual ao longo do período, como mostra a Tabela~\ref{tab:estudos-ano}. De 2005 a 2015, identificaram-se apenas 7 estudos. No intervalo de 2016 a 2020, a produção elevou-se para 9 trabalhos adicionais, refletindo o amadurecimento da literatura. O crescimento mais expressivo concentrou-se entre 2021 e 2026, com 19 estudos -- mais da metade da amostra --, indicando intensificação recente do interesse acadêmico pela avaliação empírica dos instrumentos da PNDR.
+A produção acadêmica sobre o tema distribui-se de forma desigual ao longo do período, como mostra a Tabela~\ref{tab:estudos-ano}. De 2005 a 2015, identificaram-se apenas 7 estudos. No intervalo de 2016 a 2020, a produção elevou-se para 9 trabalhos adicionais, refletindo o amadurecimento da literatura. O crescimento mais expressivo concentrou-se entre 2021 e 2026, com 18 estudos -- mais da metade da amostra --, indicando intensificação recente do interesse acadêmico pela avaliação empírica dos instrumentos da PNDR.
 
 A Tabela~\ref{tab:instrumentos} apresenta a frequência de menções a cada instrumento da PNDR nos estudos incluídos. Como parte dos trabalhos avalia mais de um instrumento simultaneamente, o total de menções excede o número de estudos. Os Fundos Constitucionais de Financiamento -- FNE, FNO e FCO -- concentram a maior parte das avaliações, seguidos pelos incentivos fiscais administrados pela Sudene e pelos Fundos de Desenvolvimento Regional.
 
@@ -106,7 +106,7 @@ Período & Qtd. artigos \\
 2005--2010 & 2 \\
 2011--2015 & 5 \\
 2016--2020 & 9 \\
-2021--2026 & 19 \\
+2021--2026 & 18 \\
 \bottomrule
 \multicolumn{2}{l}{\footnotesize Fonte: Elaboração própria.} \\
 \end{tabular}
@@ -120,7 +120,7 @@ Período & Qtd. artigos \\
 \toprule
 Unidade Amostral & Qtd. estudos \\
 \midrule
-Município & 21 \\
+Município & 20 \\
 Empresa & 11 \\
 UF & 2 \\
 Área Mínima Comparável & 1 \\
@@ -167,7 +167,7 @@ Instrumento & Qtd. estudos \\
 \midrule
 FNE & 24 \\
 FNO & 8 \\
-FCO & 11 \\
+FCO & 10 \\
 FDNE & 8 \\
 FDA & 1 \\
 FDCO & 1 \\
@@ -195,7 +195,7 @@ Método & Qtd. estudos & MSM \\
 Diferenças em Diferenças Escalonado & 5 & 3 \\
 Propensity Score Matching (PSM) & 4 & 3 \\
 Diferenças em Diferenças (DiD) & 4 & 3 \\
-Mínimos Quadrados Ordinários (MQO) & 3 & 2 \\
+Mínimos Quadrados Ordinários (MQO) & 2 & 2 \\
 Painel de Efeitos Fixos & 3 & 3 \\
 Generalized Propensity Score (GPS) & 3 & 3 \\
 \bottomrule

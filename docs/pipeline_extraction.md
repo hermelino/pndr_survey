@@ -128,7 +128,7 @@ Identificados apos a analise de indice de citacao. Estudos que apareceram como T
 | Eficacia do gasto publico: FNE, FNO e FCO | scielo-2009 (mesma pub., sem DOI) | scopus-2009-silva-resende-neto | 10.1590/s0101-41612009000100004 |
 | Efeitos regionais do FNE (congresso ANPEC 2013) | econpapers-2014-goncalves-soares-linhares (nome alternativo) | econpapers-2014-viana-goncalves-linhares (CEPAL Review) | — |
 
-Total de duplicatas: 9 (fases 1-2, DOI + fuzzy titulo) + 10 (fase 3, PDF identico) + 9 (fase 4, manual TD/WP) = 28 removidas. **118 papers das bases** (mantidos para consistencia com LLM) + **1 inclusao manual** = **119 papers na base**, **35 aprovados** apos triagem.
+Total de duplicatas: 9 (fases 1-2, DOI + fuzzy titulo) + 10 (fase 3, PDF identico) + 9 (fase 4, manual TD/WP) = 28 removidas. **118 papers das bases** (mantidos para consistencia com LLM) + **1 inclusao manual** = **119 papers na base**, **34 aprovados** apos triagem.
 
 Arquivo de auditoria fase 1: `data/1-records/processed/duplicates_removed.csv`
 Arquivo de auditoria fase 3: `data/2-papers/all_papers.xlsx` (aba "Duplicatas")
@@ -364,7 +364,17 @@ Revisao manual adicional apos verificacao de metodos e variaveis de resultado:
 | `anpec-2024-quaglio.pdf` | sem metodo econometrico | Analise espacial descritiva do FNE no Pronaf; nao aplica metodo econometrico |
 | `scopus-2012-abreu-gomes-mello.pdf` | outras variaveis de resultado | Avalia retencao de novilhas no Pantanal via DEA e indice Malmquist; variaveis de resultado fora do escopo da PNDR |
 
-Contagem final (bases): 34 aprovados, 84 rejeitados. Com inclusao manual: **35 aprovados**, 84 rejeitados, **119 total**.
+Contagem apos secao 11: 34 aprovados, 84 rejeitados.
+
+#### 12. Triagem (1 registro: APROVADO → REJEITADO, revisao manual pos-analise)
+
+Revisao manual adicional apos verificacao de escopo:
+
+| Arquivo PDF | Motivo Exclusao | Justificativa |
+|-------------|-----------------|---------------|
+| `scopus-2025-borges-rodrigues.pdf` | fora do escopo | Avalia distribuicao da oferta de credito rural do FCO, nao o efeito do instrumento sobre o crescimento regional |
+
+Contagem final (bases): 33 aprovados, 85 rejeitados. Com inclusao manual: **34 aprovados**, 85 rejeitados, **119 total**.
 
 ## Consolidacao JSON enriquecido
 
@@ -378,7 +388,7 @@ Mescla tres fontes em um unico JSON (`data/2-papers/2-2-papers.json`):
 
 Para campos duplicados, prioridade: registros das bases > all_papers > LLM.
 
-Resultado: 119 papers com campos unificados (35 aprovados — 34 das bases + 1 inclusao manual —, 84 rejeitados), incluindo: metadados bibliograficos, resumo, palavras-chave, classificacao LLM em 3 stages, resultado da triagem e motivo de exclusao.
+Resultado: 119 papers com campos unificados (34 aprovados — 33 das bases + 1 inclusao manual —, 85 rejeitados), incluindo: metadados bibliograficos, resumo, palavras-chave, classificacao LLM em 3 stages, resultado da triagem e motivo de exclusao.
 
 ## Extracao e matching de referencias
 
@@ -459,7 +469,7 @@ Tres grupos de estudos foram identificados como duplicatas verdadeiras: o mesmo 
 
 Script de marcacao: `scripts/mark_td_duplicates.py`
 
-**Resultados:** 35 estudos (17 publicados, 18 nao-publicados), **104 citacoes cruzadas**.
+**Resultados:** 34 estudos (16 publicados, 18 nao-publicados), **98 citacoes cruzadas**.
 
 Saidas:
 - `data/3-ref-bib/citation_index_results.json` — dados completos por estudo
