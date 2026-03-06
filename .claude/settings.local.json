@@ -66,7 +66,13 @@
       "WebFetch(domain:www.mdpi.com)",
       "WebFetch(domain:pmc.ncbi.nlm.nih.gov)",
       "Bash(Rscript:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(powershell -NoProfile -Command:*)",
+      "Bash(tee:*)",
+      "Bash(cut:*)",
+      "Bash(powershell -File -:*)",
+      "Bash(powershell -NoProfile -File -:*)",
+      "Bash(del \"c:\\\\OneDrive\\\\github\\\\pndr_survey\\\\_validate.py\")"
     ]
   }
 }
