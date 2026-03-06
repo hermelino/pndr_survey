@@ -171,38 +171,15 @@ Somente após aprovação explícita do usuário:
 5. **Quebras de linha:** Cada parágrafo deve ser escrito em uma única linha contínua, sem quebras de linha no meio de frases. **LIMITE: parágrafos não devem exceder 5-6 frases ou 150 palavras.** Se o parágrafo ultrapassar esse limite, divida-o em parágrafos menores agrupados por subtema. Quebras de linha só devem ocorrer entre parágrafos (linha em branco) ou em ambientes LaTeX (tabelas, listas, etc.)
 6. **Citações:** Usar `\citeonline{}` para citações integradas ao texto e `\cite{}` para citações entre parênteses — comandos nativos do abntex2cite
 7. **Labels:** Usar `\label{sec:...}`, `\label{tab:...}`, `\label{fig:...}` consistentes
-8. **Tabelas:** Seguir rigorosamente o **padrão C12** para **todas** as tabelas:
-
-   ```latex
-   \begin{table}[htbp]
-       \centering
-       \caption{Título da tabela}
-       \label{tab:identificador}
-       \footnotesize
-       \renewcommand{\arraystretch}{1.2}
-       \begin{tabular}{...}
-           \toprule
-           ... cabeçalho ...
-           \midrule
-           ... dados ...
-           \bottomrule
-           \multicolumn{N}{l}{\footnotesize Nota: texto. Fonte: Elaboração própria.} \\
-       \end{tabular}
-   \end{table}
-   ```
-
-   Regras obrigatórias:
-   - **Posicionamento:** Sempre `[htbp]`. Nunca usar `[h!]` ou `[H]`.
-   - **Ordem dentro do float:** `\centering` → `\caption{}` → `\label{}` → `\footnotesize` → `\renewcommand{\arraystretch}{1.2}` → `\begin{tabular}` → conteúdo → `\bottomrule` → `\multicolumn` (rodapé C12) → `\end{tabular}` → `\end{table}`.
-   - **Linhas:** Usar `booktabs` (`\toprule`, `\midrule`, `\bottomrule`, `\cmidrule`). Nunca usar `\hline` em tabelas (reservado para quadros).
-   - **`\caption{}` e `\label{}`:** Sempre ANTES do conteúdo (requisito abntex2). `\label{}` imediatamente após `\caption{}`.
-   - **Rodapé C12 (obrigatório):** Nota e Fonte em **linha única** via `\multicolumn{N}{l}{\footnotesize Nota: texto. Fonte: texto.} \\` como última linha do `tabular`, APÓS `\bottomrule`. `N` = número de colunas da tabela. Se não houver nota, omitir "Nota:" e usar apenas "Fonte:". Este padrão garante alinhamento à esquerda mesmo com `\centering` ativo.
-   - **NUNCA** usar `\nota{}` + `\fonte{}` como comandos separados após `\end{tabular}`. Esses comandos abntex2 criam parágrafos centralizados, violando o alinhamento à esquerda.
-   - **Tamanho de fonte:** Usar `\footnotesize` antes de `\begin{tabular}` para tabelas de dados. Para tabelas pequenas, omitir.
-   - **Espaçamento:** Sempre incluir `\renewcommand{\arraystretch}{1.2}` para legibilidade.
-
-   Para **Quadros** (`longtable` com bordas), seguir o padrão dos arquivos `survey_artigos_*.tex` com `\hline`, `\endfirsthead`, `\endhead`, `\endfoot`, `\endlastfoot`. O rodapé no `\endlastfoot` deve seguir o mesmo padrão C12 com `\multicolumn`.
-9. **Figuras:** Referenciar com `\graphicspath{{../figures/}}`
+8. **Tabelas:** Seguir rigorosamente o **padrão C12** definido em `/revisor-latex` (verificações C5 e C12). Resumo das regras essenciais:
+   - Posicionamento: sempre `[htbp]`
+   - Ordem: `\centering` → `\caption{}` → `\label{}` → `\footnotesize` → `\renewcommand{\arraystretch}{1.2}` → `\begin{tabular}` → conteúdo → `\bottomrule` → rodapé C12 → `\end{tabular}` → `\end{table}`
+   - Linhas: `booktabs` (`\toprule`, `\midrule`, `\bottomrule`), nunca `\hline`
+   - Rodapé C12: `\multicolumn{N}{l}{\footnotesize Fonte: texto.} \\` após `\bottomrule`
+   - **NUNCA** usar `\nota{}` + `\fonte{}` como comandos separados em tabelas
+   - Para **Quadros** (`longtable`), rodapé C12 via `\endlastfoot`
+   - Para tabelas side-by-side com `minipage`, `[H]` é aceito (ver exceções em `/revisor-latex` C5)
+9. **Figuras:** Referenciar com `\graphicspath{{../figures/}}`. Rodapé de figuras usa `\fonte{}` (redefinido em `main.tex` com alinhamento à esquerda), não o padrão C12
 10. **Notas de rodapé:** Usar `\footnote{}` com parcimônia
 11. **Consistência numérica:** Ao referenciar contagens que apareçam em diagramas, tabelas ou figuras incluídos via `\input{}`, verificar que os valores no texto narrativo coincidam **exatamente** com os valores no arquivo incluído. Após editar qualquer contagem, executar busca textual nos demais arquivos `.tex` da seção para garantir consistência.
 12. **Proporção de subseções:** Subseções com mais de 3 tabelas ou quadros devem ser subdivididas em subseções menores, cada uma com escopo delimitado.

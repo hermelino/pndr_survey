@@ -127,13 +127,16 @@ A avaliação organiza-se em **seis dimensões**, cada uma com critérios espec�
 
 ### D3. Estilo e registro acadêmico
 
+Avaliar conformidade com as **regras linguísticas definidas na seção "Cuidados linguísticos" de `/escrever-artigo`** (crase, concordância, regência, colocação pronominal, paralelismo, repetição, extensão de parágrafos, dados com fonte, etc.). Além disso, verificar:
+
 - **Impessoalidade:** O texto mantém tom impessoal adequado a artigo científico? (voz passiva, terceira pessoa, construções impessoais)
 - **Objetividade:** As afirmações são precisas e evitam juízos de valor não fundamentados?
 - **Concisão:** O texto é enxuto ou há circunlóquios, redundâncias e construções desnecessariamente longas?
 - **Precisão terminológica:** Os termos técnicos de economia e econometria são empregados corretamente e com consistência?
 - **Registro formal:** O texto evita coloquialismos, gerundismo, pleonasmos e informalidades?
-- **Variedade lexical:** Há repetição excessiva de palavras ou construções?
+- **Variedade lexical:** Há repetição excessiva de palavras ou construções? (Regra quantitativa: termos-chave não devem aparecer >3x por parágrafo ou >5x por subseção — conforme `/escrever-artigo`)
 - **Fluidez:** As frases são bem construídas, com ritmo adequado, evitando períodos excessivamente longos ou fragmentados?
+- **Extensão de parágrafos:** Nenhum parágrafo excede 150 palavras ou 5-6 frases (conforme `/escrever-artigo`)?
 
 ### D4. Conformidade com convenções de artigo científico em economia
 
@@ -369,9 +372,11 @@ Este aspecto deve ser avaliado transversalmente nas dimensões D1 (coerência ar
 
 ### Vícios comuns a evitar (e reportar se encontrados)
 
-- Parágrafos que iniciam com citação (o argumento deve preceder a evidência)
+Verificar tanto os vícios listados aqui quanto as regras de `/escrever-artigo` (seção "Cuidados linguísticos"):
+
+- Parágrafos que iniciam com citação — conforme regra de `/escrever-artigo`: "Parágrafos nunca devem iniciar com `\citeonline{}` ou `\cite{}`"
 - Excesso de citações sem síntese autoral
-- Seções que "listam" estudos sem integrá-los em argumento
+- Seções que "listam" estudos sem integrá-los em argumento — conforme regra de `/escrever-artigo`: "Organização de múltiplos estudos"
 - Uso de "diversos autores" sem especificar quais
 - Conclusões que apenas repetem a introdução
 - Método descrito de forma insuficiente para replicação
@@ -379,6 +384,7 @@ Este aspecto deve ser avaliado transversalmente nas dimensões D1 (coerência ar
 - Afirmações categóricas sem evidência ("a literatura mostra que...")
 - Transições abruptas entre temas sem conectivos lógicos
 - Parágrafo-frase (parágrafos com apenas uma frase)
+- Dados quantitativos sem fonte — conforme regra de `/escrever-artigo`: "Valores em R\$, percentuais e contagens devem sempre ter fonte indicada"
 
 ### Calibração do parecer
 

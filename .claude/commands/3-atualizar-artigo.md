@@ -55,79 +55,28 @@ Os dados do pipeline são a fonte de verdade. Em caso de conflito entre o artigo
 
 Tabelas compiladas a partir dos estudos aprovados. Fonte: `2-2-papers.json` (campos aninhados em `s1`, `s2`, `s3`).
 
-**IMPORTANTE:** Os campos de extração LLM estão em dicionários aninhados, não em chaves de nível superior:
-- `p['s1']['instrumentos_pndr']` — instrumentos PNDR
-- `p['s1']['tipo_trabalho']` — tipo de publicação (artigo publicado, texto p/ discussão, apresentação em congresso)
-- `p['s1']['autores']` — autores (string com nomes)
-- `p['s2']['metodo_econometrico']` — método econométrico principal
-- `p['s2']['unidade_espacial']` — unidade amostral (município, empresa, UF, etc.)
-- `p['autores']` — autores no nível superior (formato `Sobrenome, Iniciais; ...`)
-- `p['ano']` — ano no nível superior
-
-| Tabela | Label LaTeX | Dado | Como calcular |
-|--------|-------------|------|---------------|
-| Estudos por período | `tab:estudos-ano` | Contagem por faixa de ano | Agrupar `p['ano']` dos aprovados em 2005–2010, 2011–2015, 2016–2020, 2021–2025 |
-| Menções por instrumento | `tab:instrumentos` | Frequência de cada instrumento | Parsear `p['s1']['instrumentos_pndr']` (separar por vírgula/ponto-e-vírgula), normalizar para maiúsculas, contar. Mapear variantes: `IF Sudene` / `incentivo fiscal Sudene` → `IF -- Sudene`; `FDA` → `FDA`; etc. |
-| Top-10 autores | `tab:autores-todos` | Autorias e coautorias | Parsear `p['autores']` (formato `Sobrenome, I.; ...`), separar por `;`, normalizar nomes, contar frequência global |
-| Unidade amostral | `tab:unidade-amostral` | Unidade de análise | Extrair `p['s2']['unidade_espacial']`, normalizar categorias: `município` / `municipal` → `Município`; `empresa` / `firma` → `Empresa`; `UF` / `estado` → `UF`; etc. |
-| Métodos econométricos | `tab:metodos` | Métodos mais frequentes | Extrair `p['s2']['metodo_econometrico']`, agrupar variantes similares (ex: `DiD` / `Diferenças em Diferenças`), contar top-6 |
+| Tabela | Label LaTeX | Script que gera |
+|--------|-------------|----------------|
+| Estudos por período | `tab:estudos-ano` | `scripts/generate_latex_tables.py` |
+| Menções por instrumento | `tab:instrumentos` | `scripts/generate_latex_tables.py` |
+| Top-10 autores | `tab:autores-todos` | `scripts/generate_latex_tables.py` |
+| Unidade amostral | `tab:unidade-amostral` | `scripts/generate_latex_tables.py` |
+| Métodos econométricos | `tab:metodos` | `scripts/generate_latex_tables.py` |
+| Tabela IC | `tab:ic` | `scripts/generate_ic_table.py` |
 
 **Procedimento de recontagem:**
 
-```python
-import json
-from collections import Counter
+Executar o script `generate_latex_tables.py` para obter as contagens atuais de cada tabela. A lógica de normalização (instrumentos, autores, unidades amostrais, métodos) está centralizada nesse script, que é a fonte canônica.
 
-with open('data/2-papers/2-2-papers.json', encoding='utf-8') as f:
-    data = json.load(f)
-
-aprovados = [p for p in data if p.get('triagem') == 'APROVADO']
-
-# --- tab:estudos-ano ---
-anos = Counter(int(p['ano']) for p in aprovados)
-for faixa, (ini, fim) in {'2005-2010': (2005,2010), '2011-2015': (2011,2015),
-                           '2016-2020': (2016,2020), '2021-2025': (2021,2025)}.items():
-    print(f'{faixa}: {sum(c for a,c in anos.items() if ini<=a<=fim)}')
-
-# --- tab:instrumentos ---
-instrumentos = Counter()
-for p in aprovados:
-    raw = p.get('s1', {}).get('instrumentos_pndr', '')
-    if isinstance(raw, str):
-        for part in raw.replace(';', ',').split(','):
-            part = part.strip().upper()
-            if part:
-                instrumentos[part] += 1
-for i, c in instrumentos.most_common():
-    print(f'{i}: {c}')
-
-# --- tab:autores-todos ---
-autores = Counter()
-for p in aprovados:
-    raw = p.get('autores', '')
-    for a in raw.split(';'):
-        nome = a.strip()
-        if nome:
-            autores[nome] += 1
-for a, c in autores.most_common(10):
-    print(f'{a}: {c}')
-
-# --- tab:unidade-amostral ---
-unidades = Counter()
-for p in aprovados:
-    raw = p.get('s2', {}).get('unidade_espacial', '')
-    unidades[raw] += 1
-for u, c in unidades.most_common():
-    print(f'{u}: {c}')
-
-# --- tab:metodos ---
-metodos = Counter()
-for p in aprovados:
-    raw = p.get('s2', {}).get('metodo_econometrico', '')
-    metodos[raw] += 1
-for m, c in metodos.most_common(10):
-    print(f'{m}: {c}')
+```bash
+cd scripts && python generate_latex_tables.py
 ```
+
+Comparar a saída com os valores presentes nas tabelas do artigo LaTeX. As funções de normalização relevantes no script são:
+- `normalizar_instrumento()` — mapeia variantes de instrumentos PNDR
+- `normalizar_autor()` / `normalizar_autor_ris()` — unifica variantes de nomes de autores
+- `normalizar_unidade_amostral()` — padroniza unidades de análise
+- `normalizar_metodo()` — agrupa variantes de métodos econométricos
 
 ### 4. Consistência interna do artigo
 
@@ -204,7 +153,7 @@ Distribuição temporal:
   2020-2025:  XX
 ```
 
-3. Executar o script Python da seção "3. Tabelas derivadas" para extrair os valores atuais das tabelas derivadas. Montar tabela de referência:
+3. Executar `python scripts/generate_latex_tables.py` para extrair os valores atuais das tabelas derivadas. Montar tabela de referência:
 
 ```
 TABELAS DERIVADAS (38 aprovados)

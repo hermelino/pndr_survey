@@ -122,19 +122,20 @@ Verificações:
 - [ ] `\label{}` está imediatamente após `\caption{}`
 - [ ] Tabelas de dados incluem `\footnotesize` e `\renewcommand{\arraystretch}{1.2}`
 - [ ] Tabelas usam `booktabs` (`\toprule`, `\midrule`, `\bottomrule`), não `\hline`
-- [ ] **Nenhuma** tabela usa `\nota{}` ou `\fonte{}` como comandos separados após `\end{tabular}`
+- [ ] **Nenhuma** tabela usa `\nota{}` ou `\fonte{}` como comandos separados após `\end{tabular}` (exceção: figuras podem usar `\fonte{}` — ver C12)
 
 Erros a reportar:
 - `\nota{}` e/ou `\fonte{}` usados como comandos separados → `[REPORT]` com instrução de migrar para `\multicolumn` C12
 - `\footnotesize{Fonte: ...}` dentro do `tabular` sem seguir o padrão C12 → `[REPORT]`
 - Ausência de rodapé (sem `\multicolumn` com Fonte) → `[REPORT]`
-- `[h!]` ou `[H]` → `[AUTO]` substituir por `[htbp]`
+- `[h!]` ou `[H]` → `[AUTO]` substituir por `[htbp]` (exceto em tabelas side-by-side com `minipage`)
 
 **Exceções (NÃO corrigir):**
 - Quadros (`longtable`) seguem padrão próprio com `\endlastfoot` contendo o rodapé C12 via `\multicolumn`
+- Tabelas side-by-side com `\begin{minipage}` podem usar `[H]` para evitar flutuação que quebraria o alinhamento entre painéis. Nesse caso, a ordem dos elementos também pode diferir: `\footnotesize` e `\renewcommand{\arraystretch}` ficam no nível do `table` (fora das minipages), enquanto `\caption` e `\label` ficam dentro de cada minipage.
 
 **Correção automática:**
-- `[h!]` → `[htbp]` (seguro)
+- `[h!]` → `[htbp]` (seguro, exceto em tabelas com `minipage`)
 
 ### C6. Chaves `{}` balanceadas
 
@@ -224,7 +225,9 @@ Características:
 - Mesmo padrão para quadros `longtable` (via `\endlastfoot`)
 - Se não houver nota, usar apenas `{\footnotesize Fonte: texto.}`
 
-**PROIBIDO:** Usar `\nota{}` e/ou `\fonte{}` como comandos separados após `\end{tabular}`. Esses comandos abntex2 criam parágrafos centralizados, violando o alinhamento à esquerda.
+**PROIBIDO em tabelas:** Usar `\nota{}` e/ou `\fonte{}` como comandos separados após `\end{tabular}`. Esses comandos abntex2 criam parágrafos centralizados, violando o alinhamento à esquerda.
+
+**Figuras:** Ambientes `figure` podem usar `\fonte{}` como comando separado após `\includegraphics`, pois `main.tex` redefine `\fonte` com `flushleft` para alinhamento à esquerda. O padrão C12 (`\multicolumn`) não se aplica a figuras.
 
 Erros a verificar:
 - [ ] `\nota{}` ou `\fonte{}` usados como comandos separados → `[REPORT]` migrar para C12
