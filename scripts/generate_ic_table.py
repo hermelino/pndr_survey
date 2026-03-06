@@ -39,7 +39,7 @@ JOURNAL_ABBREVIATIONS: dict[str, str] = {
 
 # Mapeamento manual para periódicos sem ISSN no .bib ou sem match no Qualis
 QUALIS_MANUAL: dict[str, str] = {
-    "Revista Cadernos de Finanças Públicas": "",  # sem registro no Qualis
+    "Revista Cadernos de Finanças Públicas": "B2",  # ISSN 1806-8944
 }
 
 
