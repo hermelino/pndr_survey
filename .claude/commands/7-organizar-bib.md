@@ -207,6 +207,13 @@ Quando autores **diferentes** compartilham o mesmo sobrenome e ano, desambiguar 
 
 O campo `author` no BibTeX **nunca** deve conter "et al." — todos os autores devem ser listados. O "et al." e gerado automaticamente pelo estilo de citacao (`abntex2cite`).
 
+### 8. Virgula no ultimo campo
+
+O ultimo campo de cada entrada BibTeX **nao** deve ter virgula apos o valor. O script remove automaticamente virgulas trailing antes do `}` de fechamento da entrada.
+
+**Antes:** `url = {https://example.com},` (seguido de `}`)
+**Depois:** `url = {https://example.com}` (sem virgula)
+
 ## Restricoes
 
 1. **NUNCA** alterar conteudo dos campos BibTeX (author, year, journal, etc.) -- exceto `title`, `booktitle` e `shorttitle` com `--fix-titles`

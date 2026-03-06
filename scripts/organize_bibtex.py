@@ -250,7 +250,8 @@ def _normalize_surname(surname: str) -> str:
     while words and unidecode(_LATEX_ACCENT_RE.sub("", words[-1])).lower().rstrip(".") in _SUFFIXES:
         words = words[:-1]
     surname = " ".join(words) if words else surname  # fallback se tudo removido
-    normalized = unidecode(surname)
+    # Limpar comandos de acento LaTeX ANTES de unidecode (ex: {\c c} -> c)
+    normalized = unidecode(_LATEX_ACCENT_RE.sub("", surname))
     # Remover hifens, espacos — manter apenas letras
     normalized = re.sub(r"[^a-zA-Z]", "", normalized)
     if not normalized:
@@ -315,6 +316,7 @@ def _generate_short_key(
     used_keys: set[str],
     preserved: set[str],
     effective_base: str | None = None,
+    force_suffix: bool = False,
 ) -> str:
     """Gera chave curta para uma entrada.
 
@@ -323,6 +325,7 @@ def _generate_short_key(
 
     Args:
         effective_base: base pre-computada (inclui inicial do prenome se necessario).
+        force_suffix: se True, pular base simples e ir direto para sufixo a/b/c.
     """
     author_field = entry.fields.get("author", "")
     year = entry.fields.get("year", "0000")
@@ -337,27 +340,30 @@ def _generate_short_key(
 
     base = effective_base or (_normalize_surname(surname1) + year)
 
-    # Se chave atual e exatamente a base (ou base+sufixo) e nao conflita, preservar
-    if entry.key == base and base not in used_keys:
-        return base
-    if _SHORT_KEY_RE.match(entry.key) and entry.key.startswith(base):
-        if entry.key not in used_keys:
-            return entry.key
+    if not force_suffix:
+        # Se chave atual e exatamente a base (ou base+sufixo) e nao conflita, preservar
+        if entry.key == base and base not in used_keys:
+            return base
+        if _SHORT_KEY_RE.match(entry.key) and entry.key.startswith(base):
+            if entry.key not in used_keys:
+                return entry.key
 
-    # Tentar base simples
-    if base not in used_keys and base not in preserved:
-        return base
+        # Tentar base simples
+        if base not in used_keys and base not in preserved:
+            return base
 
-    # Tentar com segundo autor (inserir sobrenome2 antes do ano)
-    surname2 = _extract_surname(author_field, 1)
-    if surname2:
-        prefix = base[: -len(year)] if base.endswith(year) else base
-        base2 = prefix + _normalize_surname(surname2) + year
-        if base2 not in used_keys and base2 not in preserved:
-            return base2
+    # Tentar com segundo autor (apenas se effective_base nao foi fornecida,
+    # pois effective_base ja pode incluir o 2o autor)
+    if not effective_base:
+        surname2 = _extract_surname(author_field, 1)
+        if surname2:
+            prefix = base[: -len(year)] if base.endswith(year) else base
+            base2 = prefix + _normalize_surname(surname2) + year
+            if base2 not in used_keys and base2 not in preserved:
+                return base2
 
     # Sufixo alfabetico
-    for ch in "bcdefghijklmnopqrstuvwxyz":
+    for ch in "abcdefghijklmnopqrstuvwxyz":
         candidate = f"{base}{ch}"
         if candidate not in used_keys and candidate not in preserved:
             return candidate
@@ -368,10 +374,12 @@ def _generate_short_key(
 def build_key_mapping(entries: list[BibEntry]) -> dict[str, str]:
     """Constroi mapeamento old_key -> new_key para todas as entradas.
 
-    Processa em cinco fases:
-    1. Computa metadados (base, initial, author_id) para cada entrada.
-    2. Detecta conflitos entre autores diferentes no mesmo sobrenome+ano.
-    3. Calcula base efetiva (com inicial do prenome se necessario).
+    Processa em seis fases:
+    1. Computa metadados (base, initial, author_id, surname2) para cada entrada.
+    2a. Detecta conflitos entre autores diferentes no mesmo sobrenome+ano.
+    2b. Detecta mesmo autor com multiplas entradas no mesmo sobrenome+ano
+        (regra: TODOS recebem sobrenome do 2o autor na chave).
+    3. Calcula base efetiva (com inicial do prenome ou 2o autor se necessario).
     4. Identifica chaves ja no formato curto correto (preserved).
     5. Gera novas chaves para as restantes.
     """
@@ -390,14 +398,18 @@ def build_key_mapping(entries: list[BibEntry]) -> dict[str, str]:
             base = norm_surname + year
             initial = _extract_given_initial(author_field, 0)
             author_id = _normalize_author_id(author_field, 0)
+            surname2 = _extract_surname(author_field, 1)
+            norm_surname2 = _normalize_surname(surname2) if surname2 else ""
         else:
             norm_surname = ""
             base = None
             initial = ""
             author_id = ""
+            norm_surname2 = ""
         entry_meta.append({
             "base": base,
             "norm_surname": norm_surname,
+            "norm_surname2": norm_surname2,
             "year": year,
             "initial": initial,
             "author_id": author_id,
@@ -413,13 +425,42 @@ def build_key_mapping(entries: list[BibEntry]) -> dict[str, str]:
         base for base, aids in base_to_author_ids.items() if len(aids) > 1
     }
 
+    # --- Fase 2b: mesmo autor com multiplas entradas no mesmo base ---
+    # Conta quantas entradas compartilham a mesma base (sobrenome+ano)
+    base_entry_count: dict[str, int] = defaultdict(int)
+    for meta in entry_meta:
+        if meta["base"]:
+            base_entry_count[meta["base"]] += 1
+
+    needs_surname2: set[str] = {
+        base for base, count in base_entry_count.items()
+        if count > 1 and base not in needs_initial
+    }
+
     # --- Fase 3: base efetiva ---
     for meta in entry_meta:
         base = meta["base"]
         if base and base in needs_initial:
+            # Autores diferentes com mesmo sobrenome+ano → inicial do prenome
             meta["effective_base"] = meta["norm_surname"] + meta["initial"] + meta["year"]
+        elif base and base in needs_surname2 and meta["norm_surname2"]:
+            # Mesmo autor com multiplas entradas no mesmo ano → 2o autor
+            meta["effective_base"] = meta["norm_surname"] + meta["norm_surname2"] + meta["year"]
         else:
             meta["effective_base"] = base
+
+    # --- Fase 3b: detectar effective_bases compartilhadas ---
+    # Quando 2+ entradas compartilham o mesmo effective_base, TODOS devem ter
+    # sufixo (a, b, c) — nunca um sem sufixo e outro com sufixo (regra 4).
+    eff_base_count: dict[str, int] = defaultdict(int)
+    for meta in entry_meta:
+        eb = meta.get("effective_base")
+        if eb:
+            eff_base_count[eb] += 1
+
+    needs_suffix: set[str] = {
+        eb for eb, count in eff_base_count.items() if count > 1
+    }
 
     # --- Fase 4: preserved keys ---
     preserved: set[str] = set()
@@ -433,7 +474,14 @@ def build_key_mapping(entries: list[BibEntry]) -> dict[str, str]:
             _SHORT_KEY_RE.match(entry.key)
             and entry.key.startswith(effective_base)
         ):
-            preserved.add(entry.key)
+            # Se a base requer sufixo, só preservar chaves que JA tem sufixo
+            if effective_base in needs_suffix:
+                suffix_part = entry.key[len(effective_base):]
+                if suffix_part and len(suffix_part) == 1 and suffix_part.islower():
+                    preserved.add(entry.key)
+                # Chave sem sufixo em grupo que requer sufixo → nao preservar
+            else:
+                preserved.add(entry.key)
 
     log.info(
         "Keys already in short form: %d, to rename: %d",
@@ -449,7 +497,8 @@ def build_key_mapping(entries: list[BibEntry]) -> dict[str, str]:
         if entry.key in preserved:
             continue
         effective_base = entry_meta[i].get("effective_base")
-        new_key = _generate_short_key(entry, used_keys, preserved, effective_base)
+        suffix = effective_base in needs_suffix if effective_base else False
+        new_key = _generate_short_key(entry, used_keys, preserved, effective_base, suffix)
         used_keys.add(new_key)
         if new_key != entry.key:
             mapping[entry.key] = new_key
@@ -478,7 +527,9 @@ def _rebuild_bib(entries: list[BibEntry], mapping: dict[str, str]) -> str:
     # Reconstruir texto
     lines: list[str] = []
     for entry in updated:
-        lines.append(f"@{entry.entry_type}{{{entry.key},{entry.body}}}")
+        # Remover virgula trailing antes do } de fechamento da entrada
+        body = re.sub(r",\s*$", "\n", entry.body.rstrip())
+        lines.append(f"@{entry.entry_type}{{{entry.key},{body}}}")
         lines.append("")
     return "\n".join(lines)
 
