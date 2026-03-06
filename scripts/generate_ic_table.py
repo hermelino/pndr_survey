@@ -141,7 +141,8 @@ def generate_table(
     max_rows = max(len(pub_rows), len(unpub_rows))
 
     lines = [
-        r"\begin{landscape}",
+        r"\afterpage{\clearpage%",
+        r"\begin{landscape}%",
         r"\begin{table}[htbp]",
         r"\centering",
         r"\caption{Resultados do Índice de Citação Cruzada (IC)}",
@@ -176,7 +177,7 @@ def generate_table(
         r" calculável ($N=0$). Fonte: Elaborada pelos autores.} \\",
         r"\end{tabular}",
         r"\end{table}",
-        r"\end{landscape}",
+        r"\end{landscape}}",
     ])
 
     if missing_keys:
