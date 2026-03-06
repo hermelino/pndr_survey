@@ -72,7 +72,9 @@
       "Bash(cut:*)",
       "Bash(powershell -File -:*)",
       "Bash(powershell -NoProfile -File -:*)",
-      "Bash(del \"c:\\\\OneDrive\\\\github\\\\pndr_survey\\\\_validate.py\")"
+      "Bash(del \"c:\\\\OneDrive\\\\github\\\\pndr_survey\\\\_validate.py\")",
+      "Bash(del \"c:\\\\OneDrive\\\\github\\\\pndr_survey\\\\latex\\\\_validate_citations.py\")",
+      "Bash(del:*)"
     ]
   }
 }

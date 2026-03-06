@@ -222,6 +222,8 @@ O ultimo campo de cada entrada BibTeX **nao** deve ter virgula apos o valor. O s
 4. **SEMPRE** preservar chaves que ja estao no formato curto correto
 5. **SEMPRE** verificar citacoes orfas apos execucao
 6. Entradas sem campo `author` sao preservadas com chave original (warning)
+7. **NUNCA** incluir marcacoes markdown (linhas iniciadas por `##`) na saida do relatorio ou no conteudo de arquivos `.bib`/`.tex`
+8. Quando uma chave contiver sufixo alfabetico (ex: `Silva2020a`) mas o par autor+ano for unico (nao ha outro `Silva2020`), **remover o sufixo** (resultado: `Silva2020`). Sufixos so existem para desambiguacao — sem conflito, nao ha justificativa para mante-los
 
 ## Uso de `$ARGUMENTS`
 
