@@ -565,7 +565,10 @@ def _update_tex_files(
             content = new_content
         if count > 0:
             tex_path.write_text(content, encoding="utf-8")
-            rel = tex_path.relative_to(BASE_DIR)
+            try:
+                rel = tex_path.relative_to(BASE_DIR)
+            except ValueError:
+                rel = tex_path.relative_to(tex_dir.parent)
             results[str(rel)] = count
             log.info("Updated %d citations in %s", count, rel)
     return results
@@ -768,7 +771,15 @@ def main() -> None:
         default=BIB_PATH,
         help="Path to references.bib.",
     )
+    parser.add_argument(
+        "--tex-dir",
+        type=Path,
+        default=None,
+        help="Directory containing .tex files (default: sibling of --bib).",
+    )
     args = parser.parse_args()
+    if args.tex_dir is None:
+        args.tex_dir = args.bib.parent
 
     logging.basicConfig(
         level=logging.INFO,
@@ -802,7 +813,7 @@ def main() -> None:
     # Detectar referencias nao citadas (usando chaves novas)
     archived_keys: list[str] | None = None
     if args.archive:
-        cited_keys = _collect_cited_keys(TEX_DIR)
+        cited_keys = _collect_cited_keys(args.tex_dir)
         log.info("Found %d unique citation keys in .tex files", len(cited_keys))
         # Mapear chaves citadas: se o .tex ainda usa chave antiga, considerar
         all_cited = set(cited_keys)
@@ -821,11 +832,11 @@ def main() -> None:
         return
 
     # Atualizar .tex primeiro (antes de renomear .bib)
-    tex_updates = _update_tex_files(TEX_DIR, mapping)
+    tex_updates = _update_tex_files(args.tex_dir, mapping)
 
     if args.archive and archived_keys is not None:
         # Re-coletar citacoes apos atualizacao dos .tex
-        cited_keys = _collect_cited_keys(TEX_DIR)
+        cited_keys = _collect_cited_keys(args.tex_dir)
         used, archived = _split_used_archived(renamed_entries, cited_keys)
         archived_keys = [e.key for e in archived]
 
