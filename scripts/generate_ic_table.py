@@ -14,10 +14,14 @@ import re
 import sys
 from pathlib import Path
 
+import pandas as pd
+from unidecode import unidecode
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 IC_PATH = BASE_DIR / "data" / "3-ref-bib" / "citation_index_results.json"
 KEY_MAP_PATH = BASE_DIR / "latex" / "bibtex_key_map.json"
 BIB_PATH = BASE_DIR / "latex" / "references.bib"
+QUALIS_PATH = BASE_DIR / "data" / "external_data" / "qualis_capes_economia_2021_2024.xlsx"
 OUTPUT_PATH = BASE_DIR / "latex" / "tabelas" / "tabela_ic.tex"
 
 # Correções de nomes de periódicos (bib → exibição)
@@ -33,11 +37,109 @@ JOURNAL_ABBREVIATIONS: dict[str, str] = {
     "Revista Brasileira de Gestao e Desenvolvimento Regional": "Rev. Bras. Gest. Desenv. Reg.",
 }
 
+# Mapeamento manual para periódicos sem ISSN no .bib ou sem match no Qualis
+QUALIS_MANUAL: dict[str, str] = {
+    "Revista Cadernos de Finanças Públicas": "",  # sem registro no Qualis
+}
+
 
 def load_json(path: Path) -> list | dict:
     """Carrega arquivo JSON."""
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
+
+
+def load_qualis(path: Path) -> dict[str, str]:
+    """Carrega Qualis CAPES e retorna dicts para lookup por ISSN e título."""
+    df = pd.read_excel(path, sheet_name="RelatorioQualis")
+    issn_col, title_col, estrato_col = df.columns[0], df.columns[1], df.columns[2]
+
+    by_issn: dict[str, str] = {}
+    by_title: dict[str, str] = {}
+
+    for _, row in df.iterrows():
+        issn = str(row[issn_col]).strip()
+        title = str(row[title_col]).strip()
+        estrato = str(row[estrato_col]).strip()
+        if issn and issn != "nan":
+            by_issn[issn] = estrato
+        if title:
+            by_title[unidecode(title).upper()] = estrato
+
+    return by_issn, by_title
+
+
+def parse_bib_issns(bib_path: Path) -> dict[str, list[str]]:
+    """Extrai ISSNs do .bib indexados por chave BibTeX."""
+    issns: dict[str, list[str]] = {}
+    current_key: str | None = None
+
+    with open(bib_path, "r", encoding="utf-8") as f:
+        for line in f:
+            stripped = line.strip()
+            if stripped.startswith("@") and "{" in stripped:
+                current_key = stripped.split("{", 1)[1].rstrip(",").strip()
+            elif current_key:
+                match = re.match(
+                    r"issn\s*=\s*\{(.+)\}", stripped, re.IGNORECASE
+                )
+                if match:
+                    raw = match.group(1)
+                    issns[current_key] = [
+                        s.strip() for s in re.split(r"[,;]", raw) if s.strip()
+                    ]
+
+    return issns
+
+
+def strip_latex_accents(text: str) -> str:
+    """Remove comandos LaTeX de acentuação, convertendo para caractere base."""
+    # {\^o} → o, {\'a} → a, {\~n} → n, etc.
+    text = re.sub(r"\{\\['\^`~\"cv]\{?(\w)\}?\}", r"\1", text)
+    text = re.sub(r"\\['\^`~\"cv]\{(\w)\}", r"\1", text)
+    text = re.sub(r"\\['\^`~\"cv](\w)", r"\1", text)
+    # Remove chaves restantes
+    text = text.replace("{", "").replace("}", "")
+    return text
+
+
+def lookup_qualis(
+    journal_name: str,
+    bib_key: str,
+    bib_issns: dict[str, list[str]],
+    qualis_by_issn: dict[str, str],
+    qualis_by_title: dict[str, str],
+) -> str:
+    """Busca estrato Qualis de um periódico: ISSN primeiro, título depois."""
+    # Override manual
+    if journal_name in QUALIS_MANUAL:
+        return QUALIS_MANUAL[journal_name]
+
+    # Busca por ISSN
+    if bib_key in bib_issns:
+        for issn in bib_issns[bib_key]:
+            if issn in qualis_by_issn:
+                return qualis_by_issn[issn]
+
+    # Normalizar removendo acentos LaTeX e diacríticos
+    clean = strip_latex_accents(journal_name)
+    norm = unidecode(clean).upper()
+
+    # Busca por título normalizado (match exato)
+    if norm in qualis_by_title:
+        return qualis_by_title[norm]
+
+    # Busca por título parcial (nome do periódico contido no Qualis)
+    for q_title, estrato in qualis_by_title.items():
+        if norm in q_title:
+            return estrato
+
+    # Busca reversa (título Qualis contido no nome do periódico, min 15 chars)
+    for q_title, estrato in qualis_by_title.items():
+        if len(q_title) >= 15 and q_title in norm:
+            return estrato
+
+    return ""
 
 
 def parse_bib_journals(bib_path: Path) -> dict[str, str]:
@@ -84,6 +186,9 @@ def generate_table(
     ic_data: list[dict],
     key_map: dict[str, str],
     journals: dict[str, str],
+    bib_issns: dict[str, list[str]],
+    qualis_by_issn: dict[str, str],
+    qualis_by_title: dict[str, str],
 ) -> str:
     """Gera string LaTeX da tabela IC em paisagem com painéis lado a lado."""
     published = [e for e in ic_data if e.get("is_published", False)]
@@ -107,7 +212,14 @@ def generate_table(
 
         if bib_key:
             estudo = rf"\citeonline{{{bib_key}}}"
-            journal = normalize_journal(journals.get(bib_key, ""))
+            raw_journal = journals.get(bib_key, "")
+            journal = normalize_journal(raw_journal)
+            qualis = lookup_qualis(
+                raw_journal, bib_key, bib_issns,
+                qualis_by_issn, qualis_by_title,
+            )
+            if qualis:
+                journal = f"{journal} ({qualis})"
         else:
             missing_keys.append(pdf_key)
             estudo = pdf_key
@@ -193,6 +305,7 @@ def main() -> None:
         (IC_PATH, "citation_index_results.json"),
         (KEY_MAP_PATH, "bibtex_key_map.json"),
         (BIB_PATH, "references.bib"),
+        (QUALIS_PATH, "qualis_capes_economia_2021_2024.xlsx"),
     ]:
         if not path.exists():
             print(f"ERRO: {desc} não encontrado: {path}", file=sys.stderr)
@@ -201,17 +314,24 @@ def main() -> None:
     ic_data = load_json(IC_PATH)
     key_map = load_json(KEY_MAP_PATH)
     journals = parse_bib_journals(BIB_PATH)
+    bib_issns = parse_bib_issns(BIB_PATH)
+    qualis_by_issn, qualis_by_title = load_qualis(QUALIS_PATH)
 
     print(f"Estudos no IC: {len(ic_data)}")
     print(f"Chaves no mapeamento: {len(key_map)}")
     print(f"Periódicos encontrados no .bib: {len(journals)}")
+    print(f"ISSNs encontrados no .bib: {len(bib_issns)}")
+    print(f"Periódicos no Qualis: {len(qualis_by_title)}")
 
     published_count = sum(1 for e in ic_data if e.get("is_published", False))
     unpublished_count = sum(1 for e in ic_data if not e.get("is_published", True))
     print(f"Estudos publicados: {published_count}")
     print(f"Estudos não publicados: {unpublished_count}")
 
-    table = generate_table(ic_data, key_map, journals)
+    table = generate_table(
+        ic_data, key_map, journals,
+        bib_issns, qualis_by_issn, qualis_by_title,
+    )
     OUTPUT_PATH.write_text(table, encoding="utf-8")
     print(f"\nTabela gerada: {OUTPUT_PATH}")
 
