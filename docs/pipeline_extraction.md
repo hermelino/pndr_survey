@@ -396,9 +396,9 @@ Resultado: 129 papers com campos unificados (43 aprovados — 32 das bases + 11 
 
 Scripts: `data/3-ref-bib/extrair_referencias.py` e `estruturar_referencias.py`
 
-Para os estudos aprovados (incluindo os estudos manuais), as listas de referencias bibliograficas foram extraidas dos PDFs via Gemini e estruturadas em JSON com campos: raw, autor, titulo, ano, periodico, volume, issue, pages. Apos a remocao de 7 estudos duplicados (versoes TD/congresso) e 5 estudos rejeitados em revisao posterior, restam 49 JSONs ativos (42 com referencias extraidas + 7 sem referencias); os 12 removidos foram arquivados em `refs_por_estudo/_archived_duplicates/`.
+Para os estudos aprovados (incluindo os estudos manuais), as listas de referencias bibliograficas foram extraidas dos PDFs via Gemini e estruturadas em JSON com campos: raw, autor, titulo, ano, periodico, volume, issue, pages. Apos a remocao de 7 estudos duplicados (versoes TD/congresso) e 5 estudos rejeitados em revisao posterior, restam 50 JSONs ativos (43 com referencias extraidas + 7 sem referencias); os 12 removidos foram arquivados em `refs_por_estudo/_archived_duplicates/`.
 
-Resultado: 49 JSONs ativos em `data/3-ref-bib/refs_por_estudo/`.
+Resultado: 50 JSONs ativos em `data/3-ref-bib/refs_por_estudo/`.
 
 ### Matching de citacoes entre estudos
 
@@ -421,7 +421,7 @@ Campos adicionados a cada referencia nos JSONs:
 | `estudo_citado_pdf` | str/null | Arquivo PDF do estudo citado |
 | `match_score` | float/null | Score do token_sort_ratio (75-100) |
 
-Resultado: **67 citacoes cruzadas** encontradas em **18 dos 49 arquivos** de referencias.
+Resultado: **120 citacoes cruzadas** encontradas em **29 dos 50 arquivos** de referencias.
 
 ### Indice de citacao (IC)
 
@@ -469,7 +469,7 @@ Tres grupos de estudos foram identificados como duplicatas verdadeiras: o mesmo 
 
 Script de marcacao: `scripts/mark_td_duplicates.py`
 
-**Resultados:** 43 estudos aprovados (21 publicados, 22 nao-publicados), **137 citacoes cruzadas**. IC calculado para 42 estudos (Silva2023 excluido por nao ter referencias extraidas).
+**Resultados:** 43 estudos aprovados (21 publicados, 22 nao-publicados), **142 citacoes cruzadas**. IC calculado para todos os 43 estudos.
 
 Saidas:
 - `data/3-ref-bib/citation_index_results.json` — dados completos por estudo

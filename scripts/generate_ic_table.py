@@ -18,7 +18,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 IC_PATH = BASE_DIR / "data" / "3-ref-bib" / "citation_index_results.json"
 KEY_MAP_PATH = BASE_DIR / "latex" / "bibtex_key_map.json"
 BIB_PATH = BASE_DIR / "latex" / "references.bib"
-OUTPUT_PATH = BASE_DIR / "latex" / "tabela_ic.tex"
+OUTPUT_PATH = BASE_DIR / "latex" / "tabelas" / "tabela_ic.tex"
 
 # Correções de nomes de periódicos (bib → exibição)
 JOURNAL_CORRECTIONS: dict[str, str] = {

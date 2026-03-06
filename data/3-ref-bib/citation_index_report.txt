@@ -2,10 +2,10 @@
 ÍNDICE DE CITAÇÃO PARA REVISÃO SISTEMÁTICA DA PNDR
 ==========================================================================================
 
-Total de estudos:              42
+Total de estudos:              43
   Publicados (periódico):      21
-  Não publicados (TD/conf.):   21
-Total de citações cruzadas:    137
+  Não publicados (TD/conf.):   22
+Total de citações cruzadas:    142
 
 Distribuição por ano:
   2005:  1 estudos (0 pub, 1 não-pub)
@@ -19,7 +19,7 @@ Distribuição por ano:
   2020:  4 estudos (3 pub, 1 não-pub)
   2021:  1 estudos (0 pub, 1 não-pub)
   2022:  1 estudos (1 pub, 0 não-pub)
-  2023:  2 estudos (0 pub, 2 não-pub)
+  2023:  3 estudos (0 pub, 3 não-pub)
   2024:  9 estudos (4 pub, 5 não-pub)
   2025:  5 estudos (1 pub, 4 não-pub)
   2026:  1 estudos (1 pub, 0 não-pub)
@@ -69,13 +69,14 @@ Rank Estudo                                         Ano Pub? Cit   N     IC Tipo
   33 manual-2020-daniel-braga                      2020  Sim   0   9 0.0000 periódico (manual)  
   34 manual-2020-rieger-lima-rodrigues             2020  Sim   0   9 0.0000 periódico (manual)  
   35 manual-2022-goncalves-braga-gurgel            2022  Sim   0   6 0.0000 periódico (manual)  
-  36 manual-2026-oliveira-carneiro-souza           2026  Sim   0   0 0.0000 periódico (manual)  
-  37 scopus-2018-oliveira-terra-resende            2018  Sim   0  12 0.0000 artigo publicado    
-  38 scopus-2020-ribeiro-caldas-souza              2020  Sim   0   9 0.0000 artigo publicado    
-  39 scopus-2024-costa-carneiro-irffi              2024  Sim   0   5 0.0000 artigo publicado    
-  40 scopus-2024-cunha-soares                      2024  Sim   0   5 0.0000 artigo publicado    
-  41 scopus-2024-filho-moreira-silva               2024  Sim   0   5 0.0000 artigo publicado    
-  42 scopus-2025-monte-irffi-bastos                2025  Sim   0   1 0.0000 artigo publicado    
+  36 manual-2023-silva-azzoni-chagas               2023  Não   0   6 0.0000 não-publicado (man  
+  37 manual-2026-oliveira-carneiro-souza           2026  Sim   0   0 0.0000 periódico (manual)  
+  38 scopus-2018-oliveira-terra-resende            2018  Sim   0  12 0.0000 artigo publicado    
+  39 scopus-2020-ribeiro-caldas-souza              2020  Sim   0   9 0.0000 artigo publicado    
+  40 scopus-2024-costa-carneiro-irffi              2024  Sim   0   5 0.0000 artigo publicado    
+  41 scopus-2024-cunha-soares                      2024  Sim   0   5 0.0000 artigo publicado    
+  42 scopus-2024-filho-moreira-silva               2024  Sim   0   5 0.0000 artigo publicado    
+  43 scopus-2025-monte-irffi-bastos                2025  Sim   0   1 0.0000 artigo publicado    
 ------------------------------------------------------------------------------------------
 
 ==========================================================================================
@@ -177,6 +178,7 @@ Estudo                                         Ano Tipo                      Cit
 manual-2016-irffi-araujo-bastos               2016 não-publicado (manual)             3
 anpec-2017-oliveira-resende-goncalves         2017 apresentação congresso             1
 anpec-2020-oliveira-neto                      2020 apresentação congresso             2
+manual-2023-silva-azzoni-chagas               2023 não-publicado (manual)             1
 anpec-2024-alves-neto-oliveira                2024 apresentação congresso             0
 anpec-2024-braz-bastos-irffi                  2024 apresentação congresso             2
 anpec-2024-filho-alves                        2024 apresentação congresso             0
@@ -186,14 +188,14 @@ anpec-2025-shirasu                            2025 apresentação congresso     
 anpec-2025-souza-irffi-carneiro               2025 apresentação congresso             0
 anpec-2025-veloso                             2025 apresentação congresso             0
 ------------------------------------------------------------------------------------------
-Total: 11 artigos não-publicados sem citação de publicados
+Total: 12 artigos não-publicados sem citação de publicados
 
 ==========================================================================================
 DETALHE: CITAÇÕES CRUZADAS POR ESTUDO
 ==========================================================================================
 
   scopus-2009-silva-resende-neto (2009, PUB)
-    Citado por (18):
+    Citado por (19):
       ← anpec-2017-oliveira-resende-goncalves (2017, np)
       ← anpec-2020-oliveira-neto (2020, np)
       ← anpec-2021-oliveira-neto (2021, np)
@@ -208,13 +210,14 @@ DETALHE: CITAÇÕES CRUZADAS POR ESTUDO
       ← manual-2018-carneiro (2018, np)
       ← manual-2020-rieger-lima-rodrigues (2020, pub)
       ← manual-2022-goncalves-braga-gurgel (2022, pub)
+      ← manual-2023-silva-azzoni-chagas (2023, np)
       ← manual-2026-oliveira-carneiro-souza (2026, pub)
       ← scopus-2014-resende (2014, pub)
       ← scopus-2020-ribeiro-caldas-souza (2020, pub)
       ← scopus-2025-monte-irffi-bastos (2025, pub)
 
   econpapers-2011-resende (2011, NÃO-PUB)
-    Citado por (16):
+    Citado por (17):
       ← anpec-2017-nascimento-haddad (2017, np)
       ← anpec-2017-oliveira-resende-goncalves (2017, np)
       ← anpec-2020-oliveira-neto (2020, np)
@@ -226,6 +229,7 @@ DETALHE: CITAÇÕES CRUZADAS POR ESTUDO
       ← manual-2017-resende-silva-filho (2017, pub)
       ← manual-2018-carneiro (2018, np)
       ← manual-2020-daniel-braga (2020, pub)
+      ← manual-2023-silva-azzoni-chagas (2023, np)
       ← manual-2026-oliveira-carneiro-souza (2026, pub)
       ← scopus-2018-oliveira-terra-resende (2018, pub)
       ← scopus-2018-resende-silva-filho (2018, pub)
@@ -253,7 +257,7 @@ DETALHE: CITAÇÕES CRUZADAS POR ESTUDO
       → econpapers-2011-resende (2011, np)
 
   anpec-2005-oliveira-domingues (2005, NÃO-PUB)
-    Citado por (12):
+    Citado por (13):
       ← anpec-2017-nascimento-haddad (2017, np)
       ← anpec-2017-oliveira-resende-goncalves (2017, np)
       ← anpec-2024-braz-bastos-irffi (2024, np)
@@ -264,6 +268,7 @@ DETALHE: CITAÇÕES CRUZADAS POR ESTUDO
       ← manual-2019-cambota-viana (2019, pub)
       ← manual-2020-daniel-braga (2020, pub)
       ← manual-2022-goncalves-braga-gurgel (2022, pub)
+      ← manual-2023-silva-azzoni-chagas (2023, np)
       ← scopus-2014-resende (2014, pub)
       ← scopus-2020-ribeiro-caldas-souza (2020, pub)
 
@@ -288,7 +293,7 @@ DETALHE: CITAÇÕES CRUZADAS POR ESTUDO
       → econpapers-2017-oliveira-resende-oliveira (2017, pub)
 
   scopus-2014-resende (2014, PUB)
-    Citado por (12):
+    Citado por (13):
       ← anpec-2017-nascimento-haddad (2017, np)
       ← anpec-2020-oliveira-neto (2020, np)
       ← anpec-2021-oliveira-neto (2021, np)
@@ -298,6 +303,7 @@ DETALHE: CITAÇÕES CRUZADAS POR ESTUDO
       ← manual-2017-resende-silva-filho (2017, pub)
       ← manual-2018-carneiro (2018, np)
       ← manual-2019-cambota-viana (2019, pub)
+      ← manual-2023-silva-azzoni-chagas (2023, np)
       ← manual-2026-oliveira-carneiro-souza (2026, pub)
       ← scopus-2024-filho-moreira-silva (2024, pub)
       ← scopus-2025-monte-irffi-bastos (2025, pub)
@@ -475,13 +481,14 @@ DETALHE: CITAÇÕES CRUZADAS POR ESTUDO
       → scopus-2024-costa-carneiro-irffi (2024, pub)
 
   anpec-2025-souza-irffi-carneiro (2025, NÃO-PUB)
-    Cita (16):
+    Cita (17):
       → anpec-2024-braz-bastos-irffi (2024, np)
       → anpec-2023-braz-irffi (2023, np)
       → manual-2019-cambota-viana (2019, pub)
       → anpec-2024-carneiro-veloso-ferreira (2024, np)
       → scopus-2014-resende (2014, pub)
       → manual-2020-daniel-braga (2020, pub)
+      → manual-2023-silva-azzoni-chagas (2023, np)
       → scopus-2017-garsous-novoa-velasco (2017, pub)
       → manual-2016-irffi-araujo-bastos (2016, np)
       → anpec-2024-veloso-costa-carneiro (2024, np)
@@ -552,6 +559,15 @@ DETALHE: CITAÇÕES CRUZADAS POR ESTUDO
       → anpec-2005-oliveira-domingues (2005, np)
       → scopus-2009-silva-resende-neto (2009, pub)
       → econpapers-2014-viana-goncalves-linhares (2014, pub)
+
+  manual-2023-silva-azzoni-chagas (2023, NÃO-PUB)
+    Citado por (1):
+      ← anpec-2025-souza-irffi-carneiro (2025, np)
+    Cita (4):
+      → scopus-2014-resende (2014, pub)
+      → anpec-2005-oliveira-domingues (2005, np)
+      → econpapers-2011-resende (2011, np)
+      → scopus-2009-silva-resende-neto (2009, pub)
 
   manual-2026-oliveira-carneiro-souza (2026, PUB)
     Cita (7):
