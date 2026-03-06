@@ -9,7 +9,7 @@ O objetivo desta revisão sistemática é identificar e sintetizar estudos empí
 
 A busca foi conduzida em cinco bases de dados acadêmicas: Scopus, SciELO, Portal de Periódicos da CAPES, EconPapers/RePEc e anais dos encontros da ANPEC. A consulta a múltiplas fontes justifica-se pela elevada dispersão dos registros: periódicos nacionais de economia tendem a apresentar menor cobertura em bases de dados internacionais. Parte relevante da produção sobre instrumentos da PNDR concentra-se em \textit{working papers}, textos para discussão e apresentações em congressos nacionais, veículos nem sempre indexados por essas bases.
 
-Das cinco fontes, obtiveram-se 146 registros, aos quais se acrescentaram 11 documentos identificados manualmente fora das bases consultadas --- estudos citados na literatura de referência cujos periódicos ou veículos de publicação não são indexados pelas bases selecionadas. Após a remoção de 28 duplicatas em quatro etapas --- três automatizadas e uma manual ---, 118 registros únicos das bases, somados aos 11 documentos identificados manualmente, totalizaram 129 registros submetidos à análise de elegibilidade. A triagem combinou pré-classificação assistida por ferramentas computacionais com revisão integral dos autores, resultando na inclusão de 43 estudos e exclusão de 86. A Figura~\ref{fig:diagrama_prisma} apresenta o diagrama de fluxo PRISMA 2020 com o detalhamento quantitativo de cada etapa.\footnote{Os scripts de coleta, deduplicação e triagem estão disponíveis no repositório do autor em \url{https://github.com/hermelino/pndr_survey}.}
+Das cinco fontes, obtiveram-se 137 registros, aos quais se acrescentaram 11 documentos identificados manualmente fora das bases consultadas --- estudos citados na literatura de referência cujos periódicos ou veículos de publicação não são indexados pelas bases selecionadas. Após a remoção de 19 duplicatas em três fases automatizadas, 118 registros únicos das bases, somados aos 11 documentos identificados manualmente, totalizaram 129 registros submetidos à análise de elegibilidade. A triagem combinou pré-classificação assistida por ferramentas computacionais com revisão integral dos autores, resultando na inclusão de 43 estudos e exclusão de 86. A Figura~\ref{fig:diagrama_prisma} apresenta o diagrama de fluxo PRISMA 2020 com o detalhamento quantitativo de cada etapa.\footnote{Os scripts de coleta, deduplicação e triagem estão disponíveis no repositório do autor em \url{https://github.com/hermelino/pndr_survey}.}
 
 \begin{figure}[htb]
 \centering
@@ -42,7 +42,7 @@ Os critérios de exclusão foram: (a)~estudos que não avaliem explicitamente in
 
 A consulta a múltiplas bases de dados implica a presença de registros duplicados, visto que um mesmo estudo pode estar indexado em mais de uma fonte. Para tratamento dessas ocorrências, aplicou-se procedimento em quatro fases sequenciais. Nas três primeiras, automatizadas, registros com DOI idêntico foram identificados como duplicatas exatas (fase~1, $n=5$); aplicou-se comparação de similaridade de títulos por meio de \textit{token sort ratio} com limiar de 80\%, retendo como duplicata os pares com coincidência de ano e de primeiro autor ou periódico (fase~2, $n=4$); e compararam-se os arquivos PDF por \textit{hash} criptográfico SHA-256, identificando documentos fisicamente idênticos obtidos de bases distintas (fase~3, $n=10$). Na quarta fase, manual, identificaram-se 9 registros correspondentes a versões preliminares --- textos para discussão ou apresentações em congresso --- de artigos já incluídos na amostra em sua versão publicada.
 
-Ao todo, 28 duplicatas foram identificadas e removidas (19 automatizadas e 9 manuais), reduzindo os 146 registros oriundos das bases de dados para 118 únicos. Em caso de duplicata entre bases, adotou-se como critério de retenção a seguinte ordem de prioridade: Scopus, SciELO, Portal CAPES, EconPapers e ANPEC, privilegiando a versão com metadados mais completos.
+Ao todo, 19 duplicatas foram identificadas e removidas nas três fases automatizadas, reduzindo os 137 registros oriundos das bases de dados para 118 únicos. Na quarta fase, manual, 9 registros correspondentes a versões preliminares de artigos publicados foram mantidos na base e tratados como critério de exclusão na triagem final (Subseção~\ref{subsec:metodo-triagem-final}). Em caso de duplicata entre bases, adotou-se como critério de retenção a seguinte ordem de prioridade: Scopus, SciELO, Portal CAPES, EconPapers e ANPEC, privilegiando a versão com metadados mais completos.
 
 \subsection{Classificação assistida por modelo de linguagem}
 \label{subsec:metodo-classificacao-llm}
@@ -146,8 +146,8 @@ Autor & Qtd. estudos \\
 Irffi, G.D. & 11 \\
 Carneiro, D.R.F. & 9 \\
 Resende, G.M. & 8 \\
-Veloso, P.A.S. & 5 \\
 Costa, E.M. & 4 \\
+Veloso, P.A.S. & 4 \\
 Braz, M.S. & 4 \\
 Bastos, F.S. & 4 \\
 Oliveira, G.R. & 3 \\
