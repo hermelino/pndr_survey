@@ -19,6 +19,7 @@ scripts/                        → Pipeline Python
   generate_bibtex.py            → Converte RIS aprovado → BibTeX (references.bib)
   generate_ic_table.py          → Gera tabela IC LaTeX com citeonline (tabela_ic.tex)
   generate_latex_tables.py      → Regenera todas as tabelas derivadas do artigo (estudos-ano, instrumentos, autores, unidade-amostral, metodos)
+  organize_bibtex.py            → Padroniza chaves BibTeX (formato curto) e atualiza citacoes nos .tex
   src/
     models.py                   → BibRecord (bibliografico) + PaperRecord (analise LLM)
     config.py                   → Carregamento YAML + validacao
@@ -94,6 +95,8 @@ docs/update_reports/            → Relatorios de atualizacao do pipeline (propa
 - `/processar-dados [comando]` — Converte, escreve e revisa scripts de manipulacao de dados e estatisticas descritivas do projeto tese para o contexto pndr_survey. Executa conversao R → Python, gera tabelas LaTeX/Excel, cria graficos academicos e valida datasets. Comandos: `explorar` (lista scripts R disponiveis), `converter [script.R]` (converte script especifico), `stats` (estatisticas descritivas), `plot [tipo]` (graficos), `validar` (validacao de dados). Exclui estimacao econometrica. Definicao em `.claude/commands/5-processar-dados.md`.
 
 - `/revisor-latex [escopo]` — Revisor automatizado de comandos LaTeX. Verifica consistencia estrutural (ambientes, labels, referencias cruzadas), conformidade ABNT/abntex2 (\fonte{}, \cite/\citeonline, caption/label), tipografia (non-breaking spaces, espacamento) e corrige automaticamente erros seguros sem necessidade de aprovacao. Nunca altera conteudo textual, dados numericos ou conteudo de tabelas. Escopo: `main`, `metodo`, `resultados`, `politica`, `tabelas`, `todos` (padrao). Definicao em `.claude/commands/6-revisor-latex.md`.
+
+- `/organizar-bib` — Organiza `latex/references.bib`: renomeia chaves para formato curto (PrimeiroAutorAno), resolve conflitos (segundo autor ou sufixo), ordena alfabeticamente e atualiza citacoes em todos os `.tex`. Usa `scripts/organize_bibtex.py` com modos `--dry-run` (padrao) e `--execute`. Definicao em `.claude/commands/7-organizar-bib.md`.
 
 ## Dependencias
 
