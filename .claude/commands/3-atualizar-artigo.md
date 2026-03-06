@@ -31,15 +31,15 @@ Os dados do pipeline são a fonte de verdade. Em caso de conflito entre o artigo
 
 | Dado | Onde verificar | Onde aparece no artigo |
 |------|----------------|----------------------|
-| Total bruto de registros | Somar arquivos em `data/1-records/1-*/` | `metodo.tex` (3.1, 3.2, 3.4) |
-| Registros por base (brutos) | Arquivos RIS/Excel por pasta | `metodo.tex` Tabela 1 |
-| Duplicatas removidas | `pipeline_extraction.md` seção "Deduplicacao" | `metodo.tex` (3.1, 3.4) |
-| Registros únicos (pós-dedup) | `pipeline_extraction.md` tabela "Visao geral" | `metodo.tex` (3.1, 3.4, 3.5) |
-| Estudos aprovados | `2-2-papers.json` (contar `triagem == "APROVADO"`) | `metodo.tex` (3.1, 3.5, 3.6) |
-| Estudos rejeitados | `2-2-papers.json` (contar `triagem == "REJEITADO"`) | `metodo.tex` (3.1, 3.5) |
-| Motivos de rejeição | `2-2-papers.json` (agrupar `motivo_exclusao`) | `metodo.tex` Tabela 2 |
-| Publicados vs. não-publicados | `citation_index_report.txt` | `metodo.tex` (3.6) |
-| Distribuição temporal | `citation_index_report.txt` | `metodo.tex` (3.6) |
+| Total bruto de registros | Somar arquivos em `data/1-records/1-*/` | `3-metodo.tex` (3.1, 3.2, 3.4) |
+| Registros por base (brutos) | Arquivos RIS/Excel por pasta | `3-metodo.tex` Tabela 1 |
+| Duplicatas removidas | `pipeline_extraction.md` seção "Deduplicacao" | `3-metodo.tex` (3.1, 3.4) |
+| Registros únicos (pós-dedup) | `pipeline_extraction.md` tabela "Visao geral" | `3-metodo.tex` (3.1, 3.4, 3.5) |
+| Estudos aprovados | `2-2-papers.json` (contar `triagem == "APROVADO"`) | `3-metodo.tex` (3.1, 3.5, 3.6) |
+| Estudos rejeitados | `2-2-papers.json` (contar `triagem == "REJEITADO"`) | `3-metodo.tex` (3.1, 3.5) |
+| Motivos de rejeição | `2-2-papers.json` (agrupar `motivo_exclusao`) | `3-metodo.tex` Tabela 2 |
+| Publicados vs. não-publicados | `citation_index_report.txt` | `3-metodo.tex` (3.6) |
+| Distribuição temporal | `citation_index_report.txt` | `3-metodo.tex` (3.6) |
 
 ### 2. Contagens derivadas
 
@@ -102,11 +102,11 @@ Verificar que o **mesmo número** aparece de forma idêntica em todas as ocorrê
 
 | Arquivo | Seção | Tabelas |
 |---------|-------|---------|
-| `latex/metodo.tex` | Seção 3: Método (todas as subseções) | `tab:estudos-ano`, `tab:instrumentos`, `tab:autores-todos`, `tab:unidade-amostral`, `tab:metodos` |
+| `latex/3-metodo.tex` | Seção 3: Método (todas as subseções) | `tab:estudos-ano`, `tab:instrumentos`, `tab:autores-todos`, `tab:unidade-amostral`, `tab:metodos` |
 | `latex/diagrama_prisma.tex` | Diagrama de fluxo PRISMA 2020 | — |
-| `latex/main.tex` | Abstract, se houver números | — |
-| `latex/introducao.tex` | Se existir e contiver números do pipeline | — |
-| `latex/resultados.tex` | Se existir e contiver contagens de estudos | — |
+| `latex/0-main.tex` | Abstract, se houver números | — |
+| `latex/1-introducao.tex` | Se existir e contiver números do pipeline | — |
+| `latex/4-resultados.tex` | Se existir e contiver contagens de estudos | — |
 
 ---
 
@@ -216,7 +216,7 @@ Apresentar ao usuário:
 #### ERROS (requerem correção)
 | # | Arquivo | Linha | Valor atual | Valor correto | Contexto |
 |---|---------|-------|-------------|---------------|----------|
-| 1 | metodo.tex | XX | 46 | 45 | "resultando na inclusão de 46 estudos" |
+| 1 | 3-metodo.tex | XX | 46 | 45 | "resultando na inclusão de 46 estudos" |
 
 #### INCONSISTÊNCIAS (mesmo dado, valores diferentes)
 | # | Dado | Ocorrências | Valores encontrados |

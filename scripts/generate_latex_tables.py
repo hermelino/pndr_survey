@@ -9,7 +9,7 @@ Tabelas geradas:
 - tab:unidade-amostral (unidades de análise)
 - tab:metodos (métodos econométricos mais frequentes)
 
-Output: Fragmentos LaTeX prontos para inserção em metodo.tex
+Output: Fragmentos LaTeX prontos para inserção em 3-metodo.tex
 """
 
 import json

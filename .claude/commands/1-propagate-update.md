@@ -31,7 +31,7 @@ Você é o orquestrador de atualizações do pipeline de revisão sistemática `
       ↓
 [10] Documentação                      → pipeline_extraction.md, README.md
       ↓
-[11] Artigo (via /atualizar-artigo)    → metodo.tex, diagrama_prisma.tex, main.tex
+[11] Artigo (via /atualizar-artigo)    → 3-metodo.tex, diagrama_prisma.tex, 0-main.tex
 ```
 
 **Regra de propagação:** Se o estágio N é afetado, todos os estágios N+1..11 devem ser avaliados. Nem todos precisam ser re-executados — alguns podem não ser afetados pela mudança específica.
@@ -62,7 +62,7 @@ data/2-papers/2-2-papers.json                      # JSON enriquecido (MASTER)
 data/2-papers/approved_papers.ris                   # RIS dos estudos aprovados (generate_approved_ris.py)
 latex/references.bib                                # BibTeX (manual + gerado por generate_bibtex.py)
 latex/bibtex_key_map.json                           # Mapeamento PDF→chave BibTeX (generate_bibtex.py)
-latex/tabela_ic.tex                                 # Tabela IC LaTeX (generate_ic_table.py)
+latex/tabelas/tabela_ic.tex                          # Tabela IC LaTeX (generate_ic_table.py)
 data/2-papers/2-2-papers-pdfs/                     # PDFs renomeados
 data/3-ref-bib/refs_por_estudo/                    # JSONs de referências por estudo
 data/3-ref-bib/refs_por_estudo/_archived_duplicates/  # Refs arquivadas de duplicatas
@@ -128,7 +128,7 @@ scripts/mark_td_duplicates.py                # Marcação de duplicatas TD/WP
    - Nenhum dado perdido inadvertidamente
 3. Se algum passo falhar, parar e reportar — não tentar forçar.
 4. Atualizar `pipeline_extraction.md` e `README.md` com as novas contagens.
-5. Invocar `/atualizar-artigo` para verificar e corrigir números no artigo LaTeX (`metodo.tex`, `diagrama_prisma.tex`, `main.tex`) contra os dados atualizados do pipeline.
+5. Invocar `/atualizar-artigo` para verificar e corrigir números no artigo LaTeX (`3-metodo.tex`, `diagrama_prisma.tex`, `0-main.tex`) contra os dados atualizados do pipeline.
 
 ### FASE 4 — RELATÓRIO
 

@@ -24,7 +24,7 @@ Você é um revisor automatizado de comandos LaTeX para o projeto pndr_survey. S
 ### Arquivos a verificar
 
 Quando `$ARGUMENTS` estiver vazio, verificar **todos** os arquivos `.tex` em `latex/` e subdiretórios:
-- `latex/main.tex`
+- `latex/0-main.tex`
 - `latex/*.tex` (seções)
 - `latex/tabelas/*.tex`
 
@@ -32,10 +32,10 @@ Quando `$ARGUMENTS` contiver um nome de arquivo ou seção, verificar apenas o e
 
 | Argumento | Escopo |
 |-----------|--------|
-| `main` | `latex/main.tex` |
-| `metodo` | `latex/metodo.tex` |
-| `resultados` | `latex/resultados.tex` |
-| `politica` | `latex/politica-regional.tex` |
+| `main` | `latex/0-main.tex` |
+| `metodo` | `latex/3-metodo.tex` |
+| `resultados` | `latex/4-resultados.tex` |
+| `politica` | `latex/2-politica-regional.tex` |
 | `tabelas` | `latex/tabelas/*.tex` |
 | `todos` | Todos os `.tex` em `latex/` |
 | `<arquivo.tex>` | Arquivo específico |

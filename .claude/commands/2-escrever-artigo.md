@@ -16,7 +16,7 @@ Você é um redator acadêmico especializado em **economia aplicada**, com domí
 
 ### Artigo-alvo
 
-- **Arquivo:** `latex/main.tex`
+- **Arquivo:** `latex/0-main.tex`
 - **Título:** "Avaliação dos Instrumentos da PNDR: Uma Revisão Sistemática da Literatura Empírica (2005--2025)"
 - **Autor:** Hermelino Nepomuceno de Souza (CAEN/UFC)
 - **Formato:** abntex2 (modo article), 12pt, abntex2cite (alf), português
@@ -78,11 +78,11 @@ Ao redigir, consulte SEMPRE estes arquivos para obter números e detalhes atuali
 
 | Argumento | Seção-alvo | Fonte na tese |
 |-----------|-----------|---------------|
-| `introducao` | `\section{Introdução}` | `1-1-introducao.tex` |
-| `politica` | `\section{Política Regional no Brasil}` | `1-2-politica-regional-no-brasil.tex` |
-| `metodo` | `\section{Método}` | `1-3-metodo.tex` |
-| `resultados` | `\section{Discussão dos Resultados}` | `1-4-discussao-dos-resultados.tex` |
-| `conclusao` | `\section{Considerações Finais}` | `1-5-consideracoes-finais.tex` |
+| `introducao` | `\section{Introdução}` → `latex/1-introducao.tex` | `1-1-introducao.tex` |
+| `politica` | `\section{Política Regional no Brasil}` → `latex/2-politica-regional.tex` | `1-2-politica-regional-no-brasil.tex` |
+| `metodo` | `\section{Método}` → `latex/3-metodo.tex` | `1-3-metodo.tex` |
+| `resultados` | `\section{Discussão dos Resultados}` → `latex/4-resultados.tex` | `1-4-discussao-dos-resultados.tex` |
+| `conclusao` | `\section{Considerações Finais}` → `latex/5-consideracoes.tex` | `1-5-consideracoes-finais.tex` |
 | `resumo` | `\begin{abstract}` | `1-pre-textuais/resumo.tex` |
 | `todos` | Todas as seções acima | Todos os arquivos |
 
@@ -164,7 +164,7 @@ Somente após aprovação explícita do usuário:
 
 ### Regras de escrita
 
-1. **Formato:** LaTeX válido, pronto para inclusão em `main.tex`
+1. **Formato:** LaTeX válido, pronto para inclusão em `0-main.tex`
 2. **Idioma:** Português formal brasileiro, norma culta
 3. **Tom:** Técnico-científico, impessoal, objetivo
 4. **Extensão:** Adequada a artigo (NÃO tese); cada seção deve ser concisa
@@ -204,13 +204,13 @@ Somente após aprovação explícita do usuário:
 1. Redigir **uma subseção por vez**
 2. Apresentar o texto ao usuário em bloco de código LaTeX
 3. Aguardar feedback antes de prosseguir para a próxima subseção
-4. Somente editar `main.tex` quando o usuário aprovar explicitamente o texto
+4. Somente editar `0-main.tex` quando o usuário aprovar explicitamente o texto
 
 ### Quando editar o arquivo
 
 Ao receber aprovação para inserir texto em `main.tex`:
 
-1. Ler o estado atual de `main.tex`
+1. Ler o estado atual de `0-main.tex`
 2. Substituir o `% TODO` correspondente pelo conteúdo aprovado
 3. Manter a estrutura geral do documento (preâmbulo, seções, etc.)
 4. NÃO alterar seções que não foram solicitadas
@@ -368,7 +368,7 @@ Antes de apresentar qualquer roteiro, verificar:
 
 ## Restrições
 
-1. **NUNCA** editar `main.tex` sem aprovação explícita
+1. **NUNCA** editar `0-main.tex` sem aprovação explícita
 2. **NUNCA** copiar trechos da tese literalmente — sempre reescrever
 3. **NUNCA** inventar dados ou números — sempre consultar os arquivos-fonte
 4. **NUNCA** mencionar "esta tese", "capítulos seguintes" ou "defesa"

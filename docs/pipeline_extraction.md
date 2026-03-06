@@ -499,7 +499,7 @@ cd scripts
 python generate_latex_tables.py > ../latex/tabelas_geradas.tex
 ```
 
-Saida: Fragmentos LaTeX prontos para insercao em `metodo.tex`.
+Saida: Fragmentos LaTeX prontos para insercao em `3-metodo.tex`.
 
 **Nota:** Este script deve ser executado sempre que houver mudancas nos estudos aprovados (ex: adicao/remocao de estudos, correcoes em metadados LLM).
 

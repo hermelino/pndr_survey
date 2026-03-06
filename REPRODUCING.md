@@ -37,7 +37,7 @@ Regenerar outputs a partir de dados intermediários:
 ### **Nível 3: Apenas Compilação** (sem regenerar dados)
 Compilar diretamente o artigo LaTeX:
 - Todas as tabelas e figuras já versionadas
-- `pdflatex latex/main.tex`
+- `pdflatex latex/0-main.tex`
 
 **Este guia cobre o Nível 1** (reprodução completa).
 
@@ -190,7 +190,7 @@ build.bat all
 - Etapa 3 (análise LLM): **~2-4 horas** (119 PDFs, rate limit 4s)
 
 **Outputs finais:**
-- `latex/main.pdf` — Artigo compilado
+- `latex/0-main.pdf` — Artigo compilado
 - `data/1-records/processed/bib_records.json` — 119 registros normalizados
 - `data/2-papers/2-2-papers.json` — JSON enriquecido (registros + LLM + triagem)
 - `data/3-ref-bib/citation_index_results.json` — Índice de citação
@@ -502,20 +502,20 @@ build.bat latex
 
 # Comando direto
 cd latex
-pdflatex -interaction=nonstopmode main.tex
-bibtex main
-pdflatex -interaction=nonstopmode main.tex
-pdflatex -interaction=nonstopmode main.tex
+pdflatex -interaction=nonstopmode 0-main.tex
+bibtex 0-main
+pdflatex -interaction=nonstopmode 0-main.tex
+pdflatex -interaction=nonstopmode 0-main.tex
 ```
 
 **Inputs:**
-- `latex/main.tex` (arquivo principal)
+- `latex/0-main.tex` (arquivo principal)
 - `latex/tabelas/*.tex` (tabelas)
 - `figures/*.png` (figuras)
 - `latex/references.bib` (BibTeX)
 
 **Outputs:**
-- `latex/main.pdf` (artigo final)
+- `latex/0-main.pdf` (artigo final)
 
 ---
 
@@ -822,7 +822,7 @@ pndr_survey/
 │   └── 3-ref-bib/
 │       └── (scripts Python/R)        # Scripts de extração/estruturação
 ├── latex/                            # Artigo LaTeX (editado manualmente)
-│   ├── main.tex                      # Arquivo principal
+│   ├── 0-main.tex                    # Arquivo principal
 │   ├── *.tex                         # Seções do artigo
 │   └── tabelas/                      # Tabelas manuais (não geradas)
 ├── figures/                          # Figuras (geradas ou externas)
@@ -858,7 +858,7 @@ latex/
 ├── references.bib                    # BibTeX gerado
 ├── tabela_ic.tex                     # Tabela de índice de citação
 ├── tabelas/*.tex                     # Tabelas geradas
-└── main.pdf                          # Artigo compilado
+└── 0-main.pdf                          # Artigo compilado
 ```
 
 ---

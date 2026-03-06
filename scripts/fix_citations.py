@@ -1,7 +1,7 @@
-"""Corrige chaves de citação em resultados.tex usando o mapeamento BibTeX.
+"""Corrige chaves de citação em 4-resultados.tex usando o mapeamento BibTeX.
 
 Lê 2-2-papers.json, extrai autores e ano, mapeia para chaves BibTeX corretas
-e substitui as citações incorretas no arquivo resultados.tex.
+e substitui as citações incorretas no arquivo 4-resultados.tex.
 """
 
 from __future__ import annotations
@@ -14,7 +14,7 @@ from unidecode import unidecode
 BASE_DIR = Path(__file__).resolve().parent.parent
 PAPERS_JSON = BASE_DIR / "data" / "2-papers" / "2-2-papers.json"
 KEY_MAP = BASE_DIR / "latex" / "bibtex_key_map.json"
-RESULTADOS_TEX = BASE_DIR / "latex" / "resultados.tex"
+RESULTADOS_TEX = BASE_DIR / "latex" / "4-resultados.tex"
 
 def load_json(path: Path) -> dict | list:
     with open(path, "r", encoding="utf-8") as f:
