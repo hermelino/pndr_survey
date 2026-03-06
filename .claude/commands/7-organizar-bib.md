@@ -35,8 +35,9 @@ python scripts/organize_bibtex.py --execute --archive --fix-titles  # tudo
 
 ### Regras de resolucao de conflitos
 1. Tentar `PrimeiroAutor + Ano`
-2. Se conflito: `PrimeiroAutor + SegundoAutor + Ano`
-3. Se sem segundo autor ou ainda conflita: sufixo `b`, `c`, `d`...
+2. Se mesmo primeiro autor com multiplos artigos no mesmo ano: **TODOS** recebem `PrimeiroAutor + SegundoAutor + Ano` (ex: `OliveiraTerra2018`, `OliveiraResende2018`)
+3. Se autores diferentes com mesmo sobrenome e ano: desambiguar com inicial do prenome (ex: `OliveiraG2020` vs `OliveiraT2020`)
+4. Se sem segundo autor ou ainda conflita: **TODOS** recebem sufixo `a`, `b`, `c`... (nunca manter um sem sufixo e outro com `b`)
 
 ### Tratamento de nomes brasileiros (ABNT NBR 6023)
 - Particulas (`de`, `da`, `do`, `dos`, `das`): **excluidas** da chave (ABNT) -> `Silva2020` (nao `DaSilva2020`)
@@ -186,15 +187,23 @@ Sobrenomes compostos ligados por hifen sao tratados como unidade unica.
 
 Autores institucionais entre chaves BibTeX (`{BRASIL}`, `{IBGE}`) sao convertidos para Title Case na chave.
 
-### 5. Dois autores com mesmo sobrenome e ano
+### 5. Mesmo primeiro autor com multiplos artigos no mesmo ano
 
-Quando dois artigos diferentes tem o mesmo primeiro autor e ano, desambiguar com o segundo autor antes de usar sufixo alfabetico.
+Quando o **mesmo primeiro autor** tem mais de um artigo publicado no mesmo ano, **TODOS** os artigos recebem o sobrenome do segundo autor na chave — nao apenas os que conflitam.
 
-| Artigo 1: `Silva and Costa, 2020` | Artigo 2: `Silva and Reis, 2020` |
-|------------------------------------|----------------------------------|
-| `SilvaCosta2020`                   | `SilvaReis2020`                  |
+| Artigo 1: `Oliveira, G.R. and Terra, R.T., 2018` | Artigo 2: `Oliveira, G.R. and Resende, G.M., 2018` |
+|----------------------------------------------------|------------------------------------------------------|
+| `OliveiraTerra2018`                                | `OliveiraResende2018`                                |
 
-### 6. Campo `author` com "et al."
+### 6. Autores diferentes com mesmo sobrenome e ano
+
+Quando autores **diferentes** compartilham o mesmo sobrenome e ano, desambiguar pela inicial do prenome (ABNT NBR 10520).
+
+| Artigo 1: `Oliveira, Guilherme R., 2020` | Artigo 2: `de Oliveira, Tassia G., 2020` |
+|-------------------------------------------|-------------------------------------------|
+| `OliveiraG2020`                           | `OliveiraT2020`                           |
+
+### 7. Campo `author` com "et al."
 
 O campo `author` no BibTeX **nunca** deve conter "et al." — todos os autores devem ser listados. O "et al." e gerado automaticamente pelo estilo de citacao (`abntex2cite`).
 
