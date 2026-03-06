@@ -1,13 +1,13 @@
 # Skill: organizar-bib
 
-Voce e o organizador de referencias BibTeX do projeto pndr_survey. Sua tarefa e padronizar as chaves BibTeX para formato curto (AutorAno), ordenar alfabeticamente e atualizar todas as citacoes nos arquivos `.tex`.
+Voce e o organizador de referencias BibTeX do projeto pndr_survey. Sua tarefa e padronizar as chaves BibTeX para formato curto (AutorAno), ordenar alfabeticamente, atualizar todas as citacoes nos arquivos `.tex` e garantir conformidade com a ABNT NBR 6023.
 
 ## Objetivo
 
 Organizar o arquivo `latex/references.bib` seguindo convencao uniforme:
 1. **Renomear chaves** para formato curto: `PrimeiroAutorAno` (ex: `Anderson1982`)
 2. **Resolver conflitos** de chaves duplicadas adicionando segundo autor ou sufixo
-3. **Ordenar alfabeticamente** todas as entradas por chave
+3. **Ordenar entradas** por sobrenome do 1o autor, ano, desambiguacao (2o autor ou sufixo)
 4. **Atualizar citacoes** em todos os arquivos `.tex` automaticamente
 5. **Gerar relatorio** de todas as alteracoes realizadas
 6. **Corrigir capitalizacao de titulos** (stopwords e nomes proprios em portugues)
@@ -38,12 +38,31 @@ python scripts/organize_bibtex.py --execute --archive --fix-titles  # tudo
 2. Se conflito: `PrimeiroAutor + SegundoAutor + Ano`
 3. Se sem segundo autor ou ainda conflita: sufixo `b`, `c`, `d`...
 
-### Tratamento de nomes brasileiros
-- Particulas (`de`, `da`, `dos`): incluidas na chave -> `deSouza2020`
+### Tratamento de nomes brasileiros (ABNT NBR 6023)
+- Particulas (`de`, `da`, `do`, `dos`, `das`): **excluidas** da chave (ABNT) -> `Silva2020` (nao `DaSilva2020`)
 - Sufixos (`Junior`, `Neto`, `Filho`, `Jr.`): removidos da chave -> `Lucas1988` (nao `LucasJr1988`)
-- Sobrenomes compostos: sem espaco -> `SilveiraNeto2012`
+- Sobrenomes compostos com hifen: mantidos juntos -> `SilveiraNeto2012`
 - Autores institucionais (`{BRASIL}`, `{IBGE}`): title case -> `Brasil2006`
 - Nomes em MAIUSCULAS: convertidos para Title Case
+
+### Ordenacao das entradas
+
+As entradas no `.bib` sao ordenadas por tres criterios, nesta ordem de prioridade:
+
+1. **Sobrenome do 1o autor** (case-insensitive, sem particulas/acentos)
+2. **Ano** (numerico crescente)
+3. **Desambiguacao**: sobrenome do 2o autor (ou 3o, etc.) quando presente na chave; ou sufixo alfabetico (`a`, `b`, `c`...)
+
+**Exemplos de ordenacao:**
+```
+Silva2018          ← Silva, 2018
+SilvaCosta2020     ← Silva + Costa, 2020
+SilvaReis2020      ← Silva + Reis, 2020 (Reis > Costa)
+Silva2020          ← Silva, 2020 (sem 2o autor → apos chaves com 2o autor do mesmo ano? Nao: chave simples primeiro)
+Silva2020b         ← Silva, 2020, sufixo b
+```
+
+A chave simples (`Silva2020`) vem antes de chaves com segundo autor (`SilvaCosta2020`) ou sufixo (`Silva2020b`) no mesmo sobrenome+ano.
 
 ### Chaves preservadas
 Chaves ja no formato curto correto (AutorAno com o autor correto) NAO sao renomeadas.
@@ -65,7 +84,7 @@ Chaves ja no formato curto correto (AutorAno com o autor correto) NAO sao renome
 1. Executar `python scripts/organize_bibtex.py --execute [--archive]`
 2. O script:
    - Renomeia chaves no `.bib`
-   - Ordena entradas alfabeticamente
+   - Ordena entradas (sobrenome → ano → desambiguacao)
    - Atualiza citacoes em todos os `.tex` (`\cite{}`, `\citeonline{}`)
    - Se `--archive`: move entradas nao citadas para `latex/ref_archived.bib`
    - Reporta mudancas
@@ -130,6 +149,54 @@ Nomes de fundos, regioes e instituicoes sao capitalizados corretamente:
 2. Depois: aplicar padroes de nomes proprios (sobrescreve stopwords quando necessario)
 
 Novos padroes de nomes proprios podem ser adicionados na lista `_PROPER_NOUN_PATTERNS` em `scripts/organize_bibtex.py`.
+
+## Normalizacao ABNT (NBR 6023)
+
+As chaves e entradas BibTeX devem seguir as regras da ABNT para entrada de autoria. Erros frequentes que a skill deve detectar e corrigir:
+
+### 1. Particulas nao fazem parte do sobrenome de entrada
+
+Particulas como `da`, `de`, `do`, `dos`, `das` sao elementos acessorios e **nao integram o sobrenome** na entrada ABNT. A entrada bibliografica e feita pelo sobrenome principal.
+
+| Campo `author` (BibTeX)       | Entrada ABNT           | Chave correta | Chave ERRADA   |
+|-------------------------------|------------------------|---------------|----------------|
+| `da Silva, João`              | SILVA, João da         | `Silva2020`   | `DaSilva2020`  |
+| `de Souza, Maria`             | SOUZA, Maria de        | `Souza2019`   | `DeSouza2019`  |
+| `dos Santos, Pedro`           | SANTOS, Pedro dos      | `Santos2021`  | `DosSantos2021`|
+| `da Cunha Junior, Antonio`    | CUNHA JUNIOR, A. da    | `Cunha2024`   | `DaCunhaJunior2024` |
+
+### 2. Sufixos nao fazem parte da chave
+
+Sufixos como `Junior`, `Neto`, `Filho`, `Sobrinho` sao parte do sobrenome na ABNT mas **nao entram na chave** BibTeX para manter o formato curto.
+
+| Campo `author`                | Entrada ABNT               | Chave correta |
+|-------------------------------|----------------------------|---------------|
+| `Lucas Junior, Antonio`       | LUCAS JUNIOR, Antonio      | `Lucas1988`   |
+| `Silveira Neto, Raul`         | SILVEIRA NETO, Raul        | `Silveira2012`|
+
+### 3. Sobrenomes compostos com hifen sao mantidos
+
+Sobrenomes compostos ligados por hifen sao tratados como unidade unica.
+
+| Campo `author`                | Chave correta      |
+|-------------------------------|--------------------|
+| `Oliveira-Silveira, Raul`     | `OliveiraSilveira2020` |
+
+### 4. Autores institucionais
+
+Autores institucionais entre chaves BibTeX (`{BRASIL}`, `{IBGE}`) sao convertidos para Title Case na chave.
+
+### 5. Dois autores com mesmo sobrenome e ano
+
+Quando dois artigos diferentes tem o mesmo primeiro autor e ano, desambiguar com o segundo autor antes de usar sufixo alfabetico.
+
+| Artigo 1: `Silva and Costa, 2020` | Artigo 2: `Silva and Reis, 2020` |
+|------------------------------------|----------------------------------|
+| `SilvaCosta2020`                   | `SilvaReis2020`                  |
+
+### 6. Campo `author` com "et al."
+
+O campo `author` no BibTeX **nunca** deve conter "et al." — todos os autores devem ser listados. O "et al." e gerado automaticamente pelo estilo de citacao (`abntex2cite`).
 
 ## Restricoes
 

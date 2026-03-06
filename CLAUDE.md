@@ -96,7 +96,7 @@ docs/update_reports/            → Relatorios de atualizacao do pipeline (propa
 
 - `/revisor-latex [escopo]` — Revisor automatizado de comandos LaTeX. Verifica consistencia estrutural (ambientes, labels, referencias cruzadas), conformidade ABNT/abntex2 (\fonte{}, \cite/\citeonline, caption/label), tipografia (non-breaking spaces, espacamento) e corrige automaticamente erros seguros sem necessidade de aprovacao. Nunca altera conteudo textual, dados numericos ou conteudo de tabelas. Escopo: `main`, `metodo`, `resultados`, `politica`, `tabelas`, `todos` (padrao). Definicao em `.claude/commands/6-revisor-latex.md`.
 
-- `/organizar-bib` — Organiza `latex/references.bib`: renomeia chaves para formato curto (PrimeiroAutorAno), resolve conflitos (segundo autor ou sufixo), ordena alfabeticamente e atualiza citacoes em todos os `.tex`. Usa `scripts/organize_bibtex.py` com modos `--dry-run` (padrao) e `--execute`. Definicao em `.claude/commands/7-organizar-bib.md`.
+- `/organizar-bib` — Organiza `latex/references.bib` com conformidade ABNT NBR 6023: renomeia chaves para formato curto (PrimeiroAutorAno, excluindo particulas e sufixos), resolve conflitos (segundo autor ou sufixo), ordena por sobrenome do 1o autor → ano → desambiguacao, corrige capitalizacao de titulos e atualiza citacoes em todos os `.tex`. Usa `scripts/organize_bibtex.py` com modos `--dry-run` (padrao), `--execute`, `--fix-titles` e `--archive`. Definicao em `.claude/commands/7-organizar-bib.md`.
 
 ## Dependencias
 
