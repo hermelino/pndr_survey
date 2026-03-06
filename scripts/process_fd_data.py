@@ -7,15 +7,15 @@ para gerar resumos por fundo, setor e tipologia PNDR 2007.
 Entrada:
     data/external_data/fds_contratacoes.xlsx  (contratos: FDA, FDNE, FDCO)
     data/external_data/fdne_liberacoes_ate_jun_2023.xlsx  (liberações FDNE)
-    tese/bulding_dataset_R/output/data/painel_fd_agregado.rds  (painel municipal)
-    tese/bulding_dataset_R/output/data/resumo_fd.xlsx  (resumo com tipologia)
+    data/external_data/painel_fd_agregado.rds  (painel municipal FD)
+    data/external_data/resumo_fd.xlsx  (resumo com tipologia, sheet "Sheet 1")
     data/external_data/tipologia_2007.xlsx  (tipologia PNDR)
     data/external_data/br_ibge_populacao_municipio.csv  (população municipal)
 
 Saída:
     data/external_data/resumo_fd.xlsx  (resumo por fundo/setor + tipologia + per capita)
 
-Referência R:
+Referência R (somente leitura):
     tese/bulding_dataset_R/source_code/fd_variables.R
     tese/bulding_dataset_R/source_code/grafico_resumo_fd.R
 
@@ -296,25 +296,24 @@ def generate_resumo(contratacoes: pd.DataFrame) -> pd.DataFrame:
     return resumo
 
 
-TESE_ROOT = Path("C:/OneDrive/github/tese")
-TESE_RESUMO_FD = TESE_ROOT / "bulding_dataset_R" / "output" / "data" / "resumo_fd.xlsx"
-TESE_PAINEL_FD = TESE_ROOT / "bulding_dataset_R" / "output" / "data" / "painel_fd_agregado.rds"
+RESUMO_FD_SOURCE = DATA_DIR / "resumo_fd.xlsx"
+PAINEL_FD_LOCAL = DATA_DIR / "painel_fd_agregado.rds"
 
 
 def load_tipologia_resumo() -> pd.DataFrame:
-    """Carrega resumo FD por tipologia/fundo/setor da tese.
+    """Carrega resumo FD por tipologia/fundo/setor.
 
-    O resumo da tese contém valores deflacionados (IPCA) agrupados por
-    tipologia2007, INSTR e SETOR — necessário para o gráfico facetado.
+    O resumo contém valores agrupados por tipologia2007, INSTR e SETOR
+    — necessário para o gráfico facetado.
 
     Returns:
-        DataFrame com tipologia2007, INSTR, SETOR, valor
+        DataFrame com tipologia2007, INSTR, SETOR, valor, valor_bi
     """
-    if not TESE_RESUMO_FD.exists():
-        logger.warning(f"Resumo FD tese não encontrado: {TESE_RESUMO_FD}")
+    if not RESUMO_FD_SOURCE.exists():
+        logger.warning(f"Resumo FD não encontrado: {RESUMO_FD_SOURCE}")
         return pd.DataFrame()
 
-    df = pd.read_excel(TESE_RESUMO_FD, sheet_name="Sheet 1")
+    df = pd.read_excel(RESUMO_FD_SOURCE, sheet_name="Sheet 1")
     # Filtrar linhas sem tipologia
     df = df[df["tipologia2007"].notna()].copy()
     df["valor_bi"] = df["valor"] / 1e9
@@ -340,8 +339,8 @@ def compute_pib_share_fd() -> pd.DataFrame:
         logger.warning("pyreadr não instalado — participação PIB FD não calculada")
         return pd.DataFrame()
 
-    if not TESE_PAINEL_FD.exists():
-        logger.warning(f"Painel FD tese não encontrado: {TESE_PAINEL_FD}")
+    if not PAINEL_FD_LOCAL.exists():
+        logger.warning(f"Painel FD não encontrado: {PAINEL_FD_LOCAL}")
         return pd.DataFrame()
 
     # Tipologia
@@ -351,13 +350,13 @@ def compute_pib_share_fd() -> pd.DataFrame:
         return pd.DataFrame()
 
     # PIB municipal (IBGE, em R$ 1.000)
-    pib_path = Path("C:/OneDrive/DATABASES/MUNICÍPIOS/pib_municipios.xlsx")
+    pib_path = DATA_DIR / "pib_municipios.xlsx"
     if not pib_path.exists():
         logger.warning(f"PIB municipal não encontrado: {pib_path}")
         return pd.DataFrame()
 
     # 1. Carregar painel municipal FD
-    rds = pyreadr.read_r(str(TESE_PAINEL_FD))
+    rds = pyreadr.read_r(str(PAINEL_FD_LOCAL))
     painel = list(rds.values())[0]
     painel["COD_MUNIC"] = painel["COD_MUNIC"].astype(int)
     painel["year"] = painel["year"].astype(int)
@@ -479,13 +478,22 @@ def main() -> int:
         # 4. Gerar resumo por fundo/setor
         resumo = generate_resumo(contratacoes)
 
-        # 5. Carregar dados de tipologia (da tese) e per capita
+        # 5. Carregar dados de tipologia e participação PIB (dados locais)
         resumo_tipologia = load_tipologia_resumo()
         medias_pib = compute_pib_share_fd()
 
-        # 6. Salvar outputs
+        # 6. Preservar dados-fonte (Sheet 1) e salvar todas as sheets
+        source_df = pd.DataFrame()
+        if RESUMO_FD_SOURCE.exists():
+            try:
+                source_df = pd.read_excel(RESUMO_FD_SOURCE, sheet_name="Sheet 1")
+            except Exception:
+                pass
+
         out_resumo = DATA_DIR / "resumo_fd.xlsx"
         with pd.ExcelWriter(out_resumo) as writer:
+            if not source_df.empty:
+                source_df.to_excel(writer, index=False, sheet_name="Sheet 1")
             resumo.to_excel(writer, index=False, sheet_name="por_fundo_setor")
             contratacoes.to_excel(writer, index=False, sheet_name="contratos")
             if not fdne_liberacoes.empty:

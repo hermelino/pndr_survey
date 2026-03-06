@@ -3,23 +3,20 @@
 
 Produz gráficos de barras empilhadas para os instrumentos da PNDR:
   - FC (Fundos Constitucionais) por fundo, setor e tipologia
-  - FD (Fundos de Desenvolvimento) por fundo e setor
-  - IF (Incentivos Fiscais) por órgão e setor
+  - FD (Fundos de Desenvolvimento) por fundo, setor e tipologia
+  - IF (Incentivos Fiscais) por superintendência, tipologia e setor
 
-Entrada:
-    data/external_data/resumo_fc.xlsx      (resumo FC)
-    data/external_data/resumo_fd.xlsx      (resumo FD)
-    data/external_data/resumo_icf.xlsx     (resumo IF)
-    data/external_data/if_consolidado.xlsx  (IF detalhado)
+Entrada (todos locais em data/external_data/):
+    resumo_fc.xlsx              (resumo FC)
+    resumo_fd.xlsx              (resumo FD: tipologia, setor, % PIB)
+    classif_incent_fiscais.xlsx (classificação ICF por superintendência)
+    if_consolidado.xlsx         (IF detalhado, série temporal)
 
 Saída:
-    figures/fc_setor_tipologia.png         (FC por setor/tipologia)
-    figures/fd_fundo_setor.png             (FD por fundo/setor)
-    figures/if_orgao_setor.png             (IF por órgão/setor)
-
-Referência R:
-    tese/bulding_dataset_R/source_code/grafico_resumo_fc.R
-    tese/bulding_dataset_R/source_code/grafico_resumo_fd.R
+    figures/fc_setor_tipologia.png   (FC por setor/tipologia)
+    figures/fd_fundo_setor.png       (FD por fundo/setor/tipologia + % PIB)
+    figures/icf_superint_setor.png   (IF por superintendência/tipologia/setor)
+    figures/if_evolucao_anual.png    (IF série temporal por órgão)
 
 Uso:
     python generate_policy_figures.py
@@ -219,7 +216,8 @@ def generate_fd_figure() -> Path:
     """Gera figura FD por fundo, setor e tipologia (3 painéis: FDNE, FDA, FDCO).
 
     Barras empilhadas por tipologia, coloridas por setor.
-    Linha vermelha de per capita no eixo secundário.
+    Linha vermelha de participação % média no PIB local no eixo secundário.
+    Layout inspirado em ggplot2 theme_minimal (grafico_resumo_fd.R).
 
     Referência R: grafico_resumo_fd.R
 
@@ -235,13 +233,13 @@ def generate_fd_figure() -> Path:
     tip_labels = {"Alta Renda": "Alta\nRenda", "Baixa Renda": "Baixa\nRenda",
                   "Dinâmica": "Dinâmica", "Estagnada": "Estagnada"}
 
-    # RColorBrewer Set3
+    # RColorBrewer Set3 (mesma paleta do R)
     set3_colors = [
         "#8DD3C7", "#FFFFB3", "#BEBADA", "#FB8072", "#80B1D3", "#FDB462",
         "#B3DE69", "#FCCDE5", "#D9D9D9", "#BC80BD", "#CCEBC5", "#FFED6F",
     ]
 
-    # Escala Y comum: máximo total por (fundo, tipologia)
+    # Escala Y comum (fixed, como ggplot facet_wrap scales="fixed")
     max_vals = []
     for fundo in fundos:
         df_f = setor_tip[setor_tip["INSTR"] == fundo]
@@ -255,7 +253,13 @@ def generate_fd_figure() -> Path:
     max_pib = medias_pib["pib_media"].max() if len(medias_pib) > 0 else 0.001
     limite_pib = max_pib * 1.1
 
-    fig, axes = plt.subplots(1, 3, figsize=(18, 7), sharey=True)
+    # LaTeX textwidth=155mm (~6.1in). Escala = 6.1/14 ≈ 0.44
+    # fs=20 → ~8.7pt no documento; fs_x=16 → ~7pt (x-labels menores
+    # evitam sobreposição nos 3 painéis, mesmo tamanho da versão R)
+    fs = 20
+    fs_x = 16  # x-labels precisam de fonte menor nos 3 painéis
+
+    fig, axes = plt.subplots(1, 3, figsize=(14, 6), sharey=True)
 
     for ax_idx, fundo in enumerate(fundos):
         ax = axes[ax_idx]
@@ -283,7 +287,7 @@ def generate_fd_figure() -> Path:
 
         x = np.arange(len(tips_presentes))
         x_labels = [tip_labels.get(t, t) for t in tips_presentes]
-        width = 0.7
+        width = 0.8
         bottom = np.zeros(len(tips_presentes))
 
         for setor in setores_order:
@@ -306,78 +310,88 @@ def generate_fd_figure() -> Path:
         # Escalar participação PIB para o eixo Y principal
         pib_scaled = [max(0, v / limite_pib * limite_y) for v in pib_vals]
         ax.plot(x, pib_scaled, color="red", linewidth=1.2, marker="o",
-                markersize=5, zorder=5)
+                markersize=3, zorder=5)
 
         ax.set_xticks(x)
-        ax.set_xticklabels(x_labels, fontsize=28)
-        ax.set_title(fundo, fontsize=26, pad=16, color="black")
+        ax.set_xticklabels(x_labels, fontsize=fs_x, ha="center")
+        ax.set_title(fundo, fontsize=fs, pad=8)
         ax.set_ylim(0, limite_y)
+        ax.set_axisbelow(True)
 
-        spine_color = "black"
-        ax.spines["top"].set_color(spine_color)
-        ax.spines["right"].set_color(spine_color)
-        ax.spines["left"].set_color(spine_color)
-        ax.spines["bottom"].set_color(spine_color)
-        ax.grid(axis="y", alpha=0.3, linestyle="--")
-        ax.tick_params(axis="both", labelsize=18, colors=spine_color)
-        ax.tick_params(axis="y", which="both", right=False)
+        for spine in ax.spines.values():
+            spine.set_visible(True)
+            spine.set_color("black")
+            spine.set_linewidth(0.5)
+        ax.grid(axis="y", alpha=0.4, linestyle="-", color="gray", linewidth=0.5)
+        ax.tick_params(axis="both", labelsize=fs_x)
 
         if ax_idx == 0:
-            ax.set_ylabel("R$ bilhões", fontsize=18, labelpad=12, color="black")
+            ax.set_ylabel("R$ bilhões", fontsize=fs_x)
             ax.yaxis.set_major_formatter(mticker.FuncFormatter(fmt_br))
-        else:
-            ax.tick_params(axis="y", labelleft=False)
 
         # Eixo secundário participação PIB (apenas no último painel)
         if ax_idx == 2:
             ax2 = ax.twinx()
             ax2.set_ylim(0, limite_pib * 100)
-            ax2.set_ylabel("% do PIB", fontsize=18, labelpad=12, color="black")
-            ax2.spines["right"].set_color(spine_color)
-            ax2.spines["left"].set_visible(False)
-            # Alinhar ticks do eixo direito com o esquerdo (1:1)
-            left_ticks = axes[0].get_yticks()
-            n_ticks = len([t for t in left_ticks if 0 <= t <= limite_y])
-            ax2.yaxis.set_major_locator(mticker.LinearLocator(numticks=n_ticks))
+            ax2.set_ylabel("% do PIB", fontsize=fs_x)
+            for spine in ax2.spines.values():
+                spine.set_visible(True)
+                spine.set_color("black")
+                spine.set_linewidth(0.5)
+            # Alinhar ticks do eixo direito com os ticks do eixo esquerdo
+            left_ticks = [t for t in axes[0].get_yticks()
+                          if 0 <= t <= limite_y]
+            right_ticks = [(t / limite_y) * (limite_pib * 100)
+                           for t in left_ticks]
+            ax2.set_yticks(right_ticks)
             ax2.yaxis.set_major_formatter(mticker.FuncFormatter(
                 lambda v, p: f"{v:,.1f}".replace(",", "X").replace(".", ",").replace("X", ".")
             ))
-            ax2.tick_params(axis="y", labelsize=18, colors="black")
-            ax2.spines["top"].set_color(spine_color)
+            ax2.tick_params(axis="y", labelsize=fs_x)
 
-    # Legenda unificada: coletar handles/labels únicos de todos os painéis
-    all_handles: list = []
-    all_labels: list[str] = []
+    # Legenda: coletar handles/labels únicos de todos os painéis
+    handle_map: dict[str, object] = {}
     for ax in axes:
         handles, labels = ax.get_legend_handles_labels()
         for h, l in zip(handles, labels):
-            if l not in all_labels:
-                all_handles.append(h)
-                all_labels.append(l)
+            if l not in handle_map:
+                handle_map[l] = h
 
-    # Linha 1: setores (barras) — 4 colunas
+    # Linha 1: setores em ordem explícita
+    setor_order = ["Infraestrutura", "Indústria de transformação",
+                   "Indústria extrativa", "Serviços"]
+    setor_handles = []
+    setor_labels = []
+    for s in setor_order:
+        if s in handle_map:
+            setor_handles.append(handle_map[s])
+            setor_labels.append(s)
+
     leg1 = fig.legend(
-        all_handles, all_labels,
+        setor_handles, setor_labels,
         loc="lower center",
-        bbox_to_anchor=(0.5, -0.12),
-        ncol=len(all_labels),
-        fontsize=24,
+        bbox_to_anchor=(0.5, 0.06),
+        ncol=len(setor_handles),
+        fontsize=fs,
         frameon=False,
+        columnspacing=1.5,
+        handletextpad=0.5,
     )
 
-    # Linha 2: linha vermelha (Participação % média no PIB local)
-    red_line = plt.Line2D([0], [0], color="red", linewidth=1.2, marker="o", markersize=5)
+    # Linha 2: indicador PIB
+    red_line = plt.Line2D([0], [0], color="red", linewidth=1.2, marker="o", markersize=4)
     fig.legend(
-        [red_line], ["Participação % média no PIB local (eixo à direita)"],
+        [red_line], ["Partic. % média no PIB local"],
         loc="lower center",
-        bbox_to_anchor=(0.5, -0.20),
+        bbox_to_anchor=(0.5, 0.0),
         ncol=1,
-        fontsize=24,
+        fontsize=fs,
         frameon=False,
+        handletextpad=0.5,
     )
-    fig.add_artist(leg1)
+    fig.add_artist(leg1)  # manter ambas as legendas visíveis
 
-    plt.tight_layout()
+    fig.subplots_adjust(wspace=0.08, bottom=0.28, top=0.93, left=0.07, right=0.93)
 
     out_path = FIGURES_DIR / "fd_fundo_setor.png"
     fig.savefig(out_path, dpi=300, bbox_inches="tight", facecolor="white")
@@ -387,80 +401,214 @@ def generate_fd_figure() -> Path:
     return out_path
 
 
-def generate_if_figure() -> Path:
-    """Gera figura IF por órgão e setor.
+def _compute_icf_per_capita() -> pd.DataFrame:
+    """Calcula incentivos fiscais por 100 mil hab. por tipologia e superintendência.
 
-    Stacked bar chart: SUDENE vs SUDAM, empilhado por setor.
+    Usa painel_icf.rds (contagens municipais) e populacao_fc.rds.
+
+    Returns:
+        DataFrame com tipologia2007, icf_sudene_pc_media, icf_sudam_pc_media
+    """
+    try:
+        import pyreadr
+    except ImportError:
+        logger.warning("pyreadr não instalado — per capita IF não calculado")
+        return pd.DataFrame()
+
+    painel_path = DATA_DIR / "painel_icf.rds"
+    pop_path = DATA_DIR / "populacao_fc.rds"
+    tip_path = DATA_DIR / "tipologia_2007.xlsx"
+
+    for p in [painel_path, pop_path, tip_path]:
+        if not p.exists():
+            logger.warning(f"Arquivo não encontrado: {p}")
+            return pd.DataFrame()
+
+    painel = list(pyreadr.read_r(str(painel_path)).values())[0]
+    populacao = list(pyreadr.read_r(str(pop_path)).values())[0]
+
+    tip = pd.read_excel(tip_path, sheet_name="Table 1")
+    tip = tip.iloc[:, [0, 5]].copy()
+    tip.columns = ["id_municipio", "tipologia2007"]
+    tip["id_municipio"] = pd.to_numeric(tip["id_municipio"], errors="coerce").astype("Int64")
+
+    merged = (
+        painel
+        .merge(tip, left_on="COD", right_on="id_municipio", how="left")
+        .merge(populacao, left_on=["COD", "ANO"], right_on=["CD_MUN", "ano"], how="left")
+    )
+    valid = merged[
+        merged["tipologia2007"].notna()
+        & merged["populacao"].notna()
+        & (merged["populacao"] > 0)
+    ].copy()
+
+    valid["icf_sudene_pc"] = (valid["icf_sudene"] / valid["populacao"]) * 100_000
+    valid["icf_sudam_pc"] = (valid["icf_sudam"] / valid["populacao"]) * 100_000
+
+    medias = (
+        valid.groupby("tipologia2007")
+        .agg(
+            icf_sudene_pc_media=("icf_sudene_pc", "mean"),
+            icf_sudam_pc_media=("icf_sudam_pc", "mean"),
+        )
+        .reset_index()
+    )
+
+    logger.info(f"Per capita ICF por tipologia:\n{medias.round(4).to_string(index=False)}")
+    return medias
+
+
+def generate_if_figure() -> Path:
+    """Gera figura IF por superintendência, tipologia e setor (2 painéis).
+
+    Barras empilhadas por tipologia, coloridas por setor.
+    Linha vermelha de incentivos por 100 mil hab. no eixo secundário.
+    Layout inspirado em ggplot2 (grafico_resumo_icf.R).
 
     Returns:
         Caminho da figura salva
     """
-    consolidado_path = DATA_DIR / "if_consolidado.xlsx"
-    df = pd.read_excel(consolidado_path, dtype={"CNPJ": str})
+    # Dados de tipologia/setor/superintendência
+    classif_path = DATA_DIR / "classif_incent_fiscais.xlsx"
+    classif = pd.read_excel(classif_path)
 
-    # Contar por órgão e setor
-    counts = df.groupby(["ORGAO", "SETOR2"]).size().reset_index(name="QUANTIDADE")
+    # Per capita
+    medias_pc = _compute_icf_per_capita()
 
     orgaos = ["SUDENE", "SUDAM"]
+    tipologias = ["Alta Renda", "Baixa Renda", "Dinâmica", "Estagnada"]
+    tip_labels = {"Alta Renda": "Alta\nRenda", "Baixa Renda": "Baixa\nRenda",
+                  "Dinâmica": "Dinâmica", "Estagnada": "Estagnada"}
+
     setores_order = [
         "Indústria de transformação",
         "Infraestrutura",
-        "Agroindústria",
-        "Turismo",
-        "Agricultura irrigada",
         "Indústria extrativa de minerais metálicos",
-        "Outro",
+        "Turismo",
+        "Agroindústria",
+        "Agricultura irrigada",
     ]
-    # Filtrar setores presentes
-    setores = [s for s in setores_order if s in counts["SETOR2"].values]
 
-    pivot = counts.pivot_table(
-        index="ORGAO", columns="SETOR2", values="QUANTIDADE", fill_value=0
-    )
-    pivot = pivot.reindex(orgaos).fillna(0)
+    # RColorBrewer Set3
+    set3_colors = [
+        "#8DD3C7", "#FFFFB3", "#BEBADA", "#FB8072", "#80B1D3", "#FDB462",
+        "#B3DE69", "#FCCDE5", "#D9D9D9", "#BC80BD", "#CCEBC5", "#FFED6F",
+    ]
 
-    fig, ax = plt.subplots(figsize=(10, 5.5))
+    # Pivotar classif para long format: tipologia, setor, orgao, quantidade
+    rows: list[dict] = []
+    for _, r in classif.iterrows():
+        tip = r["tipologia2007"]
+        setor = r["SETOR2"]
+        for orgao in orgaos:
+            val = r.get(orgao, 0)
+            if pd.notna(val) and val > 0:
+                rows.append({"tipologia2007": tip, "SETOR2": setor,
+                             "orgao": orgao, "quantidade": val})
+    dados = pd.DataFrame(rows)
 
-    x = np.arange(len(orgaos))
-    width = 0.5
-    bottom = np.zeros(len(orgaos))
+    # Escala Y comum
+    max_vals = []
+    for orgao in orgaos:
+        df_o = dados[dados["orgao"] == orgao]
+        for tip in tipologias:
+            total = df_o[df_o["tipologia2007"] == tip]["quantidade"].sum()
+            if total > 0:
+                max_vals.append(total)
+    limite_y = max(max_vals) * 1.10 if max_vals else 1
 
-    for setor in setores:
-        if setor in pivot.columns:
-            values = pivot[setor].values
-            color = SECTOR_COLORS.get(setor, "#D9D9D9")
-            ax.bar(x, values, width, bottom=bottom, label=setor, color=color, edgecolor="white", linewidth=0.5)
+    # Escala per capita
+    if not medias_pc.empty:
+        max_pc = max(medias_pc["icf_sudene_pc_media"].max(),
+                     medias_pc["icf_sudam_pc_media"].max())
+        limite_pc = max_pc * 1.5
+    else:
+        limite_pc = 1
+
+    # LaTeX textwidth=155mm (~6.1in). Escala = 6.1/12 ≈ 0.51
+    # fs=20 → ~10pt (títulos, legenda); fs_x=16 → ~8pt (eixos)
+    fs = 20
+    fs_x = 16
+
+    fig, axes = plt.subplots(1, 2, figsize=(12, 6), sharey=True)
+
+    # Mapa orgao → coluna per capita
+    pc_col_map = {"SUDENE": "icf_sudene_pc_media", "SUDAM": "icf_sudam_pc_media"}
+
+    for ax_idx, orgao in enumerate(orgaos):
+        ax = axes[ax_idx]
+        df_o = dados[dados["orgao"] == orgao]
+
+        # Setores presentes neste órgão, na ordem definida
+        setores_presentes = [s for s in setores_order if s in df_o["SETOR2"].values]
+
+        # Cores dos setores
+        cores_setor = {s: set3_colors[i % len(set3_colors)]
+                       for i, s in enumerate(setores_order)}
+
+        x = np.arange(len(tipologias))
+        x_labels = [tip_labels.get(t, t) for t in tipologias]
+        width = 0.9
+        bottom = np.zeros(len(tipologias))
+
+        for setor in setores_presentes:
+            values = []
+            for tip in tipologias:
+                val = df_o[(df_o["tipologia2007"] == tip) & (df_o["SETOR2"] == setor)]["quantidade"].sum()
+                values.append(val)
+            values = np.array(values)
+            ax.bar(x, values, width, bottom=bottom, label=setor,
+                   color=cores_setor[setor], edgecolor="white", linewidth=0.5)
             bottom += values
 
-    ax.set_xticks(x)
-    ax.set_xticklabels(orgaos, fontsize=14)
-    ax.set_ylabel("Quantidade de incentivos", fontsize=13)
-    ax.set_ylim(0, max(bottom) * 1.12)
+        ax.set_xticks(x)
+        ax.set_xticklabels(x_labels, fontsize=fs_x, ha="center")
+        ax.set_title(orgao, fontsize=fs, pad=8)
+        ax.set_ylim(0, limite_y)
+        ax.set_axisbelow(True)
 
-    ax.spines["top"].set_color("black")
-    ax.spines["right"].set_color("black")
-    ax.spines["left"].set_color("black")
-    ax.spines["bottom"].set_color("black")
-    ax.grid(axis="y", alpha=0.3, linestyle="--")
-    ax.tick_params(axis="both", labelsize=12, colors="black")
+        for spine in ax.spines.values():
+            spine.set_visible(True)
+            spine.set_color("black")
+            spine.set_linewidth(0.5)
+        ax.grid(axis="y", alpha=0.4, linestyle="-", color="gray", linewidth=0.5)
+        ax.tick_params(axis="both", labelsize=fs_x)
 
-    ax.legend(
-        loc="upper center",
-        bbox_to_anchor=(0.5, -0.12),
-        ncol=min(3, len(setores)),
-        fontsize=10,
+        if ax_idx == 0:
+            ax.set_ylabel("Quantidade", fontsize=fs_x)
+            ax.yaxis.set_major_locator(mticker.MaxNLocator(nbins=5, integer=True))
+            ax.yaxis.set_major_formatter(mticker.FuncFormatter(fmt_br))
+
+    # Legenda unificada (com labels abreviadas para legibilidade)
+    legend_renames = {
+        "Indústria extrativa de minerais metálicos": "Ind. extr. de minerais metálicos",
+    }
+    all_handles: list = []
+    all_labels: list[str] = []
+    seen: set[str] = set()
+    for ax in axes:
+        handles, labels = ax.get_legend_handles_labels()
+        for h, l in zip(handles, labels):
+            if l not in seen:
+                seen.add(l)
+                all_handles.append(h)
+                all_labels.append(legend_renames.get(l, l))
+
+    fig.legend(
+        all_handles, all_labels,
+        loc="lower center",
+        bbox_to_anchor=(0.5, 0.0),
+        ncol=3,
+        fontsize=fs,
         frameon=False,
+        columnspacing=1.5,
+        handletextpad=0.5,
     )
 
-    # Totais
-    for i, total in enumerate(bottom):
-        if total > 0:
-            ax.text(i, total + 20, f"{int(total):,}".replace(",", "."),
-                    ha="center", va="bottom", fontsize=11, fontweight="bold")
+    fig.subplots_adjust(wspace=0.10, bottom=0.28, top=0.93, left=0.08, right=0.97)
 
-    plt.tight_layout()
-
-    out_path = FIGURES_DIR / "if_orgao_setor.png"
+    out_path = FIGURES_DIR / "icf_superint_setor.png"
     fig.savefig(out_path, dpi=300, bbox_inches="tight", facecolor="white")
     plt.close(fig)
 

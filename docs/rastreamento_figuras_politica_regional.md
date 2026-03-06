@@ -8,8 +8,8 @@
 
 ## Resumo Executivo
 
-De 4 figuras identificadas na seção:
-- ✅ **2 figuras** possuem scripts geradores confirmados
+De 5 figuras identificadas na seção:
+- ✅ **3 figuras** possuem scripts geradores confirmados (2 Python local + 1 R/tese)
 - ⚠️ **1 figura** possui script gerador provável (requer verificação)
 - ❌ **1 figura** NÃO possui script gerador (fonte externa)
 
@@ -106,35 +106,66 @@ De 4 figuras identificadas na seção:
 **Arquivo:** `icf_superint_setor.png`
 **Localização:** `c:\OneDrive\github\pndr_survey\figures\icf_superint_setor.png`
 
-**Status:** ✅ **Script confirmado**
+**Status:** ✅ **Script confirmado (Python, dados locais)**
 
 **Script gerador:**
-- **Caminho:** `c:\OneDrive\github\tese\bulding_dataset_R\source_code\grafico_resumo_icf.R`
-- **Linguagem:** R
-- **Bibliotecas:** `ggplot2`, `RColorBrewer`, `tidyverse`, `readxl`
-- **Saída:** `../output/plots/icf_superint_setor.png` (via função `save_plot()`)
+- **Caminho:** `c:\OneDrive\github\pndr_survey\scripts\generate_policy_figures.py` → `generate_if_figure()`
+- **Linguagem:** Python (matplotlib)
+- **Execução:** `python scripts/generate_policy_figures.py --only if`
 
-**Descrição do script:**
-- Gráfico de barras empilhadas (facetas SUDENE/SUDAM)
-- Categorização por tipologia 2007 (Alta Renda, Baixa Renda, Dinâmica, Estagnada)
+**Descrição:**
+- 2 painéis (SUDENE / SUDAM) com barras empilhadas por tipologia 2007
 - Breakdown por setor (6 setores: Ind. Transformação, Infraestrutura, etc.)
-- Linha vermelha sobreposta: média per capita (por 100 mil hab.)
-- Eixo secundário à direita para valores per capita
+- Sem eixo secundário
 
-**Dados necessários:**
-- `../output/data/classif_incent_fiscais.xlsx`
-- `../output/data/painel_icf.rds`
-- `../output/data/populacao_fc.rds`
-- `C:/OneDrive/DATABASES/MUNICÍPIOS/tipologia_2007.xlsx`
+**Dados necessários (todos em `data/external_data/`):**
+- `classif_incent_fiscais.xlsx`
 
-**Funções auxiliares:**
-- `save_plot()` definida em `./output_helpers.R`
+**Referência R original:** `tese/bulding_dataset_R/source_code/grafico_resumo_icf.R`
+
+---
+
+### 5. Valor Liberado pelos Fundos de Desenvolvimento
+
+**Label LaTeX:** `fig:fd` (linha ~66)
+**Arquivo:** `fd_fundo_setor.png`
+**Localização:** `c:\OneDrive\github\pndr_survey\figures\fd_fundo_setor.png`
+
+**Status:** ✅ **Script confirmado (Python, dados locais)**
+
+**Script gerador:**
+- **Caminho:** `c:\OneDrive\github\pndr_survey\scripts\generate_policy_figures.py` → `generate_fd_figure()`
+- **Linguagem:** Python (matplotlib)
+- **Execução:** `python scripts/generate_policy_figures.py --only fd`
+
+**Descrição:**
+- 3 painéis (FDNE / FDA / FDCO) com barras empilhadas por tipologia 2007
+- Breakdown por setor (Infraestrutura, Ind. Transformação, Ind. Extrativa, Serviços)
+- Linha vermelha sobreposta: participação % média no PIB local
+- Eixo secundário à direita para % do PIB
+
+**Dados necessários (todos em `data/external_data/`):**
+- `resumo_fd.xlsx` (sheets: `por_fundo_setor_tipologia`, `medias_pib_tipologia`)
+
+**Pré-processamento:** `python scripts/process_fd_data.py` (gera as sheets necessárias)
+
+**Referência R original:** `tese/bulding_dataset_R/source_code/grafico_resumo_fd.R`
 
 ---
 
 ## Dependências dos Scripts
 
-### Shapefiles Geoespaciais
+### Figuras 4 e 5 (IF e FD) — Dados locais em `data/external_data/`
+```
+data/external_data/
+├── classif_incent_fiscais.xlsx   (IF: classificação por superintendência/tipologia/setor)
+├── resumo_fd.xlsx                (FD: resumo por fundo/setor/tipologia + % PIB)
+├── painel_fd_agregado.rds        (FD: painel municipal para cálculo % PIB)
+├── pib_municipios.xlsx           (PIB municipal IBGE)
+└── tipologia_2007.xlsx           (Tipologia PNDR 2007)
+```
+
+### Figuras 1 e 3 (Mapas PIB e tipologia) — Dependências externas
 ```
 C:/OneDrive/DATABASES/DIVISÃO POLÍTICA E REGIONAL/
 ├── SHAPES/
@@ -142,22 +173,10 @@ C:/OneDrive/DATABASES/DIVISÃO POLÍTICA E REGIONAL/
 │   ├── BR_UF_2021/BR_UF_2021.shp
 ├── LIM_Semiarido_Municipal_OFICIAL/LIM_Semiarido_Municipal_OFICIAL.shp
 └── AMAZONIA LEGAL/Mun_Amazonia_Legal_2022_shp/Mun_Amazonia_Legal_2022.shp
-```
 
-### Dados Processados (RDS/Excel)
-```
 tese/bulding_dataset_R/output/data/
 ├── dataset_completo_com_pib_relativo.rds
-├── painel_balanc_var_ln_pibrpc.rds
-├── classif_incent_fiscais.xlsx
-├── painel_icf.rds
-└── populacao_fc.rds
-```
-
-### Arquivos de Configuração
-```
-tese/bulding_dataset_R/source_code/
-└── output_helpers.R  (funções save_plot, save_map, etc.)
+└── painel_balanc_var_ln_pibrpc.rds
 ```
 
 ---
@@ -211,16 +230,20 @@ python generate_figures.py
 python generate_figures.py --force
 ```
 
-### Configuração Necessária
+### Figuras com dados locais (sem dependências externas)
 
-Edite `scripts/config.yaml`, seção `figures:`:
+```bash
+# FD e IF — gerados inteiramente com dados locais
+python scripts/generate_policy_figures.py --only fd   # → figures/fd_fundo_setor.png
+python scripts/generate_policy_figures.py --only if   # → figures/icf_superint_setor.png
 
-```yaml
-figures:
-  external_data_dir: "C:/OneDrive/github/tese/bulding_dataset_R/output/data"
-  external_shapefiles_dir: "C:/OneDrive/DATABASES"
-  r_executable: ""  # Vazio = auto-detect
+# Pré-processar dados FD (se necessário regenerar sheets)
+python scripts/process_fd_data.py
 ```
+
+### Figuras com dependências externas (mapas)
+
+Requerem acesso a shapefiles e dados RDS do projeto tese:
 
 ### Implementação
 
@@ -239,11 +262,11 @@ figures:
 
 1. ✅ Confirmar que `tipologia_I.JPG` não precisa de script (fonte externa oficial)
 2. ✅ Verificar e documentar origem de `tipologia_II_simples_com_legenda.png` (gerada por `mapa_tipologia_simples.R`)
-3. ✅ Validar que scripts R de PIB e ICF geram figuras corretas
+3. ✅ Figuras FD e ICF migradas para Python com dados locais (`generate_policy_figures.py`)
 4. ✅ Adicionar comentários no LaTeX referenciando scripts
-5. ✅ Wrapper script criado para regenerar todas as figuras (`generate_figures.py`)
+5. ⬜ Migrar mapas (PIB e tipologia) para dados locais (requer cópia de shapefiles)
 
 ---
 
-**Última atualização:** 2026-03-02
+**Última atualização:** 2026-03-05
 **Responsável:** Claude Code Agent

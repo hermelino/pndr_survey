@@ -84,21 +84,18 @@ Destino: `data/external_data/`
 | `scripts/process_if_data.py` | SUDENE JSON + SUDAM Excel | `painel_icf.parquet`, `classif_incent_fiscais.xlsx` | `if_variables.R` |
 | `scripts/process_fd_data.py` | FDNE Excel + FDA PDF | `resumo_fd.xlsx`, `painel_fd_agregado.parquet` | `fd_variables.R` |
 | `scripts/process_fc_data.py` | FC Excel (6 arquivos) | `painel_fc.parquet`, `fc_tabela_resumo.tex` | `fc_variables.R` |
-| `scripts/generate_policy_figures.py` | Painéis processados | Figuras PNG (matplotlib) | `grafico_resumo_*.R` |
-
-### Scripts R de Figuras (executáveis diretamente)
-
-Scripts R mantidos em `data/r_scripts/` que geram figuras diretamente em `figures/`. Dados lidos de `data/external_data/`.
-
-| Script R | Dados de entrada | Saída | Observação |
-|----------|-----------------|-------|------------|
-| `grafico_resumo_icf.R` | `classif_incent_fiscais.xlsx`, `painel_icf.rds`, `populacao_fc.rds`, `tipologia_2007.xlsx` | `figures/icf_superint_setor.png` | Barras empilhadas por superintendência (SUDENE/SUDAM), tipologia PNDR e setor. Fonte serif, face plain. |
-| `grafico_resumo_fd.R` | `resumo_fd.xlsx`, `painel_fd_agregado.rds`, `populacao_fc.rds`, `tipologia_2007.xlsx` | `figures/fd_fundo_setor.png` | Barras empilhadas por fundo (FDNE/FDA/FDCO), tipologia PNDR e setor. Fonte serif, face plain. |
-
-**Execução:** `cd data/r_scripts && Rscript grafico_resumo_icf.R` ou `Rscript grafico_resumo_fd.R`
-
-**Auxiliar:** `data/r_scripts/output_helpers.R` — funções `save_plot()`, `save_data()`, etc. (legado do projeto tese, mantido por compatibilidade).
+| `scripts/generate_policy_figures.py` | Dados locais em `data/external_data/` | Figuras PNG (matplotlib) | `grafico_resumo_*.R` (referência apenas) |
 | `scripts/generate_policy_tables.py` | Painéis processados | Tabelas LaTeX | `descritive_estats_tipologia.R` |
+
+**Figuras geradas por `generate_policy_figures.py`** (todas com dados locais, sem dependência do projeto tese):
+
+| Figura | Dados de entrada (em `data/external_data/`) | Saída |
+|--------|----------------------------------------------|-------|
+| FD — Fundos de Desenvolvimento | `resumo_fd.xlsx` (sheets: `por_fundo_setor_tipologia`, `medias_pib_tipologia`) | `figures/fd_fundo_setor.png` |
+| IF — Incentivos Fiscais | `classif_incent_fiscais.xlsx` | `figures/icf_superint_setor.png` |
+| FC — Fundos Constitucionais | `resumo_fc.xlsx` (sheets: `por_fundo_setor_tipologia`, `medias_pc_tipologia`) | `figures/fc_setor_tipologia.png` |
+
+**Execução:** `python scripts/generate_policy_figures.py` (todas) ou `--only fd`, `--only if`, `--only fc`.
 
 ## Contexto dos Projetos
 
