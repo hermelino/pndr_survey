@@ -77,6 +77,12 @@ def is_published(study: dict) -> bool:
         "econpapers-2015-oliveira-arriel-rodrigues",  # Economia & Região
         "econpapers-2017-oliveira-resende-oliveira",  # Plan. e Políticas Públicas
         "econpapers-2024-ribeiro",                    # Economia Aplicada
+        "manual-2016-oliveira-lima-arriel",           # Economia & Região
+        "manual-2017-resende-silva-filho",            # Nova Economia
+        "manual-2019-cambota-viana",                  # Econ. do Ceará em Debate
+        "manual-2020-daniel-braga",                   # Plan. e Políticas Públicas
+        "manual-2020-rieger-lima-rodrigues",          # Rev. Econ. do Nordeste
+        "manual-2022-goncalves-braga-gurgel",        # Rev. Econ. do Nordeste
         "manual-2026-oliveira-carneiro-souza",        # Rev. Cadernos de Finanças Públicas
     }
     UNPUBLISHED_KEYS = {
@@ -84,6 +90,10 @@ def is_published(study: dict) -> bool:
         "econpapers-2011-resende",                # IPEA TD 1777
         "econpapers-2014-goncalves-soares-linhares",  # WP ANPEC
         "econpapers-2014-resende",                # IPEA TD 1918
+        "manual-2014-resende-fno",                # IPEA TD 1973
+        "manual-2016-irffi-araujo-bastos",        # Texto para Discussão
+        "manual-2018-carneiro",                   # Texto para Discussão
+        "manual-2023-silva-azzoni-chagas",        # TD NEREUS USP
         # Removidos (marcados como duplicatas de versões publicadas):
         #   econpapers-2007-silva-resende-neto  → scopus-2009-silva-resende-neto
         #   econpapers-2015-oliveira-terra-resende → scopus-2018-oliveira-terra-resende

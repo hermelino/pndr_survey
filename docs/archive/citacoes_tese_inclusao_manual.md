@@ -40,6 +40,8 @@ Estes estudos avaliam instrumentos da PNDR, estao citados na secao de resultados
 - **Chave pndr_survey (BibTeX):** `Resende2014b` (adicionado manualmente)
 - **Nota:** Complemento regional (Norte) do TD 1918 (Resende2014a, aprovado). Pipeline capturou o TD 1918 (FNE) mas nao o TD 1973 (FNO).
 
+Decisão: INCLUIR
+
 ### 2. Cravo e Resende (2015) — FCs, Painel Espacial SDM
 
 - **Titulo:** The Brazilian Regional Development Funds and Economic Growth
@@ -50,6 +52,8 @@ Estes estudos avaliam instrumentos da PNDR, estao citados na secao de resultados
 - **Chave tese:** `CravoResende2015`
 - **Chave pndr_survey (BibTeX):** `Cravo2015` (adicionado manualmente)
 - **Nota:** Versao internacional com modelo SDM. Distinto do TD IPEA 1969 (ResendeCravo2014, modelo EF nao-espacial) que foi capturado e removido como duplicata.
+
+Decisão: REJEITADO
 
 ### 3. Oliveira, Lima e Arriel (2016) — FCO, Painel Espacial SAR
 
@@ -62,6 +66,8 @@ Estes estudos avaliam instrumentos da PNDR, estao citados na secao de resultados
 - **Chave pndr_survey (BibTeX):** `Oliveira2016` (adicionado manualmente)
 - **Nota:** Avaliacao espacial do FCO especifica para Goias. Nao confundir com Oliveira2015 (econpapers, aprovado) que trata de concentracao espacial.
 
+Decisão: REJEITAR Oliveira2015 e INCLUIR Oliveira2016
+
 ### 4. Resende, Silva e Filho (2017) — FNE, Espacial por Tipologia PNDR
 
 - **Titulo:** Avaliacao Economica do Fundo Constitucional de Financiamento do Nordeste (FNE): uma Analise Espacial por Tipologia da PNDR entre 1999 e 2011
@@ -72,6 +78,8 @@ Estes estudos avaliam instrumentos da PNDR, estao citados na secao de resultados
 - **Chave tese:** `Resende2017`
 - **Chave pndr_survey (BibTeX):** `Resende2017` (adicionado manualmente)
 - **Nota:** Avalia somente o FNE por tipologia. Distinto de Resende2018 (aprovado) que avalia os tres fundos. O TD IPEA 2145 (versao WP do Resende2018) foi capturado e removido como duplicata.
+
+Decisão: INCLUIR
 
 ### 5. Irffi, Araujo e Bastos (2016) — FNE, Regressao Quantilica
 
@@ -84,6 +92,8 @@ Estes estudos avaliam instrumentos da PNDR, estao citados na secao de resultados
 - **Chave pndr_survey (BibTeX):** `Irffi2016` (adicionado manualmente)
 - **Nota:** Publicacao interna do BNB, provavelmente fora do alcance das bases consultadas.
 
+Decisão: INCLUIR
+
 ### 6. Carneiro (2018) — FNE, Analise de Eficiencia DEA
 
 - **Titulo:** Determinantes da Eficiencia da Aplicacao dos Recursos do FNE pelos Municipios Beneficiados
@@ -94,6 +104,8 @@ Estes estudos avaliam instrumentos da PNDR, estao citados na secao de resultados
 - **Chave tese:** `Carneiro2018b`
 - **Chave pndr_survey (BibTeX):** `Carneiro2018` (adicionado manualmente)
 - **Nota:** Publicacao institucional do BNB (serie ETENE), fora do alcance das bases academicas consultadas.
+
+Decisão: INCLUIR
 
 ### 7. Cambota e Viana (2019) — FNE, Painel Dinamico
 
@@ -106,6 +118,8 @@ Estes estudos avaliam instrumentos da PNDR, estao citados na secao de resultados
 - **Chave pndr_survey (BibTeX):** `Cambota2019` (adicionado manualmente)
 - **Nota:** Publicacao do TCE-CE, periodico nao indexado nas bases consultadas.
 
+Decisão: INCLUIR
+
 ### 8. Goncalves, Braga e Gurgel (2022) — FNE, Equilibrio Geral
 
 - **Titulo:** Avaliacao dos Impactos do Fundo Constitucional de Financiamento do Nordeste (FNE): uma Abordagem de Equilibrio Geral
@@ -116,6 +130,8 @@ Estes estudos avaliam instrumentos da PNDR, estao citados na secao de resultados
 - **Chave tese:** `Goncalves2022`
 - **Chave pndr_survey (BibTeX):** `Goncalves2022` (adicionado manualmente)
 - **Nota:** Periodico da UFRGS. Possivelmente nao retornado pelas queries de busca usadas no pipeline.
+
+Decisão: INCLUIR
 
 ### 9. Rieger, Lima e Rodrigues (2020) — FNE, Emprego Formal, Painel Dinamico
 
@@ -128,6 +144,8 @@ Estes estudos avaliam instrumentos da PNDR, estao citados na secao de resultados
 - **Chave pndr_survey (BibTeX):** `Rieger2020` (adicionado manualmente)
 - **Nota:** Revista Economica do Nordeste (BNB). Presente no SciELO mas nao retornado pelas queries.
 
+Decisão: INCLUIR
+
 ### 10. Daniel e Braga (2020) — FNO, DID, Emprego por Porte
 
 - **Titulo:** Impactos do Fundo Constitucional de Financiamento do Norte: evidencias do estimador de diferencas em diferencas
@@ -139,6 +157,8 @@ Estes estudos avaliam instrumentos da PNDR, estao citados na secao de resultados
 - **Chave pndr_survey (BibTeX):** `Daniel2020` (adicionado manualmente)
 - **Nota:** Periodico do IPEA. Unico estudo DID sobre o FNO na literatura.
 
+Decisão: INCLUIR
+
 ### 11. Silva Filho, Azzoni e Chagas (2023) — FNE/FNO/FCO, Painel Espacial
 
 - **Titulo:** Impactos do Financiamento Publico sobre a Economia dos Municipios Beneficiados
@@ -149,6 +169,8 @@ Estes estudos avaliam instrumentos da PNDR, estao citados na secao de resultados
 - **Chave tese:** `Silva2023`
 - **Chave pndr_survey (BibTeX):** `Silva2023` (adicionado manualmente)
 - **Nota:** Working paper do NEREUS/USP, nao indexado nas bases consultadas.
+
+Decisão: INCLUIR
 
 ---
 

@@ -73,7 +73,8 @@ def clean_year(val) -> str:
 def load_llm_xlsx() -> dict:
     """Load LLM classification xlsx, keyed by Arquivo PDF."""
     wb = openpyxl.load_workbook(str(LLM_XLSX), read_only=True)
-    ws = wb.active
+    # Use first sheet (data), not the active sheet (may be a summary tab)
+    ws = wb[wb.sheetnames[0]]
     headers = [cell.value for cell in next(ws.iter_rows(min_row=1, max_row=1))]
 
     papers = {}

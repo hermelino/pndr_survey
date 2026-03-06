@@ -14,8 +14,8 @@ Revisao sistematica sobre instrumentos da PNDR (2000-2025). Busca manual em 5 ba
 | 1-4 | EconPapers/RePEc | 11 | 11 | 100% | Concluido |
 | 1-5 | ANPEC | 61 | 61 | 100% | Concluido |
 | **Total (apos dedup)** | | **118** | **118** | **100%** | **Concluido** |
-| **Inclusao manual** | | **1** | **1** | **100%** | **Concluido** |
-| **Total geral** | | **119** | **119** | **100%** | **Concluido** |
+| **Inclusao manual** | | **11** | **11** | **100%** | **Concluido** |
+| **Total geral** | | **129** | **129** | **100%** | **Concluido** |
 
 ## Estrategia de busca
 
@@ -128,7 +128,7 @@ Identificados apos a analise de indice de citacao. Estudos que apareceram como T
 | Eficacia do gasto publico: FNE, FNO e FCO | scielo-2009 (mesma pub., sem DOI) | scopus-2009-silva-resende-neto | 10.1590/s0101-41612009000100004 |
 | Efeitos regionais do FNE (congresso ANPEC 2013) | econpapers-2014-goncalves-soares-linhares (nome alternativo) | econpapers-2014-viana-goncalves-linhares (CEPAL Review) | — |
 
-Total de duplicatas: 9 (fases 1-2, DOI + fuzzy titulo) + 10 (fase 3, PDF identico) + 9 (fase 4, manual TD/WP) = 28 removidas. **118 papers das bases** (mantidos para consistencia com LLM) + **1 inclusao manual** = **119 papers na base**, **34 aprovados** apos triagem.
+Total de duplicatas: 9 (fases 1-2, DOI + fuzzy titulo) + 10 (fase 3, PDF identico) + 9 (fase 4, manual TD/WP) = 28 removidas. **118 papers das bases** (mantidos para consistencia com LLM) + **11 inclusoes manuais** = **129 papers na base**, **43 aprovados** apos triagem.
 
 Arquivo de auditoria fase 1: `data/1-records/processed/duplicates_removed.csv`
 Arquivo de auditoria fase 3: `data/2-papers/all_papers.xlsx` (aba "Duplicatas")
@@ -170,10 +170,10 @@ Scripts de renomeacao e verificacao: `data/2-papers/2-1-papers_scripts/`.
 | EconPapers | 11 | 11 | 0 | 100% |
 | ANPEC | 61 | 61 | 0 | 100% |
 | **Total (bases)** | **118** | **118** | **0** | **100%** |
-| Inclusao manual | 1 | 1 | 0 | 100% |
-| **Total geral** | **119** | **119** | **0** | **100%** |
+| Inclusao manual | 11 | 11 | 0 | 100% |
+| **Total geral** | **129** | **129** | **0** | **100%** |
 
-Controle detalhado: `data/2-papers/all_papers.xlsx` (planilha "Registros", colunas Baixado e Arquivo PDF). O estudo `manual-2026-oliveira-carneiro-souza.pdf` foi incluido manualmente (publicacao identificada fora das bases consultadas).
+Controle detalhado: `data/2-papers/all_papers.xlsx` (planilha "Registros", colunas Baixado e Arquivo PDF). Os 11 estudos manuais foram incluidos por identificacao fora das bases consultadas (snowballing a partir do indice de citacao e revisao de literatura da tese de referencia).
 
 ### Dados processados
 
@@ -189,7 +189,7 @@ Controle detalhado: `data/2-papers/all_papers.xlsx` (planilha "Registros", colun
 
 ## Analise LLM
 
-Analise via Google Gemini (modelo `gemini-2.5-flash-lite`) em 3 estagios sequenciais, executada sobre os 118 PDFs das bases. O estudo incluido manualmente (`manual-2026-oliveira-carneiro-souza.pdf`) nao passou pela analise LLM. Script: `scripts/run_llm_all_papers.py`.
+Analise via Google Gemini (modelo `gemini-2.5-flash-lite`) em 3 estagios sequenciais, executada sobre os 118 PDFs das bases. Os 11 estudos incluidos manualmente nao passaram pela analise LLM. Script: `scripts/run_llm_all_papers.py`.
 
 ### Stage 1 — Triagem
 
@@ -210,9 +210,9 @@ Apos a analise LLM, triagem manual em `all_papers_llm_classif_final.xlsx`:
 | Resultado | Quantidade |
 |-----------|-----------|
 | APROVADO (bases) | 34 |
-| APROVADO (inclusao manual) | 1 |
+| APROVADO (inclusao manual) | 11 |
 | REJEITADO | 84 |
-| **Total** | **119** |
+| **Total** | **129** |
 
 Motivos de rejeicao: sem instrumentos PNDR (40), sem metodo econometrico (23), documento nao-cientifico (10), duplicata de versao publicada (8), anterior a 2005 (2), variaveis de resultado fora do escopo (1).
 
@@ -374,7 +374,7 @@ Revisao manual adicional apos verificacao de escopo:
 |-------------|-----------------|---------------|
 | `scopus-2025-borges-rodrigues.pdf` | fora do escopo | Avalia distribuicao da oferta de credito rural do FCO, nao o efeito do instrumento sobre o crescimento regional |
 
-Contagem final (bases): 33 aprovados, 85 rejeitados. Com inclusao manual: **34 aprovados**, 85 rejeitados, **119 total**.
+Contagem final (bases): 32 aprovados, 86 rejeitados. Com inclusao manual: **43 aprovados**, 86 rejeitados, **129 total**.
 
 ## Consolidacao JSON enriquecido
 
@@ -388,7 +388,7 @@ Mescla tres fontes em um unico JSON (`data/2-papers/2-2-papers.json`):
 
 Para campos duplicados, prioridade: registros das bases > all_papers > LLM.
 
-Resultado: 119 papers com campos unificados (34 aprovados — 33 das bases + 1 inclusao manual —, 85 rejeitados), incluindo: metadados bibliograficos, resumo, palavras-chave, classificacao LLM em 3 stages, resultado da triagem e motivo de exclusao.
+Resultado: 129 papers com campos unificados (43 aprovados — 32 das bases + 11 inclusao manual —, 86 rejeitados), incluindo: metadados bibliograficos, resumo, palavras-chave, classificacao LLM em 3 stages, resultado da triagem e motivo de exclusao.
 
 ## Extracao e matching de referencias
 
@@ -396,15 +396,15 @@ Resultado: 119 papers com campos unificados (34 aprovados — 33 das bases + 1 i
 
 Scripts: `data/3-ref-bib/extrair_referencias.py` e `estruturar_referencias.py`
 
-Para 54 dos estudos aprovados (incluindo o estudo manual), as listas de referencias bibliograficas foram extraidas dos PDFs via Gemini e estruturadas em JSON com campos: raw, autor, titulo, ano, periodico, volume, issue, pages. Apos a remocao de 7 estudos duplicados (versoes TD/congresso) e 4 estudos rejeitados em revisao posterior, restam 43 JSONs ativos; os 11 removidos foram arquivados em `refs_por_estudo/_archived_duplicates/`.
+Para os estudos aprovados (incluindo os estudos manuais), as listas de referencias bibliograficas foram extraidas dos PDFs via Gemini e estruturadas em JSON com campos: raw, autor, titulo, ano, periodico, volume, issue, pages. Apos a remocao de 7 estudos duplicados (versoes TD/congresso) e 5 estudos rejeitados em revisao posterior, restam 49 JSONs ativos (42 com referencias extraidas + 7 sem referencias); os 12 removidos foram arquivados em `refs_por_estudo/_archived_duplicates/`.
 
-Resultado: 43 JSONs ativos em `data/3-ref-bib/refs_por_estudo/`, totalizando ~1.138 referencias.
+Resultado: 49 JSONs ativos em `data/3-ref-bib/refs_por_estudo/`.
 
 ### Matching de citacoes entre estudos
 
 Script: `scripts/match_refs_to_studies.py`
 
-Para cada referencia de cada estudo, verifica se corresponde a outro estudo presente na lista de 118 papers (triagem). O matching usa:
+Para cada referencia de cada estudo, verifica se corresponde a outro estudo presente na lista de 129 papers (triagem). O matching usa:
 
 1. **Filtro por ano** — duas faixas de tolerancia:
    - Anos iguais: threshold >= 75% (`FUZZY_THRESHOLD`)
@@ -421,7 +421,7 @@ Campos adicionados a cada referencia nos JSONs:
 | `estudo_citado_pdf` | str/null | Arquivo PDF do estudo citado |
 | `match_score` | float/null | Score do token_sort_ratio (75-100) |
 
-Resultado: **67 citacoes cruzadas** encontradas em **18 dos 43 arquivos** de referencias.
+Resultado: **67 citacoes cruzadas** encontradas em **18 dos 49 arquivos** de referencias.
 
 ### Indice de citacao (IC)
 
@@ -469,7 +469,7 @@ Tres grupos de estudos foram identificados como duplicatas verdadeiras: o mesmo 
 
 Script de marcacao: `scripts/mark_td_duplicates.py`
 
-**Resultados:** 34 estudos (16 publicados, 18 nao-publicados), **98 citacoes cruzadas**.
+**Resultados:** 43 estudos aprovados (21 publicados, 22 nao-publicados), **137 citacoes cruzadas**. IC calculado para 42 estudos (Silva2023 excluido por nao ter referencias extraidas).
 
 Saidas:
 - `data/3-ref-bib/citation_index_results.json` — dados completos por estudo
