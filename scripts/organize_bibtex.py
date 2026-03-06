@@ -29,8 +29,11 @@ TEX_DIR = BASE_DIR / "latex"
 _SUFFIXES = {"junior", "júnior", "neto", "filho", "sobrinho", "jr", "sr"}
 _PARTICLES = {"de", "da", "do", "dos", "das", "e"}
 
+# Regex para remover comandos de acento LaTeX (ex: {\'u} -> u, {\c c} -> c)
+_LATEX_ACCENT_RE = re.compile(r"\\['\"`^~c]\{?|\{|\}")
+
 # Regex para detectar chave ja no formato curto: Autor2024 ou Autor2024a
-_SHORT_KEY_RE = re.compile(r"^[A-Z][a-z]+(?:[A-Z][a-z]+)*\d{4}[a-z]?$")
+_SHORT_KEY_RE = re.compile(r"^[A-Z][a-z]+(?:[A-Z][a-z]*)*\d{4}[a-z]?$")
 
 # Stopwords portuguesas: devem ficar em minuscula no meio de titulos
 _PT_STOPWORDS_TITLE = {
@@ -237,7 +240,16 @@ def _extract_surname(author_str: str, index: int = 0) -> str | None:
 
 
 def _normalize_surname(surname: str) -> str:
-    """Normaliza sobrenome para uso como chave: remove acentos, espacos, hifens."""
+    """Normaliza sobrenome para uso como chave: remove particulas, sufixos, acentos."""
+    # Remover particulas no inicio (de, da, do, dos, das, e)
+    # Limpar acentos LaTeX ({\'u} -> u) antes da comparacao
+    words = surname.split()
+    while words and unidecode(_LATEX_ACCENT_RE.sub("", words[0])).lower() in _PARTICLES:
+        words = words[1:]
+    # Remover sufixos no final (Junior, Neto, Filho, etc.)
+    while words and unidecode(_LATEX_ACCENT_RE.sub("", words[-1])).lower().rstrip(".") in _SUFFIXES:
+        words = words[:-1]
+    surname = " ".join(words) if words else surname  # fallback se tudo removido
     normalized = unidecode(surname)
     # Remover hifens, espacos — manter apenas letras
     normalized = re.sub(r"[^a-zA-Z]", "", normalized)
@@ -251,6 +263,49 @@ def _normalize_surname(surname: str) -> str:
     return normalized
 
 
+def _extract_given_initial(author_str: str, index: int = 0) -> str:
+    """Extrai inicial do prenome do autor na posicao `index`."""
+    if not author_str:
+        return ""
+    clean = author_str.replace("{", "").replace("}", "")
+    authors = re.split(r"\band\b", clean, flags=re.IGNORECASE)
+    if index >= len(authors):
+        return ""
+    author = authors[index].strip()
+    if not author:
+        return ""
+    if "," in author:
+        given = author.split(",", 1)[1].strip()
+    else:
+        # "Given Surname" — prenome sao as primeiras palavras
+        words = author.split()
+        if len(words) <= 1:
+            return ""
+        # Tudo exceto a parte final (sobrenome + particulas + sufixos)
+        given = words[0]
+    # Limpar acentos LaTeX e obter primeira letra valida
+    given_clean = unidecode(given)
+    given_clean = re.sub(r"[^a-zA-Z\s]", "", given_clean).strip()
+    for word in given_clean.split():
+        if word.lower() not in _PARTICLES:
+            return word[0].upper()
+    return ""
+
+
+def _normalize_author_id(author_str: str, index: int = 0) -> str:
+    """Identificador para agrupar 'mesmo autor' por sobrenome + inicial do prenome.
+
+    Usa apenas a inicial (nao o nome completo) para tolerar variacoes como
+    'Carneiro, Diego' vs 'Carneiro, Diego Rafael Fonseca' ou 'Costa, E.M.'
+    vs 'Costa, Edward Martins'.
+    """
+    surname = _extract_surname(author_str, index)
+    if not surname:
+        return ""
+    initial = _extract_given_initial(author_str, index)
+    return f"{_normalize_surname(surname).lower()}|{initial.lower()}"
+
+
 # ---------------------------------------------------------------------------
 # Geracao de chaves
 # ---------------------------------------------------------------------------
@@ -259,26 +314,28 @@ def _generate_short_key(
     entry: BibEntry,
     used_keys: set[str],
     preserved: set[str],
+    effective_base: str | None = None,
 ) -> str:
     """Gera chave curta para uma entrada.
 
     Se a chave atual ja esta no formato curto E nao conflita, preserva.
     Senao, gera nova chave com resolucao de conflitos.
+
+    Args:
+        effective_base: base pre-computada (inclui inicial do prenome se necessario).
     """
     author_field = entry.fields.get("author", "")
     year = entry.fields.get("year", "0000")
-    # Limpar sufixos do year (ex: "2018a" -> "2018")
     year = re.sub(r"[^0-9]", "", year)[:4]
     if not year:
         year = "0000"
 
     surname1 = _extract_surname(author_field, 0)
     if not surname1:
-        # Sem autor — usar chave existente ou titulo abreviado
         log.warning("Entry '%s' has no author field", entry.key)
         return entry.key
 
-    base = _normalize_surname(surname1) + year
+    base = effective_base or (_normalize_surname(surname1) + year)
 
     # Se chave atual e exatamente a base (ou base+sufixo) e nao conflita, preservar
     if entry.key == base and base not in used_keys:
@@ -291,10 +348,11 @@ def _generate_short_key(
     if base not in used_keys and base not in preserved:
         return base
 
-    # Tentar com segundo autor
+    # Tentar com segundo autor (inserir sobrenome2 antes do ano)
     surname2 = _extract_surname(author_field, 1)
     if surname2:
-        base2 = _normalize_surname(surname1) + _normalize_surname(surname2) + year
+        prefix = base[: -len(year)] if base.endswith(year) else base
+        base2 = prefix + _normalize_surname(surname2) + year
         if base2 not in used_keys and base2 not in preserved:
             return base2
 
@@ -310,47 +368,88 @@ def _generate_short_key(
 def build_key_mapping(entries: list[BibEntry]) -> dict[str, str]:
     """Constroi mapeamento old_key -> new_key para todas as entradas.
 
-    Processa em duas passadas:
-    1. Identifica chaves ja no formato curto que serao preservadas.
-    2. Gera novas chaves para as restantes, respeitando as preservadas.
+    Processa em cinco fases:
+    1. Computa metadados (base, initial, author_id) para cada entrada.
+    2. Detecta conflitos entre autores diferentes no mesmo sobrenome+ano.
+    3. Calcula base efetiva (com inicial do prenome se necessario).
+    4. Identifica chaves ja no formato curto correto (preserved).
+    5. Gera novas chaves para as restantes.
     """
-    # Primeira passada: identificar chaves que ja estao corretas
-    preserved: set[str] = set()
-    needs_rename: list[int] = []
+    from collections import defaultdict
 
-    for i, entry in enumerate(entries):
+    # --- Fase 1: metadados ---
+    entry_meta: list[dict[str, str | None]] = []
+    for entry in entries:
         author_field = entry.fields.get("author", "")
         year = re.sub(r"[^0-9]", "", entry.fields.get("year", ""))[:4]
-        surname1 = _extract_surname(author_field, 0)
-        if surname1:
-            expected_base = _normalize_surname(surname1) + year
+        if not year:
+            year = "0000"
+        surname = _extract_surname(author_field, 0)
+        if surname:
+            norm_surname = _normalize_surname(surname)
+            base = norm_surname + year
+            initial = _extract_given_initial(author_field, 0)
+            author_id = _normalize_author_id(author_field, 0)
         else:
-            expected_base = None
+            norm_surname = ""
+            base = None
+            initial = ""
+            author_id = ""
+        entry_meta.append({
+            "base": base,
+            "norm_surname": norm_surname,
+            "year": year,
+            "initial": initial,
+            "author_id": author_id,
+        })
 
-        # Chave curta que corresponde ao autor+ano: preservar
+    # --- Fase 2: detectar conflitos entre autores diferentes ---
+    base_to_author_ids: dict[str, set[str]] = defaultdict(set)
+    for meta in entry_meta:
+        if meta["base"] and meta["author_id"]:
+            base_to_author_ids[meta["base"]].add(meta["author_id"])
+
+    needs_initial: set[str] = {
+        base for base, aids in base_to_author_ids.items() if len(aids) > 1
+    }
+
+    # --- Fase 3: base efetiva ---
+    for meta in entry_meta:
+        base = meta["base"]
+        if base and base in needs_initial:
+            meta["effective_base"] = meta["norm_surname"] + meta["initial"] + meta["year"]
+        else:
+            meta["effective_base"] = base
+
+    # --- Fase 4: preserved keys ---
+    preserved: set[str] = set()
+    for i, entry in enumerate(entries):
+        effective_base = entry_meta[i].get("effective_base")
+        if not effective_base:
+            # Sem autor — preservar chave original
+            preserved.add(entry.key)
+            continue
         if (
             _SHORT_KEY_RE.match(entry.key)
-            and expected_base
-            and entry.key.startswith(expected_base)
+            and entry.key.startswith(effective_base)
         ):
             preserved.add(entry.key)
-        else:
-            needs_rename.append(i)
 
     log.info(
         "Keys already in short form: %d, to rename: %d",
         len(preserved),
-        len(needs_rename),
+        len(entries) - len(preserved),
     )
 
-    # Segunda passada: gerar chaves novas
+    # --- Fase 5: gerar novas chaves ---
     used_keys: set[str] = set(preserved)
     mapping: dict[str, str] = {}
 
     for i, entry in enumerate(entries):
         if entry.key in preserved:
             continue
-        new_key = _generate_short_key(entry, used_keys, preserved)
+        effective_base = entry_meta[i].get("effective_base")
+        new_key = _generate_short_key(entry, used_keys, preserved, effective_base)
         used_keys.add(new_key)
         if new_key != entry.key:
             mapping[entry.key] = new_key
