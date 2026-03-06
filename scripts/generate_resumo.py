@@ -76,7 +76,6 @@ AUTHOR_ALIASES: dict[str, str] = {
     "Neto, R.": "Silveira Neto, R. M.",
     # Veloso, P. A. S. (article: 4)
     "Veloso, P.": "Veloso, P. A. S.",
-    "Velooso, P. A. S.": "Veloso, P. A. S.",  # LLM typo
     # Other known short-initial variants
     "Soares, R.": "Soares, R. B.",
     "Dias, T.": "Dias, T. K.",
