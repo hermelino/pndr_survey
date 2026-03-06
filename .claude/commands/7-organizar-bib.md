@@ -10,6 +10,7 @@ Organizar o arquivo `latex/references.bib` seguindo convencao uniforme:
 3. **Ordenar alfabeticamente** todas as entradas por chave
 4. **Atualizar citacoes** em todos os arquivos `.tex` automaticamente
 5. **Gerar relatorio** de todas as alteracoes realizadas
+6. **Corrigir capitalizacao de titulos** (stopwords e nomes proprios em portugues)
 
 ## Script
 
@@ -18,8 +19,11 @@ O script `scripts/organize_bibtex.py` implementa toda a logica. Dois modos de op
 ```bash
 python scripts/organize_bibtex.py                        # dry-run (padrao)
 python scripts/organize_bibtex.py --archive              # dry-run + lista refs nao citadas
+python scripts/organize_bibtex.py --fix-titles           # dry-run + correcao de titulos
 python scripts/organize_bibtex.py --execute              # aplica mudancas
+python scripts/organize_bibtex.py --execute --fix-titles # aplica + corrige titulos
 python scripts/organize_bibtex.py --execute --archive    # aplica + arquiva refs nao citadas
+python scripts/organize_bibtex.py --execute --archive --fix-titles  # tudo
 ```
 
 ## Formato das chaves BibTeX
@@ -93,9 +97,43 @@ Com a flag `--archive`, o script:
 O arquivo `ref_archived.bib` serve como backup — referencias podem ser restauradas
 movendo-as de volta para `references.bib` quando necessario.
 
+## Correcao de titulos (`--fix-titles`)
+
+Corrige a capitalizacao dos campos `title`, `booktitle` e `shorttitle`:
+
+### Regra 1: Stopwords em minuscula
+
+Preposicoes, artigos e conjuncoes em portugues sao colocados em minuscula
+quando aparecem no meio do titulo (nunca na primeira posicao):
+
+- Artigos: a, o, os, as, um, uma, ...
+- Preposicoes/contracoes: de, da, do, dos, das, em, na, no, para, por, pelo, pela, pelos, pelas, ...
+- Conjuncoes: e, ou, mas, nem, que
+
+**Exemplo:** `Determinantes Da Eficiência Da Aplicação Dos Recursos Do FNE Pelos Municípios` → `Determinantes da Eficiência da Aplicação dos Recursos do FNE pelos Municípios`
+
+### Regra 2: Nomes proprios capitalizados
+
+Nomes de fundos, regioes e instituicoes sao capitalizados corretamente:
+
+- **Fundos Constitucionais:** Fundo Constitucional de Financiamento do Norte/Nordeste/Centro-Oeste
+- **Fundos de Desenvolvimento:** Fundo de Desenvolvimento do Nordeste/Norte/Centro-Oeste
+- **Regioes:** Nordeste, Centro-Oeste
+- **Politica:** Política Nacional de Desenvolvimento Regional
+- **Instituicoes:** Superintendência do Desenvolvimento do Nordeste/Amazônia, Banco do Nordeste do Brasil, Banco da Amazônia
+
+**Exemplo:** `fundo constitucional de financiamento do centro-oeste` → `Fundo Constitucional de Financiamento do Centro-Oeste`
+
+### Ordem de aplicacao
+
+1. Primeiro: lowercasar stopwords no meio do titulo
+2. Depois: aplicar padroes de nomes proprios (sobrescreve stopwords quando necessario)
+
+Novos padroes de nomes proprios podem ser adicionados na lista `_PROPER_NOUN_PATTERNS` em `scripts/organize_bibtex.py`.
+
 ## Restricoes
 
-1. **NUNCA** alterar conteudo dos campos BibTeX (author, title, year, etc.) -- apenas a chave
+1. **NUNCA** alterar conteudo dos campos BibTeX (author, year, journal, etc.) -- exceto `title`, `booktitle` e `shorttitle` com `--fix-titles`
 2. **NUNCA** executar `--execute` sem aprovacao explicita do usuario
 3. **NUNCA** deletar entradas — entradas nao citadas sao **arquivadas**, nao removidas
 4. **SEMPRE** preservar chaves que ja estao no formato curto correto
@@ -113,4 +151,5 @@ Se `$ARGUMENTS` contiver argumentos:
 | `dry-run` | Apenas FASE 1 (analise) |
 | `execute` | FASE 1-4 completa (com confirmacao) |
 | `archive` | FASE 1-4 + arquivar refs nao citadas |
+| `fix-titles` | Inclui correcao de capitalizacao de titulos |
 | `validate` | Apenas FASE 3 (verificar citacoes orfas) |

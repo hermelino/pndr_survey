@@ -32,6 +32,57 @@ _PARTICLES = {"de", "da", "do", "dos", "das", "e"}
 # Regex para detectar chave ja no formato curto: Autor2024 ou Autor2024a
 _SHORT_KEY_RE = re.compile(r"^[A-Z][a-z]+(?:[A-Z][a-z]+)*\d{4}[a-z]?$")
 
+# Stopwords portuguesas: devem ficar em minuscula no meio de titulos
+_PT_STOPWORDS_TITLE = {
+    "a", "o", "os", "as", "um", "uma", "uns", "umas",
+    "à", "ao", "aos", "às",
+    "com", "contra",
+    "da", "das", "de", "do", "dos", "desde",
+    "em", "entre",
+    "na", "nas", "no", "nos",
+    "para", "pela", "pelas", "pelo", "pelos", "por", "perante",
+    "sem", "sob", "sobre",
+    "e", "ou", "mas", "nem", "que",
+}
+
+# Padroes de nomes proprios: (regex, forma correta) — mais longos primeiro
+_PROPER_NOUN_PATTERNS: list[tuple[str, str]] = [
+    # Fundos Constitucionais
+    (r"fundo\s+constitucional\s+de\s+financiamento\s+do\s+centro[\s-]oeste",
+     "Fundo Constitucional de Financiamento do Centro-Oeste"),
+    (r"fundo\s+constitucional\s+de\s+financiamento\s+do\s+nordeste",
+     "Fundo Constitucional de Financiamento do Nordeste"),
+    (r"fundo\s+constitucional\s+de\s+financiamento\s+do\s+norte",
+     "Fundo Constitucional de Financiamento do Norte"),
+    # Fundos de Desenvolvimento
+    (r"fundo\s+de\s+desenvolvimento\s+do\s+nordeste",
+     "Fundo de Desenvolvimento do Nordeste"),
+    (r"fundo\s+de\s+desenvolvimento\s+do\s+norte",
+     "Fundo de Desenvolvimento do Norte"),
+    (r"fundo\s+de\s+desenvolvimento\s+do\s+centro[\s-]oeste",
+     "Fundo de Desenvolvimento do Centro-Oeste"),
+    # PNDR
+    (r"pol[ií]tica\s+nacional\s+de\s+desenvolvimento\s+regional",
+     "Política Nacional de Desenvolvimento Regional"),
+    # Superintendencias
+    (r"superintend[eê]ncia\s+d[eo]\s+desenvolvimento\s+d[oa]\s+nordeste",
+     "Superintendência do Desenvolvimento do Nordeste"),
+    (r"superintend[eê]ncia\s+d[eo]\s+desenvolvimento\s+d[oa]\s+amaz[oô]nia",
+     "Superintendência do Desenvolvimento da Amazônia"),
+    # Bancos
+    (r"banco\s+do\s+nordeste\s+do\s+brasil",
+     "Banco do Nordeste do Brasil"),
+    (r"banco\s+do\s+nordeste\b",
+     "Banco do Nordeste"),
+    (r"banco\s+da\s+amaz[oô]nia",
+     "Banco da Amazônia"),
+    # Regioes brasileiras
+    (r"\bnordeste\b", "Nordeste"),
+    (r"\bcentro[\s-]oeste\b", "Centro-Oeste"),
+]
+
+_TITLE_FIELDS = ("title", "booktitle", "shorttitle")
+
 
 # ---------------------------------------------------------------------------
 # Modelos
@@ -371,6 +422,79 @@ def _update_tex_files(
 
 
 # ---------------------------------------------------------------------------
+# Correcao de titulos
+# ---------------------------------------------------------------------------
+
+
+def _fix_title_case(title: str) -> str:
+    """Fix Portuguese title capitalization: lowercase stopwords, capitalize proper nouns."""
+    if not title:
+        return title
+    result = title
+    # Passo 1: Lowercasar stopwords no meio do titulo (ex: "Da" -> "da")
+    for sw in _PT_STOPWORDS_TITLE:
+        cap = sw[0].upper() + sw[1:]
+        # Casar stopword Title Case precedida de espaco/til/abertura
+        # e seguida de espaco/pontuacao/fechamento (nao no inicio do titulo)
+        pattern = re.compile(
+            r"(?<=[\s~(])" + re.escape(cap) + r"(?=[\s~,.:;)\}\-]|$)"
+        )
+        result = pattern.sub(sw, result)
+    # Passo 2: Capitalizar nomes proprios conhecidos (case-insensitive)
+    for pat, repl in _PROPER_NOUN_PATTERNS:
+        result = re.sub(pat, repl, result, flags=re.IGNORECASE)
+    return result
+
+
+def _replace_field_value(body: str, field_name: str, new_value: str) -> str:
+    """Replace a BibTeX field value in the raw entry body."""
+    pattern = re.compile(
+        r"(" + re.escape(field_name) + r"\s*=\s*)\{",
+        re.IGNORECASE,
+    )
+    m = pattern.search(body)
+    if not m:
+        return body
+    start = m.end()  # posicao logo apos a { de abertura
+    depth = 1
+    i = start
+    while i < len(body) and depth > 0:
+        if body[i] == "{":
+            depth += 1
+        elif body[i] == "}":
+            depth -= 1
+        i += 1
+    # body[start:i-1] = valor antigo, body[i-1] = } de fechamento
+    return body[:start] + new_value + body[i - 1 :]
+
+
+def _compute_title_fixes(
+    entries: list[BibEntry],
+) -> list[tuple[int, str, str, str]]:
+    """Compute title fixes without applying. Returns [(idx, field, old, new)]."""
+    fixes: list[tuple[int, str, str, str]] = []
+    for idx, entry in enumerate(entries):
+        for fld in _TITLE_FIELDS:
+            old = entry.fields.get(fld, "")
+            if not old:
+                continue
+            new = _fix_title_case(old)
+            if new != old:
+                fixes.append((idx, fld, old, new))
+    return fixes
+
+
+def _apply_title_fixes(
+    entries: list[BibEntry],
+    fixes: list[tuple[int, str, str, str]],
+) -> None:
+    """Apply title fixes to entries in place."""
+    for idx, fld, _old, new in fixes:
+        entries[idx].fields[fld] = new
+        entries[idx].body = _replace_field_value(entries[idx].body, fld, new)
+
+
+# ---------------------------------------------------------------------------
 # Arquivamento de referencias nao citadas
 # ---------------------------------------------------------------------------
 
@@ -413,6 +537,8 @@ def _generate_report(
     tex_updates: dict[str, int],
     total_entries: int,
     archived_keys: list[str] | None = None,
+    title_fixes: list[tuple[int, str, str, str]] | None = None,
+    entries: list[BibEntry] | None = None,
 ) -> str:
     """Gera relatorio de mudancas."""
     lines: list[str] = []
@@ -425,6 +551,8 @@ def _generate_report(
     if archived_keys is not None:
         lines.append(f"Archived (unused):   {len(archived_keys)}")
         lines.append(f"Kept (cited):        {total_entries - len(archived_keys)}")
+    if title_fixes is not None:
+        lines.append(f"Title fields fixed:  {len(title_fixes)}")
     lines.append(f"TeX files updated:   {len(tex_updates)}")
     total_cit = sum(tex_updates.values())
     lines.append(f"Citations updated:   {total_cit}")
@@ -440,6 +568,16 @@ def _generate_report(
         lines.append("-" * 60)
         for key in sorted(archived_keys, key=str.lower):
             lines.append(f"  {key}")
+    if title_fixes:
+        lines.append("")
+        lines.append("TITLE FIXES:")
+        lines.append("-" * 60)
+        for idx, fld, old, new in title_fixes:
+            key = entries[idx].key if entries else f"entry#{idx}"
+            final_key = mapping.get(key, key)
+            lines.append(f"  [{final_key}] {fld}:")
+            lines.append(f"    - {old}")
+            lines.append(f"    + {new}")
     if tex_updates:
         lines.append("")
         lines.append("TEX FILES UPDATED:")
@@ -470,6 +608,11 @@ def main() -> None:
         help="Move uncited entries to ref_archived.bib.",
     )
     parser.add_argument(
+        "--fix-titles",
+        action="store_true",
+        help="Fix Portuguese title capitalization (stopwords, proper nouns).",
+    )
+    parser.add_argument(
         "--bib",
         type=Path,
         default=BIB_PATH,
@@ -483,6 +626,16 @@ def main() -> None:
     )
 
     entries = parse_bib_file(args.bib)
+
+    # Compute title fixes (non-destructive)
+    title_fixes: list[tuple[int, str, str, str]] = []
+    if args.fix_titles:
+        title_fixes = _compute_title_fixes(entries)
+        log.info("Title fixes found: %d", len(title_fixes))
+        # Apply early in execute mode so downstream ops use fixed titles
+        if args.execute and title_fixes:
+            _apply_title_fixes(entries, title_fixes)
+
     mapping = build_key_mapping(entries)
 
     # Aplicar renomeacao nas chaves antes de verificar citacoes
@@ -511,7 +664,9 @@ def main() -> None:
         log.info("Used: %d, Archived: %d", len(used), len(archived))
 
     if not args.execute:
-        report = _generate_report(mapping, {}, len(entries), archived_keys)
+        report = _generate_report(
+            mapping, {}, len(entries), archived_keys, title_fixes, entries,
+        )
         log.info("DRY RUN — no files modified.\n%s", report)
         return
 
@@ -545,7 +700,9 @@ def main() -> None:
     args.bib.write_text(new_bib, encoding="utf-8")
     log.info("Wrote updated %s", args.bib.name)
 
-    report = _generate_report(mapping, tex_updates, len(entries), archived_keys)
+    report = _generate_report(
+        mapping, tex_updates, len(entries), archived_keys, title_fixes, entries,
+    )
     log.info("\n%s", report)
 
 
