@@ -210,7 +210,7 @@ def extrair_metodos(raw: str) -> list[str]:
     from unidecode import unidecode
     text = unidecode(raw.lower())
 
-    # (keywords, canonical_name, msm_score)
+    # (keywords, canonical_name)
     RULES: list[tuple[list[str], str]] = [
         # Staggered DiD (before plain DiD)
         (['escalonado', 'staggered', 'callaway', 'dois estagios', 'two-stage'],
@@ -234,9 +234,6 @@ def extrair_metodos(raw: str) -> list[str]:
         # DEA
         (['dea', 'envoltoria'],
          'Análise Envoltória de Dados (DEA)'),
-        # Frontier of order-m
-        (['ordem-m', 'order-m'],
-         'Fronteira de Ordem-m'),
         # SFA
         (['fronteira estocastica', 'sfa', 'stochastic frontier'],
          'Fronteira Estocástica (SFA)'),
@@ -249,11 +246,9 @@ def extrair_metodos(raw: str) -> list[str]:
         # DiD (plain)
         (['diferencas em diferencas', 'diff-in-diff', 'did', 'differences'],
          'Diferenças em Diferenças (DiD)'),
-        # Spatial error model
-        (['erro espacial', 'error espacial', 'sdem', 'sem '],
-         'Modelo de Erro Espacial'),
-        # Spatial panel (Durbin, SAR, spatial econometrics with panel)
-        (['painel espacial', 'spatial durbin', 'sdm', 'espacial aplicada a dados em painel',
+        # Spatial models: error + panel → unified category
+        (['erro espacial', 'error espacial', 'sdem', 'sem ',
+          'painel espacial', 'spatial durbin', 'sdm', 'espacial aplicada a dados em painel',
           'modelos espaciais de painel', 'espaciais de painel'],
          'Painel Espacial'),
         # AEDE
@@ -262,9 +257,9 @@ def extrair_metodos(raw: str) -> list[str]:
         # CGE
         (['equilibrio geral', 'cge', 'egc', 'computable general'],
          'Equilíbrio Geral Computável (EGC)'),
-        # Dynamic panel GMM
-        (['dinamico', 'dynamic', 'gmm'],
-         'Painel Dinâmico GMM'),
+        # Dynamic panel (without GMM keyword)
+        (['dinamico', 'dynamic'],
+         'Painel Dinâmico'),
         # Random effects panel
         (['efeitos aleatorios', 'random effect'],
          'Painel de Efeitos Aleatórios'),
@@ -277,9 +272,6 @@ def extrair_metodos(raw: str) -> list[str]:
         # OLS / MQO
         (['mqo', 'ols', 'minimos quadrados'],
          'MQO/OLS'),
-        # Survival analysis
-        (['sobrevivencia', 'survival'],
-         'Análise de Sobrevivência'),
         # Quantile regression
         (['quantilica', 'quantile'],
          'Regressão Quantílica'),
@@ -464,17 +456,6 @@ def main():
             for m in extrair_metodos(raw):
                 metodos[m] += 1
 
-    print("=== TAB:METODOS (TOP-6) ===")
-    print("\\begin{table}[h]")
-    print("\\centering")
-    print("\\small")
-    print("\\caption[Métodos mais frequentes]{Métodos mais frequentes\\footnote{MSM: \\textit{Maryland Scientific Methods Scale} \\cite{MadalenoWaights2016}; n.c.: não classificável.}}")
-    print("\\label{tab:metodos}")
-    print("\\begin{tabular}{lrc}")
-    print("\\toprule")
-    print("Método & Qtd. estudos & MSM \\\\")
-    print("\\midrule")
-
     # MSM scores (manual - baseado em conhecimento do método)
     msm_map = {
         'Diferenças em Diferenças Escalonado': 3,
@@ -484,31 +465,56 @@ def main():
         'Controle Sintético Generalizado': 3,
         'Painel de Efeitos Fixos': 3,
         'Painel Espacial': 3,
-        'Painel Dinâmico GMM': 3,
+        'Painel Dinâmico': 3,
         'Painel de Efeitos Aleatórios': 3,
         'Primeiras Diferenças (FD)': 3,
         'MQO/OLS': 2,
         'Variáveis Instrumentais (IV)': 3,
         'Modelo de Efeito Limiar (Threshold)': 3,
-        'Modelo de Erro Espacial': 3,
         'Regressão Descontínua (RDD)': 4,
         'Regressão Quantílica': 3,
         'Equilíbrio Geral Computável (EGC)': 'n.c.',
         'Análise Envoltória de Dados (DEA)': 'n.c.',
         'Fronteira Estocástica (SFA)': 'n.c.',
-        'Fronteira de Ordem-m': 'n.c.',
         'Índice de Malmquist': 'n.c.',
         'Análise Exploratória Espacial (AEDE)': 'n.c.',
-        'Análise de Sobrevivência': 'n.c.',
     }
 
-    for metodo, count in metodos.most_common(6):
-        msm = msm_map.get(metodo, 'n.c.')
-        print(f"{metodo} & {count} & {msm} \\\\")
+    # Top-10 ordenados por frequência desc, depois nome asc
+    top10 = sorted(metodos.most_common(10), key=lambda x: (-x[1], x[0]))
+    msm_values = {msm_map.get(m, 'n.c.') for m, _ in top10}
+    show_msm = len(msm_values) > 1  # omitir coluna se todos iguais
+
+    print("=== TAB:METODOS (TOP-10) ===")
+    print("\\begin{table}[h]")
+    print("\\centering")
+    print("\\small")
+    print("\\caption{Top-10 métodos mais usados}")
+    print("\\label{tab:metodos}")
+    if show_msm:
+        print("\\begin{tabular}{p{7cm}>{\centering\\arraybackslash}p{2.5cm}>{\centering\\arraybackslash}p{1.5cm}}")
+        print("\\toprule")
+        print("Método & Qtd. estudos & MSM \\\\")
+    else:
+        print("\\begin{tabular}{p{7cm}>{\centering\\arraybackslash}p{2.5cm}}")
+        print("\\toprule")
+        print("Método & Qtd. estudos \\\\")
+    print("\\midrule")
+
+    for metodo, count in top10:
+        if show_msm:
+            msm = msm_map.get(metodo, 'n.c.')
+            print(f"{metodo} & {count} & {msm} \\\\")
+        else:
+            print(f"{metodo} & {count} \\\\")
 
     print("\\bottomrule")
+    ncols = 3 if show_msm else 2
+    if show_msm:
+        print(f"\\multicolumn{{{ncols}}}{{p{{11cm}}}}{{\\setlength{{\\parindent}}{{0pt}}\\footnotesize Nota: MSM = \\textit{{Maryland Scientific Methods Scale}} \\cite{{Madaleno2016}}; n.c. = não classificável. Fonte: Elaboração própria.}} \\\\")
+    else:
+        print(f"\\multicolumn{{{ncols}}}{{p{{9.5cm}}}}{{\\footnotesize Fonte: Elaboração própria.}} \\\\")
     print("\\end{tabular}")
-    print("\\fonte{Elaboração própria.}")
     print("\\end{table}")
     print()
 

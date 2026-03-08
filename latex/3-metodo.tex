@@ -188,24 +188,28 @@ Com respeito aos métodos econométricos, observa-se diversidade de abordagens, 
 \centering
 \footnotesize
 \renewcommand{\arraystretch}{1.2}
-\caption{Métodos mais frequentes}
+\caption{Top-10 métodos mais usados}
 \label{tab:metodos}
 \begin{tabular}{p{7cm}>{\centering\arraybackslash}p{2.5cm}>{\centering\arraybackslash}p{1.5cm}}
 \toprule
 Método & Qtd. estudos & MSM \\
 \midrule
-Painel de Efeitos Fixos & 6 & 3 \\
+Painel Espacial & 7 & 3 \\
 Diferenças em Diferenças (DiD) & 6 & 3 \\
 Diferenças em Diferenças Escalonado & 6 & 3 \\
 Generalized Propensity Score (GPS) & 6 & 3 \\
+Painel de Efeitos Fixos & 6 & 3 \\
 Propensity Score Matching (PSM) & 5 & 3 \\
-Painel Espacial & 5 & 3 \\
+Análise Envoltória de Dados (DEA) & 3 & n.c. \\
+Equilíbrio Geral Computável (EGC) & 3 & n.c. \\
+MQO/OLS & 3 & 2 \\
+Painel Dinâmico & 3 & 3 \\
 \bottomrule
-\multicolumn{3}{p{11cm}}{\footnotesize Nota: MSM = \textit{Maryland Scientific Methods Scale} \cite{Madaleno2016}; n.c. = não classificável. Fonte: Elaboração própria.} \\
+\multicolumn{3}{p{11cm}}{\setlength{\parindent}{0pt}\footnotesize Nota: MSM = \textit{Maryland Scientific Methods Scale} \cite{Madaleno2016}; n.c. = não classificável. Fonte: Elaboração própria.} \\
 \end{tabular}
 \end{table}
 
-Entre os estudos selecionados, predominam abordagens com escore 3 -- métodos que controlam por características observáveis, porém sem garantir completa eliminação de vieses de seleção. Os métodos mais frequentes incluem painel de efeitos fixos, diferenças em diferenças (incluindo a variante escalonada), \textit{Generalized Propensity Score}, \textit{Propensity Score Matching} e painel espacial. Abordagens quase experimentais com escore 4, como \textit{Regression Discontinuity Design}, permanecem pouco utilizadas (apenas uma ocorrência).
+Entre os estudos selecionados, predominam abordagens com escore 3 -- métodos que controlam por características observáveis, porém sem garantir completa eliminação de vieses de seleção. Os métodos mais frequentes incluem painel espacial, diferenças em diferenças (incluindo a variante escalonada), \textit{Generalized Propensity Score}, painel de efeitos fixos e \textit{Propensity Score Matching}. Abordagens quase experimentais com escore 4 são ainda pouco aplicadas, com um único estudo identificado (\cite{Oliveira2021} usa \textit{Regression Discontinuity Design}).
 
 É importante explicar que métodos como Análise Envoltória de Dados (DEA) e Equilíbrio Geral Computável (EGC), presentes na amostra, não são classificáveis pela escala MSM por não se destinarem à identificação de efeitos causais: o primeiro mensura eficiência relativa e o segundo simula efeitos de equilíbrio a partir de calibração de parâmetros. A ausência de avaliações com escore máximo de robustez reflete as restrições inerentes ao desenho não aleatório da política, em que a alocação de recursos tende a ser determinada pela demanda das firmas.
 

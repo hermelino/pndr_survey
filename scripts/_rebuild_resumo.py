@@ -140,9 +140,6 @@ METODO_RULES: list[tuple[list[str], str, str]] = [
     # DEA
     (["dea", "envoltoria"],
      "Analise Envoltoria de Dados (DEA)", "n.c."),
-    # Frontier of order-m
-    (["ordem-m", "order-m"],
-     "Fronteira de Ordem-m", "n.c."),
     # SFA
     (["fronteira estocastica", "sfa", "stochastic frontier"],
      "Fronteira Estocastica (SFA)", "n.c."),
@@ -155,11 +152,9 @@ METODO_RULES: list[tuple[list[str], str, str]] = [
     # DiD (plain)
     (["diferencas em diferencas", "diff-in-diff", "did", "differences"],
      "Diferencas em Diferencas (DiD)", "3"),
-    # Spatial error model
-    (["erro espacial", "error espacial", "sdem", "sem "],
-     "Modelo de Erro Espacial", "3"),
-    # Spatial panel (Durbin, SAR, spatial econometrics with panel)
-    (["painel espacial", "spatial durbin", "sdm", "espacial aplicada a dados em painel",
+    # Spatial models: error + panel → unified category
+    (["erro espacial", "error espacial", "sdem", "sem ",
+      "painel espacial", "spatial durbin", "sdm", "espacial aplicada a dados em painel",
       "modelos espaciais de painel", "espaciais de painel"],
      "Painel Espacial", "3"),
     # AEDE
@@ -168,9 +163,9 @@ METODO_RULES: list[tuple[list[str], str, str]] = [
     # CGE
     (["equilibrio geral", "cge", "egc", "computable general"],
      "Equilibrio Geral Computavel (EGC)", "n.c."),
-    # Dynamic panel GMM
-    (["dinamico", "dynamic", "gmm"],
-     "Painel Dinamico GMM", "3"),
+    # Dynamic panel (without GMM keyword)
+    (["dinamico", "dynamic"],
+     "Painel Dinamico", "3"),
     # Random effects panel
     (["efeitos aleatorios", "random effect"],
      "Painel de Efeitos Aleatorios", "3"),
@@ -183,9 +178,6 @@ METODO_RULES: list[tuple[list[str], str, str]] = [
     # OLS / MQO
     (["mqo", "ols", "minimos quadrados"],
      "MQO/OLS", "2"),
-    # Survival analysis
-    (["sobrevivencia", "survival"],
-     "Analise de Sobrevivencia", "n.c."),
     # Quantile regression
     (["quantilica", "quantile"],
      "Regressao Quantilica", "3"),

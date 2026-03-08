@@ -28,6 +28,7 @@ OUTPUT_PATH = BASE_DIR / "latex" / "tabelas" / "tabela_ic.tex"
 JOURNAL_CORRECTIONS: dict[str, str] = {
     "Estudos Economicos": "Estudos Econômicos",
     "CEPAL REVIEW": "CEPAL Review",
+    "Revista Cadernos de Finanças Públicas": "Cadernos de Finanças Públicas",
 }
 
 # Abreviações para periódicos que não cabem em uma linha
@@ -203,6 +204,7 @@ def generate_table(
     unpublished.sort(key=lambda x: (-x.get("IC_published", 0), x.get("key", "")))
 
     missing_keys: list[str] = []
+    has_dash = False  # rastreia se algum IC é não calculável (N=0)
 
     # --- Construir linhas dos publicados ---
     pub_rows: list[tuple[str, str, str]] = []
@@ -228,6 +230,8 @@ def generate_table(
         n_after = entry.get("n_published_after", 0)
         ic_val = entry.get("IC_published", 0)
         ic_str = format_ic(ic_val, n_after)
+        if n_after == 0:
+            has_dash = True
 
         pub_rows.append((estudo, journal, ic_str))
 
@@ -246,6 +250,8 @@ def generate_table(
         n_after = entry.get("n_published_after", 0)
         ic_val = entry.get("IC_published", 0)
         ic_str = format_ic(ic_val, n_after)
+        if n_after == 0:
+            has_dash = True
 
         unpub_rows.append((estudo, ic_str))
 
@@ -283,11 +289,23 @@ def generate_table(
 
         lines.append(f"{left} & {right} \\\\")
 
+    # Nota de rodapé condicional: inclui legenda de "--" somente se presente
+    if has_dash:
+        footnote = (
+            r"\multicolumn{5}{l}{\footnotesize Nota: ``--'' = IC não"
+            r" calculável ($N=0$). Classificação Qualis-CAPES Quadriênio"
+            r" 2021--2024. Fonte: Elaborada pelos autores.} \\"
+        )
+    else:
+        footnote = (
+            r"\multicolumn{5}{l}{\footnotesize Nota: Classificação"
+            r" Qualis-CAPES Quadriênio 2021--2024."
+            r" Fonte: Elaborada pelos autores.} \\"
+        )
+
     lines.extend([
         r"\bottomrule",
-        r"\multicolumn{5}{l}{\footnotesize Nota: ``--'' = IC não"
-        r" calculável ($N=0$). Classificação Qualis-CAPES Quadriênio"
-        r" 2021--2024. Fonte: Elaborada pelos autores.} \\",
+        footnote,
         r"\end{tabular}",
         r"\end{table}",
         r"\end{landscape}}",
