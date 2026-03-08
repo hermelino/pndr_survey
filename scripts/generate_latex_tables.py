@@ -204,13 +204,15 @@ def normalizar_unidade_amostral(raw: str) -> str:
     elif 'empresa' in clean or 'firma' in clean:
         return 'Empresa'
     elif 'uf' in clean or 'estado' in clean:
-        return 'UF'
+        return 'Estado'
     elif 'amc' in clean or 'área mínima' in clean:
         return 'Área Mínima Comparável'
     elif 'microrregião' in clean:
         return 'Microrregião'
     elif 'mesorregião' in clean:
         return 'Mesorregião'
+    elif 'macrorregião' in clean or clean == 'região':
+        return 'Macrorregião'
     else:
         return clean.capitalize()
 
@@ -408,8 +410,9 @@ def main():
                     autores[autor_norm] += 1
 
     print("=== TAB:AUTORES-TODOS (TOP-10) ===")
-    print("\\begin{table}[h]")
-    print("\\small")
+    print("\\begin{table}[H]")
+    print("\\footnotesize")
+    print("\\renewcommand{\\arraystretch}{1.2}")
     print("\\centering")
     print("\\caption{Top-10 autores (autorias e coautorias)}")
     print("\\label{tab:autores-todos}")
@@ -425,8 +428,8 @@ def main():
         print(f"{autor_escaped} & {count} \\\\")
 
     print("\\bottomrule")
+    print("\\multicolumn{2}{l}{\\footnotesize Fonte: Elaboração própria.} \\\\")
     print("\\end{tabular}")
-    print("\\fonte{Elaboração própria.}")
     print("\\end{table}")
     print()
 
