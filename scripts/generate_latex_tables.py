@@ -105,6 +105,7 @@ def normalizar_autor_ris(autor: str) -> str:
         'VELOSO, Pedro': 'Veloso, P.A.S.',
         'Veloso, P.A.S.': 'Veloso, P.A.S.',
         'VELOOSO, Pedro Alexandre Santos': 'Veloso, P.A.S.',
+        'VELOSO, Pedro Alexandre Santos': 'Veloso, P.A.S.',
         # Silveira Neto
         'SILVEIRA NETO, Raul da Mota': 'Silveira Neto, R.M.',
         'NETO, Raul da Mota Silveira': 'Silveira Neto, R.M.',
@@ -128,6 +129,21 @@ def normalizar_autor_ris(autor: str) -> str:
         'Ricardo Brito Soares': 'Soares, R.B.',
         'Soares, Ricardo Brito': 'Soares, R.B.',
         'Soares, R.B.': 'Soares, R.B.',
+        # Souza
+        'SOUZA, Hermelino': 'Souza, H.N.',
+        'Souza, Hermelino Nepomuceno de': 'Souza, H.N.',
+        # Nunes
+        'NUNES, Erivelton': 'Nunes, E.S.',
+        'NUNES, Erivelton de Souza': 'Nunes, E.S.',
+        # Andrade
+        'Andrade, V.': 'Andrade, V.',
+        'ANDRADE, Vanessa': 'Andrade, V.',
+        # Domingues
+        'Domingues, E.P.': 'Domingues, E.P.',
+        'DOMINGUES, Edson Paulo': 'Domingues, E.P.',
+        # Silva Filho
+        'Abel da Silva Filho, L.': 'Silva Filho, L.A.',
+        'FILHO, Luis Abel da silva': 'Silva Filho, L.A.',
     }
 
     return VARIANTES.get(autor, autor)
@@ -150,12 +166,13 @@ def normalizar_autor(raw: str) -> list[str]:
         'Ricardo Brito Soares': 'Soares, R.B.',
         'Soares, Ricardo Brito': 'Soares, R.B.',
         'Soares, R.B.': 'Soares, R.B.',
+        'Abel da Silva Filho, L.': 'Silva Filho, L.A.',
     }
 
     # Casos especiais: registros mal formatados sem ponto-e-vírgula
     if raw == 'Ricardo Brito Soares, Jânia Maria Pinho Sousa, Antonio Pereira Da Silva Neto':
         # Retornar lista de autores extraídos manualmente
-        return ['Soares, R.B.', 'Sousa, J.M.P.', 'Neto, A.P.S.']
+        return ['Soares, R.B.', 'Sousa, J.M.P.', 'Silva Neto, A.P.']
 
     autores = []
     # Split por ponto-e-vírgula
@@ -401,7 +418,8 @@ def main():
     print("Autor & Qtd. estudos \\\\")
     print("\\midrule")
 
-    for autor, count in autores.most_common(10):
+    top10 = sorted(autores.most_common(10), key=lambda x: (-x[1], x[0]))
+    for autor, count in top10:
         # Escapar caracteres especiais do LaTeX
         autor_escaped = autor.replace('&', '\\&')
         print(f"{autor_escaped} & {count} \\\\")
