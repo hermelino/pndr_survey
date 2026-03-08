@@ -14,6 +14,16 @@
 	}%
 }
 
+% Macro para célula de variáveis (política + resultado) com label "--"
+\newcommand{\fcvar}[1]{%
+	\parbox[t]{\linewidth}{%
+		\begin{itemize}[leftmargin=*,nosep,topsep=0pt,before=\vspace{-0.6\baselineskip},label={--},labelsep=0.15em]
+			#1
+		\end{itemize}%
+		\vspace{0.3\baselineskip}%
+	}%
+}
+
 % Macro para mesclar células na coluna de método
 % Parâmetros: #1 = texto, #2 = número de linhas a mesclar
 \newcommand{\metodo}[2]{%

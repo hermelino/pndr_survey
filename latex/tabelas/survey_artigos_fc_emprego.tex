@@ -20,9 +20,8 @@
 \begin{longtable}{|>{\raggedright\arraybackslash}p{1.6cm}
 		|>{\raggedright\arraybackslash}p{1.7cm}
 		|>{\raggedright\arraybackslash}p{2cm}
-		|>{\raggedright\arraybackslash}p{1.5cm}
-		|>{\raggedright\arraybackslash}p{2.6cm}
-		|>{\raggedright\arraybackslash}p{4.2cm}|}
+		|>{\raggedright\arraybackslash}p{3.5cm}
+		|>{\raggedright\arraybackslash}p{4.8cm}|}
 
 	\caption{Estudos de Impacto dos Fundos Constitucionais sobre o Mercado de Trabalho} \label{tab:estudos_fc_emprego} \\
 
@@ -30,30 +29,28 @@
 	\begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.6cm}@{}}Método\end{tabular}
 	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.7cm}@{}}Artigo\end{tabular}
 	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2cm}@{}}Amostragem\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.5cm}@{}}Variável Independente\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2.6cm}@{}}Variável Dependente\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{4.2cm}@{}}Resultado\end{tabular} \\
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{3.5cm}@{}}Variáveis\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{4.8cm}@{}}Estimativa\end{tabular} \\
 	\hline
 	\endfirsthead
 
-	\multicolumn{6}{c}%
+	\multicolumn{5}{c}%
 	{{\quadroname\ \thetable{} -- Continuação}} \\
 	\hline
 	\begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.6cm}@{}}Método\end{tabular}
 	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.7cm}@{}}Artigo\end{tabular}
 	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2cm}@{}}Amostragem\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.5cm}@{}}Variável Independente\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2.6cm}@{}}Variável Dependente\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{4.2cm}@{}}Resultado\end{tabular} \\
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{3.5cm}@{}}Variáveis\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{4.8cm}@{}}Estimativa\end{tabular} \\
 	\hline
 	\endhead
 
 	\hline
-	\multicolumn{6}{r}{{Continua}} \\
+	\multicolumn{5}{r}{{Continua}} \\
 	\endfoot
 
 	\hline
-	\multicolumn{6}{l}{
+	\multicolumn{5}{l}{
 		\tiny
 		\parbox{14.8cm}{%
 			\vspace{0.1cm}
@@ -64,21 +61,19 @@
 \textit{Propensity Score Matching}
 	& \citeonline{SilvaResende2009}
 	& \fc[2cm]{\item Empresas NE, N, CO \item 2000-2003}
-	& \fc[1.5cm]{\item FNE, FNO, FCO (\textit{dummy})}
-	& \fc[2cm]{\item $\Delta$ ln(emprego) \item $\Delta$ ln(salário)}
+	& \fcvar{\item FNE, FNO, FCO (\textit{dummy}) \item Cresc. emprego \item Cresc. salário}
 	& \fc[4.5cm]{
 		\item FNE-emprego \hfill +61,2 p.p.\textsuperscript{*}
 		\item FNE-salário \hfill NS\phantom{\textsuperscript{*}}
 		\item FNO, FCO \hfill NS\phantom{\textsuperscript{*}}
 	}
 	\\
-	\cline{2-6}
+	\cline{2-5}
 
 
 	& \citeonline{Soares2017}
 	& \fc[2cm]{\item Empresas NE \item 2000-2006}
-	& \fc[1.5cm]{\item FNE (\textit{dummy})}
-	& \fc[2cm]{\item $\Delta$ ln(emprego) \item $\Delta$ ln(massa salarial) \item $\Delta$ ln(salário)}
+	& \fcvar{\item FNE (\textit{dummy}) \item Cresc. emprego \item Cresc. massa salarial \item Cresc. salário}
 	& \fc[4.5cm]{
 		\item FNE-empr. (1 ano) \hfill +7,96 p.p.\textsuperscript{*}
 		\item FNE-empr. (3 anos) \hfill +33,59 p.p.\textsuperscript{*}
@@ -92,8 +87,7 @@
 \textit{Generalized Propensity Score}
 	& \citeonline{OliveiraTerra2018}
 	& \fc[2cm]{\item Empresas GO \item 2004-2011}
-	& \fc[1.5cm]{\item FCO-Empresarial (contínuo)}
-	& \fc[2cm]{\item $\Delta$ ln(emprego) \item $\Delta$ ln(salário)}
+	& \fcvar{\item FCO-Empresarial (contínuo) \item Cresc. emprego \item Cresc. salário}
 	& \fc[4.5cm]{
 		\item FCO-emprego \hfill (+)\textsuperscript{*}
 		\item Efeito limitado a intervalo específico da dose
@@ -105,8 +99,7 @@
 IV e Função Dose-Resposta
 	& \citeonline{Cunha2024}
 	& \fc[2cm]{\item Empresas NE \item 2000-2006}
-	& \fc[1.5cm]{\item FNE (contínua)}
-	& \fc[2cm]{\item $\Delta$ ln(emprego) \item $\Delta$ ln(massa salarial)}
+	& \fcvar{\item FNE (contínua) \item Cresc. emprego \item Cresc. massa salarial}
 	& \fc[4.5cm]{
 		\item Dose-resposta emprego: IV \hfill 357,54\%\textsuperscript{*}
 		\item Dose-resposta emprego: OLS \hfill 133,94\%\textsuperscript{*}
@@ -119,8 +112,7 @@ IV e Função Dose-Resposta
 Primeira Diferença
 	& \citeonline{Resende2014c}
 	& \fc[2cm]{\item Empresas NE \item 1999-2006}
-	& \fc[1.5cm]{\item FNE-Indústria (\textit{dummy})}
-	& \fc[2cm]{\item $\Delta$ ln(emprego)}
+	& \fcvar{\item FNE-Indústria (\textit{dummy}) \item Cresc. emprego}
 	& \fc[4.5cm]{
 		\item FNE-Ind. (anual) \hfill +10,83 a 16,11 p.p.\textsuperscript{*}
 		\item FNE-Ind. (3 anos) \hfill +30 a 56 p.p.\textsuperscript{*}
@@ -131,8 +123,7 @@ Primeira Diferença
 Painel Espacial (SAR)
 	& \citeonline{Oliveira2015}
 	& \fc[2cm]{\item Municípios GO \item 2004-2011}
-	& \fc[1.5cm]{\item ln(FCO)}
-	& \fc[2cm]{\item ln(emprego) \item Salário médio}
+	& \fcvar{\item Log. FCO \item Log. emprego \item Salário médio}
 	& \fc[4.5cm]{
 		\item FCO-emprego \hfill (+)\textsuperscript{*}
 		\item FCO-salário \hfill (+)\textsuperscript{*}
@@ -144,8 +135,7 @@ Painel Espacial (SAR)
 Painel Dinâmico
 	& \citeonline{Ribeiro2024}
 	& \fc[2cm]{\item Municípios NE \item 2010-2015}
-	& \fc[1.5cm]{\item ln(FNE)}
-	& \fc[2cm]{\item ln(emprego) por setor}
+	& \fcvar{\item Log. FNE \item Log. emprego por setor}
 	& \fc[4.5cm]{
 		\item FNE-primário \hfill +1,10\%\textsuperscript{*}
 		\item FNE-terciário \hfill +0,53\%\textsuperscript{*}
@@ -158,8 +148,7 @@ Painel Dinâmico
 Equilíbrio Geral
 	& \citeonline{Ribeiro2020}
 	& \fc[2cm]{\item Região NE \item 2014-2025}
-	& \fc[1.5cm]{\item FNE}
-	& \fc[2cm]{\item Emprego total}
+	& \fcvar{\item FNE \item Emprego total}
 	& \fc[4.5cm]{
 		\item FNE (emprego NE acumulado) \hfill +2,75\%\textsuperscript{*}
 		\item NE-agropecuária \hfill +8,0\%\textsuperscript{*}
@@ -171,8 +160,7 @@ Equilíbrio Geral
 Diferenças em Diferenças
 	& \citeonline{Oliveira2020}
 	& \fc[2cm]{\item Empresas N (FNO) \item 2000-2010}
-	& \fc[1.5cm]{\item FNO (\textit{dummy})}
-	& \fc[2cm]{\item Emprego \item Massa salarial \item Salário médio}
+	& \fcvar{\item FNO (\textit{dummy}) \item Emprego \item Massa salarial \item Salário médio}
 	& \fc[4.5cm]{
 		\item Emprego e renda \hfill (+)\textsuperscript{*}
 		\item Curto e médio prazo (+), exceto grandes empresas
@@ -185,8 +173,7 @@ Diferenças em Diferenças
 RDD Geográfico
 	& \citeonline{Oliveira2021}
 	& \fc[2cm]{\item Municípios NE \item 1970-2010}
-	& \fc[1.5cm]{\item FNE}
-	& \fc[2cm]{\item Emprego formal e informal (2010)}
+	& \fcvar{\item FNE \item Emprego formal e informal (2010)}
 	& \fc[4.5cm]{
 		\item Agropecuária \hfill +5,4\%\textsuperscript{*}
 		\item Indústria \hfill +2,8\%\textsuperscript{*}

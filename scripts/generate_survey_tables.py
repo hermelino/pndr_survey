@@ -118,9 +118,20 @@ def load_tables(path: Path) -> list[TableDef]:
 # ---------------------------------------------------------------------------
 
 def render_fc_cell(items: list[str], width: str) -> str:
-    """Renderiza uma célula com macro \\fc[width]{\\item ...}."""
+    """Renderiza uma célula: texto direto se único item, \\fc se múltiplos."""
+    if len(items) == 1:
+        return items[0]
     inner = " ".join(f"\\item {it}" for it in items)
     return f"\\fc[{width}]{{{inner}}}"
+
+
+def render_var_cell(var_ind: list[str], var_dep: list[str]) -> str:
+    """Renderiza célula combinada de variáveis (política + resultado) com \\fcvar."""
+    combined = var_ind + var_dep
+    if len(combined) == 1:
+        return combined[0]
+    inner = " ".join(f"\\item {it}" for it in combined)
+    return f"\\fcvar{{{inner}}}"
 
 
 def render_result_item(item: ResultItem) -> str:
@@ -172,9 +183,8 @@ def render_table(table: TableDef) -> str:
     a("\\begin{longtable}{|>{\\raggedright\\arraybackslash}p{1.6cm}")
     a("\t\t|>{\\raggedright\\arraybackslash}p{1.7cm}")
     a("\t\t|>{\\raggedright\\arraybackslash}p{2cm}")
-    a("\t\t|>{\\raggedright\\arraybackslash}p{1.5cm}")
-    a("\t\t|>{\\raggedright\\arraybackslash}p{2.6cm}")
-    a("\t\t|>{\\raggedright\\arraybackslash}p{4.2cm}|}")
+    a("\t\t|>{\\raggedright\\arraybackslash}p{3.5cm}")
+    a("\t\t|>{\\raggedright\\arraybackslash}p{4.8cm}|}")
     a("")
 
     # Caption + label
@@ -189,7 +199,7 @@ def render_table(table: TableDef) -> str:
     a("")
 
     # Continuation header
-    a("\t\\multicolumn{6}{c}%")
+    a("\t\\multicolumn{5}{c}%")
     a("\t{{\\quadroname\\ \\thetable{} -- Continuação}} \\\\")
     a("\t\\hline")
     _add_header_row(lines)
@@ -199,13 +209,13 @@ def render_table(table: TableDef) -> str:
 
     # Continuation footer
     a("\t\\hline")
-    a("\t\\multicolumn{6}{r}{{Continua}} \\\\")
+    a("\t\\multicolumn{5}{r}{{Continua}} \\\\")
     a("\t\\endfoot")
     a("")
 
     # Last footer
     a("\t\\hline")
-    a("\t\\multicolumn{6}{l}{")
+    a("\t\\multicolumn{5}{l}{")
     a("\t\t\\tiny")
     a("\t\t\\parbox{14.8cm}{%")
     a(f"\t\t\t\\vspace{{0.1cm}}")
@@ -225,34 +235,32 @@ def render_table(table: TableDef) -> str:
                     a("")
                     a("\t\\hline")
             else:
-                a("\t\\cline{2-6}")
+                a("\t\\cline{2-5}")
                 a("")
             is_first_body_row = False
 
             method_col = mg.method if is_first_in_group else ""
 
-            # First bloco: full 6-column row
+            # First bloco: full 5-column row
             bloco0 = study.blocos[0]
             amostr = render_fc_cell(study.amostragem, "2cm")
-            var_ind = render_fc_cell(study.var_independente, "1.5cm")
-            var_dep = render_fc_cell(bloco0.var_dependente, "2cm")
+            variaveis = render_var_cell(study.var_independente, bloco0.var_dependente)
             resultado = render_result_cell(bloco0.resultados, "4.5cm")
 
             a(f"{method_col}")
             a(f"\t& \\citeonline{{{study.cite_key}}}")
             a(f"\t& {amostr}")
-            a(f"\t& {var_ind}")
-            a(f"\t& {var_dep}")
+            a(f"\t& {variaveis}")
             a(f"\t& {resultado}")
             a("\t\\\\")
 
             # Additional blocos (multi dep-var)
             for bloco in study.blocos[1:]:
-                a("\t\\cline{5-6}")
-                var_dep_extra = render_fc_cell(bloco.var_dependente, "2cm")
+                a("\t\\cline{4-5}")
+                variaveis_extra = render_var_cell(study.var_independente, bloco.var_dependente)
                 resultado_extra = render_result_cell(bloco.resultados, "4.5cm")
-                a(f"\t& & &")
-                a(f"\t& {var_dep_extra}")
+                a(f"\t& & ")
+                a(f"\t& {variaveis_extra}")
                 a(f"\t& {resultado_extra}")
                 a("\t\\\\")
 
@@ -271,14 +279,13 @@ def render_table(table: TableDef) -> str:
 
 
 def _add_header_row(lines: list[str]) -> None:
-    """Adiciona a linha de cabeçalho das 6 colunas."""
+    """Adiciona a linha de cabeçalho das 5 colunas."""
     cols = [
         ("1.6cm", "Método"),
         ("1.7cm", "Artigo"),
         ("2cm", "Amostragem"),
-        ("1.5cm", "Variável Independente"),
-        ("2.6cm", "Variável Dependente"),
-        ("4.2cm", "Resultado"),
+        ("3.5cm", "Variáveis"),
+        ("4.8cm", "Estimativa"),
     ]
     parts = []
     for width, title in cols:
