@@ -14,7 +14,6 @@ Output: Fragmentos LaTeX prontos para inserção em 3-metodo.tex
 
 import json
 import re
-import rispy
 from collections import Counter
 from pathlib import Path
 
@@ -70,8 +69,8 @@ def normalizar_instrumento(raw: str) -> list[str]:
 
 def normalizar_autor_ris(autor: str) -> str:
     """
-    Normaliza nomes de autores do RIS para formato consistente: Sobrenome, Iniciais
-    Unifica variantes do mesmo autor.
+    Normaliza nomes de autores para formato consistente: Sobrenome, Iniciais.
+    Unifica variantes do mesmo autor (RIS, JSON bibliográfico e LLM).
     """
     if not autor:
         return ''
@@ -83,11 +82,13 @@ def normalizar_autor_ris(autor: str) -> str:
         # Irffi
         'IRFFI, Guilherme': 'Irffi, G.D.',
         'Irffi, G.': 'Irffi, G.D.',
+        'Irffi, Guilherme': 'Irffi, G.D.',
         'Irffi, Guilherme Diniz': 'Irffi, G.D.',
         'IRFFI, Guilherme Diniz': 'Irffi, G.D.',
         # Carneiro
         'CARNEIRO, Diego': 'Carneiro, D.R.F.',
         'Carneiro, D.R.F.': 'Carneiro, D.R.F.',
+        'Carneiro, Diego': 'Carneiro, D.R.F.',
         'Carneiro, Diego Rafael Fonseca': 'Carneiro, D.R.F.',
         'CARNEIRO, Diego Rafael Fonseca': 'Carneiro, D.R.F.',
         # Resende
@@ -95,10 +96,13 @@ def normalizar_autor_ris(autor: str) -> str:
         'Resende, Guilherme': 'Resende, G.M.',
         'Resende, Guilherme Mendes': 'Resende, G.M.',
         'RESENDE, Guilherme Mendes': 'Resende, G.M.',
+        'Resend, Guilherme Mendes': 'Resende, G.M.',
         # Oliveira G.R.
         'Oliveira, Guilherme Resende': 'Oliveira, G.R.',
         'OLIVEIRA, Guilherme Resende': 'Oliveira, G.R.',
         'Oliveira, G.R.': 'Oliveira, G.R.',
+        # Oliveira I.G.
+        'Oliveira, Ierê Gondim': 'Oliveira, I.G.',
         # Oliveira T.G.
         'OLIVEIRA, Tássia Germano de': 'Oliveira, T.G.',
         # Veloso
@@ -120,11 +124,14 @@ def normalizar_autor_ris(autor: str) -> str:
         # Bastos
         'BASTOS, Felipe': 'Bastos, F.S.',
         'BASTOS, Felipe de Sousa': 'Bastos, F.S.',
+        'Bastos, Felipe de Sousa': 'Bastos, F.S.',
+        'Bastos, Fabrício de Souza': 'Bastos, F.S.',
         'de Sousa Bastos, F.': 'Bastos, F.S.',
         # Alves
         'ALVES, Denis Fernandes': 'Alves, D.F.',
         # Shirasu
-        'SHIRASU, Maitê': 'Shirasu, M.',
+        'SHIRASU, Maitê': 'Shirasu, M.R.',
+        'Shirasu, Maitê Rimekka': 'Shirasu, M.R.',
         # Soares
         'Ricardo Brito Soares': 'Soares, R.B.',
         'Soares, Ricardo Brito': 'Soares, R.B.',
@@ -144,6 +151,14 @@ def normalizar_autor_ris(autor: str) -> str:
         # Silva Filho
         'Abel da Silva Filho, L.': 'Silva Filho, L.A.',
         'FILHO, Luis Abel da silva': 'Silva Filho, L.A.',
+        'da Silva Filho, Luís Abel': 'Silva Filho, L.A.',
+        'Silva Filho, Luis Abel': 'Silva Filho, L.A.',
+        # Daniel
+        'Daniel, Lindomar Pegorini': 'Daniel, L.P.',
+        'DANIEL, Lindomar Pegorini': 'Daniel, L.P.',
+        # Braga
+        'Braga, Marcelo José': 'Braga, M.J.',
+        'BRAGA, Marcelo José': 'Braga, M.J.',
     }
 
     return VARIANTES.get(autor, autor)
@@ -394,20 +409,22 @@ def main():
     # ========================
     # TAB: AUTORES (TOP-10)
     # ========================
-    # Ler autores do approved_papers.ris (fonte mais confiável)
-    ris_path = Path(__file__).parent.parent / 'data' / '2-papers' / 'approved_papers.ris'
+    # Extrair autores do JSON (campo 'autores' com fallback para 's1.autores')
     autores = Counter()
 
-    with open(ris_path, 'r', encoding='utf-8') as f:
-        ris_records = list(rispy.load(f))
-
-    for rec in ris_records:
-        authors = rec.get('authors', [])
-        if isinstance(authors, list):
-            for autor in authors:
-                if autor:
-                    autor_norm = normalizar_autor_ris(autor)
-                    autores[autor_norm] += 1
+    for p in aprovados:
+        raw = p.get('autores', '') or ''
+        if not raw:
+            s1 = p.get('s1', {})
+            raw = s1.get('autores', '') if isinstance(s1, dict) else ''
+        if not raw:
+            continue
+        # Limpar referências de página do LLM (ex: "[p. 1]")
+        raw = re.sub(r'\s*\[p\.\s*\d+\]', '', raw)
+        for parte in raw.split(';'):
+            nome = parte.strip()
+            if nome:
+                autores[normalizar_autor_ris(nome)] += 1
 
     print("=== TAB:AUTORES-TODOS (TOP-10) ===")
     print("\\begin{table}[H]")

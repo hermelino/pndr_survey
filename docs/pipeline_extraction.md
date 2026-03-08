@@ -490,7 +490,7 @@ Regenera automaticamente as tabelas derivadas do artigo LaTeX a partir dos dados
 
 O script aplica normalizacao automatica:
 - **Instrumentos:** Remove referencias de pagina, unifica variantes (ex: "incentivo fiscal Sudene" → "IF -- Sudene")
-- **Autores:** Preserva formato "Sobrenome, Iniciais" conforme campo `autores` do JSON
+- **Autores:** Extrai do campo `autores` do JSON (fallback: `s1.autores` do LLM), cobre todos os 44 aprovados (bases + inclusao manual). Normaliza para formato "Sobrenome, Iniciais" via mapeamento de variantes
 - **Unidades:** Normaliza variantes (ex: "municipio"/"municipal" → "Municipio", "empresa"/"firma" → "Empresa")
 - **Metodos:** Unifica variantes de nomes (ex: "DiD"/"Diferencas em Diferencas" → "Diferencas em Diferencas (DiD)")
 
