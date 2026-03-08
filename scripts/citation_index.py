@@ -84,6 +84,7 @@ def is_published(study: dict) -> bool:
         "manual-2020-rieger-lima-rodrigues",          # Rev. Econ. do Nordeste
         "manual-2022-goncalves-braga-gurgel",        # Rev. Econ. do Nordeste
         "manual-2026-oliveira-carneiro-souza",        # Rev. Cadernos de Finanças Públicas
+        "manual-2026-bastos-carneiro-shirasu-irffi",  # Rev. Cadernos de Finanças Públicas
     }
     UNPUBLISHED_KEYS = {
         # Textos para Discussão / Working Papers (verificado)

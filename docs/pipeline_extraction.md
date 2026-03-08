@@ -14,8 +14,8 @@ Revisao sistematica sobre instrumentos da PNDR (2000-2025). Busca manual em 5 ba
 | 1-4 | EconPapers/RePEc | 11 | 11 | 100% | Concluido |
 | 1-5 | ANPEC | 61 | 61 | 100% | Concluido |
 | **Total (apos dedup)** | | **118** | **118** | **100%** | **Concluido** |
-| **Inclusao manual** | | **11** | **11** | **100%** | **Concluido** |
-| **Total geral** | | **129** | **129** | **100%** | **Concluido** |
+| **Inclusao manual** | | **12** | **12** | **100%** | **Concluido** |
+| **Total geral** | | **130** | **130** | **100%** | **Concluido** |
 
 ## Estrategia de busca
 
@@ -128,7 +128,7 @@ Identificados apos a analise de indice de citacao. Estudos que apareceram como T
 | Eficacia do gasto publico: FNE, FNO e FCO | scielo-2009 (mesma pub., sem DOI) | scopus-2009-silva-resende-neto | 10.1590/s0101-41612009000100004 |
 | Efeitos regionais do FNE (congresso ANPEC 2013) | econpapers-2014-goncalves-soares-linhares (nome alternativo) | econpapers-2014-viana-goncalves-linhares (CEPAL Review) | — |
 
-Total de duplicatas: 9 (fases 1-2, DOI + fuzzy titulo) + 10 (fase 3, PDF identico) + 9 (fase 4, manual TD/WP) = 28 removidas. **118 papers das bases** (mantidos para consistencia com LLM) + **11 inclusoes manuais** = **129 papers na base**, **43 aprovados** apos triagem.
+Total de duplicatas: 9 (fases 1-2, DOI + fuzzy titulo) + 10 (fase 3, PDF identico) + 9 (fase 4, manual TD/WP) = 28 removidas. **118 papers das bases** (mantidos para consistencia com LLM) + **12 inclusoes manuais** = **130 papers na base**, **44 aprovados** apos triagem.
 
 Arquivo de auditoria fase 1: `data/1-records/processed/duplicates_removed.csv`
 Arquivo de auditoria fase 3: `data/2-papers/all_papers.xlsx` (aba "Duplicatas")

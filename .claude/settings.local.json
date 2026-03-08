@@ -74,7 +74,23 @@
       "Bash(powershell -NoProfile -File -:*)",
       "Bash(del \"c:\\\\OneDrive\\\\github\\\\pndr_survey\\\\_validate.py\")",
       "Bash(del \"c:\\\\OneDrive\\\\github\\\\pndr_survey\\\\latex\\\\_validate_citations.py\")",
-      "Bash(del:*)"
+      "Bash(del:*)",
+      "Bash(where:*)",
+      "Bash(pip:*)",
+      "Bash(\"c:/OneDrive/github/pndr_survey/.venv/Scripts/pip.exe\" install PyMuPDF)",
+      "Bash(.venv\\\\Scripts\\\\python.exe:*)",
+      "Bash(c:\\\\OneDrive\\\\github\\\\pndr_survey\\\\.venv\\\\Scripts\\\\python.exe:*)",
+      "Bash(powershell.exe:*)",
+      "Bash(git mv:*)",
+      "Bash(git rm:*)",
+      "Bash(git -C \"c:\\\\OneDrive\\\\github\\\\pndr_survey\" add scripts/generate_ic_table.py latex/tabelas/tabela_ic.tex)",
+      "Bash(git -C \"c:\\\\OneDrive\\\\github\\\\pndr_survey\" commit -m \"$\\(cat <<''EOF''\nFix Cadernos de Finanças Públicas Qualis to B2 \\(ISSN 1806-8944\\)\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "WebFetch(domain:blogdoibre.fgv.br)",
+      "WebFetch(domain:agenciadenoticias.ibge.gov.br)",
+      "WebFetch(domain:www.gov.br)",
+      "WebFetch(domain:prda.sudam.gov.br)",
+      "WebFetch(domain:www.camara.leg.br)",
+      "Bash(ren \"c:\\\\OneDrive\\\\github\\\\pndr_survey\\\\data\\\\2-papers\\\\2-2-papers-pdfs\\\\Artigo+Português.pdf\" \"manual-2026-bastos-carneiro-shirasu-irffi.pdf\")"
     ]
   }
 }

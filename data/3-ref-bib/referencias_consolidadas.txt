@@ -1,5 +1,5 @@
 REFERÊNCIAS BIBLIOGRÁFICAS DOS ESTUDOS APROVADOS
-Total de estudos processados: 42/43
+Total de estudos processados: 43/44
 ======================================================================
 
 ######################################################################
@@ -4658,4 +4658,98 @@ gov.br>. Acesso em: 20 nov. 2015.
 
 planejamento e políticas públicas | ppp | n. 55 | jul./set. 2020
 132
+
+######################################################################
+# Estudo #130 - Bastos, Felipe de Sousa; Carneiro, Diego Rafael Fonseca; Shirasu, Maitê Rimekka; Irffi, Guilherme Diniz (2026)
+# Acesso ao Crédito Reduz Desigualdade Salarial de Gênero? Um Estudo Sobre Os Impactos do FNE nos Municípios Nordestinos
+# PDF: manual-2026-bastos-carneiro-shirasu-irffi.pdf
+######################################################################
+
+AGARWALA, R.; MAITY, B.; SAHU, S. Microcredit, entrepreneurship, and empowerment: 
+Evidence from India. World Development, v. 150, p. 105711, 2022.
+ALI, I.; HATTA, Z. A. Women's empowerment through microcredit: The case of Bangladesh. 
+Journal of Social Work, v. 47, n. 3, p. 453-468, 2012.
+ALPERSTEDT, G. D.; FERREIRA, J. B.; SERAFIM, M. C. Empreendedorismo Feminino: Di-
+ficuldades relatadas em histórias de vida. Revista de Ciências da Administração, p. 221–234, 
+2014.
+AMANKWA, R.; GYAMFI, A.; OFORI, K. Financial inclusion and women's empowerment: 
+Evidence from Ghana. African Journal of Economic Policy, v. 28, n. 1, p. 79-99, 2021.
+ASHRAF, N.; KARLAN, D.; YIN, W. Female empowerment: Impact of a commitment savings 
+product in the Philippines. World Development, v. 38, n. 3, p. 333-344, 2010.
+BULTE, E.; LENSINK, R.; VU, N. Do gender and business trainings affect business outcomes? 
+Experimental evidence from Vietnam. Management Science, v. 63, n. 9, p. 2918-2940, 2017.
+CABALLERO-MONTES, K. et al. Dimensions of women entrepreneurs’ empowerment: A 
+comparative study between urban and rural areas. International Journal of Gender and Entre-
+preneurship, ahead-of-print, 2023.
+CARTER, M. Women's empowerment and microfinance: Evidence from Guatemala. Feminist 
+Economics, v. 8, n. 1, p. 45-68, 2002.
+CUNHA JÚNIOR, J. M. da et al. Microcrédito e empoderamento feminino: O caso do Credia-
+migo no Ceará. Banco do Nordeste do Brasil, 2022.
+DE JESUS SOUZA, C.; BATISTA, V. C.; ZUQUI, V. Empreendedorismo Feminino no Brasil: 
+Principais Desafios Enfrentados e Perspectivas de Crescimento. Revista Foco, v. 18, n. 3, p. 
+
+25
+e7813-e7813, 2025.
+DO MONTE, K. A. D. et al. Analysis of the Northeast Constitutional Financing Fund (FNE) on 
+Municipal Economic Indicators in the Period 2010–2020. Journal of Regional Science, 2025.
+DUVENDACK, M. et al. What is the evidence of the impact of microfinance on the well-being 
+of poor people? London: EPPI-Centre, Social Science Research Unit, Institute of Education, 
+University of London, 2011.
+EKPE, I.; MAT, N. B.; CHE RAZAK, R. The effect of microfinance factors on women entrepre-
+neurs' performance in Nigeria. International Journal of Business and Social Science, v. 1, n. 2, 
+p. 255-263, 2010.
+ESMAEIL ZAEI, M.; ZAEI, M. E.; HOSSAIN, M. The role of self-help groups in women's 
+empowerment: A case study in India. Journal of Asian Finance, Economics and Business, v. 5, 
+n. 4, p. 73-82, 2018.
+GARCIA, A.; LENSINK, R.; VOORS, M. Microfinance and aspirational hope: Evidence from a 
+field experiment in Peru. Journal of Economic Behavior & Organization, v. 172, p. 21-36, 2020.
+GARIKIPATI, S. The impact of lending to women on household vulnerability and women’s em-
+powerment: Evidence from India. World Development, v. 36, n. 12, p. 2620-2642, 2008.
+GARIKIPATI, S. Microcredit and women's empowerment: Have we been looking at the wrong 
+indicators? Oxford Development Studies, v. 41, n. 1, p. 53-75, 2013.
+GOETZ, A. M.; GUPTA, R. S. Who takes the credit? Gender, power, and control over loan use 
+in rural credit programmes in Bangladesh. World Development, v. 24, n. 1, p. 45–63, 1996.
+GUARDABASCIO, B.; VENTURA, M. (2014). Estimating the dose-response function through 
+a generalized linear model approach. Stata Journal, p. 141–158.
+HASHEMI, S. M.; SCHULER, S. R.; RILEY, A. P. Rural credit programs and women's em-
+
+26
+powerment in Bangladesh. World Development, v. 24, n. 4, p. 635-653, 1996.
+HIRANO, K.; G. W. IMBENS. The Propensity Score with Continuous Treatments. In Applied 
+Bayesian Modeling and Causal Inference from Incomplete‐Data Perspectives, edited by A. Gel-
+man and X.‐L. Meng West Sussex, England: Wiley InterScience, 73–84, 2004.
+HOLVOET, N. The impact of microfinance on decision-making agency: Evidence from South 
+India. Development and Change, v. 36, n. 1, p. 75–102, 2005.
+HUIS, M. A. et al. A relational perspective on women's empowerment: The role of men as allies 
+in entrepreneurship programs. World Development, v. 120, p. 11-23, 2019.
+IBGE. Pesquisa Nacional por Amostra de Domicílios Contínua: 4º trimestre de 2024. Rio de 
+Janeiro: IBGE, 2025.
+KABEER, N. Conflicts over credit: Re-evaluating the empowerment potential of loans to wo-
+men in rural Bangladesh. World Development, v. 29, n. 1, p. 63–84, 2001.
+KABEER, N. Gender equality and women's empowerment: A critical analysis of the third mil-
+lennium development goal 1. Gender & Development, v. 13, n. 1, p. 13–24, 2005.
+MAYOUX, L. Tackling the down side: Social capital, women's empowerment and micro-finance 
+in Cameroon. Development and Change, v. 32, n. 3, p. 435–464, 2001.
+MAYOUX, L. Women’s empowerment through sustainable micro-finance: Rethinking “best 
+practice”. Discussion draft, 2006.
+MEIRELES, F. F. GenderBR: Inferência de gênero a partir de prenomes brasileiros [Software]. 
+GitHub, 2023.
+MIRO, V. H.; FRANÇA, J. M. S.; BARRETO, F. A. Inserção e rendimentos das mulheres no 
+mercado de trabalho do Nordeste. 1 abr. 2025.
+
+27
+NAWAZ, F. Microfinance and women entrepreneurs in Pakistan. International Journal of Gen-
+der and Entrepreneurship, v. 2, n. 3, p. 265–274, 2010.
+NYARKO, S. H. Barriers to women's financial inclusion: Evidence from sub-Saharan Africa. 
+Journal of African Development, v. 24, n. 2, p. 77-101, 2022.
+PANDA, P. Household structure and women's economic empowerment in India. Development 
+and Change, v. 49, n. 4, p. 1056-1084, 2018.
+RAO, A.; KELLEHER, D. Is there life after gender mainstreaming? Gender and Development, 
+v. 13, n. 2, p. 57–69, 2005.
+SANDERS, C. K.; SCHNABEL, M. Organizing for economic empowerment of battered wo-
+men: Women’s savings accounts. Journal of Community Practice, v. 14, n. 3, p. 47-68, 2006.
+TAMBUNAN, T. Women entrepreneurs in Indonesia: Importance, impact, and policy support. 
+Journal of Business and Social Review in Emerging Economies, v. 3, n. 1, p. 57-68, 2017.
+
+28
 

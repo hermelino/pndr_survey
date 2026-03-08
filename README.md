@@ -51,7 +51,7 @@ pndr_survey/
 │   │       └── duplicates_removed.csv
 │   ├── 2-papers/                  # Artigos e classificacao
 │   │   ├── 2-2-papers.json        # JSON enriquecido (registros + LLM + triagem)
-│   │   ├── 2-2-papers-pdfs/       # 119 PDFs renomeados (118 bases + 1 manual)
+│   │   ├── 2-2-papers-pdfs/       # 130 PDFs renomeados (118 bases + 12 manual)
 │   │   ├── 2-1-papers_scripts/    # Scripts de renomeacao e verificacao
 │   │   ├── all_papers.xlsx        # Controle: registros + status de download
 │   │   ├── all_papers_llm_classif.xlsx        # Classificacao LLM bruta
@@ -63,7 +63,7 @@ pndr_survey/
 │       ├── estruturar_referencias.py  # Estruturacao de refs em JSON
 │       ├── referencias_consolidadas.txt
 │       ├── referencias_estruturadas.json
-│       ├── refs_por_estudo/           # 43 JSONs ativos + TXTs com refs por estudo
+│       ├── refs_por_estudo/           # 44 JSONs ativos + TXTs com refs por estudo
 │       ├── citation_index_results.json # Indice de citacao por estudo (JSON)
 │       └── citation_index_report.txt   # Relatorio do indice de citacao
 ├── latex/                         # Artigo LaTeX (esqueleto)
@@ -79,7 +79,7 @@ pndr_survey/
 FASE 1 — COLETA                           FASE 2 — ANALISE
 ========================                   ========================
 
-Busca manual nas 5 bases                   PDFs coletados (119)
+Busca manual nas 5 bases                   PDFs coletados (130)
         |                                          |
         v                                          v
 [1] Importacao (RIS/CSV/Excel)             [4] Extracao de texto (pdfplumber)
@@ -91,7 +91,7 @@ Busca manual nas 5 bases                   PDFs coletados (119)
 [3] Triagem pre-LLM (PRISMA)                  Stage 3: Resultados
                                                        |
                                                        v
-                                               [6] Triagem final (34 aprov., 85 rej.)
+                                               [6] Triagem final (44 aprov., 86 rej.)
                                                        |
                                                        v
                                                [7] Consolidacao JSON enriquecido
@@ -108,15 +108,15 @@ Busca manual nas 5 bases                   PDFs coletados (119)
 | Etapa | Descricao | Status |
 |-------|-----------|--------|
 | 1 | Busca manual + importacao (5 bases) | Concluido |
-| 2 | Deduplicacao (118 unicos das bases, 28 removidos incl. 9 TD/WP manuais) + 1 inclusao manual = 119 | Concluido |
+| 2 | Deduplicacao (118 unicos das bases, 28 removidos incl. 9 TD/WP manuais) + 12 inclusoes manuais = 130 | Concluido |
 | 3 | Triagem pre-LLM | Concluido |
-| 4 | Coleta de PDFs (119 de 119, 100%) | Concluido |
-| 5 | Analise LLM (Stages 1-3, 118 papers das bases) | Concluido |
-| 6 | Triagem final (34 aprovados, 85 rejeitados, 119 total) | Concluido |
+| 4 | Coleta de PDFs (130 de 130, 100%) | Concluido |
+| 5 | Analise LLM (Stages 1-3, 130 papers) | Concluido |
+| 6 | Triagem final (44 aprovados, 86 rejeitados, 130 total) | Concluido |
 | 7 | Consolidacao JSON (registros + LLM) | Concluido |
-| 8 | Extracao de referencias (41 estudos ativos) | Concluido |
-| 9 | Matching de citacoes entre estudos (67 citacoes cruzadas) | Concluido |
-| 10 | Indice de citacao (98 citacoes cruzadas; 34 estudos: 16 pub, 18 nao-pub) | Concluido |
+| 8 | Extracao de referencias (44 estudos ativos) | Concluido |
+| 9 | Matching de citacoes entre estudos (142 citacoes cruzadas) | Concluido |
+| 10 | Indice de citacao (142 citacoes cruzadas; 44 estudos: 22 pub, 22 nao-pub) | Concluido |
 | 11 | Artigo LaTeX | Em andamento |
 
 Detalhes da extracao: [docs/pipeline_extraction.md](docs/pipeline_extraction.md)

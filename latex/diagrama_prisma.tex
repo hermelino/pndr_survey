@@ -25,18 +25,18 @@
 };
 
 % --- Inclusão manual (à direita da Identificação) ---
-\node[flowbox, text width=3.8cm, right=15mm of n1] (nmanual) {Inclusão manual\\(n~=~11)};
+\node[flowbox, text width=3.8cm, right=15mm of n1] (nmanual) {Inclusão manual\\(n~=~12)};
 
 % --- Triagem ---
-\node[flowbox, below=12mm of n1] (n2) {Registros após remoção\\de duplicatas (n~=~129)};
+\node[flowbox, below=12mm of n1] (n2) {Registros após remoção\\de duplicatas (n~=~130)};
 \draw[arrow] (n1) -- (n2);
 \draw[arrow] (nmanual) |- (n2);
 
-\node[flowbox, below=of n2] (n3) {Registros triados (n~=~129)};
+\node[flowbox, below=of n2] (n3) {Registros triados (n~=~130)};
 \draw[arrow] (n2) -- (n3);
 
 % --- Elegibilidade ---
-\node[flowbox, below=12mm of n3] (n4) {Publicações avaliadas\\em texto completo (n~=~129)};
+\node[flowbox, below=12mm of n3] (n4) {Publicações avaliadas\\em texto completo (n~=~130)};
 \draw[arrow] (n3) -- (n4);
 
 \node[listbox, text width=4.5cm, right=15mm of n4] (n4r) {
@@ -53,7 +53,7 @@
 \draw[arrow] (n4) -- (n4r);
 
 % --- Inclusão ---
-\node[flowbox, below=20mm of n4] (n5) {Estudos incluídos na revisão\\(n~=~43)};
+\node[flowbox, below=20mm of n4] (n5) {Estudos incluídos na revisão\\(n~=~44)};
 \draw[arrow] (n4) -- (n5);
 
 % --- Labels laterais (alinhados na mesma vertical) ---
