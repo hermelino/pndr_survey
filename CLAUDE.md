@@ -19,6 +19,7 @@ scripts/                        → Pipeline Python
   generate_bibtex.py            → Converte RIS aprovado → BibTeX (references.bib)
   generate_ic_table.py          → Gera tabela IC LaTeX com citeonline (tabelas/tabela_ic.tex)
   generate_latex_tables.py      → Regenera todas as tabelas derivadas do artigo (estudos-ano, instrumentos, autores, unidade-amostral, metodos)
+  generate_survey_tables.py     → Gera 4 quadros survey de resultados a partir de survey_results.json
   _rebuild_resumo.py            → Gera resumo estatistico (resumo_classificacao.xlsx) a partir de _classif_final.xlsx
   organize_bibtex.py            → Padroniza chaves BibTeX (formato curto) e atualiza citacoes nos .tex
   src/
@@ -41,6 +42,7 @@ data/2-papers/                  → Artigos e classificacao
   2-1-papers_scripts/           → Scripts de renomeacao e verificacao
   _llm_checkpoint.json          → Checkpoint da analise LLM
   all_papers_llm_classif_final.xlsx → Classificacao revisada (somente leitura)
+  survey_results.json            → Dados dos 4 quadros survey de resultados (fonte unica)
   resumo_classificacao.xlsx     → Resumo estatistico (gerado por _rebuild_resumo.py)
 data/3-ref-bib/                → Referencias extraidas dos estudos
   refs_por_estudo/              → 54 JSONs com refs estruturadas + matching

@@ -1,15 +1,12 @@
 % Arquivo: latex/tabelas/survey_artigos_if.tex
-% Quadro de estudos sobre impacto dos Incentivos Fiscais
-% Fonte: Revisão sistemática - dados extraídos do pipeline pndr_survey
-% Adaptado da tese: removido CostaCarneiroIrffi2023 (não aprovado),
-%   adicionados Oliveira2020, Alves2024,Olivera2026, Souza2025.
-%   Chaves BibTeX corrigidas para consistência com references.bib.
+% Gerado automaticamente por scripts/generate_survey_tables.py
+% Fonte: data/2-papers/survey_results.json
 
 % IMPORTANTE: Este arquivo requer:
 % - Pacotes: longtable, multirow, afterpage, enumitem, array
 % - Macros: \fc e \metodo (definidas em tabelas/tabela_macros.tex)
 % - Comando \citeonline (do pacote abntex2cite)
-% - Contador: quadro (definido no main.tex)
+% - Contador: quadro (definido na classe abntex2)
 
 \afterpage{\clearpage%
 \tiny%
@@ -29,7 +26,7 @@
 
 	\caption{Estudos de Impacto dos Incentivos Fiscais} \label{tab:estudos_if} \\
 
-	\hline
+\hline
 	\begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.6cm}@{}}Método\end{tabular}
 	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.7cm}@{}}Artigo\end{tabular}
 	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2cm}@{}}Amostragem\end{tabular}
@@ -64,16 +61,18 @@
 	}}
 	\endlastfoot
 
-	\hline
-DID & \citeonline{Garsous2017}
+DID
+	& \citeonline{Garsous2017}
 	& \fc[2cm]{\item BA, RJ, ES, MG \item 1998-2009}
 	& \fc[1.5cm]{\item IF-SUDENE (turismo)}
 	& \fc[2cm]{\item Emprego no turismo (log)}
 	& \fc[4.5cm]{
 		\item Emprego turismo \hfill 20\%\textsuperscript{*}, 30\%\textsuperscript{*}
-	} \\
-
+	}
+	\\
 	\cline{2-6}
+
+
 	& \citeonline{Oliveira2020}
 	& \fc[2cm]{\item PE \item 2000-2017}
 	& \fc[1.5cm]{\item Prodepe + IF-SUDENE}
@@ -82,10 +81,12 @@ DID & \citeonline{Garsous2017}
 		\item Emprego \hfill 8,6\%\textsuperscript{*}
 		\item Salário médio \hfill $-$10,3\%\textsuperscript{*}
 		\item Massa salarial \hfill NS\phantom{\textsuperscript{*}}
-	} \\
+	}
+	\\
 
 	\hline
-DID Escalonado & \citeonline{Braz2023}
+DID Escalonado
+	& \citeonline{Braz2023}
 	& \fc[2cm]{\item SUDENE \item 2002-2021}
 	& \fc[1.5cm]{\item IF-SUDENE}
 	& \fc[2cm]{\item Emprego, renda}
@@ -93,9 +94,11 @@ DID Escalonado & \citeonline{Braz2023}
 		\item Emprego \hfill 3,2\%\textsuperscript{*}
 		\item Renda \hfill 1,2\%\textsuperscript{*}
 		\item Efeito crescente e duradouro
-	} \\
-
+	}
+	\\
 	\cline{2-6}
+
+
 	& \citeonline{Alves2024}
 	& \fc[2cm]{\item PE \item 2000-2017}
 	& \fc[1.5cm]{\item Prodepe + IF-SUDENE}
@@ -105,10 +108,12 @@ DID Escalonado & \citeonline{Braz2023}
 		\item Massa salarial \hfill 15,1\%\textsuperscript{*}
 		\item Salário médio \hfill $-$8,2\%\textsuperscript{*}
 		\item Efeito temporário e declinante
-	} \\
+	}
+	\\
 
 	\hline
-DEA + SFA & \citeonline{Carneiro2023}
+DEA + SFA
+	& \citeonline{Carneiro2023}
 	& \fc[2cm]{\item NE \item 2011-2019}
 	& \fc[1.5cm]{\item IF-SUDENE}
 	& \fc[2cm]{\item Eficiência produtiva (massa salarial)}
@@ -116,19 +121,23 @@ DEA + SFA & \citeonline{Carneiro2023}
 		\item Empresas eficientes no Semiárido
 		\item Intensivas em mão de obra
 		\item Ineficiência associada ao setor, não à empresa
-	} \\
+	}
+	\\
 
 	\hline
-DID Dois Estágios & \citeonline{CarneiroVeloso2024}
+DID Dois Estágios
+	& \citeonline{CarneiroVeloso2024}
 	& \fc[2cm]{\item NE, MG, ES \item 2002-2019}
 	& \fc[1.5cm]{\item IF-SUDENE (+ FNE, FDNE)}
 	& \fc[2cm]{\item log PIB\textit{pc}, VAB setorial}
 	& \fc[4.5cm]{
 		\item IF-SUDENE \hfill NS\phantom{\textsuperscript{*}}
-	} \\
+	}
+	\\
 
 	\hline
-Controle Sintético & \citeonline{Costa2024}
+Controle Sintético
+	& \citeonline{Costa2024}
 	& \fc[2cm]{\item NE \item 2006-2019}
 	& \fc[1.5cm]{\item IF-SUDENE}
 	& \fc[2cm]{\item Vínculos (log)}
@@ -137,10 +146,12 @@ Controle Sintético & \citeonline{Costa2024}
 		\item Indústria \hfill 18,3\%\textsuperscript{*}
 		\item Efeitos por até 5 anos
 		\item Demais setores \hfill NS\phantom{\textsuperscript{*}}
-	} \\
+	}
+	\\
 
 	\hline
-Painel Espacial & \citeonline{Ferreira2024}
+Painel Espacial
+	& \citeonline{Ferreira2024}
 	& \fc[2cm]{\item NE \item 2010-2021}
 	& \fc[1.5cm]{\item IF-SUDENE (+ FDNE)}
 	& \fc[2cm]{\item IDM e subcomponentes}
@@ -150,9 +161,11 @@ Painel Espacial & \citeonline{Ferreira2024}
 		\item IDM renda \hfill 0,012\textsuperscript{*}
 		\item IDM educação \hfill NS\phantom{\textsuperscript{*}}
 		\item Transbordamento renda \hfill 0,002\textsuperscript{*}
-	} \\
-
+	}
+	\\
 	\cline{2-6}
+
+
 	& \citeonline{Oliveira2026}
 	& \fc[2cm]{\item NE \item 2010-2021}
 	& \fc[1.5cm]{\item IF-SUDENE (+ FNE, FDNE)}
@@ -160,17 +173,20 @@ Painel Espacial & \citeonline{Ferreira2024}
 	& \fc[4.5cm]{
 		\item VAB agropecuário\textit{pc} \hfill Significativo\textsuperscript{*}
 		\item PIB\textit{pc} \hfill NS\phantom{\textsuperscript{*}}
-	} \\
+	}
+	\\
 
 	\hline
-Painel Dinâmico GMM & \citeonline{Souza2025}
+Painel Dinâmico GMM
+	& \citeonline{Souza2025}
 	& \fc[2cm]{\item N, NE, CO \item 2002-2021}
 	& \fc[1.5cm]{\item IF-SUDENE, IF-SUDAM (+ FC, FD)}
 	& \fc[2cm]{\item PIB\textit{pc}, emprego, renda}
 	& \fc[4.5cm]{
 		\item IF-SUDAM inconclusivo (poucas observações)
 		\item Heterogeneidade entre instrumentos e regiões
-	} \\
+	}
+	\\
 
 \end{longtable}%
 \normalsize%

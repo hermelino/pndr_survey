@@ -72,6 +72,9 @@ data/**/*.jsonl
 !data/**/README.md
 !data/**/DATASETS.md
 
+# EXCEÇÃO 6: Versionar dados estruturados das tabelas de resultados
+!data/2-papers/survey_results.json
+
 # =============================================================================
 # OS / IDE
 # =============================================================================
