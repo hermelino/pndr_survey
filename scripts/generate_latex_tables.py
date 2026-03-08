@@ -63,9 +63,7 @@ def normalizar_instrumento(raw: str) -> list[str]:
             instrumentos.append('IF -- Sudene')
         elif 'SUDAM' in part_upper or 'IF' in part_upper and 'SUDAM' in raw.upper():
             instrumentos.append('IF -- Sudam')
-        # BNDES (caso apareça)
-        elif 'BNDES' in part_upper:
-            instrumentos.append('BNDES')
+        # BNDES is NOT a PNDR instrument — skip it
 
     return instrumentos
 
@@ -200,46 +198,108 @@ def normalizar_unidade_amostral(raw: str) -> str:
         return clean.capitalize()
 
 
-def normalizar_metodo(raw: str) -> str:
+def extrair_metodos(raw: str) -> list[str]:
     """
-    Normaliza métodos econométricos para categorias consistentes
+    Extract all econometric methods from a raw description via keyword matching.
+    Returns list of canonical method names found.
+    Order matters: more specific patterns come before generic ones.
     """
     if not raw or not isinstance(raw, str):
-        return 'Não especificado'
+        return []
 
-    # Remover referências de página
-    clean = re.sub(r'\s*\[.*?\]', '', raw).strip()
+    from unidecode import unidecode
+    text = unidecode(raw.lower())
 
-    # Normalizar variantes comuns
-    clean_lower = clean.lower()
+    # (keywords, canonical_name, msm_score)
+    RULES: list[tuple[list[str], str]] = [
+        # Staggered DiD (before plain DiD)
+        (['escalonado', 'staggered', 'callaway', 'dois estagios', 'two-stage'],
+         'Diferenças em Diferenças Escalonado'),
+        # RDD
+        (['descontinua', 'discontinuity', 'rdd', 'grdd'],
+         'Regressão Descontínua (RDD)'),
+        # GPS (before PSM)
+        (['generalized propensity', 'gps', 'escore de propensao generalizado',
+          'propensao generalizado', 'dose-response'],
+         'Generalized Propensity Score (GPS)'),
+        # PSM
+        (['propensity score matching', 'psm', 'pareamento por escore'],
+         'Propensity Score Matching (PSM)'),
+        # Generalized Synthetic Control
+        (['synthetic control', 'controle sintetico', 'sintetico generalizado'],
+         'Controle Sintético Generalizado'),
+        # IV
+        (['instrumental', ' iv '],
+         'Variáveis Instrumentais (IV)'),
+        # DEA
+        (['dea', 'envoltoria'],
+         'Análise Envoltória de Dados (DEA)'),
+        # Frontier of order-m
+        (['ordem-m', 'order-m'],
+         'Fronteira de Ordem-m'),
+        # SFA
+        (['fronteira estocastica', 'sfa', 'stochastic frontier'],
+         'Fronteira Estocástica (SFA)'),
+        # Malmquist
+        (['malmquist'],
+         'Índice de Malmquist'),
+        # Threshold
+        (['limiar', 'threshold'],
+         'Modelo de Efeito Limiar (Threshold)'),
+        # DiD (plain)
+        (['diferencas em diferencas', 'diff-in-diff', 'did', 'differences'],
+         'Diferenças em Diferenças (DiD)'),
+        # Spatial error model
+        (['erro espacial', 'error espacial', 'sdem', 'sem '],
+         'Modelo de Erro Espacial'),
+        # Spatial panel (Durbin, SAR, spatial econometrics with panel)
+        (['painel espacial', 'spatial durbin', 'sdm', 'espacial aplicada a dados em painel',
+          'modelos espaciais de painel', 'espaciais de painel'],
+         'Painel Espacial'),
+        # AEDE
+        (['exploratoria espacial', 'aede'],
+         'Análise Exploratória Espacial (AEDE)'),
+        # CGE
+        (['equilibrio geral', 'cge', 'egc', 'computable general'],
+         'Equilíbrio Geral Computável (EGC)'),
+        # Dynamic panel GMM
+        (['dinamico', 'dynamic', 'gmm'],
+         'Painel Dinâmico GMM'),
+        # Random effects panel
+        (['efeitos aleatorios', 'random effect'],
+         'Painel de Efeitos Aleatórios'),
+        # Fixed effects panel (after spatial panel)
+        (['efeito fixo', 'efeitos fixos', 'fixed effect'],
+         'Painel de Efeitos Fixos'),
+        # First differences
+        (['first-differenc', 'primeiras diferenc', ' fd '],
+         'Primeiras Diferenças (FD)'),
+        # OLS / MQO
+        (['mqo', 'ols', 'minimos quadrados'],
+         'MQO/OLS'),
+        # Survival analysis
+        (['sobrevivencia', 'survival'],
+         'Análise de Sobrevivência'),
+        # Quantile regression
+        (['quantilica', 'quantile'],
+         'Regressão Quantílica'),
+    ]
 
-    if 'did' in clean_lower or 'diferenças em diferenças' in clean_lower:
-        if 'escalonado' in clean_lower or 'staggered' in clean_lower:
-            return 'Diferenças em Diferenças Escalonado'
-        else:
-            return 'Diferenças em Diferenças (DiD)'
-    elif 'psm' in clean_lower or 'propensity score matching' in clean_lower:
-        return 'Propensity Score Matching (PSM)'
-    elif 'gps' in clean_lower or 'generalized propensity' in clean_lower:
-        return 'Generalized Propensity Score (GPS)'
-    elif 'gscm' in clean_lower or 'generalized synthetic' in clean_lower:
-        return 'Generalized Synthetic Control Method'
-    elif 'egc' in clean_lower or 'equilíbrio geral' in clean_lower:
-        return 'Equilíbrio Geral Computável (EGC)'
-    elif 'dea' in clean_lower or 'análise envoltória' in clean_lower:
-        return 'Análise Envoltória de Dados (DEA)'
-    elif 'painel' in clean_lower and 'efeito' in clean_lower:
-        return 'Painel de Efeitos Fixos'
-    elif 'painel' in clean_lower and 'espacial' in clean_lower:
-        return 'Painel Espacial'
-    elif 'first-difference' in clean_lower:
-        return 'First-Differences (FD)'
-    elif 'mqo' in clean_lower or 'ols' in clean_lower:
-        return 'Mínimos Quadrados Ordinários (MQO)'
-    elif 'iv' in clean_lower or 'variáveis instrumentais' in clean_lower:
-        return 'Variáveis Instrumentais (IV)'
-    else:
-        return clean
+    found: list[str] = []
+    for keywords, canonical in RULES:
+        for kw in keywords:
+            if kw in text:
+                if canonical not in found:
+                    found.append(canonical)
+                break
+
+    # Hierarchy: specific variant suppresses generic variant
+    DID_ESC = 'Diferenças em Diferenças Escalonado'
+    DID_PLAIN = 'Diferenças em Diferenças (DiD)'
+    if DID_ESC in found and DID_PLAIN in found:
+        found.remove(DID_PLAIN)
+
+    return found
 
 
 def main():
@@ -309,7 +369,7 @@ def main():
     print("\\midrule")
 
     # Ordem fixa para consistência
-    ordem = ['FNE', 'FNO', 'FCO', 'FDNE', 'FDA', 'FDCO', 'IF -- Sudene', 'IF -- Sudam', 'BNDES']
+    ordem = ['FNE', 'FNO', 'FCO', 'FDNE', 'FDA', 'FDCO', 'IF -- Sudene', 'IF -- Sudam']
     for inst in ordem:
         if inst in instrumentos:
             print(f"{inst} & {instrumentos[inst]} \\\\")
@@ -394,16 +454,15 @@ def main():
     print()
 
     # ========================
-    # TAB: MÉTODOS (TOP-6)
+    # TAB: MÉTODOS (TOP-6) — multi-method extraction
     # ========================
     metodos = Counter()
     for p in aprovados:
         s2 = p.get('s2', {})
         if isinstance(s2, dict):
             raw = s2.get('metodo_econometrico', '')
-            metodo_norm = normalizar_metodo(raw)
-            if metodo_norm != 'Não especificado':
-                metodos[metodo_norm] += 1
+            for m in extrair_metodos(raw):
+                metodos[m] += 1
 
     print("=== TAB:METODOS (TOP-6) ===")
     print("\\begin{table}[h]")
@@ -422,14 +481,25 @@ def main():
         'Diferenças em Diferenças (DiD)': 3,
         'Propensity Score Matching (PSM)': 3,
         'Generalized Propensity Score (GPS)': 3,
-        'Generalized Synthetic Control Method': 3,
+        'Controle Sintético Generalizado': 3,
         'Painel de Efeitos Fixos': 3,
         'Painel Espacial': 3,
-        'First-Differences (FD)': 3,
-        'Mínimos Quadrados Ordinários (MQO)': 2,
+        'Painel Dinâmico GMM': 3,
+        'Painel de Efeitos Aleatórios': 3,
+        'Primeiras Diferenças (FD)': 3,
+        'MQO/OLS': 2,
         'Variáveis Instrumentais (IV)': 3,
+        'Modelo de Efeito Limiar (Threshold)': 3,
+        'Modelo de Erro Espacial': 3,
+        'Regressão Descontínua (RDD)': 4,
+        'Regressão Quantílica': 3,
         'Equilíbrio Geral Computável (EGC)': 'n.c.',
-        'Análise Envoltória de Dados (DEA)': 'n.c.'
+        'Análise Envoltória de Dados (DEA)': 'n.c.',
+        'Fronteira Estocástica (SFA)': 'n.c.',
+        'Fronteira de Ordem-m': 'n.c.',
+        'Índice de Malmquist': 'n.c.',
+        'Análise Exploratória Espacial (AEDE)': 'n.c.',
+        'Análise de Sobrevivência': 'n.c.',
     }
 
     for metodo, count in metodos.most_common(6):

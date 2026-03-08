@@ -266,7 +266,7 @@ def generate_table(
         r"\multicolumn{3}{l}{Estudos publicados em periódicos}"
         r" & \multicolumn{2}{l}{Estudos não publicados} \\",
         r"\cmidrule(lr){1-3} \cmidrule(lr){4-5}",
-        r"Estudo & Periódico & IC & Estudo & IC \\",
+        r"Estudo & Periódico (Qualis) & IC & Estudo & IC \\",
         r"\midrule",
     ]
 
@@ -286,7 +286,8 @@ def generate_table(
     lines.extend([
         r"\bottomrule",
         r"\multicolumn{5}{l}{\footnotesize Nota: ``--'' = IC não"
-        r" calculável ($N=0$). Fonte: Elaborada pelos autores.} \\",
+        r" calculável ($N=0$). Classificação Qualis-CAPES Quadriênio"
+        r" 2021--2024. Fonte: Elaborada pelos autores.} \\",
         r"\end{tabular}",
         r"\end{table}",
         r"\end{landscape}}",

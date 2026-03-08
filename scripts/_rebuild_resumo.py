@@ -9,6 +9,7 @@ from pathlib import Path
 from collections import Counter
 
 import openpyxl
+import rispy
 from openpyxl.styles import Font, Alignment
 from unidecode import unidecode
 
@@ -194,7 +195,11 @@ MSM_SCALE: dict[str, str] = {name: msm for _, name, msm in METODO_RULES}
 
 
 def extract_metodos(raw: str | None) -> list[str]:
-    """Extract all canonical method names from a raw LLM description."""
+    """Extract all canonical method names from a raw LLM description.
+
+    Applies hierarchy rules to avoid double-counting within the same
+    method family (e.g., DiD Escalonado suppresses plain DiD).
+    """
     if not raw:
         return []
     text = unidecode(str(raw).lower())
@@ -205,19 +210,88 @@ def extract_metodos(raw: str | None) -> list[str]:
                 if canonical not in found:
                     found.append(canonical)
                 break
+    # Hierarchy: specific variant suppresses generic variant
+    DID_ESC = "Diferencas em Diferencas Escalonado"
+    DID_PLAIN = "Diferencas em Diferencas (DiD)"
+    if DID_ESC in found and DID_PLAIN in found:
+        found.remove(DID_PLAIN)
     return found
 
 
 # ---------------------------------------------------------------------------
-# Autores
+# Autores — RIS-based with normalization (consistent with generate_latex_tables.py)
 # ---------------------------------------------------------------------------
-def parse_autores(autores_str: str | None) -> list[str]:
-    """Parse authors string into list of individual author names."""
-    if not autores_str:
-        return []
-    raw = str(autores_str)
-    parts = raw.replace(" and ", ";").replace(" e ", ";").split(";")
-    return [p.strip() for p in parts if p.strip()]
+RIS_PATH = Path(__file__).parent.parent / "data" / "2-papers" / "approved_papers.ris"
+
+AUTOR_VARIANTES: dict[str, str] = {
+    # Irffi
+    'IRFFI, Guilherme': 'Irffi, G.D.',
+    'Irffi, G.': 'Irffi, G.D.',
+    'Irffi, Guilherme Diniz': 'Irffi, G.D.',
+    'IRFFI, Guilherme Diniz': 'Irffi, G.D.',
+    # Carneiro
+    'CARNEIRO, Diego': 'Carneiro, D.R.F.',
+    'Carneiro, D.R.F.': 'Carneiro, D.R.F.',
+    'Carneiro, Diego Rafael Fonseca': 'Carneiro, D.R.F.',
+    'CARNEIRO, Diego Rafael Fonseca': 'Carneiro, D.R.F.',
+    # Resende
+    'Mendes Resende, G.': 'Resende, G.M.',
+    'Resende, Guilherme': 'Resende, G.M.',
+    'Resende, Guilherme Mendes': 'Resende, G.M.',
+    'RESENDE, Guilherme Mendes': 'Resende, G.M.',
+    # Oliveira G.R.
+    'Oliveira, Guilherme Resende': 'Oliveira, G.R.',
+    'OLIVEIRA, Guilherme Resende': 'Oliveira, G.R.',
+    'Oliveira, G.R.': 'Oliveira, G.R.',
+    # Oliveira T.G.
+    'OLIVEIRA, Tássia Germano de': 'Oliveira, T.G.',
+    # Veloso
+    'VELOSO, Pedro': 'Veloso, P.A.S.',
+    'Veloso, P.A.S.': 'Veloso, P.A.S.',
+    'VELOOSO, Pedro Alexandre Santos': 'Veloso, P.A.S.',
+    # Silveira Neto
+    'SILVEIRA NETO, Raul da Mota': 'Silveira Neto, R.M.',
+    'NETO, Raul da Mota Silveira': 'Silveira Neto, R.M.',
+    # Costa
+    'COSTA, Edward': 'Costa, E.M.',
+    'Costa, E.M.': 'Costa, E.M.',
+    'COSTA, Edward Martins': 'Costa, E.M.',
+    # Braz
+    'BRAZ, Marleton Souza': 'Braz, M.S.',
+    'Braz, M.S.': 'Braz, M.S.',
+    'BRAZ, Marleton': 'Braz, M.S.',
+    # Bastos
+    'BASTOS, Felipe': 'Bastos, F.S.',
+    'BASTOS, Felipe de Sousa': 'Bastos, F.S.',
+    'de Sousa Bastos, F.': 'Bastos, F.S.',
+    # Alves
+    'ALVES, Denis Fernandes': 'Alves, D.F.',
+    # Shirasu
+    'SHIRASU, Maitê': 'Shirasu, M.',
+    # Soares
+    'Ricardo Brito Soares': 'Soares, R.B.',
+    'Soares, Ricardo Brito': 'Soares, R.B.',
+    'Soares, R.B.': 'Soares, R.B.',
+}
+
+
+def normalizar_autor_ris(autor: str) -> str:
+    """Normalize RIS author name to canonical form via variant mapping."""
+    return AUTOR_VARIANTES.get(autor.strip(), autor.strip())
+
+
+def load_autores_from_ris() -> Counter[str]:
+    """Load and count authors from approved_papers.ris with normalization."""
+    autor_counts: Counter[str] = Counter()
+    with open(RIS_PATH, 'r', encoding='utf-8') as f:
+        ris_records = list(rispy.load(f))
+    for rec in ris_records:
+        authors = rec.get('authors', [])
+        if isinstance(authors, list):
+            for autor in authors:
+                if autor:
+                    autor_counts[normalizar_autor_ris(autor)] += 1
+    return autor_counts
 
 
 # ---------------------------------------------------------------------------
@@ -322,14 +396,10 @@ def main() -> None:
     for m, c in metodos_sorted:
         print(f"  [{c}] {m}")
 
-    # --- Autores ---
-    autor_counts: Counter[str] = Counter()
-    for r in aprovados:
-        for a in parse_autores(r.get("Autores")):
-            autor_counts[a] += 1
-
+    # --- Autores (from RIS, with normalization) ---
+    autor_counts = load_autores_from_ris()
     autores_sorted = autor_counts.most_common()
-    print(f"Autores: {len(autores_sorted)} distintos")
+    print(f"Autores: {len(autores_sorted)} distintos (from RIS)")
 
     # --- IC ---
     ic_data = []
