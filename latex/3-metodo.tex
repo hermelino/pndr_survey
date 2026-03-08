@@ -89,8 +89,6 @@ A aplicação dos critérios descritos nas subseções anteriores resultou em am
 
 A produção acadêmica sobre o tema distribui-se de forma desigual ao longo do período, como mostra a Tabela~\ref{tab:estudos-ano}. De 2005 a 2015, identificaram-se apenas 7 estudos. No intervalo de 2016 a 2020, a produção elevou-se para 16 trabalhos adicionais, refletindo o amadurecimento da literatura. O crescimento mais expressivo concentrou-se entre 2021 e 2026, com 21 estudos -- quase metade da amostra --, indicando intensificação recente do interesse acadêmico pela avaliação empírica dos instrumentos da PNDR.
 
-A Tabela~\ref{tab:instrumentos} apresenta a frequência de menções a cada instrumento da PNDR nos estudos incluídos. Como parte dos trabalhos avalia mais de um instrumento simultaneamente, o total de menções excede o número de estudos. Os Fundos Constitucionais de Financiamento -- FNE, FNO e FCO -- concentram a maior parte das avaliações, seguidos pelos incentivos fiscais administrados pela Sudene e pelos Fundos de Desenvolvimento Regional.
-
 \begin{table}[H]
 \footnotesize
 \renewcommand{\arraystretch}{1.2}
@@ -122,9 +120,9 @@ Unidade Amostral & Qtd. estudos \\
 \midrule
 Município & 28 \\
 Empresa & 12 \\
-UF & 2 \\
+Estado & 2 \\
 Área Mínima Comparável & 1 \\
-Região & 1 \\
+Macrorregião & 1 \\
 \bottomrule
 \multicolumn{2}{l}{\footnotesize Fonte: Elaboração própria.} \\
 \end{tabular}
@@ -180,9 +178,9 @@ IF -- Sudam & 1 \\
 \end{minipage}
 \end{table}
 
-Três pesquisadores concentram maior participação nos estudos (incluindo coautorias): Irffi, G.D. (11 estudos), Carneiro, D.R.F. (9) e Resende, G.M. (8), indicando núcleo reduzido de especialistas dedicados à avaliação empírica dos instrumentos da PNDR (Tabela~\ref{tab:autores-todos}). Sobre a estrutura amostral dos dados empregados nos estudos, predominam análises em nível municipal (28 estudos), seguidas por estudos com dados no nível da firma ou empresa (12). Apenas dois trabalhos adotam unidades da federação como unidade de análise, e um utiliza áreas mínimas comparáveis\footnote{Agregações de municípios que garantem comparabilidade geográfica ao longo do tempo \cite{OliveiraResende2017b}.}. A predominância de dados municipais reflete a disponibilidade de informações desagregadas sobre as operações dos Fundos Constitucionais, ao passo que os estudos com microdados de firmas exploram registros administrativos dos bancos operadores.
+A Tabela~\ref{tab:instrumentos} apresenta a frequência de menções a cada instrumento da PNDR nos estudos incluídos. Como parte dos trabalhos avalia mais de um instrumento simultaneamente, o total de menções excede o número de estudos. Os Fundos Constitucionais de Financiamento -- FNE, FNO e FCO -- concentram a maior parte das avaliações, seguidos pelos incentivos fiscais administrados pela Sudene e pelos Fundos de Desenvolvimento Regional.
 
-Com respeito aos métodos econométricos, observa-se diversidade de abordagens, mas com predomínio de métodos de controle por características observáveis e de painel de dados (Tabela~\ref{tab:metodos}). Para além da frequência dos métodos, cabe avaliar a robustez das estratégias empíricas empregadas. A escala \textit{Maryland Scientific Methods} (MSM), descrita em \citeonline{Madaleno2016}, classifica a robustez dos métodos de avaliação de impacto em escores de 1 (menos robusto) a 5 (mais robusto), segundo a capacidade de lidar com vieses de seleção. 
+Três pesquisadores concentram maior participação nos estudos (incluindo coautorias): Irffi, G.D. (11 estudos), Carneiro, D.R.F. (9) e Resende, G.M. (8), indicando núcleo reduzido de especialistas dedicados à avaliação empírica dos instrumentos da PNDR (Tabela~\ref{tab:autores-todos}). Sobre a estrutura amostral dos dados empregados nos estudos, predominam análises em nível municipal (28 estudos), seguidas por estudos com dados no nível da firma ou empresa (12). Apenas dois trabalhos adotam unidades da federação como unidade de análise, e um utiliza áreas mínimas comparáveis\footnote{Agregações de municípios que garantem comparabilidade geográfica ao longo do tempo \cite{OliveiraResende2017b}.}. A predominância de dados municipais reflete a disponibilidade de informações desagregadas sobre as operações dos Fundos Constitucionais, ao passo que os estudos com microdados de firmas exploram registros administrativos dos bancos operadores.
 
 \begin{table}[H]
 \centering
@@ -209,7 +207,9 @@ Painel Dinâmico & 3 & 3 \\
 \end{tabular}
 \end{table}
 
-Entre os estudos selecionados, predominam abordagens com escore 3 -- métodos que controlam por características observáveis, porém sem garantir completa eliminação de vieses de seleção. Os métodos mais frequentes incluem painel espacial, diferenças em diferenças (incluindo a variante escalonada), \textit{Generalized Propensity Score}, painel de efeitos fixos e \textit{Propensity Score Matching}. Abordagens quase experimentais com escore 4 são ainda pouco aplicadas, com um único estudo identificado (\cite{Oliveira2021} usa \textit{Regression Discontinuity Design}).
+A respeito dos métodos econométricos adotados, observa-se múltiplas abordagens, com predomínio de métodos de controle por características observáveis e de painel de dados (Tabela~\ref{tab:metodos}). Para além da frequência dos métodos, cabe avaliar a robustez das estratégias empíricas empregadas. A escala \textit{Maryland Scientific Methods} (MSM), descrita em \citeonline{Madaleno2016}, classifica a robustez dos métodos de avaliação de impacto em escores de 1 (menos robusto) a 5 (mais robusto), segundo a capacidade de lidar com vieses de seleção. 
+
+Entre os estudos selecionados, predominam abordagens com escore 3 -- métodos que controlam por características observáveis, porém sem garantir completa eliminação de vieses de seleção. Os métodos mais frequentes incluem painel espacial, diferenças em diferenças (incluindo a variante escalonada), \textit{Generalized Propensity Score}, painel de efeitos fixos e \textit{Propensity Score Matching}. Abordagens quase experimentais com escore 4 são ainda pouco empregadas, sendo identificado um único estudo -- \citeonline{Oliveira2021} usa o método \textit{Regression Discontinuity Design}.
 
 É importante explicar que métodos como Análise Envoltória de Dados (DEA) e Equilíbrio Geral Computável (EGC), presentes na amostra, não são classificáveis pela escala MSM por não se destinarem à identificação de efeitos causais: o primeiro mensura eficiência relativa e o segundo simula efeitos de equilíbrio a partir de calibração de parâmetros. A ausência de avaliações com escore máximo de robustez reflete as restrições inerentes ao desenho não aleatório da política, em que a alocação de recursos tende a ser determinada pela demanda das firmas.
 
