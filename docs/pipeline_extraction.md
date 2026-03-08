@@ -184,12 +184,13 @@ Controle detalhado: `data/2-papers/all_papers.xlsx` (planilha "Registros", colun
 | `data/1-records/processed/duplicates_removed.csv` | 9 duplicatas removidas (auditoria) |
 | `data/2-papers/_llm_checkpoint.json` | Checkpoint com resultados LLM (stages 1-3) para 118 papers |
 | `data/2-papers/all_papers_llm_classif.xlsx` | Classificacao LLM bruta (gerada automaticamente) |
-| `data/2-papers/all_papers_llm_classif_final.xlsx` | Classificacao LLM revisada manualmente a partir de `all_papers_llm_classif.xlsx` (triagem final) |
+| `data/2-papers/all_papers_llm_classif_final.xlsx` | Classificacao LLM revisada manualmente (triagem final, somente leitura) |
+| `data/2-papers/resumo_classificacao.xlsx` | Resumo estatistico gerado por `scripts/_rebuild_resumo.py` |
 | `data/2-papers/2-2-papers.json` | JSON enriquecido: registros + LLM + triagem (fonte principal) |
 
 ## Analise LLM
 
-Analise via Google Gemini (modelo `gemini-2.5-flash-lite`) em 3 estagios sequenciais, executada sobre os 118 PDFs das bases. Os 11 estudos incluidos manualmente nao passaram pela analise LLM. Script: `scripts/run_llm_all_papers.py`.
+Analise via Google Gemini (modelo `gemini-2.5-flash-lite`) em 3 estagios sequenciais, executada sobre os 118 PDFs das bases. Os 12 estudos incluidos manualmente nao passaram pela analise LLM. Script: `scripts/run_llm_all_papers.py`.
 
 ### Stage 1 — Triagem
 
@@ -209,12 +210,12 @@ Apos a analise LLM, triagem manual em `all_papers_llm_classif_final.xlsx`:
 
 | Resultado | Quantidade |
 |-----------|-----------|
-| APROVADO (bases) | 34 |
-| APROVADO (inclusao manual) | 11 |
-| REJEITADO | 84 |
-| **Total** | **129** |
+| APROVADO (bases) | 32 |
+| APROVADO (inclusao manual) | 12 |
+| REJEITADO | 86 |
+| **Total** | **130** |
 
-Motivos de rejeicao: sem instrumentos PNDR (40), sem metodo econometrico (23), documento nao-cientifico (10), duplicata de versao publicada (8), anterior a 2005 (2), variaveis de resultado fora do escopo (1).
+Motivos de rejeicao: sem instrumentos PNDR (39), sem metodo econometrico (24), documento nao-cientifico (10), duplicata de versao publicada (8), variaveis de resultado fora do escopo (3), anterior a 2005 (2). Resumo estatistico completo em `data/2-papers/resumo_classificacao.xlsx` (gerado por `scripts/_rebuild_resumo.py`).
 
 ### Alteracoes manuais em `all_papers_llm_classif_final.xlsx`
 

@@ -56,7 +56,8 @@ data/1-records/all_records.ris                     # RIS consolidado
 data/1-records/all_records.xlsx                    # Excel consolidado
 data/2-papers/all_papers.xlsx                      # Controle: registros+download
 data/2-papers/all_papers_llm_classif.xlsx          # Classificação LLM bruta
-data/2-papers/all_papers_llm_classif_final.xlsx    # Classificação LLM revisada (MANUAL)
+data/2-papers/all_papers_llm_classif_final.xlsx    # Classificação LLM revisada (MANUAL, somente leitura)
+data/2-papers/resumo_classificacao.xlsx            # Resumo estatístico (_rebuild_resumo.py)
 data/2-papers/_llm_checkpoint.json                 # Checkpoint LLM
 data/2-papers/2-2-papers.json                      # JSON enriquecido (MASTER)
 data/2-papers/approved_papers.ris                   # RIS dos estudos aprovados (generate_approved_ris.py)
@@ -84,6 +85,7 @@ scripts/generate_bibtex.py                  # RIS → BibTeX (atualiza reference
 scripts/match_refs_to_studies.py             # Matching de citações
 scripts/citation_index.py                    # Índice de citação
 scripts/generate_ic_table.py                # Tabela IC LaTeX (usa bibtex_key_map.json)
+scripts/_rebuild_resumo.py                  # Resumo estatístico → resumo_classificacao.xlsx
 scripts/mark_td_duplicates.py                # Marcação de duplicatas TD/WP
 ```
 

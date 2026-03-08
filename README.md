@@ -55,7 +55,8 @@ pndr_survey/
 │   │   ├── 2-1-papers_scripts/    # Scripts de renomeacao e verificacao
 │   │   ├── all_papers.xlsx        # Controle: registros + status de download
 │   │   ├── all_papers_llm_classif.xlsx        # Classificacao LLM bruta
-│   │   ├── all_papers_llm_classif_final.xlsx  # Classificacao LLM revisada
+│   │   ├── all_papers_llm_classif_final.xlsx  # Classificacao LLM revisada (somente leitura)
+│   │   ├── resumo_classificacao.xlsx          # Resumo estatistico (gerado por _rebuild_resumo.py)
 │   │   ├── _llm_checkpoint.json   # Checkpoint da analise LLM (stages 1-3)
 │   │   └── build_verified_xlsx.py # Gera xlsx verificado a partir do checkpoint
 │   └── 3-ref-bib/                   # Referencias bibliograficas dos estudos

@@ -90,7 +90,17 @@
       "WebFetch(domain:www.gov.br)",
       "WebFetch(domain:prda.sudam.gov.br)",
       "WebFetch(domain:www.camara.leg.br)",
-      "Bash(ren \"c:\\\\OneDrive\\\\github\\\\pndr_survey\\\\data\\\\2-papers\\\\2-2-papers-pdfs\\\\Artigo+Português.pdf\" \"manual-2026-bastos-carneiro-shirasu-irffi.pdf\")"
+      "Bash(ren \"c:\\\\OneDrive\\\\github\\\\pndr_survey\\\\data\\\\2-papers\\\\2-2-papers-pdfs\\\\Artigo+Português.pdf\" \"manual-2026-bastos-carneiro-shirasu-irffi.pdf\")",
+      "Bash(/tmp/analyze_extra.py:*)",
+      "Bash(c:\\\\OneDrive\\\\github\\\\pndr_survey\\\\.venv\\\\Scripts\\\\python.exe -c:*)",
+      "Bash(/tmp/read_resumo.py:*)",
+      "Bash(/c/OneDrive/github/pndr_survey/.venv/Scripts/python.exe:*)",
+      "Bash(.venvScriptspython.exe scripts/_rebuild_resumo.py)",
+      "Bash(\"c:/OneDrive/github/pndr_survey/.venv/Scripts/python.exe\":*)",
+      "Bash(\"c:/OneDrive/github/pndr_survey/.venv/Scripts/python.exe\" -c \"import openpyxl; wb = openpyxl.load_workbook\\(''c:/OneDrive/github/pndr_survey/data/2-papers/all_papers_llm_classif_final.xlsx''\\); print\\(wb.sheetnames\\)\")",
+      "Bash(\"c:/OneDrive/github/pndr_survey/.venv/Scripts/python.exe\" -c:*)",
+      "Bash(\"c:/OneDrive/github/pndr_survey/.venv/Scripts/python.exe\" -c \"\nimport openpyxl\nwb = openpyxl.load_workbook\\(''c:/OneDrive/github/pndr_survey/data/2-papers/all_papers_llm_classif_final.xlsx''\\)\nws = wb[wb.sheetnames[0]]\nheaders = [cell.value for cell in ws[1]]\ncol_idx = {h: i for i, h in enumerate\\(headers\\) if h}\n\n# Check S2_metodo_econometrico values for approved papers\nfrom collections import Counter\nmetodos = Counter\\(\\)\nfor row in ws.iter_rows\\(min_row=2, values_only=True\\):\n    if row[0] is None:\n        continue\n    triagem = str\\(row[col_idx.get\\(''Triagem'', -1\\)] or ''''\\)\n    if triagem.upper\\(\\) != ''APROVADO'':\n        continue\n    mi = col_idx.get\\(''S2_metodo_econometrico''\\)\n    if mi is None:\n        mi = col_idx.get\\(''S2_m\\\\u00e9todo_econom\\\\u00e9trico''\\)\n    val = str\\(row[mi] or ''''\\) if mi is not None else ''''\n    if val and val != ''None'':\n        metodos[val] += 1\n\nprint\\(''S2_metodo_econometrico unique values \\(first 10\\):''\\)\nfor m, c in metodos.most_common\\(10\\):\n    print\\(f''  [{c}] {repr\\(m[:100]\\)}''\\)\nprint\\(f''Total distinct: {len\\(metodos\\)}''\\)\n\n# Also show S2_detalhes_metodo\nprint\\(\\)\nprint\\(''Column headers containing metodo:''\\)\nfor h in headers:\n    if h and ''metodo'' in str\\(h\\).lower\\(\\):\n        print\\(f''  {repr\\(h\\)} -> idx {col_idx[h]}''\\)\n\")",
+      "Bash(\"c:/OneDrive/github/pndr_survey/.venv/Scripts/python.exe\" -c \"\nimport openpyxl\nwb = openpyxl.load_workbook\\(''c:/OneDrive/github/pndr_survey/data/2-papers/all_papers_llm_classif_final.xlsx''\\)\nprint\\(''Sheets:'', wb.sheetnames\\)\nws = wb[''Resumo'']\n# Check if it''s the old version \\(row 3 col B = 118\\) or rebuilt version \\(130\\)\nval = ws.cell\\(row=3, column=2\\).value\nprint\\(f''Row 3 col B \\(total registros\\): {val}''\\)\n# Check period row\nfor r in range\\(15, 25\\):\n    a = ws.cell\\(row=r, column=1\\).value\n    b = ws.cell\\(row=r, column=2\\).value\n    if a:\n        print\\(f''  Row {r}: {a} = {b}''\\)\n\")"
     ]
   }
 }
