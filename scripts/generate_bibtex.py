@@ -275,6 +275,11 @@ def entry_to_bibtex(entry: dict[str, list[str]], used: set[str]) -> str:
         if url:
             lines.append(f"\turl = {{{url}}},")
 
+    # Preservar nome do arquivo PDF
+    pdf_name = _extract_pdf_name(entry)
+    if pdf_name:
+        lines.append(f"\tfile = {{{pdf_name}.pdf}},")
+
     lines.append("}")
     return "\n".join(lines)
 

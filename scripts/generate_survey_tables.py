@@ -72,11 +72,11 @@ class TableDef:
 # Column widths (matching tese proportions: total 13.9cm)
 # ---------------------------------------------------------------------------
 
-COL_METODO = "2.2cm"
-COL_ARTIGO = "2.2cm"
-COL_AMOSTR = "2.3cm"
-COL_VARIAVEIS = "3.0cm"
-COL_ESTIMATIVA = "4.2cm"
+COL_METODO = "2.0cm"
+COL_ARTIGO = "2.0cm"
+COL_AMOSTR = "2.4cm"
+COL_VARIAVEIS = "2.4cm"
+COL_ESTIMATIVA = "5.0cm"
 
 
 # ---------------------------------------------------------------------------
@@ -147,14 +147,10 @@ def render_var_cell(var_ind: list[str], var_dep: list[str], width: str = "2.2cm"
 
 def render_result_item(item: ResultItem) -> str:
     """Renderiza um \\item de resultado."""
-    prefix = "\\item[\\textbullet]" if item.sub else "\\item"
-    if item.valor is None:
+    prefix = "\\item"
+    if item.valor is None or item.valor == "":
         return f"\t\t{prefix} {item.texto}"
-    if item.valor == "":
-        # Valor vazio com phantom para alinhamento
-        return f"\t\t{prefix} {item.texto}\\hfill \\phantom{{\\textsuperscript{{*}}}}"
-    sig_mark = "\\textsuperscript{*}" if item.sig else "\\phantom{\\textsuperscript{*}}"
-    return f"\t\t{prefix} {item.texto} \\hfill {item.valor}{sig_mark}"
+    return f"\t\t{prefix} {item.texto} \\hfill {item.valor}"
 
 
 def render_result_cell(items: list[ResultItem], width: str = "4.2cm") -> str:

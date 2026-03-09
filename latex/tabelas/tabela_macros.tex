@@ -1,24 +1,25 @@
 % Arquivo: latex/tabelas/tabela_macros.tex
 % Macros para formatação de tabelas de resultados da revisão sistemática
 
-% Macro principal para formatação de células com listas
-% Uso: \fc{conteúdo em itemize}
-% O parâmetro opcional [largura] é mantido por compatibilidade mas ignorado;
-% a largura é determinada automaticamente pela coluna (\linewidth).
-\newcommand{\fc}[2][0cm]{%
-	\parbox[t]{\linewidth}{%
-		\begin{itemize}[leftmargin=*,nosep,topsep=0pt,before=\vspace{-0.6\baselineskip},labelsep=0.15em]
+% Macro principal para formatação de células com listas (label "--")
+% Uso: \fc[largura]{conteúdo em itemize}
+% Padrão: largura = 4.2cm (coluna Estimativa)
+\newcommand{\fc}[2][4.2cm]{%
+	\parbox[t]{#1}{\raggedright%
+		\begin{itemize}[leftmargin=*,nosep,topsep=0pt,before=\vspace{-0.6\baselineskip},label={--},labelsep=0.4em]
 			#2
 		\end{itemize}%
 		\vspace{0.3\baselineskip}%
 	}%
 }
 
-% Macro para célula de variáveis (política + resultado) com label "--"
-\newcommand{\fcvar}[1]{%
-	\parbox[t]{\linewidth}{%
-		\begin{itemize}[leftmargin=*,nosep,topsep=0pt,before=\vspace{-0.6\baselineskip},label={--},labelsep=0.15em]
-			#1
+% Macro para célula com label "--" (variáveis, amostragem)
+% Uso: \fcvar[largura]{conteúdo em itemize}
+% Padrão: largura = 2.2cm (colunas Amostragem e Variáveis)
+\newcommand{\fcvar}[2][2.2cm]{%
+	\parbox[t]{#1}{\raggedright%
+		\begin{itemize}[leftmargin=*,nosep,topsep=0pt,before=\vspace{-0.6\baselineskip},label={--},labelsep=0.4em]
+			#2
 		\end{itemize}%
 		\vspace{0.3\baselineskip}%
 	}%

@@ -17,31 +17,31 @@
 \renewcommand{\tablename}{\quadroname}%
 \renewcommand{\thetable}{\arabic{quadro}}%
 \stepcounter{quadro}%
-\begin{longtable}{|>{\raggedright\arraybackslash}p{2.2cm}
-		|>{\raggedright\arraybackslash}p{2.2cm}
-		|>{\raggedright\arraybackslash}p{2.3cm}
-		|>{\raggedright\arraybackslash}p{3.0cm}
-		|>{\raggedright\arraybackslash}p{4.2cm}|}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{2.0cm}
+		|>{\raggedright\arraybackslash}p{2.0cm}
+		|>{\raggedright\arraybackslash}p{2.4cm}
+		|>{\raggedright\arraybackslash}p{2.4cm}
+		|>{\raggedright\arraybackslash}p{5.0cm}|}
 
 	\caption{Estudos de Impacto dos Fundos de Desenvolvimento} \label{tab:estudos_fd} \\
 
 \hline
-	\begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2.2cm}@{}}Método\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2.2cm}@{}}Artigo\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2.3cm}@{}}Amostragem\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{3.0cm}@{}}Variáveis\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{4.2cm}@{}}Estimativa\end{tabular} \\
+	\begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2.0cm}@{}}Método\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2.0cm}@{}}Artigo\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2.4cm}@{}}Amostragem\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2.4cm}@{}}Variáveis\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{5.0cm}@{}}Estimativa\end{tabular} \\
 	\hline
 	\endfirsthead
 
 	\multicolumn{5}{c}%
 	{{\quadroname\ \thetable{} -- Continuação}} \\
 	\hline
-	\begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2.2cm}@{}}Método\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2.2cm}@{}}Artigo\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2.3cm}@{}}Amostragem\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{3.0cm}@{}}Variáveis\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{4.2cm}@{}}Estimativa\end{tabular} \\
+	\begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2.0cm}@{}}Método\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2.0cm}@{}}Artigo\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2.4cm}@{}}Amostragem\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2.4cm}@{}}Variáveis\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{5.0cm}@{}}Estimativa\end{tabular} \\
 	\hline
 	\endhead
 
@@ -60,72 +60,72 @@
 
 Painel Espacial
 	& \citeonline{Ferreira2024}
-	& \fcvar[2.3cm]{\item NE \item 2010-2021}
-	& \fcvar[3.0cm]{\item FDNE \item IDM}
-	& \fc[4.2cm]{
-		\item IDM renda \hfill 0,019\textsuperscript{*}
-		\item IDM, IDM saúde e IDM educação \hfill NS\phantom{\textsuperscript{*}}
+	& \fcvar[2.4cm]{\item Municípios \item NE \item 2010-2021}
+	& \fcvar[2.4cm]{\item FDNE \item IDM}
+	& \fc[5.0cm]{
+		\item IDM renda \hfill 0,019
+		\item IDM, IDM saúde e IDM educação \hfill NS
 	}
 	\\
 	\cline{2-5}
 
 
 	& \citeonline{Oliveira2026}
-	& \fcvar[2.3cm]{\item NE \item 2010-2021}
-	& \fcvar[3.0cm]{\item FDNE (\textit{dummy}) \item Cresc. PIB pc}
-	& \fc[4.2cm]{
-		\item Efeito direto \hfill NS\phantom{\textsuperscript{*}}
-		\item Efeito indireto \hfill 0,0252\textsuperscript{*}
-		\item Efeito total \hfill 0,0351\textsuperscript{*}
+	& \fcvar[2.4cm]{\item Municípios \item NE \item 2010-2021}
+	& \fcvar[2.4cm]{\item FDNE (\textit{dummy}) \item Cresc. PIB pc}
+	& \fc[5.0cm]{
+		\item Efeito direto \hfill NS
+		\item Efeito indireto \hfill 0,0252
+		\item Efeito total \hfill 0,0351
 	}
 	\\
 	\cline{4-5}
 	& & 
-	& \fcvar[3.0cm]{\item FDNE (\textit{dummy}) \item Cresc. VAB pc}
-	& \fc[4.2cm]{
-		\item Efeito direto \hfill 0,0409\textsuperscript{*}
-		\item Efeito indireto \hfill NS\phantom{\textsuperscript{*}}
-		\item Efeito total \hfill 0,6014\textsuperscript{*}
+	& \fcvar[2.4cm]{\item FDNE (\textit{dummy}) \item Cresc. VAB pc}
+	& \fc[5.0cm]{
+		\item Efeito direto \hfill 0,0409
+		\item Efeito indireto \hfill NS
+		\item Efeito total \hfill 0,6014
 	}
 	\\
 
 	\hline
 DID Dois Estágios
 	& \citeonline{CarneiroVeloso2024}
-	& \fcvar[2.3cm]{\item NE \item 2002-2019}
-	& \fcvar[3.0cm]{\item FDNE \item log PIB\textit{pc}, VAB setorial}
-	& \fc[4.2cm]{
-		\item PIB\textit{pc} \hfill 0,063\textsuperscript{*}
-		\item VAB\textit{pc} serviços \hfill 0,111\textsuperscript{*}
-		\item Arrecadação \hfill 0,207\textsuperscript{*}
-		\item VAB ind. e VAB agro. \hfill NS\phantom{\textsuperscript{*}}
+	& \fcvar[2.4cm]{\item Municípios \item NE \item 2002-2019}
+	& \fcvar[2.4cm]{\item FDNE \item log PIB\textit{pc}, VAB setorial}
+	& \fc[5.0cm]{
+		\item PIB\textit{pc} \hfill 0,063
+		\item VAB\textit{pc} serviços \hfill 0,111
+		\item Arrecadação \hfill 0,207
+		\item VAB ind. e VAB agro. \hfill NS
 	}
 	\\
 
 	\hline
 DID Escalonado
 	& \citeonline{Braz2024}
-	& \fcvar[2.3cm]{\item NE \item 2002-2021}
-	& \fcvar[3.0cm]{\item FDNE \item PIB\textit{pc}, emprego, renda, IDEB}
-	& \fc[4.2cm]{
-		\item PIB\textit{pc} \hfill 24,07\%\textsuperscript{*}
-		\item Renda \hfill 4,63\%\textsuperscript{*}
-		\item IDEB anos iniciais \hfill 18,67\%\textsuperscript{*}
-		\item IDEB anos finais \hfill 21,49\%\textsuperscript{*}
-		\item Emprego, pobreza, mortalidade infantil e saúde \hfill NS\phantom{\textsuperscript{*}}
+	& \fcvar[2.4cm]{\item Municípios \item NE \item 2002-2021}
+	& \fcvar[2.4cm]{\item FDNE \item PIB\textit{pc}, emprego, renda, IDEB}
+	& \fc[5.0cm]{
+		\item PIB\textit{pc} \hfill 24,07\%
+		\item Renda \hfill 4,63\%
+		\item IDEB anos iniciais \hfill 18,67\%
+		\item IDEB anos finais \hfill 21,49\%
+		\item Emprego, pobreza, mortalidade infantil e saúde \hfill NS
 	}
 	\\
 	\cline{2-5}
 
 
 	& \citeonline{Irffi2025}
-	& \fcvar[2.3cm]{\item NE \item 1999-2022}
-	& \fcvar[3.0cm]{\item FDNE-parques eólicos \item PIB\textit{pc}, VAB, emprego, massa salarial}
-	& \fc[4.2cm]{
-		\item PIB\textit{pc} \hfill 18,97\%\textsuperscript{*}
-		\item VAB indústria \hfill 71,90\%\textsuperscript{*}
-		\item VAB serviço \hfill 10,24\%\textsuperscript{*}
-		\item Emprego \hfill 23,41\%\textsuperscript{*}
+	& \fcvar[2.4cm]{\item Municípios \item NE \item 1999-2022}
+	& \fcvar[2.4cm]{\item FDNE-parques eólicos \item PIB\textit{pc}, VAB, emprego, massa salarial}
+	& \fc[5.0cm]{
+		\item PIB\textit{pc} \hfill 18,97\%
+		\item VAB indústria \hfill 71,90\%
+		\item VAB serviço \hfill 10,24\%
+		\item Emprego \hfill 23,41\%
 		\item Redução temporária do VAB-agro durante construção
 	}
 	\\
@@ -133,9 +133,9 @@ DID Escalonado
 	\hline
 Painel Dinâmico GMM
 	& \citeonline{Souza2025}
-	& \fcvar[2.3cm]{\item N, NE, CO \item 2002-2021}
-	& \fcvar[3.0cm]{\item FDNE, FDA, FDCO (+ FC + IF) \item PIB\textit{pc}, emprego, renda}
-	& \fc[4.2cm]{
+	& \fcvar[2.4cm]{\item Municípios \item N, NE, CO \item 2002-2021}
+	& \fcvar[2.4cm]{\item FDNE, FDA, FDCO (+ FC + IF) \item PIB\textit{pc}, emprego, renda}
+	& \fc[5.0cm]{
 		\item Heterogeneidade entre fundos, regiões e setores
 		\item FDCO inconclusivo (poucos projetos)
 	}

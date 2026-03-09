@@ -12,47 +12,115 @@
           "studies": [
             {
               "cite_key": "Resende2014a",
-              "amostragem": ["NE", "2004-2010"],
-              "var_independente": ["FC/PIB"],
+              "amostragem": [
+                "Municípios",
+                "NE",
+                "2004-2010"
+              ],
+              "var_independente": [
+                "FC/PIB"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Cresc. PIB pc"],
+                  "var_dependente": [
+                    "Cresc. PIB pc"
+                  ],
                   "resultados": [
-                    {"texto": "FNE (munic)", "valor": "0,021", "sig": true},
-                    {"texto": "FNE (micro)", "valor": "0,032", "sig": true},
-                    {"texto": "FNE (meso)", "valor": "--0,288", "sig": true},
-                    {"texto": "FNE-setorial", "valor": "NS", "sig": false}
+                    {
+                      "texto": "FNE (munic)",
+                      "valor": "0,021",
+                      "sig": true
+                    },
+                    {
+                      "texto": "FNE (micro)",
+                      "valor": "0,032",
+                      "sig": true
+                    },
+                    {
+                      "texto": "FNE (meso)",
+                      "valor": "--0,288",
+                      "sig": true
+                    },
+                    {
+                      "texto": "FNE-setorial",
+                      "valor": "NS",
+                      "sig": false
+                    }
                   ]
                 }
               ]
             },
             {
               "cite_key": "Resende2014b",
-              "amostragem": ["N", "2004-2010"],
-              "var_independente": ["FC/PIB"],
+              "amostragem": [
+                "Municípios",
+                "N",
+                "2004-2010"
+              ],
+              "var_independente": [
+                "FC/PIB"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Cresc. PIB pc"],
+                  "var_dependente": [
+                    "Cresc. PIB pc"
+                  ],
                   "resultados": [
-                    {"texto": "FNO (munic)", "valor": "--0,399", "sig": true},
-                    {"texto": "FNO (micro e meso)", "valor": "NS", "sig": false},
-                    {"texto": "FNO setorial", "valor": "NS", "sig": false}
+                    {
+                      "texto": "FNO (munic)",
+                      "valor": "--0,399",
+                      "sig": true
+                    },
+                    {
+                      "texto": "FNO (micro e meso)",
+                      "valor": "NS",
+                      "sig": false
+                    },
+                    {
+                      "texto": "FNO setorial",
+                      "valor": "NS",
+                      "sig": false
+                    }
                   ]
                 }
               ]
             },
             {
               "cite_key": "ResendeCravo2014",
-              "amostragem": ["CO", "2004-2010"],
-              "var_independente": ["FC/PIB"],
+              "amostragem": [
+                "Municípios",
+                "CO",
+                "2004-2010"
+              ],
+              "var_independente": [
+                "FC/PIB"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Cresc. PIB pc"],
+                  "var_dependente": [
+                    "Cresc. PIB pc"
+                  ],
                   "resultados": [
-                    {"texto": "FCO (munic)", "valor": "0,076", "sig": true},
-                    {"texto": "FCO (micro e meso)", "valor": "NS", "sig": false},
-                    {"texto": "FCO-empresarial (munic)", "valor": "0,119", "sig": true},
-                    {"texto": "FCO-rural (munic)", "valor": "--0,072", "sig": true}
+                    {
+                      "texto": "FCO (munic)",
+                      "valor": "0,076",
+                      "sig": true
+                    },
+                    {
+                      "texto": "FCO (micro e meso)",
+                      "valor": "NS",
+                      "sig": false
+                    },
+                    {
+                      "texto": "FCO-empresarial (munic)",
+                      "valor": "0,119",
+                      "sig": true
+                    },
+                    {
+                      "texto": "FCO-rural (munic)",
+                      "valor": "--0,072",
+                      "sig": true
+                    }
                   ]
                 }
               ]
@@ -64,106 +132,250 @@
           "studies": [
             {
               "cite_key": "Oliveira2005",
-              "amostragem": ["N, CO", "1991-2000"],
-              "var_independente": ["FC/PIB"],
+              "amostragem": [
+                "Municípios",
+                "N, CO",
+                "1991-2000"
+              ],
+              "var_independente": [
+                "FC/PIB"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Cresc. PIB pc"],
+                  "var_dependente": [
+                    "Cresc. PIB pc"
+                  ],
                   "resultados": [
-                    {"texto": "FNO e FCO", "valor": "NS", "sig": false}
+                    {
+                      "texto": "FNO e FCO",
+                      "valor": "NS",
+                      "sig": false
+                    }
                   ]
                 }
               ]
             },
             {
               "cite_key": "Cravo2015",
-              "amostragem": ["N, NE, CO", "2004-2010"],
-              "var_independente": ["FC/PIB"],
+              "amostragem": [
+                "Municípios",
+                "N, NE, CO",
+                "2004-2010"
+              ],
+              "var_independente": [
+                "FC/PIB"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Cresc. PIB pc"],
+                  "var_dependente": [
+                    "Cresc. PIB pc"
+                  ],
                   "resultados": [
-                    {"texto": "FNE (munic)", "valor": "NS", "sig": false},
-                    {"texto": "FNO (munic)", "valor": "--0,313", "sig": true},
-                    {"texto": "FCO (munic)", "valor": "0,087", "sig": true},
-                    {"texto": "FCO-empresarial (munic)", "valor": "+0,129", "sig": true},
-                    {"texto": "\\textit{Spillovers} espaciais", "valor": "NS", "sig": false}
+                    {
+                      "texto": "FNE (munic)",
+                      "valor": "NS",
+                      "sig": false
+                    },
+                    {
+                      "texto": "FNO (munic)",
+                      "valor": "--0,313",
+                      "sig": true
+                    },
+                    {
+                      "texto": "FCO (munic)",
+                      "valor": "0,087",
+                      "sig": true
+                    },
+                    {
+                      "texto": "FCO-empresarial (munic)",
+                      "valor": "+0,129",
+                      "sig": true
+                    },
+                    {
+                      "texto": "\\textit{Spillovers} espaciais",
+                      "valor": "NS",
+                      "sig": false
+                    }
                   ]
                 }
               ]
             },
             {
               "cite_key": "Oliveira2016",
-              "amostragem": ["GO", "2004-2011"],
-              "var_independente": ["Log. FCO"],
+              "amostragem": [
+                "Municípios",
+                "GO",
+                "2004-2011"
+              ],
+              "var_independente": [
+                "Log. FCO"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Log. PIB pc"],
+                  "var_dependente": [
+                    "Log. PIB pc"
+                  ],
                   "resultados": [
-                    {"texto": "FCO (painel espacial)", "valor": "0,098", "sig": true},
-                    {"texto": "FCO (painel clássico)", "valor": "0,102", "sig": true}
+                    {
+                      "texto": "FCO (painel espacial)",
+                      "valor": "0,098",
+                      "sig": true
+                    },
+                    {
+                      "texto": "FCO (painel clássico)",
+                      "valor": "0,102",
+                      "sig": true
+                    }
                   ]
                 }
               ]
             },
             {
               "cite_key": "Resende2017",
-              "amostragem": ["NE", "1999-2011"],
-              "var_independente": ["FC/PIB"],
+              "amostragem": [
+                "Municípios",
+                "NE",
+                "1999-2011"
+              ],
+              "var_independente": [
+                "FC/PIB"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Cresc. PIB pc"],
+                  "var_dependente": [
+                    "Cresc. PIB pc"
+                  ],
                   "resultados": [
-                    {"texto": "FNE (munic. tipologia dinâmica)"},
-                    {"texto": "Efeito direto", "valor": "0,077", "sig": true, "sub": true},
-                    {"texto": "Efeito indireto", "valor": "0,329", "sig": true, "sub": true}
+                    {
+                      "texto": "FNE (munic. tipologia dinâmica)"
+                    },
+                    {
+                      "texto": "Efeito direto",
+                      "valor": "0,077",
+                      "sig": true,
+                      "sub": true
+                    },
+                    {
+                      "texto": "Efeito indireto",
+                      "valor": "0,329",
+                      "sig": true,
+                      "sub": true
+                    }
                   ]
                 }
               ]
             },
             {
               "cite_key": "Resende2018",
-              "amostragem": ["N, NE, CO", "1999-2011"],
-              "var_independente": ["FC/PIB"],
+              "amostragem": [
+                "Municípios",
+                "N, NE, CO",
+                "1999-2011"
+              ],
+              "var_independente": [
+                "FC/PIB"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Cresc. PIB pc"],
+                  "var_dependente": [
+                    "Cresc. PIB pc"
+                  ],
                   "resultados": [
-                    {"texto": "FC (munic. tip. dinâmica - acumulado)"},
-                    {"texto": "Efeito direto", "valor": "0,033", "sig": true, "sub": true},
-                    {"texto": "Efeito indireto", "valor": "0,118", "sig": true, "sub": true},
-                    {"texto": "FC (micro. tip. baixa renda - acumulado)"},
-                    {"texto": "Efeito direto", "valor": "0,146", "sig": true, "sub": true},
-                    {"texto": "Efeito indireto", "valor": "0,466", "sig": true, "sub": true}
+                    {
+                      "texto": "FC (munic. tip. dinâmica - acumulado)"
+                    },
+                    {
+                      "texto": "Efeito direto",
+                      "valor": "0,033",
+                      "sig": true,
+                      "sub": true
+                    },
+                    {
+                      "texto": "Efeito indireto",
+                      "valor": "0,118",
+                      "sig": true,
+                      "sub": true
+                    },
+                    {
+                      "texto": "FC (micro. tip. baixa renda - acumulado)"
+                    },
+                    {
+                      "texto": "Efeito direto",
+                      "valor": "0,146",
+                      "sig": true,
+                      "sub": true
+                    },
+                    {
+                      "texto": "Efeito indireto",
+                      "valor": "0,466",
+                      "sig": true,
+                      "sub": true
+                    }
                   ]
                 }
               ]
             },
             {
               "cite_key": "Silva2023",
-              "amostragem": ["N, NE, CO", "2016-2019"],
-              "var_independente": ["Log. FC"],
+              "amostragem": [
+                "Municípios",
+                "N, NE, CO",
+                "2016-2019"
+              ],
+              "var_independente": [
+                "Log. FC"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Log. PIB pc"],
+                  "var_dependente": [
+                    "Log. PIB pc"
+                  ],
                   "resultados": [
-                    {"texto": "FNE, FNO e FCO", "valor": "NS", "sig": false}
+                    {
+                      "texto": "FNE, FNO e FCO",
+                      "valor": "NS",
+                      "sig": false
+                    }
                   ]
                 }
               ]
             },
             {
               "cite_key": "Oliveira2026",
-              "amostragem": ["NE", "2010-2021"],
-              "var_independente": ["FC/PIB"],
+              "amostragem": [
+                "Municípios",
+                "NE",
+                "2010-2021"
+              ],
+              "var_independente": [
+                "FC/PIB"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Cresc. PIB pc"],
+                  "var_dependente": [
+                    "Cresc. PIB pc"
+                  ],
                   "resultados": [
-                    {"texto": "FNE (efeito direto)", "valor": "0,00001", "sig": true},
-                    {"texto": "FNE (efeito indireto)", "valor": "NS", "sig": false},
-                    {"texto": "FNE-serviços (efeito direto)", "valor": "0,00001", "sig": true},
-                    {"texto": "FNE-indústria (efeito direto)", "valor": "0,00005", "sig": true}
+                    {
+                      "texto": "FNE (efeito direto)",
+                      "valor": "0,00001",
+                      "sig": true
+                    },
+                    {
+                      "texto": "FNE (efeito indireto)",
+                      "valor": "NS",
+                      "sig": false
+                    },
+                    {
+                      "texto": "FNE-serviços (efeito direto)",
+                      "valor": "0,00001",
+                      "sig": true
+                    },
+                    {
+                      "texto": "FNE-indústria (efeito direto)",
+                      "valor": "0,00005",
+                      "sig": true
+                    }
                   ]
                 }
               ]
@@ -175,16 +387,40 @@
           "studies": [
             {
               "cite_key": "Linhares2014",
-              "amostragem": ["NE", "2000-2008"],
-              "var_independente": ["FC/PIB"],
+              "amostragem": [
+                "Municípios",
+                "NE",
+                "2000-2008"
+              ],
+              "var_independente": [
+                "FC/PIB"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Cresc. PIB pc"],
+                  "var_dependente": [
+                    "Cresc. PIB pc"
+                  ],
                   "resultados": [
-                    {"texto": "FNE (PIB pc < 2.143)", "valor": "NS", "sig": false},
-                    {"texto": "FNE (2.143 < PIB pc < 3.866)", "valor": "0,078", "sig": true},
-                    {"texto": "FNE (3.866 < PIB pc < 7.406)", "valor": "0,109", "sig": true},
-                    {"texto": "FNE (PIB pc > 7.406)", "valor": "NS", "sig": false}
+                    {
+                      "texto": "FNE (PIB pc < 2.143)",
+                      "valor": "NS",
+                      "sig": false
+                    },
+                    {
+                      "texto": "FNE (2.143 < PIB pc < 3.866)",
+                      "valor": "0,078",
+                      "sig": true
+                    },
+                    {
+                      "texto": "FNE (3.866 < PIB pc < 7.406)",
+                      "valor": "0,109",
+                      "sig": true
+                    },
+                    {
+                      "texto": "FNE (PIB pc > 7.406)",
+                      "valor": "NS",
+                      "sig": false
+                    }
                   ]
                 }
               ]
@@ -196,13 +432,25 @@
           "studies": [
             {
               "cite_key": "Resende2014c",
-              "amostragem": ["NE", "1999-2006"],
-              "var_independente": ["FC/PIB"],
+              "amostragem": [
+                "Municípios",
+                "NE",
+                "1999-2006"
+              ],
+              "var_independente": [
+                "FC/PIB"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Cresc. PIB pc"],
+                  "var_dependente": [
+                    "Cresc. PIB pc"
+                  ],
                   "resultados": [
-                    {"texto": "FNE-indústria (munic)", "valor": "NS", "sig": false}
+                    {
+                      "texto": "FNE-indústria (munic)",
+                      "valor": "NS",
+                      "sig": false
+                    }
                   ]
                 }
               ]
@@ -214,14 +462,30 @@
           "studies": [
             {
               "cite_key": "Irffi2016",
-              "amostragem": ["NE", "2000-2010"],
-              "var_independente": ["FC/PIB"],
+              "amostragem": [
+                "Municípios",
+                "NE",
+                "2000-2010"
+              ],
+              "var_independente": [
+                "FC/PIB"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Cresc. PIB pc"],
+                  "var_dependente": [
+                    "Cresc. PIB pc"
+                  ],
                   "resultados": [
-                    {"texto": "FNE", "valor": "(+)", "sig": true},
-                    {"texto": "FNE-pecuária e agricultura", "valor": "(+)", "sig": true}
+                    {
+                      "texto": "FNE",
+                      "valor": "(+)",
+                      "sig": true
+                    },
+                    {
+                      "texto": "FNE-pecuária e agricultura",
+                      "valor": "(+)",
+                      "sig": true
+                    }
                   ]
                 }
               ]
@@ -233,13 +497,23 @@
           "studies": [
             {
               "cite_key": "Carneiro2018",
-              "amostragem": ["NE", "2010-2015"],
-              "var_independente": ["FC/PIB"],
+              "amostragem": [
+                "Municípios",
+                "NE",
+                "2010-2015"
+              ],
+              "var_independente": [
+                "FC/PIB"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Cresc. PIB pc"],
+                  "var_dependente": [
+                    "Cresc. PIB pc"
+                  ],
                   "resultados": [
-                    {"texto": "FNE: Maior eficiência em municípios integrados ao comércio internacional (Matopiba)."}
+                    {
+                      "texto": "FNE: Maior eficiência em municípios integrados ao comércio internacional (Matopiba)."
+                    }
                   ]
                 }
               ]
@@ -251,14 +525,28 @@
           "studies": [
             {
               "cite_key": "Cambota2019",
-              "amostragem": ["NE", "2003-2014"],
-              "var_independente": ["FC/PIB"],
+              "amostragem": [
+                "Municípios",
+                "NE",
+                "2003-2014"
+              ],
+              "var_independente": [
+                "FC/PIB"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Cresc. PIB pc"],
+                  "var_dependente": [
+                    "Cresc. PIB pc"
+                  ],
                   "resultados": [
-                    {"texto": "FNE", "valor": "2,96", "sig": true},
-                    {"texto": "Efeito contemporâneo e endógeno significativo."}
+                    {
+                      "texto": "FNE",
+                      "valor": "2,96",
+                      "sig": true
+                    },
+                    {
+                      "texto": "Efeito contemporâneo e endógeno significativo."
+                    }
                   ]
                 }
               ]
@@ -270,40 +558,76 @@
           "studies": [
             {
               "cite_key": "Nascimento2017",
-              "amostragem": ["BR", "2000-2011"],
-              "var_independente": ["FC"],
+              "amostragem": [
+                "Estados",
+                "BR",
+                "2000-2011"
+              ],
+              "var_independente": [
+                "FC"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["PIB"],
+                  "var_dependente": [
+                    "PIB"
+                  ],
                   "resultados": [
-                    {"texto": "Remoção do FNE (alocação em despesa corrente)", "valor": "--0,16\\%", "sig": false},
-                    {"texto": "Maior concentração regional da produção"}
+                    {
+                      "texto": "Remoção do FNE (alocação em despesa corrente)",
+                      "valor": "--0,16\\%",
+                      "sig": false
+                    },
+                    {
+                      "texto": "Maior concentração regional da produção"
+                    }
                   ]
                 }
               ]
             },
             {
               "cite_key": "Ribeiro2020",
-              "amostragem": ["BR", "2014-2025"],
-              "var_independente": ["FC/PIB"],
+              "amostragem": [
+                "Estados",
+                "BR",
+                "2014-2025"
+              ],
+              "var_independente": [
+                "FC/PIB"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Cresc. PIB pc"],
+                  "var_dependente": [
+                    "Cresc. PIB pc"
+                  ],
                   "resultados": [
-                    {"texto": "FNE (PIB NE)", "valor": "3,51\\%", "sig": true}
+                    {
+                      "texto": "FNE (PIB NE)",
+                      "valor": "3,51\\%",
+                      "sig": true
+                    }
                   ]
                 }
               ]
             },
             {
               "cite_key": "Goncalves2022",
-              "amostragem": ["NE", "2006-2015"],
-              "var_independente": ["Fundo"],
+              "amostragem": [
+                "Macrorregiões",
+                "NE",
+                "2006-2015"
+              ],
+              "var_independente": [
+                "Fundo"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Log. PIB pc"],
+                  "var_dependente": [
+                    "Log. PIB pc"
+                  ],
                   "resultados": [
-                    {"texto": "FNE (remoção): redução da atividade econômica no NE"}
+                    {
+                      "texto": "FNE (remoção): redução da atividade econômica no NE"
+                    }
                   ]
                 }
               ]
@@ -315,13 +639,25 @@
           "studies": [
             {
               "cite_key": "Oliveira2021",
-              "amostragem": ["NE", "1970-2010"],
-              "var_independente": ["Log. FNE"],
+              "amostragem": [
+                "AMC",
+                "NE",
+                "1970-2010"
+              ],
+              "var_independente": [
+                "Log. FNE"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Log. PIB pc"],
+                  "var_dependente": [
+                    "Log. PIB pc"
+                  ],
                   "resultados": [
-                    {"texto": "FNE", "valor": "NS", "sig": false}
+                    {
+                      "texto": "FNE",
+                      "valor": "NS",
+                      "sig": false
+                    }
                   ]
                 }
               ]
@@ -333,15 +669,33 @@
           "studies": [
             {
               "cite_key": "Monte2025",
-              "amostragem": ["NE", "2010-2020"],
-              "var_independente": ["FNE"],
+              "amostragem": [
+                "Municípios",
+                "NE",
+                "2010-2020"
+              ],
+              "var_independente": [
+                "FNE"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Log. PIB pc"],
+                  "var_dependente": [
+                    "Log. PIB pc"
+                  ],
                   "resultados": [
-                    {"texto": "FNE (PJ)", "valor": "0,15pp", "sig": true},
-                    {"texto": "FNE (mulheres)", "valor": "0,10pp", "sig": true},
-                    {"texto": "Efeito heterogêneo por magnitude"}
+                    {
+                      "texto": "FNE (PJ)",
+                      "valor": "0,15pp",
+                      "sig": true
+                    },
+                    {
+                      "texto": "FNE (mulheres)",
+                      "valor": "0,10pp",
+                      "sig": true
+                    },
+                    {
+                      "texto": "Efeito heterogêneo por magnitude"
+                    }
                   ]
                 }
               ]
@@ -353,15 +707,33 @@
           "studies": [
             {
               "cite_key": "CarneiroVeloso2024",
-              "amostragem": ["NE", "2002-2019"],
-              "var_independente": ["FNE (\\textit{dummy})"],
+              "amostragem": [
+                "Municípios",
+                "NE",
+                "2002-2019"
+              ],
+              "var_independente": [
+                "FNE (\\textit{dummy})"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Log. PIB pc"],
+                  "var_dependente": [
+                    "Log. PIB pc"
+                  ],
                   "resultados": [
-                    {"texto": "FNE", "valor": "0,08\\textsuperscript{*} a 0,11", "sig": true},
-                    {"texto": "A partir do 5º ano após o tratamento"},
-                    {"texto": "Principalmente serviços e administração pública", "valor": "", "sig": false}
+                    {
+                      "texto": "FNE",
+                      "valor": "0,08\\textsuperscript{*} a 0,11",
+                      "sig": true
+                    },
+                    {
+                      "texto": "A partir do 5º ano após o tratamento"
+                    },
+                    {
+                      "texto": "Principalmente serviços e administração pública",
+                      "valor": "",
+                      "sig": false
+                    }
                   ]
                 }
               ]
@@ -382,32 +754,83 @@
           "studies": [
             {
               "cite_key": "SilvaResende2009",
-              "amostragem": ["Empresas NE, N, CO", "2000-2003"],
-              "var_independente": ["FNE, FNO, FCO (\\textit{dummy})"],
+              "amostragem": [
+                "Empresas",
+                "NE, N, CO",
+                "2000-2003"
+              ],
+              "var_independente": [
+                "FNE, FNO, FCO (\\textit{dummy})"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Cresc. emprego", "Cresc. salário"],
+                  "var_dependente": [
+                    "Cresc. emprego",
+                    "Cresc. salário"
+                  ],
                   "resultados": [
-                    {"texto": "FNE-emprego", "valor": "+61,2 p.p.", "sig": true},
-                    {"texto": "FNE-salário", "valor": "NS", "sig": false},
-                    {"texto": "FNO, FCO", "valor": "NS", "sig": false}
+                    {
+                      "texto": "FNE-emprego",
+                      "valor": "+61,2 p.p.",
+                      "sig": true
+                    },
+                    {
+                      "texto": "FNE-salário",
+                      "valor": "NS",
+                      "sig": false
+                    },
+                    {
+                      "texto": "FNO, FCO",
+                      "valor": "NS",
+                      "sig": false
+                    }
                   ]
                 }
               ]
             },
             {
               "cite_key": "Soares2017",
-              "amostragem": ["Empresas NE", "2000-2006"],
-              "var_independente": ["FNE (\\textit{dummy})"],
+              "amostragem": [
+                "Empresas",
+                "NE",
+                "2000-2006"
+              ],
+              "var_independente": [
+                "FNE (\\textit{dummy})"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Cresc. emprego", "Cresc. massa salarial", "Cresc. salário"],
+                  "var_dependente": [
+                    "Cresc. emprego",
+                    "Cresc. massa salarial",
+                    "Cresc. salário"
+                  ],
                   "resultados": [
-                    {"texto": "FNE-empr. (1 ano)", "valor": "+7,96 p.p.", "sig": true},
-                    {"texto": "FNE-empr. (3 anos)", "valor": "+33,59 p.p.", "sig": true},
-                    {"texto": "FNE-empr. (5 anos)", "valor": "+132,23 p.p.", "sig": true},
-                    {"texto": "FNE-massa salarial", "valor": "(+)", "sig": true},
-                    {"texto": "FNE-salário", "valor": "NS", "sig": false}
+                    {
+                      "texto": "FNE-empr. (1 ano)",
+                      "valor": "+7,96 p.p.",
+                      "sig": true
+                    },
+                    {
+                      "texto": "FNE-empr. (3 anos)",
+                      "valor": "+33,59 p.p.",
+                      "sig": true
+                    },
+                    {
+                      "texto": "FNE-empr. (5 anos)",
+                      "valor": "+132,23 p.p.",
+                      "sig": true
+                    },
+                    {
+                      "texto": "FNE-massa salarial",
+                      "valor": "(+)",
+                      "sig": true
+                    },
+                    {
+                      "texto": "FNE-salário",
+                      "valor": "NS",
+                      "sig": false
+                    }
                   ]
                 }
               ]
@@ -419,15 +842,34 @@
           "studies": [
             {
               "cite_key": "OliveiraTerra2018",
-              "amostragem": ["Empresas GO", "2004-2011"],
-              "var_independente": ["FCO-Empresarial (contínuo)"],
+              "amostragem": [
+                "Empresas",
+                "GO",
+                "2004-2011"
+              ],
+              "var_independente": [
+                "FCO-Empresarial (contínuo)"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Cresc. emprego", "Cresc. salário"],
+                  "var_dependente": [
+                    "Cresc. emprego",
+                    "Cresc. salário"
+                  ],
                   "resultados": [
-                    {"texto": "FCO-emprego", "valor": "(+)", "sig": true},
-                    {"texto": "Efeito limitado a intervalo específico da dose"},
-                    {"texto": "FCO-salário", "valor": "NS", "sig": false}
+                    {
+                      "texto": "FCO-emprego",
+                      "valor": "(+)",
+                      "sig": true
+                    },
+                    {
+                      "texto": "Efeito limitado a intervalo específico da dose"
+                    },
+                    {
+                      "texto": "FCO-salário",
+                      "valor": "NS",
+                      "sig": false
+                    }
                   ]
                 }
               ]
@@ -439,16 +881,41 @@
           "studies": [
             {
               "cite_key": "Cunha2024",
-              "amostragem": ["Empresas NE", "2000-2006"],
-              "var_independente": ["FNE (contínua)"],
+              "amostragem": [
+                "Empresas",
+                "NE",
+                "2000-2006"
+              ],
+              "var_independente": [
+                "FNE (contínua)"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Cresc. emprego", "Cresc. massa salarial"],
+                  "var_dependente": [
+                    "Cresc. emprego",
+                    "Cresc. massa salarial"
+                  ],
                   "resultados": [
-                    {"texto": "Dose-resposta emprego: IV", "valor": "357,54\\%", "sig": true},
-                    {"texto": "Dose-resposta emprego: OLS", "valor": "133,94\\%", "sig": true},
-                    {"texto": "Dose-resposta massa: IV", "valor": "220,96\\%", "sig": true},
-                    {"texto": "Dose-resposta massa: OLS", "valor": "188,55\\%", "sig": true}
+                    {
+                      "texto": "Dose-resposta emprego: IV",
+                      "valor": "357,54\\%",
+                      "sig": true
+                    },
+                    {
+                      "texto": "Dose-resposta emprego: OLS",
+                      "valor": "133,94\\%",
+                      "sig": true
+                    },
+                    {
+                      "texto": "Dose-resposta massa: IV",
+                      "valor": "220,96\\%",
+                      "sig": true
+                    },
+                    {
+                      "texto": "Dose-resposta massa: OLS",
+                      "valor": "188,55\\%",
+                      "sig": true
+                    }
                   ]
                 }
               ]
@@ -460,14 +927,30 @@
           "studies": [
             {
               "cite_key": "Resende2014c",
-              "amostragem": ["Empresas NE", "1999-2006"],
-              "var_independente": ["FNE-Indústria (\\textit{dummy})"],
+              "amostragem": [
+                "Empresas",
+                "NE",
+                "1999-2006"
+              ],
+              "var_independente": [
+                "FNE-Indústria (\\textit{dummy})"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Cresc. emprego"],
+                  "var_dependente": [
+                    "Cresc. emprego"
+                  ],
                   "resultados": [
-                    {"texto": "FNE-Ind. (anual)", "valor": "+10,83 a 16,11 p.p.", "sig": true},
-                    {"texto": "FNE-Ind. (3 anos)", "valor": "+30 a 56 p.p.", "sig": true}
+                    {
+                      "texto": "FNE-Ind. (anual)",
+                      "valor": "+10,83 a 16,11 p.p.",
+                      "sig": true
+                    },
+                    {
+                      "texto": "FNE-Ind. (3 anos)",
+                      "valor": "+30 a 56 p.p.",
+                      "sig": true
+                    }
                   ]
                 }
               ]
@@ -479,15 +962,34 @@
           "studies": [
             {
               "cite_key": "Oliveira2015",
-              "amostragem": ["Municípios GO", "2004-2011"],
-              "var_independente": ["Log. FCO"],
+              "amostragem": [
+                "Municípios",
+                "GO",
+                "2004-2011"
+              ],
+              "var_independente": [
+                "Log. FCO"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Log. emprego", "Salário médio"],
+                  "var_dependente": [
+                    "Log. emprego",
+                    "Salário médio"
+                  ],
                   "resultados": [
-                    {"texto": "FCO-emprego", "valor": "(+)", "sig": true},
-                    {"texto": "FCO-salário", "valor": "(+)", "sig": true},
-                    {"texto": "Sem diferença relevante vs. painel clássico"}
+                    {
+                      "texto": "FCO-emprego",
+                      "valor": "(+)",
+                      "sig": true
+                    },
+                    {
+                      "texto": "FCO-salário",
+                      "valor": "(+)",
+                      "sig": true
+                    },
+                    {
+                      "texto": "Sem diferença relevante vs. painel clássico"
+                    }
                   ]
                 }
               ]
@@ -499,16 +1001,40 @@
           "studies": [
             {
               "cite_key": "Ribeiro2024",
-              "amostragem": ["Municípios NE", "2010-2015"],
-              "var_independente": ["Log. FNE"],
+              "amostragem": [
+                "Municípios",
+                "NE",
+                "2010-2015"
+              ],
+              "var_independente": [
+                "Log. FNE"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Log. emprego por setor"],
+                  "var_dependente": [
+                    "Log. emprego por setor"
+                  ],
                   "resultados": [
-                    {"texto": "FNE-primário", "valor": "+1,10\\%", "sig": true},
-                    {"texto": "FNE-terciário", "valor": "+0,53\\%", "sig": true},
-                    {"texto": "FNE-secundário", "valor": "+0,13\\%", "sig": true},
-                    {"texto": "FNE defasado (secundário)", "valor": "+0,06\\%", "sig": true}
+                    {
+                      "texto": "FNE-primário",
+                      "valor": "+1,10\\%",
+                      "sig": true
+                    },
+                    {
+                      "texto": "FNE-terciário",
+                      "valor": "+0,53\\%",
+                      "sig": true
+                    },
+                    {
+                      "texto": "FNE-secundário",
+                      "valor": "+0,13\\%",
+                      "sig": true
+                    },
+                    {
+                      "texto": "FNE defasado (secundário)",
+                      "valor": "+0,06\\%",
+                      "sig": true
+                    }
                   ]
                 }
               ]
@@ -520,15 +1046,35 @@
           "studies": [
             {
               "cite_key": "Ribeiro2020",
-              "amostragem": ["Região NE", "2014-2025"],
-              "var_independente": ["FNE"],
+              "amostragem": [
+                "Estados",
+                "NE",
+                "2014-2025"
+              ],
+              "var_independente": [
+                "FNE"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Emprego total"],
+                  "var_dependente": [
+                    "Emprego total"
+                  ],
                   "resultados": [
-                    {"texto": "FNE (emprego NE acumulado)", "valor": "+2,75\\%", "sig": true},
-                    {"texto": "NE-agropecuária", "valor": "+8,0\\%", "sig": true},
-                    {"texto": "NE-construção", "valor": "+5,3\\%", "sig": true}
+                    {
+                      "texto": "FNE (emprego NE acumulado)",
+                      "valor": "+2,75\\%",
+                      "sig": true
+                    },
+                    {
+                      "texto": "NE-agropecuária",
+                      "valor": "+8,0\\%",
+                      "sig": true
+                    },
+                    {
+                      "texto": "NE-construção",
+                      "valor": "+5,3\\%",
+                      "sig": true
+                    }
                   ]
                 }
               ]
@@ -540,16 +1086,36 @@
           "studies": [
             {
               "cite_key": "Oliveira2020",
-              "amostragem": ["Empresas N (FNO)", "2000-2010"],
-              "var_independente": ["FNO (\\textit{dummy})"],
+              "amostragem": [
+                "Empresas",
+                "N",
+                "2000-2010"
+              ],
+              "var_independente": [
+                "FNO (\\textit{dummy})"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Emprego", "Massa salarial", "Salário médio"],
+                  "var_dependente": [
+                    "Emprego",
+                    "Massa salarial",
+                    "Salário médio"
+                  ],
                   "resultados": [
-                    {"texto": "Emprego e renda", "valor": "(+)", "sig": true},
-                    {"texto": "Curto e médio prazo (+), exceto grandes empresas"},
-                    {"texto": "Investimento: efeito a longo prazo"},
-                    {"texto": "Giro/custeio: efeito a curto prazo"}
+                    {
+                      "texto": "Emprego e renda",
+                      "valor": "(+)",
+                      "sig": true
+                    },
+                    {
+                      "texto": "Curto e médio prazo (+), exceto grandes empresas"
+                    },
+                    {
+                      "texto": "Investimento: efeito a longo prazo"
+                    },
+                    {
+                      "texto": "Giro/custeio: efeito a curto prazo"
+                    }
                   ]
                 }
               ]
@@ -561,16 +1127,40 @@
           "studies": [
             {
               "cite_key": "Oliveira2021",
-              "amostragem": ["Municípios NE", "1970-2010"],
-              "var_independente": ["FNE"],
+              "amostragem": [
+                "AMC",
+                "NE",
+                "1970-2010"
+              ],
+              "var_independente": [
+                "FNE"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Emprego formal e informal (2010)"],
+                  "var_dependente": [
+                    "Emprego formal e informal (2010)"
+                  ],
                   "resultados": [
-                    {"texto": "Agropecuária", "valor": "+5,4\\%", "sig": true},
-                    {"texto": "Indústria", "valor": "+2,8\\%", "sig": true},
-                    {"texto": "Serviços", "valor": "+3,5\\%", "sig": true},
-                    {"texto": "Taxa de informalidade", "valor": "NS", "sig": false}
+                    {
+                      "texto": "Agropecuária",
+                      "valor": "+5,4\\%",
+                      "sig": true
+                    },
+                    {
+                      "texto": "Indústria",
+                      "valor": "+2,8\\%",
+                      "sig": true
+                    },
+                    {
+                      "texto": "Serviços",
+                      "valor": "+3,5\\%",
+                      "sig": true
+                    },
+                    {
+                      "texto": "Taxa de informalidade",
+                      "valor": "NS",
+                      "sig": false
+                    }
                   ]
                 }
               ]
@@ -591,37 +1181,87 @@
           "studies": [
             {
               "cite_key": "Ferreira2024",
-              "amostragem": ["NE", "2010-2021"],
-              "var_independente": ["FDNE"],
+              "amostragem": [
+                "Municípios",
+                "NE",
+                "2010-2021"
+              ],
+              "var_independente": [
+                "FDNE"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["IDM"],
+                  "var_dependente": [
+                    "IDM"
+                  ],
                   "resultados": [
-                    {"texto": "IDM renda", "valor": "0,019", "sig": true},
-                    {"texto": "IDM, IDM saúde e IDM educação", "valor": "NS", "sig": false}
+                    {
+                      "texto": "IDM renda",
+                      "valor": "0,019",
+                      "sig": true
+                    },
+                    {
+                      "texto": "IDM, IDM saúde e IDM educação",
+                      "valor": "NS",
+                      "sig": false
+                    }
                   ]
                 }
               ]
             },
             {
               "cite_key": "Oliveira2026",
-              "amostragem": ["NE", "2010-2021"],
-              "var_independente": ["FDNE (\\textit{dummy})"],
+              "amostragem": [
+                "Municípios",
+                "NE",
+                "2010-2021"
+              ],
+              "var_independente": [
+                "FDNE (\\textit{dummy})"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Cresc. PIB pc"],
+                  "var_dependente": [
+                    "Cresc. PIB pc"
+                  ],
                   "resultados": [
-                    {"texto": "Efeito direto", "valor": "NS", "sig": false},
-                    {"texto": "Efeito indireto", "valor": "0,0252", "sig": true},
-                    {"texto": "Efeito total", "valor": "0,0351", "sig": true}
+                    {
+                      "texto": "Efeito direto",
+                      "valor": "NS",
+                      "sig": false
+                    },
+                    {
+                      "texto": "Efeito indireto",
+                      "valor": "0,0252",
+                      "sig": true
+                    },
+                    {
+                      "texto": "Efeito total",
+                      "valor": "0,0351",
+                      "sig": true
+                    }
                   ]
                 },
                 {
-                  "var_dependente": ["Cresc. VAB pc"],
+                  "var_dependente": [
+                    "Cresc. VAB pc"
+                  ],
                   "resultados": [
-                    {"texto": "Efeito direto", "valor": "0,0409", "sig": true},
-                    {"texto": "Efeito indireto", "valor": "NS", "sig": false},
-                    {"texto": "Efeito total", "valor": "0,6014", "sig": true}
+                    {
+                      "texto": "Efeito direto",
+                      "valor": "0,0409",
+                      "sig": true
+                    },
+                    {
+                      "texto": "Efeito indireto",
+                      "valor": "NS",
+                      "sig": false
+                    },
+                    {
+                      "texto": "Efeito total",
+                      "valor": "0,6014",
+                      "sig": true
+                    }
                   ]
                 }
               ]
@@ -633,16 +1273,40 @@
           "studies": [
             {
               "cite_key": "CarneiroVeloso2024",
-              "amostragem": ["NE", "2002-2019"],
-              "var_independente": ["FDNE"],
+              "amostragem": [
+                "Municípios",
+                "NE",
+                "2002-2019"
+              ],
+              "var_independente": [
+                "FDNE"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["log PIB\\textit{pc}, VAB setorial"],
+                  "var_dependente": [
+                    "log PIB\\textit{pc}, VAB setorial"
+                  ],
                   "resultados": [
-                    {"texto": "PIB\\textit{pc}", "valor": "0,063", "sig": true},
-                    {"texto": "VAB\\textit{pc} serviços", "valor": "0,111", "sig": true},
-                    {"texto": "Arrecadação", "valor": "0,207", "sig": true},
-                    {"texto": "VAB ind. e VAB agro.", "valor": "NS", "sig": false}
+                    {
+                      "texto": "PIB\\textit{pc}",
+                      "valor": "0,063",
+                      "sig": true
+                    },
+                    {
+                      "texto": "VAB\\textit{pc} serviços",
+                      "valor": "0,111",
+                      "sig": true
+                    },
+                    {
+                      "texto": "Arrecadação",
+                      "valor": "0,207",
+                      "sig": true
+                    },
+                    {
+                      "texto": "VAB ind. e VAB agro.",
+                      "valor": "NS",
+                      "sig": false
+                    }
                   ]
                 }
               ]
@@ -654,34 +1318,88 @@
           "studies": [
             {
               "cite_key": "Braz2024",
-              "amostragem": ["NE", "2002-2021"],
-              "var_independente": ["FDNE"],
+              "amostragem": [
+                "Municípios",
+                "NE",
+                "2002-2021"
+              ],
+              "var_independente": [
+                "FDNE"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["PIB\\textit{pc}, emprego, renda, IDEB"],
+                  "var_dependente": [
+                    "PIB\\textit{pc}, emprego, renda, IDEB"
+                  ],
                   "resultados": [
-                    {"texto": "PIB\\textit{pc}", "valor": "24,07\\%", "sig": true},
-                    {"texto": "Renda", "valor": "4,63\\%", "sig": true},
-                    {"texto": "IDEB anos iniciais", "valor": "18,67\\%", "sig": true},
-                    {"texto": "IDEB anos finais", "valor": "21,49\\%", "sig": true},
-                    {"texto": "Emprego, pobreza, mortalidade infantil e saúde", "valor": "NS", "sig": false}
+                    {
+                      "texto": "PIB\\textit{pc}",
+                      "valor": "24,07\\%",
+                      "sig": true
+                    },
+                    {
+                      "texto": "Renda",
+                      "valor": "4,63\\%",
+                      "sig": true
+                    },
+                    {
+                      "texto": "IDEB anos iniciais",
+                      "valor": "18,67\\%",
+                      "sig": true
+                    },
+                    {
+                      "texto": "IDEB anos finais",
+                      "valor": "21,49\\%",
+                      "sig": true
+                    },
+                    {
+                      "texto": "Emprego, pobreza, mortalidade infantil e saúde",
+                      "valor": "NS",
+                      "sig": false
+                    }
                   ]
                 }
               ]
             },
             {
               "cite_key": "Irffi2025",
-              "amostragem": ["NE", "1999-2022"],
-              "var_independente": ["FDNE-parques eólicos"],
+              "amostragem": [
+                "Municípios",
+                "NE",
+                "1999-2022"
+              ],
+              "var_independente": [
+                "FDNE-parques eólicos"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["PIB\\textit{pc}, VAB, emprego, massa salarial"],
+                  "var_dependente": [
+                    "PIB\\textit{pc}, VAB, emprego, massa salarial"
+                  ],
                   "resultados": [
-                    {"texto": "PIB\\textit{pc}", "valor": "18,97\\%", "sig": true},
-                    {"texto": "VAB indústria", "valor": "71,90\\%", "sig": true},
-                    {"texto": "VAB serviço", "valor": "10,24\\%", "sig": true},
-                    {"texto": "Emprego", "valor": "23,41\\%", "sig": true},
-                    {"texto": "Redução temporária do VAB-agro durante construção"}
+                    {
+                      "texto": "PIB\\textit{pc}",
+                      "valor": "18,97\\%",
+                      "sig": true
+                    },
+                    {
+                      "texto": "VAB indústria",
+                      "valor": "71,90\\%",
+                      "sig": true
+                    },
+                    {
+                      "texto": "VAB serviço",
+                      "valor": "10,24\\%",
+                      "sig": true
+                    },
+                    {
+                      "texto": "Emprego",
+                      "valor": "23,41\\%",
+                      "sig": true
+                    },
+                    {
+                      "texto": "Redução temporária do VAB-agro durante construção"
+                    }
                   ]
                 }
               ]
@@ -693,14 +1411,26 @@
           "studies": [
             {
               "cite_key": "Souza2025",
-              "amostragem": ["N, NE, CO", "2002-2021"],
-              "var_independente": ["FDNE, FDA, FDCO (+ FC + IF)"],
+              "amostragem": [
+                "Municípios",
+                "N, NE, CO",
+                "2002-2021"
+              ],
+              "var_independente": [
+                "FDNE, FDA, FDCO (+ FC + IF)"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["PIB\\textit{pc}, emprego, renda"],
+                  "var_dependente": [
+                    "PIB\\textit{pc}, emprego, renda"
+                  ],
                   "resultados": [
-                    {"texto": "Heterogeneidade entre fundos, regiões e setores"},
-                    {"texto": "FDCO inconclusivo (poucos projetos)"}
+                    {
+                      "texto": "Heterogeneidade entre fundos, regiões e setores"
+                    },
+                    {
+                      "texto": "FDCO inconclusivo (poucos projetos)"
+                    }
                   ]
                 }
               ]
@@ -721,28 +1451,60 @@
           "studies": [
             {
               "cite_key": "Garsous2017",
-              "amostragem": ["BA, RJ, ES, MG", "1998-2009"],
-              "var_independente": ["IF-SUDENE (turismo)"],
+              "amostragem": [
+                "Municípios",
+                "BA, RJ, ES, MG",
+                "1998-2009"
+              ],
+              "var_independente": [
+                "IF-SUDENE (turismo)"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Emprego no turismo (log)"],
+                  "var_dependente": [
+                    "Emprego no turismo (log)"
+                  ],
                   "resultados": [
-                    {"texto": "Emprego turismo", "valor": "20\\%\\textsuperscript{*}, 30\\%", "sig": true}
+                    {
+                      "texto": "Emprego turismo",
+                      "valor": "20\\%\\textsuperscript{*}, 30\\%",
+                      "sig": true
+                    }
                   ]
                 }
               ]
             },
             {
               "cite_key": "Oliveira2020",
-              "amostragem": ["PE", "2000-2017"],
-              "var_independente": ["Prodepe + IF-SUDENE"],
+              "amostragem": [
+                "Empresas",
+                "PE",
+                "2000-2017"
+              ],
+              "var_independente": [
+                "Prodepe + IF-SUDENE"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Emprego, salário médio, massa salarial"],
+                  "var_dependente": [
+                    "Emprego, salário médio, massa salarial"
+                  ],
                   "resultados": [
-                    {"texto": "Emprego", "valor": "8,6\\%", "sig": true},
-                    {"texto": "Salário médio", "valor": "$-$10,3\\%", "sig": true},
-                    {"texto": "Massa salarial", "valor": "NS", "sig": false}
+                    {
+                      "texto": "Emprego",
+                      "valor": "8,6\\%",
+                      "sig": true
+                    },
+                    {
+                      "texto": "Salário médio",
+                      "valor": "$-$10,3\\%",
+                      "sig": true
+                    },
+                    {
+                      "texto": "Massa salarial",
+                      "valor": "NS",
+                      "sig": false
+                    }
                   ]
                 }
               ]
@@ -754,31 +1516,71 @@
           "studies": [
             {
               "cite_key": "Braz2023",
-              "amostragem": ["SUDENE", "2002-2021"],
-              "var_independente": ["IF-SUDENE"],
+              "amostragem": [
+                "Municípios",
+                "SUDENE",
+                "2002-2021"
+              ],
+              "var_independente": [
+                "IF-SUDENE"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Emprego, renda"],
+                  "var_dependente": [
+                    "Emprego, renda"
+                  ],
                   "resultados": [
-                    {"texto": "Emprego", "valor": "3,2\\%", "sig": true},
-                    {"texto": "Renda", "valor": "1,2\\%", "sig": true},
-                    {"texto": "Efeito crescente e duradouro"}
+                    {
+                      "texto": "Emprego",
+                      "valor": "3,2\\%",
+                      "sig": true
+                    },
+                    {
+                      "texto": "Renda",
+                      "valor": "1,2\\%",
+                      "sig": true
+                    },
+                    {
+                      "texto": "Efeito crescente e duradouro"
+                    }
                   ]
                 }
               ]
             },
             {
               "cite_key": "Alves2024",
-              "amostragem": ["PE", "2000-2017"],
-              "var_independente": ["Prodepe + IF-SUDENE"],
+              "amostragem": [
+                "Empresas",
+                "PE",
+                "2000-2017"
+              ],
+              "var_independente": [
+                "Prodepe + IF-SUDENE"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Emprego, salário médio, massa salarial"],
+                  "var_dependente": [
+                    "Emprego, salário médio, massa salarial"
+                  ],
                   "resultados": [
-                    {"texto": "Emprego", "valor": "22,3\\%", "sig": true},
-                    {"texto": "Massa salarial", "valor": "15,1\\%", "sig": true},
-                    {"texto": "Salário médio", "valor": "$-$8,2\\%", "sig": true},
-                    {"texto": "Efeito temporário e declinante"}
+                    {
+                      "texto": "Emprego",
+                      "valor": "22,3\\%",
+                      "sig": true
+                    },
+                    {
+                      "texto": "Massa salarial",
+                      "valor": "15,1\\%",
+                      "sig": true
+                    },
+                    {
+                      "texto": "Salário médio",
+                      "valor": "$-$8,2\\%",
+                      "sig": true
+                    },
+                    {
+                      "texto": "Efeito temporário e declinante"
+                    }
                   ]
                 }
               ]
@@ -790,15 +1592,29 @@
           "studies": [
             {
               "cite_key": "Carneiro2023",
-              "amostragem": ["NE", "2011-2019"],
-              "var_independente": ["IF-SUDENE"],
+              "amostragem": [
+                "Empresas",
+                "NE",
+                "2011-2019"
+              ],
+              "var_independente": [
+                "IF-SUDENE"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Eficiência produtiva (massa salarial)"],
+                  "var_dependente": [
+                    "Eficiência produtiva (massa salarial)"
+                  ],
                   "resultados": [
-                    {"texto": "Empresas eficientes no Semiárido"},
-                    {"texto": "Intensivas em mão de obra"},
-                    {"texto": "Ineficiência associada ao setor, não à empresa"}
+                    {
+                      "texto": "Empresas eficientes no Semiárido"
+                    },
+                    {
+                      "texto": "Intensivas em mão de obra"
+                    },
+                    {
+                      "texto": "Ineficiência associada ao setor, não à empresa"
+                    }
                   ]
                 }
               ]
@@ -810,13 +1626,25 @@
           "studies": [
             {
               "cite_key": "CarneiroVeloso2024",
-              "amostragem": ["NE, MG, ES", "2002-2019"],
-              "var_independente": ["IF-SUDENE (+ FNE, FDNE)"],
+              "amostragem": [
+                "Municípios",
+                "NE, MG, ES",
+                "2002-2019"
+              ],
+              "var_independente": [
+                "IF-SUDENE (+ FNE, FDNE)"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["log PIB\\textit{pc}, VAB setorial"],
+                  "var_dependente": [
+                    "log PIB\\textit{pc}, VAB setorial"
+                  ],
                   "resultados": [
-                    {"texto": "IF-SUDENE", "valor": "NS", "sig": false}
+                    {
+                      "texto": "IF-SUDENE",
+                      "valor": "NS",
+                      "sig": false
+                    }
                   ]
                 }
               ]
@@ -828,16 +1656,38 @@
           "studies": [
             {
               "cite_key": "Costa2024",
-              "amostragem": ["NE", "2006-2019"],
-              "var_independente": ["IF-SUDENE"],
+              "amostragem": [
+                "Empresas",
+                "NE",
+                "2006-2019"
+              ],
+              "var_independente": [
+                "IF-SUDENE"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Vínculos (log)"],
+                  "var_dependente": [
+                    "Vínculos (log)"
+                  ],
                   "resultados": [
-                    {"texto": "Todos os setores", "valor": "19,6\\%", "sig": true},
-                    {"texto": "Indústria", "valor": "18,3\\%", "sig": true},
-                    {"texto": "Efeitos por até 5 anos"},
-                    {"texto": "Demais setores", "valor": "NS", "sig": false}
+                    {
+                      "texto": "Todos os setores",
+                      "valor": "19,6\\%",
+                      "sig": true
+                    },
+                    {
+                      "texto": "Indústria",
+                      "valor": "18,3\\%",
+                      "sig": true
+                    },
+                    {
+                      "texto": "Efeitos por até 5 anos"
+                    },
+                    {
+                      "texto": "Demais setores",
+                      "valor": "NS",
+                      "sig": false
+                    }
                   ]
                 }
               ]
@@ -849,31 +1699,75 @@
           "studies": [
             {
               "cite_key": "Ferreira2024",
-              "amostragem": ["NE", "2010-2021"],
-              "var_independente": ["IF-SUDENE (+ FDNE)"],
+              "amostragem": [
+                "Municípios",
+                "NE",
+                "2010-2021"
+              ],
+              "var_independente": [
+                "IF-SUDENE (+ FDNE)"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["IDM e subcomponentes"],
+                  "var_dependente": [
+                    "IDM e subcomponentes"
+                  ],
                   "resultados": [
-                    {"texto": "IDM", "valor": "0,020", "sig": true},
-                    {"texto": "IDM saúde", "valor": "0,024", "sig": true},
-                    {"texto": "IDM renda", "valor": "0,012", "sig": true},
-                    {"texto": "IDM educação", "valor": "NS", "sig": false},
-                    {"texto": "Transbordamento renda", "valor": "0,002", "sig": true}
+                    {
+                      "texto": "IDM",
+                      "valor": "0,020",
+                      "sig": true
+                    },
+                    {
+                      "texto": "IDM saúde",
+                      "valor": "0,024",
+                      "sig": true
+                    },
+                    {
+                      "texto": "IDM renda",
+                      "valor": "0,012",
+                      "sig": true
+                    },
+                    {
+                      "texto": "IDM educação",
+                      "valor": "NS",
+                      "sig": false
+                    },
+                    {
+                      "texto": "Transbordamento renda",
+                      "valor": "0,002",
+                      "sig": true
+                    }
                   ]
                 }
               ]
             },
             {
               "cite_key": "Oliveira2026",
-              "amostragem": ["NE", "2010-2021"],
-              "var_independente": ["IF-SUDENE (+ FNE, FDNE)"],
+              "amostragem": [
+                "Municípios",
+                "NE",
+                "2010-2021"
+              ],
+              "var_independente": [
+                "IF-SUDENE (+ FNE, FDNE)"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["Cresc. PIB pc, Cresc. VAB pc"],
+                  "var_dependente": [
+                    "Cresc. PIB pc, Cresc. VAB pc"
+                  ],
                   "resultados": [
-                    {"texto": "VAB agropecuário\\textit{pc}", "valor": "Significativo", "sig": true},
-                    {"texto": "PIB\\textit{pc}", "valor": "NS", "sig": false}
+                    {
+                      "texto": "VAB agropecuário\\textit{pc}",
+                      "valor": "Significativo",
+                      "sig": true
+                    },
+                    {
+                      "texto": "PIB\\textit{pc}",
+                      "valor": "NS",
+                      "sig": false
+                    }
                   ]
                 }
               ]
@@ -885,14 +1779,26 @@
           "studies": [
             {
               "cite_key": "Souza2025",
-              "amostragem": ["N, NE, CO", "2002-2021"],
-              "var_independente": ["IF-SUDENE, IF-SUDAM (+ FC, FD)"],
+              "amostragem": [
+                "Municípios",
+                "N, NE, CO",
+                "2002-2021"
+              ],
+              "var_independente": [
+                "IF-SUDENE, IF-SUDAM (+ FC, FD)"
+              ],
               "blocos": [
                 {
-                  "var_dependente": ["PIB\\textit{pc}, emprego, renda"],
+                  "var_dependente": [
+                    "PIB\\textit{pc}, emprego, renda"
+                  ],
                   "resultados": [
-                    {"texto": "IF-SUDAM inconclusivo (poucas observações)"},
-                    {"texto": "Heterogeneidade entre instrumentos e regiões"}
+                    {
+                      "texto": "IF-SUDAM inconclusivo (poucas observações)"
+                    },
+                    {
+                      "texto": "Heterogeneidade entre instrumentos e regiões"
+                    }
                   ]
                 }
               ]
