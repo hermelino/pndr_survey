@@ -64,7 +64,6 @@ class TableDef:
     filename: str
     caption: str
     label: str
-    siglas: str
     method_groups: list[MethodGroup] = field(default_factory=list)
 
 
@@ -118,7 +117,6 @@ def load_tables(path: Path) -> list[TableDef]:
             filename=t["filename"],
             caption=t["caption"],
             label=t["label"],
-            siglas=t["siglas"],
             method_groups=groups,
         ))
     return tables
@@ -226,7 +224,7 @@ def render_table(table: TableDef) -> str:
     a("\t\t\\tiny")
     a("\t\t\\parbox{14.8cm}{%")
     a(f"\t\t\t\\vspace{{0.1cm}}")
-    a(f"\t\t\tFonte: Elaborado pelo autor. Siglas: {table.siglas}")
+    a("\t\t\tFonte: Elaborado pelo autor.")
     a("\t}}")
     a("\t\\endlastfoot")
     a("")

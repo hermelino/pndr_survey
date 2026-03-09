@@ -18,7 +18,7 @@
                 "2004-2010"
               ],
               "var_independente": [
-                "FC/PIB"
+                "FNE/PIB"
               ],
               "blocos": [
                 {
@@ -58,7 +58,7 @@
                 "2004-2010"
               ],
               "var_independente": [
-                "FC/PIB"
+                "FNO/PIB"
               ],
               "blocos": [
                 {
@@ -93,7 +93,7 @@
                 "2004-2010"
               ],
               "var_independente": [
-                "FC/PIB"
+                "FCO/PIB"
               ],
               "blocos": [
                 {
@@ -128,7 +128,7 @@
           ]
         },
         {
-          "method": "Modelo de \\textit{Spillover} Espacial",
+          "method": "Painel Espacial",
           "studies": [
             {
               "cite_key": "Oliveira2005",
@@ -238,7 +238,7 @@
                 "1999-2011"
               ],
               "var_independente": [
-                "FC/PIB"
+                "FNE/PIB"
               ],
               "blocos": [
                 {
@@ -348,7 +348,7 @@
                 "2010-2021"
               ],
               "var_independente": [
-                "FC/PIB"
+                "FNE/PIB"
               ],
               "blocos": [
                 {
@@ -393,7 +393,7 @@
                 "2000-2008"
               ],
               "var_independente": [
-                "FC/PIB"
+                "FNE/PIB"
               ],
               "blocos": [
                 {
@@ -438,7 +438,7 @@
                 "1999-2006"
               ],
               "var_independente": [
-                "FC/PIB"
+                "FNE/PIB"
               ],
               "blocos": [
                 {
@@ -458,7 +458,7 @@
           ]
         },
         {
-          "method": "Regressão Quantílica e IV",
+          "method": "Regressão Quantílica / Variáveis Instrumentais",
           "studies": [
             {
               "cite_key": "Irffi2016",
@@ -468,7 +468,7 @@
                 "2000-2010"
               ],
               "var_independente": [
-                "FC/PIB"
+                "FNE/PIB"
               ],
               "blocos": [
                 {
@@ -493,7 +493,7 @@
           ]
         },
         {
-          "method": "Modelo de Eficiência",
+          "method": "Análise Envoltória de Dados",
           "studies": [
             {
               "cite_key": "Carneiro2018",
@@ -503,7 +503,7 @@
                 "2010-2015"
               ],
               "var_independente": [
-                "FC/PIB"
+                "FNE/PIB"
               ],
               "blocos": [
                 {
@@ -531,7 +531,7 @@
                 "2003-2014"
               ],
               "var_independente": [
-                "FC/PIB"
+                "FNE/PIB"
               ],
               "blocos": [
                 {
@@ -554,7 +554,7 @@
           ]
         },
         {
-          "method": "Equilíbrio Geral",
+          "method": "Equilíbrio Geral Computável",
           "studies": [
             {
               "cite_key": "Nascimento2017",
@@ -564,7 +564,7 @@
                 "2000-2011"
               ],
               "var_independente": [
-                "FC"
+                "FNE"
               ],
               "blocos": [
                 {
@@ -592,7 +592,7 @@
                 "2014-2025"
               ],
               "var_independente": [
-                "FC/PIB"
+                "FNE/PIB"
               ],
               "blocos": [
                 {
@@ -617,7 +617,7 @@
                 "2006-2015"
               ],
               "var_independente": [
-                "Fundo"
+                "FNE"
               ],
               "blocos": [
                 {
@@ -665,7 +665,7 @@
           ]
         },
         {
-          "method": "\\textit{Propensity Score}",
+          "method": "\\textit{Propensity Score Matching}",
           "studies": [
             {
               "cite_key": "Monte2025",
@@ -703,7 +703,7 @@
           ]
         },
         {
-          "method": "DID 2 Estágios, DID Escalonado",
+          "method": "Diferenças em Diferenças Escalonado",
           "studies": [
             {
               "cite_key": "CarneiroVeloso2024",
@@ -1042,7 +1042,7 @@
           ]
         },
         {
-          "method": "Equilíbrio Geral",
+          "method": "Equilíbrio Geral Computável",
           "studies": [
             {
               "cite_key": "Ribeiro2020",
