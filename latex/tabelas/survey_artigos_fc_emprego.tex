@@ -17,31 +17,31 @@
 \renewcommand{\tablename}{\quadroname}%
 \renewcommand{\thetable}{\arabic{quadro}}%
 \stepcounter{quadro}%
-\begin{longtable}{|>{\raggedright\arraybackslash}p{1.6cm}
-		|>{\raggedright\arraybackslash}p{1.7cm}
-		|>{\raggedright\arraybackslash}p{2cm}
-		|>{\raggedright\arraybackslash}p{3.5cm}
-		|>{\raggedright\arraybackslash}p{4.8cm}|}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{2.2cm}
+		|>{\raggedright\arraybackslash}p{2.2cm}
+		|>{\raggedright\arraybackslash}p{2.3cm}
+		|>{\raggedright\arraybackslash}p{3.0cm}
+		|>{\raggedright\arraybackslash}p{4.2cm}|}
 
 	\caption{Estudos de Impacto dos Fundos Constitucionais sobre o Mercado de Trabalho} \label{tab:estudos_fc_emprego} \\
 
 \hline
-	\begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.6cm}@{}}Método\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.7cm}@{}}Artigo\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2cm}@{}}Amostragem\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{3.5cm}@{}}Variáveis\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{4.8cm}@{}}Estimativa\end{tabular} \\
+	\begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2.2cm}@{}}Método\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2.2cm}@{}}Artigo\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2.3cm}@{}}Amostragem\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{3.0cm}@{}}Variáveis\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{4.2cm}@{}}Estimativa\end{tabular} \\
 	\hline
 	\endfirsthead
 
 	\multicolumn{5}{c}%
 	{{\quadroname\ \thetable{} -- Continuação}} \\
 	\hline
-	\begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.6cm}@{}}Método\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{1.7cm}@{}}Artigo\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2cm}@{}}Amostragem\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{3.5cm}@{}}Variáveis\end{tabular}
-	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{4.8cm}@{}}Estimativa\end{tabular} \\
+	\begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2.2cm}@{}}Método\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2.2cm}@{}}Artigo\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{2.3cm}@{}}Amostragem\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{3.0cm}@{}}Variáveis\end{tabular}
+	& \begin{tabular}[c]{@{}>{\centering\arraybackslash}m{4.2cm}@{}}Estimativa\end{tabular} \\
 	\hline
 	\endhead
 
@@ -60,9 +60,9 @@
 
 \textit{Propensity Score Matching}
 	& \citeonline{SilvaResende2009}
-	& \fc[2cm]{\item Empresas NE, N, CO \item 2000-2003}
-	& \fcvar{\item FNE, FNO, FCO (\textit{dummy}) \item Cresc. emprego \item Cresc. salário}
-	& \fc[4.5cm]{
+	& \fcvar[2.3cm]{\item Empresas NE, N, CO \item 2000-2003}
+	& \fcvar[3.0cm]{\item FNE, FNO, FCO (\textit{dummy}) \item Cresc. emprego \item Cresc. salário}
+	& \fc[4.2cm]{
 		\item FNE-emprego \hfill +61,2 p.p.\textsuperscript{*}
 		\item FNE-salário \hfill NS\phantom{\textsuperscript{*}}
 		\item FNO, FCO \hfill NS\phantom{\textsuperscript{*}}
@@ -72,9 +72,9 @@
 
 
 	& \citeonline{Soares2017}
-	& \fc[2cm]{\item Empresas NE \item 2000-2006}
-	& \fcvar{\item FNE (\textit{dummy}) \item Cresc. emprego \item Cresc. massa salarial \item Cresc. salário}
-	& \fc[4.5cm]{
+	& \fcvar[2.3cm]{\item Empresas NE \item 2000-2006}
+	& \fcvar[3.0cm]{\item FNE (\textit{dummy}) \item Cresc. emprego \item Cresc. massa salarial \item Cresc. salário}
+	& \fc[4.2cm]{
 		\item FNE-empr. (1 ano) \hfill +7,96 p.p.\textsuperscript{*}
 		\item FNE-empr. (3 anos) \hfill +33,59 p.p.\textsuperscript{*}
 		\item FNE-empr. (5 anos) \hfill +132,23 p.p.\textsuperscript{*}
@@ -86,9 +86,9 @@
 	\hline
 \textit{Generalized Propensity Score}
 	& \citeonline{OliveiraTerra2018}
-	& \fc[2cm]{\item Empresas GO \item 2004-2011}
-	& \fcvar{\item FCO-Empresarial (contínuo) \item Cresc. emprego \item Cresc. salário}
-	& \fc[4.5cm]{
+	& \fcvar[2.3cm]{\item Empresas GO \item 2004-2011}
+	& \fcvar[3.0cm]{\item FCO-Empresarial (contínuo) \item Cresc. emprego \item Cresc. salário}
+	& \fc[4.2cm]{
 		\item FCO-emprego \hfill (+)\textsuperscript{*}
 		\item Efeito limitado a intervalo específico da dose
 		\item FCO-salário \hfill NS\phantom{\textsuperscript{*}}
@@ -98,9 +98,9 @@
 	\hline
 IV e Função Dose-Resposta
 	& \citeonline{Cunha2024}
-	& \fc[2cm]{\item Empresas NE \item 2000-2006}
-	& \fcvar{\item FNE (contínua) \item Cresc. emprego \item Cresc. massa salarial}
-	& \fc[4.5cm]{
+	& \fcvar[2.3cm]{\item Empresas NE \item 2000-2006}
+	& \fcvar[3.0cm]{\item FNE (contínua) \item Cresc. emprego \item Cresc. massa salarial}
+	& \fc[4.2cm]{
 		\item Dose-resposta emprego: IV \hfill 357,54\%\textsuperscript{*}
 		\item Dose-resposta emprego: OLS \hfill 133,94\%\textsuperscript{*}
 		\item Dose-resposta massa: IV \hfill 220,96\%\textsuperscript{*}
@@ -111,9 +111,9 @@ IV e Função Dose-Resposta
 	\hline
 Primeira Diferença
 	& \citeonline{Resende2014c}
-	& \fc[2cm]{\item Empresas NE \item 1999-2006}
-	& \fcvar{\item FNE-Indústria (\textit{dummy}) \item Cresc. emprego}
-	& \fc[4.5cm]{
+	& \fcvar[2.3cm]{\item Empresas NE \item 1999-2006}
+	& \fcvar[3.0cm]{\item FNE-Indústria (\textit{dummy}) \item Cresc. emprego}
+	& \fc[4.2cm]{
 		\item FNE-Ind. (anual) \hfill +10,83 a 16,11 p.p.\textsuperscript{*}
 		\item FNE-Ind. (3 anos) \hfill +30 a 56 p.p.\textsuperscript{*}
 	}
@@ -122,9 +122,9 @@ Primeira Diferença
 	\hline
 Painel Espacial (SAR)
 	& \citeonline{Oliveira2015}
-	& \fc[2cm]{\item Municípios GO \item 2004-2011}
-	& \fcvar{\item Log. FCO \item Log. emprego \item Salário médio}
-	& \fc[4.5cm]{
+	& \fcvar[2.3cm]{\item Municípios GO \item 2004-2011}
+	& \fcvar[3.0cm]{\item Log. FCO \item Log. emprego \item Salário médio}
+	& \fc[4.2cm]{
 		\item FCO-emprego \hfill (+)\textsuperscript{*}
 		\item FCO-salário \hfill (+)\textsuperscript{*}
 		\item Sem diferença relevante vs. painel clássico
@@ -134,9 +134,9 @@ Painel Espacial (SAR)
 	\hline
 Painel Dinâmico
 	& \citeonline{Ribeiro2024}
-	& \fc[2cm]{\item Municípios NE \item 2010-2015}
-	& \fcvar{\item Log. FNE \item Log. emprego por setor}
-	& \fc[4.5cm]{
+	& \fcvar[2.3cm]{\item Municípios NE \item 2010-2015}
+	& \fcvar[3.0cm]{\item Log. FNE \item Log. emprego por setor}
+	& \fc[4.2cm]{
 		\item FNE-primário \hfill +1,10\%\textsuperscript{*}
 		\item FNE-terciário \hfill +0,53\%\textsuperscript{*}
 		\item FNE-secundário \hfill +0,13\%\textsuperscript{*}
@@ -147,9 +147,9 @@ Painel Dinâmico
 	\hline
 Equilíbrio Geral
 	& \citeonline{Ribeiro2020}
-	& \fc[2cm]{\item Região NE \item 2014-2025}
-	& \fcvar{\item FNE \item Emprego total}
-	& \fc[4.5cm]{
+	& \fcvar[2.3cm]{\item Região NE \item 2014-2025}
+	& \fcvar[3.0cm]{\item FNE \item Emprego total}
+	& \fc[4.2cm]{
 		\item FNE (emprego NE acumulado) \hfill +2,75\%\textsuperscript{*}
 		\item NE-agropecuária \hfill +8,0\%\textsuperscript{*}
 		\item NE-construção \hfill +5,3\%\textsuperscript{*}
@@ -159,9 +159,9 @@ Equilíbrio Geral
 	\hline
 Diferenças em Diferenças
 	& \citeonline{Oliveira2020}
-	& \fc[2cm]{\item Empresas N (FNO) \item 2000-2010}
-	& \fcvar{\item FNO (\textit{dummy}) \item Emprego \item Massa salarial \item Salário médio}
-	& \fc[4.5cm]{
+	& \fcvar[2.3cm]{\item Empresas N (FNO) \item 2000-2010}
+	& \fcvar[3.0cm]{\item FNO (\textit{dummy}) \item Emprego \item Massa salarial \item Salário médio}
+	& \fc[4.2cm]{
 		\item Emprego e renda \hfill (+)\textsuperscript{*}
 		\item Curto e médio prazo (+), exceto grandes empresas
 		\item Investimento: efeito a longo prazo
@@ -172,9 +172,9 @@ Diferenças em Diferenças
 	\hline
 RDD Geográfico
 	& \citeonline{Oliveira2021}
-	& \fc[2cm]{\item Municípios NE \item 1970-2010}
-	& \fcvar{\item FNE \item Emprego formal e informal (2010)}
-	& \fc[4.5cm]{
+	& \fcvar[2.3cm]{\item Municípios NE \item 1970-2010}
+	& \fcvar[3.0cm]{\item FNE \item Emprego formal e informal (2010)}
+	& \fc[4.2cm]{
 		\item Agropecuária \hfill +5,4\%\textsuperscript{*}
 		\item Indústria \hfill +2,8\%\textsuperscript{*}
 		\item Serviços \hfill +3,5\%\textsuperscript{*}

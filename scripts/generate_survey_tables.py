@@ -69,6 +69,17 @@ class TableDef:
 
 
 # ---------------------------------------------------------------------------
+# Column widths (matching tese proportions: total 13.9cm)
+# ---------------------------------------------------------------------------
+
+COL_METODO = "2.2cm"
+COL_ARTIGO = "2.2cm"
+COL_AMOSTR = "2.3cm"
+COL_VARIAVEIS = "3.0cm"
+COL_ESTIMATIVA = "4.2cm"
+
+
+# ---------------------------------------------------------------------------
 # JSON → Dataclasses
 # ---------------------------------------------------------------------------
 
@@ -117,7 +128,7 @@ def load_tables(path: Path) -> list[TableDef]:
 # Renderização LaTeX
 # ---------------------------------------------------------------------------
 
-def render_fc_cell(items: list[str], width: str) -> str:
+def render_fc_cell(items: list[str], width: str = "2.2cm") -> str:
     """Renderiza uma célula: texto direto se único item, \\fc se múltiplos."""
     if len(items) == 1:
         return items[0]
@@ -125,13 +136,13 @@ def render_fc_cell(items: list[str], width: str) -> str:
     return f"\\fc[{width}]{{{inner}}}"
 
 
-def render_var_cell(var_ind: list[str], var_dep: list[str]) -> str:
+def render_var_cell(var_ind: list[str], var_dep: list[str], width: str = "2.2cm") -> str:
     """Renderiza célula combinada de variáveis (política + resultado) com \\fcvar."""
     combined = var_ind + var_dep
     if len(combined) == 1:
         return combined[0]
     inner = " ".join(f"\\item {it}" for it in combined)
-    return f"\\fcvar{{{inner}}}"
+    return f"\\fcvar[{width}]{{{inner}}}"
 
 
 def render_result_item(item: ResultItem) -> str:
@@ -146,7 +157,7 @@ def render_result_item(item: ResultItem) -> str:
     return f"\t\t{prefix} {item.texto} \\hfill {item.valor}{sig_mark}"
 
 
-def render_result_cell(items: list[ResultItem], width: str) -> str:
+def render_result_cell(items: list[ResultItem], width: str = "4.2cm") -> str:
     """Renderiza a célula de resultados completa."""
     lines = [render_result_item(it) for it in items]
     inner = "\n".join(lines)
@@ -180,11 +191,11 @@ def render_table(table: TableDef) -> str:
     a("\\renewcommand{\\tablename}{\\quadroname}%")
     a("\\renewcommand{\\thetable}{\\arabic{quadro}}%")
     a("\\stepcounter{quadro}%")
-    a("\\begin{longtable}{|>{\\raggedright\\arraybackslash}p{1.6cm}")
-    a("\t\t|>{\\raggedright\\arraybackslash}p{1.7cm}")
-    a("\t\t|>{\\raggedright\\arraybackslash}p{2cm}")
-    a("\t\t|>{\\raggedright\\arraybackslash}p{3.5cm}")
-    a("\t\t|>{\\raggedright\\arraybackslash}p{4.8cm}|}")
+    a(f"\\begin{{longtable}}{{|>{{\\raggedright\\arraybackslash}}p{{{COL_METODO}}}")
+    a(f"\t\t|>{{\\raggedright\\arraybackslash}}p{{{COL_ARTIGO}}}")
+    a(f"\t\t|>{{\\raggedright\\arraybackslash}}p{{{COL_AMOSTR}}}")
+    a(f"\t\t|>{{\\raggedright\\arraybackslash}}p{{{COL_VARIAVEIS}}}")
+    a(f"\t\t|>{{\\raggedright\\arraybackslash}}p{{{COL_ESTIMATIVA}}}|}}")
     a("")
 
     # Caption + label
@@ -243,9 +254,9 @@ def render_table(table: TableDef) -> str:
 
             # First bloco: full 5-column row
             bloco0 = study.blocos[0]
-            amostr = render_fc_cell(study.amostragem, "2cm")
-            variaveis = render_var_cell(study.var_independente, bloco0.var_dependente)
-            resultado = render_result_cell(bloco0.resultados, "4.5cm")
+            amostr = render_var_cell(study.amostragem, [], width=COL_AMOSTR)
+            variaveis = render_var_cell(study.var_independente, bloco0.var_dependente, width=COL_VARIAVEIS)
+            resultado = render_result_cell(bloco0.resultados, width=COL_ESTIMATIVA)
 
             a(f"{method_col}")
             a(f"\t& \\citeonline{{{study.cite_key}}}")
@@ -257,8 +268,8 @@ def render_table(table: TableDef) -> str:
             # Additional blocos (multi dep-var)
             for bloco in study.blocos[1:]:
                 a("\t\\cline{4-5}")
-                variaveis_extra = render_var_cell(study.var_independente, bloco.var_dependente)
-                resultado_extra = render_result_cell(bloco.resultados, "4.5cm")
+                variaveis_extra = render_var_cell(study.var_independente, bloco.var_dependente, width=COL_VARIAVEIS)
+                resultado_extra = render_result_cell(bloco.resultados, width=COL_ESTIMATIVA)
                 a(f"\t& & ")
                 a(f"\t& {variaveis_extra}")
                 a(f"\t& {resultado_extra}")
@@ -281,11 +292,11 @@ def render_table(table: TableDef) -> str:
 def _add_header_row(lines: list[str]) -> None:
     """Adiciona a linha de cabeçalho das 5 colunas."""
     cols = [
-        ("1.6cm", "Método"),
-        ("1.7cm", "Artigo"),
-        ("2cm", "Amostragem"),
-        ("3.5cm", "Variáveis"),
-        ("4.8cm", "Estimativa"),
+        (COL_METODO, "Método"),
+        (COL_ARTIGO, "Artigo"),
+        (COL_AMOSTR, "Amostragem"),
+        (COL_VARIAVEIS, "Variáveis"),
+        (COL_ESTIMATIVA, "Estimativa"),
     ]
     parts = []
     for width, title in cols:
