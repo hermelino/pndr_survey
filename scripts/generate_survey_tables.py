@@ -290,7 +290,7 @@ def _add_header_row(lines: list[str]) -> None:
         (COL_ARTIGO, "Artigo"),
         (COL_AMOSTR, "Amostragem"),
         (COL_VARIAVEIS, "Variáveis"),
-        (COL_ESTIMATIVA, "Estimativa"),
+        (COL_ESTIMATIVA, "Estimativas"),
     ]
     parts = []
     for width, title in cols:

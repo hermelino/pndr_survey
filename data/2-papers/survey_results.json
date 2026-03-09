@@ -188,7 +188,7 @@
                     },
                     {
                       "texto": "FCO-empresarial (munic)",
-                      "valor": "+0,129",
+                      "valor": "0,129",
                       "sig": true
                     },
                     {
@@ -383,7 +383,7 @@
           ]
         },
         {
-          "method": "Modelo \\textit{Threshold}",
+          "method": "Modelo Threshold",
           "studies": [
             {
               "cite_key": "Linhares2014",
@@ -665,7 +665,7 @@
           ]
         },
         {
-          "method": "\\textit{Propensity Score Matching}",
+          "method": "Propensity Score Matching",
           "studies": [
             {
               "cite_key": "Monte2025",
@@ -750,7 +750,7 @@
       "siglas": "NS - Não significativo; p.p. - Pontos percentuais.",
       "method_groups": [
         {
-          "method": "\\textit{Propensity Score Matching}",
+          "method": "Propensity Score Matching",
           "studies": [
             {
               "cite_key": "SilvaResende2009",
@@ -771,7 +771,7 @@
                   "resultados": [
                     {
                       "texto": "FNE-emprego",
-                      "valor": "+61,2 p.p.",
+                      "valor": "61,2 p.p.",
                       "sig": true
                     },
                     {
@@ -808,17 +808,17 @@
                   "resultados": [
                     {
                       "texto": "FNE-empr. (1 ano)",
-                      "valor": "+7,96 p.p.",
+                      "valor": "7,96 p.p.",
                       "sig": true
                     },
                     {
                       "texto": "FNE-empr. (3 anos)",
-                      "valor": "+33,59 p.p.",
+                      "valor": "33,59 p.p.",
                       "sig": true
                     },
                     {
                       "texto": "FNE-empr. (5 anos)",
-                      "valor": "+132,23 p.p.",
+                      "valor": "132,23 p.p.",
                       "sig": true
                     },
                     {
@@ -838,7 +838,7 @@
           ]
         },
         {
-          "method": "\\textit{Generalized Propensity Score}",
+          "method": "Generalized Propensity Score",
           "studies": [
             {
               "cite_key": "OliveiraTerra2018",
@@ -943,12 +943,12 @@
                   "resultados": [
                     {
                       "texto": "FNE-Ind. (anual)",
-                      "valor": "+10,83 a 16,11 p.p.",
+                      "valor": "10,83 a 16,11 p.p.",
                       "sig": true
                     },
                     {
                       "texto": "FNE-Ind. (3 anos)",
-                      "valor": "+30 a 56 p.p.",
+                      "valor": "30 a 56 p.p.",
                       "sig": true
                     }
                   ]
@@ -1017,22 +1017,22 @@
                   "resultados": [
                     {
                       "texto": "FNE-primário",
-                      "valor": "+1,10\\%",
+                      "valor": "1,10\\%",
                       "sig": true
                     },
                     {
                       "texto": "FNE-terciário",
-                      "valor": "+0,53\\%",
+                      "valor": "0,53\\%",
                       "sig": true
                     },
                     {
                       "texto": "FNE-secundário",
-                      "valor": "+0,13\\%",
+                      "valor": "0,13\\%",
                       "sig": true
                     },
                     {
                       "texto": "FNE defasado (secundário)",
-                      "valor": "+0,06\\%",
+                      "valor": "0,06\\%",
                       "sig": true
                     }
                   ]
@@ -1062,17 +1062,17 @@
                   "resultados": [
                     {
                       "texto": "FNE (emprego NE acumulado)",
-                      "valor": "+2,75\\%",
+                      "valor": "2,75\\%",
                       "sig": true
                     },
                     {
                       "texto": "NE-agropecuária",
-                      "valor": "+8,0\\%",
+                      "valor": "8,0\\%",
                       "sig": true
                     },
                     {
                       "texto": "NE-construção",
-                      "valor": "+5,3\\%",
+                      "valor": "5,3\\%",
                       "sig": true
                     }
                   ]
@@ -1143,17 +1143,17 @@
                   "resultados": [
                     {
                       "texto": "Agropecuária",
-                      "valor": "+5,4\\%",
+                      "valor": "5,4\\%",
                       "sig": true
                     },
                     {
                       "texto": "Indústria",
-                      "valor": "+2,8\\%",
+                      "valor": "2,8\\%",
                       "sig": true
                     },
                     {
                       "texto": "Serviços",
-                      "valor": "+3,5\\%",
+                      "valor": "3,5\\%",
                       "sig": true
                     },
                     {
