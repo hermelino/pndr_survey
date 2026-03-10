@@ -23,6 +23,10 @@
 *.run.xml
 *-blx.bib
 *.bcf
+*.pdf
+
+# EXCEÇÃO: Versionar o PDF compilado principal
+!latex/0-main.pdf
 
 # =============================================================================
 # Data (large files - keep only scripts, not raw data)
