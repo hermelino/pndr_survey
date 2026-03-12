@@ -2,6 +2,8 @@
 
 Revisão sistemática da literatura empírica sobre os instrumentos da Política Nacional de Desenvolvimento Regional (PNDR), cobrindo estudos publicados entre 2000 e 2025.
 
+**Artigo (versão mais recente):** [latex/0-main.pdf](https://github.com/hermelino/pndr_survey/blob/main/latex/0-main.pdf) — atualizado em 10/03/2026
+
 ## Objetivo
 
 Identificar, classificar e sintetizar as evidências empíricas sobre o impacto de três grupos de instrumentos da PNDR:
