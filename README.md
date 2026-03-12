@@ -14,12 +14,12 @@ Identificar, classificar e sintetizar as evidências empíricas sobre o impacto 
 
 ## Principais Resultados
 
-A revisão triou **130 estudos** coletados em 5 bases acadêmicas (Scopus, SciELO, CAPES, EconPapers, ANPEC) e selecionou **44 estudos empíricos** (22 publicados, 22 não publicados) com métodos econométricos, cobrindo o período 2005–2025.
+A revisão triou **130 estudos** coletados em 5 bases acadêmicas (Scopus, SciELO, CAPES, EconPapers, ANPEC) e selecionou **44 estudos empíricos** (22 publicados, 22 não publicados) com métodos econométricos, cobrindo o período 2005–2026.
 
 **Por instrumento:**
-- **Fundos Constitucionais** — instrumento mais estudado (FNE: 32 estudos, FNO: 13, FCO: 13). FNE e FCO apresentam efeitos positivos sobre PIB per capita municipal; FNO tem resultados mistos. Impactos sobre emprego são consistentemente positivos (FNE: +7,96 pp em 1 ano a +132 pp em 5 anos).
-- **Fundos de Desenvolvimento** — literatura emergente (8 estudos sobre FDNE). Evidências recentes apontam efeitos positivos sobre PIB per capita (+6,3%), receita tributária (+20,7%) e, para parques eólicos, impactos expressivos sobre VAB industrial (+71,9%).
-- **Incentivos Fiscais** — 9 estudos sobre SUDENE. Efeitos positivos sobre emprego (+3,2% a +22,3%) e índices de desenvolvimento municipal, com spillovers espaciais para áreas vizinhas.
+- **Fundos Constitucionais** — instrumento mais estudado (FNE: 32 estudos, FNO: 13, FCO: 13). FNE e FCO apresentam efeitos positivos sobre PIB per capita municipal; FNO tem resultados mistos. Impactos sobre emprego são consistentemente positivos.
+- **Fundos de Desenvolvimento** — literatura emergente (8 estudos sobre FDNE). Evidências recentes apontam efeitos positivos sobre PIB per capita, receita tributária e, para parques eólicos, impactos expressivos sobre VAB industrial.
+- **Incentivos Fiscais** — 9 estudos sobre SUDENE. Efeitos positivos sobre emprego e índices de desenvolvimento municipal, com spillovers espaciais para áreas vizinhas.
 
 **Métodos predominantes:** painel espacial, diferenças em diferenças (escalonado), propensity score (GPS/PSM), painel com efeitos fixos — maioria no nível MSM 3 da Escala de Maryland.
 
